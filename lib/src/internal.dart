@@ -3,6 +3,7 @@
 
 #import('package:intl/src/intl_helpers.dart');
 #import("package:intl/src/lazy_locale_data.dart");
+#import("package:intl/intl.dart");
 
 #import("symbols.dart");
 #import("locale.dart");
@@ -25,6 +26,37 @@ void initRelativeTimeSymbols(Function symbols) {
 Future initRelativeTimeIntl(Function init) {
   return init(relativeTimeSymbols);
 }
+
+RelativeTimeSymbols lookupSymbols(String locale) {
+  print("raw: [$locale] verifiedLocale: ${verifiedLocale(locale)}");
+  var symbols = relativeTimeSymbols[verifiedLocale(locale)];
+  if(symbols === null) throw new LocaleDataException("someLocale.init()");
+  return symbols;
+}
+
+
+// TODO: this is copied from package:intl, remove if it becomes valid beyond DateFormat there
+String verifiedLocale(String newLocale) {
+  
+  if (newLocale == null) newLocale = Intl.systemLocale;
+  
+  if (_localeExists(newLocale)) return newLocale;
+  
+  for (var each in [Intl.canonicalizedLocale(newLocale), shortLocale(newLocale)]) { 
+    if (_localeExists(each)) {
+      return each;
+    }
+  }
+  throw new ArgumentError("Invalid or unsupported locale '$newLocale'");
+}
+
+// TODO: this is copied from package:intl, remove if it becomes public there
+String shortLocale(String aLocale) {
+  if (aLocale.length < 2) return aLocale;
+  return aLocale.substring(0, 2).toLowerCase();
+}
+
+bool _localeExists(String locale) => relativeTimeLocales.indexOf(locale) != -1;
 
 void registerSymbols(RelativeTimeSymbols symbols) {
   initRelativeTimeSymbols(() => new Map<String, RelativeTimeSymbols>());

@@ -1,5 +1,5 @@
 
-#library("relative_time_locale_en");
+#library("relative_time_locale_all");
 
 #import("../src/internal.dart");
 #import("../src/locale/en.dart", prefix: "en");
@@ -9,3 +9,4 @@ void init() {
   
   locales.forEach(registerSymbols);
 }
+// yesiree!

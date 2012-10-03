@@ -1,6 +1,8 @@
 
 #library("relative_time_intl");
 
+#import("package:intl/intl.dart");
+
 #import("src/locale.dart");
 #import("src/period.dart");
 #import("src/time_unit.dart");

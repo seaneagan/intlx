@@ -3,7 +3,6 @@
 #import("../lib/relative_time_intl.dart"); 
 #import("../lib/locale/en.dart", prefix: "en");
 #import("package:intl/intl_standalone.dart");
-#import("dart:io");
 
 main() {
   
@@ -13,7 +12,7 @@ main() {
   
   final apocolypse = new Date(2012, 12, 21);
 
-  var durationFormat = new DurationFormat("en");
+  var durationFormat = new DurationFormat();
   print(durationFormat.format(const Duration(days: 50, hours: 3)));
   print(durationFormat.format(const Duration(days: 27, minutes: 2)));
 

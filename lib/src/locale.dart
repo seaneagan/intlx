@@ -10,7 +10,7 @@ class RelativeTimeLocale {
   
   final RelativeTimeSymbols _symbols;
   
-  RelativeTimeLocale(String locale) : _symbols = relativeTimeSymbols[locale];
+  RelativeTimeLocale(String locale) : _symbols = lookupSymbols(locale);
   
   String formatUnit(TimeUnit unit, int quantity) {
     bool isPlural = quantity != 1;

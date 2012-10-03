@@ -2,20 +2,33 @@
 #library("relative_time_intl");
 
 #import("src/locale.dart");
+#import("src/period.dart");
+#import("src/time_unit.dart");
 
 class DurationFormat {
   
   final RelativeTimeLocale _locale;
   
-  DurationFormat(String locale) _locale = new RelativeTimeLocale(locale);
+  DurationFormat([String locale]) : _locale = new RelativeTimeLocale(locale);
   
   String format(Duration duration) {
     
+    var period = new ClockPeriod.wrap(duration);
+    var potentialUnits = [TimeUnit.YEAR, TimeUnit.MONTH, TimeUnit.DAY, TimeUnit.HOUR, TimeUnit.MINUTE, TimeUnit.SECOND];
+    
+    for(TimeUnit unit in potentialUnits) {
+      var q = period.inUnit(unit);
+      if(q > 0) {
+        return _locale.formatUnit(unit, q);
+      }
+    }
+
+    return "[unknown duration]";
   }
   
 }
 
-class DateOffsetFormat {
+/*class DateOffsetFormat {
   
   final DurationFormat _durationFormat;
   
@@ -42,3 +55,4 @@ class NowOffsetFormat extends DateOffsetFormat {
 
   
 }
+*/

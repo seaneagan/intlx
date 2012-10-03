@@ -1,6 +1,8 @@
 
 #library("period");
 
+#import("time_unit.dart");
+
 class Period {
   // exact
   static const int MONTHS_PER_YEAR = 12;
@@ -62,14 +64,26 @@ class Period {
   operator - () => new Period(0, -months, 0, -days, 0, 0, 0, -milliseconds);
   
   // non-exact
-  int get inYears() => _inYears.floor();
-  int get inMonths() => _inMonths.floor();
-  int get inWeeks() => _inWeeks.floor();
-  int get inDays() => _inDays.floor();
-  int get inHours() => _inHours.floor();
-  int get inMinutes() => _inMinutes.floor();
-  int get inSeconds() => _inSeconds.floor();
-  int get inMilliseconds() => _inMilliseconds.floor();
+  int get inYears() => _inYears.floor().toInt();
+  int get inMonths() => _inMonths.floor().toInt();
+  int get inWeeks() => _inWeeks.floor().toInt();
+  int get inDays() => _inDays.floor().toInt();
+  int get inHours() => _inHours.floor().toInt();
+  int get inMinutes() => _inMinutes.floor().toInt();
+  int get inSeconds() => _inSeconds.floor().toInt();
+  int get inMilliseconds() => _inMilliseconds.floor().toInt();
+  int inUnit(TimeUnit unit) {
+    switch(unit) {
+      case TimeUnit.YEAR: return inYears;
+      case TimeUnit.MONTH: return inMonths;
+      case TimeUnit.WEEK: return inWeeks;
+      case TimeUnit.DAY: return inDays;
+      case TimeUnit.HOUR: return inHours;
+      case TimeUnit.MINUTE: return inMinutes;
+      case TimeUnit.SECOND: return inSeconds;
+      case TimeUnit.MILLISECOND: return inMilliseconds;
+    }
+  }
   
   Duration unwrap() => new Duration(milliseconds: inMilliseconds);
 

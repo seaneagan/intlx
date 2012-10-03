@@ -1,4 +1,6 @@
 
+#library("relative_time_en_symbols");
+
 #import("../symbols.dart");
 
 const RelativeTimeSymbols locale = const RelativeTimeSymbols(

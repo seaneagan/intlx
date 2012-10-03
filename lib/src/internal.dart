@@ -5,6 +5,7 @@
 #import("package:intl/src/lazy_locale_data.dart");
 
 #import("symbols.dart");
+#import("locale.dart");
 #import("../locale/list.dart");
 
 var relativeTimeSymbols = const UninitializedLocaleData('initializeDateFormatting(<locale>)');
@@ -26,6 +27,7 @@ Future initRelativeTimeIntl(Function init) {
 }
 
 void registerSymbols(RelativeTimeSymbols symbols) {
+  initRelativeTimeSymbols(() => new Map<String, RelativeTimeSymbols>());
   relativeTimeSymbols[symbols.name] = symbols;
 }
 

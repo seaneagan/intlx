@@ -1,0 +1,11 @@
+
+
+.project
+.metadata
+.settings/
+tests/packages
+*pubspec.lock
+.children
+.project
+packages/
+packages

@@ -1,0 +1,5 @@
+name: relative_time_intl
+description: >
+  internationalized relative time formatting, e.g. "2 hours ago"
+dependencies:
+  intl: { sdk: intl }

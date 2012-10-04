@@ -7,6 +7,8 @@
 #import("src/period.dart");
 #import("src/time_unit.dart");
 
+#source("src/locale_list.dart");
+
 class DurationFormat {
   
   final RelativeTimeLocale _locale;
@@ -20,7 +22,7 @@ class DurationFormat {
     
     for(TimeUnit unit in potentialUnits) {
       var q = period.inUnit(unit);
-      if(q > 0) {
+      if(q > 0 || unit == TimeUnit.SECOND) {
         return _locale.formatUnit(unit, q);
       }
     }

@@ -26,9 +26,8 @@ class RelativeTimeSymbols {
   String toString() => toJson().toString();
   
   String getUnitSymbol(TimeUnit unit, bool isPlural) {
-    print("unit: [$unit] isPlural: [$isPlural]");
     var index = (unit == TimeUnit.SECOND) || !isPlural ? 0 : 1;
     return units[unit.toString()][index];
   }
-    
+
 }

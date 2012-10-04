@@ -3,3 +3,4 @@ description: >
   internationalized relative time formatting, e.g. "2 hours ago"
 dependencies:
   intl: { sdk: intl }
+  unittest: { sdk: unittest }

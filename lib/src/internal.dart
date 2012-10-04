@@ -1,13 +1,13 @@
 
-#library('relative_time_internal');
+library relative_time_internal;
 
-#import('package:intl/src/intl_helpers.dart');
-#import("package:intl/src/lazy_locale_data.dart");
-#import("package:intl/intl.dart");
+import 'package:intl/src/intl_helpers.dart';
+import 'package:intl/src/lazy_locale_data.dart';
+import 'package:intl/intl.dart';
 
-#import("symbols.dart");
-#import("locale.dart");
-#import("../locale/list.dart");
+import 'symbols.dart';
+import 'locale.dart';
+import '../relative_time_intl.dart';
 
 var relativeTimeSymbols = const UninitializedLocaleData('initializeDateFormatting(<locale>)');
 
@@ -28,9 +28,8 @@ Future initRelativeTimeIntl(Function init) {
 }
 
 RelativeTimeSymbols lookupSymbols(String locale) {
-  print("raw: [$locale] verifiedLocale: ${verifiedLocale(locale)}");
   var symbols = relativeTimeSymbols[verifiedLocale(locale)];
-  if(symbols === null) throw new LocaleDataException("someLocale.init()");
+  if(symbols === null) throw new LocaleDataException("Locale data has not been loaded for locale: '$locale'");
   return symbols;
 }
 

@@ -5,11 +5,33 @@
 
 #import("../src/internal.dart");
 #import("../src/locale/bg.dart", prefix: "bg");
+#import("../src/locale/ca.dart", prefix: "ca");
+#import("../src/locale/da.dart", prefix: "da");
+#import("../src/locale/de.dart", prefix: "de");
 #import("../src/locale/en.dart", prefix: "en");
+#import("../src/locale/en_CA.dart", prefix: "en_CA");
+#import("../src/locale/en_GB.dart", prefix: "en_GB");
 #import("../src/locale/es.dart", prefix: "es");
+#import("../src/locale/eu.dart", prefix: "eu");
+#import("../src/locale/fr.dart", prefix: "fr");
+#import("../src/locale/fr_CA.dart", prefix: "fr_CA");
+#import("../src/locale/gl.dart", prefix: "gl");
+#import("../src/locale/it.dart", prefix: "it");
+#import("../src/locale/ja.dart", prefix: "ja");
+#import("../src/locale/jp.dart", prefix: "jp");
+#import("../src/locale/ko.dart", prefix: "ko");
+#import("../src/locale/nb.dart", prefix: "nb");
+#import("../src/locale/nl.dart", prefix: "nl");
+#import("../src/locale/pt.dart", prefix: "pt");
+#import("../src/locale/pt_BR.dart", prefix: "pt_BR");
+#import("../src/locale/ro.dart", prefix: "ro");
+#import("../src/locale/sv.dart", prefix: "sv");
+#import("../src/locale/tr.dart", prefix: "tr");
+#import("../src/locale/zh_CN.dart", prefix: "zh_CN");
+#import("../src/locale/zh_TW.dart", prefix: "zh_TW");
 
 void init() {
-  var locales = [bg.locale, en.locale, es.locale];
+  var locales = [bg.locale, ca.locale, da.locale, de.locale, en.locale, en_CA.locale, en_GB.locale, es.locale, eu.locale, fr.locale, fr_CA.locale, gl.locale, it.locale, ja.locale, jp.locale, ko.locale, nb.locale, nl.locale, pt.locale, pt_BR.locale, ro.locale, sv.locale, tr.locale, zh_CN.locale, zh_TW.locale];
   
   locales.forEach(registerSymbols);
 }

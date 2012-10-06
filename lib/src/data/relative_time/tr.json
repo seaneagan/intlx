@@ -1,0 +1,13 @@
+{
+  "name": "tr",
+  "past": "%s önce",
+  "future": "%s sonra",
+  "units": {
+    "SECOND": ["birkaç saniye"],
+    "MINUTE": ["bir dakika", "%d dakika"],
+    "HOUR": ["bir saat", "%d saat"],
+    "DAY": ["bir gün", "%d gün"],
+    "MONTH": ["bir ay", "%d ay"],
+    "YEAR": ["bir yıl", "%d yıl"]
+  }
+}

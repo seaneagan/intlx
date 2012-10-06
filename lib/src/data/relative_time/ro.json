@@ -1,0 +1,13 @@
+{
+  "name": "ro",
+  "past": "%s în urmă",
+  "future": "peste %s",
+  "units": {
+    "SECOND": ["câteva secunde"],
+    "MINUTE": ["un minut", "%d minute"],
+    "HOUR": ["o oră", "%d ore"],
+    "DAY": ["o zi", "%d zile"],
+    "MONTH": ["o lună", "%d luni"],
+    "YEAR": ["un an", "%d ani"]
+  }
+}

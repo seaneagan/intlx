@@ -1,0 +1,13 @@
+{
+  "name": "en_CA",
+  "past": "%s ago",
+  "future": "in %s",
+  "units": {
+    "SECOND": ["a few seconds"],
+    "MINUTE": ["a minute", "%d minutes"],
+    "HOUR": ["an hour", "%d hours"],
+    "DAY": ["a day", "%d days"],
+    "MONTH": ["a month", "%d months"],
+    "YEAR": ["a year", "%d years"]
+  }
+}

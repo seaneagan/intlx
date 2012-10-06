@@ -1,0 +1,13 @@
+{
+  "name": "nb",
+  "past": "for %s siden",
+  "future": "om %s",
+  "units": {
+    "SECOND": ["noen sekunder"],
+    "MINUTE": ["ett minutt", "%d minutter"],
+    "HOUR": ["en time", "%d timer"],
+    "DAY": ["en dag", "%d dager"],
+    "MONTH": ["en måned", "%d måneder"],
+    "YEAR": ["ett år", "%d år"]
+  }
+}

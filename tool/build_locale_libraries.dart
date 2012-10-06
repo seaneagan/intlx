@@ -165,6 +165,7 @@ Future getLocaleData() {
             
       var filePath = localeDataPath.append("$locale.json");
       String json = readFile(filePath);
+      print(json);
       localeDataMap[locale] = JSON.parse(json);
     };
     

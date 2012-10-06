@@ -1,0 +1,13 @@
+{
+  "name": "pt",
+  "past": "%s atrás",
+  "future": "em %s",
+  "units": {
+    "SECOND": ["segundos"],
+    "MINUTE": ["um minuto", "%d minutos"],
+    "HOUR": ["uma hora", "%d horas"],
+    "DAY": ["um dia", "%d dias"],
+    "MONTH": ["um mês", "%d meses"],
+    "YEAR": ["um ano", "%d anos"]
+  }
+}

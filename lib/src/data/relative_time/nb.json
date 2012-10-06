@@ -1,0 +1,13 @@
+{
+  "name": "nl",
+  "past": "%s geleden",
+  "future": "over %s",
+  "units": {
+    "SECOND": ["een paar seconden"],
+    "MINUTE": ["één minuut", "%d minuten"],
+    "HOUR": ["één uur", "%d uur"],
+    "DAY": ["één dag", "%d dagen"],
+    "MONTH": ["één maand", "%d maanden"],
+    "YEAR": ["één jaar", "%d jaar"]
+  }
+}

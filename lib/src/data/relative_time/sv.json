@@ -1,0 +1,13 @@
+{
+  "name": "sv",
+  "past": "för %s sen",
+  "future": "om %s",
+  "units": {
+    "SECOND": ["några sekunder"],
+    "MINUTE": ["en minut", "%d minuter"],
+    "HOUR": ["en timme", "%d timmar"],
+    "DAY": ["en dag", "%d dagar"],
+    "MONTH": ["en månad", "%d månader"],
+    "YEAR": ["ett år", "%d år"]
+  }
+}

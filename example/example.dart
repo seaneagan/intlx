@@ -1,5 +1,5 @@
 
-#import("../lib/relative_time_intl.dart"); 
+#import("../lib/tempora.dart"); 
 #import("../lib/locale/en.dart", prefix: "en");
 #import("../lib/locale/es.dart", prefix: "es");
 #import("package:intl/intl_standalone.dart");

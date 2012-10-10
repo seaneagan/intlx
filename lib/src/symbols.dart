@@ -1,33 +1,34 @@
 
-#library("relative_time_symbols");
+library symbols;
 
-#import("time_unit.dart");
-#import("internal.dart");
+import '../tempora.dart';
+import 'internal.dart';
+import 'plural.dart';
+import 'package:intl/intl.dart';
 
 class RelativeTimeSymbols {
   final String name, past, future;
-  final Map<String, List<String>> units;
+  final Map<String, Map<String, String>> units, pastUnits, futureUnits;
   
-  const RelativeTimeSymbols([this.name, this.past, this.future, this.units]);
+  const RelativeTimeSymbols([this.name, this.past, this.future, this.units, this.pastUnits = const {}, this.futureUnits = const {}]);
   
   RelativeTimeSymbols.fromMap(Map map) : this(
     map["name"],
     map["past"],
     map["future"],
-    map["units"]);
+    map["units"],
+    map["pastUnits"],
+    map["futureUnits"]);
 
-  toJson() => {
-    "name": name,
-    "past": past,
-    "future": future,
-    "units": units
-  };
-  
-  String toString() => toJson().toString();
-  
-  String getUnitSymbol(TimeUnit unit, bool isPlural) {
-    var index = (unit == TimeUnit.SECOND) || !isPlural ? 0 : 1;
-    return units[unit.toString()][index];
+  String getUnitSymbol(TimeUnit unit, Plurality plurality, [bool isFuture]) {
+    var unitString = unit.toString();
+    var _units = units;
+    if(isFuture != null) {
+      var _ageUnits = isFuture ? futureUnits : pastUnits;
+      if(_units.containsKey(unitString)) _units = _ageUnits;
+    }
+    
+    return _units[unitString][plurality.toString()];
   }
 
 }

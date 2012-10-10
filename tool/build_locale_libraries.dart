@@ -1,6 +1,6 @@
 
-#import("dart:io");
-#import("dart:json");
+import 'dart:io';
+import 'dart:json';
 
 main() {
   getLocaleData().then(writeLibraries);
@@ -31,10 +31,7 @@ void writeSymbolLibrary(String locale, Map data) {
   var units = data["units"];
   
   var code = '''
-
-#library("relative_time_${locale}_symbols");
-
-#import("../symbols.dart");
+import '../symbols.dart';
 
 const RelativeTimeSymbols locale = const RelativeTimeSymbols(
   name: "$locale",
@@ -68,7 +65,7 @@ void writeAllLocaleLibrary() {
   writeLocaleLibrary("all", allImports, allLogic);
 }
 
-String generateLocaleImport(String locale) => '#import("../src/locale/$locale.dart", prefix: "$locale");';
+String generateLocaleImport(String locale) => 'import \'../src/locale/$locale.dart\' as $locale;';
 
 void writeLocaleListLibrary() {
   
@@ -83,9 +80,7 @@ const relativeTimeLocales = const <String> [$localeString];
 
 void writeLocaleLibrary(String locale, String imports, String logic) {
   String code = '''
-#library("relative_time_locale_$locale");
-
-#import("../src/internal.dart");
+import '../src/internal.dart';
 $imports
 
 void init() {
@@ -101,14 +96,11 @@ writeLibrary(Path path, String name, String code) {
   String fullCode = '''
 $generatedFileWarning
 
+library $name;
+
 $code''';
   writeFile(path.append("$name.dart"), fullCode);
 }
-
-writeLocaleDataFile(String name, String code) {
-  writeFile(localeLibPath.append("$name.dart"), code);
-}
-
 
 void writeFile(Path path, String content) {
   var targetFile = new File.fromPath(path);
@@ -139,7 +131,7 @@ Path get localeSrcPath {
 Path _localeDataPath;
 Path get localeDataPath {
   if(_localeDataPath === null) {
-    _localeDataPath = libPath.append("src/data/relative_time/");
+    _localeDataPath = libPath.append("src/data/relative_time/new");
   }
   return _localeDataPath;
 }
@@ -165,7 +157,7 @@ Future getLocaleData() {
             
       var filePath = localeDataPath.append("$locale.json");
       String json = readFile(filePath);
-      print(json);
+      print("json: $json");
       localeDataMap[locale] = JSON.parse(json);
     };
     

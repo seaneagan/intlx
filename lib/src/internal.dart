@@ -1,5 +1,5 @@
 
-library relative_time_internal;
+library internal;
 
 import 'package:intl/src/intl_helpers.dart';
 import 'package:intl/src/lazy_locale_data.dart';
@@ -7,7 +7,8 @@ import 'package:intl/intl.dart';
 
 import 'symbols.dart';
 import 'locale.dart';
-import '../relative_time_intl.dart';
+import '../tempora.dart';
+import 'locale_list.dart';
 
 var relativeTimeSymbols = const UninitializedLocaleData('initializeDateFormatting(<locale>)');
 

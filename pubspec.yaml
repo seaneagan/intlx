@@ -1,4 +1,4 @@
-name: relative_time_intl
+name: tempora
 description: >
   internationalized relative time formatting, e.g. "2 hours ago"
 dependencies:

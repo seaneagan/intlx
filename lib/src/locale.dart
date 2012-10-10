@@ -1,26 +1,31 @@
 
-#library("relative_time_locale");
+library locale;
 
-#import("symbols.dart");
-#import("time_unit.dart");
-#import("internal.dart");
-
+import 'symbols.dart';
+import '../tempora.dart';
+import 'internal.dart';
+import 'plural.dart';
 
 class RelativeTimeLocale {
   
   final RelativeTimeSymbols _symbols;
+  final PluralLocale _pluralLocale;
   
-  RelativeTimeLocale(String locale) : _symbols = lookupSymbols(locale);
+  RelativeTimeLocale(String locale) : _symbols = lookupSymbols(locale), _pluralLocale = new PluralLocale();
   
-  String formatUnit(TimeUnit unit, int quantity) {
-    bool isPlural = quantity != 1;
-    String symbol = _symbols.getUnitSymbol(unit, isPlural);
+  String formatUnits(Map<TimeUnit, int> units) {
+    var unit = units.getKeys().iterator().next();
+    var quantity = units[unit];
+    var plurality = _pluralLocale.getPlurality(quantity);
+    String symbol = _symbols.getUnitSymbol(unit, plurality);
     
-    return isPlural ? symbol.replaceFirst("%d", quantity.toString()) : symbol;
+    // TODO: possibly only support this with certain pluralities
+    return symbol.replaceFirst("%d", quantity.toString());
   }
   
-  String nowOffsetPhrase(String formattedDuration, bool isFuture) {
+  String formatUnitsAge(Map<TimeUnit, int> units, bool isFuture) {
     String template = isFuture ? _symbols.future : _symbols.past;
-    return template.replaceFirst("%s", formattedDuration);
+    return template.replaceFirst("%s", formatUnits(units));
   }
+  
 }

@@ -1,7 +1,7 @@
 
-#library("period");
+library period;
 
-#import("time_unit.dart");
+import '../tempora.dart';
 
 class Period {
   // exact

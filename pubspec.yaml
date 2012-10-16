@@ -1,6 +1,9 @@
 name: tempora
+version: 0.0.1
+author: Sean Eagan <seaneagan1@gmail.com>
+homepage: http://www.github.com/seaneagan/tempora
 description: >
-  internationalized relative time formatting, e.g. "2 hours ago"
+  Tempora is relative time internationalization for dart (e.g. "5 hours", "2 minutes ago", or "Dentro de 4 días")
 dependencies:
   intl: { sdk: intl }
   unittest: { sdk: unittest }

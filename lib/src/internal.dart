@@ -34,7 +34,6 @@ RelativeTimeSymbols lookupSymbols(String locale) {
   return symbols;
 }
 
-
 // TODO: this is copied from package:intl, remove if it becomes valid beyond DateFormat there
 String verifiedLocale(String newLocale) {
   

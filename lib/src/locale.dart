@@ -13,19 +13,17 @@ class RelativeTimeLocale {
   
   RelativeTimeLocale(String locale) : _symbols = lookupSymbols(locale), _pluralLocale = new PluralLocale();
   
-  String formatUnits(Map<TimeUnit, int> units) {
-    var unit = units.getKeys().iterator().next();
-    var quantity = units[unit];
-    var plurality = _pluralLocale.getPlurality(quantity);
-    String symbol = _symbols.getUnitSymbol(unit, plurality);
-    
-    // TODO: possibly only support this with certain pluralities
-    return symbol.replaceFirst("%d", quantity.toString());
-  }
+  String formatRoundDuration(RoundDuration roundDuration, FormatLength formatLength) =>
+    _format((unit, plurality) => _symbols.getDurationSymbol(unit, plurality, formatLength), roundDuration);
   
-  String formatUnitsAge(Map<TimeUnit, int> units, bool isFuture) {
-    String template = isFuture ? _symbols.future : _symbols.past;
-    return template.replaceFirst("%s", formatUnits(units));
-  }
+  String formatRoundAge(RoundDuration roundAge, bool isFuture) =>
+    _format((unit, plurality) => _symbols.getAgeSymbol(unit, plurality, isFuture), roundAge);
   
+  String _format(_SymbolGetter symbolGetter, RoundDuration roundDuration) {
+    var plurality = _pluralLocale.getPlurality(roundDuration.quantity);
+    String symbol = symbolGetter(roundDuration.unit, plurality);
+    return symbol.replaceFirst("{0}", roundDuration.quantity.toString());
+  }
 }
+
+typedef String _SymbolGetter(TimeUnit unit, Plurality plurality);

@@ -81,7 +81,7 @@ class Period {
       case TimeUnit.HOUR: return inHours;
       case TimeUnit.MINUTE: return inMinutes;
       case TimeUnit.SECOND: return inSeconds;
-      case TimeUnit.MILLISECOND: return inMilliseconds;
+      // case TimeUnit.MILLISECOND: return inMilliseconds;
     }
   }
   

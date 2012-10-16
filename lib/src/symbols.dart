@@ -7,28 +7,26 @@ import 'plural.dart';
 import 'package:intl/intl.dart';
 
 class RelativeTimeSymbols {
-  final String name, past, future;
-  final Map<String, Map<String, String>> units, pastUnits, futureUnits;
+  final String name;
+  final Map<String, Map<String, String>> units, shortUnits, pastUnits, futureUnits;
   
-  const RelativeTimeSymbols([this.name, this.past, this.future, this.units, this.pastUnits = const {}, this.futureUnits = const {}]);
+  const RelativeTimeSymbols({this.name, this.units, this.shortUnits, this.pastUnits, this.futureUnits});
   
   RelativeTimeSymbols.fromMap(Map map) : this(
     map["name"],
-    map["past"],
-    map["future"],
     map["units"],
+    map["shortUnits"],
     map["pastUnits"],
     map["futureUnits"]);
 
-  String getUnitSymbol(TimeUnit unit, Plurality plurality, [bool isFuture]) {
-    var unitString = unit.toString();
-    var _units = units;
-    if(isFuture != null) {
-      var _ageUnits = isFuture ? futureUnits : pastUnits;
-      if(_units.containsKey(unitString)) _units = _ageUnits;
-    }
-    
-    return _units[unitString][plurality.toString()];
+  String getDurationSymbol(TimeUnit unit, Plurality plurality, FormatLength formatLength) => 
+      _getSymbol(formatLength == FormatLength.SHORT ? shortUnits : units, unit, plurality);
+
+  String getAgeSymbol(TimeUnit unit, Plurality plurality, bool isFuture) => 
+    _getSymbol(isFuture ? futureUnits : pastUnits, unit, plurality);
+  
+  String _getSymbol(Map<String, Map<String, String>> units, TimeUnit unit, Plurality plurality) {
+    return units[unit.toString()][plurality.toString()];
   }
 
 }

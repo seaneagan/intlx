@@ -4,34 +4,10 @@
 library all;
 
 import '../src/internal.dart';
-import '../src/locale/bg.dart' as bg;
-import '../src/locale/ca.dart' as ca;
-import '../src/locale/da.dart' as da;
-import '../src/locale/de.dart' as de;
 import '../src/locale/en.dart' as en;
-import '../src/locale/en_CA.dart' as en_CA;
-import '../src/locale/en_GB.dart' as en_GB;
-import '../src/locale/es.dart' as es;
-import '../src/locale/eu.dart' as eu;
-import '../src/locale/fr.dart' as fr;
-import '../src/locale/fr_CA.dart' as fr_CA;
-import '../src/locale/gl.dart' as gl;
-import '../src/locale/it.dart' as it;
-import '../src/locale/ja.dart' as ja;
-import '../src/locale/jp.dart' as jp;
-import '../src/locale/ko.dart' as ko;
-import '../src/locale/nb.dart' as nb;
-import '../src/locale/nl.dart' as nl;
-import '../src/locale/pt.dart' as pt;
-import '../src/locale/pt_BR.dart' as pt_BR;
-import '../src/locale/ro.dart' as ro;
-import '../src/locale/sv.dart' as sv;
-import '../src/locale/tr.dart' as tr;
-import '../src/locale/zh_CN.dart' as zh_CN;
-import '../src/locale/zh_TW.dart' as zh_TW;
 
 void init() {
-  var locales = [bg.locale, ca.locale, da.locale, de.locale, en.locale, en_CA.locale, en_GB.locale, es.locale, eu.locale, fr.locale, fr_CA.locale, gl.locale, it.locale, ja.locale, jp.locale, ko.locale, nb.locale, nl.locale, pt.locale, pt_BR.locale, ro.locale, sv.locale, tr.locale, zh_CN.locale, zh_TW.locale];
+  var locales = [en.locale];
   
   locales.forEach(registerSymbols);
 }

@@ -3,4 +3,4 @@
 
 library locale_list;
 
-const relativeTimeLocales = const <String> ["bg", "ca", "da", "de", "en", "en_CA", "en_GB", "es", "eu", "fr", "fr_CA", "gl", "it", "ja", "jp", "ko", "nb", "nl", "pt", "pt_BR", "ro", "sv", "tr", "zh_CN", "zh_TW"];
+const relativeTimeLocales = const <String> ["en"];

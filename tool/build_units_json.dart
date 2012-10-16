@@ -3,10 +3,10 @@ import 'dart:io';
 import 'dart:json';
 
 main() {
-  getLocaleData().then(writeLibraries);
+  getLocaleData().then(writeJson);
 }
 
-void writeLibraries(_) {
+void writeJson(_) {
   writeLocaleLibraries();
   writeSymbolLibraries();
   // TODO: run tests on new code
@@ -27,30 +27,24 @@ void writeSymbolLibraries() {
 }
 
 void writeSymbolLibrary(String locale, Map data) {
-    
-  String unitsCode(String unitType) {
-    var units = data[unitType];
-    return '''
-$unitType: const {
-    "second": const ${JSON.stringify(units["second"])},
-    "minute": const ${JSON.stringify(units["minute"])},
-    "hour": const ${JSON.stringify(units["hour"])},
-    "day": const ${JSON.stringify(units["day"])},
-    "week": const ${JSON.stringify(units["week"])},
-    "month": const ${JSON.stringify(units["month"])},
-    "year": const ${JSON.stringify(units["year"])}
-  }''';
-  }
+  
+  var units = data["units"];
   
   var code = '''
 import '../symbols.dart';
 
 const RelativeTimeSymbols locale = const RelativeTimeSymbols(
   name: "$locale",
-  ${unitsCode("units")},
-  ${unitsCode("shortUnits")},
-  ${unitsCode("pastUnits")},
-  ${unitsCode("futureUnits")});
+  past: "${data["past"]}",
+  future: "${data["future"]}",
+  units: const {
+    "SECOND": const ${JSON.stringify(units["SECOND"])},
+    "MINUTE": const ${JSON.stringify(units["MINUTE"])},
+    "HOUR": const ${JSON.stringify(units["HOUR"])},
+    "DAY": const ${JSON.stringify(units["DAY"])},
+    "MONTH": const ${JSON.stringify(units["MONTH"])},
+    "YEAR": const ${JSON.stringify(units["YEAR"])}});
+
 ''';
   
   writeLibrary(localeSrcPath, locale, code);
@@ -137,7 +131,7 @@ Path get localeSrcPath {
 Path _localeDataPath;
 Path get localeDataPath {
   if(_localeDataPath === null) {
-    _localeDataPath = libPath.append("src/data/relative_time");
+    _localeDataPath = libPath.append("src/data/relative_time/new");
   }
   return _localeDataPath;
 }
@@ -155,6 +149,8 @@ var localeDataMap = new Map<String, Map>();
 List<String> localeList;
 Future getLocaleData() {
     var completer = new Completer<List<String>>();
+    
+    var httpClient = new HttpClient().getUrl();
     
     var lister = new Directory.fromPath(localeDataPath).list(false);
     

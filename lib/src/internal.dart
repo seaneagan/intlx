@@ -29,31 +29,45 @@ Future initRelativeTimeIntl(Function init) {
 }
 
 RelativeTimeSymbols lookupSymbols(String locale) {
-  var symbols = relativeTimeSymbols[verifiedLocale(locale)];
+  var symbols = relativeTimeSymbols[verifiedLocale(locale, relativeTimeLocales)];
   if(symbols === null) throw new LocaleDataException("Locale data has not been loaded for locale: '$locale'");
   return symbols;
 }
 
-// TODO: this is copied from package:intl, remove if it becomes valid beyond DateFormat there
-String verifiedLocale(String newLocale) {
-  
-  if (newLocale == null) newLocale = Intl.systemLocale;
-  
-  if (_localeExists(newLocale)) return newLocale;
-  
-  for (var each in [Intl.canonicalizedLocale(newLocale), shortLocale(newLocale)]) { 
-    if (_localeExists(each)) {
-      return each;
-    }
-  }
-  throw new ArgumentError("Invalid or unsupported locale '$newLocale'");
+/**
+ * Return a locale name turned into xx_YY where it might possibly be
+ * in the wrong case or with a hyphen instead of an underscore.
+ */
+String canonicalizedLocale(String aLocale) {
+  if (aLocale == "C") return "en_ISO";
+  if ((aLocale.length < 5) || (aLocale.length > 6)) return aLocale;
+  var re = const RegExp("([a-zA-Z]+)[_-]([a-zA-Z]+)");
+  var match = re.firstMatch(aLocale);
+  if(match == null) return aLocale;
+  return "${match.group(1).toLowerCase()}_${match.group(2).toUpperCase()}";
 }
 
 // TODO: this is copied from package:intl, remove if it becomes public there
 String shortLocale(String aLocale) {
   if (aLocale.length < 2) return aLocale;
-  return aLocale.substring(0, 2).toLowerCase();
+  var re = const RegExp("[_-]");
+  var match = re.firstMatch(aLocale);
+  if(match == null) return aLocale;
+  return aLocale.substring(0, match.start()).toLowerCase();
 }
+
+String verifiedLocale(String newLocale, List<String> locales) {
+  
+  if (newLocale == null) newLocale = Intl.systemLocale;
+  
+  for (var locale in [newLocale, Intl.canonicalizedLocale(newLocale), shortLocale(newLocale)]) { 
+    if (locales.indexOf(locale) != -1) {
+      return locale;
+    }
+  }
+  throw new ArgumentError("Invalid or unsupported locale '$newLocale'");
+}
+
 
 bool _localeExists(String locale) => relativeTimeLocales.indexOf(locale) != -1;
 

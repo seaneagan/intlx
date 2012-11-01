@@ -1,8 +1,9 @@
 
-library utils;
+library util;
 
 import 'dart:io';
 import 'dart:uri';
+import 'dart:utf';
 
 String readFile(filePath) {
   var file = new File.fromPath(filePath);
@@ -23,12 +24,15 @@ Future<String> getUri(String uri) {
   var completer = new Completer();
   var connection = new HttpClient().getUrl(new Uri(uri));
   connection.onResponse = (HttpClientResponse response) {
-    var input = new StringInputStream(response.inputStream);
-    String body = '';
+    // var input = new StringInputStream(response.inputStream, Encoding.UTF_8);
+    var input = response.inputStream;
+    var listInput = new ListInputStream();
     input.onData = () {
-      body = "$body${input.read()}";
+      listInput.write(input.read());
     };
     input.onClosed = () {
+      var charCodes = utf8ToCodepoints(listInput.read());
+      var body = new String.fromCharCodes(charCodes);
       print("body: $body");
       completer.complete(body);
     };

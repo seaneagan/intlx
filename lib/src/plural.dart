@@ -2,8 +2,8 @@
 library plural;
 
 abstract class PluralLocale {
-  factory PluralLocale([String locale]) {
-    if(_rulelessLocales.indexOf(locale) != -1) return const _RulelessPluralLocale();
+  factory PluralLocale(String locale) {
+    if(_rulelessLocales.contains(locale)) return const _RulelessPluralLocale();
     return const _BasicPluralLocale();
   }
 

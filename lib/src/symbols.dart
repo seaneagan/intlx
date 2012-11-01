@@ -19,14 +19,14 @@ class RelativeTimeSymbols {
     map["pastUnits"],
     map["futureUnits"]);
 
-  String getDurationSymbol(TimeUnit unit, Plurality plurality, FormatLength formatLength) => 
+  String getDurationSymbol(TimeUnit unit, String plurality, FormatLength formatLength) => 
       _getSymbol(formatLength == FormatLength.SHORT ? shortUnits : units, unit, plurality);
 
-  String getAgeSymbol(TimeUnit unit, Plurality plurality, bool isFuture) => 
+  String getAgeSymbol(TimeUnit unit, String plurality, bool isFuture) => 
     _getSymbol(isFuture ? futureUnits : pastUnits, unit, plurality);
   
-  String _getSymbol(Map<String, Map<String, String>> units, TimeUnit unit, Plurality plurality) {
-    return units[unit.toString()][plurality.toString()];
+  String _getSymbol(Map<String, Map<String, String>> units, TimeUnit unit, String plurality) {
+    return units[unit.toString()][plurality];
   }
 
 }

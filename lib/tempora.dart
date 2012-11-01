@@ -1,31 +1,30 @@
 
+/// provides internationalized relative time formatting
 library tempora;
 
-import 'package:intl/intl.dart';
-
 import 'src/locale.dart';
-import 'src/period.dart';
+import 'dart:math';
 
-/// Internationalizes Durations
-/// e.g.
-/// print(new DurationFormat("en").format(const Duration(hours: 2)); // "two hours"
+/// formats Durations
+/// e.g. "2 hours"
 class DurationFormat extends _RelativeTimeFormat<Duration> {
   
-  DurationFormat([String locale, DurationRounder rounder = const DurationRounder(), this._formatLength = FormatLength.LONG]) : super(locale, rounder);
+  DurationFormat({String locale, DurationRounder rounder: const DurationRounder(), FormatLength length: FormatLength.LONG}) : super(locale, rounder) {
+    this._length = length;
+  }
   
   String format(Duration duration) {
-    return _locale.formatRoundDuration(_roundDuration(duration), _formatLength);
+    return _locale.formatRoundDuration(_roundDuration(duration), _length);
   }
 
-  final FormatLength _formatLength;
+  FormatLength _length;
 }
 
-/// Internationalizes the "age" of Dates
-/// e.g.
-/// print(new AgeFormat("en").format(new Date.now().subtract(const Duration(hours: 2))); // "two hours ago"
+/// formats the "age" of Dates
+/// e.g. "2 hours ago" or "In 2 hours"
 class AgeFormat extends _RelativeTimeFormat<Date> {
 
-  AgeFormat([String locale, DurationRounder rounder = const DurationRounder()]) : super(locale, rounder);
+  AgeFormat({String locale, DurationRounder rounder: const DurationRounder()}) : super(locale, rounder);
     
   String format(Date date) {
     var age = new Date.now().difference(date);
@@ -42,16 +41,18 @@ class DurationRounder {
 
   /// Rounds a [Duration].
   RoundDuration roundDuration(Duration duration) {
-    var period = new ClockPeriod.wrap(duration);
-    var potentialUnits = [TimeUnit.YEAR, TimeUnit.MONTH, TimeUnit.WEEK, TimeUnit.DAY, TimeUnit.HOUR, TimeUnit.MINUTE];
-    
-    for(TimeUnit unit in potentialUnits) {
-      var q = period.inUnit(unit);
-      if(q > 0) {
-        return new RoundDuration(unit, q);
-      }
+    TimeUnit unit;
+    int q;
+    if((q = duration.inDays ~/ 365) > 0) unit = TimeUnit.YEAR;
+    else if((q = min(duration.inDays ~/ 30, 11)) > 0) unit = TimeUnit.MONTH;
+    else if((q = duration.inDays ~/ 7) > 0) unit = TimeUnit.WEEK;
+    else if((q = duration.inDays) > 0) unit = TimeUnit.DAY;
+    else if((q = duration.inHours) > 0) unit = TimeUnit.HOUR;
+    else {
+      unit = TimeUnit.MINUTE;
+      q = duration.inMinutes;
     }
-    return new RoundDuration(TimeUnit.MINUTE, 0);
+    return new RoundDuration(unit, q);
   }
 }
 
@@ -72,14 +73,13 @@ class TimeUnit implements Comparable {
   static const DAY = const TimeUnit._("day", 3); 
   static const WEEK = const TimeUnit._("week", 4); 
   static const MONTH = const TimeUnit._("month", 5); 
-  static const YEAR = const TimeUnit._("year", 6); 
+  static const YEAR = const TimeUnit._("year", 6);
   
   const TimeUnit._(this._name, this._index);
   
   int compareTo(TimeUnit other) => _index.compareTo(other._index);
   
   String toString() => _name;
-  
   
   final String _name;
   final int _index;

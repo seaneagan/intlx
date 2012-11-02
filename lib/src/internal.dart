@@ -29,7 +29,7 @@ Future initRelativeTimeIntl(Function init) {
 }
 
 RelativeTimeSymbols lookupSymbols(String locale) {
-  var symbols = relativeTimeSymbols[verifiedLocale(locale, relativeTimeLocales)];
+  var symbols = relativeTimeSymbols[getVerifiedLocale(locale, relativeTimeLocales)];
   if(symbols === null) throw new LocaleDataException("Locale data has not been loaded for locale: '$locale'");
   return symbols;
 }
@@ -56,7 +56,7 @@ String shortLocale(String aLocale) {
   return aLocale.substring(0, match.start()).toLowerCase();
 }
 
-String verifiedLocale(String newLocale, List<String> locales) {
+String getVerifiedLocale(String newLocale, List<String> locales) {
   
   if (newLocale == null) newLocale = Intl.systemLocale;
   

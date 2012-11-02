@@ -4,7 +4,7 @@ library locale;
 import 'symbols.dart';
 import '../tempora.dart';
 import 'internal.dart';
-import 'plural.dart';
+import 'plural/plural.dart';
 
 class RelativeTimeLocale {
   

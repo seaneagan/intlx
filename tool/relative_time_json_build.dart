@@ -1,14 +1,14 @@
 
-library tempora_json_builder;
+library relative_time_json_build;
 
 import 'dart:io';
 import 'dart:json';
 import 'dart:uri';
 import 'util.dart';
 import '../lib/tempora.dart';
-import '../lib/src/plural.dart';
+import 'file:/C:/Users/se136c/dart/relative_time_intl/lib/src/plural/plural.dart';
 
-part 'locales.dart';
+part 'relative_time_locale_data.dart';
 
 final cldrTag = "unconfirmed";
 final cldrUri = "http://i18ndata.appspot.com/cldr/tags/$cldrTag/";
@@ -36,7 +36,7 @@ String cleanJson(String locale, Map unitsData) {
       if(unitsData.containsKey(unitsKey)) {
         var unitData = unitsData[unitsKey];
         var newUnitData = new Map<String, String>();
-        for(String plurality in ["0", "1"]..addAll(Plurality.values.map((plurality) => plurality.toString()))) {
+        for(String plurality in ["0", "1"]..addAll(PluralCategory.values.map((plurality) => plurality.toString()))) {
           var pluralityKey = "$plurality$pluralitySuffix";
           if(unitData.containsKey(pluralityKey)) {
             newUnitData[plurality] = unitData[pluralityKey];

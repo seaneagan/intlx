@@ -1,5 +1,5 @@
 
-part of tempora_json_builder;
+part of relative_time_json_build;
 
 final relativeTimeLocales = const [
     "af",

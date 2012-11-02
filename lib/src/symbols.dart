@@ -3,7 +3,7 @@ library symbols;
 
 import '../tempora.dart';
 import 'internal.dart';
-import 'plural.dart';
+import 'plural/plural.dart';
 import 'package:intl/intl.dart';
 
 class RelativeTimeSymbols {

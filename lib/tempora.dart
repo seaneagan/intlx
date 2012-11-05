@@ -2,8 +2,8 @@
 /// provides internationalized relative time formatting
 library tempora;
 
-import 'src/locale.dart';
 import 'dart:math';
+import 'src/relative_time/locale.dart';
 
 /// formats Durations
 /// e.g. "2 hours"

@@ -3,7 +3,7 @@
 
 library plural_locale_sr;
 
-import '../src/internal.dart';
+import '../../src/plural/internal.dart';
 
 void init() {
   registerLocale(const PluralLocaleImpl("sr", RuPluralStrategy));

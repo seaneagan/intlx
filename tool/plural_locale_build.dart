@@ -3,15 +3,14 @@ library plural_locale_build;
 
 import 'dart:io';
 import 'util.dart';
-
-part 'plural_locale_data.dart';
+import 'plural_locale_data.dart';
 
 main() {
   writeLocaleLibraries();
 }
 
 void writeLocaleLibraries() {
-  for(String locale in localeList) {
+  for(String locale in pluralLocaleList) {
     writeSingleLocaleLibrary(locale);
   }
   writeAllLocaleLibrary();
@@ -23,7 +22,7 @@ void writeSingleLocaleLibrary(String locale) {
 }
 
 void writeAllLocaleLibrary() {
-  var allLocales = Strings.join(localeList.map(generateLocaleInstantiation), ", ");
+  var allLocales = Strings.join(pluralLocaleList.map(generateLocaleInstantiation), ", ");
   var allLogic = '''
   var locales = [$allLocales];
   
@@ -36,7 +35,7 @@ String generateLocaleInstantiation(String locale) => 'const PluralLocaleImpl("$l
 
 void writeLocaleLibrary(String locale, String logic) {
   String code = '''
-import '../src/internal.dart';
+import '../../src/plural/internal.dart';
 
 void init() {
 $logic
@@ -47,12 +46,12 @@ $logic
 }
 
 void writeLocaleListLibrary() {
-  String localeString = Strings.join(localeList.map((locale) => '"$locale"'), ", ");
+  String localeString = Strings.join(pluralLocaleList.map((locale) => '"$locale"'), ", ");
   
   var code = '''
 
 const pluralLocales = const <String> [$localeString];
 ''';
 
-  writeLibrary(libPath.append("src/plural/src"), "locale_list", code, "plural_locale_list");
+  writeLibrary(libPath.append("src/plural"), "locale_list", code, "plural_locale_list");
 }

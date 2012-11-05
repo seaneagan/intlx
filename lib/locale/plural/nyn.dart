@@ -3,7 +3,7 @@
 
 library plural_locale_nyn;
 
-import '../src/internal.dart';
+import '../../src/plural/internal.dart';
 
 void init() {
   registerLocale(const PluralLocaleImpl("nyn", BasicPluralStrategy));

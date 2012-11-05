@@ -2,8 +2,8 @@
 library plural;
 
 import '../internal.dart';
-import 'src/internal.dart';
-import 'src/locale_list.dart';
+import 'internal.dart';
+import 'locale_list.dart';
 
 abstract class PluralLocale {
   factory PluralLocale(String locale) {

@@ -2,6 +2,8 @@
 import 'dart:io';
 import 'dart:json';
 import 'util.dart';
+import 'package:tempora/src/internal.dart';
+import 'plural_locale_data.dart';
 
 main() {
   getLocaleData().then(writeLibraries);
@@ -59,10 +61,12 @@ const RelativeTimeSymbols locale = const RelativeTimeSymbols(
 }
 
 void writeSingleLocaleLibrary(String locale) {
-  String pluralLibraryIdentifier = getPluralLibraryIdentifier(locale);
+  var pluralLocale = getVerifiedLocale(locale, pluralLocaleList);
+  String pluralLibraryIdentifier = getPluralLibraryIdentifier(pluralLocale);
   writeLocaleLibrary(
     locale, 
-    generateLocaleImport(locale).concat("import '../plural/$locale.dart' as $pluralLibraryIdentifier;'"), 
+    '''${generateLocaleImport(locale)}
+import '../plural/$pluralLocale.dart' as $pluralLibraryIdentifier;''', 
     '''  registerSymbols(${getSymbolsLibraryIdentifier(locale)}.locale);
   $pluralLibraryIdentifier.init();''');
 }
@@ -80,7 +84,7 @@ void writeAllLocaleLibrary() {
   writeLocaleLibrary("all", allImports, allLogic);
 }
 
-String generateLocaleImport(String locale) => "import '../src/locale/$locale.dart' as ${getSymbolsLibraryIdentifier(locale)}";
+String generateLocaleImport(String locale) => "import '../../src/relative_time/locale/$locale.dart' as ${getSymbolsLibraryIdentifier(locale)};";
 
 void writeLocaleListLibrary() {
   
@@ -90,12 +94,12 @@ void writeLocaleListLibrary() {
 const relativeTimeLocales = const <String> [$localeString];
 ''';
 
-  writeLibrary(libPath.append("src/"), "locale_list", code);
+  writeLibrary(libPath.append("src/relative_time/"), "relative_time_locale_list", code);
 }
 
 void writeLocaleLibrary(String locale, String imports, String logic) {
   String code = '''
-import '../src/internal.dart';
+import '../../src/internal.dart';
 $imports
 
 void init() {
@@ -109,7 +113,7 @@ $logic
 Path _localeSrcPath;
 Path get localeSrcPath {
   if(_localeSrcPath === null) {
-    _localeSrcPath = libPath.append("src/locale/");
+    _localeSrcPath = libPath.append("src/relative_time/locale/");
   }
   return _localeSrcPath;
 }
@@ -127,7 +131,7 @@ List<String> localeList;
 Future getLocaleData() {
     var completer = new Completer<List<String>>();
     
-    var lister = new Directory.fromPath(localeDataPath).list(false);
+    var lister = new Directory.fromPath(localeDataPath).list();
     
     lister.onFile = (String file) {
       String locale = new Path.fromNative(file).filenameWithoutExtension;

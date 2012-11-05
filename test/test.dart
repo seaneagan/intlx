@@ -1,6 +1,5 @@
 
 import '../lib/tempora.dart'; 
-import '../lib/locale/en.dart' as en; 
 import 'package:unittest/unittest.dart';
 
 main() {

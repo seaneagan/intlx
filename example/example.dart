@@ -1,6 +1,6 @@
 
 import '../lib/tempora.dart'; 
-import '../lib/locale/all.dart' as all;
+import '../lib/locale/relative_time/all.dart' as all; 
 import 'package:intl/intl_standalone.dart';
 
 main() {
@@ -9,7 +9,7 @@ main() {
     
     print("system locale: $locale");
     
-    locale = "en";
+    locale = "iw";
   
     all.init();
         
@@ -21,7 +21,7 @@ main() {
   
     var ageFormat = new AgeFormat(locale: locale);
     print("The apocolypse is: ${ageFormat.format(apocolypse)}");
-    print("A couple hours from now is: ${ageFormat.format(new Date.now().add(const Duration(hours: 2, minutes: 5)))}");
+    print("A couple hours ago is: ${ageFormat.format(new Date.now().subtract(const Duration(hours: 2, minutes: 5)))}");
   };
 
   findSystemLocale().then(go);

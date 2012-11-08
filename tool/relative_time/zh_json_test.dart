@@ -1,5 +1,5 @@
 
-import 'util.dart';
+import '../util.dart';
 import 'dart:json';
 
 main() {

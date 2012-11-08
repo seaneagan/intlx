@@ -1,6 +1,6 @@
 
-/// provides internationalized relative time formatting
-library tempora;
+/// internationalization APIs not yet in the intl package
+library intlx;
 
 import 'dart:math';
 import 'src/relative_time/locale.dart';
@@ -20,7 +20,7 @@ class DurationFormat extends _RelativeTimeFormat<Duration> {
   FormatLength _length;
 }
 
-/// formats the "age" of Dates
+/// Formats Dates on a timeline relative to now
 /// e.g. "2 hours ago" or "In 2 hours"
 class TimelineFormat extends _RelativeTimeFormat<Date> {
 

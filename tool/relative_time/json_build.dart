@@ -5,7 +5,7 @@ import 'dart:io';
 import 'dart:json';
 import 'dart:uri';
 import '../util.dart';
-import 'package:tempora/tempora.dart';
+import 'package:intlx/intlx.dart';
 import 'file:/C:/Users/se136c/dart/relative_time_intl/lib/src/plural/plural.dart';
 import 'locale_data.dart';
 

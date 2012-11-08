@@ -2,7 +2,7 @@
 library relative_time_locale;
 
 import 'symbols.dart';
-import '../../tempora.dart';
+import '../../intlx.dart';
 import '../internal.dart';
 import '../plural/plural.dart';
 

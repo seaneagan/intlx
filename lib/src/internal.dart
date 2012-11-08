@@ -5,7 +5,7 @@ import 'package:intl/src/intl_helpers.dart';
 import 'package:intl/src/lazy_locale_data.dart';
 import 'package:intl/intl.dart';
 
-import '../tempora.dart';
+import '../intlx.dart';
 import 'relative_time/symbols.dart';
 import 'relative_time/locale_list.dart';
 

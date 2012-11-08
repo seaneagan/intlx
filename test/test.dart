@@ -1,8 +1,7 @@
 
 import 'package:unittest/unittest.dart';
-import 'package:unittest/unittest.dart';
 import 'package:intlx/intlx.dart';
-import 'package:intlx/locale/relative_time/en.dart';
+import 'package:intlx/locale/relative_time/en.dart' as en;
 
 main() {
 
@@ -38,8 +37,8 @@ main() {
       timelineFormat = new TimelineFormat(locale: "en");
     });
   
-    test("now is past", () => expect(timelineFormat.format(new Date.now()), "0 minutes ago"));
     test("In 2 minutes", () => expect(timelineFormat.format(new Date.now().add(new Duration(minutes: 2, seconds: 30))), "In 2 minutes"));
     test("5 hours ago", () => expect(timelineFormat.format(new Date.now().subtract(new Duration(hours: 5))), "5 hours ago"));
+    test("now is past", () => expect(timelineFormat.format(new Date.now()), "0 minutes ago"));
   });
 }

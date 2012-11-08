@@ -1,5 +1,5 @@
 
-import '../lib/tempora.dart'; 
+import '../lib/intlx.dart'; 
 import '../lib/locale/relative_time/all.dart' as all; 
 import 'package:intl/intl_standalone.dart';
 

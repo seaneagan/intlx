@@ -4,7 +4,7 @@ library relative_time_locale_build;
 import 'dart:io';
 import 'dart:json';
 import '../util.dart';
-import 'package:tempora/src/internal.dart';
+import 'package:intlx/src/internal.dart';
 import '../plural/locale_data.dart';
 
 main() {

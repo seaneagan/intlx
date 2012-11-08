@@ -1,7 +1,7 @@
 
 library relative_time_symbols;
 
-import '../../tempora.dart';
+import '../../intlx.dart';
 import '../internal.dart';
 import '../plural/plural.dart';
 import 'package:intl/intl.dart';

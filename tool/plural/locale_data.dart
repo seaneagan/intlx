@@ -1,6 +1,6 @@
 
 library plural_locale_data;
-import 'package:tempora/src/plural/internal.dart';
+import 'package:intlx/src/plural/internal.dart';
 
 String getPluralStrategy(String locale) {
   String name;

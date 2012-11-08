@@ -22,9 +22,9 @@ class DurationFormat extends _RelativeTimeFormat<Duration> {
 
 /// formats the "age" of Dates
 /// e.g. "2 hours ago" or "In 2 hours"
-class AgeFormat extends _RelativeTimeFormat<Date> {
+class TimelineFormat extends _RelativeTimeFormat<Date> {
 
-  AgeFormat({String locale, DurationRounder rounder: const DurationRounder()}) : super(locale, rounder);
+  TimelineFormat({String locale, DurationRounder rounder: const DurationRounder()}) : super(locale, rounder);
     
   String format(Date date) {
     var age = new Date.now().difference(date);

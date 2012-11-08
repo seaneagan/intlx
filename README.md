@@ -1,11 +1,13 @@
 
-#Tempora
+#Intlx
 
-Tempora is relative time internationalization for dart.
+  Intlx is experimental internationalization APIs for Dart, 
+  which have not yet made it into the intl package itslef.
+  All data is sourced from CLDR.
 
 ##Features:
 
-* AgeFormat
+* TimelineFormat
   formats Dates into their relative Duration and direction from now e.g. "37 minutes ago" or "In 2 days"
 * DurationFormat
   formats Durations e.g. "5 hours"

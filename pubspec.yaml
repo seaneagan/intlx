@@ -1,9 +1,11 @@
-name: tempora
+name: intlx
 version: 0.0.1
 author: Sean Eagan <seaneagan1@gmail.com>
-homepage: http://www.github.com/seaneagan/tempora
+homepage: http://www.github.com/seaneagan/intlx
 description: >
-  Tempora is relative time internationalization for dart (e.g. "5 hours", "2 minutes ago", or "Dentro de 4 días")
+  Intlx is experimental internationalization APIs for Dart, 
+  which have not yet made it into the intl package itslef.
+  All data is sourced from CLDR.
 dependencies:
   intl: { sdk: intl }
   unittest: { sdk: unittest }

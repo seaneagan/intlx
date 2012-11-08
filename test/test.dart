@@ -1,10 +1,13 @@
 
-import '../lib/tempora.dart'; 
 import 'package:unittest/unittest.dart';
+import 'package:unittest/unittest.dart';
+import 'package:intlx/intlx.dart';
+import 'package:intlx/locale/relative_time/en.dart';
 
 main() {
 
   DurationFormat durationFormat;
+  TimelineFormat timelineFormat;
   en.init();
 
   group('DurationFormat', () {
@@ -27,5 +30,16 @@ main() {
     test("364 days = 11 months", () => expect(durationFormat.format(new Duration(days: 364)), "11 months"));
     test("365 days = 1 year", () => expect(durationFormat.format(new Duration(days: 365)), "1 year"));
     test("730 days = 2 years", () => expect(durationFormat.format(new Duration(days: 730)), "2 years"));
+  });
+
+  group('TimelineFormat', () {
+
+    setUp(() {
+      timelineFormat = new TimelineFormat(locale: "en");
+    });
+  
+    test("now is past", () => expect(timelineFormat.format(new Date.now()), "0 minutes ago"));
+    test("In 2 minutes", () => expect(timelineFormat.format(new Date.now().add(new Duration(minutes: 2, seconds: 30))), "In 2 minutes"));
+    test("5 hours ago", () => expect(timelineFormat.format(new Date.now().subtract(new Duration(hours: 5))), "5 hours ago"));
   });
 }

@@ -4,20 +4,21 @@ import 'package:intlx/src/plural/internal.dart';
 
 String getPluralStrategy(String locale) {
   String name;
-  if(basicLocales.contains(locale)) name = "Basic";
-  else if(rulelessLocales.contains(locale)) name = "Ruleless";
-  else if(zeroOrOneLocales.contains(locale)) name = "ZeroOrOne";
-  else if(ruLocales.contains(locale)) name = "Ru";
-  else if(csSkLocales.contains(locale)) name = "CsSk";
-  else if(locale == "fr") name = "Fr";
-  else if(locale == "ar") name = "Ar";
-  else if(locale == "pl") name = "Pl";  
-  else if(locale == "lt") name = "Lt";  
-  else if(locale == "lv") name = "Lv";  
-  else if(locale == "mt") name = "Mt";  
-  else if(locale == "ro") name = "Ro";  
-  else if(locale == "sl") name = "Sl";  
-  else throw new ArgumentError('PluralLocale does not support the locale: "$locale"'); 
+  if(basicLocales.contains(locale)) { name = "Basic";
+  } else if(rulelessLocales.contains(locale)) { name = "Ruleless";
+  } else if(zeroOrOneLocales.contains(locale)) { name = "ZeroOrOne";
+  } else if(ruLocales.contains(locale)) { name = "Ru";
+  } else if(csSkLocales.contains(locale)) { name = "CsSk";
+  } else if(locale == "fr") { name = "Fr";
+  } else if(locale == "ar") { name = "Ar";
+  } else if(locale == "pl") { name = "Pl";
+  } else if(locale == "lt") { name = "Lt";
+  } else if(locale == "lv") { name = "Lv";
+  } else if(locale == "mt") { name = "Mt";
+  } else if(locale == "ro") { name = "Ro";
+  } else if(locale == "sl") { name = "Sl";
+  } else { throw new ArgumentError('PluralLocale does not support the locale: "$locale"');
+  }
   return "${name}PluralStrategy";
 }
 
@@ -32,7 +33,7 @@ var pluralLocaleList = <String> []
 var localeDataMap = getLocaleDataMap();
 
 Map<String, PluralStrategy> getLocaleDataMap() {
-  
+
 }
 
 const basicLocales = const <String> [

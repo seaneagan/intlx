@@ -14,7 +14,7 @@ main() {
     setUp(() {
       durationFormat = new DurationFormat(locale: "en");
     });
-  
+
     test("0 seconds = 0 minutes", () => expect(durationFormat.format(new Duration(seconds: 0)), "0 minutes"));
     test("1 second = 0 minutes", () => expect(durationFormat.format(new Duration(seconds: 1)), "0 minutes"));
     test("1 minute = 1 minute", () => expect(durationFormat.format(new Duration(minutes: 1)), "1 minute"));
@@ -36,7 +36,7 @@ main() {
     setUp(() {
       timelineFormat = new TimelineFormat(locale: "en");
     });
-  
+
     test("In 2 minutes", () => expect(timelineFormat.format(new Date.now().add(new Duration(minutes: 2, seconds: 30))), "In 2 minutes"));
     test("5 hours ago", () => expect(timelineFormat.format(new Date.now().subtract(new Duration(hours: 5))), "5 hours ago"));
     test("now is past", () => expect(timelineFormat.format(new Date.now()), "0 minutes ago"));

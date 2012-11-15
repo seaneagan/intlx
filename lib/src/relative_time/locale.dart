@@ -7,30 +7,22 @@ import '../internal.dart';
 import '../plural/plural.dart';
 
 class RelativeTimeLocale {
-  
+
   final RelativeTimeSymbols _symbols;
-  final PluralLocale _pluralLocale;
-  
-  RelativeTimeLocale(String locale) : _symbols = lookupSymbols(locale), _pluralLocale = new PluralLocale(locale);
-  
+  // final PluralLocale _pluralLocale;
+  final String _locale;
+
+  RelativeTimeLocale(String locale) : _symbols = lookupSymbols(locale), _locale = locale;
+
   String formatRoundDuration(RoundDuration roundDuration, FormatLength formatLength) =>
-    _format((unit, plurality) => _symbols.getDurationSymbol(unit, plurality, formatLength), roundDuration);
-  
+    _format(formatLength == FormatLength.SHORT ? _symbols.shortUnits : _symbols.units, roundDuration);
+
   String formatRoundAge(RoundDuration roundAge, bool isFuture) =>
-    _format((unit, plurality) => _symbols.getAgeSymbol(unit, plurality, isFuture), roundAge);
-  
-  String _format(_SymbolGetter symbolGetter, RoundDuration roundDuration) {
-    String symbol;
-    var quantity = roundDuration.quantity;
-    if(quantity == 0 || quantity == 1) {
-      symbol = symbolGetter(roundDuration.unit, quantity.toString());
-    }
-    if(symbol == null) {
-      var plurality = _pluralLocale.getPlurality(quantity);
-      symbol = symbolGetter(roundDuration.unit, plurality.toString());
-    }
-    return symbol.replaceFirst("{0}", quantity.toString());
+    _format(isFuture ? _symbols.futureUnits : _symbols.pastUnits, roundAge);
+
+  String _format(Map<String, Map<String, String>> units, RoundDuration roundDuration) {
+    var cases = units[roundDuration.unit.toString()];
+    var pluralFormat = new PluralFormat(cases, locale: _locale, pattern: "{0}");
+    return pluralFormat.format(roundDuration.quantity);
   }
 }
-
-typedef String _SymbolGetter(TimeUnit unit, String plurality);

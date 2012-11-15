@@ -25,9 +25,9 @@ void writeAllLocaleLibrary() {
   var allLocales = Strings.join(pluralLocaleList.map(generateLocaleInstantiation), ", ");
   var allLogic = '''
   var locales = [$allLocales];
-  
+
   locales.forEach(registerLocale);''';
-  
+
   writeLocaleLibrary("all", allLogic);
 }
 
@@ -47,7 +47,7 @@ $logic
 
 void writeLocaleListLibrary() {
   String localeString = Strings.join(pluralLocaleList.map((locale) => '"$locale"'), ", ");
-  
+
   var code = '''
 
 const pluralLocales = const <String> [$localeString];

@@ -13,10 +13,10 @@ abstract class PluralLocale {
     }
     return pluralLocaleMap[verifiedLocale];
   }
-  
+
   final String locale;
 
-  PluralCategory getPlurality(int n);
+  PluralCategory getPluralCategory(int n);
 }
 
 class PluralCategory {
@@ -27,7 +27,7 @@ class PluralCategory {
   static const FEW = const PluralCategory._("few");
   static const MANY = const PluralCategory._("many");
   static const OTHER = const PluralCategory._("other");
-  
+
   const PluralCategory._(this._name);
 
   final String _name;

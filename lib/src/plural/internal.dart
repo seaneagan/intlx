@@ -10,7 +10,7 @@ class PluralLocaleImpl implements PluralLocale {
   final String locale;
   final PluralStrategy _strategy;
 
-  PluralCategory getPlurality(int n) => _strategy(n);
+  PluralCategory getPluralCategory(int n) => _strategy(n);
   toString() => "PluralLocale: $locale";
 }
 

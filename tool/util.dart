@@ -60,7 +60,7 @@ Future<String> getUri(String uri) {
 
 Path _libPath;
 Path get libPath {
-  if(_libPath === null) {
+  if(_libPath == null) {
     var packageRoot = new Path(new Directory.current().path);
     _libPath = packageRoot.append("lib");
   }
@@ -69,7 +69,7 @@ Path get libPath {
 
 Path _localeLibPath;
 Path get localeLibPath {
-  if(_localeLibPath === null) {
+  if(_localeLibPath == null) {
     _localeLibPath = libPath.append("locale/");
   }
   return _localeLibPath;

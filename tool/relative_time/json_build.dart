@@ -46,7 +46,7 @@ String cleanJson(String locale, Map unitsData) {
     }
     return units;
   }
-  
+
   var data = {
     "name": locale,
     "units": getUnits(''),
@@ -54,14 +54,14 @@ String cleanJson(String locale, Map unitsData) {
     "futureUnits": getUnits('-future'),
     "shortUnits": getUnits('', '-alt-short'),
   };
-  
+
   return JSON.stringify(data);
-  
+
 }
 
 Path _localeDataPath;
 Path get localeDataPath {
-  if(_localeDataPath === null) {
+  if(_localeDataPath == null) {
     _localeDataPath = libPath.append("src/data/relative_time");
   }
   return _localeDataPath;
@@ -69,7 +69,7 @@ Path get localeDataPath {
 
 Path _libPath;
 Path get libPath {
-  if(_libPath === null) {
+  if(_libPath == null) {
     var packageRoot = new Path(new Directory.current().path);
     _libPath = packageRoot.append("lib");
   }
@@ -79,17 +79,17 @@ Path get libPath {
 Future getLocaleData() {
 
   var unitsRequests = <Future<String>> [];
-  
+
   relativeTimeLocales.forEach((locale){
     unitsRequests.add(getUri(getLocaleUnitsUri(locale)));
   });
-  
+
   var unitsRequestsFuture = Futures.wait(unitsRequests);
-  
+
   return unitsRequestsFuture.transform((List<String> unitsBodies) {
 
     var localeDataMap = new Map<String, Map>();
-    
+
     for(int i = 0; i < unitsBodies.length; i++) {
       localeDataMap[relativeTimeLocales[i]] = JSON.parse(unitsBodies[i]);
     }

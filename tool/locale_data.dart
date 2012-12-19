@@ -1,7 +1,7 @@
 
-library relative_time_locale_data;
+library base_locales;
 
-final relativeTimeLocales = const [
+final baseLocales = const [
     "af",
     "am",
     "ar",

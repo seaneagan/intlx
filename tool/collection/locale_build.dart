@@ -1,5 +1,5 @@
 
-library relative_time_locale_build;
+library collection_locale_build;
 
 import 'dart:io';
 import 'dart:json';
@@ -8,7 +8,7 @@ import 'package:intlx/src/internal.dart';
 import '../plural/locale_data.dart';
 
 main() {
-  getBuiltLocaleData("relative_time").then(writeLibraries);
+  getBuiltLocaleData("collection").then(writeLibraries);
 }
 
 List<String> localeList;
@@ -67,12 +67,9 @@ const RelativeTimeSymbols locale = const RelativeTimeSymbols(
 }
 
 void writeSingleLocaleLibrary(String locale) {
-  var pluralLocale = getVerifiedLocale(locale, pluralLocaleList);
-  String pluralLibraryIdentifier = getPluralLibraryIdentifier(pluralLocale);
   writeLocaleLibrary(
     locale,
-    '''${generateLocaleImport(locale)}
-import '../plural/$pluralLocale.dart' as $pluralLibraryIdentifier;''',
+    '${generateLocaleImport(locale)}',
     '''  registerSymbols(${getSymbolsLibraryIdentifier(locale)}.locale);
   $pluralLibraryIdentifier.init();''');
 }
@@ -90,7 +87,7 @@ void writeAllLocaleLibrary() {
   writeLocaleLibrary("all", allImports, allLogic);
 }
 
-String generateLocaleImport(String locale) => "import '../../src/relative_time/locale/$locale.dart' as ${getSymbolsLibraryIdentifier(locale)};";
+String generateLocaleImport(String locale) => "import '../../src/collection/locale/$locale.dart' as ${getSymbolsLibraryIdentifier(locale)};";
 
 void writeLocaleListLibrary() {
 
@@ -100,7 +97,7 @@ void writeLocaleListLibrary() {
 const relativeTimeLocales = const <String> [$localeString];
 ''';
 
-  writeLibrary(libPath.append("src/relative_time/"), "relative_time_locale_list", code);
+  writeLibrary(libPath.append("src/collection/"), "collection_locale_list", code);
 }
 
 void writeLocaleLibrary(String locale, String imports, String logic) {
@@ -113,25 +110,16 @@ $logic
 }
 ''';
 
-  writeLibrary(localeLibPath.append("relative_time/"), locale, code, "relative_time_locale_$locale");
+  writeLibrary(localeLibPath.append("collection/"), locale, code, "collection_locale_$locale");
 }
 
 Path _localeSrcPath;
 Path get localeSrcPath {
   if(_localeSrcPath == null) {
-    _localeSrcPath = libPath.append("src/relative_time/locale/");
+    _localeSrcPath = libPath.append("src/collection/locale/");
   }
   return _localeSrcPath;
 }
 
-Path _localeDataPath;
-Path get localeDataPath {
-  if(_localeDataPath == null) {
-    _localeDataPath = libPath.append("src/data/relative_time");
-  }
-  return _localeDataPath;
-}
-
-String getSymbolsLibraryIdentifier(String locale) => "relative_time_symbols_$locale";
-String getPluralLibraryIdentifier(String locale) => "plural_locale_$locale";
+String getSymbolsLibraryIdentifier(String locale) => "collection_symbols_$locale";
 

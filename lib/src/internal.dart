@@ -40,7 +40,7 @@ RelativeTimeSymbols lookupSymbols(String locale) {
 String canonicalizedLocale(String aLocale) {
   if (aLocale == "C") return "en_ISO";
   if ((aLocale.length < 5) || (aLocale.length > 6)) return aLocale;
-  var re = const RegExp("([a-zA-Z]+)[_-]([a-zA-Z]+)");
+  var re = new RegExp("([a-zA-Z]+)[_-]([a-zA-Z]+)");
   var match = re.firstMatch(aLocale);
   if(match == null) return aLocale;
   return "${match.group(1).toLowerCase()}_${match.group(2).toUpperCase()}";
@@ -49,7 +49,7 @@ String canonicalizedLocale(String aLocale) {
 // TODO: this is copied from package:intl, remove if it becomes public there
 String shortLocale(String aLocale) {
   if (aLocale.length < 2) return aLocale;
-  var re = const RegExp("[_-]");
+  var re = new RegExp("[_-]");
   var match = re.firstMatch(aLocale);
   if(match == null) return aLocale;
   return aLocale.substring(0, match.start).toLowerCase();

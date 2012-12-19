@@ -122,6 +122,16 @@ class PluralFormat {
   final PluralLocale _locale;
 }
 
+class CollectionFormat {
+  CollectionFormat({String locale}) : _locale = new CollectionLocale(locale);
+  
+  String format(Collection collection) {
+    return _locale.format(collection);
+  }
+
+  final CollectionLocale _locale;
+}
+
 /// Enum to represent format lengths.
 class FormatLength {
   static const SHORT = const FormatLength._("SHORT", 0);

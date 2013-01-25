@@ -1,14 +1,7 @@
-//condition     = and_condition ('or' and_condition)*
-//and_condition = relation ('and' relation)*
-//relation      = is_relation | in_relation | within_relation
-//is_relation   = expr 'is' ('not')? value
-//in_relation   = expr ('not')? 'in' range_list
-//within_relation = expr ('not')? 'within' range_list
-//expr          = 'n' ('mod' value)?
-//range_list    = (range | value) (',' range_list)*
-//value         = digit+
-//digit         = 0|1|2|3|4|5|6|7|8|9
-//range         = value'..'value
+
+/// Provides a parser for the CLDR plural rule syntax
+/// see http://unicode.org/reports/tr35/#Language_Plural_Rules
+library plural_rule_parser;
 
 import 'package:parsers/parsers.dart';
 
@@ -48,13 +41,13 @@ class Range {
 class Condition extends Dartable {
   Condition(this.andConditions);
   final List<AndCondition> andConditions;
-  String toDart() => Strings.join(andConditions.map(getDart), ' || ');
+  String toDart() => Strings.join(andConditions.mappedBy(getDart).toList(), ' || ');
 }
 
 class AndCondition extends Dartable {
   AndCondition(this.relations);
   final List relations;
-  String toDart() => Strings.join(relations.map(getDart), ' && ');
+  String toDart() => Strings.join(relations.mappedBy(getDart).toList(), ' && ');
 }
 
 abstract class InOrWithinRelation extends Dartable {
@@ -65,7 +58,7 @@ abstract class InOrWithinRelation extends Dartable {
   String toDart() {
     var input = formatMod(mod);
     var negation = not ? '!' : '';
-    var dart = Strings.join(test.map((arg) => arg is int ? '$input == $arg' : '${rangeDart(arg, input)}'), ' || ');
+    var dart = Strings.join(test.mappedBy((arg) => arg is int ? '$input == $arg' : '${rangeDart(arg, input)}').toList(), ' || ');
     dart = '($dart)';
     if(not) dart = '!$dart';
     return dart;

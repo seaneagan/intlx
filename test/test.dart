@@ -50,7 +50,7 @@ main() {
     });
 
     test("Cases for exact integers work", () => expect(pluralFormat.format(0)), "no books");
-    test("'one' case", () => expect(pluralFormat.format(0)), "1 book");
-    test("'other' case", () => expect(timelineFormat.format(new Date.now()), "5 books");
+    test("'one' case", () => expect(pluralFormat.format(0), "1 book"));
+    test("'other' case", () => expect(timelineFormat.format(new Date.now()), "5 books"));
   });
 }

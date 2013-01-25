@@ -2,56 +2,45 @@
 library plural_locale_build;
 
 import 'dart:io';
+import 'dart:json';
 import '../util.dart';
-import 'locale_data.dart';
+import 'plural_rule_parser.dart';
+import 'package:intlx/src/plural/plural.dart';
 
 main() {
-  writeLocaleLibraries();
+  new PluralLibraryWriter().writeLibraries();
 }
 
-void writeLocaleLibraries() {
-  for(String locale in pluralLocaleList) {
-    writeSingleLocaleLibrary(locale);
+class PluralLibraryWriter extends LibraryWriter {
+  final String type = "plural";
+  final String symbolsClass = "PluralLocaleImpl";
+  final String symbolsClassLibrary = "plural";
+
+  Future getBuiltLocaleData() {
+    var pluralRulesUri = '${cldrUri}supplemental/plurals/plurals?depth=-1';
+    return fetchUri(pluralRulesUri).then((String json) {
+      var data = JSON.parse(json);
+      data.forEach((String locale, var rules) {
+        if(rules == '') data[locale] = <String, String> {};
+      });
+      return data;
+    });
   }
-  writeAllLocaleLibrary();
-  writeLocaleListLibrary();
+
+  String getSymbolsConstructorArgs(String locale, Map data) => """'$locale', (int n) {
+${getPluralRulesCode(data)}
+  }""";
 }
 
-void writeSingleLocaleLibrary(String locale) {
-  writeLocaleLibrary(locale, '  registerLocale(${generateLocaleInstantiation(locale)});');
-}
-
-void writeAllLocaleLibrary() {
-  var allLocales = Strings.join(pluralLocaleList.map(generateLocaleInstantiation), ", ");
-  var allLogic = '''
-  var locales = [$allLocales];
-
-  locales.forEach(registerLocale);''';
-
-  writeLocaleLibrary("all", allLogic);
-}
-
-String generateLocaleInstantiation(String locale) => 'const PluralLocaleImpl("$locale", ${getPluralStrategy(locale)})';
-
-void writeLocaleLibrary(String locale, String logic) {
-  String code = '''
-import '../../src/plural/internal.dart';
-
-void init() {
-$logic
-}
-''';
-
-  writeLibrary(localeLibPath.append("plural/"), locale, code, "plural_locale_$locale");
-}
-
-void writeLocaleListLibrary() {
-  String localeString = Strings.join(pluralLocaleList.map((locale) => '"$locale"'), ", ");
-
-  var code = '''
-
-const pluralLocales = const <String> [$localeString];
-''';
-
-  writeLibrary(libPath.append("src/plural"), "locale_list", code, "plural_locale_list");
+String getPluralRulesCode(Map<String, String> pluralRules) {
+  String code = "return PluralCategory.OTHER;";
+  for(PluralCategory category in [PluralCategory.MANY, PluralCategory.FEW, PluralCategory.TWO, PluralCategory.ONE, PluralCategory.ZERO]) {
+    var categoryString = category.toString();
+    if(pluralRules.containsKey(categoryString)) {
+      String categoryTest = pluralParser.parse(pluralRules[categoryString]).toDart();
+      code = '''if($categoryTest) return PluralCategory.${categoryString.toUpperCase()};
+else $code''';
+    }
+  }
+  return code;
 }

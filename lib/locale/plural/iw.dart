@@ -3,7 +3,6 @@
 
 library plural_locale_iw;
 
-import '../../src/plural/internal.dart';
 
 void init() {
   registerLocale(const PluralLocaleImpl("iw", BasicPluralStrategy));

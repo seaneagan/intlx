@@ -5,6 +5,7 @@ import '../../intlx.dart';
 import '../internal.dart';
 import '../plural/plural.dart';
 import 'package:intl/intl.dart';
+import 'locale_list.dart';
 
 class RelativeTimeSymbols {
   final String name;
@@ -28,5 +29,7 @@ class RelativeTimeSymbols {
   String _getSymbol(Map<String, Map<String, String>> units, TimeUnit unit, String plurality) {
     return units[unit.toString()][plurality];
   }
+
+  static final map = new SymbolsMap<RelativeTimeSymbols>(relativeTimeLocales);
 
 }

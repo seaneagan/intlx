@@ -114,7 +114,7 @@ class PluralFormat {
       message = message.replaceFirst(_pattern, quantityString);
     }
     return message;
-    
+
   }
 
   final Map<String, String> _cases;
@@ -124,7 +124,7 @@ class PluralFormat {
 
 class CollectionFormat {
   CollectionFormat({String locale}) : _locale = new CollectionLocale(locale);
-  
+
   String format(Collection collection) {
     return _locale.format(collection);
   }

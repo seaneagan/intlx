@@ -12,7 +12,7 @@ main() {
 }
 
 String transformJson(String locale, String json) {
-  
+
   Map unitsData = JSON.parse(json);
 
   getUnits(String unitSuffix, [pluralitySuffix = '']) {
@@ -23,7 +23,7 @@ String transformJson(String locale, String json) {
       if(unitsData.containsKey(unitsKey)) {
         var unitData = unitsData[unitsKey];
         var newUnitData = new Map<String, String>();
-        for(String plurality in ["0", "1"]..addAll(PluralCategory.values.map((plurality) => plurality.toString()))) {
+        for(String plurality in ["0", "1"]..addAll(PluralCategory.values.mappedBy((plurality) => plurality.toString()))) {
           var pluralityKey = "$plurality$pluralitySuffix";
           if(unitData.containsKey(pluralityKey)) {
             newUnitData[plurality] = unitData[pluralityKey];
@@ -36,7 +36,6 @@ String transformJson(String locale, String json) {
   }
 
   var data = {
-    "name": locale,
     "units": getUnits(''),
     "pastUnits": getUnits('-past'),
     "futureUnits": getUnits('-future'),

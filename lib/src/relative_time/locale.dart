@@ -8,11 +8,7 @@ import '../plural/plural.dart';
 
 class RelativeTimeLocale {
 
-  final RelativeTimeSymbols _symbols;
-  // final PluralLocale _pluralLocale;
-  final String _locale;
-
-  RelativeTimeLocale(String locale) : _symbols = lookupSymbols(locale), _locale = locale;
+  RelativeTimeLocale(String locale) : _symbols = RelativeTimeSymbols.map[locale], _locale = locale;
 
   String formatRoundDuration(RoundDuration roundDuration, FormatLength formatLength) =>
     _format(formatLength == FormatLength.SHORT ? _symbols.shortUnits : _symbols.units, roundDuration);
@@ -25,4 +21,7 @@ class RelativeTimeLocale {
     var pluralFormat = new PluralFormat(cases, locale: _locale, pattern: "{0}");
     return pluralFormat.format(roundDuration.quantity);
   }
+
+  final RelativeTimeSymbols _symbols;
+  final String _locale;
 }

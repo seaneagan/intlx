@@ -5,133 +5,56 @@ import 'dart:io';
 import 'dart:json';
 import '../util.dart';
 import 'package:intlx/src/internal.dart';
-import '../plural/locale_data.dart';
+import 'package:intlx/src/plural/locale_list.dart';
+import 'package:intl/intl.dart';
 
 main() {
-  getBuiltLocaleData("relative_time").then(writeLibraries);
+  new RelativeTimeLibraryWriter().writeLibraries();
 }
 
-List<String> localeList;
-void writeLibraries(Map<String, Map> localeDataMap) {
-  localeList = new List.from(localeDataMap.keys);
-  // TODO: remove once default sort argument is allowed
-  localeList.sort((a, b) => a.compareTo(b));
-  writeLocaleLibraries();
-  writeSymbolLibraries(localeDataMap);
-  // TODO: run tests on new code
-}
+class RelativeTimeLibraryWriter extends JsonSourcedLibraryWriter {
+  final type = "relative_time";
+  final symbolsClass = "RelativeTimeSymbols";
+  String getPluralLibraryIdentifier(String locale) => "plural_locale_$locale";
 
-void writeLocaleLibraries() {
-  for(String locale in localeList) {
-    writeSingleLocaleLibrary(locale);
-  }
-  writeAllLocaleLibrary();
-  writeLocaleListLibrary();
-}
+  getSymbolsConstructorArgs(String locale, Map data) {
+    String unitsCode(String unitType) {
+      var units = data[unitType];
+      if(units.isEmpty) return "$unitType: const {}";
+      return '''
+  $unitType: const {
+      "second": const ${JSON.stringify(units["second"])},
+      "minute": const ${JSON.stringify(units["minute"])},
+      "hour": const ${JSON.stringify(units["hour"])},
+      "day": const ${JSON.stringify(units["day"])},
+      "week": const ${JSON.stringify(units["week"])},
+      "month": const ${JSON.stringify(units["month"])},
+      "year": const ${JSON.stringify(units["year"])}
+    }''';
+    }
 
-void writeSymbolLibraries(localeDataMap) {
-  for(String locale in localeList) {
-    writeSymbolLibrary(locale, localeDataMap[locale]);
-  }
-}
-
-void writeSymbolLibrary(String locale, Map data) {
-
-  String unitsCode(String unitType) {
-    var units = data[unitType];
-    if(units.isEmpty()) return "$unitType: const {}";
     return '''
-$unitType: const {
-    "second": const ${JSON.stringify(units["second"])},
-    "minute": const ${JSON.stringify(units["minute"])},
-    "hour": const ${JSON.stringify(units["hour"])},
-    "day": const ${JSON.stringify(units["day"])},
-    "week": const ${JSON.stringify(units["week"])},
-    "month": const ${JSON.stringify(units["month"])},
-    "year": const ${JSON.stringify(units["year"])}
-  }''';
+    ${unitsCode("units")},
+    ${unitsCode("shortUnits")},
+    ${unitsCode("pastUnits")},
+    ${unitsCode("futureUnits")}''';
   }
 
-  var code = '''
-import '../symbols.dart';
+  String getAllLocaleLibraryImports() => '''${super.getAllLocaleLibraryImports()}
+import '../plural/all.dart' as plural_locale_all;''';
 
-const RelativeTimeSymbols locale = const RelativeTimeSymbols(
-  name: "$locale",
-  ${unitsCode("units")},
-  ${unitsCode("shortUnits")},
-  ${unitsCode("pastUnits")},
-  ${unitsCode("futureUnits")});
-''';
+  String getAllLocaleLibraryLogic() => '''
+    plural_locale_all.init();
+    ${super.getAllLocaleLibraryLogic()}''';
 
-  writeLibrary(localeSrcPath, locale, code, getSymbolsLibraryIdentifier(locale));
+  void writeSingleLocaleLibrary(String locale) {
+    var pluralLocale = Intl.verifiedLocale(locale, pluralLocales.contains);
+    String pluralLibraryIdentifier = getPluralLibraryIdentifier(pluralLocale);
+    writeLocaleLibrary(
+        locale,
+        '''${generateLocaleImport(locale)}
+    import '../plural/$pluralLocale.dart' as $pluralLibraryIdentifier;''',
+        '''  $symbolsClass.map['$locale'] = ${getSymbolsLibraryIdentifier(locale)}.symbols;
+      $pluralLibraryIdentifier.init();''');
+    }
 }
-
-void writeSingleLocaleLibrary(String locale) {
-  var pluralLocale = getVerifiedLocale(locale, pluralLocaleList);
-  String pluralLibraryIdentifier = getPluralLibraryIdentifier(pluralLocale);
-  writeLocaleLibrary(
-    locale,
-    '''${generateLocaleImport(locale)}
-import '../plural/$pluralLocale.dart' as $pluralLibraryIdentifier;''',
-    '''  registerSymbols(${getSymbolsLibraryIdentifier(locale)}.locale);
-  $pluralLibraryIdentifier.init();''');
-}
-
-void writeAllLocaleLibrary() {
-  var allImports = """${Strings.join(localeList.map(generateLocaleImport), "\n")}
-  import '../plural/all.dart' as plural_locale_all;""";
-  var allLocales = Strings.join(localeList.map((locale) => "${getSymbolsLibraryIdentifier(locale)}.locale"), ", ");
-  var allLogic = '''
-  var locales = [$allLocales];
-
-  plural_locale_all.init();
-  locales.forEach(registerSymbols);''';
-
-  writeLocaleLibrary("all", allImports, allLogic);
-}
-
-String generateLocaleImport(String locale) => "import '../../src/relative_time/locale/$locale.dart' as ${getSymbolsLibraryIdentifier(locale)};";
-
-void writeLocaleListLibrary() {
-
-  String localeString = Strings.join(localeList.map((locale) => '"$locale"'), ", ");
-
-  var code = '''
-const relativeTimeLocales = const <String> [$localeString];
-''';
-
-  writeLibrary(libPath.append("src/relative_time/"), "relative_time_locale_list", code);
-}
-
-void writeLocaleLibrary(String locale, String imports, String logic) {
-  String code = '''
-import '../../src/internal.dart';
-$imports
-
-void init() {
-$logic
-}
-''';
-
-  writeLibrary(localeLibPath.append("relative_time/"), locale, code, "relative_time_locale_$locale");
-}
-
-Path _localeSrcPath;
-Path get localeSrcPath {
-  if(_localeSrcPath == null) {
-    _localeSrcPath = libPath.append("src/relative_time/locale/");
-  }
-  return _localeSrcPath;
-}
-
-Path _localeDataPath;
-Path get localeDataPath {
-  if(_localeDataPath == null) {
-    _localeDataPath = libPath.append("src/data/relative_time");
-  }
-  return _localeDataPath;
-}
-
-String getSymbolsLibraryIdentifier(String locale) => "relative_time_symbols_$locale";
-String getPluralLibraryIdentifier(String locale) => "plural_locale_$locale";
-

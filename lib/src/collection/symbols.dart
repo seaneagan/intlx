@@ -1,32 +1,24 @@
 
-library relative_time_symbols;
+library collection_symbols;
 
 import '../../intlx.dart';
 import '../internal.dart';
 import '../plural/plural.dart';
 import 'package:intl/intl.dart';
+import 'locale_list.dart';
 
-class RelativeTimeSymbols {
-  final String name;
-  final Map<String, Map<String, String>> units, shortUnits, pastUnits, futureUnits;
+class CollectionSymbols {
+  final String start, middle, end;
+  final Map<String, String> indexed;
 
-  const RelativeTimeSymbols({this.name, this.units, this.shortUnits, this.pastUnits, this.futureUnits});
+  const CollectionSymbols({this.start, this.middle, this.end, this.indexed});
 
-  RelativeTimeSymbols.fromMap(Map map) : this(
-    name: map["name"],
-    units: map["units"],
-    shortUnits: map["shortUnits"],
-    pastUnits: map["pastUnits"],
-    futureUnits: map["futureUnits"]);
-
-  String getDurationSymbol(TimeUnit unit, String plurality, FormatLength formatLength) =>
-      _getSymbol(formatLength == FormatLength.SHORT ? shortUnits : units, unit, plurality);
-
-  String getAgeSymbol(TimeUnit unit, String plurality, bool isFuture) =>
-    _getSymbol(isFuture ? futureUnits : pastUnits, unit, plurality);
-
-  String _getSymbol(Map<String, Map<String, String>> units, TimeUnit unit, String plurality) {
-    return units[unit.toString()][plurality];
-  }
-
+  CollectionSymbols.fromMap(Map map) : this(
+    start: map["start"],
+    middle: map["middle"],
+    end: map["end"],
+    indexed: map["indexed"]);
+  
+  static final map = new SymbolsMap<CollectionSymbols>(collectionLocales);
+  
 }

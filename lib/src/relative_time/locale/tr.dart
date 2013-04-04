@@ -3,41 +3,41 @@
 
 library relative_time_symbols_tr;
 
-import '../symbols.dart';
+import 'package:intlx/src/relative_time/symbols.dart';
 
 final symbols = new RelativeTimeSymbols(      units: const {
       "second": const {"other":"{0} saniye"},
       "minute": const {"other":"{0} dakika"},
       "hour": const {"other":"{0} saat"},
-      "day": const {"other":"{0} gün"},
+      "day": const {"other":"{0} gÃ¼n"},
       "week": const {"other":"{0} hafta"},
       "month": const {"other":"{0} ay"},
-      "year": const {"other":"{0} yıl"}
+      "year": const {"other":"{0} yÄ±l"}
     },
       shortUnits: const {
       "second": const {"other":"{0} sn."},
       "minute": const {"other":"{0} dk."},
       "hour": const {"other":"{0} sa."},
-      "day": const {"other":"{0} gün"},
+      "day": const {"other":"{0} gÃ¼n"},
       "week": const {"other":"{0} hafta"},
       "month": const {"other":"{0} ay"},
-      "year": const {"other":"{0} yıl"}
+      "year": const {"other":"{0} yÄ±l"}
     },
       pastUnits: const {
-      "second": const {"1":"1 saniye önce","0":"0 saniye önce","other":"{0} saniye önce"},
-      "minute": const {"1":"1 dakika önce","0":"0 dakika önce","other":"{0} dakika önce"},
-      "hour": const {"1":"1 saat önce","0":"0 saat önce","other":"{0} saat önce"},
-      "day": const {"1":"1 gün önce","0":"0 gün önce","other":"{0} gün önce"},
-      "week": const {"1":"1 hafta önce","0":"0 hafta önce","other":"{0} hafta önce"},
-      "month": const {"1":"1 ay önce","0":"0 ay önce","other":"{0} ay önce"},
-      "year": const {"1":"1 yıl önce","0":"0 yıl önce","other":"{0} yıl önce"}
+      "second": const {"1":"1 saniye Ã¶nce","0":"0 saniye Ã¶nce","other":"{0} saniye Ã¶nce"},
+      "minute": const {"1":"1 dakika Ã¶nce","0":"0 dakika Ã¶nce","other":"{0} dakika Ã¶nce"},
+      "hour": const {"1":"1 saat Ã¶nce","0":"0 saat Ã¶nce","other":"{0} saat Ã¶nce"},
+      "day": const {"1":"1 gÃ¼n Ã¶nce","0":"0 gÃ¼n Ã¶nce","other":"{0} gÃ¼n Ã¶nce"},
+      "week": const {"1":"1 hafta Ã¶nce","0":"0 hafta Ã¶nce","other":"{0} hafta Ã¶nce"},
+      "month": const {"1":"1 ay Ã¶nce","0":"0 ay Ã¶nce","other":"{0} ay Ã¶nce"},
+      "year": const {"1":"1 yÄ±l Ã¶nce","0":"0 yÄ±l Ã¶nce","other":"{0} yÄ±l Ã¶nce"}
     },
       futureUnits: const {
       "second": const {"1":"1 saniye sonra","0":"0 saniye sonra","other":"{0} saniye sonra"},
       "minute": const {"1":"1 dakika sonra","0":"0 dakika sonra","other":"{0} dakika sonra"},
       "hour": const {"1":"1 saat sonra","0":"0 saat sonra","other":"{0} saat sonra"},
-      "day": const {"1":"1 gün sonra","0":"0 gün sonra","other":"{0} gün sonra"},
+      "day": const {"1":"1 gÃ¼n sonra","0":"0 gÃ¼n sonra","other":"{0} gÃ¼n sonra"},
       "week": const {"1":"1 hafta sonra","0":"0 hafta sonra","other":"{0} hafta sonra"},
       "month": const {"1":"1 ay sonra","0":"0 ay sonra","other":"{0} ay sonra"},
-      "year": const {"1":"1 yıl sonra","0":"0 yıl sonra","other":"{0} yıl sonra"}
+      "year": const {"1":"1 yÄ±l sonra","0":"0 yÄ±l sonra","other":"{0} yÄ±l sonra"}
     });

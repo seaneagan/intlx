@@ -41,13 +41,13 @@ class Range {
 class Condition extends Dartable {
   Condition(this.andConditions);
   final List<AndCondition> andConditions;
-  String toDart() => Strings.join(andConditions.mappedBy(getDart).toList(), ' || ');
+  String toDart() => andConditions.map(getDart).toList().join(' || ');
 }
 
 class AndCondition extends Dartable {
   AndCondition(this.relations);
   final List relations;
-  String toDart() => Strings.join(relations.mappedBy(getDart).toList(), ' && ');
+  String toDart() => relations.map(getDart).toList().join(' && ');
 }
 
 abstract class InOrWithinRelation extends Dartable {
@@ -58,7 +58,7 @@ abstract class InOrWithinRelation extends Dartable {
   String toDart() {
     var input = formatMod(mod);
     var negation = not ? '!' : '';
-    var dart = Strings.join(test.mappedBy((arg) => arg is int ? '$input == $arg' : '${rangeDart(arg, input)}').toList(), ' || ');
+    var dart = test.map((arg) => arg is int ? '$input == $arg' : '${rangeDart(arg, input)}').toList().join(' || ');
     dart = '($dart)';
     if(not) dart = '!$dart';
     return dart;
@@ -69,12 +69,7 @@ abstract class InOrWithinRelation extends Dartable {
 class InRelation extends InOrWithinRelation {
   InRelation(int mod, bool not, List test) : super(mod, not, test);
   String rangeDart(Range range, String input) {
-    var i = range.min;
-    var list = <int> [];
-    for(var i = range.min; i <= range.max; i++) {
-      list.add(i);
-    }
-    return '$list.contains($input)';
+    return 'range(${(range.max + 1) - range.min}, ${range.min}).contains($input)';
   }
 }
 
@@ -100,7 +95,7 @@ class IsRelation extends Dartable {
 String formatMod(int mod) => mod == null ? 'n' : 'n % $mod';
 
 main() {
-  var test = "n within 0..2 and n is not 0 and n is not 2";
+  var test = "n in 0..99 and n is not 0 and n is not 2";
   //var test = "n is 0 OR n is not 1 AND n mod 100 in 1..19";
   //var test = "n mod 10 in 3..4,9 and n mod 100 not in 10..19,70..79,90..99";
   var condition = pluralParser.parse(test);

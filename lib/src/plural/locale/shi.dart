@@ -3,10 +3,10 @@
 
 library plural_symbols_shi;
 
-import '../plural.dart';
+import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('shi', (int n) {
 if(((n >= 0 && n <= 1))) return PluralCategory.ONE;
-else if(([2, 3, 4, 5, 6, 7, 8, 9, 10].contains(n))) return PluralCategory.FEW;
+else if((range(9, 2).contains(n))) return PluralCategory.FEW;
 else return PluralCategory.OTHER;
   });

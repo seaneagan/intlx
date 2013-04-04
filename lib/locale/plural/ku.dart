@@ -3,9 +3,10 @@
 
 library plural_locale_ku;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/ku.dart' as plural_symbols_ku;
-  
+
   void init() {
   PluralLocaleImpl.map['ku'] = plural_symbols_ku.symbols;
   }

@@ -3,9 +3,10 @@
 
 library plural_locale_kab;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/kab.dart' as plural_symbols_kab;
-  
+
   void init() {
   PluralLocaleImpl.map['kab'] = plural_symbols_kab.symbols;
   }

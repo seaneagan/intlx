@@ -3,7 +3,7 @@
 
 library plural_symbols_ms;
 
-import '../plural.dart';
+import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('ms', (int n) {
 return PluralCategory.OTHER;

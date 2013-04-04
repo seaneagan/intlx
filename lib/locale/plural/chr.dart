@@ -3,9 +3,10 @@
 
 library plural_locale_chr;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/chr.dart' as plural_symbols_chr;
-  
+
   void init() {
   PluralLocaleImpl.map['chr'] = plural_symbols_chr.symbols;
   }

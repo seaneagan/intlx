@@ -3,9 +3,9 @@
 
 library collection_symbols_ko;
 
-import '../symbols.dart';
+import 'package:intlx/src/collection/symbols.dart';
 
 final symbols = new CollectionSymbols(    start: '{0}, {1}',
     middle: '{0}, {1}',
-    end: '{0} 및 {1}',
-    indexed: const {"2":"{0} 및 {1}"});
+    end: '{0} ë° {1}',
+    indexed: const {"2":"{0} ë° {1}"});

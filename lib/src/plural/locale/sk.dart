@@ -3,10 +3,10 @@
 
 library plural_symbols_sk;
 
-import '../plural.dart';
+import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('sk', (int n) {
 if(n == 1) return PluralCategory.ONE;
-else if(([2, 3, 4].contains(n))) return PluralCategory.FEW;
+else if((range(3, 2).contains(n))) return PluralCategory.FEW;
 else return PluralCategory.OTHER;
   });

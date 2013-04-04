@@ -5,12 +5,11 @@ import 'package:intlx/locale/relative_time/en.dart' as en;
 
 main() {
 
-  DurationFormat durationFormat;
-  TimelineFormat timelineFormat;
-  PluralFormat pluralFormat;
   en.init();
 
   group('DurationFormat', () {
+
+    DurationFormat durationFormat;
 
     setUp(() {
       durationFormat = new DurationFormat(locale: "en");
@@ -34,23 +33,27 @@ main() {
 
   group('TimelineFormat', () {
 
+    TimelineFormat timelineFormat;
+
     setUp(() {
       timelineFormat = new TimelineFormat(locale: "en");
     });
 
-    test("In 2 minutes", () => expect(timelineFormat.format(new Date.now().add(new Duration(minutes: 2, seconds: 30))), "In 2 minutes"));
-    test("5 hours ago", () => expect(timelineFormat.format(new Date.now().subtract(new Duration(hours: 5))), "5 hours ago"));
-    test("now is past", () => expect(timelineFormat.format(new Date.now()), "0 minutes ago"));
+    test("In 2 minutes", () => expect(timelineFormat.format(new DateTime.now().add(new Duration(minutes: 2, seconds: 30))), "In 2 minutes"));
+    test("5 hours ago", () => expect(timelineFormat.format(new DateTime.now().subtract(new Duration(hours: 5))), "5 hours ago"));
+    test("now is past", () => expect(timelineFormat.format(new DateTime.now()), "0 minutes ago"));
   });
 
   group('PluralFormat', () {
+
+    PluralFormat pluralFormat;
 
     setUp(() {
       pluralFormat = new PluralFormat({"0": "no books", "one": "{0} book", "other": "{0} books"}, locale: "en", pattern: "{0}");
     });
 
-    test("Cases for exact integers work", () => expect(pluralFormat.format(0)), "no books");
-    test("'one' case", () => expect(pluralFormat.format(0), "1 book"));
-    test("'other' case", () => expect(timelineFormat.format(new Date.now()), "5 books"));
+    test("case for exact integer", () => expect(pluralFormat.format(0), "no books"));
+    test("'one' case", () => expect(pluralFormat.format(1), "1 book"));
+    test("'other' case", () => expect(pluralFormat.format(5), "5 books"));
   });
 }

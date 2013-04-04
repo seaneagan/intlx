@@ -3,9 +3,9 @@
 
 library collection_symbols_ar;
 
-import '../symbols.dart';
+import 'package:intlx/src/collection/symbols.dart';
 
-final symbols = new CollectionSymbols(    start: '{0}، {1}',
-    middle: '{0}، {1}',
-    end: '{0}، و {1}',
-    indexed: const {"2":"{0} و {1}"});
+final symbols = new CollectionSymbols(    start: '{0}Ø {1}',
+    middle: '{0}Ø {1}',
+    end: '{0}Ø Ù {1}',
+    indexed: const {"2":"{0} Ù {1}"});

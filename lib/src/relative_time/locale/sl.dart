@@ -3,7 +3,7 @@
 
 library relative_time_symbols_sl;
 
-import '../symbols.dart';
+import 'package:intlx/src/relative_time/symbols.dart';
 
 final symbols = new RelativeTimeSymbols(      units: const {
       "second": const {"one":"{0} sekunda","other":"{0} sekund","few":"{0} sekunde","two":"{0} sekundi"},
@@ -24,20 +24,20 @@ final symbols = new RelativeTimeSymbols(      units: const {
       "year": const {"one":"{0} l","other":"{0} l","few":"{0} l","two":"{0} l"}
     },
       pastUnits: const {
-      "second": const {"two":"Pred {0} sekundama","1":"Pred 1 sekundo","one":"Pred {0} sekundo","0":"Pred 0 sekundami","few":"Pred {0} sekundami","other":"Pred {0} sekundami"},
-      "minute": const {"two":"Pred {0} min.","1":"Pred 1 min.","one":"Pred {0} min.","0":"Pred 0 min.","few":"Pred {0} min.","other":"Pred {0} min."},
-      "hour": const {"two":"Pred {0} h","1":"Pred 1 h","one":"Pred {0} h","0":"Pred 0 h","few":"Pred {0} h","other":"Pred {0} h"},
-      "day": const {"two":"Pred {0} dnevoma","1":"Pred 1 dnevom","one":"Pred {0} dnevom","0":"Pred 0 dnevi","few":"Pred {0} dnevi","other":"Pred {0} dnevi"},
-      "week": const {"two":"Pred {0} tednoma","1":"Pred 1 tednom","one":"Pred {0} tednom","0":"Pred 0 tedni","few":"Pred {0} tedni","other":"Pred {0} tedni"},
-      "month": const {"two":"Pred {0} meseci","1":"Pred 1 mesecem","one":"Pred {0} mesecem","0":"Pred 0 meseci","few":"Pred {0} meseci","other":"Pred {0} meseci"},
-      "year": const {"two":"Pred {0} leti","1":"Pred 1 letom","one":"Pred {0} letom","0":"Pred 0 leti","few":"Pred {0} leti","other":"Pred {0} leti"}
+      "second": const {"1":"Pred 1 sekundo","one":"Pred {0} sekundo","0":"Pred 0 sekundami","few":"Pred {0} sekundami","other":"Pred {0} sekundami","two":"Pred {0} sekundama"},
+      "minute": const {"1":"Pred 1 min.","one":"Pred {0} min.","0":"Pred 0 min.","few":"Pred {0} min.","other":"Pred {0} min.","two":"Pred {0} min."},
+      "hour": const {"1":"Pred 1 h","one":"Pred {0} h","0":"Pred 0 h","few":"Pred {0} h","other":"Pred {0} h","two":"Pred {0} h"},
+      "day": const {"1":"Pred 1 dnevom","one":"Pred {0} dnevom","0":"Pred 0 dnevi","few":"Pred {0} dnevi","other":"Pred {0} dnevi","two":"Pred {0} dnevoma"},
+      "week": const {"1":"Pred 1 tednom","one":"Pred {0} tednom","0":"Pred 0 tedni","few":"Pred {0} tedni","other":"Pred {0} tedni","two":"Pred {0} tednoma"},
+      "month": const {"1":"Pred 1 mesecem","one":"Pred {0} mesecem","0":"Pred 0 meseci","few":"Pred {0} meseci","other":"Pred {0} meseci","two":"Pred {0} meseci"},
+      "year": const {"1":"Pred 1 letom","one":"Pred {0} letom","0":"Pred 0 leti","few":"Pred {0} leti","other":"Pred {0} leti","two":"Pred {0} leti"}
     },
       futureUnits: const {
-      "second": const {"two":"Čez {0} sekundi","1":"Čez 1 sekundo","one":"Čez {0} sekundo","0":"Čez 0 sekund","few":"Čez {0} sekunde","other":"Čez {0} sekundi"},
-      "minute": const {"two":"Čez {0} min.","1":"Čez 1 min.","one":"Čez {0} min.","0":"Čez 0 min.","few":"Čez {0} min.","other":"Čez {0} min."},
-      "hour": const {"two":"Čez {0} h","1":"Čez 1 h","one":"Čez {0} h","0":"Čez 0 h","few":"Čez {0} h","other":"Čez {0} h"},
-      "day": const {"two":"Čez {0} dni","1":"Čez 1 dan","one":"Čez {0} dan","0":"Čez 0 dni","few":"Čez {0} dni","other":"Čez {0} dni"},
-      "week": const {"two":"Čez {0} tedna","1":"Čez 1 teden","one":"Čez {0} teden","0":"Čez 0 tednov","few":"Čez {0} tedne","other":"Čez {0} tednov"},
-      "month": const {"two":"Čez {0} meseca","1":"Čez 1 mesec","one":"Čez {0} mesec","0":"Čez 0 mesecev","few":"Čez {0} mesece","other":"Čez {0} mesecev"},
-      "year": const {"two":"Čez {0} leti","1":"Čez 1 leto","one":"Čez {0} leto","0":"Čez 0 let","few":"Čez {0} leta","other":"Čez {0} let"}
+      "second": const {"1":"Äez 1 sekundo","one":"Äez {0} sekundo","0":"Äez 0 sekund","few":"Äez {0} sekunde","other":"Äez {0} sekundi","two":"Äez {0} sekundi"},
+      "minute": const {"1":"Äez 1 min.","one":"Äez {0} min.","0":"Äez 0 min.","few":"Äez {0} min.","other":"Äez {0} min.","two":"Äez {0} min."},
+      "hour": const {"1":"Äez 1 h","one":"Äez {0} h","0":"Äez 0 h","few":"Äez {0} h","other":"Äez {0} h","two":"Äez {0} h"},
+      "day": const {"1":"Äez 1 dan","one":"Äez {0} dan","0":"Äez 0 dni","few":"Äez {0} dni","other":"Äez {0} dni","two":"Äez {0} dni"},
+      "week": const {"1":"Äez 1 teden","one":"Äez {0} teden","0":"Äez 0 tednov","few":"Äez {0} tedne","other":"Äez {0} tednov","two":"Äez {0} tedna"},
+      "month": const {"1":"Äez 1 mesec","one":"Äez {0} mesec","0":"Äez 0 mesecev","few":"Äez {0} mesece","other":"Äez {0} mesecev","two":"Äez {0} meseca"},
+      "year": const {"1":"Äez 1 leto","one":"Äez {0} leto","0":"Äez 0 let","few":"Äez {0} leta","other":"Äez {0} let","two":"Äez {0} leti"}
     });

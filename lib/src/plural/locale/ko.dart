@@ -3,7 +3,7 @@
 
 library plural_symbols_ko;
 
-import '../plural.dart';
+import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('ko', (int n) {
 return PluralCategory.OTHER;

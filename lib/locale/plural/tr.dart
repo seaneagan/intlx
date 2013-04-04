@@ -3,9 +3,10 @@
 
 library plural_locale_tr;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/tr.dart' as plural_symbols_tr;
-  
+
   void init() {
   PluralLocaleImpl.map['tr'] = plural_symbols_tr.symbols;
   }

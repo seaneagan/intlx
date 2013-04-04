@@ -3,9 +3,10 @@
 
 library collection_locale_pt_BR;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/collection/symbols.dart';
   import 'package:intlx/src/collection/locale/pt_BR.dart' as collection_symbols_pt_BR;
-  
+
   void init() {
   CollectionSymbols.map['pt_BR'] = collection_symbols_pt_BR.symbols;
   }

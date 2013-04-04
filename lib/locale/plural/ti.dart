@@ -3,9 +3,10 @@
 
 library plural_locale_ti;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/ti.dart' as plural_symbols_ti;
-  
+
   void init() {
   PluralLocaleImpl.map['ti'] = plural_symbols_ti.symbols;
   }

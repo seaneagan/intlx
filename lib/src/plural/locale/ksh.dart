@@ -3,7 +3,7 @@
 
 library plural_symbols_ksh;
 
-import '../plural.dart';
+import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('ksh', (int n) {
 if(n == 0) return PluralCategory.ZERO;

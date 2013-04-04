@@ -3,10 +3,11 @@
 
 library relative_time_locale_gsw;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/relative_time/symbols.dart';
   import 'package:intlx/src/relative_time/locale/gsw.dart' as relative_time_symbols_gsw;
     import '../plural/gsw.dart' as plural_locale_gsw;
-  
+
   void init() {
     RelativeTimeSymbols.map['gsw'] = relative_time_symbols_gsw.symbols;
       plural_locale_gsw.init();

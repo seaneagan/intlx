@@ -3,7 +3,7 @@
 
 library plural_symbols_no;
 
-import '../plural.dart';
+import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('no', (int n) {
 if(n == 1) return PluralCategory.ONE;

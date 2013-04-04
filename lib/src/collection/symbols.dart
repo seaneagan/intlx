@@ -5,7 +5,7 @@ import '../../intlx.dart';
 import '../internal.dart';
 import '../plural/plural.dart';
 import 'package:intl/intl.dart';
-import 'locale_list.dart';
+import 'collection_locale_list.dart';
 
 class CollectionSymbols {
   final String start, middle, end;

@@ -30,6 +30,6 @@ class RelativeTimeSymbols {
     return units[unit.toString()][plurality];
   }
 
-  static final map = new SymbolsMap<RelativeTimeSymbols>(relativeTimeLocales);
+  static final map = <String, RelativeTimeSymbols> {};
 
 }

@@ -3,11 +3,11 @@
 
 library plural_symbols_mt;
 
-import '../plural.dart';
+import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('mt', (int n) {
 if(n == 1) return PluralCategory.ONE;
-else if(n == 0 || ([2, 3, 4, 5, 6, 7, 8, 9, 10].contains(n % 100))) return PluralCategory.FEW;
-else if(([11, 12, 13, 14, 15, 16, 17, 18, 19].contains(n % 100))) return PluralCategory.MANY;
+else if(n == 0 || (range(9, 2).contains(n % 100))) return PluralCategory.FEW;
+else if((range(9, 11).contains(n % 100))) return PluralCategory.MANY;
 else return PluralCategory.OTHER;
   });

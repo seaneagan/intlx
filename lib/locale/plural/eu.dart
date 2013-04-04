@@ -3,9 +3,10 @@
 
 library plural_locale_eu;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/eu.dart' as plural_symbols_eu;
-  
+
   void init() {
   PluralLocaleImpl.map['eu'] = plural_symbols_eu.symbols;
   }

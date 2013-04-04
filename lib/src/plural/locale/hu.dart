@@ -3,7 +3,7 @@
 
 library plural_symbols_hu;
 
-import '../plural.dart';
+import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('hu', (int n) {
 return PluralCategory.OTHER;

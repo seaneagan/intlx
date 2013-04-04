@@ -3,41 +3,41 @@
 
 library relative_time_symbols_zh;
 
-import '../symbols.dart';
+import 'package:intlx/src/relative_time/symbols.dart';
 
 final symbols = new RelativeTimeSymbols(      units: const {
-      "second": const {"other":"{0}秒"},
-      "minute": const {"other":"{0}分"},
-      "hour": const {"other":"{0}小时"},
-      "day": const {"other":"{0}日"},
-      "week": const {"other":"{0}周"},
-      "month": const {"other":"{0}月"},
-      "year": const {"other":"{0}年"}
+      "second": const {"other":"{0}ç§"},
+      "minute": const {"other":"{0}å"},
+      "hour": const {"other":"{0}å°æ¶"},
+      "day": const {"other":"{0}æ¥"},
+      "week": const {"other":"{0}å¨"},
+      "month": const {"other":"{0}æ"},
+      "year": const {"other":"{0}å¹´"}
     },
       shortUnits: const {
-      "second": const {"other":"{0}秒"},
-      "minute": const {"other":"{0}分"},
-      "hour": const {"other":"{0}小时"},
-      "day": const {"other":"{0}日"},
-      "week": const {"other":"{0}周"},
-      "month": const {"other":"{0}月"},
-      "year": const {"other":"{0}年"}
+      "second": const {"other":"{0}ç§"},
+      "minute": const {"other":"{0}å"},
+      "hour": const {"other":"{0}å°æ¶"},
+      "day": const {"other":"{0}æ¥"},
+      "week": const {"other":"{0}å¨"},
+      "month": const {"other":"{0}æ"},
+      "year": const {"other":"{0}å¹´"}
     },
       pastUnits: const {
-      "second": const {"1":"1秒钟前","0":"0秒钟前","other":"{0}秒钟前"},
-      "minute": const {"1":"1分钟前","0":"0分钟前","other":"{0}分钟前"},
-      "hour": const {"1":"1小时前","0":"0小时前","other":"{0}小时前"},
-      "day": const {"1":"1天前","0":"0天前","other":"{0}天前"},
-      "week": const {"1":"1周前","0":"0周前","other":"{0}周前"},
-      "month": const {"1":"1个月前","0":"0个月前","other":"{0}个月前"},
-      "year": const {"1":"1年前","0":"0年前","other":"{0}年前"}
+      "second": const {"1":"1ç§éå","0":"0ç§éå","other":"{0}ç§éå"},
+      "minute": const {"1":"1åéå","0":"0åéå","other":"{0}åéå"},
+      "hour": const {"1":"1å°æ¶å","0":"0å°æ¶å","other":"{0}å°æ¶å"},
+      "day": const {"1":"1å¤©å","0":"0å¤©å","other":"{0}å¤©å"},
+      "week": const {"1":"1å¨å","0":"0å¨å","other":"{0}å¨å"},
+      "month": const {"1":"1ä¸ªæå","0":"0ä¸ªæå","other":"{0}ä¸ªæå"},
+      "year": const {"1":"1å¹´å","0":"0å¹´å","other":"{0}å¹´å"}
     },
       futureUnits: const {
-      "second": const {"1":"1秒钟后","0":"0秒钟后","other":"{0}秒钟后"},
-      "minute": const {"1":"1分钟后","0":"0分钟后","other":"{0}分钟后"},
-      "hour": const {"1":"1小时后","0":"0小时后","other":"{0}小时后"},
-      "day": const {"1":"1天后","0":"0天后","other":"{0}天后"},
-      "week": const {"1":"1周后","0":"0周后","other":"{0}周后"},
-      "month": const {"1":"1个月后","0":"0个月后","other":"{0}个月后"},
-      "year": const {"1":"1年后","0":"0年后","other":"{0}年后"}
+      "second": const {"1":"1ç§éå","0":"0ç§éå","other":"{0}ç§éå"},
+      "minute": const {"1":"1åéå","0":"0åéå","other":"{0}åéå"},
+      "hour": const {"1":"1å°æ¶å","0":"0å°æ¶å","other":"{0}å°æ¶å"},
+      "day": const {"1":"1å¤©å","0":"0å¤©å","other":"{0}å¤©å"},
+      "week": const {"1":"1å¨å","0":"0å¨å","other":"{0}å¨å"},
+      "month": const {"1":"1ä¸ªæå","0":"0ä¸ªæå","other":"{0}ä¸ªæå"},
+      "year": const {"1":"1å¹´å","0":"0å¹´å","other":"{0}å¹´å"}
     });

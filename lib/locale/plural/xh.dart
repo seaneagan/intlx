@@ -3,9 +3,10 @@
 
 library plural_locale_xh;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/xh.dart' as plural_symbols_xh;
-  
+
   void init() {
   PluralLocaleImpl.map['xh'] = plural_symbols_xh.symbols;
   }

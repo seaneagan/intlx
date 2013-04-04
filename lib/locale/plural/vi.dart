@@ -3,9 +3,10 @@
 
 library plural_locale_vi;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/vi.dart' as plural_symbols_vi;
-  
+
   void init() {
   PluralLocaleImpl.map['vi'] = plural_symbols_vi.symbols;
   }

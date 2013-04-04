@@ -3,9 +3,10 @@
 
 library collection_locale_eu;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/collection/symbols.dart';
   import 'package:intlx/src/collection/locale/eu.dart' as collection_symbols_eu;
-  
+
   void init() {
   CollectionSymbols.map['eu'] = collection_symbols_eu.symbols;
   }

@@ -3,9 +3,10 @@
 
 library plural_locale_az;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/az.dart' as plural_symbols_az;
-  
+
   void init() {
   PluralLocaleImpl.map['az'] = plural_symbols_az.symbols;
   }

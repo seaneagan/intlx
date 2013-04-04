@@ -3,7 +3,7 @@
 
 library plural_symbols_wo;
 
-import '../plural.dart';
+import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('wo', (int n) {
 return PluralCategory.OTHER;

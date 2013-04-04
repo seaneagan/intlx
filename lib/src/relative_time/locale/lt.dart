@@ -3,16 +3,16 @@
 
 library relative_time_symbols_lt;
 
-import '../symbols.dart';
+import 'package:intlx/src/relative_time/symbols.dart';
 
 final symbols = new RelativeTimeSymbols(      units: const {
-      "second": const {"one":"{0} sekundę","other":"{0} sekundžių","few":"{0} sekundės"},
-      "minute": const {"one":"{0} minutė","other":"{0} minučių","few":"{0} minutės"},
-      "hour": const {"one":"{0} valandą","other":"{0} valandų","few":"{0} valandos"},
-      "day": const {"one":"{0} diena","other":"{0} dienų","few":"{0} dienos"},
-      "week": const {"one":"{0} savaitė","other":"{0} savaičių","few":"{0} savaitės"},
-      "month": const {"one":"{0} mėnesio","other":"{0} mėnesių","few":"{0} mėnesiai"},
-      "year": const {"one":"{0} metai","other":"{0} metų","few":"{0} metai"}
+      "second": const {"one":"{0} sekundÄ","other":"{0} sekundÅ¾iÅ³","few":"{0} sekundÄs"},
+      "minute": const {"one":"{0} minutÄ","other":"{0} minuÄiÅ³","few":"{0} minutÄs"},
+      "hour": const {"one":"{0} valandÄ","other":"{0} valandÅ³","few":"{0} valandos"},
+      "day": const {"one":"{0} diena","other":"{0} dienÅ³","few":"{0} dienos"},
+      "week": const {"one":"{0} savaitÄ","other":"{0} savaiÄiÅ³","few":"{0} savaitÄs"},
+      "month": const {"one":"{0} mÄnesio","other":"{0} mÄnesiÅ³","few":"{0} mÄnesiai"},
+      "year": const {"one":"{0} metai","other":"{0} metÅ³","few":"{0} metai"}
     },
       shortUnits: const {
       "second": const {"one":"{0} sek.","other":"{0} sek.","few":"{0} sek."},
@@ -20,24 +20,24 @@ final symbols = new RelativeTimeSymbols(      units: const {
       "hour": const {"one":"{0} val.","other":"{0} val.","few":"{0} val."},
       "day": const {"one":"{0} d.","other":"{0} d.","few":"{0} d."},
       "week": const {"one":"{0} sav.","other":"{0} sav.","few":"{0} sav."},
-      "month": const {"one":"{0} mėn.","other":"{0} mėn.","few":"{0} mėn."},
+      "month": const {"one":"{0} mÄn.","other":"{0} mÄn.","few":"{0} mÄn."},
       "year": const {"one":"{0} m.","other":"{0} m.","few":"{0} m."}
     },
       pastUnits: const {
-      "second": const {"1":"prieš 1 sekundę","one":"prieš {0} sekundę","0":"prieš 0 sekundžių","few":"prieš {0} sekundės","other":"prieš {0} sekundžių"},
-      "minute": const {"1":"prieš 1 minutę","one":"prieš {0} minutę","0":"prieš 0 minučių","few":"prieš {0} minutės","other":"prieš {0} minučių"},
-      "hour": const {"1":"prieš 1 valandą","one":"prieš {0} valandą","0":"prieš 0 valandų","few":"prieš {0} valandos","other":"prieš {0} valandų"},
-      "day": const {"1":"prieš 1 dieną","one":"prieš {0} dieną","0":"prieš 0 dienų","few":"prieš {0} dienos","other":"prieš {0} dienų"},
-      "week": const {"1":"prieš 1 savaitę","one":"prieš {0} savaitę","0":"prieš 0 savaičių","few":"prieš {0} savaitės","other":"prieš {0} savaičių"},
-      "month": const {"1":"prieš 1 mėnesį","one":"prieš {0} mėnesio","0":"prieš 0 mėnesių","few":"prieš {0} mėnesį","other":"prieš {0} mėnesių"},
-      "year": const {"1":"prieš 1 metus","one":"prieš {0} metus","0":"prieš 0 metų","few":"prieš {0} metai","other":"prieš {0} metų"}
+      "second": const {"1":"prieÅ¡ 1 sekundÄ","one":"prieÅ¡ {0} sekundÄ","0":"prieÅ¡ 0 sekundÅ¾iÅ³","few":"prieÅ¡ {0} sekundÄs","other":"prieÅ¡ {0} sekundÅ¾iÅ³"},
+      "minute": const {"1":"prieÅ¡ 1 minutÄ","one":"prieÅ¡ {0} minutÄ","0":"prieÅ¡ 0 minuÄiÅ³","few":"prieÅ¡ {0} minutÄs","other":"prieÅ¡ {0} minuÄiÅ³"},
+      "hour": const {"1":"prieÅ¡ 1 valandÄ","one":"prieÅ¡ {0} valandÄ","0":"prieÅ¡ 0 valandÅ³","few":"prieÅ¡ {0} valandos","other":"prieÅ¡ {0} valandÅ³"},
+      "day": const {"1":"prieÅ¡ 1 dienÄ","one":"prieÅ¡ {0} dienÄ","0":"prieÅ¡ 0 dienÅ³","few":"prieÅ¡ {0} dienos","other":"prieÅ¡ {0} dienÅ³"},
+      "week": const {"1":"prieÅ¡ 1 savaitÄ","one":"prieÅ¡ {0} savaitÄ","0":"prieÅ¡ 0 savaiÄiÅ³","few":"prieÅ¡ {0} savaitÄs","other":"prieÅ¡ {0} savaiÄiÅ³"},
+      "month": const {"1":"prieÅ¡ 1 mÄnesÄ¯","one":"prieÅ¡ {0} mÄnesio","0":"prieÅ¡ 0 mÄnesiÅ³","few":"prieÅ¡ {0} mÄnesÄ¯","other":"prieÅ¡ {0} mÄnesiÅ³"},
+      "year": const {"1":"prieÅ¡ 1 metus","one":"prieÅ¡ {0} metus","0":"prieÅ¡ 0 metÅ³","few":"prieÅ¡ {0} metai","other":"prieÅ¡ {0} metÅ³"}
     },
       futureUnits: const {
-      "second": const {"1":"po 1 sekundės","one":"po {0} sekundę","0":"po 0 sekundžių","few":"po {0} sekundės","other":"po {0} sekundžių"},
-      "minute": const {"1":"po 1 minutės","one":"po {0} minutę","0":"po 0 minučių","few":"po {0} minutės","other":"po {0} minučių"},
-      "hour": const {"1":"po 1 valandos","one":"po {0} valandą","0":"po 0 valandų","few":"po {0} valandos","other":"po {0} valandų"},
-      "day": const {"1":"po 1 dienos","one":"po {0} dieną","0":"po 0 dienų","few":"po {0} dienos","other":"po {0} dienų"},
-      "week": const {"1":"po 1 savaitės","one":"po {0} savaitę","0":"po 0 savaičių","few":"po {0} savaitės","other":"po {0} savaičių"},
-      "month": const {"1":"po 1 mėnesio","one":"po {0} mėnesio","0":"po 0 mėnesių","few":"po {0} mėnesį","other":"po {0} mėnesių"},
-      "year": const {"1":"po 1 metų","one":"po {0} metus","0":"po 0 metų","few":"po {0} metai","other":"po {0} metų"}
+      "second": const {"1":"po 1 sekundÄs","one":"po {0} sekundÄ","0":"po 0 sekundÅ¾iÅ³","few":"po {0} sekundÄs","other":"po {0} sekundÅ¾iÅ³"},
+      "minute": const {"1":"po 1 minutÄs","one":"po {0} minutÄ","0":"po 0 minuÄiÅ³","few":"po {0} minutÄs","other":"po {0} minuÄiÅ³"},
+      "hour": const {"1":"po 1 valandos","one":"po {0} valandÄ","0":"po 0 valandÅ³","few":"po {0} valandos","other":"po {0} valandÅ³"},
+      "day": const {"1":"po 1 dienos","one":"po {0} dienÄ","0":"po 0 dienÅ³","few":"po {0} dienos","other":"po {0} dienÅ³"},
+      "week": const {"1":"po 1 savaitÄs","one":"po {0} savaitÄ","0":"po 0 savaiÄiÅ³","few":"po {0} savaitÄs","other":"po {0} savaiÄiÅ³"},
+      "month": const {"1":"po 1 mÄnesio","one":"po {0} mÄnesio","0":"po 0 mÄnesiÅ³","few":"po {0} mÄnesÄ¯","other":"po {0} mÄnesiÅ³"},
+      "year": const {"1":"po 1 metÅ³","one":"po {0} metus","0":"po 0 metÅ³","few":"po {0} metai","other":"po {0} metÅ³"}
     });

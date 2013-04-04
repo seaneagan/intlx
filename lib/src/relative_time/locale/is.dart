@@ -3,41 +3,41 @@
 
 library relative_time_symbols_is;
 
-import '../symbols.dart';
+import 'package:intlx/src/relative_time/symbols.dart';
 
 final symbols = new RelativeTimeSymbols(      units: const {
-      "second": const {"one":"{0} sekúnda","other":"{0} sekúndur"},
-      "minute": const {"one":"{0} mínúta","other":"{0} mínútur"},
+      "second": const {"one":"{0} sekÃºnda","other":"{0} sekÃºndur"},
+      "minute": const {"one":"{0} mÃ­nÃºta","other":"{0} mÃ­nÃºtur"},
       "hour": const {"one":"{0} klukkustund","other":"{0} klukkustundir"},
       "day": const {"one":"{0} dagur","other":"{0} dagar"},
       "week": const {"one":"{0} vika","other":"{0} vikur"},
-      "month": const {"one":"{0} mánuður","other":"{0} mánuðir"},
-      "year": const {"one":"{0} ár","other":"{0} ár"}
+      "month": const {"one":"{0} mÃ¡nuÃ°ur","other":"{0} mÃ¡nuÃ°ir"},
+      "year": const {"one":"{0} Ã¡r","other":"{0} Ã¡r"}
     },
       shortUnits: const {
       "second": const {"1":"1 sek.","0":"0 sek.","other":"{0} sek."},
-      "minute": const {"1":"1 mín.","0":"0 mín.","other":"{0} mín."},
+      "minute": const {"1":"1 mÃ­n.","0":"0 mÃ­n.","other":"{0} mÃ­n."},
       "hour": const {"1":"1 klst.","0":"0 klst.","other":"{0} klst."},
       "day": const {"1":"Einn dagur","0":"0 dagar","other":"{0} dagar"},
       "week": const {"1":"1 vika","0":"0 vikur","other":"{0} vikur"},
-      "month": const {"1":"1 mán.","0":"0 mán.","other":"{0} mán."},
-      "year": const {"1":"1 ár","0":"0 ár","other":"{0} ár"}
+      "month": const {"1":"1 mÃ¡n.","0":"0 mÃ¡n.","other":"{0} mÃ¡n."},
+      "year": const {"1":"1 Ã¡r","0":"0 Ã¡r","other":"{0} Ã¡r"}
     },
       pastUnits: const {
-      "second": const {"1":"Fyrir einni sekúndu síðan","0":"Fyrir 0 sekúndum síðan","other":"Fyrir {0} sekúndum síðan"},
-      "minute": const {"1":"Fyrir einni mínútu síðan","0":"Fyrir 0 mínútum síðan","other":"Fyrir {0} mínútum síðan"},
-      "hour": const {"1":"Fyrir einni klukkustund síðan","0":"Fyrir 0 klukkustundum síðan","other":"Fyrir {0} klukkustundum síðan"},
-      "day": const {"1":"Fyrir einum degi síðan","0":"Fyrir 0 dögum síðan","other":"Fyrir {0} dögum síðan"},
-      "week": const {"1":"Fyrir einni viku síðan","0":"Fyrir 0 vikum síðan","other":"Fyrir {0} vikum síðan"},
-      "month": const {"1":"Fyrir einum mánuði síðan","0":"Fyrir 0 mánuðum síðan","other":"Fyrir {0} mánuðum síðan"},
-      "year": const {"1":"Fyrir einu ári síðan","0":"Fyrir 0 árum síðan","other":"Fyrir {0} árum síðan"}
+      "second": const {"1":"Fyrir einni sekÃºndu sÃ­Ã°an","0":"Fyrir 0 sekÃºndum sÃ­Ã°an","other":"Fyrir {0} sekÃºndum sÃ­Ã°an"},
+      "minute": const {"1":"Fyrir einni mÃ­nÃºtu sÃ­Ã°an","0":"Fyrir 0 mÃ­nÃºtum sÃ­Ã°an","other":"Fyrir {0} mÃ­nÃºtum sÃ­Ã°an"},
+      "hour": const {"1":"Fyrir einni klukkustund sÃ­Ã°an","0":"Fyrir 0 klukkustundum sÃ­Ã°an","other":"Fyrir {0} klukkustundum sÃ­Ã°an"},
+      "day": const {"1":"Fyrir einum degi sÃ­Ã°an","0":"Fyrir 0 dÃ¶gum sÃ­Ã°an","other":"Fyrir {0} dÃ¶gum sÃ­Ã°an"},
+      "week": const {"1":"Fyrir einni viku sÃ­Ã°an","0":"Fyrir 0 vikum sÃ­Ã°an","other":"Fyrir {0} vikum sÃ­Ã°an"},
+      "month": const {"1":"Fyrir einum mÃ¡nuÃ°i sÃ­Ã°an","0":"Fyrir 0 mÃ¡nuÃ°um sÃ­Ã°an","other":"Fyrir {0} mÃ¡nuÃ°um sÃ­Ã°an"},
+      "year": const {"1":"Fyrir einu Ã¡ri sÃ­Ã°an","0":"Fyrir 0 Ã¡rum sÃ­Ã°an","other":"Fyrir {0} Ã¡rum sÃ­Ã°an"}
     },
       futureUnits: const {
-      "second": const {"1":"Eftir eina sekúndu","0":"Eftir 0 sekúndur","other":"Eftir {0} sekúndur"},
-      "minute": const {"1":"Eftir eina mínútu","0":"Eftir 0 mínútur","other":"Eftir {0} mínútur"},
+      "second": const {"1":"Eftir eina sekÃºndu","0":"Eftir 0 sekÃºndur","other":"Eftir {0} sekÃºndur"},
+      "minute": const {"1":"Eftir eina mÃ­nÃºtu","0":"Eftir 0 mÃ­nÃºtur","other":"Eftir {0} mÃ­nÃºtur"},
       "hour": const {"1":"Eftir eina klukkustund","0":"Eftir 0 klukkustundir","other":"Eftir {0} klukkustundir"},
       "day": const {"1":"Eftir einn dag","0":"Eftir 0 daga","other":"Eftir {0} daga"},
       "week": const {"1":"Eftir eina viku","0":"Eftir 0 vikur","other":"Eftir {0} vikur"},
-      "month": const {"1":"Eftir einn mánuð","0":"Eftir 0 mánuði","other":"Eftir {0} mánuði"},
-      "year": const {"1":"Eftir eitt ár","0":"Eftir 0 ár","other":"Eftir {0} ár"}
+      "month": const {"1":"Eftir einn mÃ¡nuÃ°","0":"Eftir 0 mÃ¡nuÃ°i","other":"Eftir {0} mÃ¡nuÃ°i"},
+      "year": const {"1":"Eftir eitt Ã¡r","0":"Eftir 0 Ã¡r","other":"Eftir {0} Ã¡r"}
     });

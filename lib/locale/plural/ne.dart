@@ -3,9 +3,10 @@
 
 library plural_locale_ne;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/ne.dart' as plural_symbols_ne;
-  
+
   void init() {
   PluralLocaleImpl.map['ne'] = plural_symbols_ne.symbols;
   }

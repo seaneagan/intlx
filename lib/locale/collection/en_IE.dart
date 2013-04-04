@@ -3,9 +3,10 @@
 
 library collection_locale_en_IE;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/collection/symbols.dart';
   import 'package:intlx/src/collection/locale/en_IE.dart' as collection_symbols_en_IE;
-  
+
   void init() {
   CollectionSymbols.map['en_IE'] = collection_symbols_en_IE.symbols;
   }

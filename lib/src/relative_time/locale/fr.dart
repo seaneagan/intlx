@@ -3,7 +3,7 @@
 
 library relative_time_symbols_fr;
 
-import '../symbols.dart';
+import 'package:intlx/src/relative_time/symbols.dart';
 
 final symbols = new RelativeTimeSymbols(      units: const {
       "second": const {"one":"{0} seconde","other":"{0} secondes"},
@@ -12,7 +12,7 @@ final symbols = new RelativeTimeSymbols(      units: const {
       "day": const {"one":"{0} jour","other":"{0} jours"},
       "week": const {"one":"{0} semaine","other":"{0} semaines"},
       "month": const {"one":"{0} mois","other":"{0} mois"},
-      "year": const {"one":"{0} année","other":"{0} années"}
+      "year": const {"one":"{0} annÃ©e","other":"{0} annÃ©es"}
     },
       shortUnits: const {
       "second": const {"one":"{0} s","other":"{0} s"},

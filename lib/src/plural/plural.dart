@@ -3,21 +3,21 @@ library plural;
 
 import '../internal.dart';
 import 'package:intl/intl.dart';
+import 'plural_locale_list.dart';
 
 abstract class PluralLocale {
   factory PluralLocale(String locale) {
     String verifiedLocale = Intl.verifiedLocale(locale, pluralLocales.contains);
-    if(!pluralLocaleMap.containsKey(verifiedLocale)) {
+    if(!PluralLocaleImpl.map.containsKey(verifiedLocale)) {
       throw new ArgumentError('PluralLocale "$verifiedLocale" is not loaded');
     }
-    return map[verifiedLocale];
+    return PluralLocaleImpl.map[verifiedLocale];
   }
 
   final String locale;
 
   PluralCategory getPluralCategory(int n);
 
-  static final map = <String, PluralLocale> {};
 }
 
 typedef PluralCategory PluralStrategy(int quantity);
@@ -29,6 +29,7 @@ class PluralLocaleImpl implements PluralLocale {
 
   PluralCategory getPluralCategory(int n) => _strategy(n);
   toString() => "PluralLocale: $locale";
+  static final map = <String, PluralLocale> {};
 }
 
 class PluralCategory {
@@ -48,3 +49,5 @@ class PluralCategory {
 
   static const values = const <PluralCategory> [ZERO, ONE, TWO, FEW, MANY, OTHER];
 }
+
+Iterable<int> range(int length, [int start = 0]) => new Iterable.generate(length, (int index) => start + index);

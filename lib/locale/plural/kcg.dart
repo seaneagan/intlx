@@ -3,9 +3,10 @@
 
 library plural_locale_kcg;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/kcg.dart' as plural_symbols_kcg;
-  
+
   void init() {
   PluralLocaleImpl.map['kcg'] = plural_symbols_kcg.symbols;
   }

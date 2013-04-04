@@ -3,9 +3,10 @@
 
 library plural_locale_mk;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/mk.dart' as plural_symbols_mk;
-  
+
   void init() {
   PluralLocaleImpl.map['mk'] = plural_symbols_mk.symbols;
   }

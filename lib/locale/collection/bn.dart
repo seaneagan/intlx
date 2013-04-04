@@ -3,9 +3,10 @@
 
 library collection_locale_bn;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/collection/symbols.dart';
   import 'package:intlx/src/collection/locale/bn.dart' as collection_symbols_bn;
-  
+
   void init() {
   CollectionSymbols.map['bn'] = collection_symbols_bn.symbols;
   }

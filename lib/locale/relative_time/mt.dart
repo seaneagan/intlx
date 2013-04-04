@@ -3,10 +3,11 @@
 
 library relative_time_locale_mt;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/relative_time/symbols.dart';
   import 'package:intlx/src/relative_time/locale/mt.dart' as relative_time_symbols_mt;
     import '../plural/mt.dart' as plural_locale_mt;
-  
+
   void init() {
     RelativeTimeSymbols.map['mt'] = relative_time_symbols_mt.symbols;
       plural_locale_mt.init();

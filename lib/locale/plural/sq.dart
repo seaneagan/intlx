@@ -3,9 +3,10 @@
 
 library plural_locale_sq;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/sq.dart' as plural_symbols_sq;
-  
+
   void init() {
   PluralLocaleImpl.map['sq'] = plural_symbols_sq.symbols;
   }

@@ -3,9 +3,10 @@
 
 library plural_locale_ckb;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/ckb.dart' as plural_symbols_ckb;
-  
+
   void init() {
   PluralLocaleImpl.map['ckb'] = plural_symbols_ckb.symbols;
   }

@@ -3,9 +3,10 @@
 
 library plural_locale_te;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/te.dart' as plural_symbols_te;
-  
+
   void init() {
   PluralLocaleImpl.map['te'] = plural_symbols_te.symbols;
   }

@@ -3,9 +3,10 @@
 
 library collection_locale_ar;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/collection/symbols.dart';
   import 'package:intlx/src/collection/locale/ar.dart' as collection_symbols_ar;
-  
+
   void init() {
   CollectionSymbols.map['ar'] = collection_symbols_ar.symbols;
   }

@@ -2,10 +2,11 @@
 library plural_locale_build;
 
 import 'dart:io';
-import 'dart:json';
+import 'dart:json' as json;
 import '../util.dart';
 import 'plural_rule_parser.dart';
 import 'package:intlx/src/plural/plural.dart';
+import 'dart:async';
 
 main() {
   new PluralLibraryWriter().writeLibraries();
@@ -18,8 +19,8 @@ class PluralLibraryWriter extends LibraryWriter {
 
   Future getBuiltLocaleData() {
     var pluralRulesUri = '${cldrUri}supplemental/plurals/plurals?depth=-1';
-    return fetchUri(pluralRulesUri).then((String json) {
-      var data = JSON.parse(json);
+    return fetchUri(pluralRulesUri).then((String jsonText) {
+      var data = json.parse(jsonText);
       data.forEach((String locale, var rules) {
         if(rules == '') data[locale] = <String, String> {};
       });

@@ -3,9 +3,10 @@
 
 library plural_locale_xog;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/xog.dart' as plural_symbols_xog;
-  
+
   void init() {
   PluralLocaleImpl.map['xog'] = plural_symbols_xog.symbols;
   }

@@ -3,7 +3,7 @@
 
 library plural_symbols_fy;
 
-import '../plural.dart';
+import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('fy', (int n) {
 if(n == 1) return PluralCategory.ONE;

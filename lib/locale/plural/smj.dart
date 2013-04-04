@@ -3,9 +3,10 @@
 
 library plural_locale_smj;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/smj.dart' as plural_symbols_smj;
-  
+
   void init() {
   PluralLocaleImpl.map['smj'] = plural_symbols_smj.symbols;
   }

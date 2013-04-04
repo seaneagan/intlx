@@ -3,12 +3,12 @@
 
 library plural_symbols_br;
 
-import '../plural.dart';
+import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('br', (int n) {
 if(n % 10 == 1 && !(n % 100 == 11 || n % 100 == 71 || n % 100 == 91)) return PluralCategory.ONE;
 else if(n % 10 == 2 && !(n % 100 == 12 || n % 100 == 72 || n % 100 == 92)) return PluralCategory.TWO;
-else if(([3, 4].contains(n % 10) || n % 10 == 9) && !([10, 11, 12, 13, 14, 15, 16, 17, 18, 19].contains(n % 100) || [70, 71, 72, 73, 74, 75, 76, 77, 78, 79].contains(n % 100) || [90, 91, 92, 93, 94, 95, 96, 97, 98, 99].contains(n % 100))) return PluralCategory.FEW;
+else if((range(2, 3).contains(n % 10) || n % 10 == 9) && !(range(10, 10).contains(n % 100) || range(10, 70).contains(n % 100) || range(10, 90).contains(n % 100))) return PluralCategory.FEW;
 else if(n % 1000000 == 0 && n != 0) return PluralCategory.MANY;
 else return PluralCategory.OTHER;
   });

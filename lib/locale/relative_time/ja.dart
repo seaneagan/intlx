@@ -3,10 +3,11 @@
 
 library relative_time_locale_ja;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/relative_time/symbols.dart';
   import 'package:intlx/src/relative_time/locale/ja.dart' as relative_time_symbols_ja;
     import '../plural/ja.dart' as plural_locale_ja;
-  
+
   void init() {
     RelativeTimeSymbols.map['ja'] = relative_time_symbols_ja.symbols;
       plural_locale_ja.init();

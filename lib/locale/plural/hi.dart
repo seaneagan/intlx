@@ -3,9 +3,10 @@
 
 library plural_locale_hi;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/hi.dart' as plural_symbols_hi;
-  
+
   void init() {
   PluralLocaleImpl.map['hi'] = plural_symbols_hi.symbols;
   }

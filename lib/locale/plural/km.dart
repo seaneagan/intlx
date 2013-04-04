@@ -3,9 +3,10 @@
 
 library plural_locale_km;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/km.dart' as plural_symbols_km;
-  
+
   void init() {
   PluralLocaleImpl.map['km'] = plural_symbols_km.symbols;
   }

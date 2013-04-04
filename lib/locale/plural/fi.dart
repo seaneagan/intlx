@@ -3,9 +3,10 @@
 
 library plural_locale_fi;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/fi.dart' as plural_symbols_fi;
-  
+
   void init() {
   PluralLocaleImpl.map['fi'] = plural_symbols_fi.symbols;
   }

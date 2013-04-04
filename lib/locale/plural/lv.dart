@@ -3,9 +3,10 @@
 
 library plural_locale_lv;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/lv.dart' as plural_symbols_lv;
-  
+
   void init() {
   PluralLocaleImpl.map['lv'] = plural_symbols_lv.symbols;
   }

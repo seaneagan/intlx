@@ -3,9 +3,10 @@
 
 library plural_locale_no;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/no.dart' as plural_symbols_no;
-  
+
   void init() {
   PluralLocaleImpl.map['no'] = plural_symbols_no.symbols;
   }

@@ -3,9 +3,10 @@
 
 library collection_locale_zh_CN;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/collection/symbols.dart';
   import 'package:intlx/src/collection/locale/zh_CN.dart' as collection_symbols_zh_CN;
-  
+
   void init() {
   CollectionSymbols.map['zh_CN'] = collection_symbols_zh_CN.symbols;
   }

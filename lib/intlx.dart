@@ -5,6 +5,7 @@ library intlx;
 import 'dart:math';
 import 'src/relative_time/locale.dart';
 import 'src/plural/plural.dart';
+import 'src/collection/locale.dart';
 
 /// formats Durations
 /// e.g. "2 hours"
@@ -23,12 +24,12 @@ class DurationFormat extends _RelativeTimeFormat<Duration> {
 
 /// Formats Dates on a timeline relative to now
 /// e.g. "2 hours ago" or "In 2 hours"
-class TimelineFormat extends _RelativeTimeFormat<Date> {
+class TimelineFormat extends _RelativeTimeFormat<DateTime> {
 
   TimelineFormat({String locale, DurationRounder rounder: const DurationRounder()}) : super(locale, rounder);
 
-  String format(Date date) {
-    var now = new Date.now();
+  String format(DateTime date) {
+    var now = new DateTime.now();
     var milliseconds = now.millisecondsSinceEpoch - date.millisecondsSinceEpoch;
     var age = new Duration(milliseconds: milliseconds.abs());
     var isFuture = milliseconds.isNegative;
@@ -67,7 +68,7 @@ class RoundDuration {
 }
 
 /// Enum to represent time units
-class TimeUnit implements Comparable {
+class TimeUnit implements Comparable<TimeUnit> {
 
   static const SECOND = const TimeUnit._("second", 0);
   static const MINUTE = const TimeUnit._("minute", 1);

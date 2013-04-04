@@ -3,9 +3,9 @@
 
 library plural_symbols_gv;
 
-import '../plural.dart';
+import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('gv', (int n) {
-if(([1, 2].contains(n % 10)) || n % 20 == 0) return PluralCategory.ONE;
+if((range(2, 1).contains(n % 10)) || n % 20 == 0) return PluralCategory.ONE;
 else return PluralCategory.OTHER;
   });

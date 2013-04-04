@@ -3,9 +3,10 @@
 
 library plural_locale_rm;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/rm.dart' as plural_symbols_rm;
-  
+
   void init() {
   PluralLocaleImpl.map['rm'] = plural_symbols_rm.symbols;
   }

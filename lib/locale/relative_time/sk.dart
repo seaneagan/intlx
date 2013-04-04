@@ -3,10 +3,11 @@
 
 library relative_time_locale_sk;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/relative_time/symbols.dart';
   import 'package:intlx/src/relative_time/locale/sk.dart' as relative_time_symbols_sk;
     import '../plural/sk.dart' as plural_locale_sk;
-  
+
   void init() {
     RelativeTimeSymbols.map['sk'] = relative_time_symbols_sk.symbols;
       plural_locale_sk.init();

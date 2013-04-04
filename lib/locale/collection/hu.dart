@@ -3,9 +3,10 @@
 
 library collection_locale_hu;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/collection/symbols.dart';
   import 'package:intlx/src/collection/locale/hu.dart' as collection_symbols_hu;
-  
+
   void init() {
   CollectionSymbols.map['hu'] = collection_symbols_hu.symbols;
   }

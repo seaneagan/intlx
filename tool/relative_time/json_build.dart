@@ -2,7 +2,7 @@
 library relative_time_json_build;
 
 import 'dart:io';
-import 'dart:json';
+import 'dart:json' as json;
 import 'package:intlx/intlx.dart';
 import 'package:intlx/src/plural/plural.dart';
 import '../util.dart';
@@ -11,9 +11,9 @@ main() {
   writeLocaleJson("units", "relative_time", transformJson);
 }
 
-String transformJson(String locale, String json) {
+String transformJson(String locale, String jsonText) {
 
-  Map unitsData = JSON.parse(json);
+  Map unitsData = json.parse(jsonText);
 
   getUnits(String unitSuffix, [pluralitySuffix = '']) {
     var units = new Map<String, Map<String, String>>();
@@ -23,7 +23,7 @@ String transformJson(String locale, String json) {
       if(unitsData.containsKey(unitsKey)) {
         var unitData = unitsData[unitsKey];
         var newUnitData = new Map<String, String>();
-        for(String plurality in ["0", "1"]..addAll(PluralCategory.values.mappedBy((plurality) => plurality.toString()))) {
+        for(String plurality in ["0", "1"]..addAll(PluralCategory.values.map((plurality) => plurality.toString()))) {
           var pluralityKey = "$plurality$pluralitySuffix";
           if(unitData.containsKey(pluralityKey)) {
             newUnitData[plurality] = unitData[pluralityKey];
@@ -42,6 +42,6 @@ String transformJson(String locale, String json) {
     "shortUnits": getUnits('', '-alt-short'),
   };
 
-  return JSON.stringify(data);
+  return json.stringify(data);
 
 }

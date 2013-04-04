@@ -3,7 +3,7 @@
 
 library relative_time_symbols_ca;
 
-import '../symbols.dart';
+import 'package:intlx/src/relative_time/symbols.dart';
 
 final symbols = new RelativeTimeSymbols(      units: const {
       "second": const {"one":"{0} segon","other":"{0} segons"},
@@ -33,11 +33,11 @@ final symbols = new RelativeTimeSymbols(      units: const {
       "year": const {"1":"Fa 1 any","one":"Fa {0} any","0":"Fa 0 anys","other":"Fa {0} anys"}
     },
       futureUnits: const {
-      "second": const {"1":"D'aquí a 1 segon","one":"D'aquí a {0} segon","0":"D'aquí a 0 segons","other":"D'aquí a {0} segons"},
-      "minute": const {"1":"D'aquí a 1 minut","one":"D'aquí a {0} minut","0":"D'aquí a 0 minuts","other":"D'aquí a {0} minuts"},
-      "hour": const {"1":"D'aquí a 1 hora","one":"D'aquí a {0} hora","0":"D'aquí a 0 hores","other":"D'aquí a {0} hores"},
-      "day": const {"1":"D'aquí a 1 dia","one":"D'aquí a {0} dia","0":"D'aquí a 0 dies","other":"D'aquí a {0} dies"},
-      "week": const {"1":"D'aquí a 1 setmana","one":"D'aquí a {0} setmana","0":"D'aquí a 0 setmanes","other":"D'aquí a {0} setmanes"},
-      "month": const {"1":"D'aquí a 1 mes","one":"D'aquí a {0} mes","0":"D'aquí a 0 mesos","other":"D'aquí a {0} mesos"},
-      "year": const {"1":"D'aquí a 1 any","one":"D'aquí a {0} any","0":"D'aquí a 0 anys","other":"D'aquí a {0} anys"}
+      "second": const {"1":"D'aquÃ­ a 1 segon","one":"D'aquÃ­ a {0} segon","0":"D'aquÃ­ a 0 segons","other":"D'aquÃ­ a {0} segons"},
+      "minute": const {"1":"D'aquÃ­ a 1 minut","one":"D'aquÃ­ a {0} minut","0":"D'aquÃ­ a 0 minuts","other":"D'aquÃ­ a {0} minuts"},
+      "hour": const {"1":"D'aquÃ­ a 1 hora","one":"D'aquÃ­ a {0} hora","0":"D'aquÃ­ a 0 hores","other":"D'aquÃ­ a {0} hores"},
+      "day": const {"1":"D'aquÃ­ a 1 dia","one":"D'aquÃ­ a {0} dia","0":"D'aquÃ­ a 0 dies","other":"D'aquÃ­ a {0} dies"},
+      "week": const {"1":"D'aquÃ­ a 1 setmana","one":"D'aquÃ­ a {0} setmana","0":"D'aquÃ­ a 0 setmanes","other":"D'aquÃ­ a {0} setmanes"},
+      "month": const {"1":"D'aquÃ­ a 1 mes","one":"D'aquÃ­ a {0} mes","0":"D'aquÃ­ a 0 mesos","other":"D'aquÃ­ a {0} mesos"},
+      "year": const {"1":"D'aquÃ­ a 1 any","one":"D'aquÃ­ a {0} any","0":"D'aquÃ­ a 0 anys","other":"D'aquÃ­ a {0} anys"}
     });

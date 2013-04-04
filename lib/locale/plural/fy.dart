@@ -3,9 +3,10 @@
 
 library plural_locale_fy;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/fy.dart' as plural_symbols_fy;
-  
+
   void init() {
   PluralLocaleImpl.map['fy'] = plural_symbols_fy.symbols;
   }

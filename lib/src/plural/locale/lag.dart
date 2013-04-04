@@ -3,7 +3,7 @@
 
 library plural_symbols_lag;
 
-import '../plural.dart';
+import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('lag', (int n) {
 if(n == 0) return PluralCategory.ZERO;

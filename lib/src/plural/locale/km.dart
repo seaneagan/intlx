@@ -3,7 +3,7 @@
 
 library plural_symbols_km;
 
-import '../plural.dart';
+import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('km', (int n) {
 return PluralCategory.OTHER;

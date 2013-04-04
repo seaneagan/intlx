@@ -3,9 +3,10 @@
 
 library plural_locale_mas;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/mas.dart' as plural_symbols_mas;
-  
+
   void init() {
   PluralLocaleImpl.map['mas'] = plural_symbols_mas.symbols;
   }

@@ -3,9 +3,10 @@
 
 library plural_locale_sk;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/sk.dart' as plural_symbols_sk;
-  
+
   void init() {
   PluralLocaleImpl.map['sk'] = plural_symbols_sk.symbols;
   }

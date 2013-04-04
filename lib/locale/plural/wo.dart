@@ -3,9 +3,10 @@
 
 library plural_locale_wo;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/wo.dart' as plural_symbols_wo;
-  
+
   void init() {
   PluralLocaleImpl.map['wo'] = plural_symbols_wo.symbols;
   }

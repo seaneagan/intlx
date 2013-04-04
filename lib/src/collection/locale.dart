@@ -10,24 +10,23 @@ class CollectionLocale {
 
   CollectionLocale(String locale) : _symbols = CollectionSymbols.map[locale], _locale = locale;
 
-  String format(Collection collection) {
-    var list = new List.from(collection);
-    if(_symbols.indexed.containsKey(list.length.toString())) return _formatCustom(_symbols.indexed[list.length.toString()], list);
+  String format(Iterable iterable) {
+    if(iterable.isEmpty) return "";
+    var list = iterable.toList();
+    var length = list.length.toString();
+    if(_symbols.indexed.containsKey(length)) return _formatCustom(_symbols.indexed[length], list);
     return _formatAll(list);
   }
 
   String _formatCustom(String format, List elements) {
     var element, result;
     if (elements.length > 1) {
-      result = format.replace(new RegExp("\{(\d+)\}"), () {
-        return RegExp.$1;
-      });
+      return format.splitMapJoin(new RegExp("\{(\d+)\}"), onMatch: (Match match) => elements[int.parse(match.group(1))].toString());
 //      if (isRtl) {
 //        result = TwitterCldr.Bidi.from_string(result, {
 //          "direction": "RTL"
 //        }).reorder_visually().toString();
 //      }
-      return result.replace(new RegExp("(\d+)"), () => elements[int.parse(RegExp.$1)]);
     }
     return elements[0].toString();
   }

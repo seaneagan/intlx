@@ -3,12 +3,12 @@
 
 library plural_symbols_ga;
 
-import '../plural.dart';
+import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('ga', (int n) {
 if(n == 1) return PluralCategory.ONE;
 else if(n == 2) return PluralCategory.TWO;
-else if(([3, 4, 5, 6].contains(n))) return PluralCategory.FEW;
-else if(([7, 8, 9, 10].contains(n))) return PluralCategory.MANY;
+else if((range(4, 3).contains(n))) return PluralCategory.FEW;
+else if((range(4, 7).contains(n))) return PluralCategory.MANY;
 else return PluralCategory.OTHER;
   });

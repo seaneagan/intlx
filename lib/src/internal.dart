@@ -9,7 +9,10 @@ import '../intlx.dart';
 class SymbolsMap<T> {
   SymbolsMap(this._localeList);
 
-  void operator []= (String locale, T symbols) => _map[locale] = symbols;
+  void operator []= (String locale, T symbols) {
+    print("setting locale: $locale");
+    _map[locale] = symbols;
+  }
 
   T operator [] (String locale) {
     locale = Intl.verifiedLocale(locale, (String locale) => _localeList.contains(locale));
@@ -20,13 +23,3 @@ class SymbolsMap<T> {
   final _map = <String, T> {};
   final List<String> _localeList;
 }
-
-//Future initLocale(String locale, LocaleDataReader reader) {
-//  initRelativeTimeSymbols(() => new LazyLocaleData(reader, _createRelativeTimeSymbols, relativeTimeLocales));
-//  return initRelativeTimeIntl((symbols) => symbols.initLocale(locale));
-//}
-//
-//RelativeTimeSymbols _createRelativeTimeSymbols(Map map) {
-//  return new RelativeTimeSymbols.fromMap(map);
-//}
-

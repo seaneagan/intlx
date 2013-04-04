@@ -3,9 +3,10 @@
 
 library plural_locale_ksh;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/ksh.dart' as plural_symbols_ksh;
-  
+
   void init() {
   PluralLocaleImpl.map['ksh'] = plural_symbols_ksh.symbols;
   }

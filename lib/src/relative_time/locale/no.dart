@@ -3,7 +3,7 @@
 
 library relative_time_symbols_no;
 
-import '../symbols.dart';
+import 'package:intlx/src/relative_time/symbols.dart';
 
 final symbols = new RelativeTimeSymbols(      units: const {
       "second": const {"one":"{0} sekund","other":"{0} sekunder"},
@@ -11,8 +11,8 @@ final symbols = new RelativeTimeSymbols(      units: const {
       "hour": const {"one":"{0} time","other":"{0} timer"},
       "day": const {"one":"{0} dag","other":"{0} dager"},
       "week": const {"one":"{0} uke","other":"{0} uker"},
-      "month": const {"one":"{0} måned","other":"{0} måneder"},
-      "year": const {"one":"{0} år","other":"{0} år"}
+      "month": const {"one":"{0} mÃ¥ned","other":"{0} mÃ¥neder"},
+      "year": const {"one":"{0} Ã¥r","other":"{0} Ã¥r"}
     },
       shortUnits: const {
       "second": const {"one":"{0} sek","other":"{0} sek"},
@@ -21,7 +21,7 @@ final symbols = new RelativeTimeSymbols(      units: const {
       "day": const {"one":"{0} dag","other":"{0} dager"},
       "week": const {"one":"{0} uke","other":"{0} uker"},
       "month": const {"one":"{0} md.","other":"{0} md."},
-      "year": const {"one":"{0} år","other":"{0} år"}
+      "year": const {"one":"{0} Ã¥r","other":"{0} Ã¥r"}
     },
     pastUnits: const {},
     futureUnits: const {});

@@ -3,9 +3,10 @@
 
 library plural_locale_tzm;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/tzm.dart' as plural_symbols_tzm;
-  
+
   void init() {
   PluralLocaleImpl.map['tzm'] = plural_symbols_tzm.symbols;
   }

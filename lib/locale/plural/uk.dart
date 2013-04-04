@@ -3,9 +3,10 @@
 
 library plural_locale_uk;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/uk.dart' as plural_symbols_uk;
-  
+
   void init() {
   PluralLocaleImpl.map['uk'] = plural_symbols_uk.symbols;
   }

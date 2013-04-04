@@ -3,9 +3,10 @@
 
 library plural_locale_gsw;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/gsw.dart' as plural_symbols_gsw;
-  
+
   void init() {
   PluralLocaleImpl.map['gsw'] = plural_symbols_gsw.symbols;
   }

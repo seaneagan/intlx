@@ -3,10 +3,11 @@
 
 library relative_time_locale_zh_CN;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/relative_time/symbols.dart';
   import 'package:intlx/src/relative_time/locale/zh_CN.dart' as relative_time_symbols_zh_CN;
     import '../plural/zh.dart' as plural_locale_zh;
-  
+
   void init() {
     RelativeTimeSymbols.map['zh_CN'] = relative_time_symbols_zh_CN.symbols;
       plural_locale_zh.init();

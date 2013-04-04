@@ -3,14 +3,14 @@
 
 library relative_time_symbols_sq;
 
-import '../symbols.dart';
+import 'package:intlx/src/relative_time/symbols.dart';
 
 final symbols = new RelativeTimeSymbols(      units: const {
-      "second": const {"one":"{0} sekondë","other":"{0} sekonda"},
-      "minute": const {"one":"{0} minutë","other":"{0} minuta"},
-      "hour": const {"one":"{0} orë","other":"{0} h"},
-      "day": const {"one":"{0} ditë","other":"{0} ditë"},
-      "week": const {"one":"{0} javë","other":"{0} w"},
+      "second": const {"one":"{0} sekondÃ«","other":"{0} sekonda"},
+      "minute": const {"one":"{0} minutÃ«","other":"{0} minuta"},
+      "hour": const {"one":"{0} orÃ«","other":"{0} h"},
+      "day": const {"one":"{0} ditÃ«","other":"{0} ditÃ«"},
+      "week": const {"one":"{0} javÃ«","other":"{0} w"},
       "month": const {"one":"{0} muaj","other":"{0} m"},
       "year": const {"one":"{0} vit","other":"{0} vjet"}
     },

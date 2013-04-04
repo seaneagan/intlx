@@ -3,9 +3,10 @@
 
 library plural_locale_ses;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/ses.dart' as plural_symbols_ses;
-  
+
   void init() {
   PluralLocaleImpl.map['ses'] = plural_symbols_ses.symbols;
   }

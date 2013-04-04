@@ -3,7 +3,7 @@
 
 library plural_symbols_yo;
 
-import '../plural.dart';
+import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('yo', (int n) {
 return PluralCategory.OTHER;

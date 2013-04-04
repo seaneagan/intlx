@@ -3,9 +3,10 @@
 
 library plural_locale_haw;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/haw.dart' as plural_symbols_haw;
-  
+
   void init() {
   PluralLocaleImpl.map['haw'] = plural_symbols_haw.symbols;
   }

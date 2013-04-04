@@ -2,7 +2,7 @@
 library collection_locale_build;
 
 import 'dart:io';
-import 'dart:json';
+import 'dart:json' as json;
 import '../util.dart';
 import 'package:intlx/src/internal.dart';
 
@@ -28,7 +28,7 @@ class CollectionLibraryWriter extends JsonSourcedLibraryWriter {
     start: '${data["start"]}',
     middle: '${data["middle"]}',
     end: '${data["end"]}',
-    indexed: const ${JSON.stringify(indexed)}""";
+    indexed: const ${json.stringify(indexed)}""";
   }
 
 }

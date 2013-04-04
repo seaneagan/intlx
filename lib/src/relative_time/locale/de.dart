@@ -3,7 +3,7 @@
 
 library relative_time_symbols_de;
 
-import '../symbols.dart';
+import 'package:intlx/src/relative_time/symbols.dart';
 
 final symbols = new RelativeTimeSymbols(      units: const {
       "second": const {"one":"{0} Sekunde","other":"{0} Sekunden"},
@@ -24,20 +24,20 @@ final symbols = new RelativeTimeSymbols(      units: const {
       "year": const {"one":"{0} Jahr","other":"{0} Jahre"}
     },
       pastUnits: const {
-      "second": const {"1":"Vor 1 Sekunde","one":"Vor {0} Sekunde","0":"Vor 0 Sekunden","other":"Vor {0} Sekunden"},
-      "minute": const {"1":"Vor 1 Minute","one":"Vor {0} Minute","0":"Vor 0 Minuten","other":"Vor {0} Minuten"},
-      "hour": const {"1":"Vor 1 Stunde","one":"Vor {0} Stunde","0":"Vor 0 Stunden","other":"Vor {0} Stunden"},
-      "day": const {"1":"Vor 1 Tag","one":"Vor {0} Tag","0":"Vor 0 Tagen","other":"Vor {0} Tagen"},
-      "week": const {"1":"Vor 1 Woche","one":"Vor {0} Woche","0":"Vor 0 Wochen","other":"Vor {0} Wochen"},
-      "month": const {"1":"Vor 1 Monat","one":"Vor {0} Monat","0":"Vor 0 Monaten","other":"Vor {0} Monaten"},
-      "year": const {"1":"Vor 1 Jahr","one":"Vor {0} Jahr","0":"Vor 0 Jahren","other":"Vor {0} Jahren"}
+      "second": const {"1":"Vor 1Â Sekunde","one":"Vor {0} Sekunde","0":"Vor 0Â Sekunden","other":"Vor {0} Sekunden"},
+      "minute": const {"1":"Vor 1Â Minute","one":"Vor {0} Minute","0":"Vor 0Â Minuten","other":"Vor {0} Minuten"},
+      "hour": const {"1":"Vor 1Â Stunde","one":"Vor {0} Stunde","0":"Vor 0Â Stunden","other":"Vor {0} Stunden"},
+      "day": const {"1":"Vor 1Â Tag","one":"Vor {0} Tag","0":"Vor 0Â Tagen","other":"Vor {0} Tagen"},
+      "week": const {"1":"Vor 1Â Woche","one":"Vor {0} Woche","0":"Vor 0Â Wochen","other":"Vor {0} Wochen"},
+      "month": const {"1":"Vor 1Â Monat","one":"Vor {0} Monat","0":"Vor 0Â Monaten","other":"Vor {0} Monaten"},
+      "year": const {"1":"Vor 1Â Jahr","one":"Vor {0} Jahr","0":"Vor 0Â Jahren","other":"Vor {0} Jahren"}
     },
       futureUnits: const {
-      "second": const {"1":"In 1 Sekunde","one":"In {0} Sekunde","0":"In 0 Sekunden","other":"In {0} Sekunden"},
-      "minute": const {"1":"In 1 Minute","one":"In {0} Minute","0":"In 0 Minuten","other":"In {0} Minuten"},
-      "hour": const {"1":"In 1 Stunde","one":"In {0} Stunde","0":"In 0 Stunden","other":"In {0} Stunden"},
-      "day": const {"1":"In 1 Tag","one":"In {0} Tag","0":"In 0 Tagen","other":"In {0} Tagen"},
-      "week": const {"1":"In 1 Woche","one":"In {0} Woche","0":"In 0 Wochen","other":"In {0} Wochen"},
-      "month": const {"1":"In 1 Monat","one":"In {0} Monat","0":"In 0 Monaten","other":"In {0} Monaten"},
-      "year": const {"1":"In 1 Jahr","one":"In {0} Jahr","0":"In 0 Jahren","other":"In {0} Jahren"}
+      "second": const {"1":"In 1Â Sekunde","one":"In {0} Sekunde","0":"In 0Â Sekunden","other":"In {0} Sekunden"},
+      "minute": const {"1":"In 1Â Minute","one":"In {0} Minute","0":"In 0Â Minuten","other":"In {0} Minuten"},
+      "hour": const {"1":"In 1Â Stunde","one":"In {0} Stunde","0":"In 0Â Stunden","other":"In {0} Stunden"},
+      "day": const {"1":"In 1Â Tag","one":"In {0} Tag","0":"In 0Â Tagen","other":"In {0} Tagen"},
+      "week": const {"1":"In 1Â Woche","one":"In {0} Woche","0":"In 0Â Wochen","other":"In {0} Wochen"},
+      "month": const {"1":"In 1Â Monat","one":"In {0} Monat","0":"In 0Â Monaten","other":"In {0} Monaten"},
+      "year": const {"1":"In 1Â Jahr","one":"In {0} Jahr","0":"In 0Â Jahren","other":"In {0} Jahren"}
     });

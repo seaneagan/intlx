@@ -3,9 +3,10 @@
 
 library plural_locale_saq;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/saq.dart' as plural_symbols_saq;
-  
+
   void init() {
   PluralLocaleImpl.map['saq'] = plural_symbols_saq.symbols;
   }

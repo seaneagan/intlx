@@ -3,7 +3,7 @@
 
 library plural_symbols_to;
 
-import '../plural.dart';
+import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('to', (int n) {
 return PluralCategory.OTHER;

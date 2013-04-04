@@ -3,9 +3,10 @@
 
 library collection_locale_ms;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/collection/symbols.dart';
   import 'package:intlx/src/collection/locale/ms.dart' as collection_symbols_ms;
-  
+
   void init() {
   CollectionSymbols.map['ms'] = collection_symbols_ms.symbols;
   }

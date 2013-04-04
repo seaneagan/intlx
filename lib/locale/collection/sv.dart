@@ -3,9 +3,10 @@
 
 library collection_locale_sv;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/collection/symbols.dart';
   import 'package:intlx/src/collection/locale/sv.dart' as collection_symbols_sv;
-  
+
   void init() {
   CollectionSymbols.map['sv'] = collection_symbols_sv.symbols;
   }

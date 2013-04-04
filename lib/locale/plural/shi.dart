@@ -3,9 +3,10 @@
 
 library plural_locale_shi;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/shi.dart' as plural_symbols_shi;
-  
+
   void init() {
   PluralLocaleImpl.map['shi'] = plural_symbols_shi.symbols;
   }

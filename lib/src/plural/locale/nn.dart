@@ -3,7 +3,7 @@
 
 library plural_symbols_nn;
 
-import '../plural.dart';
+import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('nn', (int n) {
 if(n == 1) return PluralCategory.ONE;

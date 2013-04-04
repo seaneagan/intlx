@@ -3,10 +3,11 @@
 
 library relative_time_locale_en_AU;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/relative_time/symbols.dart';
   import 'package:intlx/src/relative_time/locale/en_AU.dart' as relative_time_symbols_en_AU;
     import '../plural/en.dart' as plural_locale_en;
-  
+
   void init() {
     RelativeTimeSymbols.map['en_AU'] = relative_time_symbols_en_AU.symbols;
       plural_locale_en.init();

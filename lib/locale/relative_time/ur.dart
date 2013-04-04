@@ -3,10 +3,11 @@
 
 library relative_time_locale_ur;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/relative_time/symbols.dart';
   import 'package:intlx/src/relative_time/locale/ur.dart' as relative_time_symbols_ur;
     import '../plural/ur.dart' as plural_locale_ur;
-  
+
   void init() {
     RelativeTimeSymbols.map['ur'] = relative_time_symbols_ur.symbols;
       plural_locale_ur.init();

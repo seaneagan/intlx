@@ -3,9 +3,10 @@
 
 library plural_locale_bg;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/bg.dart' as plural_symbols_bg;
-  
+
   void init() {
   PluralLocaleImpl.map['bg'] = plural_symbols_bg.symbols;
   }

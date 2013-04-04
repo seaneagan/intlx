@@ -3,25 +3,25 @@
 
 library relative_time_symbols_zh_HK;
 
-import '../symbols.dart';
+import 'package:intlx/src/relative_time/symbols.dart';
 
 final symbols = new RelativeTimeSymbols(      units: const {
-      "second": const {"other":"{0}秒"},
-      "minute": const {"other":"{0}分"},
-      "hour": const {"other":"{0}時"},
-      "day": const {"other":"{0}日"},
-      "week": const {"other":"{0}星期"},
-      "month": const {"other":"{0}月"},
-      "year": const {"other":"{0}年"}
+      "second": const {"other":"{0}ç§"},
+      "minute": const {"other":"{0}å"},
+      "hour": const {"other":"{0}æ"},
+      "day": const {"other":"{0}æ¥"},
+      "week": const {"other":"{0}ææ"},
+      "month": const {"other":"{0}æ"},
+      "year": const {"other":"{0}å¹´"}
     },
       shortUnits: const {
-      "second": const {"other":"{0}秒"},
-      "minute": const {"other":"{0}分"},
-      "hour": const {"other":"{0}小時"},
-      "day": const {"other":"{0}日"},
-      "week": const {"other":"{0}週"},
-      "month": const {"other":"{0}月"},
-      "year": const {"other":"{0}年"}
+      "second": const {"other":"{0}ç§"},
+      "minute": const {"other":"{0}å"},
+      "hour": const {"other":"{0}å°æ"},
+      "day": const {"other":"{0}æ¥"},
+      "week": const {"other":"{0}é±"},
+      "month": const {"other":"{0}æ"},
+      "year": const {"other":"{0}å¹´"}
     },
     pastUnits: const {},
     futureUnits: const {});

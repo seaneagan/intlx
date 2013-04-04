@@ -3,15 +3,15 @@
 
 library relative_time_symbols_lv;
 
-import '../symbols.dart';
+import 'package:intlx/src/relative_time/symbols.dart';
 
 final symbols = new RelativeTimeSymbols(      units: const {
       "second": const {"one":"{0} sekunde","other":"{0} sekundes","zero":"{0} sekundes"},
-      "minute": const {"one":"{0} minūte","other":"{0} minūtes","zero":"{0} minūtes"},
+      "minute": const {"one":"{0} minÅ«te","other":"{0} minÅ«tes","zero":"{0} minÅ«tes"},
       "hour": const {"one":"{0} stunda","other":"{0} stundas","zero":"{0} stundas"},
       "day": const {"one":"{0} diennakts","other":"{0} diennaktis","zero":"{0} diennaktis"},
-      "week": const {"one":"{0} nedēļa","other":"{0} nedēļas","zero":"{0} nedēļas"},
-      "month": const {"one":"{0} mēnesis","other":"{0} mēneši","zero":"{0} mēneši"},
+      "week": const {"one":"{0} nedÄÄ¼a","other":"{0} nedÄÄ¼as","zero":"{0} nedÄÄ¼as"},
+      "month": const {"one":"{0} mÄnesis","other":"{0} mÄneÅ¡i","zero":"{0} mÄneÅ¡i"},
       "year": const {"one":"{0} gads","other":"{0} gadi","zero":"{0} gadi"}
     },
       shortUnits: const {
@@ -20,24 +20,24 @@ final symbols = new RelativeTimeSymbols(      units: const {
       "hour": const {"one":"{0} h","other":"{0} h","zero":"{0} h"},
       "day": const {"one":"{0} diena","other":"{0} dienas","zero":"{0} dienas"},
       "week": const {"one":"{0} ned.","other":"{0} ned.","zero":"{0} ned."},
-      "month": const {"one":"{0} mēn.","other":"{0} mēn.","zero":"{0} mēn."},
+      "month": const {"one":"{0} mÄn.","other":"{0} mÄn.","zero":"{0} mÄn."},
       "year": const {"one":"{0} g.","other":"{0} g.","zero":"{0} g."}
     },
       pastUnits: const {
-      "second": const {"1":"Pirms 1 sekundes","one":"Pirms {0} sekundes","0":"Pirms 0 sekundēm","other":"Pirms {0} sekundēm","zero":"Pirms {0} sekundēm"},
-      "minute": const {"1":"Pirms 1 minūtes","one":"Pirms {0} minūtes","0":"Pirms 0 minūtēm","other":"Pirms {0} minūtēm","zero":"Pirms {0} minūtēm"},
-      "hour": const {"1":"Pirms 1 stundas","one":"Pirms {0} stundas","0":"Pirms 0 stundām","other":"Pirms {0} stundām","zero":"Pirms {0} stundām"},
-      "day": const {"1":"Pirms 1 dienas","one":"Pirms {0} dienas","0":"Pirms 0 dienām","other":"Pirms {0} dienām","zero":"Pirms {0} dienām"},
-      "week": const {"1":"Pirms 1 nedēļas","one":"Pirms {0} nedēļas","0":"Pirms 0 nedēļām","other":"Pirms {0} nedēļām","zero":"Pirms {0} nedēļām"},
-      "month": const {"1":"Pirms 1 mēneša","one":"Pirms {0} mēneša","0":"Pirms 0 mēnešiem","other":"Pirms {0} mēnešiem","zero":"Pirms {0} mēnešiem"},
-      "year": const {"1":"Pirms 1 gada","one":"Pirms {0} gada","0":"Pirms 0 gadiem","other":"Pirms {0} gadiem","zero":"Pirms {0} gadiem"}
+      "second": const {"1":"Pirms 1Â sekundes","one":"Pirms {0} sekundes","0":"Pirms 0Â sekundÄm","other":"Pirms {0} sekundÄm","zero":"Pirms {0} sekundÄm"},
+      "minute": const {"1":"Pirms 1Â minÅ«tes","one":"Pirms {0} minÅ«tes","0":"Pirms 0Â minÅ«tÄm","other":"Pirms {0} minÅ«tÄm","zero":"Pirms {0} minÅ«tÄm"},
+      "hour": const {"1":"Pirms 1Â stundas","one":"Pirms {0} stundas","0":"Pirms 0Â stundÄm","other":"Pirms {0} stundÄm","zero":"Pirms {0} stundÄm"},
+      "day": const {"1":"Pirms 1Â dienas","one":"Pirms {0} dienas","0":"Pirms 0Â dienÄm","other":"Pirms {0} dienÄm","zero":"Pirms {0} dienÄm"},
+      "week": const {"1":"Pirms 1Â nedÄÄ¼as","one":"Pirms {0} nedÄÄ¼as","0":"Pirms 0Â nedÄÄ¼Äm","other":"Pirms {0} nedÄÄ¼Äm","zero":"Pirms {0} nedÄÄ¼Äm"},
+      "month": const {"1":"Pirms 1Â mÄneÅ¡a","one":"Pirms {0} mÄneÅ¡a","0":"Pirms 0Â mÄneÅ¡iem","other":"Pirms {0} mÄneÅ¡iem","zero":"Pirms {0} mÄneÅ¡iem"},
+      "year": const {"1":"Pirms 1Â gada","one":"Pirms {0} gada","0":"Pirms 0Â gadiem","other":"Pirms {0} gadiem","zero":"Pirms {0} gadiem"}
     },
       futureUnits: const {
-      "second": const {"1":"Pēc 1 sekundes","one":"Pēc {0} sekundes","0":"Pēc 0 sekundēm","other":"Pēc {0} sekundēm","zero":"Pēc {0} sekundēm"},
-      "minute": const {"1":"Pēc 1 minūtes","one":"Pēc {0} minūtes","0":"Pēc 0 minūtēm","other":"Pēc {0} minūtēm","zero":"Pēc {0} minūtēm"},
-      "hour": const {"1":"Pēc 1 stundas","one":"Pēc {0} stundas","0":"Pēc 0 stundām","other":"Pēc {0} stundām","zero":"Pēc {0} stundām"},
-      "day": const {"1":"Pēc 1 dienas","one":"Pēc {0} dienas","0":"Pēc 0 dienām","other":"Pēc {0} dienām","zero":"Pēc {0} dienām"},
-      "week": const {"1":"Pēc 1 nedēļas","one":"Pēc {0} nedēļas","0":"Pēc 0 nedēļām","other":"Pēc {0} nedēļām","zero":"Pēc {0} nedēļām"},
-      "month": const {"1":"Pēc 1 mēneša","one":"Pēc {0} mēneša","0":"Pēc 0 mēnešiem","other":"Pēc {0} mēnešiem","zero":"Pēc {0} mēnešiem"},
-      "year": const {"1":"Pēc 1 gada","one":"Pēc {0} gada","0":"Pēc 0 gadiem","other":"Pēc {0} gadiem","zero":"Pēc {0} gadiem"}
+      "second": const {"1":"PÄc 1Â sekundes","one":"PÄc {0} sekundes","0":"PÄc 0Â sekundÄm","other":"PÄc {0} sekundÄm","zero":"PÄc {0} sekundÄm"},
+      "minute": const {"1":"PÄc 1Â minÅ«tes","one":"PÄc {0} minÅ«tes","0":"PÄc 0Â minÅ«tÄm","other":"PÄc {0} minÅ«tÄm","zero":"PÄc {0} minÅ«tÄm"},
+      "hour": const {"1":"PÄc 1Â stundas","one":"PÄc {0} stundas","0":"PÄc 0Â stundÄm","other":"PÄc {0} stundÄm","zero":"PÄc {0} stundÄm"},
+      "day": const {"1":"PÄc 1Â dienas","one":"PÄc {0} dienas","0":"PÄc 0Â dienÄm","other":"PÄc {0} dienÄm","zero":"PÄc {0} dienÄm"},
+      "week": const {"1":"PÄc 1Â nedÄÄ¼as","one":"PÄc {0} nedÄÄ¼as","0":"PÄc 0Â nedÄÄ¼Äm","other":"PÄc {0} nedÄÄ¼Äm","zero":"PÄc {0} nedÄÄ¼Äm"},
+      "month": const {"1":"PÄc 1Â mÄneÅ¡a","one":"PÄc {0} mÄneÅ¡a","0":"PÄc 0Â mÄneÅ¡iem","other":"PÄc {0} mÄneÅ¡iem","zero":"PÄc {0} mÄneÅ¡iem"},
+      "year": const {"1":"PÄc 1Â gada","one":"PÄc {0} gada","0":"PÄc 0Â gadiem","other":"PÄc {0} gadiem","zero":"PÄc {0} gadiem"}
     });

@@ -3,7 +3,7 @@
 
 library plural_symbols_smj;
 
-import '../plural.dart';
+import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('smj', (int n) {
 if(n == 1) return PluralCategory.ONE;

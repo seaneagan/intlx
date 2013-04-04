@@ -2,7 +2,7 @@
 library relative_time_locale_build;
 
 import 'dart:io';
-import 'dart:json';
+import 'dart:json' as json;
 import '../util.dart';
 import 'package:intlx/src/internal.dart';
 import 'package:intlx/src/plural/locale_list.dart';
@@ -23,13 +23,13 @@ class RelativeTimeLibraryWriter extends JsonSourcedLibraryWriter {
       if(units.isEmpty) return "$unitType: const {}";
       return '''
   $unitType: const {
-      "second": const ${JSON.stringify(units["second"])},
-      "minute": const ${JSON.stringify(units["minute"])},
-      "hour": const ${JSON.stringify(units["hour"])},
-      "day": const ${JSON.stringify(units["day"])},
-      "week": const ${JSON.stringify(units["week"])},
-      "month": const ${JSON.stringify(units["month"])},
-      "year": const ${JSON.stringify(units["year"])}
+      "second": const ${json.stringify(units["second"])},
+      "minute": const ${json.stringify(units["minute"])},
+      "hour": const ${json.stringify(units["hour"])},
+      "day": const ${json.stringify(units["day"])},
+      "week": const ${json.stringify(units["week"])},
+      "month": const ${json.stringify(units["month"])},
+      "year": const ${json.stringify(units["year"])}
     }''';
     }
 

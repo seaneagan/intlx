@@ -3,10 +3,10 @@
 
 library plural_symbols_lt;
 
-import '../plural.dart';
+import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('lt', (int n) {
-if(n % 10 == 1 && !([11, 12, 13, 14, 15, 16, 17, 18, 19].contains(n % 100))) return PluralCategory.ONE;
-else if(([2, 3, 4, 5, 6, 7, 8, 9].contains(n % 10)) && !([11, 12, 13, 14, 15, 16, 17, 18, 19].contains(n % 100))) return PluralCategory.FEW;
+if(n % 10 == 1 && !(range(9, 11).contains(n % 100))) return PluralCategory.ONE;
+else if((range(8, 2).contains(n % 10)) && !(range(9, 11).contains(n % 100))) return PluralCategory.FEW;
 else return PluralCategory.OTHER;
   });

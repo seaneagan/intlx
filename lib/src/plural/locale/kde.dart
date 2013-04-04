@@ -3,7 +3,7 @@
 
 library plural_symbols_kde;
 
-import '../plural.dart';
+import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('kde', (int n) {
 return PluralCategory.OTHER;

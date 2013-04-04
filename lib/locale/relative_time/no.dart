@@ -3,10 +3,11 @@
 
 library relative_time_locale_no;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/relative_time/symbols.dart';
   import 'package:intlx/src/relative_time/locale/no.dart' as relative_time_symbols_no;
     import '../plural/no.dart' as plural_locale_no;
-  
+
   void init() {
     RelativeTimeSymbols.map['no'] = relative_time_symbols_no.symbols;
       plural_locale_no.init();

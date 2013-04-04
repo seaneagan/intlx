@@ -3,10 +3,11 @@
 
 library relative_time_locale_sq;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/relative_time/symbols.dart';
   import 'package:intlx/src/relative_time/locale/sq.dart' as relative_time_symbols_sq;
     import '../plural/sq.dart' as plural_locale_sq;
-  
+
   void init() {
     RelativeTimeSymbols.map['sq'] = relative_time_symbols_sq.symbols;
       plural_locale_sq.init();

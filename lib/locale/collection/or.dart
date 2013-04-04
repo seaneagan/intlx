@@ -3,9 +3,10 @@
 
 library collection_locale_or;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/collection/symbols.dart';
   import 'package:intlx/src/collection/locale/or.dart' as collection_symbols_or;
-  
+
   void init() {
   CollectionSymbols.map['or'] = collection_symbols_or.symbols;
   }

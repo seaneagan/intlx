@@ -3,9 +3,10 @@
 
 library plural_locale_ak;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/ak.dart' as plural_symbols_ak;
-  
+
   void init() {
   PluralLocaleImpl.map['ak'] = plural_symbols_ak.symbols;
   }

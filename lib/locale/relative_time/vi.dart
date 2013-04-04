@@ -3,10 +3,11 @@
 
 library relative_time_locale_vi;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/relative_time/symbols.dart';
   import 'package:intlx/src/relative_time/locale/vi.dart' as relative_time_symbols_vi;
     import '../plural/vi.dart' as plural_locale_vi;
-  
+
   void init() {
     RelativeTimeSymbols.map['vi'] = relative_time_symbols_vi.symbols;
       plural_locale_vi.init();

@@ -3,7 +3,7 @@
 
 library plural_symbols_lv;
 
-import '../plural.dart';
+import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('lv', (int n) {
 if(n == 0) return PluralCategory.ZERO;

@@ -3,9 +3,10 @@
 
 library plural_locale_ka;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/ka.dart' as plural_symbols_ka;
-  
+
   void init() {
   PluralLocaleImpl.map['ka'] = plural_symbols_ka.symbols;
   }

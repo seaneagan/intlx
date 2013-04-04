@@ -3,9 +3,10 @@
 
 library plural_locale_ps;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/ps.dart' as plural_symbols_ps;
-  
+
   void init() {
   PluralLocaleImpl.map['ps'] = plural_symbols_ps.symbols;
   }

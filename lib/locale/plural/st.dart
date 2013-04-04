@@ -3,9 +3,10 @@
 
 library plural_locale_st;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/st.dart' as plural_symbols_st;
-  
+
   void init() {
   PluralLocaleImpl.map['st'] = plural_symbols_st.symbols;
   }

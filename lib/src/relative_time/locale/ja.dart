@@ -3,41 +3,41 @@
 
 library relative_time_symbols_ja;
 
-import '../symbols.dart';
+import 'package:intlx/src/relative_time/symbols.dart';
 
 final symbols = new RelativeTimeSymbols(      units: const {
-      "second": const {"other":"{0}秒"},
-      "minute": const {"other":"{0}分"},
-      "hour": const {"other":"{0}時間"},
-      "day": const {"other":"{0}日"},
-      "week": const {"other":"{0}週"},
-      "month": const {"other":"{0}か月"},
-      "year": const {"other":"{0}年"}
+      "second": const {"other":"{0}ç§"},
+      "minute": const {"other":"{0}å"},
+      "hour": const {"other":"{0}æé"},
+      "day": const {"other":"{0}æ¥"},
+      "week": const {"other":"{0}é±"},
+      "month": const {"other":"{0}ãæ"},
+      "year": const {"other":"{0}å¹´"}
     },
       shortUnits: const {
-      "second": const {"other":"{0}秒"},
-      "minute": const {"other":"{0}分"},
-      "hour": const {"other":"{0}時間"},
-      "day": const {"other":"{0}日"},
-      "week": const {"other":"{0}週"},
-      "month": const {"other":"{0}か月"},
-      "year": const {"other":"{0}年"}
+      "second": const {"other":"{0}ç§"},
+      "minute": const {"other":"{0}å"},
+      "hour": const {"other":"{0}æé"},
+      "day": const {"other":"{0}æ¥"},
+      "week": const {"other":"{0}é±"},
+      "month": const {"other":"{0}ãæ"},
+      "year": const {"other":"{0}å¹´"}
     },
       pastUnits: const {
-      "second": const {"1":"1 秒前","0":"0 秒前","other":"{0}秒前"},
-      "minute": const {"1":"1 分前","0":"0 分前","other":"{0}分前"},
-      "hour": const {"1":"1 時間前","0":"0 時間前","other":"{0}時間前"},
-      "day": const {"1":"1 日前","0":"0 日前","other":"{0}日前"},
-      "week": const {"1":"1 週間前","0":"0 週間前","other":"{0}週前"},
-      "month": const {"1":"1 か月前","0":"0 か月前","other":"{0}か月前"},
-      "year": const {"1":"1 年前","0":"0 年前","other":"{0}年前"}
+      "second": const {"1":"1 ç§å","0":"0 ç§å","other":"{0}ç§å"},
+      "minute": const {"1":"1 åå","0":"0 åå","other":"{0}åå"},
+      "hour": const {"1":"1 æéå","0":"0 æéå","other":"{0}æéå"},
+      "day": const {"1":"1 æ¥å","0":"0 æ¥å","other":"{0}æ¥å"},
+      "week": const {"1":"1 é±éå","0":"0 é±éå","other":"{0}é±å"},
+      "month": const {"1":"1 ãæå","0":"0 ãæå","other":"{0}ãæå"},
+      "year": const {"1":"1 å¹´å","0":"0 å¹´å","other":"{0}å¹´å"}
     },
       futureUnits: const {
-      "second": const {"1":"1 秒後","0":"0 秒後","other":"{0} 秒後"},
-      "minute": const {"1":"1 分後","0":"0 分後","other":"{0} 分後"},
-      "hour": const {"1":"1 時間後","0":"0 時間後","other":"{0} 時間後"},
-      "day": const {"1":"1 日後","0":"0 日後","other":"{0} 日後"},
-      "week": const {"1":"1 週間後","0":"0 週間後","other":"{0} 週間後"},
-      "month": const {"1":"1 か月後","0":"0 か月後","other":"{0} か月後"},
-      "year": const {"1":"1 年後","0":"0 年後","other":"{0} 年後"}
+      "second": const {"1":"1 ç§å¾","0":"0 ç§å¾","other":"{0} ç§å¾"},
+      "minute": const {"1":"1 åå¾","0":"0 åå¾","other":"{0} åå¾"},
+      "hour": const {"1":"1 æéå¾","0":"0 æéå¾","other":"{0} æéå¾"},
+      "day": const {"1":"1 æ¥å¾","0":"0 æ¥å¾","other":"{0} æ¥å¾"},
+      "week": const {"1":"1 é±éå¾","0":"0 é±éå¾","other":"{0} é±éå¾"},
+      "month": const {"1":"1 ãæå¾","0":"0 ãæå¾","other":"{0} ãæå¾"},
+      "year": const {"1":"1 å¹´å¾","0":"0 å¹´å¾","other":"{0} å¹´å¾"}
     });

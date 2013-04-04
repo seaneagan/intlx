@@ -3,9 +3,10 @@
 
 library collection_locale_ca;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/collection/symbols.dart';
   import 'package:intlx/src/collection/locale/ca.dart' as collection_symbols_ca;
-  
+
   void init() {
   CollectionSymbols.map['ca'] = collection_symbols_ca.symbols;
   }

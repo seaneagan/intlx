@@ -3,9 +3,10 @@
 
 library plural_locale_teo;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/teo.dart' as plural_symbols_teo;
-  
+
   void init() {
   PluralLocaleImpl.map['teo'] = plural_symbols_teo.symbols;
   }

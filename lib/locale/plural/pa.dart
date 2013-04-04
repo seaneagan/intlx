@@ -3,9 +3,10 @@
 
 library plural_locale_pa;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/pa.dart' as plural_symbols_pa;
-  
+
   void init() {
   PluralLocaleImpl.map['pa'] = plural_symbols_pa.symbols;
   }

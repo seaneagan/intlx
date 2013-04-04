@@ -3,9 +3,10 @@
 
 library plural_locale_el;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/el.dart' as plural_symbols_el;
-  
+
   void init() {
   PluralLocaleImpl.map['el'] = plural_symbols_el.symbols;
   }

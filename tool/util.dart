@@ -4,9 +4,10 @@ library util;
 import 'dart:io';
 import 'dart:uri';
 import 'dart:utf';
-import 'dart:json';
+import 'dart:json' as json;
 import 'package:http/http.dart';
 import 'locale_data.dart';
+import 'dart:async';
 
 String readFile(filePath) {
   var file = new File.fromPath(filePath);
@@ -15,14 +16,7 @@ String readFile(filePath) {
 
 void writeFile(Path path, String content) {
   var targetFile = new File.fromPath(path);
-  // TODO: replace below with following line when it works
-  // targetFile.writeAsStringSync(content);
-  targetFile.createSync();
-  var raf = targetFile.openSync(FileMode.WRITE);
-  raf.truncateSync(0);
-  raf.writeStringSync(content);
-  raf.flushSync();
-  raf.close();
+  targetFile.writeAsStringSync(content);
 }
 
 abstract class LibraryWriter {
@@ -87,16 +81,13 @@ final symbols = new $symbolsClass(${getSymbolsConstructorArgs(locale, data)});
   void writeAllLocaleLibrary() {
     writeLocaleLibrary("all", getAllLocaleLibraryImports(), getAllLocaleLibraryLogic());
   }
-  String getAllLocaleLibraryImports() => Strings.join(localeList.mappedBy(generateLocaleImport).toList(), "\n");
+  String getAllLocaleLibraryImports() => localeList.map(generateLocaleImport).toList().join("\n");
 
   String getAllLocaleLibraryLogic() {
-    var symbolsMap = <String, dynamic> {};
-    localeList.forEach((String locale){
-      symbolsMap[locale] = '${getSymbolsLibraryIdentifier(locale)}.symbols';
-    });
+    var mapContents = localeList.map((String locale) => '"$locale": ${getSymbolsLibraryIdentifier(locale)}.symbols').join(", ");
     return '''
-      var symbolsMap = $symbolsMap;
-      symbolsMap.forEach((String locale, symbols) => $symbolsClass.map[locale] = symbols);''';
+      var symbolsMap = <String, $symbolsClass> {$mapContents};
+      symbolsMap.forEach((String locale, $symbolsClass symbols) => $symbolsClass.map[locale] = symbols);''';
   }
 
   String generateLocaleImport(String locale) => "import 'package:intlx/src/$type/locale/$locale.dart' as ${getSymbolsLibraryIdentifier(locale)};";
@@ -104,7 +95,7 @@ final symbols = new $symbolsClass(${getSymbolsConstructorArgs(locale, data)});
   String getSymbolsClassLibraryImport() => "import 'package:intlx/src/$type/$symbolsClassLibrary.dart';";
 
   void writeLocaleListLibrary() {
-    String localeListString = JSON.stringify(localeList);
+    String localeListString = json.stringify(localeList);
 
     var code = '''
   const ${type}Locales = const <String> $localeListString;
@@ -116,6 +107,7 @@ final symbols = new $symbolsClass(${getSymbolsConstructorArgs(locale, data)});
   void writeLocaleLibrary(String locale, String imports, String logic) {
     String code = '''
   import 'package:intlx/src/internal.dart';
+  ${getSymbolsClassLibraryImport()}
   $imports
 
   void init() {
@@ -155,20 +147,16 @@ abstract class JsonSourcedLibraryWriter extends LibraryWriter {
 
     var lister = new Directory.fromPath(dataPath).list();
 
-    lister.onFile = (String file) {
-      String locale = new Path.fromNative(file).filenameWithoutExtension;
+    lister.listen((FileSystemEntity fse) {
+      String locale = new Path(fse.path).filenameWithoutExtension;
 
       var filePath = dataPath.append("$locale.json");
-      String json = readFile(filePath);
-      print("json: $json");
-      localeDataMap[locale] = JSON.parse(json);
-    };
-
-    lister.onDone = (completed) {
-      if(completed) {
-        completer.complete(localeDataMap);
-      }
-    };
+      String fileJson = readFile(filePath);
+      localeDataMap[locale] = json.parse(fileJson);
+    },
+    onDone: () {
+      completer.complete(localeDataMap);
+    });
 
     return completer.future;
   }
@@ -186,28 +174,7 @@ $code''';
   writeFile(path.append("$name.dart"), fullCode);
 }
 
-Future<String> fetchUri(String uri) {
-  var completer = new Completer();
-  var connection = new HttpClient().getUrl(new Uri(uri));
-  connection.onResponse = (HttpClientResponse response) {
-    // var input = new StringInputStream(response.inputStream, Encoding.UTF_8);
-    var input = response.inputStream;
-    var listInput = new ListInputStream();
-    input.onData = () {
-      listInput.write(input.read());
-    };
-    input.onClosed = () {
-      var charCodes = utf8ToCodepoints(listInput.read());
-      var body = new String.fromCharCodes(charCodes);
-      print("body: $body");
-      completer.complete(body);
-    };
-  };
-  connection.onError = (var e) {
-    print("getUri error: $e");
-  };
-  return completer.future;
-}
+Future<String> fetchUri(String uri) => get(uri).then((Response response) => response.body);
 
 void writeLocaleJson(String type, String outputPath, String transformJson(String locale, String json)) {
   getLocaleData(type, baseLocales).then((localeJsonMap) => writeLocaleJsonFiles(localeDataPath.append(outputPath), localeJsonMap, transformJson));

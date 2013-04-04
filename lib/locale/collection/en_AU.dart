@@ -3,9 +3,10 @@
 
 library collection_locale_en_AU;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/collection/symbols.dart';
   import 'package:intlx/src/collection/locale/en_AU.dart' as collection_symbols_en_AU;
-  
+
   void init() {
   CollectionSymbols.map['en_AU'] = collection_symbols_en_AU.symbols;
   }

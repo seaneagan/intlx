@@ -3,9 +3,10 @@
 
 library plural_locale_zu;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/zu.dart' as plural_symbols_zu;
-  
+
   void init() {
   PluralLocaleImpl.map['zu'] = plural_symbols_zu.symbols;
   }

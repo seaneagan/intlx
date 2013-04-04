@@ -3,9 +3,10 @@
 
 library plural_locale_wa;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/wa.dart' as plural_symbols_wa;
-  
+
   void init() {
   PluralLocaleImpl.map['wa'] = plural_symbols_wa.symbols;
   }

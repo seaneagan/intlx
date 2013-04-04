@@ -3,9 +3,10 @@
 
 library collection_locale_vi;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/collection/symbols.dart';
   import 'package:intlx/src/collection/locale/vi.dart' as collection_symbols_vi;
-  
+
   void init() {
   CollectionSymbols.map['vi'] = collection_symbols_vi.symbols;
   }

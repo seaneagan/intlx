@@ -3,7 +3,7 @@
 
 library relative_time_symbols_hr;
 
-import '../symbols.dart';
+import 'package:intlx/src/relative_time/symbols.dart';
 
 final symbols = new RelativeTimeSymbols(      units: const {
       "second": const {"one":"{0} sekunda","other":"{0} sekunda","few":"{0} sekunde","many":"{0} sekundi"},
@@ -24,20 +24,20 @@ final symbols = new RelativeTimeSymbols(      units: const {
       "year": const {"one":"{0} g.","other":"{0} g.","few":"{0} g.","many":"{0} g."}
     },
       pastUnits: const {
-      "second": const {"many":"prije {0} sekundi","1":"prije 1 sekundu","one":"prije {0} sekundu","0":"prije 0 sekundi","few":"prije {0} sekunde","other":"prije {0} sekundi"},
-      "minute": const {"many":"prije {0} minuta","1":"prije 1 minutu","one":"prije {0} minutu","0":"prije 0 minuta","few":"prije {0} minute","other":"Prije {0} minuta"},
-      "hour": const {"many":"prije {0} sati","1":"prije 1 h","one":"prije {0} sat","0":"prije 0 sati","few":"prije {0} sata","other":"Prije {0} sati"},
-      "day": const {"many":"prije {0} dana","1":"prije 1 dana","one":"prije {0} dan","0":"prije 0 dana","few":"prije {0} dana","other":"Prije ovoliko dana: {0}"},
-      "week": const {"many":"prije {0} tjedana","1":"prije 1 tjedna","one":"prije {0} tjedan","0":"prije 0 tjedana","few":"prije {0} tjedna","other":"prije ovoliko tjedana: {0}"},
-      "month": const {"many":"prije {0} mjeseci","1":"prije 1 mjeseca","one":"prije {0} mjesec","0":"prije 0 mjeseci","few":"prije {0} mjeseca","other":"prije ovoliko mjeseci: {0}"},
-      "year": const {"many":"prije {0} godina","1":"prije 1 godine","one":"prije {0} godinu","0":"prije 0 godina","few":"prije {0} godine","other":"prije ovoliko godina: {0}"}
+      "second": const {"1":"prije 1 sekundu","one":"prije {0} sekundu","0":"prije 0 sekundi","few":"prije {0} sekunde","other":"prije {0} sekundi","many":"prije {0} sekundi"},
+      "minute": const {"1":"prije 1 minutu","one":"prije {0} minutu","0":"prije 0 minuta","few":"prije {0} minute","other":"Prije {0} minuta","many":"prije {0} minuta"},
+      "hour": const {"1":"prije 1 h","one":"prije {0} sat","0":"prije 0 sati","few":"prije {0} sata","other":"Prije {0} sati","many":"prije {0} sati"},
+      "day": const {"1":"prije 1 dana","one":"prije {0} dan","0":"prije 0 dana","few":"prije {0} dana","other":"Prije ovoliko dana: {0}","many":"prije {0} dana"},
+      "week": const {"1":"prije 1 tjedna","one":"prije {0} tjedan","0":"prije 0 tjedana","few":"prije {0} tjedna","other":"prije ovoliko tjedana: {0}","many":"prije {0} tjedana"},
+      "month": const {"1":"prije 1 mjeseca","one":"prije {0} mjesec","0":"prije 0 mjeseci","few":"prije {0} mjeseca","other":"prije ovoliko mjeseci: {0}","many":"prije {0} mjeseci"},
+      "year": const {"1":"prije 1 godine","one":"prije {0} godinu","0":"prije 0 godina","few":"prije {0} godine","other":"prije ovoliko godina: {0}","many":"prije {0} godina"}
     },
       futureUnits: const {
-      "second": const {"many":"za {0} sekundi","1":"za 1 sekundu","one":"za {0} sekundu","0":"za 0 sekundi","few":"za {0} sekunde","other":"za {0} sekundi"},
-      "minute": const {"many":"za {0} minuta","1":"za 1 min","one":"za {0} minutu","0":"za 0 minuta","few":"za {0} minute","other":"Za {0} minuta"},
-      "hour": const {"many":"za {0} sati","1":"za 1 sat","one":"za {0} sat","0":"za 0 sati","few":"za {0} sata","other":"Za {0} sati"},
-      "day": const {"many":"za {0} dana","1":"za 1 dan","one":"za {0} dan","0":"za 0 dana","few":"za {0} dana","other":"za {0} dana"},
-      "week": const {"many":"za {0} tjedana","1":"za 1 tjedan","one":"za {0} tjedan","0":"za 0 tjedana","few":"za {0} tjedna","other":"za sljedeći broj tjedana: {0}"},
-      "month": const {"many":"za {0} mjeseci","1":"za 1 mjesec","one":"za {0} mjesec","0":"za 0 mjeseci","few":"za {0} mjeseca","other":"za sljedeći broj mjeseci: {0}"},
-      "year": const {"many":"za {0} godina","1":"za 1 godinu","one":"za {0} godinu","0":"za 0 g.","few":"za {0} godine","other":"za {0} godina"}
+      "second": const {"1":"za 1 sekundu","one":"za {0} sekundu","0":"za 0 sekundi","few":"za {0} sekunde","other":"za {0} sekundi","many":"za {0} sekundi"},
+      "minute": const {"1":"za 1 min","one":"za {0} minutu","0":"za 0 minuta","few":"za {0} minute","other":"Za {0} minuta","many":"za {0} minuta"},
+      "hour": const {"1":"za 1 sat","one":"za {0} sat","0":"za 0 sati","few":"za {0} sata","other":"Za {0} sati","many":"za {0} sati"},
+      "day": const {"1":"za 1 dan","one":"za {0} dan","0":"za 0 dana","few":"za {0} dana","other":"za {0} dana","many":"za {0} dana"},
+      "week": const {"1":"za 1 tjedan","one":"za {0} tjedan","0":"za 0 tjedana","few":"za {0} tjedna","other":"za sljedeÄi broj tjedana: {0}","many":"za {0} tjedana"},
+      "month": const {"1":"za 1 mjesec","one":"za {0} mjesec","0":"za 0 mjeseci","few":"za {0} mjeseca","other":"za sljedeÄi broj mjeseci: {0}","many":"za {0} mjeseci"},
+      "year": const {"1":"za 1 godinu","one":"za {0} godinu","0":"za 0 g.","few":"za {0} godine","other":"za {0} godina","many":"za {0} godina"}
     });

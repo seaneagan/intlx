@@ -3,10 +3,11 @@
 
 library relative_time_locale_ca;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/relative_time/symbols.dart';
   import 'package:intlx/src/relative_time/locale/ca.dart' as relative_time_symbols_ca;
     import '../plural/ca.dart' as plural_locale_ca;
-  
+
   void init() {
     RelativeTimeSymbols.map['ca'] = relative_time_symbols_ca.symbols;
       plural_locale_ca.init();

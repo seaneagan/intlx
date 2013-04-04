@@ -3,25 +3,25 @@
 
 library relative_time_symbols_iw;
 
-import '../symbols.dart';
+import 'package:intlx/src/relative_time/symbols.dart';
 
 final symbols = new RelativeTimeSymbols(      units: const {
-      "second": const {"one":"{0} שניה","other":"{0} שניות"},
-      "minute": const {"one":"{0} דקה","other":"{0} דקות"},
-      "hour": const {"one":"{0} שעה","other":"{0} שעות"},
-      "day": const {"one":"{0} יום","other":"{0} ימים"},
-      "week": const {"one":"{0} שבוע","other":"{0} שבועות"},
-      "month": const {"one":"{0} חודש","other":"{0} חודשים"},
-      "year": const {"one":"{0} שנה","other":"{0} שנים"}
+      "second": const {"one":"{0} ×©× ××","other":"{0} ×©× ×××ª"},
+      "minute": const {"one":"{0} ××§×","other":"{0} ××§××ª"},
+      "hour": const {"one":"{0} ×©×¢×","other":"{0} ×©×¢××ª"},
+      "day": const {"one":"{0} ×××","other":"{0} ××××"},
+      "week": const {"one":"{0} ×©×××¢","other":"{0} ×©×××¢××ª"},
+      "month": const {"one":"{0} ××××©","other":"{0} ××××©××"},
+      "year": const {"one":"{0} ×©× ×","other":"{0} ×©× ××"}
     },
       shortUnits: const {
-      "second": const {"one":"{0} שנ׳","other":"{0} שנ׳"},
-      "minute": const {"one":"{0} דק׳","other":"{0} דק׳"},
-      "hour": const {"one":"{0} שעה","other":"{0} שעות"},
-      "day": const {"one":"{0} יום","other":"{0} ימים"},
-      "week": const {"one":"{0} שבוע","other":"{0} שבועות"},
-      "month": const {"one":"{0} חודש","other":"{0} חודשים"},
-      "year": const {"one":"{0} שנה","other":"{0} שנים"}
+      "second": const {"one":"{0} ×©× ×³","other":"{0} ×©× ×³"},
+      "minute": const {"one":"{0} ××§×³","other":"{0} ××§×³"},
+      "hour": const {"one":"{0} ×©×¢×","other":"{0} ×©×¢××ª"},
+      "day": const {"one":"{0} ×××","other":"{0} ××××"},
+      "week": const {"one":"{0} ×©×××¢","other":"{0} ×©×××¢××ª"},
+      "month": const {"one":"{0} ××××©","other":"{0} ××××©××"},
+      "year": const {"one":"{0} ×©× ×","other":"{0} ×©× ××"}
     },
     pastUnits: const {},
     futureUnits: const {});

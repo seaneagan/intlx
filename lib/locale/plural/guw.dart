@@ -3,9 +3,10 @@
 
 library plural_locale_guw;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/guw.dart' as plural_symbols_guw;
-  
+
   void init() {
   PluralLocaleImpl.map['guw'] = plural_symbols_guw.symbols;
   }

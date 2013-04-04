@@ -3,9 +3,10 @@
 
 library plural_locale_nyn;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/nyn.dart' as plural_symbols_nyn;
-  
+
   void init() {
   PluralLocaleImpl.map['nyn'] = plural_symbols_nyn.symbols;
   }

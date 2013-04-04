@@ -3,9 +3,10 @@
 
 library plural_locale_cgg;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/cgg.dart' as plural_symbols_cgg;
-  
+
   void init() {
   PluralLocaleImpl.map['cgg'] = plural_symbols_cgg.symbols;
   }

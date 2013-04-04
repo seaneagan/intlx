@@ -3,7 +3,7 @@
 
 library plural_symbols_bo;
 
-import '../plural.dart';
+import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('bo', (int n) {
 return PluralCategory.OTHER;

@@ -3,7 +3,7 @@
 
 library relative_time_symbols_zu;
 
-import '../symbols.dart';
+import 'package:intlx/src/relative_time/symbols.dart';
 
 final symbols = new RelativeTimeSymbols(      units: const {
       "second": const {"1":"isekhondi elingu-1","0":"0 amasekhondi","other":"{0} amasekhondi"},

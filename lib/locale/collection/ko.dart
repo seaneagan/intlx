@@ -3,9 +3,10 @@
 
 library collection_locale_ko;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/collection/symbols.dart';
   import 'package:intlx/src/collection/locale/ko.dart' as collection_symbols_ko;
-  
+
   void init() {
   CollectionSymbols.map['ko'] = collection_symbols_ko.symbols;
   }

@@ -3,9 +3,10 @@
 
 library collection_locale_pl;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/collection/symbols.dart';
   import 'package:intlx/src/collection/locale/pl.dart' as collection_symbols_pl;
-  
+
   void init() {
   CollectionSymbols.map['pl'] = collection_symbols_pl.symbols;
   }

@@ -3,9 +3,10 @@
 
 library plural_locale_ro;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/ro.dart' as plural_symbols_ro;
-  
+
   void init() {
   PluralLocaleImpl.map['ro'] = plural_symbols_ro.symbols;
   }

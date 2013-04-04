@@ -3,7 +3,7 @@
 
 library plural_symbols_dz;
 
-import '../plural.dart';
+import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('dz', (int n) {
 return PluralCategory.OTHER;

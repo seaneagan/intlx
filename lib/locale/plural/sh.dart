@@ -3,9 +3,10 @@
 
 library plural_locale_sh;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/sh.dart' as plural_symbols_sh;
-  
+
   void init() {
   PluralLocaleImpl.map['sh'] = plural_symbols_sh.symbols;
   }

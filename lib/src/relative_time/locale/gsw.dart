@@ -3,15 +3,15 @@
 
 library relative_time_symbols_gsw;
 
-import '../symbols.dart';
+import 'package:intlx/src/relative_time/symbols.dart';
 
 final symbols = new RelativeTimeSymbols(      units: const {
       "second": const {"one":"{0} Sekunde","other":"{0} Sekunde"},
       "minute": const {"one":"{0} Minuute","other":"{0} Minuute"},
       "hour": const {"one":"{0} Schtund","other":"{0} Schtunde"},
-      "day": const {"one":"{0} Taag","other":"{0} Tääg"},
+      "day": const {"one":"{0} Taag","other":"{0} TÃ¤Ã¤g"},
       "week": const {"one":"{0} Wuche","other":"{0} Wuche"},
-      "month": const {"one":"{0} Monet","other":"{0} Mönet"},
+      "month": const {"one":"{0} Monet","other":"{0} MÃ¶net"},
       "year": const {"one":"{0} Jahr","other":"{0} Jahr"}
     },
       shortUnits: const {

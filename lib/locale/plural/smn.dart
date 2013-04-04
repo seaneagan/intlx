@@ -3,9 +3,10 @@
 
 library plural_locale_smn;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/smn.dart' as plural_symbols_smn;
-  
+
   void init() {
   PluralLocaleImpl.map['smn'] = plural_symbols_smn.symbols;
   }

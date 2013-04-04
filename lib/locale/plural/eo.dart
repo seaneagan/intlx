@@ -3,9 +3,10 @@
 
 library plural_locale_eo;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/eo.dart' as plural_symbols_eo;
-  
+
   void init() {
   PluralLocaleImpl.map['eo'] = plural_symbols_eo.symbols;
   }

@@ -3,9 +3,10 @@
 
 library plural_locale_bs;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/bs.dart' as plural_symbols_bs;
-  
+
   void init() {
   PluralLocaleImpl.map['bs'] = plural_symbols_bs.symbols;
   }

@@ -3,13 +3,13 @@
 
 library relative_time_symbols_fi;
 
-import '../symbols.dart';
+import 'package:intlx/src/relative_time/symbols.dart';
 
 final symbols = new RelativeTimeSymbols(      units: const {
       "second": const {"one":"{0} sekunti","other":"{0} sekuntia"},
       "minute": const {"one":"{0} minuutti","other":"{0} minuuttia"},
       "hour": const {"one":"{0} tunti","other":"{0} tuntia"},
-      "day": const {"one":"{0} päivä","other":"{0} päivää"},
+      "day": const {"one":"{0} pÃ¤ivÃ¤","other":"{0} pÃ¤ivÃ¤Ã¤"},
       "week": const {"one":"{0} viikko","other":"{0} viikkoa"},
       "month": const {"one":"{0} kuukausi","other":"{0} kuukautta"},
       "year": const {"one":"{0} vuosi","other":"{0} vuotta"}
@@ -27,17 +27,17 @@ final symbols = new RelativeTimeSymbols(      units: const {
       "second": const {"1":"sekunti sitten","one":"{0} sekunti sitten","0":"alle sekunti sitten","other":"{0} sekuntia sitten"},
       "minute": const {"1":"minuutti sitten","one":"{0} minuutti sitten","0":"alle minuutti sitten","other":"{0} minuuttia sitten"},
       "hour": const {"1":"tunti sitten","one":"{0} tunti sitten","0":"alle tunti sitten","other":"{0} tuntia sitten"},
-      "day": const {"1":"päivä sitten","one":"{0} päivä sitten","0":"alle päivä sitten","other":"{0} päivää sitten"},
+      "day": const {"1":"pÃ¤ivÃ¤ sitten","one":"{0} pÃ¤ivÃ¤ sitten","0":"alle pÃ¤ivÃ¤ sitten","other":"{0} pÃ¤ivÃ¤Ã¤ sitten"},
       "week": const {"1":"viikko sitten","one":"{0} viikko sitten","0":"alle viikko sitten","other":"{0} viikkoa sitten"},
       "month": const {"1":"kuukausi sitten","one":"{0} kuukausi sitten","0":"alle kuukausi sitten","other":"{0} kuukautta sitten"},
       "year": const {"1":"vuosi sitten","one":"{0} vuosi sitten","0":"alle vuosi sitten","other":"{0} vuotta sitten"}
     },
       futureUnits: const {
-      "second": const {"1":"sekunnin päästä","one":"{0} sekunnin päästä","0":"alle sekunnin päästä","other":"{0} sekunnin päästä"},
-      "minute": const {"1":"minuutin päästä","one":"{0} minuutin päästä","0":"alle minuutin päästä","other":"{0} minuutin päästä"},
-      "hour": const {"1":"tunnin päästä","one":"{0} tunnin päästä","0":"alle tunnin päästä","other":"{0} tunnin päästä"},
-      "day": const {"1":"päivän päästä","one":"{0} päivän päästä","0":"alle päivän päästä","other":"{0} päivän päästä"},
-      "week": const {"1":"viikon päästä","one":"{0} viikon päästä","0":"alle viikon päästä","other":"{0} viikon päästä"},
-      "month": const {"1":"kuukauden päästä","one":"{0} kuukauden päästä","0":"alle kuukauden päästä","other":"{0} kuukauden päästä"},
-      "year": const {"1":"vuoden päästä","one":"{0} vuoden päästä","0":"alle vuoden päästä","other":"{0} vuoden päästä"}
+      "second": const {"1":"sekunnin pÃ¤Ã¤stÃ¤","one":"{0} sekunnin pÃ¤Ã¤stÃ¤","0":"alle sekunnin pÃ¤Ã¤stÃ¤","other":"{0} sekunnin pÃ¤Ã¤stÃ¤"},
+      "minute": const {"1":"minuutin pÃ¤Ã¤stÃ¤","one":"{0} minuutin pÃ¤Ã¤stÃ¤","0":"alle minuutin pÃ¤Ã¤stÃ¤","other":"{0} minuutin pÃ¤Ã¤stÃ¤"},
+      "hour": const {"1":"tunnin pÃ¤Ã¤stÃ¤","one":"{0} tunnin pÃ¤Ã¤stÃ¤","0":"alle tunnin pÃ¤Ã¤stÃ¤","other":"{0} tunnin pÃ¤Ã¤stÃ¤"},
+      "day": const {"1":"pÃ¤ivÃ¤n pÃ¤Ã¤stÃ¤","one":"{0} pÃ¤ivÃ¤n pÃ¤Ã¤stÃ¤","0":"alle pÃ¤ivÃ¤n pÃ¤Ã¤stÃ¤","other":"{0} pÃ¤ivÃ¤n pÃ¤Ã¤stÃ¤"},
+      "week": const {"1":"viikon pÃ¤Ã¤stÃ¤","one":"{0} viikon pÃ¤Ã¤stÃ¤","0":"alle viikon pÃ¤Ã¤stÃ¤","other":"{0} viikon pÃ¤Ã¤stÃ¤"},
+      "month": const {"1":"kuukauden pÃ¤Ã¤stÃ¤","one":"{0} kuukauden pÃ¤Ã¤stÃ¤","0":"alle kuukauden pÃ¤Ã¤stÃ¤","other":"{0} kuukauden pÃ¤Ã¤stÃ¤"},
+      "year": const {"1":"vuoden pÃ¤Ã¤stÃ¤","one":"{0} vuoden pÃ¤Ã¤stÃ¤","0":"alle vuoden pÃ¤Ã¤stÃ¤","other":"{0} vuoden pÃ¤Ã¤stÃ¤"}
     });

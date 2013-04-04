@@ -3,9 +3,10 @@
 
 library plural_locale_ny;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/ny.dart' as plural_symbols_ny;
-  
+
   void init() {
   PluralLocaleImpl.map['ny'] = plural_symbols_ny.symbols;
   }

@@ -3,14 +3,14 @@
 
 library relative_time_symbols_sk;
 
-import '../symbols.dart';
+import 'package:intlx/src/relative_time/symbols.dart';
 
 final symbols = new RelativeTimeSymbols(      units: const {
-      "second": const {"one":"{0} sekunda","other":"{0} sekúnd","few":"{0} sekundy"},
-      "minute": const {"one":"{0} minúta","other":"{0} minút","few":"{0} minúty"},
-      "hour": const {"one":"{0} hodina","other":"{0} hodín","few":"{0} hodiny"},
-      "day": const {"one":"{0} deň","other":"{0} dní","few":"{0} dni"},
-      "week": const {"one":"{0} týždeň","other":"{0} týždňov","few":"{0} týždne"},
+      "second": const {"one":"{0} sekunda","other":"{0} sekÃºnd","few":"{0} sekundy"},
+      "minute": const {"one":"{0} minÃºta","other":"{0} minÃºt","few":"{0} minÃºty"},
+      "hour": const {"one":"{0} hodina","other":"{0} hodÃ­n","few":"{0} hodiny"},
+      "day": const {"one":"{0} deÅ","other":"{0} dnÃ­","few":"{0} dni"},
+      "week": const {"one":"{0} tÃ½Å¾deÅ","other":"{0} tÃ½Å¾dÅov","few":"{0} tÃ½Å¾dne"},
       "month": const {"one":"{0} mesiac","other":"{0} mesiacov","few":"{0} mesiace"},
       "year": const {"one":"{0} rok","other":"{0} rokov","few":"{0} roky"}
     },
@@ -19,25 +19,25 @@ final symbols = new RelativeTimeSymbols(      units: const {
       "minute": const {"one":"{0} min","other":"{0} min","few":"{0} min"},
       "hour": const {"one":"{0} h","other":"{0} h","few":"{0} h"},
       "day": const {"one":"{0} d.","other":"{0} d.","few":"{0} d."},
-      "week": const {"one":"{0} týžd.","other":"{0} týžd.","few":"{0} týžd."},
+      "week": const {"one":"{0} tÃ½Å¾d.","other":"{0} tÃ½Å¾d.","few":"{0} tÃ½Å¾d."},
       "month": const {"one":"{0} mes.","other":"{0} mes.","few":"{0} mes."},
       "year": const {"one":"{0} r.","other":"{0} r.","few":"{0} r."}
     },
       pastUnits: const {
       "second": const {"1":"Pred 1 sekundou","one":"{0} sekundou","0":"Pred 0 sekundami","few":"Pred {0} sekundami","other":"Pred {0} sekundami"},
-      "minute": const {"1":"Pred 1 minútou","one":"{0} minútou","0":"Pred 0 minútami","few":"Pred {0} minútami","other":"Pred {0} minútami"},
+      "minute": const {"1":"Pred 1 minÃºtou","one":"{0} minÃºtou","0":"Pred 0 minÃºtami","few":"Pred {0} minÃºtami","other":"Pred {0} minÃºtami"},
       "hour": const {"1":"Pred 1 hodinou","one":"{0} hodinou","0":"Pred 0 hodinami","few":"Pred {0} hodinami","other":"Pred {0} hodinami"},
-      "day": const {"1":"Pred 1 dňom","one":"{0} dňom","0":"Pred 0 dňami","few":"Pred {0} dňami","other":"Pred {0} dňami"},
-      "week": const {"1":"Pred 1 týždňom","one":"{0} týždňom","0":"Pred 0 týždňami","few":"Pred {0} týždňami","other":"Pred {0} týždňami"},
+      "day": const {"1":"Pred 1 dÅom","one":"{0} dÅom","0":"Pred 0 dÅami","few":"Pred {0} dÅami","other":"Pred {0} dÅami"},
+      "week": const {"1":"Pred 1 tÃ½Å¾dÅom","one":"{0} tÃ½Å¾dÅom","0":"Pred 0 tÃ½Å¾dÅami","few":"Pred {0} tÃ½Å¾dÅami","other":"Pred {0} tÃ½Å¾dÅami"},
       "month": const {"1":"Pred 1 mesiacom","one":"{0} mesiacom","0":"Pred 0 mesiacmi","few":"Pred {0} mesiacmi","other":"Pred {0} mesiacmi"},
       "year": const {"1":"Pred 1 rokom","one":"{0} rokom","0":"Pred 0 rokmi","few":"Pred {0} rokmi","other":"Pred {0} rokmi"}
     },
       futureUnits: const {
-      "second": const {"1":"O 1 sekundu","one":"{0} sekundu","0":"O 0 sekúnd","few":"O {0} sekundy","other":"O {0} sekúnd"},
-      "minute": const {"1":"O 1 minútu","one":"{0} minútu","0":"O 0 minút","few":"O {0} minúty","other":"O {0} minút"},
-      "hour": const {"1":"O 1 hodinu","one":"{0} hodinu","0":"O 0 hodín","few":"O {0} hodiny","other":"O {0} hodín"},
-      "day": const {"1":"O 1 deň","one":"{0} deň","0":"O 0 dní","few":"O {0} dni","other":"O {0} dní"},
-      "week": const {"1":"O 1 týždeň","one":"{0} týždeň","0":"O 0 týždňov","few":"O {0} týždne","other":"O {0} týždňov"},
+      "second": const {"1":"O 1 sekundu","one":"{0} sekundu","0":"O 0 sekÃºnd","few":"O {0} sekundy","other":"O {0} sekÃºnd"},
+      "minute": const {"1":"O 1 minÃºtu","one":"{0} minÃºtu","0":"O 0 minÃºt","few":"O {0} minÃºty","other":"O {0} minÃºt"},
+      "hour": const {"1":"O 1 hodinu","one":"{0} hodinu","0":"O 0 hodÃ­n","few":"O {0} hodiny","other":"O {0} hodÃ­n"},
+      "day": const {"1":"O 1 deÅ","one":"{0} deÅ","0":"O 0 dnÃ­","few":"O {0} dni","other":"O {0} dnÃ­"},
+      "week": const {"1":"O 1 tÃ½Å¾deÅ","one":"{0} tÃ½Å¾deÅ","0":"O 0 tÃ½Å¾dÅov","few":"O {0} tÃ½Å¾dne","other":"O {0} tÃ½Å¾dÅov"},
       "month": const {"1":"O 1 mesiac","one":"{0} mesiac","0":"O 0 mesiacov","few":"O {0} mesiace","other":"O {0} mesiacov"},
       "year": const {"1":"O 1 rok","one":"{0} rok","0":"O 0 rokov","few":"O {0} roky","other":"O {0} rokov"}
     });

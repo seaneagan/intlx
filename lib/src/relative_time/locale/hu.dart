@@ -3,41 +3,41 @@
 
 library relative_time_symbols_hu;
 
-import '../symbols.dart';
+import 'package:intlx/src/relative_time/symbols.dart';
 
 final symbols = new RelativeTimeSymbols(      units: const {
-      "second": const {"other":"{0} másodperc"},
+      "second": const {"other":"{0} mÃ¡sodperc"},
       "minute": const {"other":"{0} perc"},
-      "hour": const {"other":"{0} óra"},
+      "hour": const {"other":"{0} Ã³ra"},
       "day": const {"other":"{0} nap"},
-      "week": const {"other":"{0} hét"},
-      "month": const {"other":"{0} hónap"},
-      "year": const {"other":"{0} év"}
+      "week": const {"other":"{0} hÃ©t"},
+      "month": const {"other":"{0} hÃ³nap"},
+      "year": const {"other":"{0} Ã©v"}
     },
       shortUnits: const {
       "second": const {"other":"{0} mp"},
       "minute": const {"other":"{0} p"},
-      "hour": const {"other":"{0} ó"},
+      "hour": const {"other":"{0} Ã³"},
       "day": const {"other":"{0} nap"},
-      "week": const {"other":"{0} hét"},
-      "month": const {"other":"{0} hónap"},
-      "year": const {"other":"{0} év"}
+      "week": const {"other":"{0} hÃ©t"},
+      "month": const {"other":"{0} hÃ³nap"},
+      "year": const {"other":"{0} Ã©v"}
     },
       pastUnits: const {
-      "second": const {"1":"1 másodperce","0":"0 másodperce","other":"{0} másodperccel ezelőtt"},
-      "minute": const {"1":"1 perce","0":"0 perce","other":"{0} perccel ezelőtt"},
-      "hour": const {"1":"1 órája","0":"0 órája","other":"{0} órával ezelőtt"},
-      "day": const {"1":"1 napja","0":"0 napja","other":"{0} nappal ezelőtt"},
-      "week": const {"1":"1 hete","0":"0 hete","other":"{0} héttel ezelőtt"},
-      "month": const {"1":"1 hónapja","0":"0 hónapja","other":"{0} hónappal ezelőtt"},
-      "year": const {"1":"1 éve","0":"0 éve","other":"{0} évvel ezelőtt"}
+      "second": const {"1":"1 mÃ¡sodperce","0":"0 mÃ¡sodperce","other":"{0} mÃ¡sodperccel ezelÅtt"},
+      "minute": const {"1":"1 perce","0":"0 perce","other":"{0} perccel ezelÅtt"},
+      "hour": const {"1":"1 Ã³rÃ¡ja","0":"0 Ã³rÃ¡ja","other":"{0} Ã³rÃ¡val ezelÅtt"},
+      "day": const {"1":"1 napja","0":"0 napja","other":"{0} nappal ezelÅtt"},
+      "week": const {"1":"1 hete","0":"0 hete","other":"{0} hÃ©ttel ezelÅtt"},
+      "month": const {"1":"1 hÃ³napja","0":"0 hÃ³napja","other":"{0} hÃ³nappal ezelÅtt"},
+      "year": const {"1":"1 Ã©ve","0":"0 Ã©ve","other":"{0} Ã©vvel ezelÅtt"}
     },
       futureUnits: const {
-      "second": const {"1":"1 másodperc múlva","0":"0 másodperc múlva","other":"{0} másodperc múlva"},
-      "minute": const {"1":"1 perc múlva","0":"0 perc múlva","other":"{0} perc múlva"},
-      "hour": const {"1":"1 óra múlva","0":"0 óra múlva","other":"{0} óra múlva"},
-      "day": const {"1":"1 nap múlva","0":"0 nap múlva","other":"{0} nap múlva"},
-      "week": const {"1":"1 hét múlva","0":"0 hét múlva","other":"{0} hét múlva"},
-      "month": const {"1":"1 hónap múlva","0":"0 hónap múlva","other":"{0} hónap múlva"},
-      "year": const {"1":"1 év múlva","0":"0 év múlva","other":"{0} év múlva"}
+      "second": const {"1":"1 mÃ¡sodperc mÃºlva","0":"0 mÃ¡sodperc mÃºlva","other":"{0} mÃ¡sodperc mÃºlva"},
+      "minute": const {"1":"1 perc mÃºlva","0":"0 perc mÃºlva","other":"{0} perc mÃºlva"},
+      "hour": const {"1":"1 Ã³ra mÃºlva","0":"0 Ã³ra mÃºlva","other":"{0} Ã³ra mÃºlva"},
+      "day": const {"1":"1 nap mÃºlva","0":"0 nap mÃºlva","other":"{0} nap mÃºlva"},
+      "week": const {"1":"1 hÃ©t mÃºlva","0":"0 hÃ©t mÃºlva","other":"{0} hÃ©t mÃºlva"},
+      "month": const {"1":"1 hÃ³nap mÃºlva","0":"0 hÃ³nap mÃºlva","other":"{0} hÃ³nap mÃºlva"},
+      "year": const {"1":"1 Ã©v mÃºlva","0":"0 Ã©v mÃºlva","other":"{0} Ã©v mÃºlva"}
     });

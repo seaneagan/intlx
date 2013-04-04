@@ -3,7 +3,7 @@
 
 library plural_symbols_sg;
 
-import '../plural.dart';
+import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('sg', (int n) {
 return PluralCategory.OTHER;

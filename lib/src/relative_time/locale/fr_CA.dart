@@ -3,7 +3,7 @@
 
 library relative_time_symbols_fr_CA;
 
-import '../symbols.dart';
+import 'package:intlx/src/relative_time/symbols.dart';
 
 final symbols = new RelativeTimeSymbols(      units: const {
       "second": const {"one":"{0} seconde","other":"{0} secondes"},
@@ -12,7 +12,7 @@ final symbols = new RelativeTimeSymbols(      units: const {
       "day": const {"one":"{0} jour","other":"{0} jours"},
       "week": const {"one":"{0} semaine","other":"{0} semaines"},
       "month": const {"one":"{0} mois","other":"{0} mois"},
-      "year": const {"one":"{0} année","other":"{0} années"}
+      "year": const {"one":"{0} annÃ©e","other":"{0} annÃ©es"}
     },
       shortUnits: const {
       "second": const {"one":"{0} s","other":"{0} s"},
@@ -24,20 +24,20 @@ final symbols = new RelativeTimeSymbols(      units: const {
       "year": const {"one":"{0} an","other":"{0} ans"}
     },
       pastUnits: const {
-      "second": const {"1":"il y a 1 seconde","one":"Il y a {0} seconde","0":"il y a 0 seconde","other":"Il y a {0} secondes"},
-      "minute": const {"1":"il y a 1 minute","one":"Il y a {0} minute","0":"il y a 0 minute","other":"Il y a {0} minutes"},
-      "hour": const {"1":"il y a 1 heure","one":"Il y a {0} heure","0":"il y a 0 heure","other":"Il y a {0} heures"},
-      "day": const {"1":"il y a 1 jour","one":"Il y a {0} jour","0":"il y a 0 jour","other":"Il y a {0} jours"},
-      "week": const {"1":"il y a 1 semaine","one":"Il y a {0} semaine","0":"il y a 0 semaine","other":"Il y a {0} semaines"},
-      "month": const {"1":"il y a 1 mois","one":"Il y a {0} mois","0":"il y a 0 mois","other":"Il y a {0} mois"},
-      "year": const {"1":"il y a 1 an","one":"Il y a {0} an","0":"il y a 0 an","other":"Il y a {0} ans"}
+      "second": const {"1":"il y a 1 seconde","one":"Il y a {0}Â seconde","0":"il y a 0 seconde","other":"Il y a {0}Â secondes"},
+      "minute": const {"1":"il y a 1 minute","one":"Il y a {0}Â minute","0":"il y a 0 minute","other":"Il y a {0}Â minutes"},
+      "hour": const {"1":"il y a 1 heure","one":"Il y a {0}Â heure","0":"il y a 0 heure","other":"Il y a {0}Â heures"},
+      "day": const {"1":"il y a 1 jour","one":"Il y a {0}Â jour","0":"il y a 0 jour","other":"Il y a {0}Â jours"},
+      "week": const {"1":"il y a 1 semaine","one":"Il y a {0}Â semaine","0":"il y a 0 semaine","other":"Il y a {0}Â semaines"},
+      "month": const {"1":"il y a 1 mois","one":"Il y a {0}Â mois","0":"il y a 0 mois","other":"Il y a {0}Â mois"},
+      "year": const {"1":"il y a 1 an","one":"Il y a {0}Â an","0":"il y a 0 an","other":"Il y a {0}Â ans"}
     },
       futureUnits: const {
-      "second": const {"1":"Dans 1 seconde","one":"Dans {0} seconde","0":"Dans 0 seconde","other":"Dans {0} secondes"},
-      "minute": const {"1":"dans 1 minute","one":"Dans {0} minute","0":"dans 0 minute","other":"Dans {0} minutes"},
-      "hour": const {"1":"dans 1 heure","one":"Dans {0} heure","0":"dans 0 heure","other":"Dans {0} heures"},
-      "day": const {"1":"dans 1 jour","one":"Dans {0} jour","0":"dans 0 jour","other":"Dans {0} jours"},
-      "week": const {"1":"dans 1 semaine","one":"Dans {0} semaine","0":"dans 0 semaine","other":"Dans {0} semaines"},
-      "month": const {"1":"dans 1 mois","one":"Dans {0} mois","0":"dans 0 mois","other":"Dans {0} mois"},
-      "year": const {"1":"dans 1 an","one":"Dans {0} an","0":"dans 0 an","other":"Dans {0} ans"}
+      "second": const {"1":"DansÂ 1Â seconde","one":"DansÂ {0}Â seconde","0":"DansÂ 0Â seconde","other":"DansÂ {0}Â secondes"},
+      "minute": const {"1":"dans 1 minute","one":"Dans {0}Â minute","0":"dans 0 minute","other":"Dans {0}Â minutes"},
+      "hour": const {"1":"dans 1 heure","one":"Dans {0}Â heure","0":"dans 0 heure","other":"Dans {0}Â heures"},
+      "day": const {"1":"dans 1 jour","one":"Dans {0}Â jour","0":"dans 0 jour","other":"Dans {0}Â jours"},
+      "week": const {"1":"dans 1 semaine","one":"Dans {0}Â semaine","0":"dans 0 semaine","other":"Dans {0}Â semaines"},
+      "month": const {"1":"dans 1 mois","one":"Dans {0}Â mois","0":"dans 0 mois","other":"Dans {0}Â mois"},
+      "year": const {"1":"dans 1 an","one":"Dans {0}Â an","0":"dans 0 an","other":"Dans {0}Â ans"}
     });

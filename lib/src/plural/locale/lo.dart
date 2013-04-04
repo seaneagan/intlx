@@ -3,7 +3,7 @@
 
 library plural_symbols_lo;
 
-import '../plural.dart';
+import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('lo', (int n) {
 return PluralCategory.OTHER;

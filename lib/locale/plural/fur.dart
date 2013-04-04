@@ -3,9 +3,10 @@
 
 library plural_locale_fur;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/fur.dart' as plural_symbols_fur;
-  
+
   void init() {
   PluralLocaleImpl.map['fur'] = plural_symbols_fur.symbols;
   }

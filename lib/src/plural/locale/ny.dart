@@ -3,7 +3,7 @@
 
 library plural_symbols_ny;
 
-import '../plural.dart';
+import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('ny', (int n) {
 if(n == 1) return PluralCategory.ONE;

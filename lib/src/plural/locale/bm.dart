@@ -3,7 +3,7 @@
 
 library plural_symbols_bm;
 
-import '../plural.dart';
+import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('bm', (int n) {
 return PluralCategory.OTHER;

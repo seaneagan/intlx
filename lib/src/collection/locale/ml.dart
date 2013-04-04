@@ -3,9 +3,9 @@
 
 library collection_symbols_ml;
 
-import '../symbols.dart';
+import 'package:intlx/src/collection/symbols.dart';
 
 final symbols = new CollectionSymbols(    start: '{0}, {1}',
     middle: '{0}, {1}',
-    end: '{0}, {1} എന്നിവ',
-    indexed: const {"2":"{0} കൂടാതെ {1}"});
+    end: '{0}, {1} à´à´¨àµà´¨à´¿à´µ',
+    indexed: const {"2":"{0} à´àµà´à´¾à´¤àµ {1}"});

@@ -3,9 +3,10 @@
 
 library collection_locale_sq;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/collection/symbols.dart';
   import 'package:intlx/src/collection/locale/sq.dart' as collection_symbols_sq;
-  
+
   void init() {
   CollectionSymbols.map['sq'] = collection_symbols_sq.symbols;
   }

@@ -3,7 +3,7 @@
 
 library plural_symbols_eo;
 
-import '../plural.dart';
+import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('eo', (int n) {
 if(n == 1) return PluralCategory.ONE;

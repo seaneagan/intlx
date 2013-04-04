@@ -3,9 +3,10 @@
 
 library plural_locale_nah;
 
-  import '../../src/internal.dart';
+  import 'package:intlx/src/internal.dart';
+  import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/nah.dart' as plural_symbols_nah;
-  
+
   void init() {
   PluralLocaleImpl.map['nah'] = plural_symbols_nah.symbols;
   }

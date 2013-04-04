@@ -3,7 +3,7 @@
 
 library plural_symbols_fur;
 
-import '../plural.dart';
+import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('fur', (int n) {
 if(n == 1) return PluralCategory.ONE;

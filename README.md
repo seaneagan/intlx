@@ -1,5 +1,6 @@
-
 #Intlx
+
+  [![Build Status](https://drone.io/seaneagan/intlx/status.png)](https://drone.io/seaneagan/intlx/latest)
 
   Intlx is experimental internationalization APIs for Dart, 
   which have not yet made it into the intl package itslef.

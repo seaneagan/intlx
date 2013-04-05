@@ -12,8 +12,10 @@ class CollectionLocale {
 
   String format(Iterable iterable) {
     if(iterable.isEmpty) return "";
+    if(iterable.length == 1) return iterable.single.toString();
     var list = iterable.toList();
     var length = list.length.toString();
+    print("length: $length");
     if(_symbols.indexed.containsKey(length)) return _formatCustom(_symbols.indexed[length], list);
     return _formatAll(list);
   }
@@ -21,14 +23,16 @@ class CollectionLocale {
   String _formatCustom(String format, List elements) {
     var element, result;
     if (elements.length > 1) {
-      return format.splitMapJoin(new RegExp("\{(\d+)\}"), onMatch: (Match match) => elements[int.parse(match.group(1))].toString());
+      return format.splitMapJoin(new RegExp(r'\{(\d+)\}'), onMatch: (Match match) {
+        return elements[int.parse(match.group(1))].toString();
+      });
 //      if (isRtl) {
 //        result = TwitterCldr.Bidi.from_string(result, {
 //          "direction": "RTL"
 //        }).reorder_visually().toString();
 //      }
     }
-    return elements[0].toString();
+    return elements.single.toString();
   }
 
   String _formatAll(List list) {

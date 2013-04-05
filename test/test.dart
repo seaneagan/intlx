@@ -1,11 +1,13 @@
 
 import 'package:unittest/unittest.dart';
 import 'package:intlx/intlx.dart';
-import 'package:intlx/locale/relative_time/en.dart' as en;
+import 'package:intlx/locale/relative_time/en.dart' as relative_time_en;
+import 'package:intlx/locale/collection/en.dart' as collection_en;
 
 main() {
 
-  en.init();
+  relative_time_en.init();
+  collection_en.init();
 
   group('DurationFormat', () {
 
@@ -56,4 +58,18 @@ main() {
     test("'one' case", () => expect(pluralFormat.format(1), "1 book"));
     test("'other' case", () => expect(pluralFormat.format(5), "5 books"));
   });
+
+  group('CollectionFormat', () {
+
+    CollectionFormat collectionFormat;
+
+    setUp(() {
+      collectionFormat = new CollectionFormat(locale: "en");
+    });
+
+    test("empty collection is empty string", () => expect(collectionFormat.format([]), ""));
+    test("single item", () => expect(collectionFormat.format([1]), "1"));
+    test("many items", () => expect(collectionFormat.format([1, 2, 3, "x", "y", "z"]), "1, 2, 3, x, y, and z"));
+  });
+
 }

@@ -1,6 +1,7 @@
 
 import 'package:intlx/intlx.dart';
-import '../lib/locale/relative_time/all.dart' as all;
+import 'package:intlx/locale/relative_time/all.dart' as relative_time_all;
+import 'package:intlx/locale/collection/all.dart' as collection_all;
 import 'package:intl/intl_standalone.dart';
 
 main() {
@@ -12,7 +13,8 @@ main() {
     // system locale is not work in Windows yet
     locale = "en";
 
-    all.init();
+    relative_time_all.init();
+    collection_all.init();
 
     final apocolypse = new DateTime(2012, 12, 21);
 
@@ -28,6 +30,11 @@ main() {
     print(pluralFormat.format(0)); // "no books"
     print(pluralFormat.format(1)); // "1 book"
     print(pluralFormat.format(5)); // "5 books"
+    
+    var collectionFormat = new CollectionFormat(locale: "en");
+    print(collectionFormat.format([]));
+    print(collectionFormat.format([1]));
+    print(collectionFormat.format([1, 2, 3, "x", "y", "z"]));
   };
 
   findSystemLocale().then(go);

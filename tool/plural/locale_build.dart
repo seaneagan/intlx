@@ -16,6 +16,51 @@ class PluralLibraryWriter extends LibraryWriter {
   final String type = "plural";
   final String symbolsClass = "PluralLocaleImpl";
   final String symbolsClassLibrary = "plural";
+  
+  void writeLibrariesSync(){
+    super.writeLibrariesSync();
+    writeLoadLocaleLibrary();
+  }
+
+  void writeLoadLocaleLibrary() {
+    var loadLocaleLibraryPath = libPath.append("src/$type/");
+    
+    var imports = localeList.map((locale) => '''@library_$locale
+import 'package:intlx/src/plural/locale/$locale.dart' as plural_locale_$locale;
+''').join();
+
+    var deferredLibraries = localeList.map((locale) => '''  const library_$locale = const DeferredLibrary('plural_symbols_$locale');
+''').join();
+    
+    var libraryMapEntries = localeList.map((locale) => '''    '$locale': library_$locale''').join(',\n');
+    
+    var switchCases = localeList.map((locale) => '''  case '$locale': init(plural_locale_$locale.symbols); break;
+''').join();
+
+    var code = '''
+import 'dart:async';
+import 'package:intlx/src/plural/plural.dart';
+$imports
+
+Future<bool> loadLocale([String locale]) {
+$deferredLibraries
+  const libraryMap = const <String, DeferredLibrary> {
+$libraryMapEntries
+  };
+ 
+  if(PluralLocaleImpl.map.containsKey(locale)) return new Future.immediate(false);
+  return libraryMap[locale].load().then((_) {
+    init(PluralLocale pluralLocale) => PluralLocaleImpl.map[locale] = pluralLocale;
+    switch(locale) {
+$switchCases
+    }
+    return true;
+  });
+}''';
+    
+    writeLibrary(loadLocaleLibraryPath, "load_locale", code);
+    
+  }
 
   Future getBuiltLocaleData() {
     var pluralRulesUri = '${cldrUri}supplemental/plurals/plurals?depth=-1';

@@ -5,8 +5,9 @@ description: Intlx is experimental internationalization APIs for Dart,  which ha
 homepage: http://www.github.com/seaneagan/intlx
 dependencies:
   intl: any
-dev_dependencies:
   unittest: any
   http: any
   parsers: any
   pathos: any
+  web_ui: any
+  widget: any

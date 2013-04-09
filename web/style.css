@@ -1,0 +1,245 @@
+/* Main header
+-------------------------------------------------- */
+
+header.mainhead {
+  position: relative;
+}
+
+header.mainhead .icons {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 38.5px; /* same as bootstrap h1 */
+  line-height: 40px; /* same as bootstrap h1 */
+}
+
+header.mainhead .icons a i {
+ text-decoration: none;
+}
+
+header.mainhead p {
+  font-size: 150%;
+  line-height: 1.1em;
+  color: gray;
+}
+
+/* Navigation
+-------------------------------------------------- */
+
+ul.nav-list {
+  padding: 0;
+  width: 228px;
+  margin-top: 20px;
+}
+ul.nav-list > li {
+  border: 1px solid #ddd;
+  padding: 3px 15px;
+  margin-bottom: -1px;
+}
+ul.nav-list > li:first-child {
+  border-radius: 6px 6px 0 0;
+}
+ul.nav-list > li:last-child {
+  border-radius: 0 0 6px 6px;
+}
+ul.nav-list > li > a.h1 {
+  font-weight: bold;
+}
+ul.nav-list > li > a.h2 {
+  padding-left: 25px;
+}
+
+/* Footer
+-------------------------------------------------- */
+
+.footer {
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 70px;
+  border-top: 1px solid #e5e5e5;
+  background-color: #f5f5f5;
+}
+.footer p {
+  margin-bottom: 1em;
+  color: #777;
+}
+.footer-links {
+  margin: 10px 0;
+}
+.footer-links li {
+  display: inline;
+  padding: 0 2px;
+}
+.footer-links li:first-child {
+  padding-left: 0;
+}
+
+/* Desktop large
+------------------------- */
+@media (min-width: 1200px) {
+  ul.nav-list { width: 258px; }
+}
+
+/* Tablet to desktop
+------------------------- */
+@media (min-width: 768px) and (max-width: 979px) {
+  ul.nav-list { width: 166px; }
+}
+
+/* Tablet
+------------------------- */
+@media (max-width: 767px) {
+  ul.nav-list {
+    position: static;
+    width: auto;
+  }
+}
+
+/*
+x-dropdown in nav
+-------------------------------------------------- */
+.navbar .nav > x-dropdown {
+  float: left;
+}
+
+x-dropdown a.dropdown-toggle {
+  display: block;
+  float: none;
+  padding: 10px 15px 10px;
+  color: #777;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #fff;
+}
+
+.navbar .nav > x-dropdown .dropdown-toggle .caret {
+  border-top-color: #777;
+  border-bottom-color: #777;
+}
+
+.navbar .nav > x-dropdown .dropdown-menu:before {
+  position: absolute;
+  top: -7px;
+  left: 9px;
+  display: inline-block;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #ccc;
+  border-left: 7px solid transparent;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  content: '';
+}
+
+.navbar .nav > x-dropdown .dropdown-menu:after {
+  position: absolute;
+  top: -6px;
+  left: 10px;
+  display: inline-block;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #ffffff;
+  border-left: 6px solid transparent;
+  content: '';
+}
+
+blockquote p {
+  margin-bottom: 2ex;
+}
+
+div.demo, pre.code {
+  position: relative;
+  display: block;
+  padding: 9.5px;
+  padding-top: 36px;
+  margin: 15px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+}
+
+div.demo::after, pre.code::after {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  padding: 3px 7px;
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  color: #9da0a4;
+  border-radius: 4px 0 4px 0;
+}
+
+div.demo {
+  background-color: white;
+}
+
+div.demo::after {
+  content: "Example";
+}
+
+pre.code {
+  word-wrap: normal;
+  word-break: normal;
+  white-space: pre;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+pre.code::after {
+  content: "Markup";
+}
+
+
+.demo figure {
+  text-align: center;
+  position: relative;
+}
+.demo figure > figcaption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 15px;
+  color: white;
+  background: #333333;
+  background: rgba(0, 0, 0, 0.75);
+}
+.demo p {
+  margin: 5px 0;
+}
+
+.highlighted {
+  -webkit-animation-name: invert;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: 0.5s;
+}
+
+@-webkit-keyframes invert {
+  20% {
+    color: white;
+    text-shadow: black 0 0 5px;
+  }
+}
+
+.open button.btn {
+  background: #e6e6e6
+}
+
+/* ShowHide Styles */
+.demo.showhide {
+  text-align: center;
+}
+
+.demo.showhide .logo_wrapper {
+  margin: 0 auto;
+  width: 333px;
+  height: 250px;
+  background-image: -webkit-linear-gradient(top, white, #eee); /* For Chrome and Safari */
+  background-image:     -ms-linear-gradient(top, white, #eee); /* For pre-releases of IE 10*/
+  background-image:      -o-linear-gradient(top, white, #eee); /* For old Opera (11.1 to 12.0) */
+  background-image:         linear-gradient(to bottom, white, #eee); /* Standard syntax; must be last */
+}
+
+.demo.showhide .logo_wrapper img {
+  width: 333px;
+  height: 250px;
+}

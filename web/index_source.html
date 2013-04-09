@@ -1,0 +1,355 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <title>Dart Widgets</title>
+    <link rel="components" href="packages/widget/components/accordion.html">
+    <link rel="components" href="packages/widget/components/alert.html">
+    <link rel="components" href="packages/widget/components/carousel.html">
+    <link rel="components" href="packages/widget/components/collapse.html">
+    <link rel="components" href="packages/widget/components/dropdown.html">
+    <link rel="components" href="packages/widget/components/modal.html">
+    <link rel="components" href="packages/widget/components/tabs.html">
+    <script type="application/dart" src="app.dart"></script>
+    <script type="text/javascript" src="dart.js"></script>
+
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/3.0.2/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <header class="mainhead">
+        <h1>Dart Widgets</h1>
+        <p>A collection of <a href="#components">Components</a> and <a href="#effects">Effects</a>, written in <a href="http://www.dartlang.org/">Dart</a>, designed to make it easier to build rich web applications.</p>
+        <div class="icons">
+          <a href="https://github.com/kevmoo/widget.dart" title="kevmoo/widget.dart"><i class="icon-github"></i></a>
+          <a href="https://twitter.com/kevmoo" rel="author" title="@kevmoo"><i class="icon-twitter"></i></a>
+          <a href="https://plus.google.com/110066012384188006594?rel=author" rel="author" title="+Kevin Moore"><i class="icon-google-plus-sign"></i></a>
+        </div>
+      </header>
+      <div class="row">
+        <div class="span3">
+          <ul class="nav nav-list affix">
+          </ul>
+        </div>
+
+    <div class="span9">
+      <header>
+        <h1>Components</h1>
+        <blockquote>
+          <p>Reusable elements. Based on the <a href="https://github.com/dart-lang/web-ui">web-ui library</a> sponsored by the Dart team.</p>
+          <p><strong>web-ui</strong> is an implementation of the W3C Draft spec for <a href="https://dvcs.w3.org/hg/webcomponents/raw-file/tip/explainer/index.html">Web Components</a> along with a set of related technologies.</p>
+        </blockquote>
+      </header>
+      <section class="component">
+        <h2>Accordion</h2>
+        <blockquote class="comments"><p><strong>Accordion</strong> wraps a set of <a href="#collapse">Collapse</a> elements and ensures only one is visible
+at a time.</p>
+<p>See <a href="#collapse">Collapse</a> for details on how content is interpreted.</p></blockquote>
+
+        <div class="demo">
+          <x-accordion>
+            <x-collapse>
+              <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse">Item 1</a>
+              </div>
+              <p>Item 1 content - Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </x-collapse>
+            <x-collapse>
+              <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse">Item 2</a>
+              </div>
+              <p>Item 2 content - Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </x-collapse>
+            <x-collapse>
+              <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse">Item 3</a>
+              </div>
+              <p>Item 3 content - Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </x-collapse>
+          </x-accordion>
+        </div>
+
+        <pre class="code"></pre>
+      </section>
+
+      <section class="component">
+        <h2>Alert</h2>
+        <blockquote class="comments"><p><strong>Alert</strong> follows the same convention as <a href="http://twitter.github.com/bootstrap/javascript.html#alerts">its inspiration</a> in Bootstrap.</p>
+<p>Clicking on a nested element with the attribute <code>data-dismiss='alert'</code> will cause <strong>Alert</strong> to close.</p></blockquote>
+        <div class="demo">
+          <x-alert>
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <strong>Holy guacamole!</strong> Best check yo self, you're not looking too good.
+          </x-alert>
+        </div>
+
+        <pre class="code"></pre>
+
+      </section>
+
+      <section class="component">
+        <h2>Carousel</h2>
+        <blockquote class="comments"><p><strong>Carousel</strong> allows moving back and forth through a set of child elements.</p>
+<p>It is based on a <a href="http://twitter.github.com/bootstrap/javascript.html#carousel">similar component</a>
+in Bootstrap.</p>
+<p><strong>Carousel</strong> leverages the <a href="#swap">Swap</a> component to render the transition between items.</p></blockquote>
+
+        <div class="demo">
+          <x-carousel>
+            <figure>
+              <img src="//twitter.github.com/bootstrap/assets/img/bootstrap-mdo-sfmoma-01.jpg">
+              <figcaption>A description of the first image.</figcaption>
+            </figure>
+
+            <figure class="active">
+              <img src="//twitter.github.com/bootstrap/assets/img/bootstrap-mdo-sfmoma-02.jpg">
+              <figcaption>A description of the second image.</figcaption>
+            </figure>
+
+            <figure>
+              <img src="//twitter.github.com/bootstrap/assets/img/bootstrap-mdo-sfmoma-03.jpg">
+              <figcaption>A description of the third image.</figcaption>
+            </figure>
+
+          </x-carousel>
+        </div>
+
+        <pre class="code"></pre>
+      </section>
+
+      <section class="component">
+        <h2>Collapse</h2>
+        <blockquote class="comments"><p><strong>Collapse</strong> uses a content model similar to <a href="http://twitter.github.com/bootstrap/javascript.html#collapse">collapse functionality</a> in Bootstrap.</p>
+<p>The header element for <strong>Collapse</strong> is a child element with class <code>accordion-heading</code>.</p>
+<p>The rest of the children are rendered as content.</p>
+<p><strong>Collapse</strong> listens for <code>click</code> events and toggles visibility of content if the
+click target has attribute <code>data-toggle="collapse"</code>.</p></blockquote>
+
+        <div class="demo">
+          <x-collapse>
+            <div class="accordion-heading">
+              <a class="accordion-toggle" data-toggle="collapse">Click to toggle expand/collapse</a>
+            </div>
+            <ul>
+              <li>This is some</li>
+              <li>content</li>
+            </ul>
+          </x-collapse>
+        </div>
+
+        <pre class="code"></pre>
+      </section>
+
+      <section class="component">
+        <h2>Dropdown</h2>
+        <blockquote class="comments"><p><strong>Dropdown</strong> aligns closely with the model provided by the
+<a href="http://twitter.github.com/bootstrap/javascript.html#dropdowns">dropdown functionality</a>
+in Bootstrap.</p>
+<p><strong>Dropdown</strong> content is inferred from all child elements that have
+class <code>dropdown-menu</code>. Bootstrap defines a CSS selector for <code>.dropdown-menu</code>
+with an initial display of <code>none</code>.</p>
+<p><strong>Dropdown</strong> listens for <code>click</code> events and toggles visibility of content if the
+click target has attribute <code>data-toggle="dropdown"</code>.</p>
+<p>Bootstrap also defines a CSS selector which sets <code>display: block;</code> for elements
+matching <code>.open &gt; .dropdown-menu</code>. When <strong>Dropdown</strong> opens, the class <code>open</code> is
+added to the inner element wrapping all content. Causing child elements with
+class <code>dropdown-menu</code> to become visible.</p></blockquote>
+
+        <div class="demo">
+          <h3>A a button</h3>
+          <x-dropdown>
+            <button class="btn" data-toggle="dropdown">Click me!</button>
+            <ul class="dropdown-menu">
+              <li><a>Action</a></li>
+              <li><a>Another action</a></li>
+              <li><a>Something else here</a></li>
+              <li class="divider"></li>
+              <li><a>Separated link</a></li>
+            </ul>
+          </x-dropdown>
+
+          <h3>In a nav</h3>
+          <!-- Because Bootstrap css assumes a certain hierarchy of items in a nav
+          .navbar .nav > li > a
+          To use a DropDown element, one has to copy and modify Bootstrap styles to
+          apply to x-dropdown
+          -->
+
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="container">
+                <div class="nav">
+                  <x-dropdown>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nav Menu 1<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Item 1</a></li>
+                      <li><a href="#">Item 2</a></li>
+                    </ul>
+                  </x-dropdown>
+                  <x-dropdown>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nav Menu 2<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li class="nav-header">Header 1</li>
+                      <li><a href="#">Item 1</a></li>
+                      <li><a href="#">Item 2</a></li>
+                      <li class="nav-header">Header 2</li>
+                      <li><a href="#">Item 3</a></li>
+                      <li><a href="#">Item 4</a></li>
+                    </ul>
+                  </x-dropdown>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <pre class="code"></pre>
+      </section>
+
+      <section class="component">
+        <h2>Modal</h2>
+        <blockquote class="comments"><p>When added to a page, <strong>Modal</strong> is hidden. It can be displayed by calling the <code>show</code> method.</p>
+<p>Similar to <a href="#alert">Alert</a>, elements with the attribute <code>data-dismiss="modal"</code> will close <strong>Modal</strong> when clicked.</p>
+<p>Content within <strong>Modal</strong> is placed in a div with class <code>modal</code> so related styles from Bootstrap are applied.</p>
+<p>The <strong>Modal</strong> component leverages the <a href="#modalmanager">ModalManager</a> effect.</p></blockquote>
+        <div class="demo">
+          <!-- Button to trigger modal -->
+          <a role="button" class="btn btn-primary" on-click="query('#modal_example').xtag.show();">Launch demo modal</a>
+
+          <!-- Modal -->
+          <x-modal id="modal_example">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h3 id="myModalLabel">Modal header</h3>
+            </div>
+            <div class="modal-body">
+              <p>One fine body…</p>
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+              <button class="btn btn-primary">Save changes</button>
+            </div>
+          </x-modal>
+        </div>
+
+        <pre class="code"></pre>
+      </section>
+
+      <section class="component">
+        <h2>Swap</h2>
+        <blockquote class="comments"><p><strong>Swap</strong> is a low-level component designed to be composed by other components.
+It exposes the functionality of the <a href="#swapper">Swapper</a> effect as a simple container element with corresponding methods to
+<code>swap</code> between child elements via code.</p>
+<p><a href="#tabs">Tabs</a> and <a href="#carousel">Carousel</a> both use this component.</p></blockquote>
+      </section>
+
+      <section class="component">
+        <h2>Tabs</h2>
+        <blockquote class="comments"><p><strong>Tabs</strong> is based on the <a href="http://twitter.github.com/bootstrap/javascript.html#tabs">analogous feature</a> in Bootstrap.</p>
+<p>The tab headers are processed as all child <code>&lt;li&gt;</code> elements in content.
+The rest of the child elements are considered tab content.</p>
+<p><strong>Tabs</strong> responds to click events from any child with <code>data-toggle="tab"</code> or <code>data-toggle="pill"</code>.</p>
+<p>The target content id is either the value of <code>data-target</code> on the clicked element or the anchor
+in <code>href</code>.</p></blockquote>
+
+        <div class="demo">
+          <x-tabs>
+            <li class="active">
+              <a href="#tab1" data-toggle="tab">Tab 1</a>
+            </li>
+            <li>
+              <a href="#tab2" data-toggle="tab">Tab 2</a>
+            </li>
+            <li>
+              <a href="#tab3" data-toggle="tab">Tab 3</a>
+            </li>
+
+            <p id="tab1" class="active">Tab 1 content - Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p id="tab2">Tab 2 content - Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p id="tab3">Tab 3 content - Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </x-tabs>
+        </div>
+
+        <pre class="code"></pre>
+
+      </section>
+
+      <header>
+        <h1>Effects</h1>
+        <blockquote>
+          <p>A set of behaviors that can be used directly with elements on a web page.</p>
+          <p>Effects are used by <a href="#components">Components</a> to offer easy,
+          declarative access to these features.</p>
+        </blockquote>
+      </header>
+
+      <section class="effect">
+        <h2>ModalManager</h2>
+        <blockquote class="comments"><p><strong>ModalManager</strong> is inspired by the <a href="http://twitter.github.com/bootstrap/javascript.html#modals">modal helper</a> in Bootstrap.</p>
+<p>It has two static methods <code>show</code> and <code>hide</code> that both take the same parameters as corresponding methods in <a href="#showhide">ShowHide</a>.</p>
+<p><strong>ModalManager</strong> controls the display of the provided element while also creating a dark backdrop on the page.
+Any element used should have a fixed position, a z-index greater than 1040, and an initial display of none.</p></blockquote>
+      </section>
+
+      <section class="effect">
+        <h2>ShowHide</h2>
+        <blockquote class="comments"><p><strong>ShowHide</strong> is an effect inspired by the <a href="http://api.jquery.com/category/effects/basics/">basic effects in jQuery</a>.
+Provide an element and an action--show, hide, toggle--and the element's display will change accordingly.
+Custom effects, duration, and easing values can also be provided.</p>
+<p>At the moment, all of the provided effects leverage CSS3 transitions. Creating new effects is easy.</p>
+<p><strong>ShowHide</strong> is used by <a href="#collapse">Collapse</a> and <a href="#dropdown">DropDown</a> to animate their content.
+It is also used by <a href="#swapper">Swapper</a>.</p></blockquote>
+        <div class="demo showhide">
+          <div class="effects btn-group btn-group"></div>
+          <div class="logo_wrapper">
+            <img src="bot_logo.png" alt="BOT Logo">
+          </div>
+        </div>
+      </section>
+      <section class="effect">
+        <h2>Swapper</h2>
+        <blockquote class="comments"><p><strong>Swapper</strong> is an effect that builds on top of <a href="#showhide">ShowHide</a> to manage the visibility
+of a number of children contained in a parent element.</p>
+<p>Provide a parent element and either a target child element or an index to a
+target child element and <strong>Swapper</strong> will display the target while hiding other
+visible elements using the provided effects, duration, and timing.</p>
+<p><strong>Swapper</strong> is encapsulated into a component by <a href="#swap">Swap</a>.</p></blockquote>
+      </section>
+
+    </div>
+      </div>
+    </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Dart code and samples built by <a href="https://plus.google.com/110066012384188006594?rel=author" rel="author" target="_blank">Kevin Moore</a>.</p>
+      <p>Inspiration for the components, the sample layout, and a huge amount<br>
+      of CSS borrowed with thanks from <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>.</p>
+      <p>Code licensed under <a href="http://opensource.org/licenses/bsd-license.php" target="_blank">The BSD 2-Clause License</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/kevmoo/widget.dart">Source</a></li>
+        <li class="muted">·</li>
+        <li><a href="https://github.com/kevmoo/widget.dart/issues?state=open">Issues</a></li>
+        <li class="muted">·</li>
+        <li><a href="https://github.com/dart-lang/web-ui">Dart Web UI library</a></li>
+      </ul>
+    </div>
+  </footer>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-3441863-8']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body></html>

@@ -1,0 +1,424 @@
+---
+build.dart --machine --changed=pubspec.yaml
+Dart_Invoke: did not find top-level function 'main'.
+build.dart finished [1216 ms]
+
+---
+build.dart --machine --changed=pubspec.lock
+Total time                                                   --  17 ms
+build.dart finished [6084 ms]
+
+---
+build.dart --machine --full
+[{"method":"mapping","params":{"from":"web/index_source.html","to":"web\out\index_source.html"}}]
+error exception while reading file "web/index_source.html", original message:
+ AsyncError: 'FileIOException: Cannot open file 'web/index_source.html' (OS Error: The system cannot find the file specified.
+, errno = 2)'
+Stack trace:
+#0      _File.open.<anonymous closure> (dart:io:1046:9)
+#1      _ThenFuture._sendValue (dart:async:463:24)
+#2      _FutureImpl._setValue (dart:async:361:26)
+#3      _CompleterImpl.complete (dart:async:190:21)
+#4      _SendPortImpl.call.<anonymous closure> (dart:isolate-patch:106:27)
+#5      _ReceivePortImpl._handleMessage (dart:isolate-patch:81:92)
+
+
+Total time spent on web/index_source.html                    --  40 ms
+Total time                                                   --  59 ms
+build.dart finished [556 ms]
+
+---
+build.dart --machine --changed=web\app.dart --changed=web\bot_logo.png --changed=web\dart.js --changed=web\inde...
+[{"method":"mapping","params":{"from":"web/index_source.html","to":"web\out\index_source.html"}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\accordion.html","message":"Implied constructor name for x-tags has changed to \"XAccordion\". You should rename your class or add a constructor=\"Accordion\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":78}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\alert.html","message":"Implied constructor name for x-tags has changed to \"XAlert\". You should rename your class or add a constructor=\"Alert\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":74}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\dropdown.html","message":"Implied constructor name for x-tags has changed to \"XDropdown\". You should rename your class or add a constructor=\"Dropdown\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":77}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\collapse.html","message":"Implied constructor name for x-tags has changed to \"XCollapse\". You should rename your class or add a constructor=\"Collapse\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":77}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\modal.html","message":"Implied constructor name for x-tags has changed to \"XModal\". You should rename your class or add a constructor=\"Modal\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":74}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\tabs.html","message":"Implied constructor name for x-tags has changed to \"XTabs\". You should rename your class or add a constructor=\"Tabs\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":7,"charStart":100,"charEnd":137}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\carousel.html","message":"Implied constructor name for x-tags has changed to \"XCarousel\". You should rename your class or add a constructor=\"Carousel\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":7,"charStart":100,"charEnd":141}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\swap.html","message":"Implied constructor name for x-tags has changed to \"XSwap\". You should rename your class or add a constructor=\"Swap\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":73}}]
+Total time spent on web/index_source.html                    -- 1461 ms
+Total time                                                   -- 1479 ms
+build.dart finished [1989 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\widget\components\accordion.dart --changed=web\out\_from_...
+Total time                                                   --  17 ms
+build.dart finished [538 ms]
+
+---
+build.dart --machine --removed=web\bot_logo.png --removed=web\index.html
+Unable to open file: C:/Users/se136c/dart/relative_time_intl/packages/args/args.dart'package:web_ui/component_build.dart': Error: line 23 pos 1: library handler failed
+import 'package:args/args.dart';
+^
+'file:///C:/Users/se136c/dart/relative_time_intl/build.dart': Error: line 1 pos 1: library handler failed
+import 'package:web_ui/component_build.dart';
+^
+build.dart finished [418 ms]
+
+---
+build.dart --machine --changed=pubspec.lock
+Unable to open file: C:/Users/se136c/dart/relative_time_intl/packages/args/args.dart'package:web_ui/component_build.dart': Error: line 23 pos 1: library handler failed
+import 'package:args/args.dart';
+^
+'file:///C:/Users/se136c/dart/relative_time_intl/build.dart': Error: line 1 pos 1: library handler failed
+import 'package:web_ui/component_build.dart';
+^
+build.dart finished [292 ms]
+
+---
+build.dart --machine --changed=tool\plural\locale_build.dart
+Unable to open file: C:/Users/se136c/dart/relative_time_intl/packages/args/args.dart'package:web_ui/component_build.dart': Error: line 23 pos 1: library handler failed
+import 'package:args/args.dart';
+^
+'file:///C:/Users/se136c/dart/relative_time_intl/build.dart': Error: line 1 pos 1: library handler failed
+import 'package:web_ui/component_build.dart';
+^
+build.dart finished [1434 ms]
+
+---
+build.dart --machine --changed=pubspec.lock
+Unable to open file: C:/Users/se136c/dart/relative_time_intl/packages/args/args.dart'package:web_ui/component_build.dart': Error: line 23 pos 1: library handler failed
+import 'package:args/args.dart';
+^
+'file:///C:/Users/se136c/dart/relative_time_intl/build.dart': Error: line 1 pos 1: library handler failed
+import 'package:web_ui/component_build.dart';
+^
+build.dart finished [177 ms]
+
+---
+build.dart --machine --changed=pubspec.yaml
+Unable to open file: C:/Users/se136c/dart/relative_time_intl/packages/args/args.dart'package:web_ui/component_build.dart': Error: line 23 pos 1: library handler failed
+import 'package:args/args.dart';
+^
+'file:///C:/Users/se136c/dart/relative_time_intl/build.dart': Error: line 1 pos 1: library handler failed
+import 'package:web_ui/component_build.dart';
+^
+build.dart finished [67 ms]
+
+---
+build.dart --machine --changed=pubspec.lock
+Unable to open file: C:/Users/se136c/dart/relative_time_intl/packages/args/args.dart'package:web_ui/component_build.dart': Error: line 23 pos 1: library handler failed
+import 'package:args/args.dart';
+^
+'file:///C:/Users/se136c/dart/relative_time_intl/build.dart': Error: line 1 pos 1: library handler failed
+import 'package:web_ui/component_build.dart';
+^
+build.dart finished [66 ms]
+
+---
+build.dart --machine --changed=pubspec.lock
+Total time                                                   --  16 ms
+build.dart finished [588 ms]
+
+---
+build.dart --machine --changed=lib\locale\plural\af.dart --changed=lib\locale\plural\ak.dart --changed=lib\loca...
+[{"method":"mapping","params":{"from":"web/index_source.html","to":"web\out\index_source.html"}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\collapse.html","message":"Implied constructor name for x-tags has changed to \"XCollapse\". You should rename your class or add a constructor=\"Collapse\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":77}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\alert.html","message":"Implied constructor name for x-tags has changed to \"XAlert\". You should rename your class or add a constructor=\"Alert\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":74}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\accordion.html","message":"Implied constructor name for x-tags has changed to \"XAccordion\". You should rename your class or add a constructor=\"Accordion\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":78}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\dropdown.html","message":"Implied constructor name for x-tags has changed to \"XDropdown\". You should rename your class or add a constructor=\"Dropdown\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":77}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\modal.html","message":"Implied constructor name for x-tags has changed to \"XModal\". You should rename your class or add a constructor=\"Modal\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":74}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\carousel.html","message":"Implied constructor name for x-tags has changed to \"XCarousel\". You should rename your class or add a constructor=\"Carousel\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":7,"charStart":100,"charEnd":141}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\tabs.html","message":"Implied constructor name for x-tags has changed to \"XTabs\". You should rename your class or add a constructor=\"Tabs\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":7,"charStart":100,"charEnd":137}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\swap.html","message":"Implied constructor name for x-tags has changed to \"XSwap\". You should rename your class or add a constructor=\"Swap\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":73}}]
+Total time spent on web/index_source.html                    -- 1367 ms
+Total time                                                   -- 1395 ms
+build.dart finished [2862 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\widget\components\accordion.dart --changed=web\out\_from_...
+Total time                                                   --  16 ms
+build.dart finished [536 ms]
+
+---
+build.dart --machine --changed=lib\locale\plural\af.dart --changed=lib\locale\plural\ak.dart --changed=lib\loca...
+[{"method":"mapping","params":{"from":"web/index_source.html","to":"web\out\index_source.html"}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\alert.html","message":"Implied constructor name for x-tags has changed to \"XAlert\". You should rename your class or add a constructor=\"Alert\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":74}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\accordion.html","message":"Implied constructor name for x-tags has changed to \"XAccordion\". You should rename your class or add a constructor=\"Accordion\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":78}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\carousel.html","message":"Implied constructor name for x-tags has changed to \"XCarousel\". You should rename your class or add a constructor=\"Carousel\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":7,"charStart":100,"charEnd":141}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\collapse.html","message":"Implied constructor name for x-tags has changed to \"XCollapse\". You should rename your class or add a constructor=\"Collapse\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":77}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\dropdown.html","message":"Implied constructor name for x-tags has changed to \"XDropdown\". You should rename your class or add a constructor=\"Dropdown\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":77}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\modal.html","message":"Implied constructor name for x-tags has changed to \"XModal\". You should rename your class or add a constructor=\"Modal\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":74}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\tabs.html","message":"Implied constructor name for x-tags has changed to \"XTabs\". You should rename your class or add a constructor=\"Tabs\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":7,"charStart":100,"charEnd":137}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\swap.html","message":"Implied constructor name for x-tags has changed to \"XSwap\". You should rename your class or add a constructor=\"Swap\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":73}}]
+Total time spent on web/index_source.html                    -- 1718 ms
+Total time                                                   -- 1745 ms
+build.dart finished [2991 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\widget\components\accordion.dart --changed=web\out\_from_...
+Total time                                                   --  25 ms
+build.dart finished [619 ms]
+
+---
+build.dart --machine --changed=lib\src\plural\load_locale.dart
+[{"method":"mapping","params":{"from":"web/index_source.html","to":"web\out\index_source.html"}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\accordion.html","message":"Implied constructor name for x-tags has changed to \"XAccordion\". You should rename your class or add a constructor=\"Accordion\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":78}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\alert.html","message":"Implied constructor name for x-tags has changed to \"XAlert\". You should rename your class or add a constructor=\"Alert\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":74}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\carousel.html","message":"Implied constructor name for x-tags has changed to \"XCarousel\". You should rename your class or add a constructor=\"Carousel\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":7,"charStart":100,"charEnd":141}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\collapse.html","message":"Implied constructor name for x-tags has changed to \"XCollapse\". You should rename your class or add a constructor=\"Collapse\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":77}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\dropdown.html","message":"Implied constructor name for x-tags has changed to \"XDropdown\". You should rename your class or add a constructor=\"Dropdown\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":77}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\modal.html","message":"Implied constructor name for x-tags has changed to \"XModal\". You should rename your class or add a constructor=\"Modal\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":74}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\tabs.html","message":"Implied constructor name for x-tags has changed to \"XTabs\". You should rename your class or add a constructor=\"Tabs\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":7,"charStart":100,"charEnd":137}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\swap.html","message":"Implied constructor name for x-tags has changed to \"XSwap\". You should rename your class or add a constructor=\"Swap\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":73}}]
+Total time spent on web/index_source.html                    -- 1061 ms
+Total time                                                   -- 1079 ms
+build.dart finished [1668 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\widget\components\accordion.dart --changed=web\out\_from_...
+Total time                                                   --  17 ms
+build.dart finished [584 ms]
+
+---
+build.dart --machine --changed=tool\plural\locale_build.dart
+[{"method":"mapping","params":{"from":"web/index_source.html","to":"web\out\index_source.html"}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\accordion.html","message":"Implied constructor name for x-tags has changed to \"XAccordion\". You should rename your class or add a constructor=\"Accordion\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":78}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\alert.html","message":"Implied constructor name for x-tags has changed to \"XAlert\". You should rename your class or add a constructor=\"Alert\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":74}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\carousel.html","message":"Implied constructor name for x-tags has changed to \"XCarousel\". You should rename your class or add a constructor=\"Carousel\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":7,"charStart":100,"charEnd":141}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\dropdown.html","message":"Implied constructor name for x-tags has changed to \"XDropdown\". You should rename your class or add a constructor=\"Dropdown\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":77}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\collapse.html","message":"Implied constructor name for x-tags has changed to \"XCollapse\". You should rename your class or add a constructor=\"Collapse\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":77}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\modal.html","message":"Implied constructor name for x-tags has changed to \"XModal\". You should rename your class or add a constructor=\"Modal\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":74}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\tabs.html","message":"Implied constructor name for x-tags has changed to \"XTabs\". You should rename your class or add a constructor=\"Tabs\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":7,"charStart":100,"charEnd":137}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\swap.html","message":"Implied constructor name for x-tags has changed to \"XSwap\". You should rename your class or add a constructor=\"Swap\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":73}}]
+Total time spent on web/index_source.html                    -- 1235 ms
+Total time                                                   -- 1254 ms
+build.dart finished [2624 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\widget\components\accordion.dart --changed=web\out\_from_...
+Total time                                                   --  24 ms
+build.dart finished [587 ms]
+
+---
+build.dart --machine --changed=lib\src\plural\locale\af.dart --changed=lib\src\plural\locale\ak.dart --changed=...
+[{"method":"mapping","params":{"from":"web/index_source.html","to":"web\out\index_source.html"}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\accordion.html","message":"Implied constructor name for x-tags has changed to \"XAccordion\". You should rename your class or add a constructor=\"Accordion\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":78}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\alert.html","message":"Implied constructor name for x-tags has changed to \"XAlert\". You should rename your class or add a constructor=\"Alert\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":74}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\carousel.html","message":"Implied constructor name for x-tags has changed to \"XCarousel\". You should rename your class or add a constructor=\"Carousel\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":7,"charStart":100,"charEnd":141}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\collapse.html","message":"Implied constructor name for x-tags has changed to \"XCollapse\". You should rename your class or add a constructor=\"Collapse\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":77}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\dropdown.html","message":"Implied constructor name for x-tags has changed to \"XDropdown\". You should rename your class or add a constructor=\"Dropdown\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":77}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\modal.html","message":"Implied constructor name for x-tags has changed to \"XModal\". You should rename your class or add a constructor=\"Modal\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":74}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\tabs.html","message":"Implied constructor name for x-tags has changed to \"XTabs\". You should rename your class or add a constructor=\"Tabs\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":7,"charStart":100,"charEnd":137}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\swap.html","message":"Implied constructor name for x-tags has changed to \"XSwap\". You should rename your class or add a constructor=\"Swap\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":73}}]
+Total time spent on web/index_source.html                    -- 1038 ms
+Total time                                                   -- 1058 ms
+build.dart finished [1583 ms]
+
+---
+build.dart --machine --changed=lib\locale\plural\af.dart --changed=lib\locale\plural\ak.dart --changed=lib\loca...
+[{"method":"mapping","params":{"from":"web/index_source.html","to":"web\out\index_source.html"}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\accordion.html","message":"Implied constructor name for x-tags has changed to \"XAccordion\". You should rename your class or add a constructor=\"Accordion\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":78}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\alert.html","message":"Implied constructor name for x-tags has changed to \"XAlert\". You should rename your class or add a constructor=\"Alert\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":74}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\carousel.html","message":"Implied constructor name for x-tags has changed to \"XCarousel\". You should rename your class or add a constructor=\"Carousel\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":7,"charStart":100,"charEnd":141}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\collapse.html","message":"Implied constructor name for x-tags has changed to \"XCollapse\". You should rename your class or add a constructor=\"Collapse\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":77}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\dropdown.html","message":"Implied constructor name for x-tags has changed to \"XDropdown\". You should rename your class or add a constructor=\"Dropdown\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":77}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\modal.html","message":"Implied constructor name for x-tags has changed to \"XModal\". You should rename your class or add a constructor=\"Modal\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":74}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\tabs.html","message":"Implied constructor name for x-tags has changed to \"XTabs\". You should rename your class or add a constructor=\"Tabs\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":7,"charStart":100,"charEnd":137}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\swap.html","message":"Implied constructor name for x-tags has changed to \"XSwap\". You should rename your class or add a constructor=\"Swap\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":73}}]
+Total time spent on web/index_source.html                    -- 1153 ms
+Total time                                                   -- 1181 ms
+build.dart finished [1762 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\widget\components\accordion.dart --changed=web\out\_from_...
+Total time                                                   --  18 ms
+build.dart finished [542 ms]
+
+---
+build.dart --machine --removed=lib\locale\plural\in.dart --removed=lib\locale\plural\iw.dart
+[{"method":"mapping","params":{"from":"web/index_source.html","to":"web\out\index_source.html"}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\accordion.html","message":"Implied constructor name for x-tags has changed to \"XAccordion\". You should rename your class or add a constructor=\"Accordion\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":78}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\alert.html","message":"Implied constructor name for x-tags has changed to \"XAlert\". You should rename your class or add a constructor=\"Alert\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":74}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\carousel.html","message":"Implied constructor name for x-tags has changed to \"XCarousel\". You should rename your class or add a constructor=\"Carousel\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":7,"charStart":100,"charEnd":141}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\collapse.html","message":"Implied constructor name for x-tags has changed to \"XCollapse\". You should rename your class or add a constructor=\"Collapse\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":77}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\dropdown.html","message":"Implied constructor name for x-tags has changed to \"XDropdown\". You should rename your class or add a constructor=\"Dropdown\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":77}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\modal.html","message":"Implied constructor name for x-tags has changed to \"XModal\". You should rename your class or add a constructor=\"Modal\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":74}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\tabs.html","message":"Implied constructor name for x-tags has changed to \"XTabs\". You should rename your class or add a constructor=\"Tabs\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":7,"charStart":100,"charEnd":137}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\swap.html","message":"Implied constructor name for x-tags has changed to \"XSwap\". You should rename your class or add a constructor=\"Swap\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":73}}]
+Total time spent on web/index_source.html                    -- 1296 ms
+Total time                                                   -- 1317 ms
+build.dart finished [1959 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\widget\components\accordion.dart --changed=web\out\_from_...
+Total time                                                   --  18 ms
+build.dart finished [501 ms]
+
+---
+build.dart --machine --changed=tool\plural\locale_build.dart
+[{"method":"mapping","params":{"from":"web/index_source.html","to":"web\out\index_source.html"}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\accordion.html","message":"Implied constructor name for x-tags has changed to \"XAccordion\". You should rename your class or add a constructor=\"Accordion\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":78}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\alert.html","message":"Implied constructor name for x-tags has changed to \"XAlert\". You should rename your class or add a constructor=\"Alert\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":74}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\carousel.html","message":"Implied constructor name for x-tags has changed to \"XCarousel\". You should rename your class or add a constructor=\"Carousel\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":7,"charStart":100,"charEnd":141}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\collapse.html","message":"Implied constructor name for x-tags has changed to \"XCollapse\". You should rename your class or add a constructor=\"Collapse\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":77}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\dropdown.html","message":"Implied constructor name for x-tags has changed to \"XDropdown\". You should rename your class or add a constructor=\"Dropdown\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":77}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\modal.html","message":"Implied constructor name for x-tags has changed to \"XModal\". You should rename your class or add a constructor=\"Modal\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":74}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\tabs.html","message":"Implied constructor name for x-tags has changed to \"XTabs\". You should rename your class or add a constructor=\"Tabs\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":7,"charStart":100,"charEnd":137}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\swap.html","message":"Implied constructor name for x-tags has changed to \"XSwap\". You should rename your class or add a constructor=\"Swap\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":73}}]
+Total time spent on web/index_source.html                    -- 1047 ms
+Total time                                                   -- 1065 ms
+build.dart finished [1560 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\widget\components\accordion.dart --changed=web\out\_from_...
+Total time                                                   --  17 ms
+build.dart finished [500 ms]
+
+---
+build.dart --machine --changed=lib\src\plural\load_locale.dart
+[{"method":"mapping","params":{"from":"web/index_source.html","to":"web\out\index_source.html"}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\accordion.html","message":"Implied constructor name for x-tags has changed to \"XAccordion\". You should rename your class or add a constructor=\"Accordion\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":78}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\alert.html","message":"Implied constructor name for x-tags has changed to \"XAlert\". You should rename your class or add a constructor=\"Alert\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":74}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\carousel.html","message":"Implied constructor name for x-tags has changed to \"XCarousel\". You should rename your class or add a constructor=\"Carousel\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":7,"charStart":100,"charEnd":141}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\collapse.html","message":"Implied constructor name for x-tags has changed to \"XCollapse\". You should rename your class or add a constructor=\"Collapse\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":77}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\dropdown.html","message":"Implied constructor name for x-tags has changed to \"XDropdown\". You should rename your class or add a constructor=\"Dropdown\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":77}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\modal.html","message":"Implied constructor name for x-tags has changed to \"XModal\". You should rename your class or add a constructor=\"Modal\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":74}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\tabs.html","message":"Implied constructor name for x-tags has changed to \"XTabs\". You should rename your class or add a constructor=\"Tabs\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":7,"charStart":100,"charEnd":137}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\swap.html","message":"Implied constructor name for x-tags has changed to \"XSwap\". You should rename your class or add a constructor=\"Swap\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":73}}]
+Total time spent on web/index_source.html                    -- 1134 ms
+Total time                                                   -- 1153 ms
+build.dart finished [1651 ms]
+
+---
+build.dart --machine --changed=lib\locale\plural\af.dart --changed=lib\locale\plural\ak.dart --changed=lib\loca...
+[{"method":"mapping","params":{"from":"web/index_source.html","to":"web\out\index_source.html"}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\accordion.html","message":"Implied constructor name for x-tags has changed to \"XAccordion\". You should rename your class or add a constructor=\"Accordion\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":78}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\alert.html","message":"Implied constructor name for x-tags has changed to \"XAlert\". You should rename your class or add a constructor=\"Alert\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":74}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\carousel.html","message":"Implied constructor name for x-tags has changed to \"XCarousel\". You should rename your class or add a constructor=\"Carousel\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":7,"charStart":100,"charEnd":141}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\collapse.html","message":"Implied constructor name for x-tags has changed to \"XCollapse\". You should rename your class or add a constructor=\"Collapse\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":77}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\dropdown.html","message":"Implied constructor name for x-tags has changed to \"XDropdown\". You should rename your class or add a constructor=\"Dropdown\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":77}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\modal.html","message":"Implied constructor name for x-tags has changed to \"XModal\". You should rename your class or add a constructor=\"Modal\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":74}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\tabs.html","message":"Implied constructor name for x-tags has changed to \"XTabs\". You should rename your class or add a constructor=\"Tabs\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":7,"charStart":100,"charEnd":137}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\swap.html","message":"Implied constructor name for x-tags has changed to \"XSwap\". You should rename your class or add a constructor=\"Swap\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":73}}]
+Total time spent on web/index_source.html                    -- 1251 ms
+Total time                                                   -- 1280 ms
+build.dart finished [1878 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\widget\components\accordion.dart --changed=web\out\_from_...
+Total time                                                   --  18 ms
+build.dart finished [561 ms]
+
+---
+build.dart --machine --changed=example\locale_loading.dart
+[{"method":"mapping","params":{"from":"web/index_source.html","to":"web\out\index_source.html"}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\accordion.html","message":"Implied constructor name for x-tags has changed to \"XAccordion\". You should rename your class or add a constructor=\"Accordion\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":78}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\alert.html","message":"Implied constructor name for x-tags has changed to \"XAlert\". You should rename your class or add a constructor=\"Alert\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":74}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\carousel.html","message":"Implied constructor name for x-tags has changed to \"XCarousel\". You should rename your class or add a constructor=\"Carousel\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":7,"charStart":100,"charEnd":141}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\collapse.html","message":"Implied constructor name for x-tags has changed to \"XCollapse\". You should rename your class or add a constructor=\"Collapse\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":77}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\dropdown.html","message":"Implied constructor name for x-tags has changed to \"XDropdown\". You should rename your class or add a constructor=\"Dropdown\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":77}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\modal.html","message":"Implied constructor name for x-tags has changed to \"XModal\". You should rename your class or add a constructor=\"Modal\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":74}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\tabs.html","message":"Implied constructor name for x-tags has changed to \"XTabs\". You should rename your class or add a constructor=\"Tabs\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":7,"charStart":100,"charEnd":137}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\swap.html","message":"Implied constructor name for x-tags has changed to \"XSwap\". You should rename your class or add a constructor=\"Swap\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":73}}]
+Total time spent on web/index_source.html                    -- 1136 ms
+Total time                                                   -- 1155 ms
+build.dart finished [1671 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\widget\components\accordion.dart --changed=web\out\_from_...
+Total time                                                   --  17 ms
+build.dart finished [529 ms]
+
+---
+build.dart --machine --changed=example\locale_loading.dart
+[{"method":"mapping","params":{"from":"web/index_source.html","to":"web\out\index_source.html"}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\accordion.html","message":"Implied constructor name for x-tags has changed to \"XAccordion\". You should rename your class or add a constructor=\"Accordion\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":78}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\alert.html","message":"Implied constructor name for x-tags has changed to \"XAlert\". You should rename your class or add a constructor=\"Alert\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":74}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\carousel.html","message":"Implied constructor name for x-tags has changed to \"XCarousel\". You should rename your class or add a constructor=\"Carousel\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":7,"charStart":100,"charEnd":141}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\collapse.html","message":"Implied constructor name for x-tags has changed to \"XCollapse\". You should rename your class or add a constructor=\"Collapse\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":77}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\dropdown.html","message":"Implied constructor name for x-tags has changed to \"XDropdown\". You should rename your class or add a constructor=\"Dropdown\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":77}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\modal.html","message":"Implied constructor name for x-tags has changed to \"XModal\". You should rename your class or add a constructor=\"Modal\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":74}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\tabs.html","message":"Implied constructor name for x-tags has changed to \"XTabs\". You should rename your class or add a constructor=\"Tabs\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":7,"charStart":100,"charEnd":137}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\swap.html","message":"Implied constructor name for x-tags has changed to \"XSwap\". You should rename your class or add a constructor=\"Swap\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":73}}]
+Total time spent on web/index_source.html                    -- 1102 ms
+Total time                                                   -- 1120 ms
+build.dart finished [1613 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\widget\components\accordion.dart --changed=web\out\_from_...
+Total time                                                   --  17 ms
+build.dart finished [494 ms]
+
+---
+build.dart --machine --changed=example\locale_loading.dart
+[{"method":"mapping","params":{"from":"web/index_source.html","to":"web\out\index_source.html"}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\accordion.html","message":"Implied constructor name for x-tags has changed to \"XAccordion\". You should rename your class or add a constructor=\"Accordion\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":78}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\alert.html","message":"Implied constructor name for x-tags has changed to \"XAlert\". You should rename your class or add a constructor=\"Alert\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":74}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\carousel.html","message":"Implied constructor name for x-tags has changed to \"XCarousel\". You should rename your class or add a constructor=\"Carousel\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":7,"charStart":100,"charEnd":141}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\collapse.html","message":"Implied constructor name for x-tags has changed to \"XCollapse\". You should rename your class or add a constructor=\"Collapse\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":77}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\dropdown.html","message":"Implied constructor name for x-tags has changed to \"XDropdown\". You should rename your class or add a constructor=\"Dropdown\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":77}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\modal.html","message":"Implied constructor name for x-tags has changed to \"XModal\". You should rename your class or add a constructor=\"Modal\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":74}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\tabs.html","message":"Implied constructor name for x-tags has changed to \"XTabs\". You should rename your class or add a constructor=\"Tabs\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":7,"charStart":100,"charEnd":137}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\swap.html","message":"Implied constructor name for x-tags has changed to \"XSwap\". You should rename your class or add a constructor=\"Swap\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":73}}]
+Total time spent on web/index_source.html                    -- 1040 ms
+Total time                                                   -- 1060 ms
+build.dart finished [1554 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\widget\components\accordion.dart --changed=web\out\_from_...
+Total time                                                   --  17 ms
+build.dart finished [502 ms]
+
+---
+build.dart --machine --changed=example\locale_loading.dart
+[{"method":"mapping","params":{"from":"web/index_source.html","to":"web\out\index_source.html"}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\accordion.html","message":"Implied constructor name for x-tags has changed to \"XAccordion\". You should rename your class or add a constructor=\"Accordion\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":78}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\alert.html","message":"Implied constructor name for x-tags has changed to \"XAlert\". You should rename your class or add a constructor=\"Alert\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":74}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\carousel.html","message":"Implied constructor name for x-tags has changed to \"XCarousel\". You should rename your class or add a constructor=\"Carousel\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":7,"charStart":100,"charEnd":141}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\collapse.html","message":"Implied constructor name for x-tags has changed to \"XCollapse\". You should rename your class or add a constructor=\"Collapse\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":77}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\dropdown.html","message":"Implied constructor name for x-tags has changed to \"XDropdown\". You should rename your class or add a constructor=\"Dropdown\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":77}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\modal.html","message":"Implied constructor name for x-tags has changed to \"XModal\". You should rename your class or add a constructor=\"Modal\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":74}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\tabs.html","message":"Implied constructor name for x-tags has changed to \"XTabs\". You should rename your class or add a constructor=\"Tabs\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":7,"charStart":100,"charEnd":137}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\swap.html","message":"Implied constructor name for x-tags has changed to \"XSwap\". You should rename your class or add a constructor=\"Swap\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":73}}]
+Total time spent on web/index_source.html                    -- 1135 ms
+Total time                                                   -- 1155 ms
+build.dart finished [1653 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\widget\components\accordion.dart --changed=web\out\_from_...
+Total time                                                   --  17 ms
+build.dart finished [494 ms]
+
+---
+build.dart --machine --changed=example\locale_loading.dart
+[{"method":"mapping","params":{"from":"web/index_source.html","to":"web\out\index_source.html"}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\accordion.html","message":"Implied constructor name for x-tags has changed to \"XAccordion\". You should rename your class or add a constructor=\"Accordion\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":78}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\alert.html","message":"Implied constructor name for x-tags has changed to \"XAlert\". You should rename your class or add a constructor=\"Alert\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":74}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\carousel.html","message":"Implied constructor name for x-tags has changed to \"XCarousel\". You should rename your class or add a constructor=\"Carousel\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":7,"charStart":100,"charEnd":141}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\collapse.html","message":"Implied constructor name for x-tags has changed to \"XCollapse\". You should rename your class or add a constructor=\"Collapse\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":77}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\dropdown.html","message":"Implied constructor name for x-tags has changed to \"XDropdown\". You should rename your class or add a constructor=\"Dropdown\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":77}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\modal.html","message":"Implied constructor name for x-tags has changed to \"XModal\". You should rename your class or add a constructor=\"Modal\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":74}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\tabs.html","message":"Implied constructor name for x-tags has changed to \"XTabs\". You should rename your class or add a constructor=\"Tabs\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":7,"charStart":100,"charEnd":137}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\swap.html","message":"Implied constructor name for x-tags has changed to \"XSwap\". You should rename your class or add a constructor=\"Swap\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":73}}]
+Total time spent on web/index_source.html                    -- 1038 ms
+Total time                                                   -- 1057 ms
+build.dart finished [1570 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\widget\components\accordion.dart --changed=web\out\_from_...
+Total time                                                   --  17 ms
+build.dart finished [497 ms]
+
+---
+build.dart --machine --removed=lib\locale\relative_time\in.dart --removed=lib\locale\relative_time\iw.dart
+[{"method":"mapping","params":{"from":"web/index_source.html","to":"web\out\index_source.html"}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\accordion.html","message":"Implied constructor name for x-tags has changed to \"XAccordion\". You should rename your class or add a constructor=\"Accordion\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":78}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\alert.html","message":"Implied constructor name for x-tags has changed to \"XAlert\". You should rename your class or add a constructor=\"Alert\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":74}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\carousel.html","message":"Implied constructor name for x-tags has changed to \"XCarousel\". You should rename your class or add a constructor=\"Carousel\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":7,"charStart":100,"charEnd":141}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\collapse.html","message":"Implied constructor name for x-tags has changed to \"XCollapse\". You should rename your class or add a constructor=\"Collapse\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":77}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\dropdown.html","message":"Implied constructor name for x-tags has changed to \"XDropdown\". You should rename your class or add a constructor=\"Dropdown\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":77}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\modal.html","message":"Implied constructor name for x-tags has changed to \"XModal\". You should rename your class or add a constructor=\"Modal\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":74}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\tabs.html","message":"Implied constructor name for x-tags has changed to \"XTabs\". You should rename your class or add a constructor=\"Tabs\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":7,"charStart":100,"charEnd":137}}]
+[{"method":"warning","params":{"file":"web\\packages\\widget\\components\\swap.html","message":"Implied constructor name for x-tags has changed to \"XSwap\". You should rename your class or add a constructor=\"Swap\" attribute to the element declaration. Also custom tags are not required to start with \"x-\" if their name has at least one dash.","line":4,"charStart":36,"charEnd":73}}]
+Total time spent on web/index_source.html                    -- 1097 ms
+Total time                                                   -- 1115 ms
+build.dart finished [1617 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\widget\components\accordion.dart --changed=web\out\_from_...
+Total time                                                   --  17 ms
+build.dart finished [511 ms]
+

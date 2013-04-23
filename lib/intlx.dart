@@ -6,6 +6,7 @@ import 'dart:math';
 import 'src/relative_time/locale.dart';
 import 'src/plural/plural.dart';
 import 'src/collection/locale.dart';
+import 'src/duration_converters.dart';
 
 /// formats Durations
 /// e.g. "2 hours"
@@ -46,9 +47,9 @@ class DurationRounder {
   RoundDuration roundDuration(Duration duration) {
     TimeUnit unit;
     int q;
-    if((q = duration.inDays ~/ 365) > 0) { unit = TimeUnit.YEAR;
-    } else if((q = min(duration.inDays ~/ 30, 11)) > 0) { unit = TimeUnit.MONTH;
-    } else if((q = duration.inDays ~/ 7) > 0) { unit = TimeUnit.WEEK;
+    if((q = inYears(duration)) > 0) { unit = TimeUnit.YEAR;
+    } else if((q = min(inMonths(duration), 11)) > 0) { unit = TimeUnit.MONTH;
+    } else if((q = inWeeks(duration)) > 0) { unit = TimeUnit.WEEK;
     } else if((q = duration.inDays) > 0) { unit = TimeUnit.DAY;
     } else if((q = duration.inHours) > 0) { unit = TimeUnit.HOUR;
     } else {

@@ -34,12 +34,12 @@ class PluralLocaleImpl implements PluralLocale {
 
 class PluralCategory {
 
-  static const ZERO = const PluralCategory._("zero");
-  static const ONE = const PluralCategory._("one");
-  static const TWO = const PluralCategory._("two");
-  static const FEW = const PluralCategory._("few");
-  static const MANY = const PluralCategory._("many");
-  static const OTHER = const PluralCategory._("other");
+  static const ZERO = const PluralCategory._("ZERO");
+  static const ONE = const PluralCategory._("ONE");
+  static const TWO = const PluralCategory._("TWO");
+  static const FEW = const PluralCategory._("FEW");
+  static const MANY = const PluralCategory._("MANY");
+  static const OTHER = const PluralCategory._("OTHER");
 
   const PluralCategory._(this._name);
 

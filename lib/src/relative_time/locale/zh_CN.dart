@@ -6,22 +6,22 @@ library relative_time_symbols_zh_CN;
 import 'package:intlx/src/relative_time/symbols.dart';
 
 final symbols = new RelativeTimeSymbols(      units: const {
-      "second": const {"other":"{0}ç§"},
-      "minute": const {"other":"{0}å"},
-      "hour": const {"other":"{0}å°æ¶"},
-      "day": const {"other":"{0}æ¥"},
-      "week": const {"other":"{0}å¨"},
-      "month": const {"other":"{0}æ"},
-      "year": const {"other":"{0}å¹´"}
+      "SECOND": const {"other":"{0}ç§"},
+      "MINUTE": const {"other":"{0}å"},
+      "HOUR": const {"other":"{0}å°æ¶"},
+      "DAY": const {"other":"{0}æ¥"},
+      "WEEK": const {"other":"{0}å¨"},
+      "MONTH": const {"other":"{0}æ"},
+      "YEAR": const {"other":"{0}å¹´"}
     },
       shortUnits: const {
-      "second": const {"other":"{0}ç§"},
-      "minute": const {"other":"{0}å"},
-      "hour": const {"other":"{0}å°æ¶"},
-      "day": const {"other":"{0}æ¥"},
-      "week": const {"other":"{0}å¨"},
-      "month": const {"other":"{0}æ"},
-      "year": const {"other":"{0}å¹´"}
+      "SECOND": const {"other":"{0}ç§"},
+      "MINUTE": const {"other":"{0}å"},
+      "HOUR": const {"other":"{0}å°æ¶"},
+      "DAY": const {"other":"{0}æ¥"},
+      "WEEK": const {"other":"{0}å¨"},
+      "MONTH": const {"other":"{0}æ"},
+      "YEAR": const {"other":"{0}å¹´"}
     },
     pastUnits: const {},
     futureUnits: const {});

@@ -6,22 +6,22 @@ library relative_time_symbols_no;
 import 'package:intlx/src/relative_time/symbols.dart';
 
 final symbols = new RelativeTimeSymbols(      units: const {
-      "second": const {"one":"{0} sekund","other":"{0} sekunder"},
-      "minute": const {"one":"{0} minutt","other":"{0} minutter"},
-      "hour": const {"one":"{0} time","other":"{0} timer"},
-      "day": const {"one":"{0} dag","other":"{0} dager"},
-      "week": const {"one":"{0} uke","other":"{0} uker"},
-      "month": const {"one":"{0} mÃ¥ned","other":"{0} mÃ¥neder"},
-      "year": const {"one":"{0} Ã¥r","other":"{0} Ã¥r"}
+      "SECOND": const {"one":"{0} sekund","other":"{0} sekunder"},
+      "MINUTE": const {"one":"{0} minutt","other":"{0} minutter"},
+      "HOUR": const {"one":"{0} time","other":"{0} timer"},
+      "DAY": const {"one":"{0} dag","other":"{0} dager"},
+      "WEEK": const {"one":"{0} uke","other":"{0} uker"},
+      "MONTH": const {"one":"{0} mÃ¥ned","other":"{0} mÃ¥neder"},
+      "YEAR": const {"one":"{0} Ã¥r","other":"{0} Ã¥r"}
     },
       shortUnits: const {
-      "second": const {"one":"{0} sek","other":"{0} sek"},
-      "minute": const {"one":"{0} min","other":"{0} min"},
-      "hour": const {"one":"{0} t","other":"{0} t"},
-      "day": const {"one":"{0} dag","other":"{0} dager"},
-      "week": const {"one":"{0} uke","other":"{0} uker"},
-      "month": const {"one":"{0} md.","other":"{0} md."},
-      "year": const {"one":"{0} Ã¥r","other":"{0} Ã¥r"}
+      "SECOND": const {"one":"{0} sek","other":"{0} sek"},
+      "MINUTE": const {"one":"{0} min","other":"{0} min"},
+      "HOUR": const {"one":"{0} t","other":"{0} t"},
+      "DAY": const {"one":"{0} dag","other":"{0} dager"},
+      "WEEK": const {"one":"{0} uke","other":"{0} uker"},
+      "MONTH": const {"one":"{0} md.","other":"{0} md."},
+      "YEAR": const {"one":"{0} Ã¥r","other":"{0} Ã¥r"}
     },
     pastUnits: const {},
     futureUnits: const {});

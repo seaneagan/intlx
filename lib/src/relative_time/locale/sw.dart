@@ -6,38 +6,38 @@ library relative_time_symbols_sw;
 import 'package:intlx/src/relative_time/symbols.dart';
 
 final symbols = new RelativeTimeSymbols(      units: const {
-      "second": const {"1":"Sekunde 1","0":"Sekunde 0","other":"sekunde {0}"},
-      "minute": const {"1":"dakika 1","0":"dakika 0","other":"dakika {0}"},
-      "hour": const {"1":"saa 1","0":"Masaa 0","other":"masaa {0}"},
-      "day": const {"1":"siku 1","0":"siku 0","other":"siku {0}"},
-      "week": const {"1":"wiki 1","0":"wiki 0","other":"wiki {0}"},
-      "month": const {"1":"mwezi 1","0":"miezi 0","other":"miezi {0}"},
-      "year": const {"1":"mwaka 1","0":"miaka 0","other":"miaka {0}"}
+      "SECOND": const {"1":"Sekunde 1","0":"Sekunde 0","other":"sekunde {0}"},
+      "MINUTE": const {"1":"dakika 1","0":"dakika 0","other":"dakika {0}"},
+      "HOUR": const {"1":"saa 1","0":"Masaa 0","other":"masaa {0}"},
+      "DAY": const {"1":"siku 1","0":"siku 0","other":"siku {0}"},
+      "WEEK": const {"1":"wiki 1","0":"wiki 0","other":"wiki {0}"},
+      "MONTH": const {"1":"mwezi 1","0":"miezi 0","other":"miezi {0}"},
+      "YEAR": const {"1":"mwaka 1","0":"miaka 0","other":"miaka {0}"}
     },
       shortUnits: const {
-      "second": const {"1":"sekunde 1","0":"sekunde 0","other":"sekunde {0}"},
-      "minute": const {"1":"Dakika 1","0":"Dakika 0","other":"Dakika {0}"},
-      "hour": const {"1":"Saa 1","0":"Masaa 0","other":"Masaa {0}"},
-      "day": const {"1":"siku 1","0":"siku 0","other":"siku {0}"},
-      "week": const {"1":"wiki 1","0":"wiki 0","other":"wiki {0}"},
-      "month": const {"1":"mwezi 1","0":"miezi 0","other":"miezi {0}"},
-      "year": const {"1":"Mwaka 1","0":"miaka 0","other":"miaka {0}"}
+      "SECOND": const {"1":"sekunde 1","0":"sekunde 0","other":"sekunde {0}"},
+      "MINUTE": const {"1":"Dakika 1","0":"Dakika 0","other":"Dakika {0}"},
+      "HOUR": const {"1":"Saa 1","0":"Masaa 0","other":"Masaa {0}"},
+      "DAY": const {"1":"siku 1","0":"siku 0","other":"siku {0}"},
+      "WEEK": const {"1":"wiki 1","0":"wiki 0","other":"wiki {0}"},
+      "MONTH": const {"1":"mwezi 1","0":"miezi 0","other":"miezi {0}"},
+      "YEAR": const {"1":"Mwaka 1","0":"miaka 0","other":"miaka {0}"}
     },
       pastUnits: const {
-      "second": const {"1":"Sekunde moja iliyopita","0":"Sekunde 0 zilizopita","other":"Sekunde {0} zilizopita"},
-      "minute": const {"1":"dakina 1 iliyopita","0":"Dakika 0 zilizopita","other":"Dakika {0} zilizopita"},
-      "hour": const {"1":"Saa moja lililopita","0":"Masaa 0 yaliyopita","other":"Masaa {0} yaliyopita"},
-      "day": const {"1":"siku 1 iliyopita","0":"Siku 0 zilizopita","other":"Siku {0} zilizopita"},
-      "week": const {"1":"Wiki 1 iliyopita","0":"Wiki 0 zilizopita","other":"Wiki {0} zilizopita"},
-      "month": const {"1":"Mwezi 1 uliopita","0":"Miezi 0 iliyopita","other":"Miezi {0} iliyopita"},
-      "year": const {"1":"Mwaka 1 uliopita","0":"Miaka 0 iliyopita","other":"Miaka {0} iliyopita"}
+      "SECOND": const {"1":"Sekunde moja iliyopita","0":"Sekunde 0 zilizopita","other":"Sekunde {0} zilizopita"},
+      "MINUTE": const {"1":"dakina 1 iliyopita","0":"Dakika 0 zilizopita","other":"Dakika {0} zilizopita"},
+      "HOUR": const {"1":"Saa moja lililopita","0":"Masaa 0 yaliyopita","other":"Masaa {0} yaliyopita"},
+      "DAY": const {"1":"siku 1 iliyopita","0":"Siku 0 zilizopita","other":"Siku {0} zilizopita"},
+      "WEEK": const {"1":"Wiki 1 iliyopita","0":"Wiki 0 zilizopita","other":"Wiki {0} zilizopita"},
+      "MONTH": const {"1":"Mwezi 1 uliopita","0":"Miezi 0 iliyopita","other":"Miezi {0} iliyopita"},
+      "YEAR": const {"1":"Mwaka 1 uliopita","0":"Miaka 0 iliyopita","other":"Miaka {0} iliyopita"}
     },
       futureUnits: const {
-      "second": const {"1":"Baada ya sekunde 1","0":"Baada ya sekunde 0","other":"Baada ya sekunde {0}"},
-      "minute": const {"1":"Baada ya dakika 1","0":"Baada ya dakika 0","other":"Baada ya dakika {0}"},
-      "hour": const {"1":"Baada ya saa 1","0":"Baada ya masaa 0","other":"Baada ya masaa {0}"},
-      "day": const {"1":"Baada ya siku 1","0":"Baada ya siku 0","other":"Baada ya siku {0}"},
-      "week": const {"1":"Baada ya wiki 1","0":"Baada ya wiki 0","other":"Baada ya wiki {0}"},
-      "month": const {"1":"Baada ya mwezi 1","0":"Baada ya miezi 0","other":"Baada ya miezi {0}"},
-      "year": const {"1":"Baada ya mwaka 1","0":"Baada ya miaka 0","other":"Baada ya miaka {0}"}
+      "SECOND": const {"1":"Baada ya sekunde 1","0":"Baada ya sekunde 0","other":"Baada ya sekunde {0}"},
+      "MINUTE": const {"1":"Baada ya dakika 1","0":"Baada ya dakika 0","other":"Baada ya dakika {0}"},
+      "HOUR": const {"1":"Baada ya saa 1","0":"Baada ya masaa 0","other":"Baada ya masaa {0}"},
+      "DAY": const {"1":"Baada ya siku 1","0":"Baada ya siku 0","other":"Baada ya siku {0}"},
+      "WEEK": const {"1":"Baada ya wiki 1","0":"Baada ya wiki 0","other":"Baada ya wiki {0}"},
+      "MONTH": const {"1":"Baada ya mwezi 1","0":"Baada ya miezi 0","other":"Baada ya miezi {0}"},
+      "YEAR": const {"1":"Baada ya mwaka 1","0":"Baada ya miaka 0","other":"Baada ya miaka {0}"}
     });

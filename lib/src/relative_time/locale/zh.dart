@@ -6,38 +6,38 @@ library relative_time_symbols_zh;
 import 'package:intlx/src/relative_time/symbols.dart';
 
 final symbols = new RelativeTimeSymbols(      units: const {
-      "second": const {"other":"{0}ç§"},
-      "minute": const {"other":"{0}å"},
-      "hour": const {"other":"{0}å°æ¶"},
-      "day": const {"other":"{0}æ¥"},
-      "week": const {"other":"{0}å¨"},
-      "month": const {"other":"{0}æ"},
-      "year": const {"other":"{0}å¹´"}
+      "SECOND": const {"other":"{0}ç§"},
+      "MINUTE": const {"other":"{0}å"},
+      "HOUR": const {"other":"{0}å°æ¶"},
+      "DAY": const {"other":"{0}æ¥"},
+      "WEEK": const {"other":"{0}å¨"},
+      "MONTH": const {"other":"{0}æ"},
+      "YEAR": const {"other":"{0}å¹´"}
     },
       shortUnits: const {
-      "second": const {"other":"{0}ç§"},
-      "minute": const {"other":"{0}å"},
-      "hour": const {"other":"{0}å°æ¶"},
-      "day": const {"other":"{0}æ¥"},
-      "week": const {"other":"{0}å¨"},
-      "month": const {"other":"{0}æ"},
-      "year": const {"other":"{0}å¹´"}
+      "SECOND": const {"other":"{0}ç§"},
+      "MINUTE": const {"other":"{0}å"},
+      "HOUR": const {"other":"{0}å°æ¶"},
+      "DAY": const {"other":"{0}æ¥"},
+      "WEEK": const {"other":"{0}å¨"},
+      "MONTH": const {"other":"{0}æ"},
+      "YEAR": const {"other":"{0}å¹´"}
     },
       pastUnits: const {
-      "second": const {"1":"1ç§éå","0":"0ç§éå","other":"{0}ç§éå"},
-      "minute": const {"1":"1åéå","0":"0åéå","other":"{0}åéå"},
-      "hour": const {"1":"1å°æ¶å","0":"0å°æ¶å","other":"{0}å°æ¶å"},
-      "day": const {"1":"1å¤©å","0":"0å¤©å","other":"{0}å¤©å"},
-      "week": const {"1":"1å¨å","0":"0å¨å","other":"{0}å¨å"},
-      "month": const {"1":"1ä¸ªæå","0":"0ä¸ªæå","other":"{0}ä¸ªæå"},
-      "year": const {"1":"1å¹´å","0":"0å¹´å","other":"{0}å¹´å"}
+      "SECOND": const {"1":"1ç§éå","0":"0ç§éå","other":"{0}ç§éå"},
+      "MINUTE": const {"1":"1åéå","0":"0åéå","other":"{0}åéå"},
+      "HOUR": const {"1":"1å°æ¶å","0":"0å°æ¶å","other":"{0}å°æ¶å"},
+      "DAY": const {"1":"1å¤©å","0":"0å¤©å","other":"{0}å¤©å"},
+      "WEEK": const {"1":"1å¨å","0":"0å¨å","other":"{0}å¨å"},
+      "MONTH": const {"1":"1ä¸ªæå","0":"0ä¸ªæå","other":"{0}ä¸ªæå"},
+      "YEAR": const {"1":"1å¹´å","0":"0å¹´å","other":"{0}å¹´å"}
     },
       futureUnits: const {
-      "second": const {"1":"1ç§éå","0":"0ç§éå","other":"{0}ç§éå"},
-      "minute": const {"1":"1åéå","0":"0åéå","other":"{0}åéå"},
-      "hour": const {"1":"1å°æ¶å","0":"0å°æ¶å","other":"{0}å°æ¶å"},
-      "day": const {"1":"1å¤©å","0":"0å¤©å","other":"{0}å¤©å"},
-      "week": const {"1":"1å¨å","0":"0å¨å","other":"{0}å¨å"},
-      "month": const {"1":"1ä¸ªæå","0":"0ä¸ªæå","other":"{0}ä¸ªæå"},
-      "year": const {"1":"1å¹´å","0":"0å¹´å","other":"{0}å¹´å"}
+      "SECOND": const {"1":"1ç§éå","0":"0ç§éå","other":"{0}ç§éå"},
+      "MINUTE": const {"1":"1åéå","0":"0åéå","other":"{0}åéå"},
+      "HOUR": const {"1":"1å°æ¶å","0":"0å°æ¶å","other":"{0}å°æ¶å"},
+      "DAY": const {"1":"1å¤©å","0":"0å¤©å","other":"{0}å¤©å"},
+      "WEEK": const {"1":"1å¨å","0":"0å¨å","other":"{0}å¨å"},
+      "MONTH": const {"1":"1ä¸ªæå","0":"0ä¸ªæå","other":"{0}ä¸ªæå"},
+      "YEAR": const {"1":"1å¹´å","0":"0å¹´å","other":"{0}å¹´å"}
     });

@@ -6,38 +6,38 @@ library relative_time_symbols_sl;
 import 'package:intlx/src/relative_time/symbols.dart';
 
 final symbols = new RelativeTimeSymbols(      units: const {
-      "second": const {"one":"{0} sekunda","other":"{0} sekund","few":"{0} sekunde","two":"{0} sekundi"},
-      "minute": const {"one":"{0} minuta","other":"{0} minut","few":"{0} minute","two":"{0} minuti"},
-      "hour": const {"one":"{0} ura","other":"{0} ur","few":"{0} ure","two":"{0} uri"},
-      "day": const {"one":"{0} dan","other":"{0} dni","few":"{0} dnevi","two":"{0} dni"},
-      "week": const {"one":"{0} teden","other":"{0} tednov","few":"{0} tedni","two":"{0} tedna"},
-      "month": const {"one":"{0} mesec","other":"{0} mesecev","few":"{0} meseci","two":"{0} meseca"},
-      "year": const {"one":"{0} leto","other":"{0} let","few":"{0} leta","two":"{0} leti"}
+      "SECOND": const {"one":"{0} sekunda","other":"{0} sekund","few":"{0} sekunde","two":"{0} sekundi"},
+      "MINUTE": const {"one":"{0} minuta","other":"{0} minut","few":"{0} minute","two":"{0} minuti"},
+      "HOUR": const {"one":"{0} ura","other":"{0} ur","few":"{0} ure","two":"{0} uri"},
+      "DAY": const {"one":"{0} dan","other":"{0} dni","few":"{0} dnevi","two":"{0} dni"},
+      "WEEK": const {"one":"{0} teden","other":"{0} tednov","few":"{0} tedni","two":"{0} tedna"},
+      "MONTH": const {"one":"{0} mesec","other":"{0} mesecev","few":"{0} meseci","two":"{0} meseca"},
+      "YEAR": const {"one":"{0} leto","other":"{0} let","few":"{0} leta","two":"{0} leti"}
     },
       shortUnits: const {
-      "second": const {"one":"{0} s","other":"{0} s","few":"{0} s","two":"{0} s"},
-      "minute": const {"one":"{0} min","other":"{0} min","few":"{0} min","two":"{0} min"},
-      "hour": const {"one":"{0} h","other":"{0} h","few":"{0} h","two":"{0} h"},
-      "day": const {"one":"{0} d","other":"{0} d","few":"{0} d","two":"{0} d"},
-      "week": const {"one":"{0} t","other":"{0} t","few":"{0} t","two":"{0} t"},
-      "month": const {"one":"{0} m","other":"{0} m","few":"{0} m","two":"{0} m"},
-      "year": const {"one":"{0} l","other":"{0} l","few":"{0} l","two":"{0} l"}
+      "SECOND": const {"one":"{0} s","other":"{0} s","few":"{0} s","two":"{0} s"},
+      "MINUTE": const {"one":"{0} min","other":"{0} min","few":"{0} min","two":"{0} min"},
+      "HOUR": const {"one":"{0} h","other":"{0} h","few":"{0} h","two":"{0} h"},
+      "DAY": const {"one":"{0} d","other":"{0} d","few":"{0} d","two":"{0} d"},
+      "WEEK": const {"one":"{0} t","other":"{0} t","few":"{0} t","two":"{0} t"},
+      "MONTH": const {"one":"{0} m","other":"{0} m","few":"{0} m","two":"{0} m"},
+      "YEAR": const {"one":"{0} l","other":"{0} l","few":"{0} l","two":"{0} l"}
     },
       pastUnits: const {
-      "second": const {"1":"Pred 1 sekundo","one":"Pred {0} sekundo","0":"Pred 0 sekundami","few":"Pred {0} sekundami","other":"Pred {0} sekundami","two":"Pred {0} sekundama"},
-      "minute": const {"1":"Pred 1 min.","one":"Pred {0} min.","0":"Pred 0 min.","few":"Pred {0} min.","other":"Pred {0} min.","two":"Pred {0} min."},
-      "hour": const {"1":"Pred 1 h","one":"Pred {0} h","0":"Pred 0 h","few":"Pred {0} h","other":"Pred {0} h","two":"Pred {0} h"},
-      "day": const {"1":"Pred 1 dnevom","one":"Pred {0} dnevom","0":"Pred 0 dnevi","few":"Pred {0} dnevi","other":"Pred {0} dnevi","two":"Pred {0} dnevoma"},
-      "week": const {"1":"Pred 1 tednom","one":"Pred {0} tednom","0":"Pred 0 tedni","few":"Pred {0} tedni","other":"Pred {0} tedni","two":"Pred {0} tednoma"},
-      "month": const {"1":"Pred 1 mesecem","one":"Pred {0} mesecem","0":"Pred 0 meseci","few":"Pred {0} meseci","other":"Pred {0} meseci","two":"Pred {0} meseci"},
-      "year": const {"1":"Pred 1 letom","one":"Pred {0} letom","0":"Pred 0 leti","few":"Pred {0} leti","other":"Pred {0} leti","two":"Pred {0} leti"}
+      "SECOND": const {"1":"Pred 1 sekundo","one":"Pred {0} sekundo","0":"Pred 0 sekundami","few":"Pred {0} sekundami","other":"Pred {0} sekundami","two":"Pred {0} sekundama"},
+      "MINUTE": const {"1":"Pred 1 min.","one":"Pred {0} min.","0":"Pred 0 min.","few":"Pred {0} min.","other":"Pred {0} min.","two":"Pred {0} min."},
+      "HOUR": const {"1":"Pred 1 h","one":"Pred {0} h","0":"Pred 0 h","few":"Pred {0} h","other":"Pred {0} h","two":"Pred {0} h"},
+      "DAY": const {"1":"Pred 1 dnevom","one":"Pred {0} dnevom","0":"Pred 0 dnevi","few":"Pred {0} dnevi","other":"Pred {0} dnevi","two":"Pred {0} dnevoma"},
+      "WEEK": const {"1":"Pred 1 tednom","one":"Pred {0} tednom","0":"Pred 0 tedni","few":"Pred {0} tedni","other":"Pred {0} tedni","two":"Pred {0} tednoma"},
+      "MONTH": const {"1":"Pred 1 mesecem","one":"Pred {0} mesecem","0":"Pred 0 meseci","few":"Pred {0} meseci","other":"Pred {0} meseci","two":"Pred {0} meseci"},
+      "YEAR": const {"1":"Pred 1 letom","one":"Pred {0} letom","0":"Pred 0 leti","few":"Pred {0} leti","other":"Pred {0} leti","two":"Pred {0} leti"}
     },
       futureUnits: const {
-      "second": const {"1":"Äez 1 sekundo","one":"Äez {0} sekundo","0":"Äez 0 sekund","few":"Äez {0} sekunde","other":"Äez {0} sekundi","two":"Äez {0} sekundi"},
-      "minute": const {"1":"Äez 1 min.","one":"Äez {0} min.","0":"Äez 0 min.","few":"Äez {0} min.","other":"Äez {0} min.","two":"Äez {0} min."},
-      "hour": const {"1":"Äez 1 h","one":"Äez {0} h","0":"Äez 0 h","few":"Äez {0} h","other":"Äez {0} h","two":"Äez {0} h"},
-      "day": const {"1":"Äez 1 dan","one":"Äez {0} dan","0":"Äez 0 dni","few":"Äez {0} dni","other":"Äez {0} dni","two":"Äez {0} dni"},
-      "week": const {"1":"Äez 1 teden","one":"Äez {0} teden","0":"Äez 0 tednov","few":"Äez {0} tedne","other":"Äez {0} tednov","two":"Äez {0} tedna"},
-      "month": const {"1":"Äez 1 mesec","one":"Äez {0} mesec","0":"Äez 0 mesecev","few":"Äez {0} mesece","other":"Äez {0} mesecev","two":"Äez {0} meseca"},
-      "year": const {"1":"Äez 1 leto","one":"Äez {0} leto","0":"Äez 0 let","few":"Äez {0} leta","other":"Äez {0} let","two":"Äez {0} leti"}
+      "SECOND": const {"1":"Äez 1 sekundo","one":"Äez {0} sekundo","0":"Äez 0 sekund","few":"Äez {0} sekunde","other":"Äez {0} sekundi","two":"Äez {0} sekundi"},
+      "MINUTE": const {"1":"Äez 1 min.","one":"Äez {0} min.","0":"Äez 0 min.","few":"Äez {0} min.","other":"Äez {0} min.","two":"Äez {0} min."},
+      "HOUR": const {"1":"Äez 1 h","one":"Äez {0} h","0":"Äez 0 h","few":"Äez {0} h","other":"Äez {0} h","two":"Äez {0} h"},
+      "DAY": const {"1":"Äez 1 dan","one":"Äez {0} dan","0":"Äez 0 dni","few":"Äez {0} dni","other":"Äez {0} dni","two":"Äez {0} dni"},
+      "WEEK": const {"1":"Äez 1 teden","one":"Äez {0} teden","0":"Äez 0 tednov","few":"Äez {0} tedne","other":"Äez {0} tednov","two":"Äez {0} tedna"},
+      "MONTH": const {"1":"Äez 1 mesec","one":"Äez {0} mesec","0":"Äez 0 mesecev","few":"Äez {0} mesece","other":"Äez {0} mesecev","two":"Äez {0} meseca"},
+      "YEAR": const {"1":"Äez 1 leto","one":"Äez {0} leto","0":"Äez 0 let","few":"Äez {0} leta","other":"Äez {0} let","two":"Äez {0} leti"}
     });

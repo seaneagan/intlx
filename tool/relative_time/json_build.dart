@@ -18,18 +18,18 @@ String transformJson(String locale, String jsonText) {
   getUnits(String unitSuffix, [pluralitySuffix = '']) {
     var units = new Map<String, Map<String, String>>();
     for(var unit in TimeUnit.values) {
-      var lowerCaseUnit = unit.toString().toLowerCase();
-      var unitsKey = "$lowerCaseUnit$unitSuffix";
+      var unitString = unit.toString();
+      var unitsKey = "${unitString.toLowerCase()}$unitSuffix";
       if(unitsData.containsKey(unitsKey)) {
         var unitData = unitsData[unitsKey];
         var newUnitData = new Map<String, String>();
-        for(String plurality in ["0", "1"]..addAll(PluralCategory.values.map((plurality) => plurality.toString()))) {
+        for(String plurality in ["0", "1"]..addAll(PluralCategory.values.map((plurality) => plurality.toString().toLowerCase()))) {
           var pluralityKey = "$plurality$pluralitySuffix";
           if(unitData.containsKey(pluralityKey)) {
             newUnitData[plurality] = unitData[pluralityKey];
           }
         }
-        units[lowerCaseUnit] = newUnitData;
+        units[unitString] = newUnitData;
       }
     }
     return units;

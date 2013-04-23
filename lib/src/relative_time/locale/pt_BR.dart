@@ -6,38 +6,38 @@ library relative_time_symbols_pt_BR;
 import 'package:intlx/src/relative_time/symbols.dart';
 
 final symbols = new RelativeTimeSymbols(      units: const {
-      "second": const {"one":"{0} segundo","other":"{0} segundos"},
-      "minute": const {"one":"{0} minuto","other":"{0} minutos"},
-      "hour": const {"one":"{0} hora","other":"{0} horas"},
-      "day": const {"one":"{0} dia","other":"{0} dias"},
-      "week": const {"one":"{0} semana","other":"{0} semanas"},
-      "month": const {"one":"{0} mÃªs","other":"{0} meses"},
-      "year": const {"one":"{0} ano","other":"{0} anos"}
+      "SECOND": const {"one":"{0} segundo","other":"{0} segundos"},
+      "MINUTE": const {"one":"{0} minuto","other":"{0} minutos"},
+      "HOUR": const {"one":"{0} hora","other":"{0} horas"},
+      "DAY": const {"one":"{0} dia","other":"{0} dias"},
+      "WEEK": const {"one":"{0} semana","other":"{0} semanas"},
+      "MONTH": const {"one":"{0} mÃªs","other":"{0} meses"},
+      "YEAR": const {"one":"{0} ano","other":"{0} anos"}
     },
       shortUnits: const {
-      "second": const {"one":"{0} seg","other":"{0} seg"},
-      "minute": const {"one":"{0} min","other":"{0} min"},
-      "hour": const {"one":"{0} h","other":"{0} h"},
-      "day": const {"one":"{0} dia","other":"{0} dias"},
-      "week": const {"one":"{0} sem.","other":"{0} sem."},
-      "month": const {"one":"{0} mÃªs","other":"{0} meses"},
-      "year": const {"one":"{0} ano","other":"{0} anos"}
+      "SECOND": const {"one":"{0} seg","other":"{0} seg"},
+      "MINUTE": const {"one":"{0} min","other":"{0} min"},
+      "HOUR": const {"one":"{0} h","other":"{0} h"},
+      "DAY": const {"one":"{0} dia","other":"{0} dias"},
+      "WEEK": const {"one":"{0} sem.","other":"{0} sem."},
+      "MONTH": const {"one":"{0} mÃªs","other":"{0} meses"},
+      "YEAR": const {"one":"{0} ano","other":"{0} anos"}
     },
       pastUnits: const {
-      "second": const {"1":"HÃ¡ 1 segundo","one":"HÃ¡ {0} segundo","0":"HÃ¡ 0 segundos","other":"HÃ¡ {0} segundos"},
-      "minute": const {"1":"HÃ¡ 1 minuto","one":"HÃ¡ {0} minuto","0":"HÃ¡ 0 minutos","other":"HÃ¡ {0} minutos"},
-      "hour": const {"1":"HÃ¡ 1 hora","one":"HÃ¡ {0} hora","0":"HÃ¡ 0 horas","other":"HÃ¡ {0} horas"},
-      "day": const {"1":"HÃ¡ 1 dia","one":"HÃ¡ {0} dia","0":"HÃ¡ 0 dias","other":"HÃ¡ {0} dias"},
-      "week": const {"1":"HÃ¡ 1 semana","one":"HÃ¡ {0} semana","0":"HÃ¡ 0 semanas","other":"HÃ¡ {0} semanas"},
-      "month": const {"1":"HÃ¡ 1 mÃªs","one":"HÃ¡ {0} mÃªs","0":"HÃ¡ 0 meses","other":"HÃ¡ {0} meses"},
-      "year": const {"1":"HÃ¡ 1 ano","one":"HÃ¡ {0} ano","0":"HÃ¡ 0 anos","other":"HÃ¡ {0} anos"}
+      "SECOND": const {"1":"HÃ¡ 1 segundo","one":"HÃ¡ {0} segundo","0":"HÃ¡ 0 segundos","other":"HÃ¡ {0} segundos"},
+      "MINUTE": const {"1":"HÃ¡ 1 minuto","one":"HÃ¡ {0} minuto","0":"HÃ¡ 0 minutos","other":"HÃ¡ {0} minutos"},
+      "HOUR": const {"1":"HÃ¡ 1 hora","one":"HÃ¡ {0} hora","0":"HÃ¡ 0 horas","other":"HÃ¡ {0} horas"},
+      "DAY": const {"1":"HÃ¡ 1 dia","one":"HÃ¡ {0} dia","0":"HÃ¡ 0 dias","other":"HÃ¡ {0} dias"},
+      "WEEK": const {"1":"HÃ¡ 1 semana","one":"HÃ¡ {0} semana","0":"HÃ¡ 0 semanas","other":"HÃ¡ {0} semanas"},
+      "MONTH": const {"1":"HÃ¡ 1 mÃªs","one":"HÃ¡ {0} mÃªs","0":"HÃ¡ 0 meses","other":"HÃ¡ {0} meses"},
+      "YEAR": const {"1":"HÃ¡ 1 ano","one":"HÃ¡ {0} ano","0":"HÃ¡ 0 anos","other":"HÃ¡ {0} anos"}
     },
       futureUnits: const {
-      "second": const {"1":"Dentro de 1 segundo","one":"Dentro de {0} segundo","0":"Dentro de 0 segundos","other":"Dentro de {0} segundos"},
-      "minute": const {"1":"Dentro de 1 minuto","one":"Dentro de {0} minuto","0":"Dentro de 0 minutos","other":"Dentro de {0} minutos"},
-      "hour": const {"1":"Dentro de 1 hora","one":"Dentro de {0} hora","0":"Dentro de 0 horas","other":"Dentro de {0} horas"},
-      "day": const {"1":"Dentro de 1 dia","one":"Dentro de {0} dia","0":"Dentro de 0 dias","other":"Dentro de {0} dias"},
-      "week": const {"1":"Dentro de 1 semana","one":"Dentro de {0} semana","0":"Dentro de 0 semanas","other":"Dentro de {0} semanas"},
-      "month": const {"1":"Dentro de 1 mÃªs","one":"Dentro de {0} mÃªs","0":"Dentro de 0 meses","other":"Dentro de {0} meses"},
-      "year": const {"1":"Dentro de 1 ano","one":"Dentro de {0} ano","0":"Dentro de 0 anos","other":"Dentro de {0} anos"}
+      "SECOND": const {"1":"Dentro de 1 segundo","one":"Dentro de {0} segundo","0":"Dentro de 0 segundos","other":"Dentro de {0} segundos"},
+      "MINUTE": const {"1":"Dentro de 1 minuto","one":"Dentro de {0} minuto","0":"Dentro de 0 minutos","other":"Dentro de {0} minutos"},
+      "HOUR": const {"1":"Dentro de 1 hora","one":"Dentro de {0} hora","0":"Dentro de 0 horas","other":"Dentro de {0} horas"},
+      "DAY": const {"1":"Dentro de 1 dia","one":"Dentro de {0} dia","0":"Dentro de 0 dias","other":"Dentro de {0} dias"},
+      "WEEK": const {"1":"Dentro de 1 semana","one":"Dentro de {0} semana","0":"Dentro de 0 semanas","other":"Dentro de {0} semanas"},
+      "MONTH": const {"1":"Dentro de 1 mÃªs","one":"Dentro de {0} mÃªs","0":"Dentro de 0 meses","other":"Dentro de {0} meses"},
+      "YEAR": const {"1":"Dentro de 1 ano","one":"Dentro de {0} ano","0":"Dentro de 0 anos","other":"Dentro de {0} anos"}
     });

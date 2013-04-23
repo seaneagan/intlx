@@ -22,11 +22,11 @@ class DurationFormat extends _RelativeTimeFormat<Duration> {
   FormatLength _length;
 }
 
-/// Formats Dates on a timeline relative to now
+/// Formats Dates relative to now
 /// e.g. "2 hours ago" or "In 2 hours"
-class TimelineFormat extends _RelativeTimeFormat<DateTime> {
+class AgeFormat extends _RelativeTimeFormat<DateTime> {
 
-  TimelineFormat({String locale, DurationRounder rounder: const DurationRounder()}) : super(locale, rounder);
+  AgeFormat({String locale, DurationRounder rounder: const DurationRounder()}) : super(locale, rounder);
 
   String format(DateTime date) {
     var now = new DateTime.now();
@@ -70,13 +70,14 @@ class RoundDuration {
 /// Enum to represent time units
 class TimeUnit implements Comparable<TimeUnit> {
 
-  static const SECOND = const TimeUnit._("second", 0);
-  static const MINUTE = const TimeUnit._("minute", 1);
-  static const HOUR = const TimeUnit._("hour", 2);
-  static const DAY = const TimeUnit._("day", 3);
-  static const WEEK = const TimeUnit._("week", 4);
-  static const MONTH = const TimeUnit._("month", 5);
-  static const YEAR = const TimeUnit._("year", 6);
+  // TODO: the names returned by should probably be uppercase to be forward compatible with enums
+  static const SECOND = const TimeUnit._("SECOND", 0);
+  static const MINUTE = const TimeUnit._("MINUTE", 1);
+  static const HOUR = const TimeUnit._("HOUR", 2);
+  static const DAY = const TimeUnit._("DAY", 3);
+  static const WEEK = const TimeUnit._("WEEK", 4);
+  static const MONTH = const TimeUnit._("MONTH", 5);
+  static const YEAR = const TimeUnit._("YEAR", 6);
 
   const TimeUnit._(this._name, this._index);
 
@@ -99,7 +100,8 @@ class PluralFormat {
     if(_cases.containsKey(quantityString)) {
       key = quantityString;
     } else {
-      var category = _locale.getPluralCategory(quantity).toString();
+      var category = _locale.getPluralCategory(quantity).toString().toLowerCase();
+      print("category: $category, _cases: $_cases");
       if(_cases.containsKey(category)) {
         key = category;
       } else {
@@ -126,7 +128,7 @@ class PluralFormat {
 class CollectionFormat {
   CollectionFormat({String locale}) : _locale = new CollectionLocale(locale);
 
-  String format(Collection collection) {
+  String format(Iterable collection) {
     return _locale.format(collection);
   }
 

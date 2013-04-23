@@ -6,38 +6,38 @@ library relative_time_symbols_id;
 import 'package:intlx/src/relative_time/symbols.dart';
 
 final symbols = new RelativeTimeSymbols(      units: const {
-      "second": const {"other":"{0} detik"},
-      "minute": const {"other":"{0} menit"},
-      "hour": const {"other":"{0} jam"},
-      "day": const {"other":"{0} hari"},
-      "week": const {"other":"{0} minggu"},
-      "month": const {"other":"{0} bulan"},
-      "year": const {"other":"{0} tahun"}
+      "SECOND": const {"other":"{0} detik"},
+      "MINUTE": const {"other":"{0} menit"},
+      "HOUR": const {"other":"{0} jam"},
+      "DAY": const {"other":"{0} hari"},
+      "WEEK": const {"other":"{0} minggu"},
+      "MONTH": const {"other":"{0} bulan"},
+      "YEAR": const {"other":"{0} tahun"}
     },
       shortUnits: const {
-      "second": const {"other":"{0} dtk"},
-      "minute": const {"other":"{0} mnt"},
-      "hour": const {"other":"{0} jam"},
-      "day": const {"other":"{0} hr"},
-      "week": const {"other":"{0} mggu"},
-      "month": const {"other":"{0} bln"},
-      "year": const {"other":"{0} thn"}
+      "SECOND": const {"other":"{0} dtk"},
+      "MINUTE": const {"other":"{0} mnt"},
+      "HOUR": const {"other":"{0} jam"},
+      "DAY": const {"other":"{0} hr"},
+      "WEEK": const {"other":"{0} mggu"},
+      "MONTH": const {"other":"{0} bln"},
+      "YEAR": const {"other":"{0} thn"}
     },
       pastUnits: const {
-      "second": const {"1":"1 detik yang lalu","0":"0 detik yang lalu","other":"{0} detik yang lalu"},
-      "minute": const {"1":"1 menit yang lalu","0":"0 menit yang lalu","other":"{0} menit yang lalu"},
-      "hour": const {"1":"1 jam yang lalu","0":"0 jam yang lalu","other":"{0} jam yang lalu"},
-      "day": const {"1":"1 hari yang lalu","0":"0 hari yang lalu","other":"{0} hari yang lalu"},
-      "week": const {"1":"1 minggu yang lalu","0":"0 minggu yang lalu","other":"{0} minggu yang lalu"},
-      "month": const {"1":"1 bulan yang lalu","0":"0 bulan yang lalu","other":"{0} bulan yang lalu"},
-      "year": const {"1":"1 tahun yang lalu","0":"0 tahun yang lalu","other":"{0} tahun yang lalu"}
+      "SECOND": const {"1":"1 detik yang lalu","0":"0 detik yang lalu","other":"{0} detik yang lalu"},
+      "MINUTE": const {"1":"1 menit yang lalu","0":"0 menit yang lalu","other":"{0} menit yang lalu"},
+      "HOUR": const {"1":"1 jam yang lalu","0":"0 jam yang lalu","other":"{0} jam yang lalu"},
+      "DAY": const {"1":"1 hari yang lalu","0":"0 hari yang lalu","other":"{0} hari yang lalu"},
+      "WEEK": const {"1":"1 minggu yang lalu","0":"0 minggu yang lalu","other":"{0} minggu yang lalu"},
+      "MONTH": const {"1":"1 bulan yang lalu","0":"0 bulan yang lalu","other":"{0} bulan yang lalu"},
+      "YEAR": const {"1":"1 tahun yang lalu","0":"0 tahun yang lalu","other":"{0} tahun yang lalu"}
     },
       futureUnits: const {
-      "second": const {"1":"Dalam 1 detik","0":"Dalam 0 detik","other":"Dalam {0} detik"},
-      "minute": const {"1":"Dalam 1 menit","0":"Dalam 0 menit","other":"Dalam {0} menit"},
-      "hour": const {"1":"Dalam 1 jam","0":"Dalam 0 jam","other":"Dalam {0} jam"},
-      "day": const {"1":"Dalam 1 hari","0":"Dalam 0 hari","other":"Dalam {0} hari"},
-      "week": const {"1":"Dalam 1 minggu","0":"Dalam 0 minggu","other":"Dalam {0} minggu"},
-      "month": const {"1":"Dalam 1 bulan","0":"Dalam 0 bulan","other":"Dalam {0} bulan"},
-      "year": const {"1":"Dalam 1 tahun","0":"Dalam 0 tahun","other":"Dalam {0} tahun"}
+      "SECOND": const {"1":"Dalam 1 detik","0":"Dalam 0 detik","other":"Dalam {0} detik"},
+      "MINUTE": const {"1":"Dalam 1 menit","0":"Dalam 0 menit","other":"Dalam {0} menit"},
+      "HOUR": const {"1":"Dalam 1 jam","0":"Dalam 0 jam","other":"Dalam {0} jam"},
+      "DAY": const {"1":"Dalam 1 hari","0":"Dalam 0 hari","other":"Dalam {0} hari"},
+      "WEEK": const {"1":"Dalam 1 minggu","0":"Dalam 0 minggu","other":"Dalam {0} minggu"},
+      "MONTH": const {"1":"Dalam 1 bulan","0":"Dalam 0 bulan","other":"Dalam {0} bulan"},
+      "YEAR": const {"1":"Dalam 1 tahun","0":"Dalam 0 tahun","other":"Dalam {0} tahun"}
     });

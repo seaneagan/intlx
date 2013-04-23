@@ -6,38 +6,38 @@ library relative_time_symbols_vi;
 import 'package:intlx/src/relative_time/symbols.dart';
 
 final symbols = new RelativeTimeSymbols(      units: const {
-      "second": const {"other":"{0} giÃ¢y"},
-      "minute": const {"other":"{0} phÃºt"},
-      "hour": const {"other":"{0} giá»"},
-      "day": const {"other":"{0} ngÃ y"},
-      "week": const {"other":"{0} tuáº§n"},
-      "month": const {"other":"{0} thÃ¡ng"},
-      "year": const {"other":"{0} nÄm"}
+      "SECOND": const {"other":"{0} giÃ¢y"},
+      "MINUTE": const {"other":"{0} phÃºt"},
+      "HOUR": const {"other":"{0} giá»"},
+      "DAY": const {"other":"{0} ngÃ y"},
+      "WEEK": const {"other":"{0} tuáº§n"},
+      "MONTH": const {"other":"{0} thÃ¡ng"},
+      "YEAR": const {"other":"{0} nÄm"}
     },
       shortUnits: const {
-      "second": const {"other":"{0} s"},
-      "minute": const {"other":"{0} ph"},
-      "hour": const {"other":"{0} g"},
-      "day": const {"other":"{0} ngÃ y"},
-      "week": const {"other":"{0} tuáº§n"},
-      "month": const {"other":"{0} thÃ¡ng"},
-      "year": const {"other":"{0} nÄm"}
+      "SECOND": const {"other":"{0} s"},
+      "MINUTE": const {"other":"{0} ph"},
+      "HOUR": const {"other":"{0} g"},
+      "DAY": const {"other":"{0} ngÃ y"},
+      "WEEK": const {"other":"{0} tuáº§n"},
+      "MONTH": const {"other":"{0} thÃ¡ng"},
+      "YEAR": const {"other":"{0} nÄm"}
     },
       pastUnits: const {
-      "second": const {"1":"1 giÃ¢y trÆ°á»c","0":"0 giÃ¢y trÆ°á»c","other":"{0} giÃ¢y trÆ°á»c"},
-      "minute": const {"1":"1 phÃºt trÆ°á»c","0":"0 phÃºt trÆ°á»c","other":"{0} phÃºt trÆ°á»c"},
-      "hour": const {"1":"1 giá» trÆ°á»c","0":"0 giá» trÆ°á»c","other":"{0} giá» trÆ°á»c"},
-      "day": const {"1":"1 ngÃ y trÆ°á»c","0":"0 ngÃ y trÆ°á»c","other":"{0} ngÃ y trÆ°á»c"},
-      "week": const {"1":"1 tuáº§n trÆ°á»c","0":"0 tuáº§n trÆ°á»c","other":"{0} tuáº§n trÆ°á»c"},
-      "month": const {"1":"1 thÃ¡ng trÆ°á»c","0":"0 thÃ¡ng trÆ°á»c","other":"{0} thÃ¡ng trÆ°á»c"},
-      "year": const {"1":"1 nÄm trÆ°á»c","0":"0 nÄm trÆ°á»c","other":"{0} nÄm trÆ°á»c"}
+      "SECOND": const {"1":"1 giÃ¢y trÆ°á»c","0":"0 giÃ¢y trÆ°á»c","other":"{0} giÃ¢y trÆ°á»c"},
+      "MINUTE": const {"1":"1 phÃºt trÆ°á»c","0":"0 phÃºt trÆ°á»c","other":"{0} phÃºt trÆ°á»c"},
+      "HOUR": const {"1":"1 giá» trÆ°á»c","0":"0 giá» trÆ°á»c","other":"{0} giá» trÆ°á»c"},
+      "DAY": const {"1":"1 ngÃ y trÆ°á»c","0":"0 ngÃ y trÆ°á»c","other":"{0} ngÃ y trÆ°á»c"},
+      "WEEK": const {"1":"1 tuáº§n trÆ°á»c","0":"0 tuáº§n trÆ°á»c","other":"{0} tuáº§n trÆ°á»c"},
+      "MONTH": const {"1":"1 thÃ¡ng trÆ°á»c","0":"0 thÃ¡ng trÆ°á»c","other":"{0} thÃ¡ng trÆ°á»c"},
+      "YEAR": const {"1":"1 nÄm trÆ°á»c","0":"0 nÄm trÆ°á»c","other":"{0} nÄm trÆ°á»c"}
     },
       futureUnits: const {
-      "second": const {"1":"Trong 1 giÃ¢y","0":"Trong 0 giÃ¢y","other":"Trong {0} giÃ¢y"},
-      "minute": const {"1":"Trong 1 phÃºt","0":"Trong 0 phÃºt","other":"Trong {0} phÃºt"},
-      "hour": const {"1":"Trong 1 giá»","0":"Trong 0 giá»","other":"Trong {0} giá»"},
-      "day": const {"1":"Trong 1 ngÃ y","0":"Trong 0 ngÃ y","other":"Trong {0} ngÃ y"},
-      "week": const {"1":"Trong 1 tuáº§n","0":"Trong 0 tuáº§n","other":"Trong {0} tuáº§n"},
-      "month": const {"1":"Trong 1 thÃ¡ng","0":"Trong 0 thÃ¡ng","other":"Trong {0} thÃ¡ng"},
-      "year": const {"1":"Trong 1 nÄm","0":"Trong 0 nÄm","other":"Trong {0} nÄm"}
+      "SECOND": const {"1":"Trong 1 giÃ¢y","0":"Trong 0 giÃ¢y","other":"Trong {0} giÃ¢y"},
+      "MINUTE": const {"1":"Trong 1 phÃºt","0":"Trong 0 phÃºt","other":"Trong {0} phÃºt"},
+      "HOUR": const {"1":"Trong 1 giá»","0":"Trong 0 giá»","other":"Trong {0} giá»"},
+      "DAY": const {"1":"Trong 1 ngÃ y","0":"Trong 0 ngÃ y","other":"Trong {0} ngÃ y"},
+      "WEEK": const {"1":"Trong 1 tuáº§n","0":"Trong 0 tuáº§n","other":"Trong {0} tuáº§n"},
+      "MONTH": const {"1":"Trong 1 thÃ¡ng","0":"Trong 0 thÃ¡ng","other":"Trong {0} thÃ¡ng"},
+      "YEAR": const {"1":"Trong 1 nÄm","0":"Trong 0 nÄm","other":"Trong {0} nÄm"}
     });

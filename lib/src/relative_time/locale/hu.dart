@@ -6,38 +6,38 @@ library relative_time_symbols_hu;
 import 'package:intlx/src/relative_time/symbols.dart';
 
 final symbols = new RelativeTimeSymbols(      units: const {
-      "second": const {"other":"{0} mÃ¡sodperc"},
-      "minute": const {"other":"{0} perc"},
-      "hour": const {"other":"{0} Ã³ra"},
-      "day": const {"other":"{0} nap"},
-      "week": const {"other":"{0} hÃ©t"},
-      "month": const {"other":"{0} hÃ³nap"},
-      "year": const {"other":"{0} Ã©v"}
+      "SECOND": const {"other":"{0} mÃ¡sodperc"},
+      "MINUTE": const {"other":"{0} perc"},
+      "HOUR": const {"other":"{0} Ã³ra"},
+      "DAY": const {"other":"{0} nap"},
+      "WEEK": const {"other":"{0} hÃ©t"},
+      "MONTH": const {"other":"{0} hÃ³nap"},
+      "YEAR": const {"other":"{0} Ã©v"}
     },
       shortUnits: const {
-      "second": const {"other":"{0} mp"},
-      "minute": const {"other":"{0} p"},
-      "hour": const {"other":"{0} Ã³"},
-      "day": const {"other":"{0} nap"},
-      "week": const {"other":"{0} hÃ©t"},
-      "month": const {"other":"{0} hÃ³nap"},
-      "year": const {"other":"{0} Ã©v"}
+      "SECOND": const {"other":"{0} mp"},
+      "MINUTE": const {"other":"{0} p"},
+      "HOUR": const {"other":"{0} Ã³"},
+      "DAY": const {"other":"{0} nap"},
+      "WEEK": const {"other":"{0} hÃ©t"},
+      "MONTH": const {"other":"{0} hÃ³nap"},
+      "YEAR": const {"other":"{0} Ã©v"}
     },
       pastUnits: const {
-      "second": const {"1":"1 mÃ¡sodperce","0":"0 mÃ¡sodperce","other":"{0} mÃ¡sodperccel ezelÅtt"},
-      "minute": const {"1":"1 perce","0":"0 perce","other":"{0} perccel ezelÅtt"},
-      "hour": const {"1":"1 Ã³rÃ¡ja","0":"0 Ã³rÃ¡ja","other":"{0} Ã³rÃ¡val ezelÅtt"},
-      "day": const {"1":"1 napja","0":"0 napja","other":"{0} nappal ezelÅtt"},
-      "week": const {"1":"1 hete","0":"0 hete","other":"{0} hÃ©ttel ezelÅtt"},
-      "month": const {"1":"1 hÃ³napja","0":"0 hÃ³napja","other":"{0} hÃ³nappal ezelÅtt"},
-      "year": const {"1":"1 Ã©ve","0":"0 Ã©ve","other":"{0} Ã©vvel ezelÅtt"}
+      "SECOND": const {"1":"1 mÃ¡sodperce","0":"0 mÃ¡sodperce","other":"{0} mÃ¡sodperccel ezelÅtt"},
+      "MINUTE": const {"1":"1 perce","0":"0 perce","other":"{0} perccel ezelÅtt"},
+      "HOUR": const {"1":"1 Ã³rÃ¡ja","0":"0 Ã³rÃ¡ja","other":"{0} Ã³rÃ¡val ezelÅtt"},
+      "DAY": const {"1":"1 napja","0":"0 napja","other":"{0} nappal ezelÅtt"},
+      "WEEK": const {"1":"1 hete","0":"0 hete","other":"{0} hÃ©ttel ezelÅtt"},
+      "MONTH": const {"1":"1 hÃ³napja","0":"0 hÃ³napja","other":"{0} hÃ³nappal ezelÅtt"},
+      "YEAR": const {"1":"1 Ã©ve","0":"0 Ã©ve","other":"{0} Ã©vvel ezelÅtt"}
     },
       futureUnits: const {
-      "second": const {"1":"1 mÃ¡sodperc mÃºlva","0":"0 mÃ¡sodperc mÃºlva","other":"{0} mÃ¡sodperc mÃºlva"},
-      "minute": const {"1":"1 perc mÃºlva","0":"0 perc mÃºlva","other":"{0} perc mÃºlva"},
-      "hour": const {"1":"1 Ã³ra mÃºlva","0":"0 Ã³ra mÃºlva","other":"{0} Ã³ra mÃºlva"},
-      "day": const {"1":"1 nap mÃºlva","0":"0 nap mÃºlva","other":"{0} nap mÃºlva"},
-      "week": const {"1":"1 hÃ©t mÃºlva","0":"0 hÃ©t mÃºlva","other":"{0} hÃ©t mÃºlva"},
-      "month": const {"1":"1 hÃ³nap mÃºlva","0":"0 hÃ³nap mÃºlva","other":"{0} hÃ³nap mÃºlva"},
-      "year": const {"1":"1 Ã©v mÃºlva","0":"0 Ã©v mÃºlva","other":"{0} Ã©v mÃºlva"}
+      "SECOND": const {"1":"1 mÃ¡sodperc mÃºlva","0":"0 mÃ¡sodperc mÃºlva","other":"{0} mÃ¡sodperc mÃºlva"},
+      "MINUTE": const {"1":"1 perc mÃºlva","0":"0 perc mÃºlva","other":"{0} perc mÃºlva"},
+      "HOUR": const {"1":"1 Ã³ra mÃºlva","0":"0 Ã³ra mÃºlva","other":"{0} Ã³ra mÃºlva"},
+      "DAY": const {"1":"1 nap mÃºlva","0":"0 nap mÃºlva","other":"{0} nap mÃºlva"},
+      "WEEK": const {"1":"1 hÃ©t mÃºlva","0":"0 hÃ©t mÃºlva","other":"{0} hÃ©t mÃºlva"},
+      "MONTH": const {"1":"1 hÃ³nap mÃºlva","0":"0 hÃ³nap mÃºlva","other":"{0} hÃ³nap mÃºlva"},
+      "YEAR": const {"1":"1 Ã©v mÃºlva","0":"0 Ã©v mÃºlva","other":"{0} Ã©v mÃºlva"}
     });

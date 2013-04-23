@@ -6,38 +6,38 @@ library relative_time_symbols_et;
 import 'package:intlx/src/relative_time/symbols.dart';
 
 final symbols = new RelativeTimeSymbols(      units: const {
-      "second": const {"one":"{0} sekund","other":"{0} sekundit"},
-      "minute": const {"one":"{0} minut","other":"{0} minutit"},
-      "hour": const {"one":"{0} tund","other":"{0} tundi"},
-      "day": const {"one":"{0} Ã¶Ã¶pÃ¤ev","other":"{0} Ã¶Ã¶pÃ¤eva"},
-      "week": const {"one":"{0} nÃ¤dal","other":"{0} nÃ¤dalat"},
-      "month": const {"one":"{0} kuu","other":"{0} kuud"},
-      "year": const {"one":"{0} aasta","other":"{0} aastat"}
+      "SECOND": const {"one":"{0} sekund","other":"{0} sekundit"},
+      "MINUTE": const {"one":"{0} minut","other":"{0} minutit"},
+      "HOUR": const {"one":"{0} tund","other":"{0} tundi"},
+      "DAY": const {"one":"{0} Ã¶Ã¶pÃ¤ev","other":"{0} Ã¶Ã¶pÃ¤eva"},
+      "WEEK": const {"one":"{0} nÃ¤dal","other":"{0} nÃ¤dalat"},
+      "MONTH": const {"one":"{0} kuu","other":"{0} kuud"},
+      "YEAR": const {"one":"{0} aasta","other":"{0} aastat"}
     },
       shortUnits: const {
-      "second": const {"1":"1 s","0":"0 s","other":"{0} s"},
-      "minute": const {"1":"1 min","0":"0 min","other":"{0} min"},
-      "hour": const {"1":"1 tund","0":"0 tundi","other":"{0} tundi"},
-      "day": const {"1":"1 pÃ¤ev","0":"0 pÃ¤eva","other":"{0} pÃ¤eva"},
-      "week": const {"1":"1 nÃ¤dal","0":"0 nÃ¤dalat","other":"{0} nÃ¤dalat"},
-      "month": const {"1":"1 kuu","0":"0 kuud","other":"{0} kuud"},
-      "year": const {"1":"1 a","0":"0 a","other":"{0} a"}
+      "SECOND": const {"1":"1 s","0":"0 s","other":"{0} s"},
+      "MINUTE": const {"1":"1 min","0":"0 min","other":"{0} min"},
+      "HOUR": const {"1":"1 tund","0":"0 tundi","other":"{0} tundi"},
+      "DAY": const {"1":"1 pÃ¤ev","0":"0 pÃ¤eva","other":"{0} pÃ¤eva"},
+      "WEEK": const {"1":"1 nÃ¤dal","0":"0 nÃ¤dalat","other":"{0} nÃ¤dalat"},
+      "MONTH": const {"1":"1 kuu","0":"0 kuud","other":"{0} kuud"},
+      "YEAR": const {"1":"1 a","0":"0 a","other":"{0} a"}
     },
       pastUnits: const {
-      "second": const {"1":"1 sekundi eest","one":"-{0} sekundi eest","0":"0 sekundi eest","other":"{0} sekundi eest"},
-      "minute": const {"1":"1 minut tagasi","one":"-{0} minuti eest","0":"0 minutit tagasi","other":"{0} minuti eest"},
-      "hour": const {"1":"1 tunni eest","one":"-{0} tunni eest","0":"0 tunni eest","other":"{0} tunni eest"},
-      "day": const {"1":"1 pÃ¤ev tagasi","one":"-{0} pÃ¤eva eest","0":"0 pÃ¤eva tagasi","other":"-{0} pÃ¤eva eest"},
-      "week": const {"1":"1 nÃ¤dal tagasi","one":"-{0} nÃ¤dala eest","0":"0 nÃ¤dalat tagasi","other":"{0} nÃ¤dala eest"},
-      "month": const {"1":"1 kuu tagasi","one":"-{0} kuu eest","0":"0 kuud tagasi","other":"{0} kuu eest"},
-      "year": const {"1":"1 aasta tagasi","one":"-{0} aasta eest","0":"0 aastat tagasi","other":"{0} aasta eest"}
+      "SECOND": const {"1":"1 sekundi eest","one":"-{0} sekundi eest","0":"0 sekundi eest","other":"{0} sekundi eest"},
+      "MINUTE": const {"1":"1 minut tagasi","one":"-{0} minuti eest","0":"0 minutit tagasi","other":"{0} minuti eest"},
+      "HOUR": const {"1":"1 tunni eest","one":"-{0} tunni eest","0":"0 tunni eest","other":"{0} tunni eest"},
+      "DAY": const {"1":"1 pÃ¤ev tagasi","one":"-{0} pÃ¤eva eest","0":"0 pÃ¤eva tagasi","other":"-{0} pÃ¤eva eest"},
+      "WEEK": const {"1":"1 nÃ¤dal tagasi","one":"-{0} nÃ¤dala eest","0":"0 nÃ¤dalat tagasi","other":"{0} nÃ¤dala eest"},
+      "MONTH": const {"1":"1 kuu tagasi","one":"-{0} kuu eest","0":"0 kuud tagasi","other":"{0} kuu eest"},
+      "YEAR": const {"1":"1 aasta tagasi","one":"-{0} aasta eest","0":"0 aastat tagasi","other":"{0} aasta eest"}
     },
       futureUnits: const {
-      "second": const {"1":"1 sekundi pÃ¤rast","one":"+{0} sekundi pÃ¤rast","0":"0 sekundi pÃ¤rast","other":"{0} sekundi pÃ¤rast"},
-      "minute": const {"1":"1 minuti pÃ¤rast","one":"+{0} minuti pÃ¤rast","0":"0 minuti pÃ¤rast","other":"{0} minuti pÃ¤rast"},
-      "hour": const {"1":"1 tunni pÃ¤rast","one":"+{0} tunni pÃ¤rast","0":"0 tunni pÃ¤rast","other":"{0} tunni pÃ¤rast"},
-      "day": const {"1":"1 pÃ¤eva pÃ¤rast","one":"+{0} pÃ¤eva pÃ¤rast","0":"0 pÃ¤eva pÃ¤rast","other":"{0} pÃ¤eva pÃ¤rast"},
-      "week": const {"1":"1 nÃ¤dala pÃ¤rast","one":"+{0} nÃ¤dala pÃ¤rast","0":"0 nÃ¤dala pÃ¤rast","other":"{0} nÃ¤dala pÃ¤rast"},
-      "month": const {"1":"1 kuu pÃ¤rast","one":"+{0} kuu pÃ¤rast","0":"0 kuu pÃ¤rast","other":"{0} kuu pÃ¤rast"},
-      "year": const {"1":"1 aasta pÃ¤rast","one":"+{0} aasta pÃ¤rast","0":"0 aasta pÃ¤rast","other":"{0} aasta pÃ¤rast"}
+      "SECOND": const {"1":"1 sekundi pÃ¤rast","one":"+{0} sekundi pÃ¤rast","0":"0 sekundi pÃ¤rast","other":"{0} sekundi pÃ¤rast"},
+      "MINUTE": const {"1":"1 minuti pÃ¤rast","one":"+{0} minuti pÃ¤rast","0":"0 minuti pÃ¤rast","other":"{0} minuti pÃ¤rast"},
+      "HOUR": const {"1":"1 tunni pÃ¤rast","one":"+{0} tunni pÃ¤rast","0":"0 tunni pÃ¤rast","other":"{0} tunni pÃ¤rast"},
+      "DAY": const {"1":"1 pÃ¤eva pÃ¤rast","one":"+{0} pÃ¤eva pÃ¤rast","0":"0 pÃ¤eva pÃ¤rast","other":"{0} pÃ¤eva pÃ¤rast"},
+      "WEEK": const {"1":"1 nÃ¤dala pÃ¤rast","one":"+{0} nÃ¤dala pÃ¤rast","0":"0 nÃ¤dala pÃ¤rast","other":"{0} nÃ¤dala pÃ¤rast"},
+      "MONTH": const {"1":"1 kuu pÃ¤rast","one":"+{0} kuu pÃ¤rast","0":"0 kuu pÃ¤rast","other":"{0} kuu pÃ¤rast"},
+      "YEAR": const {"1":"1 aasta pÃ¤rast","one":"+{0} aasta pÃ¤rast","0":"0 aasta pÃ¤rast","other":"{0} aasta pÃ¤rast"}
     });

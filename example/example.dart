@@ -22,7 +22,7 @@ main() {
     print(durationFormat.format(const Duration(days: 50, hours: 3)));
     print(durationFormat.format(const Duration(days: 27, minutes: 2)));
 
-    var ageFormat = new TimelineFormat(locale: locale);
+    var ageFormat = new AgeFormat(locale: locale);
     print("The apocolypse is: ${ageFormat.format(apocolypse)}");
     print("A couple hours ago is: ${ageFormat.format(new DateTime.now().subtract(const Duration(hours: 2, minutes: 5)))}");
 

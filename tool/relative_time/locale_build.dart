@@ -23,13 +23,13 @@ class RelativeTimeLibraryWriter extends JsonSourcedLibraryWriter {
       if(units.isEmpty) return "$unitType: const {}";
       return '''
   $unitType: const {
-      "second": const ${json.stringify(units["second"])},
-      "minute": const ${json.stringify(units["minute"])},
-      "hour": const ${json.stringify(units["hour"])},
-      "day": const ${json.stringify(units["day"])},
-      "week": const ${json.stringify(units["week"])},
-      "month": const ${json.stringify(units["month"])},
-      "year": const ${json.stringify(units["year"])}
+      "SECOND": const ${json.stringify(units["SECOND"])},
+      "MINUTE": const ${json.stringify(units["MINUTE"])},
+      "HOUR": const ${json.stringify(units["HOUR"])},
+      "DAY": const ${json.stringify(units["DAY"])},
+      "WEEK": const ${json.stringify(units["WEEK"])},
+      "MONTH": const ${json.stringify(units["MONTH"])},
+      "YEAR": const ${json.stringify(units["YEAR"])}
     }''';
     }
 

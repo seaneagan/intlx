@@ -33,17 +33,17 @@ main() {
     test("730 days = 2 years", () => expect(durationFormat.format(new Duration(days: 730)), "2 years"));
   });
 
-  group('TimelineFormat', () {
+  group('AgeFormat', () {
 
-    TimelineFormat timelineFormat;
+    AgeFormat ageFormat;
 
     setUp(() {
-      timelineFormat = new TimelineFormat(locale: "en");
+      ageFormat = new AgeFormat(locale: "en");
     });
 
-    test("In 2 minutes", () => expect(timelineFormat.format(new DateTime.now().add(new Duration(minutes: 2, seconds: 30))), "In 2 minutes"));
-    test("5 hours ago", () => expect(timelineFormat.format(new DateTime.now().subtract(new Duration(hours: 5))), "5 hours ago"));
-    test("now is past", () => expect(timelineFormat.format(new DateTime.now()), "0 minutes ago"));
+    test("In 2 minutes", () => expect(ageFormat.format(new DateTime.now().add(new Duration(minutes: 2, seconds: 30))), "In 2 minutes"));
+    test("5 hours ago", () => expect(ageFormat.format(new DateTime.now().subtract(new Duration(hours: 5))), "5 hours ago"));
+    test("now is past", () => expect(ageFormat.format(new DateTime.now()), "0 minutes ago"));
   });
 
   group('PluralFormat', () {
@@ -54,7 +54,7 @@ main() {
       pluralFormat = new PluralFormat({"0": "no books", "one": "{0} book", "other": "{0} books"}, locale: "en", pattern: "{0}");
     });
 
-    test("case for exact integer", () => expect(pluralFormat.format(0), "no books"));
+    test("exact integer case", () => expect(pluralFormat.format(0), "no books"));
     test("'one' case", () => expect(pluralFormat.format(1), "1 book"));
     test("'other' case", () => expect(pluralFormat.format(5), "5 books"));
   });

@@ -3,7 +3,7 @@
 
 library collection_symbols_zh_TW;
 
-import 'package:intlx/src/collection/symbols.dart';
+import 'package:intlx/src/collection/collection_symbols.dart';
 
 final symbols = new CollectionSymbols(    start: '{0}ã{1}',
     middle: '{0}ã{1}',

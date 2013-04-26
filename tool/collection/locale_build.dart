@@ -4,7 +4,6 @@ library collection_locale_build;
 import 'dart:io';
 import 'dart:json' as json;
 import '../util.dart';
-import 'package:intlx/src/internal.dart';
 
 main() {
   new CollectionLibraryWriter().writeLibraries();

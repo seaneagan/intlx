@@ -3,7 +3,7 @@
 
 library relative_time_symbols_af;
 
-import 'package:intlx/src/relative_time/symbols.dart';
+import 'package:intlx/src/relative_time/relative_time_symbols.dart';
 
 final symbols = new RelativeTimeSymbols(      units: const {
       "SECOND": const {"1":"1 sekonde","one":"{0} sekonde","0":"0 sekondes","other":"{0} sekondes"},

@@ -3,8 +3,7 @@
 
 library relative_time_locale_en;
 
-  import 'package:intlx/src/internal.dart';
-  import 'package:intlx/src/relative_time/symbols.dart';
+  import 'package:intlx/src/relative_time/relative_time_symbols.dart';
   import 'package:intlx/src/relative_time/locale/en.dart' as relative_time_symbols_en;
     import '../plural/en.dart' as plural_locale_en;
 

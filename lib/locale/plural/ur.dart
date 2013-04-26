@@ -3,7 +3,6 @@
 
 library plural_locale_ur;
 
-  import 'package:intlx/src/internal.dart';
   import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/ur.dart' as plural_symbols_ur;
 

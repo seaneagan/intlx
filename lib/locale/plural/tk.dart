@@ -3,7 +3,6 @@
 
 library plural_locale_tk;
 
-  import 'package:intlx/src/internal.dart';
   import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/tk.dart' as plural_symbols_tk;
 

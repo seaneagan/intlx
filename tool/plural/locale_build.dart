@@ -12,6 +12,12 @@ main() {
   new PluralLibraryWriter().writeLibraries();
 }
 
+const deprecatedLocaleMap = const <String, String> {
+  'iw': 'he',
+  // 'ji': 'yi',
+  'in': 'id'
+};
+
 class PluralLibraryWriter extends LibraryWriter {
   final String type = "plural";
   final String symbolsClass = "PluralLocaleImpl";
@@ -67,6 +73,10 @@ $switchCases
     var pluralRulesUri = '${cldrUri}supplemental/plurals/plurals?depth=-1';
     return fetchUri(pluralRulesUri).then((String jsonText) {
       var data = json.parse(jsonText);
+      deprecatedLocaleMap.forEach((k, v) {
+        data[k] = data[v];
+      });
+      print('data: $data');
       var niceData = {};
       data.forEach((String locale, var rules) {
         toUpperCaseKeys(Map map) {

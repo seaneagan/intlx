@@ -1,9 +1,11 @@
 
 library plural;
 
-import '../internal.dart';
+import '../symbols_map.dart';
 import 'package:intl/intl.dart';
 import 'plural_locale_list.dart';
+
+part 'plural_category.dart';
 
 abstract class PluralLocale {
   factory PluralLocale(String locale) {
@@ -32,22 +34,5 @@ class PluralLocaleImpl implements PluralLocale {
   static final map = <String, PluralLocale> {};
 }
 
-class PluralCategory {
-
-  static const ZERO = const PluralCategory._("ZERO");
-  static const ONE = const PluralCategory._("ONE");
-  static const TWO = const PluralCategory._("TWO");
-  static const FEW = const PluralCategory._("FEW");
-  static const MANY = const PluralCategory._("MANY");
-  static const OTHER = const PluralCategory._("OTHER");
-
-  const PluralCategory._(this._name);
-
-  final String _name;
-
-  String toString() => _name;
-
-  static const values = const <PluralCategory> [ZERO, ONE, TWO, FEW, MANY, OTHER];
-}
-
+// TODO: find a better place for this
 Iterable<int> range(int length, [int start = 0]) => new Iterable.generate(length, (int index) => start + index);

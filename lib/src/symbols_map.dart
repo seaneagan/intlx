@@ -1,5 +1,5 @@
 
-library internal;
+library symbols_map;
 
 import 'package:intl/src/intl_helpers.dart';
 import 'package:intl/src/lazy_locale_data.dart';

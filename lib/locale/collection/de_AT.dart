@@ -3,8 +3,7 @@
 
 library collection_locale_de_AT;
 
-  import 'package:intlx/src/internal.dart';
-  import 'package:intlx/src/collection/symbols.dart';
+  import 'package:intlx/src/collection/collection_symbols.dart';
   import 'package:intlx/src/collection/locale/de_AT.dart' as collection_symbols_de_AT;
 
   void init() {

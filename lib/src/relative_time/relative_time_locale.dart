@@ -1,9 +1,9 @@
 
 library relative_time_locale;
 
-import 'symbols.dart';
+import 'relative_time_symbols.dart';
 import '../../intlx.dart';
-import '../internal.dart';
+import '../symbols_map.dart';
 import '../plural/plural.dart';
 
 class RelativeTimeLocale {

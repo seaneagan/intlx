@@ -3,8 +3,7 @@
 
 library collection_locale_zu;
 
-  import 'package:intlx/src/internal.dart';
-  import 'package:intlx/src/collection/symbols.dart';
+  import 'package:intlx/src/collection/collection_symbols.dart';
   import 'package:intlx/src/collection/locale/zu.dart' as collection_symbols_zu;
 
   void init() {

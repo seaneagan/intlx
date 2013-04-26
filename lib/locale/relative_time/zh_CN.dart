@@ -3,8 +3,7 @@
 
 library relative_time_locale_zh_CN;
 
-  import 'package:intlx/src/internal.dart';
-  import 'package:intlx/src/relative_time/symbols.dart';
+  import 'package:intlx/src/relative_time/relative_time_symbols.dart';
   import 'package:intlx/src/relative_time/locale/zh_CN.dart' as relative_time_symbols_zh_CN;
     import '../plural/zh.dart' as plural_locale_zh;
 

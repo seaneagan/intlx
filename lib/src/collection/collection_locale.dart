@@ -1,9 +1,9 @@
 
 library collection_locale;
 
-import 'symbols.dart';
+import 'collection_symbols.dart';
 import '../../intlx.dart';
-import '../internal.dart';
+import '../symbols_map.dart';
 import '../plural/plural.dart';
 
 class CollectionLocale {
@@ -15,7 +15,6 @@ class CollectionLocale {
     if(iterable.length == 1) return iterable.single.toString();
     var list = iterable.toList();
     var length = list.length.toString();
-    print("length: $length");
     if(_symbols.indexed.containsKey(length)) return _formatCustom(_symbols.indexed[length], list);
     return _formatAll(list);
   }

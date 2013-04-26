@@ -3,7 +3,6 @@
 
 library plural_locale_sah;
 
-  import 'package:intlx/src/internal.dart';
   import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/sah.dart' as plural_symbols_sah;
 

@@ -3,7 +3,6 @@
 
 library plural_locale_rof;
 
-  import 'package:intlx/src/internal.dart';
   import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/rof.dart' as plural_symbols_rof;
 

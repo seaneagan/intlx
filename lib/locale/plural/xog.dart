@@ -3,7 +3,6 @@
 
 library plural_locale_xog;
 
-  import 'package:intlx/src/internal.dart';
   import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/xog.dart' as plural_symbols_xog;
 

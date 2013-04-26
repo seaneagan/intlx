@@ -2,7 +2,7 @@
 library collection_symbols;
 
 import '../../intlx.dart';
-import '../internal.dart';
+import '../symbols_map.dart';
 import '../plural/plural.dart';
 import 'package:intl/intl.dart';
 import 'collection_locale_list.dart';

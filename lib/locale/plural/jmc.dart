@@ -3,7 +3,6 @@
 
 library plural_locale_jmc;
 
-  import 'package:intlx/src/internal.dart';
   import 'package:intlx/src/plural/plural.dart';
   import 'package:intlx/src/plural/locale/jmc.dart' as plural_symbols_jmc;
 

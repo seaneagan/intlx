@@ -119,12 +119,16 @@ import 'package:intlx/src/plural/locale/id.dart' as plural_locale_id;
 import 'package:intlx/src/plural/locale/ig.dart' as plural_locale_ig;
 @library_ii
 import 'package:intlx/src/plural/locale/ii.dart' as plural_locale_ii;
+@library_in
+import 'package:intlx/src/plural/locale/in.dart' as plural_locale_in;
 @library_is
 import 'package:intlx/src/plural/locale/is.dart' as plural_locale_is;
 @library_it
 import 'package:intlx/src/plural/locale/it.dart' as plural_locale_it;
 @library_iu
 import 'package:intlx/src/plural/locale/iu.dart' as plural_locale_iu;
+@library_iw
+import 'package:intlx/src/plural/locale/iw.dart' as plural_locale_iw;
 @library_ja
 import 'package:intlx/src/plural/locale/ja.dart' as plural_locale_ja;
 @library_jmc
@@ -404,9 +408,11 @@ const library_hu = const DeferredLibrary('plural_symbols_hu');
 const library_id = const DeferredLibrary('plural_symbols_id');
 const library_ig = const DeferredLibrary('plural_symbols_ig');
 const library_ii = const DeferredLibrary('plural_symbols_ii');
+const library_in = const DeferredLibrary('plural_symbols_in');
 const library_is = const DeferredLibrary('plural_symbols_is');
 const library_it = const DeferredLibrary('plural_symbols_it');
 const library_iu = const DeferredLibrary('plural_symbols_iu');
+const library_iw = const DeferredLibrary('plural_symbols_iw');
 const library_ja = const DeferredLibrary('plural_symbols_ja');
 const library_jmc = const DeferredLibrary('plural_symbols_jmc');
 const library_jv = const DeferredLibrary('plural_symbols_jv');
@@ -577,9 +583,11 @@ const library_zu = const DeferredLibrary('plural_symbols_zu');
   'id': library_id,
   'ig': library_ig,
   'ii': library_ii,
+  'in': library_in,
   'is': library_is,
   'it': library_it,
   'iu': library_iu,
+  'iw': library_iw,
   'ja': library_ja,
   'jmc': library_jmc,
   'jv': library_jv,
@@ -754,9 +762,11 @@ Future<bool> loadLocale([String locale]) {
       case 'id': init(plural_locale_id.symbols); break;
       case 'ig': init(plural_locale_ig.symbols); break;
       case 'ii': init(plural_locale_ii.symbols); break;
+      case 'in': init(plural_locale_in.symbols); break;
       case 'is': init(plural_locale_is.symbols); break;
       case 'it': init(plural_locale_it.symbols); break;
       case 'iu': init(plural_locale_iu.symbols); break;
+      case 'iw': init(plural_locale_iw.symbols); break;
       case 'ja': init(plural_locale_ja.symbols); break;
       case 'jmc': init(plural_locale_jmc.symbols); break;
       case 'jv': init(plural_locale_jv.symbols); break;

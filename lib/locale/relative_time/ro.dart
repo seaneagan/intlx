@@ -3,8 +3,7 @@
 
 library relative_time_locale_ro;
 
-  import 'package:intlx/src/internal.dart';
-  import 'package:intlx/src/relative_time/symbols.dart';
+  import 'package:intlx/src/relative_time/relative_time_symbols.dart';
   import 'package:intlx/src/relative_time/locale/ro.dart' as relative_time_symbols_ro;
     import '../plural/ro.dart' as plural_locale_ro;
 

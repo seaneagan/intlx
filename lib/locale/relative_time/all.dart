@@ -3,8 +3,7 @@
 
 library relative_time_locale_all;
 
-  import 'package:intlx/src/internal.dart';
-  import 'package:intlx/src/relative_time/symbols.dart';
+  import 'package:intlx/src/relative_time/relative_time_symbols.dart';
   import 'package:intlx/src/relative_time/locale/af.dart' as relative_time_symbols_af;
 import 'package:intlx/src/relative_time/locale/am.dart' as relative_time_symbols_am;
 import 'package:intlx/src/relative_time/locale/ar.dart' as relative_time_symbols_ar;

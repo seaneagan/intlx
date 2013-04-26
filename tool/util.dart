@@ -106,7 +106,6 @@ final symbols = new $symbolsClass(${getSymbolsConstructorArgs(locale, data)});
 
   void writeLocaleLibrary(String locale, String imports, String logic) {
     String code = '''
-  import 'package:intlx/src/internal.dart';
   ${getSymbolsClassLibraryImport()}
   $imports
 
@@ -138,7 +137,7 @@ final symbols = new $symbolsClass(${getSymbolsConstructorArgs(locale, data)});
 
 abstract class JsonSourcedLibraryWriter extends LibraryWriter {
 
-  String get symbolsClassLibrary => 'symbols';
+  String get symbolsClassLibrary => '${type}_symbols';
   Path get dataPath => localeDataPath.append(type);
 
   Future getBuiltLocaleData() {

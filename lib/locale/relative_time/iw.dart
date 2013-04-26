@@ -3,8 +3,7 @@
 
 library relative_time_locale_iw;
 
-  import 'package:intlx/src/internal.dart';
-  import 'package:intlx/src/relative_time/symbols.dart';
+  import 'package:intlx/src/relative_time/relative_time_symbols.dart';
   import 'package:intlx/src/relative_time/locale/iw.dart' as relative_time_symbols_iw;
     import '../plural/iw.dart' as plural_locale_iw;
 

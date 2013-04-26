@@ -2,10 +2,9 @@
 library relative_time_symbols;
 
 import '../../intlx.dart';
-import '../internal.dart';
+import '../symbols_map.dart';
 import '../plural/plural.dart';
 import 'package:intl/intl.dart';
-import 'locale_list.dart';
 
 class RelativeTimeSymbols {
   final String name;

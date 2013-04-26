@@ -1,9 +1,9 @@
 
-library collection_locale_build;
+library iterable_locale_build;
 
 import 'dart:io';
 import 'dart:json' as json;
-import '../util.dart';
+import '../library_writer.dart';
 
 main() {
   new IterableLibraryWriter().writeLibraries();

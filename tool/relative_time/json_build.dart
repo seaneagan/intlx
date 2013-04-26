@@ -5,10 +5,10 @@ import 'dart:io';
 import 'dart:json' as json;
 import 'package:intlx/intlx.dart';
 import 'package:intlx/src/plural/plural.dart';
-import '../util.dart';
+import '../cldr_data.dart';
 
 main() {
-  writeLocaleJson("units", "relative_time", transformJson);
+  fetchAndWriteCldrData("units", "relative_time", transformJson);
 }
 
 String transformJson(String locale, String jsonText) {

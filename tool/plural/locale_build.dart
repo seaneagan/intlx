@@ -3,7 +3,9 @@ library plural_locale_build;
 
 import 'dart:io';
 import 'dart:json' as json;
-import '../util.dart';
+import '../library_writer.dart';
+import '../cldr_data.dart';
+import '../paths.dart';
 import 'plural_rule_parser.dart';
 import 'package:intlx/src/plural/plural.dart';
 import 'dart:async';
@@ -76,7 +78,6 @@ $switchCases
       deprecatedLocaleMap.forEach((k, v) {
         data[k] = data[v];
       });
-      print('data: $data');
       var niceData = {};
       data.forEach((String locale, var rules) {
         toUpperCaseKeys(Map map) {

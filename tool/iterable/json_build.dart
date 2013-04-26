@@ -1,9 +1,8 @@
 
 library iterable_json_build;
 
-import 'dart:io';
-import '../util.dart';
+import '../cldr_data.dart';
 
 main() {
-  writeLocaleJson("listPatterns/listPattern", "iterable", (locale, json) => json);
+  fetchAndWriteCldrData("listPatterns/listPattern", "iterable", (locale, json) => json);
 }

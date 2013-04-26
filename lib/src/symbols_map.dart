@@ -4,7 +4,7 @@ library symbols_map;
 import 'package:intl/src/intl_helpers.dart';
 import 'package:intl/src/lazy_locale_data.dart';
 import 'package:intl/intl.dart';
-import '../intlx.dart';
+import 'package:intlx/intlx.dart';
 
 class SymbolsMap<T> {
   SymbolsMap(this._localeList);

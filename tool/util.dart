@@ -31,7 +31,6 @@ abstract class LibraryWriter {
   Future writeLibraries() {
     getBuiltLocaleData().then((localeDataMap) {
       this.localeDataMap = localeDataMap;
-      print('localeDataMap: $localeDataMap');
       localeList = new List.from(localeDataMap.keys)..sort();
       writeLibrariesSync();
     });
@@ -52,7 +51,6 @@ abstract class LibraryWriter {
 
   void writeSymbolLibraries() {
     for(String locale in localeList) {
-      print('localeDataMap[locale]: ${localeDataMap[locale]}');
       writeSymbolLibrary(locale, localeDataMap[locale]);
     }
   }
@@ -182,7 +180,6 @@ void writeLocaleJson(String type, String outputPath, String transformJson(String
 void writeLocaleJsonFiles(Path path, Map<String, String> localeJsonMap, String transformJson(String locale, String json)) {
   localeJsonMap.forEach((locale, json){
     writeFile(path.append("$locale.json"), transformJson(locale, json));
-    print("completed writing json file for $locale");
   });
 }
 
@@ -236,9 +233,6 @@ Future getLocaleData(String path, List<String> locales) {
     for(int i = 0; i < unitsBodies.length; i++) {
       localeDataMap[locales[i]] = unitsBodies[i];
     }
-    print("localeDataMap: $localeDataMap");
-    print("locale count: ${baseLocales.length}");
-    print("localeDataMap length: ${localeDataMap.length}");
     return localeDataMap;
   });
 }

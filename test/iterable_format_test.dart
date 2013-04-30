@@ -14,7 +14,8 @@ main() {
     });
 
     test("empty iterable is empty string", () => expect(iterableFormat.format([]), ""));
-    test("single item", () => expect(iterableFormat.format([1]), "1"));
+    test("1 item", () => expect(iterableFormat.format([1]), "1"));
+    test("2 items", () => expect(iterableFormat.format([1, "x"]), "1 and x"));
     test("many items", () => expect(iterableFormat.format([1, 2, 3, "x", "y", "z"]), "1, 2, 3, x, y, and z"));
   });
 }

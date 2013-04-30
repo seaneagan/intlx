@@ -3364,3 +3364,8 @@ build.dart --machine --changed=test\iterable_format_test.dart
 arguments: [--machine, --changed=test\iterable_format_test.dart]
 build.dart finished [561 ms]
 
+---
+build.dart --machine --changed=test\iterable_format_test.dart
+arguments: [--machine, --changed=test\iterable_format_test.dart]
+build.dart finished [595 ms]
+

@@ -5,7 +5,7 @@ import 'dart:io';
 import 'dart:json' as json;
 import '../library_writer.dart';
 import '../cldr_data.dart';
-import '../paths.dart';
+import '../package_paths.dart';
 import 'plural_rule_parser.dart';
 import 'package:intlx/src/plural/plural.dart';
 import 'dart:async';

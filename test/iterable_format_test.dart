@@ -18,4 +18,3 @@ main() {
     test("many items", () => expect(iterableFormat.format([1, 2, 3, "x", "y", "z"]), "1, 2, 3, x, y, and z"));
   });
 }
-

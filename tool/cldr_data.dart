@@ -2,7 +2,7 @@
 import 'dart:io';
 import 'dart:async';
 import 'package:http/http.dart';
-import 'paths.dart';
+import 'package_paths.dart';
 import 'locale_data.dart';
 
 Future<String> fetchUri(String uri) => get(uri).then((Response response) => response.body);

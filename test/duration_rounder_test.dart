@@ -9,17 +9,19 @@ main() {
 
     DurationFormat durationFormat;
     AgeFormat ageFormat;
+    var oneHundredDays;
 
     setUp(() {
       relative_time_en.init();
       var dayRounder = const StaticUnitDurationRounder(TimeUnit.DAY);
       durationFormat = new DurationFormat(locale: "en", rounder: dayRounder);
       ageFormat = new AgeFormat(locale: "en", rounder: dayRounder);
+      oneHundredDays = const Duration(hours: Duration.HOURS_PER_DAY * 100);
     });
 
     test("5 minutes = 0 days", () => expect(durationFormat.format(new Duration(minutes: 5)), "0 days"));
-    test("100 days ago", () => expect(ageFormat.format(new DateTime.now().subtract(new Duration(hours: Duration.HOURS_PER_DAY * 100))), "100 days ago"));
-    test("In 100 days", () => expect(ageFormat.format(new DateTime.now().add(new Duration(hours: Duration.HOURS_PER_DAY * 100))), "In 100 days"));
+    test("100 days ago", () => expect(ageFormat.format(new DateTime.now().subtract(oneHundredDays)), "100 days ago"));
+    test("In 100 days", () => expect(ageFormat.format(new DateTime.now().add(oneHundredDays)), "In 100 days"));
   });
 
 }

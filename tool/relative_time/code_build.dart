@@ -6,6 +6,7 @@ import 'dart:json' as json;
 import '../library_writer.dart';
 import 'package:intlx/src/plural/plural_locale_list.dart';
 import 'package:intl/intl.dart';
+import 'package:intlx/intlx.dart';
 
 main() {
   new RelativeTimeLibraryWriter().writeLibraries();
@@ -19,28 +20,28 @@ class RelativeTimeLibraryWriter extends JsonSourcedLibraryWriter {
   getSymbolsConstructorArgs(String locale, Map data) {
     String unitsCode(String unitType) {
       var units = data[unitType];
-      if(units.isEmpty) return "$unitType: const {}";
+      var mapContents = '';
+      if(!units.isEmpty) {
+        mapContents = TimeUnit.values.map((TimeUnit unit) {
+          var unitString = unit.toString();
+          return '"$unitString": const ${json.stringify(units[unitString])}';
+        }).join(''',
+      ''');
+      }
       return '''
   $unitType: const {
-      "SECOND": const ${json.stringify(units["SECOND"])},
-      "MINUTE": const ${json.stringify(units["MINUTE"])},
-      "HOUR": const ${json.stringify(units["HOUR"])},
-      "DAY": const ${json.stringify(units["DAY"])},
-      "WEEK": const ${json.stringify(units["WEEK"])},
-      "MONTH": const ${json.stringify(units["MONTH"])},
-      "YEAR": const ${json.stringify(units["YEAR"])}
+      $mapContents
     }''';
     }
 
+    var ret = ["units", "shortUnits", "pastUnits", "futureUnits"].map(unitsCode).join(''',
+    ''');
     return '''
-    ${unitsCode("units")},
-    ${unitsCode("shortUnits")},
-    ${unitsCode("pastUnits")},
-    ${unitsCode("futureUnits")}''';
+    $ret''';
   }
 
   String getAllLocaleLibraryImports() => '''${super.getAllLocaleLibraryImports()}
-import '../plural/all.dart' as plural_locale_all;''';
+import '../plural/all.dart' as ${getPluralLibraryIdentifier('all')};''';
 
   String getAllLocaleLibraryLogic() => '''
     plural_locale_all.init();

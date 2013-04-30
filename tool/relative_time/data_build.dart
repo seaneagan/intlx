@@ -12,7 +12,6 @@ main() {
 }
 
 String transformJson(String locale, String jsonText) {
-
   Map unitsData = json.parse(jsonText);
 
   getUnits(String unitSuffix, [pluralitySuffix = '']) {

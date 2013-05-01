@@ -1,8 +1,6 @@
 
-library iterable_json_build;
-
-import '../cldr_data.dart';
+import '../cldr_data_proxy.dart';
 
 main() {
-  fetchAndWriteCldrData("listPatterns/listPattern", "iterable", (locale, json) => json);
+  new CldrDataProxy("listPatterns/listPattern", "iterable").proxy();
 }

@@ -10,7 +10,6 @@ class SymbolsMap<T> {
   SymbolsMap(this._localeList);
 
   void operator []= (String locale, T symbols) {
-    print("setting locale: $locale");
     _map[locale] = symbols;
   }
 

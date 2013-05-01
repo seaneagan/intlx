@@ -1,6 +1,4 @@
 
-library relative_time_locale_build;
-
 import 'dart:io';
 import 'dart:json' as json;
 import '../library_writer.dart';
@@ -12,7 +10,7 @@ main() {
   new RelativeTimeLibraryWriter().writeLibraries();
 }
 
-class RelativeTimeLibraryWriter extends JsonSourcedLibraryWriter {
+class RelativeTimeLibraryWriter extends LibraryWriter {
   final type = "relative_time";
   final symbolsClass = "RelativeTimeSymbols";
   String getPluralLibraryIdentifier(String locale) => "plural_locale_$locale";

@@ -1,24 +1,17 @@
 
-library plural_locale_build;
-
 import 'dart:io';
 import 'dart:json' as json;
 import '../library_writer.dart';
-import '../cldr_data.dart';
+import '../cldr_data_proxy.dart';
 import '../package_paths.dart';
 import 'plural_rule_parser.dart';
 import 'package:intlx/src/plural/plural.dart';
 import 'dart:async';
+import 'package:http/http.dart' as http;
 
 main() {
   new PluralLibraryWriter().writeLibraries();
 }
-
-const deprecatedLocaleMap = const <String, String> {
-  'iw': 'he',
-  // 'ji': 'yi',
-  'in': 'id'
-};
 
 class PluralLibraryWriter extends LibraryWriter {
   final String type = "plural";
@@ -67,30 +60,8 @@ $switchCases
   });
 }''';
     
-    writeLibrary(loadLocaleLibraryPath, "load_locale", code);
+    writeLibrary(loadLocaleLibraryPath, "load_locale", getLibraryComment(false), code);
     
-  }
-
-  Future getBuiltLocaleData() {
-    var pluralRulesUri = '${cldrUri}supplemental/plurals/plurals?depth=-1';
-    return fetchUri(pluralRulesUri).then((String jsonText) {
-      var data = json.parse(jsonText);
-      deprecatedLocaleMap.forEach((k, v) {
-        data[k] = data[v];
-      });
-      var niceData = {};
-      data.forEach((String locale, var rules) {
-        toUpperCaseKeys(Map map) {
-          var uc = {};
-          map.forEach((k, v) {
-            uc[k.toUpperCase()] = v;
-          });
-          return uc;
-        }
-        niceData[locale] = rules == '' ? <String, String> {} : toUpperCaseKeys(rules);
-      });
-      return niceData;
-    });
   }
 
   String getSymbolsConstructorArgs(String locale, Map data) => """'$locale', (int n) {

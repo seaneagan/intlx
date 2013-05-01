@@ -1,6 +1,4 @@
 
-library iterable_locale_build;
-
 import 'dart:io';
 import 'dart:json' as json;
 import '../library_writer.dart';
@@ -9,7 +7,7 @@ main() {
   new IterableLibraryWriter().writeLibraries();
 }
 
-class IterableLibraryWriter extends JsonSourcedLibraryWriter {
+class IterableLibraryWriter extends LibraryWriter {
   final type = "iterable";
   final symbolsClass = "IterableSymbols";
 

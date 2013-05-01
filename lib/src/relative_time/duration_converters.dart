@@ -1,6 +1,7 @@
 
 library duration_converters;
 
+// TODO: should these be more precise averages, or is that too unpredictable ?
 const int DAYS_PER_YEAR = 365;
 const int DAYS_PER_MONTH = 30;
 

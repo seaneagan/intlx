@@ -12,7 +12,8 @@ which have not yet made it into [the intl package](http://pub.dartlang.org/packa
 
 ####Formatters
 
-| AgeFormat     | Dates relative to now| _2 days ago_ or _In 2 days_| [data][RT Data]       | [scheme][RT scheme]       |
+| API           | What does it format? | Examples                   | CLDR Data             | Unicode tr35 notes        |
+| ------------- | -------------------- | -------------------------- | --------------------- | ------------------------- |
 | IterableFormat| Iterables            | _a, b, and c_              | [data][Iterable data] | [notes][Iterable scheme] |
 | PluralFormat  | nums to a plural form| _1 octopus_ or _2 octopi_  | [data][Plural data]   | [notes][Plural scheme]   |
 | DurationFormat| Durations            | _5 hours_ or _5 hrs_       | [data][RT data]       | [notes][RT scheme]       |

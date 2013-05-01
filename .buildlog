@@ -3889,3 +3889,13 @@ build.dart --machine --changed=lib\src\symbols_map.dart
 arguments: [--machine, --changed=lib\src\symbols_map.dart]
 build.dart finished [589 ms]
 
+---
+build.dart --machine --full
+arguments: [--machine, --full]
+build.dart finished [7174 ms]
+
+---
+build.dart --machine --changed=README.md
+arguments: [--machine, --changed=README.md]
+build.dart finished [730 ms]
+

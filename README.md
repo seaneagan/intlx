@@ -12,19 +12,11 @@ which have not yet made it into [the intl package](http://pub.dartlang.org/packa
 
 ####Formatters
 
-| API           | What does it format? | Examples                   | CLDR Data             | Unicode tr35 notes        |
-| ------------- | -------------------- | -------------------------- | --------------------- | ------------------------- |
-<<<<<<< HEAD
-| IterableFormat| Iterables            | _a, b, and c_              | [data][Iterable Data] | [scheme][Iterable scheme] |
-| PluralFormat  | nums to a plural form| _1 octopus_ or _2 octopi_  | [data][Plural Data]   | [scheme][Plural scheme]   |
-| DurationFormat| Durations            | _5 hours_ or _5 hrs_       | [data][RT Data]       | [scheme][RT scheme]       |
 | AgeFormat     | Dates relative to now| _2 days ago_ or _In 2 days_| [data][RT Data]       | [scheme][RT scheme]       |
-=======
 | IterableFormat| Iterables            | _a, b, and c_              | [data][Iterable data] | [notes][Iterable scheme] |
 | PluralFormat  | nums to a plural form| _1 octopus_ or _2 octopi_  | [data][Plural data]   | [notes][Plural scheme]   |
 | DurationFormat| Durations            | _5 hours_ or _5 hrs_       | [data][RT data]       | [notes][RT scheme]       |
 | AgeFormat     | Dates relative to now| _2 days ago_ or _In 2 days_| [data][RT data]       | [notes][RT scheme]       |
->>>>>>> 987580d80a1a8df394afb6a1e4784ac50f973e7c
 
 <!---
 TODO: make API names link to generated API docs once they exist
@@ -36,15 +28,6 @@ TODO: make API names link to generated API docs once they exist
 ##CLDR data
   All data is sourced from CLDR, specifically http://i18ndata.appspot.com/.
 
-<<<<<<< HEAD
-[Iterable data]: (http://i18ndata.appspot.com/cldr/tags/unconfirmed/main/en/listPatterns/listPattern?action=browse&depth=-1)
-[Plural data]: (http://i18ndata.appspot.com/cldr/tags/unconfirmed/supplemental/plurals/plurals?action=browse&depth=-1)
-[RT data]: (http://i18ndata.appspot.com/cldr/tags/unconfirmed/main/en/units?action=browse&depth=-1)
-
-[Iterable scheme]: (http://unicode.org/reports/tr35/tr35-general.html#ListPatterns)
-[Plural scheme]: (http://unicode.org/reports/tr35/tr35-numbers.html#Language_Plural_Rules)
-[RT scheme]: (http://unicode.org/reports/tr35/#Unit_Elements)
-=======
 [Iterable data]: http://i18ndata.appspot.com/cldr/tags/unconfirmed/main/en/listPatterns/listPattern?action=browse&depth=-1
 [Plural data]: http://i18ndata.appspot.com/cldr/tags/unconfirmed/supplemental/plurals/plurals?action=browse&depth=-1
 [RT data]: http://i18ndata.appspot.com/cldr/tags/unconfirmed/main/en/units?action=browse&depth=-1
@@ -52,4 +35,3 @@ TODO: make API names link to generated API docs once they exist
 [Iterable scheme]: http://unicode.org/reports/tr35/tr35-general.html#ListPatterns
 [Plural scheme]: http://unicode.org/reports/tr35/tr35-numbers.html#Language_Plural_Rules
 [RT scheme]: http://unicode.org/reports/tr35/#Unit_Elements
->>>>>>> 987580d80a1a8df394afb6a1e4784ac50f973e7c

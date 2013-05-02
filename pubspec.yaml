@@ -1,13 +1,14 @@
 name: intlx
 version: 0.0.2
 author: Sean Eagan <seaneagan1@gmail.com>
-description: Intlx is experimental internationalization APIs for Dart,  which have not yet made it into the intl package itslef. All data is sourced from CLDR.
+description: Intlx is internationalization APIs for Dart,  which have not yet made it into the intl package itself.  All data is sourced from CLDR.
 homepage: http://www.github.com/seaneagan/intlx
 dependencies:
-  unittest: 0.4.7+1
-  http: any
   intl: any
-  web_ui: any
+dev_dependencies:
+  unittest: any
+  http: any
   parsers: any
+  web_ui: any
   pathos: any
   widget: any

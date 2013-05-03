@@ -1,5 +1,5 @@
 
-library collection_locale;
+library iterable_locale;
 
 import 'iterable_symbols.dart';
 import '../../intlx.dart';
@@ -13,36 +13,27 @@ class IterableLocale {
   String format(Iterable iterable) {
     if(iterable.isEmpty) return "";
     if(iterable.length == 1) return iterable.single.toString();
-    var list = iterable.toList();
+    var list = iterable is List ? iterable : iterable.toList();
     var length = list.length.toString();
     if(_symbols.indexed.containsKey(length)) return _formatCustom(_symbols.indexed[length], list);
     return _formatAll(list);
   }
 
-  String _formatCustom(String format, List elements) {
-    var element, result;
-    if (elements.length > 1) {
-      return format.splitMapJoin(new RegExp(r'\{(\d+)\}'), onMatch: (Match match) {
-        return elements[int.parse(match.group(1))].toString();
-      });
-//      if (isRtl) {
-//        result = TwitterCldr.Bidi.from_string(result, {
-//          "direction": "RTL"
-//        }).reorder_visually().toString();
-//      }
-    }
-    return elements.single.toString();
+  String _formatCustom(String format, Iterable elements) {
+    return format.splitMapJoin(new RegExp(r'\{(\d+)\}'), onMatch: (Match match) {
+      return elements.elementAt(int.parse(match.group(1))).toString();
+    });
   }
 
   String _formatAll(List list) {
-    var result = _formatCustom(ifNull(_symbols.end, ifNull(_symbols.middle, "")), [list[list.length - 2], list[list.length - 1]]);
-    if (list.length > 2) {
-      var format, _i = 3, _ref;
-      for (var i = _i, _ref = list.length; 3 <= _ref ? _i <= _ref : _i >= _ref; i = 3 <= _ref ? ++_i : --_i) {
-        format = i == list.length ? _symbols.start : _symbols.middle;
-        format = ifNull(format, _symbols.middle);
-        result = _formatCustom(ifNull(format, ""), [list[list.length - i], result]);
-      }
+    var length = list.length;
+    var result = _formatCustom(_symbols.end, list.skip(length - 2));
+    if (length > 2) {
+      var needsStart = length > 3;
+      result = (needsStart ? list.skip(1).toList() : list).reversed.skip(2).fold(result, (result, item) {
+        return _formatCustom(_symbols.middle, [item, result]);
+      });
+      if (needsStart) result = _formatCustom(_symbols.start, [list.first, result]);
     }
     return result;
   }
@@ -52,4 +43,3 @@ class IterableLocale {
 
 }
 
-ifNull(v, d) => v == null ? d : v;

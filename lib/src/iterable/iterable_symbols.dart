@@ -1,5 +1,5 @@
 
-library collection_symbols;
+library iterable_symbols;
 
 import 'package:intlx/intlx.dart';
 import 'package:intlx/src/symbols_map.dart';
@@ -7,10 +7,15 @@ import 'package:intlx/src/plural/plural.dart';
 import 'package:intlx/src/iterable/iterable_locale_list.dart';
 
 class IterableSymbols {
-  final String start, middle, end;
+
+  final String _middle, _start, _end;
   final Map<String, String> indexed;
 
-  const IterableSymbols({this.start, this.middle, this.end, this.indexed});
+  String get start => ifNull(_start, middle);
+  String get middle => ifNull(_middle, "");
+  String get end =>  ifNull(_end, middle);
+
+  const IterableSymbols({start, middle, end, this.indexed}) : _start = start, _middle = middle, _end = end;
 
   IterableSymbols.fromMap(Map map) : this(
     start: map["start"],
@@ -21,3 +26,6 @@ class IterableSymbols {
   static final map = new SymbolsMap<IterableSymbols>(iterableLocales);
   
 }
+
+// TODO: replace this with the resolution of http://dartbug.com/1236
+ifNull(v, d) => v == null ? d : v;

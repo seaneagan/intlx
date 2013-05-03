@@ -3904,3 +3904,98 @@ build.dart --machine --changed=README.md
 arguments: [--machine, --changed=README.md]
 build.dart finished [700 ms]
 
+---
+build.dart --machine --changed=pubspec.yaml
+arguments: [--machine, --changed=pubspec.yaml]
+build.dart finished [2194 ms]
+
+---
+build.dart --machine --changed=pubspec.yaml
+arguments: [--machine, --changed=pubspec.yaml]
+build.dart finished [616 ms]
+
+---
+build.dart --machine --changed=pubspec.lock
+arguments: [--machine, --changed=pubspec.lock]
+build.dart finished [527 ms]
+
+---
+build.dart --machine --changed=pubspec.lock
+arguments: [--machine, --changed=pubspec.lock]
+build.dart finished [489 ms]
+
+---
+build.dart --machine --changed=pubspec.yaml
+arguments: [--machine, --changed=pubspec.yaml]
+build.dart finished [1457 ms]
+
+---
+build.dart --machine --full
+arguments: [--machine, --full]
+build.dart finished [5292 ms]
+
+---
+build.dart --machine --changed=pubspec.yaml
+arguments: [--machine, --changed=pubspec.yaml]
+build.dart finished [490 ms]
+
+---
+build.dart --machine --changed=lib\src\relative_time\time_unit.dart
+arguments: [--machine, --changed=lib\src\relative_time\time_unit.dart]
+build.dart finished [526 ms]
+
+---
+build.dart --machine --changed=lib\intlx.dart --changed=lib\src\relative_time\relative_time_format.dart --chang...
+arguments: [--machine, --changed=lib\intlx.dart, --changed=lib\src\relative_time\relative_time_format.dart, --changed=lib\src\relative_time\time_unit.dart]
+build.dart finished [523 ms]
+
+---
+build.dart --machine --changed=README.md
+arguments: [--machine, --changed=README.md]
+build.dart finished [557 ms]
+
+---
+build.dart --machine --changed=lib\src\iterable\iterable_locale.dart --changed=lib\src\iterable\iterable_symbol...
+arguments: [--machine, --changed=lib\src\iterable\iterable_locale.dart, --changed=lib\src\iterable\iterable_symbols.dart]
+build.dart finished [757 ms]
+
+---
+build.dart --machine --changed=lib\src\iterable\iterable_locale.dart
+arguments: [--machine, --changed=lib\src\iterable\iterable_locale.dart]
+build.dart finished [4471 ms]
+
+---
+build.dart --machine --changed=lib\src\iterable\iterable_symbols.dart
+arguments: [--machine, --changed=lib\src\iterable\iterable_symbols.dart]
+build.dart finished [2862 ms]
+
+---
+build.dart --machine --changed=lib\src\iterable\iterable_locale.dart
+arguments: [--machine, --changed=lib\src\iterable\iterable_locale.dart]
+build.dart finished [3895 ms]
+
+---
+build.dart --machine --changed=lib\src\iterable\iterable_locale.dart
+arguments: [--machine, --changed=lib\src\iterable\iterable_locale.dart]
+build.dart finished [632 ms]
+
+---
+build.dart --machine --changed=lib\src\iterable\iterable_locale.dart
+arguments: [--machine, --changed=lib\src\iterable\iterable_locale.dart]
+build.dart finished [503 ms]
+
+---
+build.dart --machine --changed=lib\src\iterable\iterable_locale.dart
+arguments: [--machine, --changed=lib\src\iterable\iterable_locale.dart]
+build.dart finished [504 ms]
+
+---
+build.dart --machine --changed=lib\src\iterable\iterable_locale.dart
+arguments: [--machine, --changed=lib\src\iterable\iterable_locale.dart]
+build.dart finished [6979 ms]
+
+---
+build.dart --machine --changed=lib\src\iterable\iterable_locale.dart
+arguments: [--machine, --changed=lib\src\iterable\iterable_locale.dart]
+build.dart finished [6916 ms]
+

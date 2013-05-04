@@ -5,7 +5,7 @@
 import 'dart:io';
 
 // current directory must be <root of this package>
-Path libPath = new Path(new Directory.current().path).append("lib");
+Path libPath = new Path(Directory.current.path).append("lib");
 
 // path of private (symbol) locale libraries for given type
 Path getLocaleSrcPath(String type) => libPath.append("src/$type/locale/");

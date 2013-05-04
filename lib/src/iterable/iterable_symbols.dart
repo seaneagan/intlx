@@ -8,12 +8,12 @@ import 'package:intlx/src/iterable/iterable_locale_list.dart';
 
 class IterableSymbols {
 
-  final String _middle, _start, _end;
-  final Map<String, String> indexed;
+  final List _middle, _start, _end;
+  final Map<String, List> indexed;
 
-  String get start => ifNull(_start, middle);
-  String get middle => ifNull(_middle, "");
-  String get end =>  ifNull(_end, middle);
+  List get start => ifNull(_start, middle);
+  List get middle => ifNull(_middle, []);
+  List get end =>  ifNull(_end, middle);
 
   const IterableSymbols({start, middle, end, this.indexed}) : _start = start, _middle = middle, _end = end;
 

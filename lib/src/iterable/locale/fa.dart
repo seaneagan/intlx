@@ -9,7 +9,7 @@ library iterable_symbols_fa;
 
 import 'package:intlx/src/iterable/iterable_symbols.dart';
 
-final symbols = new IterableSymbols(    start: '{0}Øâ {1}',
-    middle: '{0}Øâ {1}',
-    end: '{0}Ø Ù {1}',
-    indexed: const {"2":"{0} Ù {1}"});
+final symbols = new IterableSymbols(    start: const ["0","Øâ ","1"],
+    middle: const ["0","Øâ ","1"],
+    end: const ["0","Ø Ù ","1"],
+    indexed: {"2":["0"," Ù ","1"]});

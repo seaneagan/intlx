@@ -13,7 +13,7 @@ class IterableLibraryWriter extends LibraryWriter {
 
   getSymbolsConstructorArgs(String locale, Map data) {
 
-    var indexed = <String, String> {};
+    var indexed = <String, List> {};
     for(int i = 2; i <= 3; i++) {
       var indexString = i.toString();
       if(data.containsKey(indexString)) {
@@ -22,10 +22,10 @@ class IterableLibraryWriter extends LibraryWriter {
     }
 
     return """
-    start: '${data["start"]}',
-    middle: '${data["middle"]}',
-    end: '${data["end"]}',
-    indexed: const ${json.stringify(indexed)}""";
+    start: const ${json.stringify(data["start"])},
+    middle: const ${json.stringify(data["middle"])},
+    end: const ${json.stringify(data["end"])},
+    indexed: ${json.stringify(indexed)}""";
   }
 
 }

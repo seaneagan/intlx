@@ -30,6 +30,7 @@ class CldrDataProxy {
   
     return Future.wait(dataRequests).then((List<String> unitsBodies) {
       return unitsBodies.asMap().keys.fold(new Map<String, dynamic>(), (localeDataMap, i){
+        print("${locales[i]}: ${unitsBodies[i]}");
         localeDataMap[locales[i]] = json.parse(unitsBodies[i]);
         return localeDataMap;
       });
@@ -37,6 +38,7 @@ class CldrDataProxy {
   }
   
   transform(Map<String, dynamic> localeJsonMap) => localeJsonMap.keys.fold(<String, String> {}, (map, locale) {
+    print("transformed: ${transformJson(locale, localeJsonMap[locale])}");
     map[locale] = json.stringify(transformJson(locale, localeJsonMap[locale]));
     return map;
   });

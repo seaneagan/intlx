@@ -1,3 +1,6 @@
+// Copyright (c) 2013, the Dart project authors.  Please see the AUTHORS file
+// for details. All rights reserved. Use of this source code is governed by a
+// BSD-style license that can be found in the LICENSE file.
 
 /// Provides a parser for the CLDR plural rule syntax
 /// see http://unicode.org/reports/tr35/#Language_Plural_Rules

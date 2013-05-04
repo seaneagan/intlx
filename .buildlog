@@ -4354,3 +4354,63 @@ build.dart --machine --changed=lib\src\data\iterable\en.json
 arguments: [--machine, --changed=lib\src\data\iterable\en.json]
 build.dart finished [588 ms]
 
+---
+build.dart --machine --changed=lib\locale\iterable\af.dart --changed=lib\locale\iterable\all.dart --changed=lib...
+arguments: [--machine, --changed=lib\locale\iterable\af.dart, --changed=lib\locale\iterable\all.dart, --changed=lib\locale\iterable\am.dart, --changed=lib\locale\iterable\ar.dart, --changed=lib\locale\iterable\bg.dart, --changed=lib\locale\iterable\bn.dart, --changed=lib\locale\iterable\ca.dart, --changed=lib\locale\iterable\cs.dart, --changed=lib\locale\iterable\da.dart, --changed=lib\locale\iterable\de.dart, --changed=lib\locale\iterable\de_AT.dart, --changed=lib\locale\iterable\de_CH.dart, --changed=lib\locale\iterable\el.dart, --changed=lib\locale\iterable\en.dart, --changed=lib\locale\iterable\en_AU.dart, --changed=lib\locale\iterable\en_GB.dart, --changed=lib\locale\iterable\en_IE.dart, --changed=lib\locale\iterable\en_IN.dart, --changed=lib\locale\iterable\en_SG.dart, --changed=lib\locale\iterable\en_US.dart, --changed=lib\locale\iterable\en_ZA.dart, --changed=lib\locale\iterable\es.dart, --changed=lib\locale\iterable\es_419.dart, --changed=lib\locale\iterable\et.dart, --changed=lib\locale\iterable\eu.dart, --changed=lib\locale\iterable\fa.dart, --changed=lib\locale\iterable\fi.dart, --changed=lib\locale\iterable\fil.dart, --changed=lib\locale\iterable\fr.dart, --changed=lib\locale\iterable\fr_CA.dart, --changed=lib\locale\iterable\gl.dart, --changed=lib\locale\iterable\gsw.dart, --changed=lib\locale\iterable\gu.dart, --changed=lib\locale\iterable\he.dart, --changed=lib\locale\iterable\hi.dart, --changed=lib\locale\iterable\hr.dart, --changed=lib\locale\iterable\hu.dart, --changed=lib\locale\iterable\id.dart, --changed=lib\locale\iterable\in.dart, --changed=lib\locale\iterable\is.dart, --changed=lib\locale\iterable\it.dart, --changed=lib\locale\iterable\iw.dart, --changed=lib\locale\iterable\ja.dart, --changed=lib\locale\iterable\kn.dart, --changed=lib\locale\iterable\ko.dart, --changed=lib\locale\iterable\ln.dart, --changed=lib\locale\iterable\lt.dart, --changed=lib\locale\iterable\lv.dart, --changed=lib\locale\iterable\ml.dart, --changed=lib\locale\iterable\mr.dart, --changed=lib\locale\iterable\ms.dart, --changed=lib\locale\iterable\mt.dart, --changed=lib\locale\iterable\nl.dart, --changed=lib\locale\iterable\no.dart, --changed=lib\locale\iterable\or.dart, --changed=lib\locale\iterable\pl.dart, --changed=lib\locale\iterable\pt.dart, --changed=lib\locale\iterable\pt_BR.dart, --changed=lib\locale\iterable\pt_PT.dart, --changed=lib\locale\iterable\ro.dart, --changed=lib\locale\iterable\ru.dart, --changed=lib\locale\iterable\sk.dart, --changed=lib\locale\iterable\sl.dart, --changed=lib\locale\iterable\sq.dart, --changed=lib\locale\iterable\sr.dart, --changed=lib\locale\iterable\sv.dart, --changed=lib\locale\iterable\sw.dart, --changed=lib\locale\iterable\ta.dart, --changed=lib\locale\iterable\te.dart, --changed=lib\locale\iterable\th.dart, --changed=lib\locale\iterable\tl.dart, --changed=lib\locale\iterable\tr.dart, --changed=lib\locale\iterable\uk.dart, --changed=lib\locale\iterable\ur.dart, --changed=lib\locale\iterable\vi.dart, --changed=lib\locale\iterable\zh.dart, --changed=lib\locale\iterable\zh_CN.dart, --changed=lib\locale\iterable\zh_HK.dart, --changed=lib\locale\iterable\zh_TW.dart, --changed=lib\locale\iterable\zu.dart, --changed=lib\src\iterable\iterable_locale_list.dart, --changed=lib\src\iterable\locale\af.dart, --changed=lib\src\iterable\locale\am.dart, --changed=lib\src\iterable\locale\ar.dart, --changed=lib\src\iterable\locale\bg.dart, --changed=lib\src\iterable\locale\bn.dart, --changed=lib\src\iterable\locale\ca.dart, --changed=lib\src\iterable\locale\cs.dart, --changed=lib\src\iterable\locale\da.dart, --changed=lib\src\iterable\locale\de.dart, --changed=lib\src\iterable\locale\de_AT.dart, --changed=lib\src\iterable\locale\de_CH.dart, --changed=lib\src\iterable\locale\el.dart, --changed=lib\src\iterable\locale\en.dart, --changed=lib\src\iterable\locale\en_AU.dart, --changed=lib\src\iterable\locale\en_GB.dart, --changed=lib\src\iterable\locale\en_IE.dart, --changed=lib\src\iterable\locale\en_IN.dart, --changed=lib\src\iterable\locale\en_SG.dart, --changed=lib\src\iterable\locale\en_US.dart, --changed=lib\src\iterable\locale\en_ZA.dart, --changed=lib\src\iterable\locale\es.dart, --changed=lib\src\iterable\locale\es_419.dart, --changed=lib\src\iterable\locale\et.dart, --changed=lib\src\iterable\locale\eu.dart, --changed=lib\src\iterable\locale\fa.dart, --changed=lib\src\iterable\locale\fi.dart, --changed=lib\src\iterable\locale\fil.dart, --changed=lib\src\iterable\locale\fr.dart, --changed=lib\src\iterable\locale\fr_CA.dart, --changed=lib\src\iterable\locale\gl.dart, --changed=lib\src\iterable\locale\gsw.dart, --changed=lib\src\iterable\locale\gu.dart, --changed=lib\src\iterable\locale\he.dart, --changed=lib\src\iterable\locale\hi.dart, --changed=lib\src\iterable\locale\hr.dart, --changed=lib\src\iterable\locale\hu.dart, --changed=lib\src\iterable\locale\id.dart, --changed=lib\src\iterable\locale\in.dart, --changed=lib\src\iterable\locale\is.dart, --changed=lib\src\iterable\locale\it.dart, --changed=lib\src\iterable\locale\iw.dart, --changed=lib\src\iterable\locale\ja.dart, --changed=lib\src\iterable\locale\kn.dart, --changed=lib\src\iterable\locale\ko.dart, --changed=lib\src\iterable\locale\ln.dart, --changed=lib\src\iterable\locale\lt.dart, --changed=lib\src\iterable\locale\lv.dart, --changed=lib\src\iterable\locale\ml.dart, --changed=lib\src\iterable\locale\mr.dart, --changed=lib\src\iterable\locale\ms.dart, --changed=lib\src\iterable\locale\mt.dart, --changed=lib\src\iterable\locale\nl.dart, --changed=lib\src\iterable\locale\no.dart, --changed=lib\src\iterable\locale\or.dart, --changed=lib\src\iterable\locale\pl.dart, --changed=lib\src\iterable\locale\pt.dart, --changed=lib\src\iterable\locale\pt_BR.dart, --changed=lib\src\iterable\locale\pt_PT.dart, --changed=lib\src\iterable\locale\ro.dart, --changed=lib\src\iterable\locale\ru.dart, --changed=lib\src\iterable\locale\sk.dart, --changed=lib\src\iterable\locale\sl.dart, --changed=lib\src\iterable\locale\sq.dart, --changed=lib\src\iterable\locale\sr.dart, --changed=lib\src\iterable\locale\sv.dart, --changed=lib\src\iterable\locale\sw.dart, --changed=lib\src\iterable\locale\ta.dart, --changed=lib\src\iterable\locale\te.dart, --changed=lib\src\iterable\locale\th.dart, --changed=lib\src\iterable\locale\tl.dart, --changed=lib\src\iterable\locale\tr.dart, --changed=lib\src\iterable\locale\uk.dart, --changed=lib\src\iterable\locale\ur.dart, --changed=lib\src\iterable\locale\vi.dart, --changed=lib\src\iterable\locale\zh.dart, --changed=lib\src\iterable\locale\zh_CN.dart, --changed=lib\src\iterable\locale\zh_HK.dart, --changed=lib\src\iterable\locale\zh_TW.dart, --changed=lib\src\iterable\locale\zu.dart]
+build.dart finished [542 ms]
+
+---
+build.dart --machine --changed=lib\src\iterable\iterable_locale.dart
+arguments: [--machine, --changed=lib\src\iterable\iterable_locale.dart]
+build.dart finished [524 ms]
+
+---
+build.dart --machine --changed=lib\src\iterable\iterable_locale.dart
+arguments: [--machine, --changed=lib\src\iterable\iterable_locale.dart]
+build.dart finished [527 ms]
+
+---
+build.dart --machine --changed=lib\src\iterable\iterable_format.dart
+arguments: [--machine, --changed=lib\src\iterable\iterable_format.dart]
+build.dart finished [551 ms]
+
+---
+build.dart --machine --changed=lib\src\iterable\iterable_locale.dart
+arguments: [--machine, --changed=lib\src\iterable\iterable_locale.dart]
+build.dart finished [511 ms]
+
+---
+build.dart --machine --changed=lib\src\iterable\iterable_locale.dart
+arguments: [--machine, --changed=lib\src\iterable\iterable_locale.dart]
+build.dart finished [507 ms]
+
+---
+build.dart --machine --changed=test\iterable_format_test.dart
+arguments: [--machine, --changed=test\iterable_format_test.dart]
+build.dart finished [538 ms]
+
+---
+build.dart --machine --changed=test\iterable_format_test.dart
+arguments: [--machine, --changed=test\iterable_format_test.dart]
+build.dart finished [503 ms]
+
+---
+build.dart --machine --changed=test\iterable_format_test.dart
+arguments: [--machine, --changed=test\iterable_format_test.dart]
+build.dart finished [501 ms]
+
+---
+build.dart --machine --changed=test\iterable_format_test.dart
+arguments: [--machine, --changed=test\iterable_format_test.dart]
+build.dart finished [518 ms]
+
+---
+build.dart --machine --changed=test\iterable_format_test.dart
+arguments: [--machine, --changed=test\iterable_format_test.dart]
+build.dart finished [500 ms]
+
+---
+build.dart --machine --changed=test\iterable_format_test.dart
+arguments: [--machine, --changed=test\iterable_format_test.dart]
+build.dart finished [515 ms]
+

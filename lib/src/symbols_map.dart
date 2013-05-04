@@ -14,8 +14,11 @@ class SymbolsMap<T> {
   }
 
   T operator [] (String locale) {
-    locale = Intl.verifiedLocale(locale, (String locale) => _localeList.contains(locale));
-    if(!_map.containsKey(locale)) throw new LocaleDataException("Locale data has not been loaded for locale: '$locale'");
+    locale = Intl.verifiedLocale(locale, (String locale) => 
+      _localeList.contains(locale));
+    if(!_map.containsKey(locale)) 
+      throw new LocaleDataException(
+        "Locale data has not been loaded for locale: '$locale'");
     return _map[locale];
   }
 

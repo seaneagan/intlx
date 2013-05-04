@@ -1,7 +1,7 @@
 
 part of intlx;
 
-/// Enum to represent time units
+/// Enum to represent time units.
 class TimeUnit implements Comparable<TimeUnit> {
   // TODO: this class should be in a generic calendar library, 
   // such as that referenced in http://dartbug.com/5627

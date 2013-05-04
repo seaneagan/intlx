@@ -13,7 +13,7 @@ main() {
 
     setUp(() {
       relative_time_en.init();
-      var dayRounder = const StaticUnitDurationRounder(TimeUnit.DAY);
+      var dayRounder = const DurationRounder.staticUnit(TimeUnit.DAY);
       durationFormat = new DurationFormat(locale: "en", rounder: dayRounder);
       ageFormat = new AgeFormat(locale: "en", rounder: dayRounder);
       oneHundredDays = const Duration(hours: Duration.HOURS_PER_DAY * 100);
@@ -26,23 +26,3 @@ main() {
 
 }
 
-// TODO: expose this via a DurationRounder.staticUnit constructor ?
-class StaticUnitDurationRounder implements DurationRounder {
-  const StaticUnitDurationRounder(this.unit);
-  
-  RoundDuration roundDuration(Duration duration) {
-    int q;
-    switch(unit) {
-      case TimeUnit.YEAR: q = inYears(duration); break;
-      case TimeUnit.MONTH: q = inMonths(duration); break;
-      case TimeUnit.WEEK: q = inWeeks(duration); break;
-      case TimeUnit.DAY: q = duration.inDays; break;
-      case TimeUnit.HOUR: q = duration.inHours; break;
-      case TimeUnit.MINUTE: q = duration.inMinutes; break;
-      case TimeUnit.SECOND: q = duration.inSeconds; break;
-    }
-    return new RoundDuration(unit, q);
-  }
-  
-  final TimeUnit unit;
-}

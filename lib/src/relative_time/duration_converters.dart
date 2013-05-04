@@ -1,4 +1,6 @@
 
+// TODO: replace this library with whatever support is provided
+// for this in the library referenced by http://dartbug.com/5627.
 library duration_converters;
 
 // TODO: should these be more precise averages, or is that too unpredictable ?

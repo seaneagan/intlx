@@ -3,6 +3,7 @@ part of intlx;
 
 /// Enum to represent format lengths.
 class FormatLength {
+  // TODO: can DateFormat use this as well ? others ?
   static const SHORT = const FormatLength._("SHORT", 0);
   static const LONG = const FormatLength._("LONG", 1);
 

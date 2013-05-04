@@ -7,8 +7,11 @@ import 'package_paths.dart';
 import 'package:intl/intl.dart';
 import 'package:intl/date_symbol_data_file.dart';
 
-final cldrTag = "unconfirmed";
+// This web service uses the official CLDR JSON bindings,
+// as specified by http://cldr.unicode.org/index/cldr-spec/json.
 final cldrBaseUri = "http://i18ndata.appspot.com/cldr/tags/$cldrTag/";
+final cldrTag = "unconfirmed";
+
 final mainCldrLocales = json.parse(new File.fromPath(mainLocaleListFilePath).readAsStringSync());
 
 class CldrDataProxy {

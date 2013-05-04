@@ -9,7 +9,7 @@ library iterable_symbols_cs;
 
 import 'package:intlx/src/iterable/iterable_symbols.dart';
 
-final symbols = new IterableSymbols(    start: const ["0",", ","1"],
-    middle: const ["0",", ","1"],
-    end: const ["0"," a ","1"],
-    indexed: {"2":["0"," a ","1"]});
+final symbols = new IterableSymbols(    start: const [0,", ",1],
+    middle: const [0,", ",1],
+    end: const [0," a ",1],
+    indexed: {"2":[0," a ",1]});

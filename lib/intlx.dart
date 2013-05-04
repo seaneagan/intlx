@@ -1,5 +1,5 @@
 
-/// internationalization APIs not yet in the intl package
+/// internationalization APIs not yet in [the intl package](http://pub.dartlang.org/packages/intl).
 library intlx;
 
 import 'dart:math';

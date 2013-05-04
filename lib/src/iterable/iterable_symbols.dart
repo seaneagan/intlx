@@ -15,7 +15,10 @@ class IterableSymbols {
   List get middle => ifNull(_middle, []);
   List get end =>  ifNull(_end, middle);
 
-  const IterableSymbols({start, middle, end, this.indexed}) : _start = start, _middle = middle, _end = end;
+  const IterableSymbols({start, middle, end, this.indexed}) : 
+    _start = start, 
+    _middle = middle, 
+    _end = end;
 
   IterableSymbols.fromMap(Map map) : this(
     start: map["start"],

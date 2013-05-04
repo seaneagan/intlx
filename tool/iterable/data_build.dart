@@ -3,8 +3,8 @@ import 'package:parsers/parsers.dart';
 import '../cldr_data_proxy.dart';
 
 main() {
-  print(listPatternParser.parse("{0} and {1}").map((i) => i.runtimeType).join("::"));
-  // new IterableDataProxy().proxy();
+  // print(listPatternParser.parse("{0} and {1}").map((i) => i.runtimeType).join("::"));
+  new IterableDataProxy().proxy();
 }
 
 class IterableDataProxy extends CldrDataProxy {

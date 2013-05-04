@@ -9,9 +9,11 @@ import '../plural/plural.dart';
 class IterableLocale {
   final IterableSymbols _symbols;
   final String _locale;
-  var _mapSeparator;
+  var _onSeparator;
   
-  IterableLocale(String locale, this._mapSeparator) : _symbols = IterableSymbols.map[locale], _locale = locale;
+  IterableLocale(String locale, this._onSeparator) : 
+    _symbols = IterableSymbols.map[locale], 
+    _locale = locale;
   
   String format(Iterable iterable) {
     // 0 item case
@@ -22,29 +24,29 @@ class IterableLocale {
     var list = iterable is List ? iterable : iterable.toList();
     var length = list.length.toString();
     // item count exception case
-    if(_symbols.indexed.containsKey(length)) return _substituteItems(_symbols.indexed[length], list);
+    if(_symbols.indexed.containsKey(length)) 
+      return _substituteItems(_symbols.indexed[length], list);
     // general case
     return _formatAll(list);
   }
 
   String _substituteItems(List template, Iterable elements) => 
-    template.map((e) => e is int ? elements.elementAt(e) : _mapSeparator(e)).join();
+    template.map((e) => 
+      e is int ? 
+        elements.elementAt(e) : 
+        _onSeparator(e)).join();
 
   String _formatAll(List list) {
-//    String _buildTemplate(List template, currentItem, List oldItems) {
-//      return template.map((piece) => piece is int ? elements[piece] : piece)join();.splitMapJoin(new RegExp(r'\{(\d+)\}'), onMatch: (Match match) {
-//        return elements.elementAt(int.parse(match.group(1))).toString();
-//      });
-//    }
-
     var length = list.length;
     var result = _substituteItems(_symbols.end, list.skip(length - 2));
     if (length > 2) {
       var needsStart = length > 3;
-      var reversedMiddleItems = (needsStart ? list.skip(1).toList() : list).reversed.skip(2);
+      var reversedMiddleItems = 
+        (needsStart ? list.skip(1).toList() : list).reversed.skip(2);
       result = reversedMiddleItems.fold(result, (result, item) =>
         _substituteItems(_symbols.middle, [item, result]));
-      if (needsStart) result = _substituteItems(_symbols.start, [list.first, result]);
+      if (needsStart) 
+        result = _substituteItems(_symbols.start, [list.first, result]);
     }
     return result;
   }

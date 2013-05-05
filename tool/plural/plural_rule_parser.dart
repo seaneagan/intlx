@@ -8,27 +8,30 @@ library plural_rule_parser;
 
 import 'package:parsers/parsers.dart';
 
-
-Parser get pluralParser {
-  if(_pluralParser == null) {
-    final lp = new LanguageParsers();
-    Parser upperOrLower(String symb) => lp.symbol(symb.toUpperCase()) | lp.symbol(symb.toLowerCase());
-    var natural = lp.natural;
-    var range = (natural + (lp.symbol('..') > natural)) ^ (int min, int max) => new Range(min, max);
-    var rangeList = (range | natural).sepBy1(lp.comma);
-    var expr = lp.symbol('n') > (lp.symbol('mod') > natural).maybe ^ (option) => option.isDefined ? option.value : null;
-    var maybeNot = lp.symbol('not').maybe ^ (option) => option.isDefined;
-    var isRelation = (expr + (lp.symbol('is') > maybeNot) + natural) ^ (int mod, bool not, int test) => new IsRelation(mod, not, test);
-    var inRelation = (expr + (maybeNot < lp.symbol('in')) + rangeList) ^ (int mod, bool not, List test) => new InRelation(mod, not, test);
-    var withinRelation = (expr + (maybeNot < lp.symbol('within')) + rangeList) ^ (int mod, bool not, List test) => new WithInRelation(mod, not, test);
-    var relation = isRelation | inRelation | withinRelation;
-    var andCondition = relation.sepBy1(upperOrLower('and')) ^ (List relations) => new AndCondition(relations);
-    _pluralParser = andCondition.sepBy1(upperOrLower('or')) < eof ^ (List andConditions) => new Condition(andConditions);
-  }
-  return _pluralParser;
-}
-Parser _pluralParser;
-
+final pluralParser = () {
+  final lp = new LanguageParsers();
+  Parser upperOrLower(String symb) => 
+    lp.symbol(symb.toUpperCase()) | lp.symbol(symb.toLowerCase());
+  var natural = lp.natural;
+  var range = (natural + (lp.symbol('..') > natural)) ^ 
+    (int min, int max) => new Range(min, max);
+  var rangeList = (range | natural).sepBy1(lp.comma);
+  var expr = lp.symbol('n') > (lp.symbol('mod') > natural).maybe ^ 
+    (option) => option.isDefined ? option.value : null;
+  var maybeNot = lp.symbol('not').maybe ^ (option) => option.isDefined;
+  var isRelation = (expr + (lp.symbol('is') > maybeNot) + natural) ^ 
+    (int mod, bool not, int test) => new IsRelation(mod, not, test);
+  var inRelation = (expr + (maybeNot < lp.symbol('in')) + rangeList) ^ 
+    (int mod, bool not, List test) => new InRelation(mod, not, test);
+  var withinRelation = (expr + (maybeNot < lp.symbol('within')) + rangeList) ^ 
+    (int mod, bool not, List test) => new WithInRelation(mod, not, test);
+  var relation = isRelation | inRelation | withinRelation;
+  var andCondition = relation.sepBy1(upperOrLower('and')) ^ 
+    (List relations) => new AndCondition(relations);
+  var parser = andCondition.sepBy1(upperOrLower('or')) < eof ^ 
+    (List andConditions) => new Condition(andConditions);
+  return parser;
+}();
 
 abstract class Dartable {
   String toDart();
@@ -61,7 +64,9 @@ abstract class InOrWithinRelation extends Dartable {
   String toDart() {
     var input = formatMod(mod);
     var negation = not ? '!' : '';
-    var dart = test.map((arg) => arg is int ? '$input == $arg' : '${rangeDart(arg, input)}').toList().join(' || ');
+    var dart = test.map((arg) => arg is int ? 
+      '$input == $arg' : 
+      '${rangeDart(arg, input)}').toList().join(' || ');
     dart = '($dart)';
     if(not) dart = '!$dart';
     return dart;
@@ -71,9 +76,8 @@ abstract class InOrWithinRelation extends Dartable {
 
 class InRelation extends InOrWithinRelation {
   InRelation(int mod, bool not, List test) : super(mod, not, test);
-  String rangeDart(Range range, String input) {
-    return 'range(${(range.max + 1) - range.min}, ${range.min}).contains($input)';
-  }
+  String rangeDart(Range range, String input) =>
+    'range(${(range.max + 1) - range.min}, ${range.min}).contains($input)';
 }
 
 class WithInRelation extends InOrWithinRelation {
@@ -97,6 +101,7 @@ class IsRelation extends Dartable {
 
 String formatMod(int mod) => mod == null ? 'n' : 'n % $mod';
 
+// TODO: write some proper unit tests for the plural parser
 main() {
   var test = "n in 0..99 and n is not 0 and n is not 2";
   //var test = "n is 0 OR n is not 1 AND n mod 100 in 1..19";

@@ -35,13 +35,15 @@ class RelativeTimeLibraryWriter extends LibraryWriter {
     }''';
     }
 
-    var ret = ["units", "shortUnits", "pastUnits", "futureUnits"].map(unitsCode).join(''',
+    var unitCategories = ["units", "shortUnits", "pastUnits", "futureUnits"];
+    var ret = unitCategories.map(unitsCode).join(''',
     ''');
     return '''
     $ret''';
   }
 
-  String getAllLocaleLibraryImports() => '''${super.getAllLocaleLibraryImports()}
+  String getAllLocaleLibraryImports() => 
+    '''${super.getAllLocaleLibraryImports()}
 import '../plural/all.dart' as ${getPluralLibraryIdentifier('all')};''';
 
   String getAllLocaleLibraryLogic() => '''
@@ -50,12 +52,13 @@ import '../plural/all.dart' as ${getPluralLibraryIdentifier('all')};''';
 
   void writeSingleLocaleLibrary(String locale) {
     var pluralLocale = Intl.verifiedLocale(locale, pluralLocales.contains);
-    String pluralLibraryIdentifier = getPluralLibraryIdentifier(pluralLocale);
+    var pluralLibraryId = getPluralLibraryIdentifier(pluralLocale);
+    var symbolsLibraryId = getSymbolsLibraryIdentifier(locale);
     writeLocaleLibrary(
-        locale,
-        '''${generateLocaleImport(locale)}
-    import '../plural/$pluralLocale.dart' as $pluralLibraryIdentifier;''',
-        '''  $symbolsClass.map['$locale'] = ${getSymbolsLibraryIdentifier(locale)}.symbols;
-      $pluralLibraryIdentifier.init();''');
+      locale,
+      '''${generateLocaleImport(locale)}
+    import '../plural/$pluralLocale.dart' as $pluralLibraryId;''',
+      '''  $symbolsClass.map['$locale'] = $symbolsLibraryId.symbols;
+      $pluralLibraryId.init();''');
     }
 }

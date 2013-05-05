@@ -25,7 +25,10 @@ class RelativeTimeDataProxy extends CldrDataProxy {
         if(unitsData.containsKey(unitsKey)) {
           var unitData = unitsData[unitsKey];
           var newUnitData = new Map<String, String>();
-          for(String plurality in ["0", "1"]..addAll(PluralCategory.values.map((plurality) => plurality.toString().toLowerCase()))) {
+          var pluralities = ["0", "1"]..addAll(
+            PluralCategory.values.map((plurality) => 
+              plurality.toString().toLowerCase()));
+          for(String plurality in pluralities) {
             var pluralityKey = "$plurality$pluralitySuffix";
             if(unitData.containsKey(pluralityKey)) {
               newUnitData[plurality] = unitData[pluralityKey];

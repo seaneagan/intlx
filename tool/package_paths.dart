@@ -4,8 +4,13 @@
 
 // TODO: merge this library with intl/test/data_directory.dart.
 // move under lib/src since used by both tool and test dirs?
+// create a PubPackage class to model this ?
 
 import 'dart:io';
+import 'package:pathos/path.dart';
+
+// current directory must be <root of this package>
+String packageName = "intlx"; // basename(Directory.current.path);
 
 // current directory must be <root of this package>
 Path libPath = new Path(Directory.current.path).append("lib");
@@ -23,7 +28,8 @@ Path dataPath = libPath.append("src/data/");
 Path getLocaleDataPath(String type) => dataPath.append(type);
 
 // path to locale data file for given type and locale
-Path getLocaleDataFilePath(String type, String locale) => getLocaleDataPath(type).append("$locale.json");
+Path getLocaleDataFilePath(String type, String locale) => 
+  getLocaleDataPath(type).append("$locale.json");
 
 // path to locale data file for given type and locale
 Path mainLocaleListFilePath = dataPath.append("main_locale_list.json");

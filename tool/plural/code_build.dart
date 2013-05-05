@@ -30,15 +30,18 @@ class PluralLibraryWriter extends LibraryWriter {
     var loadLocaleLibraryPath = libPath.append("src/$type/");
     
     var imports = localeList.map((locale) => '''@library_$locale
-import 'package:intlx/src/plural/locale/$locale.dart' as plural_locale_$locale;
+import 'package:$packageName/src/plural/locale/$locale.dart' as plural_locale_$locale;
 ''').join();
 
-    var deferredLibraries = localeList.map((locale) => '''const library_$locale = const DeferredLibrary('plural_symbols_$locale');
+    var deferredLibraries = localeList.map((locale) => 
+      '''const library_$locale = const DeferredLibrary('plural_symbols_$locale');
 ''').join();
     
-    var libraryMapEntries = localeList.map((locale) => '''  '$locale': library_$locale''').join(',\n');
+    var libraryMapEntries = localeList.map((locale) => 
+      '''  '$locale': library_$locale''').join(',\n');
     
-    var switchCases = localeList.map((locale) => '''      case '$locale': init(plural_locale_$locale.symbols); break;
+    var switchCases = localeList.map((locale) => 
+      '''      case '$locale': init(plural_locale_$locale.symbols); break;
 ''').join();
 
     var code = '''
@@ -53,9 +56,11 @@ $libraryMapEntries
   };
 
 Future<bool> loadLocale([String locale]) {
-  if(PluralLocaleImpl.map.containsKey(locale)) return new Future.immediate(false);
+  if(PluralLocaleImpl.map.containsKey(locale)) 
+    return new Future.immediate(false);
   return libraryMap[locale].load().then((_) {
-    init(PluralLocale pluralLocale) => PluralLocaleImpl.map[locale] = pluralLocale;
+    init(PluralLocale pluralLocale) => 
+      PluralLocaleImpl.map[locale] = pluralLocale;
     switch(locale) {
 $switchCases
     }
@@ -63,24 +68,29 @@ $switchCases
   });
 }''';
     
-    writeLibrary(loadLocaleLibraryPath, "load_locale", getLibraryComment(false), code);
-    
+    writeLibrary(
+      loadLocaleLibraryPath, 
+      "load_locale", 
+      getLibraryComment(false), 
+      code);
   }
 
-  String getSymbolsConstructorArgs(String locale, Map data) => """'$locale', (int n) {
+  String getSymbolsConstructorArgs(String locale, Map data) => 
+    """'$locale', (int n) {
 ${getPluralRulesCode(data)}
   }""";
 }
 
-String getPluralRulesCode(Map<String, String> pluralRules) {
-  String code = "return PluralCategory.OTHER;";
-  for(PluralCategory category in [PluralCategory.MANY, PluralCategory.FEW, PluralCategory.TWO, PluralCategory.ONE, PluralCategory.ZERO]) {
-    var categoryString = category.toString();
-    if(pluralRules.containsKey(categoryString)) {
-      String categoryTest = pluralParser.parse(pluralRules[categoryString]).toDart();
-      code = '''if($categoryTest) return PluralCategory.${categoryString};
+String getPluralRulesCode(Map<String, String> pluralRules) => 
+  PluralCategory.values.reversed.skip(1).fold(
+    "return PluralCategory.OTHER;", 
+    (String code, category) {
+      var categoryString = category.toString();
+      if(pluralRules.containsKey(categoryString)) {
+        String categoryTest = 
+          pluralParser.parse(pluralRules[categoryString]).toDart();
+        code = '''if($categoryTest) return PluralCategory.${categoryString};
 else $code''';
-    }
-  }
-  return code;
-}
+      }
+      return code;
+  });

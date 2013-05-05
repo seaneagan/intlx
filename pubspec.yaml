@@ -8,7 +8,7 @@ dependencies:
 dev_dependencies:
   unittest: any
   http: any
-  parsers: any
   web_ui: any
+  parsers: any
   pathos: any
   widget: any

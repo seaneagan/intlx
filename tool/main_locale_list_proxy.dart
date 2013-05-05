@@ -10,8 +10,8 @@ import 'dart:async';
 import 'package:intl/intl.dart';
 import 'package_paths.dart';
 main() {
-  http.read(cldrBaseUri + "main").then((String dummyLocaleMap) {
-    var localeList = json.parse(dummyLocaleMap).keys.toList();
+  http.read("${cldrBaseUri}main").then((String emptyLocaleMap) {
+    var localeList = json.parse(emptyLocaleMap).keys.toList();
     var file = new File.fromPath(mainLocaleListFilePath);
     file.writeAsStringSync(json.stringify(localeList));
   });

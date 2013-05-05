@@ -16,15 +16,18 @@ abstract class LibraryWriter {
   String get symbolsClass;
   String get symbolsClassLibrary => '${type}_symbols';
 
-  Future getBuiltLocaleData() => new Directory.fromPath(getLocaleDataPath(type)).list().fold(<String, Map> {}, (Map<String, Map> localeDataMap, FileSystemEntity fse) {
-    String locale = new Path(fse.path).filenameWithoutExtension;
-
-    var filePath = getLocaleDataFilePath(type, locale);
-    var file = new File.fromPath(filePath);
-    String fileJson = file.readAsStringSync();
-    localeDataMap[locale] = json.parse(fileJson);
-    return localeDataMap;
-  });
+  Future getBuiltLocaleData() {
+    var dataDirectory = new Directory.fromPath(getLocaleDataPath(type));
+    return dataDirectory.list().fold({}, (localeDataMap, fse) {
+      String locale = new Path(fse.path).filenameWithoutExtension;
+  
+      var filePath = getLocaleDataFilePath(type, locale);
+      var file = new File.fromPath(filePath);
+      String fileJson = file.readAsStringSync();
+      localeDataMap[locale] = json.parse(fileJson);
+      return localeDataMap;
+    });
+  }
 
   Future writeLibraries() {
     getBuiltLocaleData().then((localeDataMap) {
@@ -54,7 +57,12 @@ abstract class LibraryWriter {
   }
 
   void writeSymbolLibrary(String locale, Map data) {
-    writeLibrary(getLocaleSrcPath(type), locale, getLibraryComment(true), getSymbolLibraryCode(locale, data), getSymbolsLibraryIdentifier(locale));
+    writeLibrary(
+      getLocaleSrcPath(type), 
+      locale, 
+      getLibraryComment(true), 
+      getSymbolLibraryCode(locale, data), 
+      getSymbolsLibraryIdentifier(locale));
   }
 
   String getSymbolLibraryCode(String locale, Map data) => '''
@@ -65,30 +73,42 @@ final symbols = new $symbolsClass(${getSymbolsConstructorArgs(locale, data)});
 
   String getSymbolsConstructorArgs(String locale, Map data);
 
-  String getSymbolsLibraryIdentifier(String locale) => "${type}_symbols_$locale";
+  String getSymbolsLibraryIdentifier(String locale) => 
+    "${type}_symbols_$locale";
 
   void writeSingleLocaleLibrary(String locale) {
+    var symbolsLibraryId = getSymbolsLibraryIdentifier(locale);
     writeLocaleLibrary(
         locale,
         generateLocaleImport(locale),
-        "$symbolsClass.map['$locale'] = ${getSymbolsLibraryIdentifier(locale)}.symbols;");
+        "$symbolsClass.map['$locale'] = $symbolsLibraryId.symbols;");
   }
 
   void writeAllLocaleLibrary() {
-    writeLocaleLibrary("all", getAllLocaleLibraryImports(), getAllLocaleLibraryLogic());
+    writeLocaleLibrary(
+      "all", 
+      getAllLocaleLibraryImports(), 
+      getAllLocaleLibraryLogic());
   }
-  String getAllLocaleLibraryImports() => localeList.map(generateLocaleImport).toList().join("\n");
+  String getAllLocaleLibraryImports() => 
+    localeList.map(generateLocaleImport).toList().join("\n");
 
   String getAllLocaleLibraryLogic() {
-    var mapContents = localeList.map((String locale) => '"$locale": ${getSymbolsLibraryIdentifier(locale)}.symbols').join(", ");
+    var mapContents = localeList.map((String locale) => 
+      '"$locale": ${getSymbolsLibraryIdentifier(locale)}.symbols').join(", ");
     return '''
       var symbolsMap = <String, $symbolsClass> {$mapContents};
-      symbolsMap.forEach((String locale, $symbolsClass symbols) => $symbolsClass.map[locale] = symbols);''';
+      symbolsMap.forEach((String locale, $symbolsClass symbols) => 
+        $symbolsClass.map[locale] = symbols);''';
   }
 
-  String generateLocaleImport(String locale) => "import 'package:intlx/src/$type/locale/$locale.dart' as ${getSymbolsLibraryIdentifier(locale)};";
+  String generateLocaleImport(String locale) {
+    var symbolsLibraryId = getSymbolsLibraryIdentifier(locale);
+    return "import 'package:$packageName/src/$type/locale/$locale.dart' as $symbolsLibraryId;";
+  }
 
-  String getSymbolsClassLibraryImport() => "import 'package:intlx/src/$type/$symbolsClassLibrary.dart';";
+  String getSymbolsClassLibraryImport() => 
+    "import 'package:$packageName/src/$type/$symbolsClassLibrary.dart';";
 
   void writeLocaleListLibrary() {
     String localeListString = json.stringify(localeList);
@@ -97,7 +117,11 @@ final symbols = new $symbolsClass(${getSymbolsConstructorArgs(locale, data)});
 const ${type}Locales = const <String> $localeListString;
   ''';
 
-    writeLibrary(libPath.append("src/$type/"), "${type}_locale_list", getLibraryComment(false), code);
+    writeLibrary(
+      libPath.append("src/$type/"), 
+      "${type}_locale_list", 
+      getLibraryComment(false), 
+      code);
   }
 
   void writeLocaleLibrary(String locale, String imports, String logic) {
@@ -110,10 +134,21 @@ void init() {
 }
   ''';
 
-    writeLibrary(localeLibPath.append("$type/"), locale, getLibraryComment(false), code, "${type}_locale_$locale");
+    writeLibrary(
+      localeLibPath.append("$type/"), 
+      locale, 
+      getLibraryComment(false), 
+      code, 
+      "${type}_locale_$locale");
   }
 
-  writeLibrary(Path path, String name, String comment, String code, [String identifier]) {
+  writeLibrary(
+    Path path, 
+    String name, 
+    String comment, 
+    String code, 
+    [String identifier]) {
+
     if(identifier == null) identifier = name;
     String fullCode = '''
 $comment

@@ -22,14 +22,15 @@ class PluralDataProxy extends CldrDataProxy {
     var pluralRulesUri = '${cldrBaseUri}supplemental/plurals/plurals?depth=-1';
     return http.read(pluralRulesUri).then((String jsonText) {
       var data = json.parse(jsonText);
-      // add deprecated (renamed) locales, which are not present in CLDR plural data
+      // add deprecated (renamed) locales, 
+      // which are not present in CLDR plural data
       deprecatedLocaleMap.forEach((k, v) {
         data[k] = data[v];
       });
       
       return data;
       
-      return constrainLocales(data.keys).fold(<String, dynamic> {}, (map, locale) {
+      return constrainLocales(data.keys).fold({}, (map, locale) {
         map[locale] = data[locale];
         return map;
       });
@@ -44,7 +45,9 @@ class PluralDataProxy extends CldrDataProxy {
       });
       return uc;
     }
-    return jsonObject == '' ? const <String, String> {} : toUpperCaseKeys(jsonObject);
+    return jsonObject == '' ? 
+      const <String, String> {} : 
+      toUpperCaseKeys(jsonObject);
   }
 
 }

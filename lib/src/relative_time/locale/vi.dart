@@ -13,39 +13,39 @@ library relative_time_symbols_vi;
 
 import 'package:intlx/src/relative_time/relative_time_symbols.dart';
 
-final symbols = new RelativeTimeSymbols(      units: const {
-      "SECOND": const {"other":"{0} giÃ¢y"},
-      "MINUTE": const {"other":"{0} phÃºt"},
-      "HOUR": const {"other":"{0} giá»"},
-      "DAY": const {"other":"{0} ngÃ y"},
-      "WEEK": const {"other":"{0} tuáº§n"},
-      "MONTH": const {"other":"{0} thÃ¡ng"},
-      "YEAR": const {"other":"{0} nÄm"}
+final symbols = new RelativeTimeSymbols(      units: {
+      "SECOND": {"other":"{0} giÃ¢y"},
+      "MINUTE": {"other":"{0} phÃºt"},
+      "HOUR": {"other":"{0} giá»"},
+      "DAY": {"other":"{0} ngÃ y"},
+      "WEEK": {"other":"{0} tuáº§n"},
+      "MONTH": {"other":"{0} thÃ¡ng"},
+      "YEAR": {"other":"{0} nÄm"}
     },
-      shortUnits: const {
-      "SECOND": const {"other":"{0} s"},
-      "MINUTE": const {"other":"{0} ph"},
-      "HOUR": const {"other":"{0} g"},
-      "DAY": const {"other":"{0} ngÃ y"},
-      "WEEK": const {"other":"{0} tuáº§n"},
-      "MONTH": const {"other":"{0} thÃ¡ng"},
-      "YEAR": const {"other":"{0} nÄm"}
+      shortUnits: {
+      "SECOND": {"other":"{0} s"},
+      "MINUTE": {"other":"{0} ph"},
+      "HOUR": {"other":"{0} g"},
+      "DAY": {"other":"{0} ngÃ y"},
+      "WEEK": {"other":"{0} tuáº§n"},
+      "MONTH": {"other":"{0} thÃ¡ng"},
+      "YEAR": {"other":"{0} nÄm"}
     },
-      pastUnits: const {
-      "SECOND": const {"1":"1 giÃ¢y trÆ°á»c","0":"0 giÃ¢y trÆ°á»c","other":"{0} giÃ¢y trÆ°á»c"},
-      "MINUTE": const {"1":"1 phÃºt trÆ°á»c","0":"0 phÃºt trÆ°á»c","other":"{0} phÃºt trÆ°á»c"},
-      "HOUR": const {"1":"1 giá» trÆ°á»c","0":"0 giá» trÆ°á»c","other":"{0} giá» trÆ°á»c"},
-      "DAY": const {"1":"1 ngÃ y trÆ°á»c","0":"0 ngÃ y trÆ°á»c","other":"{0} ngÃ y trÆ°á»c"},
-      "WEEK": const {"1":"1 tuáº§n trÆ°á»c","0":"0 tuáº§n trÆ°á»c","other":"{0} tuáº§n trÆ°á»c"},
-      "MONTH": const {"1":"1 thÃ¡ng trÆ°á»c","0":"0 thÃ¡ng trÆ°á»c","other":"{0} thÃ¡ng trÆ°á»c"},
-      "YEAR": const {"1":"1 nÄm trÆ°á»c","0":"0 nÄm trÆ°á»c","other":"{0} nÄm trÆ°á»c"}
+      pastUnits: {
+      "SECOND": {"1":"1 giÃ¢y trÆ°á»c","0":"0 giÃ¢y trÆ°á»c","other":"{0} giÃ¢y trÆ°á»c"},
+      "MINUTE": {"1":"1 phÃºt trÆ°á»c","0":"0 phÃºt trÆ°á»c","other":"{0} phÃºt trÆ°á»c"},
+      "HOUR": {"1":"1 giá» trÆ°á»c","0":"0 giá» trÆ°á»c","other":"{0} giá» trÆ°á»c"},
+      "DAY": {"1":"1 ngÃ y trÆ°á»c","0":"0 ngÃ y trÆ°á»c","other":"{0} ngÃ y trÆ°á»c"},
+      "WEEK": {"1":"1 tuáº§n trÆ°á»c","0":"0 tuáº§n trÆ°á»c","other":"{0} tuáº§n trÆ°á»c"},
+      "MONTH": {"1":"1 thÃ¡ng trÆ°á»c","0":"0 thÃ¡ng trÆ°á»c","other":"{0} thÃ¡ng trÆ°á»c"},
+      "YEAR": {"1":"1 nÄm trÆ°á»c","0":"0 nÄm trÆ°á»c","other":"{0} nÄm trÆ°á»c"}
     },
-      futureUnits: const {
-      "SECOND": const {"1":"Trong 1 giÃ¢y","0":"Trong 0 giÃ¢y","other":"Trong {0} giÃ¢y"},
-      "MINUTE": const {"1":"Trong 1 phÃºt","0":"Trong 0 phÃºt","other":"Trong {0} phÃºt"},
-      "HOUR": const {"1":"Trong 1 giá»","0":"Trong 0 giá»","other":"Trong {0} giá»"},
-      "DAY": const {"1":"Trong 1 ngÃ y","0":"Trong 0 ngÃ y","other":"Trong {0} ngÃ y"},
-      "WEEK": const {"1":"Trong 1 tuáº§n","0":"Trong 0 tuáº§n","other":"Trong {0} tuáº§n"},
-      "MONTH": const {"1":"Trong 1 thÃ¡ng","0":"Trong 0 thÃ¡ng","other":"Trong {0} thÃ¡ng"},
-      "YEAR": const {"1":"Trong 1 nÄm","0":"Trong 0 nÄm","other":"Trong {0} nÄm"}
+      futureUnits: {
+      "SECOND": {"1":"Trong 1 giÃ¢y","0":"Trong 0 giÃ¢y","other":"Trong {0} giÃ¢y"},
+      "MINUTE": {"1":"Trong 1 phÃºt","0":"Trong 0 phÃºt","other":"Trong {0} phÃºt"},
+      "HOUR": {"1":"Trong 1 giá»","0":"Trong 0 giá»","other":"Trong {0} giá»"},
+      "DAY": {"1":"Trong 1 ngÃ y","0":"Trong 0 ngÃ y","other":"Trong {0} ngÃ y"},
+      "WEEK": {"1":"Trong 1 tuáº§n","0":"Trong 0 tuáº§n","other":"Trong {0} tuáº§n"},
+      "MONTH": {"1":"Trong 1 thÃ¡ng","0":"Trong 0 thÃ¡ng","other":"Trong {0} thÃ¡ng"},
+      "YEAR": {"1":"Trong 1 nÄm","0":"Trong 0 nÄm","other":"Trong {0} nÄm"}
     });

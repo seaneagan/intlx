@@ -47,6 +47,7 @@ import 'package:$packageName/src/plural/locale/$locale.dart' as plural_locale_$l
     var code = '''
 import 'dart:async';
 import 'package:intlx/src/plural/plural.dart';
+import 'package:intlx/src/util.dart';
 $imports
 
 $deferredLibraries

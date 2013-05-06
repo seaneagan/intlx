@@ -15,5 +15,5 @@ import 'package:intlx/src/iterable/iterable_symbols.dart';
 
 final symbols = new IterableSymbols(    start: const [0,", ",1],
     middle: const [0,", ",1],
-    end: const [0,", ",1],
+    end: const [0,", ",1," à´à´¨àµà´¨à´¿à´µ"],
     indexed: {"2":[0," à´àµà´à´¾à´¤àµ ",1]});

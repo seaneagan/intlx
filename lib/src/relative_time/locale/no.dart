@@ -13,27 +13,27 @@ library relative_time_symbols_no;
 
 import 'package:intlx/src/relative_time/relative_time_symbols.dart';
 
-final symbols = new RelativeTimeSymbols(      units: const {
-      "SECOND": const {"one":"{0} sekund","other":"{0} sekunder"},
-      "MINUTE": const {"one":"{0} minutt","other":"{0} minutter"},
-      "HOUR": const {"one":"{0} time","other":"{0} timer"},
-      "DAY": const {"one":"{0} dag","other":"{0} dager"},
-      "WEEK": const {"one":"{0} uke","other":"{0} uker"},
-      "MONTH": const {"one":"{0} mÃ¥ned","other":"{0} mÃ¥neder"},
-      "YEAR": const {"one":"{0} Ã¥r","other":"{0} Ã¥r"}
+final symbols = new RelativeTimeSymbols(      units: {
+      "SECOND": {"one":"{0} sekund","other":"{0} sekunder"},
+      "MINUTE": {"one":"{0} minutt","other":"{0} minutter"},
+      "HOUR": {"one":"{0} time","other":"{0} timer"},
+      "DAY": {"one":"{0} dag","other":"{0} dager"},
+      "WEEK": {"one":"{0} uke","other":"{0} uker"},
+      "MONTH": {"one":"{0} mÃ¥ned","other":"{0} mÃ¥neder"},
+      "YEAR": {"one":"{0} Ã¥r","other":"{0} Ã¥r"}
     },
-      shortUnits: const {
-      "SECOND": const {"one":"{0} sek","other":"{0} sek"},
-      "MINUTE": const {"one":"{0} min","other":"{0} min"},
-      "HOUR": const {"one":"{0} t","other":"{0} t"},
-      "DAY": const {"one":"{0} dag","other":"{0} dager"},
-      "WEEK": const {"one":"{0} uke","other":"{0} uker"},
-      "MONTH": const {"one":"{0} md.","other":"{0} md."},
-      "YEAR": const {"one":"{0} Ã¥r","other":"{0} Ã¥r"}
+      shortUnits: {
+      "SECOND": {"one":"{0} sek","other":"{0} sek"},
+      "MINUTE": {"one":"{0} min","other":"{0} min"},
+      "HOUR": {"one":"{0} t","other":"{0} t"},
+      "DAY": {"one":"{0} dag","other":"{0} dager"},
+      "WEEK": {"one":"{0} uke","other":"{0} uker"},
+      "MONTH": {"one":"{0} md.","other":"{0} md."},
+      "YEAR": {"one":"{0} Ã¥r","other":"{0} Ã¥r"}
     },
-      pastUnits: const {
+      pastUnits: {
       
     },
-      futureUnits: const {
+      futureUnits: {
       
     });

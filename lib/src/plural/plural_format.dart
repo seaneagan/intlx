@@ -5,7 +5,7 @@
 part of intlx;
 
 /// Formats text into a plural form, given a quantity ([num]).
-/// See the [CLDR specification](http://cldr.unicode.org/index/cldr-spec/plural-rules).
+/// See the [CLDR specification][1].
 /// Example (english):
 ///     var pluralFormat = new PluralFormat({
 ///       "0": "no books", 
@@ -15,6 +15,7 @@ part of intlx;
 ///     print(pluralFormat.format(0)); // "no books"
 ///     print(pluralFormat.format(1)); // "1 books"
 ///     print(pluralFormat.format(2)); // "2 books"
+/// [1]: http://cldr.unicode.org/index/cldr-spec/plural-rules
 class PluralFormat {
 
   /// The [cases] parameter maps plural category identifiers to templates,
@@ -32,7 +33,8 @@ class PluralFormat {
     if(_cases.containsKey(quantityString)) {
       key = quantityString;
     } else {
-      var category = _locale.getPluralCategory(quantity).toString().toLowerCase();
+      var category = 
+        _locale.getPluralCategory(quantity).toString().toLowerCase();
       if(_cases.containsKey(category)) {
         key = category;
       } else {
@@ -43,11 +45,12 @@ class PluralFormat {
         }
       }
     }
-    var message = _cases[key];
+    var template = _cases[key];
     if(_pattern != null) {
-      message = message.replaceFirst(_pattern, quantityString);
+      template = 
+        template.splitMapJoin(_pattern, onMatch: (Match) => quantityString);
     }
-    return message;
+    return template;
 
   }
 

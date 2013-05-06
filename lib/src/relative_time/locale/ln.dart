@@ -13,39 +13,39 @@ library relative_time_symbols_ln;
 
 import 'package:intlx/src/relative_time/relative_time_symbols.dart';
 
-final symbols = new RelativeTimeSymbols(      units: const {
-      "SECOND": const {"other":"{0} s"},
-      "MINUTE": const {"other":"{0} min"},
-      "HOUR": const {"other":"{0} h"},
-      "DAY": const {"other":"{0} d"},
-      "WEEK": const {"other":"{0} w"},
-      "MONTH": const {"other":"{0} m"},
-      "YEAR": const {"other":"{0} y"}
+final symbols = new RelativeTimeSymbols(      units: {
+      "SECOND": {"other":"{0} s"},
+      "MINUTE": {"other":"{0} min"},
+      "HOUR": {"other":"{0} h"},
+      "DAY": {"other":"{0} d"},
+      "WEEK": {"other":"{0} w"},
+      "MONTH": {"other":"{0} m"},
+      "YEAR": {"other":"{0} y"}
     },
-      shortUnits: const {
-      "SECOND": const {},
-      "MINUTE": const {},
-      "HOUR": const {},
-      "DAY": const {},
-      "WEEK": const {},
-      "MONTH": const {},
-      "YEAR": const {}
+      shortUnits: {
+      "SECOND": {},
+      "MINUTE": {},
+      "HOUR": {},
+      "DAY": {},
+      "WEEK": {},
+      "MONTH": {},
+      "YEAR": {}
     },
-      pastUnits: const {
-      "SECOND": const {"other":"-{0} s"},
-      "MINUTE": const {"other":"-{0} min"},
-      "HOUR": const {"other":"-{0} h"},
-      "DAY": const {"other":"-{0} d"},
-      "WEEK": const {"other":"-{0} w"},
-      "MONTH": const {"other":"-{0} m"},
-      "YEAR": const {"other":"-{0} y"}
+      pastUnits: {
+      "SECOND": {"other":"-{0} s"},
+      "MINUTE": {"other":"-{0} min"},
+      "HOUR": {"other":"-{0} h"},
+      "DAY": {"other":"-{0} d"},
+      "WEEK": {"other":"-{0} w"},
+      "MONTH": {"other":"-{0} m"},
+      "YEAR": {"other":"-{0} y"}
     },
-      futureUnits: const {
-      "SECOND": const {"other":"+{0} s"},
-      "MINUTE": const {"other":"+{0} min"},
-      "HOUR": const {"other":"+{0} h"},
-      "DAY": const {"other":"+{0} d"},
-      "WEEK": const {"other":"+{0} w"},
-      "MONTH": const {"other":"+{0} m"},
-      "YEAR": const {"other":"+{0} y"}
+      futureUnits: {
+      "SECOND": {"other":"+{0} s"},
+      "MINUTE": {"other":"+{0} min"},
+      "HOUR": {"other":"+{0} h"},
+      "DAY": {"other":"+{0} d"},
+      "WEEK": {"other":"+{0} w"},
+      "MONTH": {"other":"+{0} m"},
+      "YEAR": {"other":"+{0} y"}
     });

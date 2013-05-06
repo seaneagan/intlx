@@ -8,6 +8,7 @@ import 'iterable_symbols.dart';
 import '../../intlx.dart';
 import '../symbols_map.dart';
 import '../plural/plural.dart';
+import 'package:intlx/src/cldr_template.dart';
 
 class IterableLocale {
   final IterableSymbols _symbols;
@@ -28,32 +29,24 @@ class IterableLocale {
     var length = list.length.toString();
     // item count exception case
     if(_symbols.indexed.containsKey(length)) 
-      return _substituteItems(_symbols.indexed[length], list);
+      return renderCldrTemplate(_symbols.indexed[length], list, _onSeparator);
     // general case
     return _formatAll(list);
   }
 
-  String _substituteItems(List template, Iterable elements) => 
-    template.map((e) => 
-      e is int ? 
-        elements.elementAt(e) : 
-        _onSeparator(e)).join();
-
   String _formatAll(List list) {
     var length = list.length;
-    var result = _substituteItems(_symbols.end, list.skip(length - 2));
+    var result = renderCldrTemplate(_symbols.end, list.skip(length - 2),  _onSeparator);
     if (length > 2) {
       var needsStart = length > 3;
       var reversedMiddleItems = 
         (needsStart ? list.skip(1).toList() : list).reversed.skip(2);
       result = reversedMiddleItems.fold(result, (result, item) =>
-        _substituteItems(_symbols.middle, [item, result]));
+          renderCldrTemplate(_symbols.middle, [item, result],  _onSeparator));
       if (needsStart) 
-        result = _substituteItems(_symbols.start, [list.first, result]);
+        result = renderCldrTemplate(_symbols.start, [list.first, result], _onSeparator);
     }
     return result;
   }
 
 }
-
-//void walk(Iterable iterable, callback(item)) => iterable.forEach(f)

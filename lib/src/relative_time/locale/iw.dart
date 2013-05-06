@@ -13,27 +13,27 @@ library relative_time_symbols_iw;
 
 import 'package:intlx/src/relative_time/relative_time_symbols.dart';
 
-final symbols = new RelativeTimeSymbols(      units: const {
-      "SECOND": const {"one":"{0} ×©× ××","other":"{0} ×©× ×××ª"},
-      "MINUTE": const {"one":"{0} ××§×","other":"{0} ××§××ª"},
-      "HOUR": const {"one":"{0} ×©×¢×","other":"{0} ×©×¢××ª"},
-      "DAY": const {"one":"{0} ×××","other":"{0} ××××"},
-      "WEEK": const {"one":"{0} ×©×××¢","other":"{0} ×©×××¢××ª"},
-      "MONTH": const {"one":"{0} ××××©","other":"{0} ××××©××"},
-      "YEAR": const {"one":"{0} ×©× ×","other":"{0} ×©× ××"}
+final symbols = new RelativeTimeSymbols(      units: {
+      "SECOND": {"one":"{0} ×©× ××","other":"{0} ×©× ×××ª"},
+      "MINUTE": {"one":"{0} ××§×","other":"{0} ××§××ª"},
+      "HOUR": {"one":"{0} ×©×¢×","other":"{0} ×©×¢××ª"},
+      "DAY": {"one":"{0} ×××","other":"{0} ××××"},
+      "WEEK": {"one":"{0} ×©×××¢","other":"{0} ×©×××¢××ª"},
+      "MONTH": {"one":"{0} ××××©","other":"{0} ××××©××"},
+      "YEAR": {"one":"{0} ×©× ×","other":"{0} ×©× ××"}
     },
-      shortUnits: const {
-      "SECOND": const {"one":"{0} ×©× ×³","other":"{0} ×©× ×³"},
-      "MINUTE": const {"one":"{0} ××§×³","other":"{0} ××§×³"},
-      "HOUR": const {"one":"{0} ×©×¢×","other":"{0} ×©×¢××ª"},
-      "DAY": const {"one":"{0} ×××","other":"{0} ××××"},
-      "WEEK": const {"one":"{0} ×©×××¢","other":"{0} ×©×××¢××ª"},
-      "MONTH": const {"one":"{0} ××××©","other":"{0} ××××©××"},
-      "YEAR": const {"one":"{0} ×©× ×","other":"{0} ×©× ××"}
+      shortUnits: {
+      "SECOND": {"one":"{0} ×©× ×³","other":"{0} ×©× ×³"},
+      "MINUTE": {"one":"{0} ××§×³","other":"{0} ××§×³"},
+      "HOUR": {"one":"{0} ×©×¢×","other":"{0} ×©×¢××ª"},
+      "DAY": {"one":"{0} ×××","other":"{0} ××××"},
+      "WEEK": {"one":"{0} ×©×××¢","other":"{0} ×©×××¢××ª"},
+      "MONTH": {"one":"{0} ××××©","other":"{0} ××××©××"},
+      "YEAR": {"one":"{0} ×©× ×","other":"{0} ×©× ××"}
     },
-      pastUnits: const {
+      pastUnits: {
       
     },
-      futureUnits: const {
+      futureUnits: {
       
     });

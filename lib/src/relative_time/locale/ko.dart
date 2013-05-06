@@ -13,39 +13,39 @@ library relative_time_symbols_ko;
 
 import 'package:intlx/src/relative_time/relative_time_symbols.dart';
 
-final symbols = new RelativeTimeSymbols(      units: const {
-      "SECOND": const {"other":"{0}ì´"},
-      "MINUTE": const {"other":"{0}ë¶"},
-      "HOUR": const {"other":"{0}ìê°"},
-      "DAY": const {"other":"{0}ì¼"},
-      "WEEK": const {"other":"{0}ì£¼"},
-      "MONTH": const {"other":"{0}ê°ì"},
-      "YEAR": const {"other":"{0}ë"}
+final symbols = new RelativeTimeSymbols(      units: {
+      "SECOND": {"other":"{0}ì´"},
+      "MINUTE": {"other":"{0}ë¶"},
+      "HOUR": {"other":"{0}ìê°"},
+      "DAY": {"other":"{0}ì¼"},
+      "WEEK": {"other":"{0}ì£¼"},
+      "MONTH": {"other":"{0}ê°ì"},
+      "YEAR": {"other":"{0}ë"}
     },
-      shortUnits: const {
-      "SECOND": const {"other":"{0}ì´"},
-      "MINUTE": const {"other":"{0}ë¶"},
-      "HOUR": const {"other":"{0}ìê°"},
-      "DAY": const {"other":"{0}ì¼"},
-      "WEEK": const {"other":"{0}ì£¼"},
-      "MONTH": const {"other":"{0}ê°ì"},
-      "YEAR": const {"other":"{0}ë"}
+      shortUnits: {
+      "SECOND": {"other":"{0}ì´"},
+      "MINUTE": {"other":"{0}ë¶"},
+      "HOUR": {"other":"{0}ìê°"},
+      "DAY": {"other":"{0}ì¼"},
+      "WEEK": {"other":"{0}ì£¼"},
+      "MONTH": {"other":"{0}ê°ì"},
+      "YEAR": {"other":"{0}ë"}
     },
-      pastUnits: const {
-      "SECOND": const {"1":"1ì´ ì ","0":"0ì´ ì ","other":"{0}ì´ ì "},
-      "MINUTE": const {"1":"1ë¶ ì ","0":"0ë¶ ì ","other":"{0}ë¶ ì "},
-      "HOUR": const {"1":"1ìê° ì ","0":"0ìê° ì ","other":"{0}ìê° ì "},
-      "DAY": const {"1":"1ì¼ ì ","0":"0ì¼ ì ","other":"{0}ì¼ ì "},
-      "WEEK": const {"1":"1ì£¼ ì ","0":"0ì£¼ ì ","other":"{0}ì£¼ ì "},
-      "MONTH": const {"1":"1ê°ì ì ","0":"0ê°ì ì ","other":"{0}ê°ì ì "},
-      "YEAR": const {"1":"1ë ì ","0":"0ë ì ","other":"{0}ë ì "}
+      pastUnits: {
+      "SECOND": {"1":"1ì´ ì ","0":"0ì´ ì ","other":"{0}ì´ ì "},
+      "MINUTE": {"1":"1ë¶ ì ","0":"0ë¶ ì ","other":"{0}ë¶ ì "},
+      "HOUR": {"1":"1ìê° ì ","0":"0ìê° ì ","other":"{0}ìê° ì "},
+      "DAY": {"1":"1ì¼ ì ","0":"0ì¼ ì ","other":"{0}ì¼ ì "},
+      "WEEK": {"1":"1ì£¼ ì ","0":"0ì£¼ ì ","other":"{0}ì£¼ ì "},
+      "MONTH": {"1":"1ê°ì ì ","0":"0ê°ì ì ","other":"{0}ê°ì ì "},
+      "YEAR": {"1":"1ë ì ","0":"0ë ì ","other":"{0}ë ì "}
     },
-      futureUnits: const {
-      "SECOND": const {"1":"1ì´ í","0":"0ì´ í","other":"{0}ì´ í"},
-      "MINUTE": const {"1":"1ë¶ í","0":"0ë¶ í","other":"{0}ë¶ í"},
-      "HOUR": const {"1":"1ìê° í","0":"0ìê° í","other":"{0}ìê° í"},
-      "DAY": const {"1":"1ì¼ í","0":"0ì¼ í","other":"{0}ì¼ í"},
-      "WEEK": const {"1":"1ì£¼ í","0":"0ì£¼ í","other":"{0}ì£¼ í"},
-      "MONTH": const {"1":"1ê°ì í","0":"0ê°ì í","other":"{0}ê°ì í"},
-      "YEAR": const {"1":"1ë í","0":"0ë í","other":"{0}ë í"}
+      futureUnits: {
+      "SECOND": {"1":"1ì´ í","0":"0ì´ í","other":"{0}ì´ í"},
+      "MINUTE": {"1":"1ë¶ í","0":"0ë¶ í","other":"{0}ë¶ í"},
+      "HOUR": {"1":"1ìê° í","0":"0ìê° í","other":"{0}ìê° í"},
+      "DAY": {"1":"1ì¼ í","0":"0ì¼ í","other":"{0}ì¼ í"},
+      "WEEK": {"1":"1ì£¼ í","0":"0ì£¼ í","other":"{0}ì£¼ í"},
+      "MONTH": {"1":"1ê°ì í","0":"0ê°ì í","other":"{0}ê°ì í"},
+      "YEAR": {"1":"1ë í","0":"0ë í","other":"{0}ë í"}
     });

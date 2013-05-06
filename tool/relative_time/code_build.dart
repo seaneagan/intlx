@@ -25,12 +25,12 @@ class RelativeTimeLibraryWriter extends LibraryWriter {
       if(!units.isEmpty) {
         mapContents = TimeUnit.values.map((TimeUnit unit) {
           var unitString = unit.toString();
-          return '"$unitString": const ${json.stringify(units[unitString])}';
+          return '"$unitString": ${json.stringify(units[unitString])}';
         }).join(''',
       ''');
       }
       return '''
-  $unitType: const {
+  $unitType: {
       $mapContents
     }''';
     }

@@ -10,6 +10,8 @@ import 'src/relative_time/relative_time_locale.dart';
 import 'src/plural/plural.dart';
 import 'src/iterable/iterable_locale.dart';
 import 'src/relative_time/duration_converters.dart';
+import 'src/cldr_template.dart';
+import 'src/util.dart';
 
 part 'src/relative_time/relative_time_format.dart';
 part 'src/relative_time/time_unit.dart';

@@ -6,6 +6,7 @@ import 'dart:io';
 import 'dart:json' as json;
 import 'package:intlx/intlx.dart';
 import 'package:intlx/src/plural/plural.dart';
+import 'package:intlx/src/cldr_template.dart';
 import '../cldr_data_proxy.dart';
 
 main() {

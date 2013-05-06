@@ -7,6 +7,7 @@ library plural;
 import '../symbols_map.dart';
 import 'package:intl/intl.dart';
 import 'plural_locale_list.dart';
+import 'package:intlx/src/util.dart';
 
 part 'plural_category.dart';
 
@@ -36,6 +37,3 @@ class PluralLocaleImpl implements PluralLocale {
   toString() => "PluralLocale: $locale";
   static final map = <String, PluralLocale> {};
 }
-
-// TODO: find a better place for this
-Iterable<int> range(int length, [int start = 0]) => new Iterable.generate(length, (int index) => start + index);

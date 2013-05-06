@@ -13,27 +13,27 @@ library relative_time_symbols_in;
 
 import 'package:intlx/src/relative_time/relative_time_symbols.dart';
 
-final symbols = new RelativeTimeSymbols(      units: const {
-      "SECOND": const {"other":"{0} detik"},
-      "MINUTE": const {"other":"{0} menit"},
-      "HOUR": const {"other":"{0} jam"},
-      "DAY": const {"other":"{0} hari"},
-      "WEEK": const {"other":"{0} minggu"},
-      "MONTH": const {"other":"{0} bulan"},
-      "YEAR": const {"other":"{0} tahun"}
+final symbols = new RelativeTimeSymbols(      units: {
+      "SECOND": {"other":"{0} detik"},
+      "MINUTE": {"other":"{0} menit"},
+      "HOUR": {"other":"{0} jam"},
+      "DAY": {"other":"{0} hari"},
+      "WEEK": {"other":"{0} minggu"},
+      "MONTH": {"other":"{0} bulan"},
+      "YEAR": {"other":"{0} tahun"}
     },
-      shortUnits: const {
-      "SECOND": const {"other":"{0} dtk"},
-      "MINUTE": const {"other":"{0} mnt"},
-      "HOUR": const {"other":"{0} jam"},
-      "DAY": const {"other":"{0} hr"},
-      "WEEK": const {"other":"{0} mggu"},
-      "MONTH": const {"other":"{0} bln"},
-      "YEAR": const {"other":"{0} thn"}
+      shortUnits: {
+      "SECOND": {"other":"{0} dtk"},
+      "MINUTE": {"other":"{0} mnt"},
+      "HOUR": {"other":"{0} jam"},
+      "DAY": {"other":"{0} hr"},
+      "WEEK": {"other":"{0} mggu"},
+      "MONTH": {"other":"{0} bln"},
+      "YEAR": {"other":"{0} thn"}
     },
-      pastUnits: const {
+      pastUnits: {
       
     },
-      futureUnits: const {
+      futureUnits: {
       
     });

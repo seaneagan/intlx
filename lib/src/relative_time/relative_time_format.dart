@@ -5,17 +5,22 @@
 part of intlx;
 
 /// Formats [Duration]s.
-/// See the [CLDR specification](http://cldr.unicode.org/translation/plurals#TOC-Localized-Units).
+/// See the [CLDR specification][1].
 /// Example (english):
-///     var durationFormat = new DurationFormat();
-///     print(durationFormat.format(const Duration(minutes: 150))); // "2 hours"
-///     print(durationFormat.format(const Duration(seconds: 30))); // "0 minutes"
+///     var df = new DurationFormat();
+///     print(df.format(const Duration(minutes: 150))); // "2 hours"
+///     print(df.format(const Duration(seconds: 30))); // "0 minutes"
+/// [1]: http://cldr.unicode.org/translation/plurals#TOC-Localized-Units
 class DurationFormat extends _RelativeTimeFormat<Duration> {
 
   /// The [locale] parameter defaults to [Intl.systemLocale].
   /// For [rounder], see [DurationRounder]. 
   /// For [length], see [FormatLength].
-  DurationFormat({String locale, DurationRounder rounder: const DurationRounder(), FormatLength length: FormatLength.LONG}) : super(locale, rounder) {
+  DurationFormat({
+    String locale, 
+    DurationRounder rounder: const DurationRounder(), 
+    FormatLength length: FormatLength.LONG
+  }) : super(locale, rounder) {
     this._length = length;
   }
 
@@ -26,20 +31,26 @@ class DurationFormat extends _RelativeTimeFormat<Duration> {
   FormatLength _length;
 }
 
-/// Formats [Date]s relative to now.
-/// See the [CLDR specification](http://cldr.unicode.org/translation/plurals#TOC-Past-and-Future).
+/// Formats [DateTime]s relative to now.
+/// See the [CLDR specification][1].
 /// Example (english):
 ///     var ageFormat = new AgeFormat();
 ///     var now = new DateTime.now();
-///     print(ageFormat.format(now.add(const Duration(hours: 2))))); // "In 2 hours"
-///     print(ageFormat.format(now.subtract(const Duration(hours: 2))))); // "2 hours ago"
+///     var twoHours = const Duration(hours: 2);
+///     print(ageFormat.format(now.add(twoHours)))); // "In 2 hours"
+///     print(ageFormat.format(now.subtract(twoHours)))); // "2 hours ago"
+/// [1]: http://cldr.unicode.org/translation/plurals#TOC-Past-and-Future
 class AgeFormat extends _RelativeTimeFormat<DateTime> {
 
-  AgeFormat({String locale, DurationRounder rounder: const DurationRounder()}) : super(locale, rounder);
+  AgeFormat({
+    String locale, 
+    DurationRounder rounder: const DurationRounder()
+  }) : super(locale, rounder);
 
   String format(DateTime date) {
     var now = new DateTime.now();
-    var milliseconds = now.millisecondsSinceEpoch - date.millisecondsSinceEpoch;
+    var milliseconds = 
+      now.millisecondsSinceEpoch - date.millisecondsSinceEpoch;
     var age = new Duration(milliseconds: milliseconds.abs());
     var isFuture = milliseconds.isNegative;
     return _locale.formatRoundAge(_roundDuration(age), isFuture);
@@ -52,11 +63,13 @@ class AgeFormat extends _RelativeTimeFormat<DateTime> {
 ///     var dayRounder = const DurationRounder.staticUnit(TimeUnit.DAY);
 ///     var durationFormat = new DurationFormat(rounder: dayRounder);
 ///     var ageFormat = new AgeFormat(rounder: dayRounder);
+///     var now = new DateTime.now();
 ///     print(durationFormat.format(new Duration(minutes: 5))); // "0 days"
-///     print(ageFormat.format(new DateTime.now().add(oneHundredDays))); // "In 100 days"
+///     print(ageFormat.format(now.add(oneHundredDays))); // "In 100 days"
 class DurationRounder {
   const DurationRounder();
-  const factory DurationRounder.staticUnit(TimeUnit unit) = _StaticUnitDurationRounder;
+  const factory DurationRounder.staticUnit(TimeUnit unit) = 
+    _StaticUnitDurationRounder;
   // TODO: Any other common strategies to include here?
 
   /// Rounds a [Duration].
@@ -85,9 +98,11 @@ class RoundDuration {
 }
 
 abstract class _RelativeTimeFormat<T> {
-  _RelativeTimeFormat([String locale, this._rounder]) : _locale = new RelativeTimeLocale(locale);
+  _RelativeTimeFormat([String locale, this._rounder]) : 
+    _locale = new RelativeTimeLocale(locale);
   String format(T o);
-  RoundDuration _roundDuration(Duration duration) => _rounder.roundDuration(duration);
+  RoundDuration _roundDuration(Duration duration) => 
+    _rounder.roundDuration(duration);
 
   final RelativeTimeLocale _locale;
   final DurationRounder _rounder;

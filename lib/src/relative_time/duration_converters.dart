@@ -4,6 +4,7 @@
 
 // TODO: replace this library with whatever support is provided
 // for this in the library referenced by http://dartbug.com/5627.
+// this will not be added directly to Duration per http://dartbug.com/10416
 library duration_converters;
 
 // TODO: should these be more precise averages, or is that too unpredictable ?

@@ -13,39 +13,39 @@ library relative_time_symbols_sq;
 
 import 'package:intlx/src/relative_time/relative_time_symbols.dart';
 
-final symbols = new RelativeTimeSymbols(      units: const {
-      "SECOND": const {"one":"{0} sekondÃ«","other":"{0} sekonda"},
-      "MINUTE": const {"one":"{0} minutÃ«","other":"{0} minuta"},
-      "HOUR": const {"one":"{0} orÃ«","other":"{0} h"},
-      "DAY": const {"one":"{0} ditÃ«","other":"{0} ditÃ«"},
-      "WEEK": const {"one":"{0} javÃ«","other":"{0} w"},
-      "MONTH": const {"one":"{0} muaj","other":"{0} m"},
-      "YEAR": const {"one":"{0} vit","other":"{0} vjet"}
+final symbols = new RelativeTimeSymbols(      units: {
+      "SECOND": {"one":"{0} sekondÃ«","other":"{0} sekonda"},
+      "MINUTE": {"one":"{0} minutÃ«","other":"{0} minuta"},
+      "HOUR": {"one":"{0} orÃ«","other":"{0} h"},
+      "DAY": {"one":"{0} ditÃ«","other":"{0} ditÃ«"},
+      "WEEK": {"one":"{0} javÃ«","other":"{0} w"},
+      "MONTH": {"one":"{0} muaj","other":"{0} m"},
+      "YEAR": {"one":"{0} vit","other":"{0} vjet"}
     },
-      shortUnits: const {
-      "SECOND": const {},
-      "MINUTE": const {},
-      "HOUR": const {},
-      "DAY": const {},
-      "WEEK": const {},
-      "MONTH": const {},
-      "YEAR": const {}
+      shortUnits: {
+      "SECOND": {},
+      "MINUTE": {},
+      "HOUR": {},
+      "DAY": {},
+      "WEEK": {},
+      "MONTH": {},
+      "YEAR": {}
     },
-      pastUnits: const {
-      "SECOND": const {"other":"-{0} s"},
-      "MINUTE": const {"other":"-{0} min"},
-      "HOUR": const {"other":"-{0} h"},
-      "DAY": const {"other":"-{0} d"},
-      "WEEK": const {"other":"-{0} w"},
-      "MONTH": const {"other":"-{0} m"},
-      "YEAR": const {"other":"-{0} y"}
+      pastUnits: {
+      "SECOND": {"other":"-{0} s"},
+      "MINUTE": {"other":"-{0} min"},
+      "HOUR": {"other":"-{0} h"},
+      "DAY": {"other":"-{0} d"},
+      "WEEK": {"other":"-{0} w"},
+      "MONTH": {"other":"-{0} m"},
+      "YEAR": {"other":"-{0} y"}
     },
-      futureUnits: const {
-      "SECOND": const {"other":"+{0} s"},
-      "MINUTE": const {"other":"+{0} min"},
-      "HOUR": const {"other":"+{0} h"},
-      "DAY": const {"other":"+{0} d"},
-      "WEEK": const {"other":"+{0} w"},
-      "MONTH": const {"other":"+{0} m"},
-      "YEAR": const {"other":"+{0} y"}
+      futureUnits: {
+      "SECOND": {"other":"+{0} s"},
+      "MINUTE": {"other":"+{0} min"},
+      "HOUR": {"other":"+{0} h"},
+      "DAY": {"other":"+{0} d"},
+      "WEEK": {"other":"+{0} w"},
+      "MONTH": {"other":"+{0} m"},
+      "YEAR": {"other":"+{0} y"}
     });

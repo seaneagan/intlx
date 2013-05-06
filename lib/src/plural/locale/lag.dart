@@ -11,10 +11,11 @@
 
 library plural_symbols_lag;
 
-import 'package:intlx/src/plural/plural.dart';
+  import 'package:intlx/src/util.dart';
+  import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('lag', (int n) {
 if(n == 0) return PluralCategory.ZERO;
-else if(((n >= 0 && n <= 2)) && n != 0 && n != 2) return PluralCategory.ONE;
-else return PluralCategory.OTHER;
-  });
+  else if(((n >= 0 && n <= 2)) && n != 0 && n != 2) return PluralCategory.ONE;
+  else return PluralCategory.OTHER;
+});

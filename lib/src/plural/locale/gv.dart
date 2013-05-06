@@ -11,9 +11,10 @@
 
 library plural_symbols_gv;
 
-import 'package:intlx/src/plural/plural.dart';
+  import 'package:intlx/src/util.dart';
+  import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('gv', (int n) {
 if((range(2, 1).contains(n % 10)) || n % 20 == 0) return PluralCategory.ONE;
-else return PluralCategory.OTHER;
-  });
+  else return PluralCategory.OTHER;
+});

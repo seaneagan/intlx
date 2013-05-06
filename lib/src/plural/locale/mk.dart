@@ -11,9 +11,10 @@
 
 library plural_symbols_mk;
 
-import 'package:intlx/src/plural/plural.dart';
+  import 'package:intlx/src/util.dart';
+  import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('mk', (int n) {
 if(n % 10 == 1 && n != 11) return PluralCategory.ONE;
-else return PluralCategory.OTHER;
-  });
+  else return PluralCategory.OTHER;
+});

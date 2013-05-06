@@ -8,7 +8,6 @@
 library load_locale;
 
 import 'dart:async';
-import 'package:intlx/src/plural/plural.dart';
 import 'package:intlx/src/util.dart';
 @library_af
 import 'package:intlx/src/plural/locale/af.dart' as plural_locale_af;

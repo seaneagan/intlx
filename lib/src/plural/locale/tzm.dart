@@ -11,9 +11,10 @@
 
 library plural_symbols_tzm;
 
-import 'package:intlx/src/plural/plural.dart';
+  import 'package:intlx/src/util.dart';
+  import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('tzm', (int n) {
 if((range(2, 0).contains(n)) || (range(89, 11).contains(n))) return PluralCategory.ONE;
-else return PluralCategory.OTHER;
-  });
+  else return PluralCategory.OTHER;
+});

@@ -11,10 +11,11 @@
 
 library plural_symbols_ksh;
 
-import 'package:intlx/src/plural/plural.dart';
+  import 'package:intlx/src/util.dart';
+  import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('ksh', (int n) {
 if(n == 0) return PluralCategory.ZERO;
-else if(n == 1) return PluralCategory.ONE;
-else return PluralCategory.OTHER;
-  });
+  else if(n == 1) return PluralCategory.ONE;
+  else return PluralCategory.OTHER;
+});

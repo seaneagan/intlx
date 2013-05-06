@@ -11,9 +11,10 @@
 
 library plural_symbols_de;
 
-import 'package:intlx/src/plural/plural.dart';
+  import 'package:intlx/src/util.dart';
+  import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('de', (int n) {
 if(n == 1) return PluralCategory.ONE;
-else return PluralCategory.OTHER;
-  });
+  else return PluralCategory.OTHER;
+});

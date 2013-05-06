@@ -11,9 +11,10 @@
 
 library plural_symbols_ff;
 
-import 'package:intlx/src/plural/plural.dart';
+  import 'package:intlx/src/util.dart';
+  import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('ff', (int n) {
 if(((n >= 0 && n <= 2)) && n != 2) return PluralCategory.ONE;
-else return PluralCategory.OTHER;
-  });
+  else return PluralCategory.OTHER;
+});

@@ -11,10 +11,11 @@
 
 library plural_symbols_lv;
 
-import 'package:intlx/src/plural/plural.dart';
+  import 'package:intlx/src/util.dart';
+  import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('lv', (int n) {
 if(n == 0) return PluralCategory.ZERO;
-else if(n % 10 == 1 && n % 100 != 11) return PluralCategory.ONE;
-else return PluralCategory.OTHER;
-  });
+  else if(n % 10 == 1 && n % 100 != 11) return PluralCategory.ONE;
+  else return PluralCategory.OTHER;
+});

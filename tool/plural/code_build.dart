@@ -46,7 +46,6 @@ import 'package:$packageName/src/plural/locale/$locale.dart' as plural_locale_$l
 
     var code = '''
 import 'dart:async';
-import 'package:intlx/src/plural/plural.dart';
 import 'package:intlx/src/util.dart';
 $imports
 
@@ -79,7 +78,10 @@ $switchCases
   String getSymbolsConstructorArgs(String locale, Map data) => 
     """'$locale', (int n) {
 ${getPluralRulesCode(data)}
-  }""";
+}""";
+  String getSymbolLibraryCode(String locale, Map data) => '''
+  import 'package:$packageName/src/util.dart';
+  ${super.getSymbolLibraryCode(locale, data)}''';
 }
 
 String getPluralRulesCode(Map<String, String> pluralRules) => 
@@ -91,7 +93,7 @@ String getPluralRulesCode(Map<String, String> pluralRules) =>
         String categoryTest = 
           pluralParser.parse(pluralRules[categoryString]).toDart();
         code = '''if($categoryTest) return PluralCategory.${categoryString};
-else $code''';
+  else $code''';
       }
       return code;
   });

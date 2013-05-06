@@ -11,13 +11,14 @@
 
 library plural_symbols_cy;
 
-import 'package:intlx/src/plural/plural.dart';
+  import 'package:intlx/src/util.dart';
+  import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('cy', (int n) {
 if(n == 0) return PluralCategory.ZERO;
-else if(n == 1) return PluralCategory.ONE;
-else if(n == 2) return PluralCategory.TWO;
-else if(n == 3) return PluralCategory.FEW;
-else if(n == 6) return PluralCategory.MANY;
-else return PluralCategory.OTHER;
-  });
+  else if(n == 1) return PluralCategory.ONE;
+  else if(n == 2) return PluralCategory.TWO;
+  else if(n == 3) return PluralCategory.FEW;
+  else if(n == 6) return PluralCategory.MANY;
+  else return PluralCategory.OTHER;
+});

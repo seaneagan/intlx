@@ -11,11 +11,12 @@
 
 library plural_symbols_pl;
 
-import 'package:intlx/src/plural/plural.dart';
+  import 'package:intlx/src/util.dart';
+  import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('pl', (int n) {
 if(n == 1) return PluralCategory.ONE;
-else if((range(3, 2).contains(n % 10)) && !(range(3, 12).contains(n % 100))) return PluralCategory.FEW;
-else if(n != 1 && (range(2, 0).contains(n % 10)) || (range(5, 5).contains(n % 10)) || (range(3, 12).contains(n % 100))) return PluralCategory.MANY;
-else return PluralCategory.OTHER;
-  });
+  else if((range(3, 2).contains(n % 10)) && !(range(3, 12).contains(n % 100))) return PluralCategory.FEW;
+  else if(n != 1 && (range(2, 0).contains(n % 10)) || (range(5, 5).contains(n % 10)) || (range(3, 12).contains(n % 100))) return PluralCategory.MANY;
+  else return PluralCategory.OTHER;
+});

@@ -11,11 +11,12 @@
 
 library plural_symbols_mt;
 
-import 'package:intlx/src/plural/plural.dart';
+  import 'package:intlx/src/util.dart';
+  import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('mt', (int n) {
 if(n == 1) return PluralCategory.ONE;
-else if(n == 0 || (range(9, 2).contains(n % 100))) return PluralCategory.FEW;
-else if((range(9, 11).contains(n % 100))) return PluralCategory.MANY;
-else return PluralCategory.OTHER;
-  });
+  else if(n == 0 || (range(9, 2).contains(n % 100))) return PluralCategory.FEW;
+  else if((range(9, 11).contains(n % 100))) return PluralCategory.MANY;
+  else return PluralCategory.OTHER;
+});

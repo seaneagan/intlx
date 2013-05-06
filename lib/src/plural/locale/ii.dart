@@ -11,8 +11,9 @@
 
 library plural_symbols_ii;
 
-import 'package:intlx/src/plural/plural.dart';
+  import 'package:intlx/src/util.dart';
+  import 'package:intlx/src/plural/plural.dart';
 
 final symbols = new PluralLocaleImpl('ii', (int n) {
 return PluralCategory.OTHER;
-  });
+});

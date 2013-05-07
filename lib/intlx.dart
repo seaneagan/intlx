@@ -18,3 +18,4 @@ part 'src/relative_time/time_unit.dart';
 part 'src/plural/plural_format.dart';
 part 'src/iterable/iterable_format.dart';
 part 'src/format_length.dart';
+part 'src/locale_data.dart';

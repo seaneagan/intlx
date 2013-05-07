@@ -4,20 +4,16 @@
 
 library plural;
 
-import '../symbols_map.dart';
 import 'package:intl/intl.dart';
-import 'plural_locale_list.dart';
 import 'package:intlx/src/util.dart';
+import 'package:intlx/src/symbols_map.dart';
+import 'package:intlx/src/plural/plural_locale_list.dart';
 
 part 'plural_category.dart';
 
 abstract class PluralLocale {
   factory PluralLocale(String locale) {
-    String verifiedLocale = Intl.verifiedLocale(locale, pluralLocales.contains);
-    if(!PluralLocaleImpl.map.containsKey(verifiedLocale)) {
-      throw new ArgumentError('PluralLocale "$verifiedLocale" is not loaded');
-    }
-    return PluralLocaleImpl.map[verifiedLocale];
+    return PluralLocaleImpl.map[locale];
   }
 
   final String locale;
@@ -35,5 +31,5 @@ class PluralLocaleImpl implements PluralLocale {
 
   PluralCategory getPluralCategory(int n) => _strategy(n);
   toString() => "PluralLocale: $locale";
-  static final map = <String, PluralLocale> {};
+  static final map = new SymbolsMap<PluralLocaleImpl>(pluralLocales);
 }

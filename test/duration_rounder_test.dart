@@ -4,8 +4,7 @@
 
 import 'package:unittest/unittest.dart';
 import 'package:intlx/intlx.dart';
-import 'package:intlx/locale/relative_time/en.dart' as relative_time_en;
-import 'package:intlx/src/relative_time/duration_converters.dart';
+import 'package:intlx/relative_time_locale_data.dart' as relative_time_data;
 
 main() {
   group('DurationRounder', () {
@@ -15,11 +14,11 @@ main() {
     var oneHundredDays;
 
     setUp(() {
-      relative_time_en.init();
+      relative_time_data.EN.load();
       var dayRounder = const DurationRounder.staticUnit(TimeUnit.DAY);
       durationFormat = new DurationFormat(locale: "en", rounder: dayRounder);
       ageFormat = new AgeFormat(locale: "en", rounder: dayRounder);
-      oneHundredDays = const Duration(hours: Duration.HOURS_PER_DAY * 100);
+      oneHundredDays = const Duration(hours: Duration.HOURS_PER_DAY * 100 + 1);
     });
 
     test("5 minutes = 0 days", () => expect(durationFormat.format(new Duration(minutes: 5)), "0 days"));

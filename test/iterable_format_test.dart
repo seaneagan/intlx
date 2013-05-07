@@ -4,7 +4,7 @@
 
 import 'package:unittest/unittest.dart';
 import 'package:intlx/intlx.dart';
-import 'package:intlx/locale/iterable/en.dart' as iterable_en;
+import 'package:intlx/iterable_locale_data.dart' as iterable_data;
 
 main() {
   group('IterableFormat', () {
@@ -12,7 +12,7 @@ main() {
     IterableFormat iterableFormat;
 
     setUp(() {
-      iterable_en.init();
+      iterable_data.EN.load();
       iterableFormat = new IterableFormat(locale: "en");
     });
 

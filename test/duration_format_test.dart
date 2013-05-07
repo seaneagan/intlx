@@ -4,7 +4,7 @@
 
 import 'package:unittest/unittest.dart';
 import 'package:intlx/intlx.dart';
-import 'package:intlx/locale/relative_time/en.dart' as relative_time_en;
+import 'package:intlx/relative_time_locale_data.dart' as relative_time_data;
 
 main() {
   group('DurationFormat', () {
@@ -12,7 +12,7 @@ main() {
     DurationFormat durationFormat;
 
     setUp(() {
-      relative_time_en.init();
+      relative_time_data.EN.load();
       durationFormat = new DurationFormat(locale: "en");
     });
 

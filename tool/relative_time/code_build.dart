@@ -60,5 +60,8 @@ import '../plural/all.dart' as ${getPluralLibraryIdentifier('all')};''';
     import '../plural/$pluralLocale.dart' as $pluralLibraryId;''',
       '''  $symbolsClass.map['$locale'] = $symbolsLibraryId.symbols;
       $pluralLibraryId.init();''');
-    }
+  }
+  
+  String getLocaleDataConstructorArgs(String locale) => super.getLocaleDataConstructorArgs(locale) + ", plural_locale_data.${locale.toUpperCase()}";
+
 }

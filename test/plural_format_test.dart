@@ -4,7 +4,7 @@
 
 import 'package:unittest/unittest.dart';
 import 'package:intlx/intlx.dart';
-import 'package:intlx/locale/plural/en.dart' as plural_en;
+import 'package:intlx/plural_locale_data.dart' as plural_data;
 
 main() {
   group('PluralFormat', () {
@@ -12,7 +12,7 @@ main() {
     PluralFormat pluralFormat;
 
     setUp(() {
-      plural_en.init();
+      plural_data.EN.load();
       pluralFormat = new PluralFormat({"0": "no books", "one": "{0} book", "other": "{0} books"}, locale: "en", pattern: "{0}");
     });
 

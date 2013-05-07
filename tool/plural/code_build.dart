@@ -82,6 +82,7 @@ ${getPluralRulesCode(data)}
   String getSymbolLibraryCode(String locale, Map data) => '''
   import 'package:$packageName/src/util.dart';
   ${super.getSymbolLibraryCode(locale, data)}''';
+
 }
 
 String getPluralRulesCode(Map<String, String> pluralRules) => 

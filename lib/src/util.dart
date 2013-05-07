@@ -10,6 +10,7 @@ Map mapValues(Map map, valueMapper(value)) => map.keys.fold({}, (result, key) {
 
 // TODO: create common typedef library ?
 typedef R Unary<T, R>(T);
+typedef void Action();
 
 // TODO: create common callback library ?
 noop(x) => x;
@@ -18,3 +19,19 @@ noop(x) => x;
 // TODO: names parameters instead ?
 Iterable<int> range(int length, [int start = 0, int step = 1]) => 
   new Iterable.generate(length, (int index) => start + index * step);
+
+String withCapitalization(String s, bool capitalized) {
+  var firstLetter = s[0];
+  firstLetter = capitalized ? 
+    firstLetter.toUpperCase() : 
+    firstLetter.toLowerCase();
+  return firstLetter + s.substring(1);
+}
+
+String underscoresToCamelCase(String underscores, bool capitalized) { 
+  var camel = underscores.splitMapJoin(
+    "_", 
+    onMatch: (_) => "", 
+    onNonMatch: (String segment) => withCapitalization(segment, true));
+  return withCapitalization(camel, capitalized);
+}

@@ -4,9 +4,10 @@
 
 library relative_time_symbols;
 
-import '../../intlx.dart';
-import '../symbols_map.dart';
-import '../plural/plural.dart';
+import 'package:intlx/intlx.dart';
+import 'package:intlx/src/symbols_map.dart';
+import 'package:intlx/src/plural/plural.dart';
+import 'package:intlx/src/relative_time/relative_time_locale_list.dart';
 import 'package:intl/intl.dart';
 
 class RelativeTimeSymbols {
@@ -32,6 +33,6 @@ class RelativeTimeSymbols {
     return units[unit.toString()][plurality];
   }
 
-  static final map = <String, RelativeTimeSymbols> {};
+  static final map = new SymbolsMap<RelativeTimeSymbols>(relativeTimeLocales);
 
 }

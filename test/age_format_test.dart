@@ -12,8 +12,9 @@ main() {
     AgeFormat ageFormat;
 
     setUp(() {
-      relative_time_data.EN.load();
-      ageFormat = new AgeFormat(locale: "en");
+      var localeData = relative_time_data.EN;
+      localeData.load();
+      ageFormat = new AgeFormat(locale: localeData.locale);
     });
 
     test("In 2 minutes", () => expect(ageFormat.format(new DateTime.now().add(new Duration(minutes: 2, seconds: 30))), "In 2 minutes"));

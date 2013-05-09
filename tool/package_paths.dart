@@ -16,7 +16,7 @@ String packageName = "intlx"; // basename(Directory.current.path);
 Path libPath = new Path(Directory.current.path).append("lib");
 
 // path of private (symbol) locale libraries for given type
-Path getLocaleSrcPath(String type) => libPath.append("src/$type/locale/");
+Path getLocaleSrcPath(String type) => libPath.append("src/$type/data/");
 
 // path of locale specific libraries
 Path localeLibPath = libPath.append("locale/");

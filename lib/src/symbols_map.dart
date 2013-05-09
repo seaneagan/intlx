@@ -10,7 +10,11 @@ import 'package:intl/intl.dart';
 import 'package:intlx/intlx.dart';
 
 class SymbolsMap<T> {
-  SymbolsMap(this._localeList);
+  final List<String> _localeList;
+  final Map<String, T> _map;
+
+  SymbolsMap(this._localeList, [Map<String, T> map]) :
+    _map = map == null ? <String, T> {} : map;
 
   void operator []= (String locale, T symbols) {
     _map[locale] = symbols;
@@ -24,7 +28,4 @@ class SymbolsMap<T> {
         "Locale data has not been loaded for locale: '$locale'");
     return _map[locale];
   }
-
-  final _map = <String, T> {};
-  final List<String> _localeList;
 }

@@ -20,3 +20,12 @@ abstract class LocaleDataImpl implements LocaleData {
   }
   SymbolsMap _getSymbolsMap();
 }
+
+abstract class AllLocaleDataImpl implements LocaleData {
+  String get locale => 'ALL';
+  final _setSymbolsMap;
+  AllLocaleDataImpl(this._setSymbolsMap);
+  void load() {
+    _setSymbolsMap();
+  }
+}

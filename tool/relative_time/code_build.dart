@@ -8,6 +8,7 @@ import '../library_writer.dart';
 import 'package:intlx/src/plural/plural_locale_list.dart';
 import 'package:intl/intl.dart';
 import 'package:intlx/intlx.dart';
+import '../package_paths.dart';
 
 main() {
   new RelativeTimeLibraryWriter().writeLibraries();
@@ -53,7 +54,7 @@ import '../plural/all.dart' as ${getPluralLibraryIdentifier('all')};''';
   void writeSingleLocaleLibrary(String locale) {
     var pluralLocale = Intl.verifiedLocale(locale, pluralLocales.contains);
     var pluralLibraryId = getPluralLibraryIdentifier(pluralLocale);
-    var symbolsLibraryId = getSymbolsLibraryIdentifier(locale);
+    var symbolsLibraryId = getSymbolsLibraryId(locale);
     writeLocaleLibrary(
       locale,
       '''${generateLocaleImport(locale)}
@@ -61,7 +62,12 @@ import '../plural/all.dart' as ${getPluralLibraryIdentifier('all')};''';
       '''  $symbolsClass.map['$locale'] = $symbolsLibraryId.symbols;
       $pluralLibraryId.init();''');
   }
+  final pluralLocaleDataId = 'plural_locale_data';
+  String getSymbolsImports() => '''import 'package:$packageName/$pluralLocaleDataId.dart' as $pluralLocaleDataId;
+${super.getSymbolsImports()}''';
   
-  String getLocaleDataConstructorArgs(String locale) => super.getLocaleDataConstructorArgs(locale) + ", plural_locale_data.${locale.toUpperCase()}";
+  String getLocaleDataConstructorArgs(String locale) => super.getLocaleDataConstructorArgs(locale) + ", $pluralLocaleDataId.${locale.toUpperCase()}";
 
+  String getSymbolsMapSetterLogic() => '''$pluralLocaleDataId.ALL.load();
+${super.getSymbolsMapSetterLogic()}''';
 }

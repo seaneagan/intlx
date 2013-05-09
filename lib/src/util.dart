@@ -15,8 +15,11 @@ typedef void Action();
 // TODO: create common callback library ?
 noop(x) => x;
 
+// TODO: replace this with the resolution of http://dartbug.com/1236
+ifNull(v, d) => v == null ? d : v;
+
 // is there a bug for this ?
-// TODO: names parameters instead ?
+// TODO: named parameters instead ?
 Iterable<int> range(int length, [int start = 0, int step = 1]) => 
   new Iterable.generate(length, (int index) => start + index * step);
 

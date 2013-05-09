@@ -30,7 +30,7 @@ class PluralLibraryWriter extends LibraryWriter {
     var loadLocaleLibraryPath = libPath.append("src/$type/");
     
     var imports = localeList.map((locale) => '''@library_$locale
-import 'package:$packageName/src/plural/locale/$locale.dart' as plural_locale_$locale;
+import 'package:$packageName/src/plural/data/$locale.dart' as ${getSymbolsImportId(locale)};
 ''').join();
 
     var deferredLibraries = localeList.map((locale) => 
@@ -41,12 +41,13 @@ import 'package:$packageName/src/plural/locale/$locale.dart' as plural_locale_$l
       '''  '$locale': library_$locale''').join(',\n');
     
     var switchCases = localeList.map((locale) => 
-      '''      case '$locale': init(plural_locale_$locale.symbols); break;
+      '''      case '$locale': init(${getSymbolsConstant(locale)}); break;
 ''').join();
 
     var code = '''
 import 'dart:async';
-import 'package:intlx/src/util.dart';
+import 'package:$packageName/src/util.dart';
+import 'package:$packageName/src/plural/plural.dart';
 $imports
 
 $deferredLibraries
@@ -70,7 +71,7 @@ $switchCases
     
     writeLibrary(
       loadLocaleLibraryPath, 
-      "load_locale", 
+      "${type}_load_locale", 
       getLibraryComment(false), 
       code);
   }

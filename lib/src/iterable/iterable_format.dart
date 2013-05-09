@@ -6,13 +6,21 @@ part of intlx;
 
 /// Formats [Iterable]s.
 /// See the [CLDR specification][1].
-/// Example (english):
-///     var iterableFormat = new IterableFormat();
+/// Data for at least one locale must be loaded using 
+/// [iterable_locale_data.dart][2] before instantiating this class.
+/// Example:
+///     import 'package:intlx/intlx.dart';
+///     import 'package:intlx/iterable_locale_data.dart' as iterable_data;
+///     
+///     var localeData = iterable_data.EN; // english locale
+///     localeData.load();
+///     var iterableFormat = new IterableFormat(locale: localeData.locale);
 ///     print(iterableFormat.format([])); // ""
 ///     print(iterableFormat.format([1])); // "1"
 ///     print(iterableFormat.format([1, 2])); // "1 and 2"
 ///     print(iterableFormat.format([1, 2, 3])); // "1, 2, and 3"
 /// [1]: http://cldr.unicode.org/translation/lists
+/// [2]: iterable_locale_data.dart
 class IterableFormat {
   /// The [locale] parameter defaults to [Intl.systemLocale].
   /// The [onSeparator] parameter transforms separators produced by [format], 

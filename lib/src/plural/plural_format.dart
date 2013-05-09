@@ -6,16 +6,24 @@ part of intlx;
 
 /// Formats text into a plural form, given a quantity ([num]).
 /// See the [CLDR specification][1].
-/// Example (english):
+/// Data for at least one locale must be loaded using 
+/// [plural_locale_data.dart][2] before instantiating this class.
+/// Example:
+///     import 'package:intlx/intlx.dart';
+///     import 'package:intlx/plural_locale_data.dart' as plural_data;
+///     
+///     var localeData = plural_data.EN; // english locale
+///     localeData.load();
 ///     var pluralFormat = new PluralFormat({
 ///       "0": "no books", 
 ///       "one": "{0} book", 
 ///       "other": "{0} books"
-///     }, locale: "en", pattern: "{0}");
+///     }, locale: localeData.locale, pattern: "{0}");
 ///     print(pluralFormat.format(0)); // "no books"
 ///     print(pluralFormat.format(1)); // "1 books"
 ///     print(pluralFormat.format(2)); // "2 books"
 /// [1]: http://cldr.unicode.org/index/cldr-spec/plural-rules
+/// [2]: plural_locale_data.dart
 class PluralFormat {
 
   /// The [cases] parameter maps plural category identifiers to templates,

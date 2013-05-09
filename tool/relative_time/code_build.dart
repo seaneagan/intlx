@@ -43,26 +43,8 @@ class RelativeTimeLibraryWriter extends LibraryWriter {
     $ret''';
   }
 
-  String getAllLocaleLibraryImports() => 
-    '''${super.getAllLocaleLibraryImports()}
-import '../plural/all.dart' as ${getPluralLibraryIdentifier('all')};''';
-
-  String getAllLocaleLibraryLogic() => '''
-    plural_locale_all.init();
-    ${super.getAllLocaleLibraryLogic()}''';
-
-  void writeSingleLocaleLibrary(String locale) {
-    var pluralLocale = Intl.verifiedLocale(locale, pluralLocales.contains);
-    var pluralLibraryId = getPluralLibraryIdentifier(pluralLocale);
-    var symbolsLibraryId = getSymbolsLibraryId(locale);
-    writeLocaleLibrary(
-      locale,
-      '''${generateLocaleImport(locale)}
-    import '../plural/$pluralLocale.dart' as $pluralLibraryId;''',
-      '''  $symbolsClass.map['$locale'] = $symbolsLibraryId.symbols;
-      $pluralLibraryId.init();''');
-  }
   final pluralLocaleDataId = 'plural_locale_data';
+  String getPublicClasses() => '[DurationFormat] and/or [AgeFormat]';
   String getSymbolsImports() => '''import 'package:$packageName/$pluralLocaleDataId.dart' as $pluralLocaleDataId;
 ${super.getSymbolsImports()}''';
   

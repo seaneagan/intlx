@@ -10,7 +10,7 @@ import 'dart:io';
 import 'package:pathos/path.dart';
 
 // current directory must be <root of this package>
-String packageName = "intlx"; // basename(Directory.current.path);
+String packageName = basename(Directory.current.path);
 
 // current directory must be <root of this package>
 Path libPath = new Path(Directory.current.path).append("lib");

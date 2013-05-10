@@ -19,8 +19,8 @@ final symbols = new RelativeTimeSymbols(      units: {
       "HOUR": {"one":"{0} time","other":"{0} timer"},
       "DAY": {"one":"{0} dag","other":"{0} dager"},
       "WEEK": {"one":"{0} uke","other":"{0} uker"},
-      "MONTH": {"one":"{0} mÃ¥ned","other":"{0} mÃ¥neder"},
-      "YEAR": {"one":"{0} Ã¥r","other":"{0} Ã¥r"}
+      "MONTH": {"one":"{0} måned","other":"{0} måneder"},
+      "YEAR": {"one":"{0} år","other":"{0} år"}
     },
       shortUnits: {
       "SECOND": {"one":"{0} sek","other":"{0} sek"},
@@ -29,7 +29,7 @@ final symbols = new RelativeTimeSymbols(      units: {
       "DAY": {"one":"{0} dag","other":"{0} dager"},
       "WEEK": {"one":"{0} uke","other":"{0} uker"},
       "MONTH": {"one":"{0} md.","other":"{0} md."},
-      "YEAR": {"one":"{0} Ã¥r","other":"{0} Ã¥r"}
+      "YEAR": {"one":"{0} år","other":"{0} år"}
     },
       pastUnits: {
       

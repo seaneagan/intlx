@@ -13,7 +13,7 @@ library iterable_symbols_zh_HK;
 
 import 'package:intlx/src/iterable/iterable_symbols.dart';
 
-final symbols = new IterableSymbols(    start: const [0,"ã",1],
-    middle: const [0,"ã",1],
-    end: const [0,"å",1],
-    indexed: {"2":[0,"å",1]});
+final symbols = new IterableSymbols(    start: const [0,"、",1],
+    middle: const [0,"、",1],
+    end: const [0,"和",1],
+    indexed: {"2":[0,"和",1]});

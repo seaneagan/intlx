@@ -14,22 +14,22 @@ library relative_time_symbols_zh_CN;
 import 'package:intlx/src/relative_time/relative_time_symbols.dart';
 
 final symbols = new RelativeTimeSymbols(      units: {
-      "SECOND": {"other":"{0}ç§"},
-      "MINUTE": {"other":"{0}å"},
-      "HOUR": {"other":"{0}å°æ¶"},
-      "DAY": {"other":"{0}æ¥"},
-      "WEEK": {"other":"{0}å¨"},
-      "MONTH": {"other":"{0}æ"},
-      "YEAR": {"other":"{0}å¹´"}
+      "SECOND": {"other":"{0}秒"},
+      "MINUTE": {"other":"{0}分"},
+      "HOUR": {"other":"{0}小时"},
+      "DAY": {"other":"{0}日"},
+      "WEEK": {"other":"{0}周"},
+      "MONTH": {"other":"{0}月"},
+      "YEAR": {"other":"{0}年"}
     },
       shortUnits: {
-      "SECOND": {"other":"{0}ç§"},
-      "MINUTE": {"other":"{0}å"},
-      "HOUR": {"other":"{0}å°æ¶"},
-      "DAY": {"other":"{0}æ¥"},
-      "WEEK": {"other":"{0}å¨"},
-      "MONTH": {"other":"{0}æ"},
-      "YEAR": {"other":"{0}å¹´"}
+      "SECOND": {"other":"{0}秒"},
+      "MINUTE": {"other":"{0}分"},
+      "HOUR": {"other":"{0}小时"},
+      "DAY": {"other":"{0}日"},
+      "WEEK": {"other":"{0}周"},
+      "MONTH": {"other":"{0}月"},
+      "YEAR": {"other":"{0}年"}
     },
       pastUnits: {
       

@@ -45,7 +45,7 @@ final symbols = new RelativeTimeSymbols(      units: {
       "MINUTE": {"1":"za 1 min","one":"za {0} minutu","0":"za 0 minuta","few":"za {0} minute","other":"Za {0} minuta","many":"za {0} minuta"},
       "HOUR": {"1":"za 1 sat","one":"za {0} sat","0":"za 0 sati","few":"za {0} sata","other":"Za {0} sati","many":"za {0} sati"},
       "DAY": {"1":"za 1 dan","one":"za {0} dan","0":"za 0 dana","few":"za {0} dana","other":"za {0} dana","many":"za {0} dana"},
-      "WEEK": {"1":"za 1 tjedan","one":"za {0} tjedan","0":"za 0 tjedana","few":"za {0} tjedna","other":"za sljedeÄi broj tjedana: {0}","many":"za {0} tjedana"},
-      "MONTH": {"1":"za 1 mjesec","one":"za {0} mjesec","0":"za 0 mjeseci","few":"za {0} mjeseca","other":"za sljedeÄi broj mjeseci: {0}","many":"za {0} mjeseci"},
+      "WEEK": {"1":"za 1 tjedan","one":"za {0} tjedan","0":"za 0 tjedana","few":"za {0} tjedna","other":"za sljedeći broj tjedana: {0}","many":"za {0} tjedana"},
+      "MONTH": {"1":"za 1 mjesec","one":"za {0} mjesec","0":"za 0 mjeseci","few":"za {0} mjeseca","other":"za sljedeći broj mjeseci: {0}","many":"za {0} mjeseci"},
       "YEAR": {"1":"za 1 godinu","one":"za {0} godinu","0":"za 0 g.","few":"za {0} godine","other":"za {0} godina","many":"za {0} godina"}
     });

@@ -41,11 +41,11 @@ final symbols = new RelativeTimeSymbols(      units: {
       "YEAR": {"1":"Pred 1 letom","one":"Pred {0} letom","0":"Pred 0 leti","few":"Pred {0} leti","other":"Pred {0} leti","two":"Pred {0} leti"}
     },
       futureUnits: {
-      "SECOND": {"1":"Äez 1 sekundo","one":"Äez {0} sekundo","0":"Äez 0 sekund","few":"Äez {0} sekunde","other":"Äez {0} sekundi","two":"Äez {0} sekundi"},
-      "MINUTE": {"1":"Äez 1 min.","one":"Äez {0} min.","0":"Äez 0 min.","few":"Äez {0} min.","other":"Äez {0} min.","two":"Äez {0} min."},
-      "HOUR": {"1":"Äez 1 h","one":"Äez {0} h","0":"Äez 0 h","few":"Äez {0} h","other":"Äez {0} h","two":"Äez {0} h"},
-      "DAY": {"1":"Äez 1 dan","one":"Äez {0} dan","0":"Äez 0 dni","few":"Äez {0} dni","other":"Äez {0} dni","two":"Äez {0} dni"},
-      "WEEK": {"1":"Äez 1 teden","one":"Äez {0} teden","0":"Äez 0 tednov","few":"Äez {0} tedne","other":"Äez {0} tednov","two":"Äez {0} tedna"},
-      "MONTH": {"1":"Äez 1 mesec","one":"Äez {0} mesec","0":"Äez 0 mesecev","few":"Äez {0} mesece","other":"Äez {0} mesecev","two":"Äez {0} meseca"},
-      "YEAR": {"1":"Äez 1 leto","one":"Äez {0} leto","0":"Äez 0 let","few":"Äez {0} leta","other":"Äez {0} let","two":"Äez {0} leti"}
+      "SECOND": {"1":"Čez 1 sekundo","one":"Čez {0} sekundo","0":"Čez 0 sekund","few":"Čez {0} sekunde","other":"Čez {0} sekundi","two":"Čez {0} sekundi"},
+      "MINUTE": {"1":"Čez 1 min.","one":"Čez {0} min.","0":"Čez 0 min.","few":"Čez {0} min.","other":"Čez {0} min.","two":"Čez {0} min."},
+      "HOUR": {"1":"Čez 1 h","one":"Čez {0} h","0":"Čez 0 h","few":"Čez {0} h","other":"Čez {0} h","two":"Čez {0} h"},
+      "DAY": {"1":"Čez 1 dan","one":"Čez {0} dan","0":"Čez 0 dni","few":"Čez {0} dni","other":"Čez {0} dni","two":"Čez {0} dni"},
+      "WEEK": {"1":"Čez 1 teden","one":"Čez {0} teden","0":"Čez 0 tednov","few":"Čez {0} tedne","other":"Čez {0} tednov","two":"Čez {0} tedna"},
+      "MONTH": {"1":"Čez 1 mesec","one":"Čez {0} mesec","0":"Čez 0 mesecev","few":"Čez {0} mesece","other":"Čez {0} mesecev","two":"Čez {0} meseca"},
+      "YEAR": {"1":"Čez 1 leto","one":"Čez {0} leto","0":"Čez 0 let","few":"Čez {0} leta","other":"Čez {0} let","two":"Čez {0} leti"}
     });

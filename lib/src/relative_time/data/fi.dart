@@ -17,7 +17,7 @@ final symbols = new RelativeTimeSymbols(      units: {
       "SECOND": {"one":"{0} sekunti","other":"{0} sekuntia"},
       "MINUTE": {"one":"{0} minuutti","other":"{0} minuuttia"},
       "HOUR": {"one":"{0} tunti","other":"{0} tuntia"},
-      "DAY": {"one":"{0} pÃ¤ivÃ¤","other":"{0} pÃ¤ivÃ¤Ã¤"},
+      "DAY": {"one":"{0} päivä","other":"{0} päivää"},
       "WEEK": {"one":"{0} viikko","other":"{0} viikkoa"},
       "MONTH": {"one":"{0} kuukausi","other":"{0} kuukautta"},
       "YEAR": {"one":"{0} vuosi","other":"{0} vuotta"}
@@ -35,17 +35,17 @@ final symbols = new RelativeTimeSymbols(      units: {
       "SECOND": {"1":"sekunti sitten","one":"{0} sekunti sitten","0":"alle sekunti sitten","other":"{0} sekuntia sitten"},
       "MINUTE": {"1":"minuutti sitten","one":"{0} minuutti sitten","0":"alle minuutti sitten","other":"{0} minuuttia sitten"},
       "HOUR": {"1":"tunti sitten","one":"{0} tunti sitten","0":"alle tunti sitten","other":"{0} tuntia sitten"},
-      "DAY": {"1":"pÃ¤ivÃ¤ sitten","one":"{0} pÃ¤ivÃ¤ sitten","0":"alle pÃ¤ivÃ¤ sitten","other":"{0} pÃ¤ivÃ¤Ã¤ sitten"},
+      "DAY": {"1":"päivä sitten","one":"{0} päivä sitten","0":"alle päivä sitten","other":"{0} päivää sitten"},
       "WEEK": {"1":"viikko sitten","one":"{0} viikko sitten","0":"alle viikko sitten","other":"{0} viikkoa sitten"},
       "MONTH": {"1":"kuukausi sitten","one":"{0} kuukausi sitten","0":"alle kuukausi sitten","other":"{0} kuukautta sitten"},
       "YEAR": {"1":"vuosi sitten","one":"{0} vuosi sitten","0":"alle vuosi sitten","other":"{0} vuotta sitten"}
     },
       futureUnits: {
-      "SECOND": {"1":"sekunnin pÃ¤Ã¤stÃ¤","one":"{0} sekunnin pÃ¤Ã¤stÃ¤","0":"alle sekunnin pÃ¤Ã¤stÃ¤","other":"{0} sekunnin pÃ¤Ã¤stÃ¤"},
-      "MINUTE": {"1":"minuutin pÃ¤Ã¤stÃ¤","one":"{0} minuutin pÃ¤Ã¤stÃ¤","0":"alle minuutin pÃ¤Ã¤stÃ¤","other":"{0} minuutin pÃ¤Ã¤stÃ¤"},
-      "HOUR": {"1":"tunnin pÃ¤Ã¤stÃ¤","one":"{0} tunnin pÃ¤Ã¤stÃ¤","0":"alle tunnin pÃ¤Ã¤stÃ¤","other":"{0} tunnin pÃ¤Ã¤stÃ¤"},
-      "DAY": {"1":"pÃ¤ivÃ¤n pÃ¤Ã¤stÃ¤","one":"{0} pÃ¤ivÃ¤n pÃ¤Ã¤stÃ¤","0":"alle pÃ¤ivÃ¤n pÃ¤Ã¤stÃ¤","other":"{0} pÃ¤ivÃ¤n pÃ¤Ã¤stÃ¤"},
-      "WEEK": {"1":"viikon pÃ¤Ã¤stÃ¤","one":"{0} viikon pÃ¤Ã¤stÃ¤","0":"alle viikon pÃ¤Ã¤stÃ¤","other":"{0} viikon pÃ¤Ã¤stÃ¤"},
-      "MONTH": {"1":"kuukauden pÃ¤Ã¤stÃ¤","one":"{0} kuukauden pÃ¤Ã¤stÃ¤","0":"alle kuukauden pÃ¤Ã¤stÃ¤","other":"{0} kuukauden pÃ¤Ã¤stÃ¤"},
-      "YEAR": {"1":"vuoden pÃ¤Ã¤stÃ¤","one":"{0} vuoden pÃ¤Ã¤stÃ¤","0":"alle vuoden pÃ¤Ã¤stÃ¤","other":"{0} vuoden pÃ¤Ã¤stÃ¤"}
+      "SECOND": {"1":"sekunnin päästä","one":"{0} sekunnin päästä","0":"alle sekunnin päästä","other":"{0} sekunnin päästä"},
+      "MINUTE": {"1":"minuutin päästä","one":"{0} minuutin päästä","0":"alle minuutin päästä","other":"{0} minuutin päästä"},
+      "HOUR": {"1":"tunnin päästä","one":"{0} tunnin päästä","0":"alle tunnin päästä","other":"{0} tunnin päästä"},
+      "DAY": {"1":"päivän päästä","one":"{0} päivän päästä","0":"alle päivän päästä","other":"{0} päivän päästä"},
+      "WEEK": {"1":"viikon päästä","one":"{0} viikon päästä","0":"alle viikon päästä","other":"{0} viikon päästä"},
+      "MONTH": {"1":"kuukauden päästä","one":"{0} kuukauden päästä","0":"alle kuukauden päästä","other":"{0} kuukauden päästä"},
+      "YEAR": {"1":"vuoden päästä","one":"{0} vuoden päästä","0":"alle vuoden päästä","other":"{0} vuoden päästä"}
     });

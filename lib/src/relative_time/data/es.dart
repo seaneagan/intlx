@@ -17,35 +17,35 @@ final symbols = new RelativeTimeSymbols(      units: {
       "SECOND": {"one":"{0} segundo","other":"{0} segundos"},
       "MINUTE": {"one":"{0} minuto","other":"{0} minutos"},
       "HOUR": {"one":"{0} hora","other":"{0} horas"},
-      "DAY": {"one":"{0} dÃ­a","other":"{0} dÃ­as"},
+      "DAY": {"one":"{0} día","other":"{0} días"},
       "WEEK": {"one":"{0} semana","other":"{0} semanas"},
       "MONTH": {"one":"{0} mes","other":"{0} meses"},
-      "YEAR": {"one":"{0} aÃ±o","other":"{0} aÃ±os"}
+      "YEAR": {"one":"{0} año","other":"{0} años"}
     },
       shortUnits: {
       "SECOND": {"one":"{0} s","other":"{0} s"},
       "MINUTE": {"one":"{0} min","other":"{0} min"},
       "HOUR": {"one":"{0} h","other":"{0} h"},
-      "DAY": {"one":"{0} dÃ­a","other":"{0} dÃ­as"},
+      "DAY": {"one":"{0} día","other":"{0} días"},
       "WEEK": {"one":"{0} semana","other":"{0} semanas"},
       "MONTH": {"one":"{0} mes","other":"{0} meses"},
-      "YEAR": {"one":"{0} aÃ±o","other":"{0} aÃ±os"}
+      "YEAR": {"one":"{0} año","other":"{0} años"}
     },
       pastUnits: {
       "SECOND": {"1":"Hace 1 segundo","one":"Hace {0} segundo","0":"Hace 0 segundos","other":"Hace {0} segundos"},
       "MINUTE": {"1":"Hace 1 minuto","one":"Hace {0} minuto","0":"Hace 0 minutos","other":"Hace {0} minutos"},
       "HOUR": {"1":"Hace 1 hora","one":"Hace {0} hora","0":"Hace 0 horas","other":"Hace {0} horas"},
-      "DAY": {"1":"Hace 1 dÃ­a","one":"Hace {0} dÃ­a","0":"Hace 0 dÃ­as","other":"Hace {0} dÃ­as"},
+      "DAY": {"1":"Hace 1 día","one":"Hace {0} día","0":"Hace 0 días","other":"Hace {0} días"},
       "WEEK": {"1":"Hace 1 semana","one":"Hace {0} semana","0":"Hace 0 semanas","other":"Hace {0} semanas"},
       "MONTH": {"1":"Hace 1 mes","one":"Hace {0} mes","0":"Hace 0 meses","other":"Hace {0} meses"},
-      "YEAR": {"1":"Hace 1 aÃ±o","one":"Hace {0} aÃ±o","0":"Hace 0 aÃ±os","other":"Hace {0} aÃ±os"}
+      "YEAR": {"1":"Hace 1 año","one":"Hace {0} año","0":"Hace 0 años","other":"Hace {0} años"}
     },
       futureUnits: {
       "SECOND": {"1":"Dentro de 1 segundo","one":"Dentro de {0} segundo","0":"Dentro de 0 segundos","other":"Dentro de {0} segundos"},
       "MINUTE": {"1":"Dentro de 1 minuto","one":"Dentro de {0} minuto","0":"Dentro de 0 minutos","other":"Dentro de {0} minutos"},
       "HOUR": {"1":"Dentro de 1 hora","one":"Dentro de {0} hora","0":"Dentro de 0 horas","other":"Dentro de {0} horas"},
-      "DAY": {"1":"Dentro de 1 dÃ­a","one":"Dentro de {0} dÃ­a","0":"Dentro de 0 dÃ­as","other":"Dentro de {0} dÃ­as"},
+      "DAY": {"1":"Dentro de 1 día","one":"Dentro de {0} día","0":"Dentro de 0 días","other":"Dentro de {0} días"},
       "WEEK": {"1":"Dentro de 1 semana","one":"Dentro de {0} semana","0":"Dentro de 0 semanas","other":"Dentro de {0} semanas"},
       "MONTH": {"1":"Dentro de 1 mes","one":"Dentro de {0} mes","0":"Dentro de 0 meses","other":"Dentro de {0} meses"},
-      "YEAR": {"1":"Dentro de 1 aÃ±o","one":"Dentro de {0} aÃ±o","0":"Dentro de 0 aÃ±os","other":"Dentro de {0} aÃ±os"}
+      "YEAR": {"1":"Dentro de 1 año","one":"Dentro de {0} año","0":"Dentro de 0 años","other":"Dentro de {0} años"}
     });

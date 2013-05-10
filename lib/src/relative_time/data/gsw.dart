@@ -17,9 +17,9 @@ final symbols = new RelativeTimeSymbols(      units: {
       "SECOND": {"one":"{0} Sekunde","other":"{0} Sekunde"},
       "MINUTE": {"one":"{0} Minuute","other":"{0} Minuute"},
       "HOUR": {"one":"{0} Schtund","other":"{0} Schtunde"},
-      "DAY": {"one":"{0} Taag","other":"{0} TÃ¤Ã¤g"},
+      "DAY": {"one":"{0} Taag","other":"{0} Tääg"},
       "WEEK": {"one":"{0} Wuche","other":"{0} Wuche"},
-      "MONTH": {"one":"{0} Monet","other":"{0} MÃ¶net"},
+      "MONTH": {"one":"{0} Monet","other":"{0} Mönet"},
       "YEAR": {"one":"{0} Jahr","other":"{0} Jahr"}
     },
       shortUnits: {

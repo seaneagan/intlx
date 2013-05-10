@@ -14,38 +14,38 @@ library relative_time_symbols_hu;
 import 'package:intlx/src/relative_time/relative_time_symbols.dart';
 
 final symbols = new RelativeTimeSymbols(      units: {
-      "SECOND": {"other":"{0} mÃ¡sodperc"},
+      "SECOND": {"other":"{0} másodperc"},
       "MINUTE": {"other":"{0} perc"},
-      "HOUR": {"other":"{0} Ã³ra"},
+      "HOUR": {"other":"{0} óra"},
       "DAY": {"other":"{0} nap"},
-      "WEEK": {"other":"{0} hÃ©t"},
-      "MONTH": {"other":"{0} hÃ³nap"},
-      "YEAR": {"other":"{0} Ã©v"}
+      "WEEK": {"other":"{0} hét"},
+      "MONTH": {"other":"{0} hónap"},
+      "YEAR": {"other":"{0} év"}
     },
       shortUnits: {
       "SECOND": {"other":"{0} mp"},
       "MINUTE": {"other":"{0} p"},
-      "HOUR": {"other":"{0} Ã³"},
+      "HOUR": {"other":"{0} ó"},
       "DAY": {"other":"{0} nap"},
-      "WEEK": {"other":"{0} hÃ©t"},
-      "MONTH": {"other":"{0} hÃ³nap"},
-      "YEAR": {"other":"{0} Ã©v"}
+      "WEEK": {"other":"{0} hét"},
+      "MONTH": {"other":"{0} hónap"},
+      "YEAR": {"other":"{0} év"}
     },
       pastUnits: {
-      "SECOND": {"1":"1 mÃ¡sodperce","0":"0 mÃ¡sodperce","other":"{0} mÃ¡sodperccel ezelÅtt"},
-      "MINUTE": {"1":"1 perce","0":"0 perce","other":"{0} perccel ezelÅtt"},
-      "HOUR": {"1":"1 Ã³rÃ¡ja","0":"0 Ã³rÃ¡ja","other":"{0} Ã³rÃ¡val ezelÅtt"},
-      "DAY": {"1":"1 napja","0":"0 napja","other":"{0} nappal ezelÅtt"},
-      "WEEK": {"1":"1 hete","0":"0 hete","other":"{0} hÃ©ttel ezelÅtt"},
-      "MONTH": {"1":"1 hÃ³napja","0":"0 hÃ³napja","other":"{0} hÃ³nappal ezelÅtt"},
-      "YEAR": {"1":"1 Ã©ve","0":"0 Ã©ve","other":"{0} Ã©vvel ezelÅtt"}
+      "SECOND": {"1":"1 másodperce","0":"0 másodperce","other":"{0} másodperccel ezelőtt"},
+      "MINUTE": {"1":"1 perce","0":"0 perce","other":"{0} perccel ezelőtt"},
+      "HOUR": {"1":"1 órája","0":"0 órája","other":"{0} órával ezelőtt"},
+      "DAY": {"1":"1 napja","0":"0 napja","other":"{0} nappal ezelőtt"},
+      "WEEK": {"1":"1 hete","0":"0 hete","other":"{0} héttel ezelőtt"},
+      "MONTH": {"1":"1 hónapja","0":"0 hónapja","other":"{0} hónappal ezelőtt"},
+      "YEAR": {"1":"1 éve","0":"0 éve","other":"{0} évvel ezelőtt"}
     },
       futureUnits: {
-      "SECOND": {"1":"1 mÃ¡sodperc mÃºlva","0":"0 mÃ¡sodperc mÃºlva","other":"{0} mÃ¡sodperc mÃºlva"},
-      "MINUTE": {"1":"1 perc mÃºlva","0":"0 perc mÃºlva","other":"{0} perc mÃºlva"},
-      "HOUR": {"1":"1 Ã³ra mÃºlva","0":"0 Ã³ra mÃºlva","other":"{0} Ã³ra mÃºlva"},
-      "DAY": {"1":"1 nap mÃºlva","0":"0 nap mÃºlva","other":"{0} nap mÃºlva"},
-      "WEEK": {"1":"1 hÃ©t mÃºlva","0":"0 hÃ©t mÃºlva","other":"{0} hÃ©t mÃºlva"},
-      "MONTH": {"1":"1 hÃ³nap mÃºlva","0":"0 hÃ³nap mÃºlva","other":"{0} hÃ³nap mÃºlva"},
-      "YEAR": {"1":"1 Ã©v mÃºlva","0":"0 Ã©v mÃºlva","other":"{0} Ã©v mÃºlva"}
+      "SECOND": {"1":"1 másodperc múlva","0":"0 másodperc múlva","other":"{0} másodperc múlva"},
+      "MINUTE": {"1":"1 perc múlva","0":"0 perc múlva","other":"{0} perc múlva"},
+      "HOUR": {"1":"1 óra múlva","0":"0 óra múlva","other":"{0} óra múlva"},
+      "DAY": {"1":"1 nap múlva","0":"0 nap múlva","other":"{0} nap múlva"},
+      "WEEK": {"1":"1 hét múlva","0":"0 hét múlva","other":"{0} hét múlva"},
+      "MONTH": {"1":"1 hónap múlva","0":"0 hónap múlva","other":"{0} hónap múlva"},
+      "YEAR": {"1":"1 év múlva","0":"0 év múlva","other":"{0} év múlva"}
     });

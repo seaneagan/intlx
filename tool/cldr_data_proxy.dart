@@ -4,6 +4,7 @@
 
 import 'dart:io';
 import 'dart:async';
+import 'dart:utf';
 import 'dart:json' as json;
 import 'package:http/http.dart' as http;
 import 'package_paths.dart';
@@ -37,7 +38,11 @@ class CldrDataProxy {
       "${cldrBaseUri}main/$locale/${_path}?depth=-1";
     var locales = constrainLocales(availableLocalesForDateFormatting).toList();
     var dataRequests = 
-      locales.map((locale) => http.read(getCldrDataUri(locale)));
+      locales.map((locale) {
+        return http.get(getCldrDataUri(locale)).then((http.Response response){
+          return new String.fromCharCodes(utf8ToCodepoints(response.bodyBytes));
+        });
+      });
   
     return Future.wait(dataRequests).then((List<String> unitsBodies) {
       return unitsBodies.asMap().keys.fold(

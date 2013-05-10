@@ -41,11 +41,11 @@ final symbols = new RelativeTimeSymbols(      units: {
       "YEAR": {"1":"Fa 1 any","one":"Fa {0} any","0":"Fa 0 anys","other":"Fa {0} anys"}
     },
       futureUnits: {
-      "SECOND": {"1":"D'aquÃ­ a 1 segon","one":"D'aquÃ­ a {0} segon","0":"D'aquÃ­ a 0 segons","other":"D'aquÃ­ a {0} segons"},
-      "MINUTE": {"1":"D'aquÃ­ a 1 minut","one":"D'aquÃ­ a {0} minut","0":"D'aquÃ­ a 0 minuts","other":"D'aquÃ­ a {0} minuts"},
-      "HOUR": {"1":"D'aquÃ­ a 1 hora","one":"D'aquÃ­ a {0} hora","0":"D'aquÃ­ a 0 hores","other":"D'aquÃ­ a {0} hores"},
-      "DAY": {"1":"D'aquÃ­ a 1 dia","one":"D'aquÃ­ a {0} dia","0":"D'aquÃ­ a 0 dies","other":"D'aquÃ­ a {0} dies"},
-      "WEEK": {"1":"D'aquÃ­ a 1 setmana","one":"D'aquÃ­ a {0} setmana","0":"D'aquÃ­ a 0 setmanes","other":"D'aquÃ­ a {0} setmanes"},
-      "MONTH": {"1":"D'aquÃ­ a 1 mes","one":"D'aquÃ­ a {0} mes","0":"D'aquÃ­ a 0 mesos","other":"D'aquÃ­ a {0} mesos"},
-      "YEAR": {"1":"D'aquÃ­ a 1 any","one":"D'aquÃ­ a {0} any","0":"D'aquÃ­ a 0 anys","other":"D'aquÃ­ a {0} anys"}
+      "SECOND": {"1":"D'aquí a 1 segon","one":"D'aquí a {0} segon","0":"D'aquí a 0 segons","other":"D'aquí a {0} segons"},
+      "MINUTE": {"1":"D'aquí a 1 minut","one":"D'aquí a {0} minut","0":"D'aquí a 0 minuts","other":"D'aquí a {0} minuts"},
+      "HOUR": {"1":"D'aquí a 1 hora","one":"D'aquí a {0} hora","0":"D'aquí a 0 hores","other":"D'aquí a {0} hores"},
+      "DAY": {"1":"D'aquí a 1 dia","one":"D'aquí a {0} dia","0":"D'aquí a 0 dies","other":"D'aquí a {0} dies"},
+      "WEEK": {"1":"D'aquí a 1 setmana","one":"D'aquí a {0} setmana","0":"D'aquí a 0 setmanes","other":"D'aquí a {0} setmanes"},
+      "MONTH": {"1":"D'aquí a 1 mes","one":"D'aquí a {0} mes","0":"D'aquí a 0 mesos","other":"D'aquí a {0} mesos"},
+      "YEAR": {"1":"D'aquí a 1 any","one":"D'aquí a {0} any","0":"D'aquí a 0 anys","other":"D'aquí a {0} anys"}
     });

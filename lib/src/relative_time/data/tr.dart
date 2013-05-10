@@ -17,35 +17,35 @@ final symbols = new RelativeTimeSymbols(      units: {
       "SECOND": {"other":"{0} saniye"},
       "MINUTE": {"other":"{0} dakika"},
       "HOUR": {"other":"{0} saat"},
-      "DAY": {"other":"{0} gÃ¼n"},
+      "DAY": {"other":"{0} gün"},
       "WEEK": {"other":"{0} hafta"},
       "MONTH": {"other":"{0} ay"},
-      "YEAR": {"other":"{0} yÄ±l"}
+      "YEAR": {"other":"{0} yıl"}
     },
       shortUnits: {
       "SECOND": {"other":"{0} sn."},
       "MINUTE": {"other":"{0} dk."},
       "HOUR": {"other":"{0} sa."},
-      "DAY": {"other":"{0} gÃ¼n"},
+      "DAY": {"other":"{0} gün"},
       "WEEK": {"other":"{0} hafta"},
       "MONTH": {"other":"{0} ay"},
-      "YEAR": {"other":"{0} yÄ±l"}
+      "YEAR": {"other":"{0} yıl"}
     },
       pastUnits: {
-      "SECOND": {"1":"1 saniye Ã¶nce","0":"0 saniye Ã¶nce","other":"{0} saniye Ã¶nce"},
-      "MINUTE": {"1":"1 dakika Ã¶nce","0":"0 dakika Ã¶nce","other":"{0} dakika Ã¶nce"},
-      "HOUR": {"1":"1 saat Ã¶nce","0":"0 saat Ã¶nce","other":"{0} saat Ã¶nce"},
-      "DAY": {"1":"1 gÃ¼n Ã¶nce","0":"0 gÃ¼n Ã¶nce","other":"{0} gÃ¼n Ã¶nce"},
-      "WEEK": {"1":"1 hafta Ã¶nce","0":"0 hafta Ã¶nce","other":"{0} hafta Ã¶nce"},
-      "MONTH": {"1":"1 ay Ã¶nce","0":"0 ay Ã¶nce","other":"{0} ay Ã¶nce"},
-      "YEAR": {"1":"1 yÄ±l Ã¶nce","0":"0 yÄ±l Ã¶nce","other":"{0} yÄ±l Ã¶nce"}
+      "SECOND": {"1":"1 saniye önce","0":"0 saniye önce","other":"{0} saniye önce"},
+      "MINUTE": {"1":"1 dakika önce","0":"0 dakika önce","other":"{0} dakika önce"},
+      "HOUR": {"1":"1 saat önce","0":"0 saat önce","other":"{0} saat önce"},
+      "DAY": {"1":"1 gün önce","0":"0 gün önce","other":"{0} gün önce"},
+      "WEEK": {"1":"1 hafta önce","0":"0 hafta önce","other":"{0} hafta önce"},
+      "MONTH": {"1":"1 ay önce","0":"0 ay önce","other":"{0} ay önce"},
+      "YEAR": {"1":"1 yıl önce","0":"0 yıl önce","other":"{0} yıl önce"}
     },
       futureUnits: {
       "SECOND": {"1":"1 saniye sonra","0":"0 saniye sonra","other":"{0} saniye sonra"},
       "MINUTE": {"1":"1 dakika sonra","0":"0 dakika sonra","other":"{0} dakika sonra"},
       "HOUR": {"1":"1 saat sonra","0":"0 saat sonra","other":"{0} saat sonra"},
-      "DAY": {"1":"1 gÃ¼n sonra","0":"0 gÃ¼n sonra","other":"{0} gÃ¼n sonra"},
+      "DAY": {"1":"1 gün sonra","0":"0 gün sonra","other":"{0} gün sonra"},
       "WEEK": {"1":"1 hafta sonra","0":"0 hafta sonra","other":"{0} hafta sonra"},
       "MONTH": {"1":"1 ay sonra","0":"0 ay sonra","other":"{0} ay sonra"},
-      "YEAR": {"1":"1 yÄ±l sonra","0":"0 yÄ±l sonra","other":"{0} yÄ±l sonra"}
+      "YEAR": {"1":"1 yıl sonra","0":"0 yıl sonra","other":"{0} yıl sonra"}
     });

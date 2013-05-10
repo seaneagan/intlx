@@ -14,11 +14,11 @@ library relative_time_symbols_sq;
 import 'package:intlx/src/relative_time/relative_time_symbols.dart';
 
 final symbols = new RelativeTimeSymbols(      units: {
-      "SECOND": {"one":"{0} sekondÃ«","other":"{0} sekonda"},
-      "MINUTE": {"one":"{0} minutÃ«","other":"{0} minuta"},
-      "HOUR": {"one":"{0} orÃ«","other":"{0} h"},
-      "DAY": {"one":"{0} ditÃ«","other":"{0} ditÃ«"},
-      "WEEK": {"one":"{0} javÃ«","other":"{0} w"},
+      "SECOND": {"one":"{0} sekondë","other":"{0} sekonda"},
+      "MINUTE": {"one":"{0} minutë","other":"{0} minuta"},
+      "HOUR": {"one":"{0} orë","other":"{0} h"},
+      "DAY": {"one":"{0} ditë","other":"{0} ditë"},
+      "WEEK": {"one":"{0} javë","other":"{0} w"},
       "MONTH": {"one":"{0} muaj","other":"{0} m"},
       "YEAR": {"one":"{0} vit","other":"{0} vjet"}
     },

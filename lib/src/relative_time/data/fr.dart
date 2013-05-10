@@ -20,7 +20,7 @@ final symbols = new RelativeTimeSymbols(      units: {
       "DAY": {"one":"{0} jour","other":"{0} jours"},
       "WEEK": {"one":"{0} semaine","other":"{0} semaines"},
       "MONTH": {"one":"{0} mois","other":"{0} mois"},
-      "YEAR": {"one":"{0} annÃ©e","other":"{0} annÃ©es"}
+      "YEAR": {"one":"{0} année","other":"{0} années"}
     },
       shortUnits: {
       "SECOND": {"one":"{0} s","other":"{0} s"},

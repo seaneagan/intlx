@@ -14,22 +14,22 @@ library relative_time_symbols_iw;
 import 'package:intlx/src/relative_time/relative_time_symbols.dart';
 
 final symbols = new RelativeTimeSymbols(      units: {
-      "SECOND": {"one":"{0} ×©× ××","other":"{0} ×©× ×××ª"},
-      "MINUTE": {"one":"{0} ××§×","other":"{0} ××§××ª"},
-      "HOUR": {"one":"{0} ×©×¢×","other":"{0} ×©×¢××ª"},
-      "DAY": {"one":"{0} ×××","other":"{0} ××××"},
-      "WEEK": {"one":"{0} ×©×××¢","other":"{0} ×©×××¢××ª"},
-      "MONTH": {"one":"{0} ××××©","other":"{0} ××××©××"},
-      "YEAR": {"one":"{0} ×©× ×","other":"{0} ×©× ××"}
+      "SECOND": {"one":"{0} שניה","other":"{0} שניות"},
+      "MINUTE": {"one":"{0} דקה","other":"{0} דקות"},
+      "HOUR": {"one":"{0} שעה","other":"{0} שעות"},
+      "DAY": {"one":"{0} יום","other":"{0} ימים"},
+      "WEEK": {"one":"{0} שבוע","other":"{0} שבועות"},
+      "MONTH": {"one":"{0} חודש","other":"{0} חודשים"},
+      "YEAR": {"one":"{0} שנה","other":"{0} שנים"}
     },
       shortUnits: {
-      "SECOND": {"one":"{0} ×©× ×³","other":"{0} ×©× ×³"},
-      "MINUTE": {"one":"{0} ××§×³","other":"{0} ××§×³"},
-      "HOUR": {"one":"{0} ×©×¢×","other":"{0} ×©×¢××ª"},
-      "DAY": {"one":"{0} ×××","other":"{0} ××××"},
-      "WEEK": {"one":"{0} ×©×××¢","other":"{0} ×©×××¢××ª"},
-      "MONTH": {"one":"{0} ××××©","other":"{0} ××××©××"},
-      "YEAR": {"one":"{0} ×©× ×","other":"{0} ×©× ××"}
+      "SECOND": {"one":"{0} שנ׳","other":"{0} שנ׳"},
+      "MINUTE": {"one":"{0} דק׳","other":"{0} דק׳"},
+      "HOUR": {"one":"{0} שעה","other":"{0} שעות"},
+      "DAY": {"one":"{0} יום","other":"{0} ימים"},
+      "WEEK": {"one":"{0} שבוע","other":"{0} שבועות"},
+      "MONTH": {"one":"{0} חודש","other":"{0} חודשים"},
+      "YEAR": {"one":"{0} שנה","other":"{0} שנים"}
     },
       pastUnits: {
       

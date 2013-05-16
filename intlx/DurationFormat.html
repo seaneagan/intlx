@@ -1,0 +1,135 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>DurationFormat class / intlx Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="intlx" data-type="DurationFormat">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../intlx.html">intlx</a> &rsaquo; <a href="../intlx/DurationFormat.html">DurationFormat</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
+        <div class="nav">
+        
+<h2><div class="icon-library"></div><a href="../intlx.html">intlx</a></h2><h2><div class="icon-library"></div><a href="../intlx.html">intlx</a></h2><ul class="icon">
+<li><a href="../intlx/AgeFormat.html"><div class="icon-class"></div>AgeFormat</a></li>
+<li><div class="icon-class"></div><strong>DurationFormat</strong></li>
+<li><a href="../intlx/DurationRounder.html"><div class="icon-class"></div>DurationRounder</a></li>
+<li><a href="../intlx/FormatLength.html"><div class="icon-class"></div>FormatLength</a></li>
+<li><a href="../intlx/IterableFormat.html"><div class="icon-class"></div>IterableFormat</a></li>
+<li><a href="../intlx/LocaleData.html"><div class="icon-class"></div>LocaleData</a></li>
+<li><a href="../intlx/PluralFormat.html"><div class="icon-class"></div>PluralFormat</a></li>
+<li><a href="../intlx/RoundDuration.html"><div class="icon-class"></div>RoundDuration</a></li>
+<li><a href="../intlx/TimeUnit.html"><div class="icon-class"></div>TimeUnit</a></li>
+</ul>
+<h2><div class="icon-library"></div><a href="../iterable_locale_data.html">iterable_locale_data</a></h2><h2><div class="icon-library"></div><a href="../plural_locale_data.html">plural_locale_data</a></h2><h2><div class="icon-library"></div><a href="../plural_locale_data.html">plural_locale_data</a></h2><h2><div class="icon-library"></div><a href="../relative_time_locale_data.html">relative_time_locale_data</a></h2></div>
+<div class="content">
+        <h2><strong>DurationFormat</strong>
+          class
+        </h2>
+        
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
+<div class="doc">
+<p>Formats <code>Duration</code>s.
+See the <a href="http://cldr.unicode.org/translation/plurals#TOC-Localized-Units">CLDR specification</a>.
+Data for at least one locale must be loaded using 
+<a href="../relative_time_locale_data.html">relative _ time _ locale _ data.dart</a> before instantiating this class.
+Example:</p>
+<pre><code>import 'package:intlx/intlx.dart';
+import 'package:intlx/relative_time_locale_data.dart' as relative_time_data;
+
+var localeData = relative_time_data.EN; // english locale
+localeData.load();
+var df = new DurationFormat(locale: localeData.locale);
+print(df.format(const Duration(minutes: 150))); // "2 hours"
+print(df.format(const Duration(seconds: 30))); // "0 minutes"
+</code></pre>
+<pre class="source">
+class DurationFormat extends _RelativeTimeFormat&lt;Duration&gt; {
+
+ /// The [locale] parameter defaults to [Intl.systemLocale].
+ /// For [rounder], see [DurationRounder]. 
+ /// For [length], for example in english, [FormatLength.SHORT] might yield "3 hrs", 
+ /// whereas [FormatLength.LONG] would yield "3 hours".
+ DurationFormat({
+   String locale, 
+   DurationRounder rounder: const DurationRounder(), 
+   FormatLength length: FormatLength.LONG
+ }) : super(locale, rounder) {
+   this._length = length;
+ }
+
+ String format(Duration duration) {
+   return _locale.formatRoundDuration(_roundDuration(duration), _length);
+ }
+
+ FormatLength _length;
+}
+</pre>
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../intlx/_RelativeTimeFormat.html">_RelativeTimeFormat&lt;Duration&gt;</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>DurationFormat</strong></span></p>
+<div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="DurationFormat">
+<button class="show-code">Code</button>
+new <strong>DurationFormat</strong>({<a href="http://api.dartlang.org/dart_core/String.html">String</a> locale, <a href="../intlx/DurationRounder.html">DurationRounder</a> rounder: const DurationRounder(), <a href="../intlx/FormatLength.html">FormatLength</a> length: FormatLength.LONG}) <a class="anchor-link" href="#DurationFormat"
+              title="Permalink to DurationFormat.DurationFormat">#</a></h4>
+<div class="doc">
+<p>The 
+<span class="param">locale</span> parameter defaults to <code>Intl.systemLocale</code>.
+For 
+<span class="param">rounder</span>, see <a class="crossref" href="../intlx/DurationRounder.html">DurationRounder</a>. 
+For 
+<span class="param">length</span>, for example in english, <a class="crossref" href="../intlx/FormatLength.html#SHORT">FormatLength.SHORT</a> might yield "3 hrs", 
+whereas <a class="crossref" href="../intlx/FormatLength.html#LONG">FormatLength.LONG</a> would yield "3 hours".</p>
+<pre class="source">
+DurationFormat({
+ String locale, 
+ DurationRounder rounder: const DurationRounder(), 
+ FormatLength length: FormatLength.LONG
+}) : super(locale, rounder) {
+ this._length = length;
+}
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method"><h4 id="format">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>format</strong>(<a href="http://api.dartlang.org/dart_core/Duration.html">Duration</a> duration) <a class="anchor-link" href="#format"
+              title="Permalink to DurationFormat.format">#</a></h4>
+<div class="doc">
+<pre class="source">
+String format(Duration duration) {
+ return _locale.formatRoundDuration(_roundDuration(duration), _length);
+}
+</pre>
+</div>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        <div class="footer">
+          <div>This page was generated at 2013-05-16 00:35:31.182</div>
+        </div>
+        <script async src="../client-static.js"></script>
+        </body></html>
+        

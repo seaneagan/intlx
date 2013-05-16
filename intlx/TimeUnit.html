@@ -1,0 +1,217 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>TimeUnit class / intlx Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="intlx" data-type="TimeUnit">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../intlx.html">intlx</a> &rsaquo; <a href="../intlx/TimeUnit.html">TimeUnit</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
+        <div class="nav">
+        
+<h2><div class="icon-library"></div><a href="../intlx.html">intlx</a></h2><h2><div class="icon-library"></div><a href="../intlx.html">intlx</a></h2><ul class="icon">
+<li><a href="../intlx/AgeFormat.html"><div class="icon-class"></div>AgeFormat</a></li>
+<li><a href="../intlx/DurationFormat.html"><div class="icon-class"></div>DurationFormat</a></li>
+<li><a href="../intlx/DurationRounder.html"><div class="icon-class"></div>DurationRounder</a></li>
+<li><a href="../intlx/FormatLength.html"><div class="icon-class"></div>FormatLength</a></li>
+<li><a href="../intlx/IterableFormat.html"><div class="icon-class"></div>IterableFormat</a></li>
+<li><a href="../intlx/LocaleData.html"><div class="icon-class"></div>LocaleData</a></li>
+<li><a href="../intlx/PluralFormat.html"><div class="icon-class"></div>PluralFormat</a></li>
+<li><a href="../intlx/RoundDuration.html"><div class="icon-class"></div>RoundDuration</a></li>
+<li><div class="icon-class"></div><strong>TimeUnit</strong></li>
+</ul>
+<h2><div class="icon-library"></div><a href="../iterable_locale_data.html">iterable_locale_data</a></h2><h2><div class="icon-library"></div><a href="../plural_locale_data.html">plural_locale_data</a></h2><h2><div class="icon-library"></div><a href="../plural_locale_data.html">plural_locale_data</a></h2><h2><div class="icon-library"></div><a href="../relative_time_locale_data.html">relative_time_locale_data</a></h2></div>
+<div class="content">
+        <h2><strong>TimeUnit</strong>
+          class
+        </h2>
+        
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
+<div class="doc">
+<p>Enum to represent time units.</p>
+<pre class="source">
+class TimeUnit implements Comparable&lt;TimeUnit&gt; {
+ // TODO: this class should be in a generic calendar library, 
+ // such as that referenced in http://dartbug.com/5627
+ 
+ static const SECOND = const TimeUnit._("SECOND", 0);
+ static const MINUTE = const TimeUnit._("MINUTE", 1);
+ static const HOUR = const TimeUnit._("HOUR", 2);
+ static const DAY = const TimeUnit._("DAY", 3);
+ static const WEEK = const TimeUnit._("WEEK", 4);
+ static const MONTH = const TimeUnit._("MONTH", 5);
+ static const YEAR = const TimeUnit._("YEAR", 6);
+
+ const TimeUnit._(this._name, this._index);
+
+ int compareTo(TimeUnit other) =&gt; _index.compareTo(other._index);
+
+ String toString() =&gt; _name;
+
+ final String _name;
+ final int _index;
+
+ static const values = const &lt;TimeUnit&gt; [SECOND, MINUTE, HOUR, DAY, WEEK, MONTH, YEAR];
+}
+</pre>
+</div>
+<h3>Implements</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../dart_core/Comparable.html">Comparable&lt;TimeUnit&gt;</a></span></p>
+<div>
+<h3>Static Properties</h3>
+<div class="field"><h4 id="DAY">
+<button class="show-code">Code</button>
+const         <strong>DAY</strong> <a class="anchor-link"
+            href="#DAY"
+            title="Permalink to TimeUnit.DAY">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+static const DAY = const TimeUnit._("DAY", 3)
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="HOUR">
+<button class="show-code">Code</button>
+const         <strong>HOUR</strong> <a class="anchor-link"
+            href="#HOUR"
+            title="Permalink to TimeUnit.HOUR">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+static const HOUR = const TimeUnit._("HOUR", 2)
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="MINUTE">
+<button class="show-code">Code</button>
+const         <strong>MINUTE</strong> <a class="anchor-link"
+            href="#MINUTE"
+            title="Permalink to TimeUnit.MINUTE">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+static const MINUTE = const TimeUnit._("MINUTE", 1)
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="MONTH">
+<button class="show-code">Code</button>
+const         <strong>MONTH</strong> <a class="anchor-link"
+            href="#MONTH"
+            title="Permalink to TimeUnit.MONTH">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+static const MONTH = const TimeUnit._("MONTH", 5)
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="SECOND">
+<button class="show-code">Code</button>
+const         <strong>SECOND</strong> <a class="anchor-link"
+            href="#SECOND"
+            title="Permalink to TimeUnit.SECOND">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+static const SECOND = const TimeUnit._("SECOND", 0)
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="values">
+<button class="show-code">Code</button>
+const         <strong>values</strong> <a class="anchor-link"
+            href="#values"
+            title="Permalink to TimeUnit.values">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+static const values = const &lt;TimeUnit&gt; [SECOND, MINUTE, HOUR, DAY, WEEK, MONTH, YEAR]
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="WEEK">
+<button class="show-code">Code</button>
+const         <strong>WEEK</strong> <a class="anchor-link"
+            href="#WEEK"
+            title="Permalink to TimeUnit.WEEK">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+static const WEEK = const TimeUnit._("WEEK", 4)
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="YEAR">
+<button class="show-code">Code</button>
+const         <strong>YEAR</strong> <a class="anchor-link"
+            href="#YEAR"
+            title="Permalink to TimeUnit.YEAR">#</a>
+        </h4>
+        <div class="doc">
+<pre class="source">
+static const YEAR = const TimeUnit._("YEAR", 6)
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method"><h4 id="compareTo">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>compareTo</strong>(<a href="../intlx/TimeUnit.html">TimeUnit</a> other) <a class="anchor-link" href="#compareTo"
+              title="Permalink to TimeUnit.compareTo">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Compares this object to another <code>Comparable</code></p>
+<p>Returns a value like a <code>Comparator</code> when comparing <code>this</code> to 
+<span class="param">other</span>.</p>
+<p>May throw an <code>ArgumentError</code> if 
+<span class="param">other</span> is of a type that
+is not comparable to <code>this</code>.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Comparable.html">Comparable</a>&lt;<a href="../intlx/TimeUnit.html">TimeUnit</a>&gt; </div></div>
+<pre class="source">
+int compareTo(TimeUnit other) =&gt; _index.compareTo(other._index);
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to TimeUnit.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+String toString() =&gt; _name;
+</pre>
+</div>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        <div class="footer">
+          <div>This page was generated at 2013-05-16 00:35:31.105</div>
+        </div>
+        <script async src="../client-static.js"></script>
+        </body></html>
+        

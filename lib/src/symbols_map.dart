@@ -14,7 +14,7 @@ class SymbolsMap<T> {
   final Map<String, T> _map;
 
   SymbolsMap(this._localeList, [Map<String, T> map]) :
-    _map = map == null ? <String, T> {} : map;
+    _map = (map == null ? <String, T> {} : map);
 
   void operator []= (String locale, T symbols) {
     _map[locale] = symbols;

@@ -26,6 +26,6 @@ class IterableSymbols {
     end: map["end"],
     indexed: map["indexed"]);
   
-  static final map = new SymbolsMap<IterableSymbols>(iterableLocales);
+  static var map = new SymbolsMap<IterableSymbols>(iterableLocales);
   
 }

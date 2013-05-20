@@ -17,6 +17,9 @@ library plural_locale_data;
 
 import 'package:intlx/intlx.dart';
 import 'package:intlx/src/locale_data_impl.dart';
+import 'package:intlx/src/symbols_map.dart';
+import 'package:intlx/src/plural/plural_locale_list.dart';
+import 'package:intlx/src/plural/plural.dart';
 import 'package:intlx/src/plural/data/af.dart' as symbols_AF;
 import 'package:intlx/src/plural/data/ak.dart' as symbols_AK;
 import 'package:intlx/src/plural/data/am.dart' as symbols_AM;

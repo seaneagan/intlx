@@ -48,7 +48,7 @@ class RelativeTimeLibraryWriter extends LibraryWriter {
   String getSymbolsImports() => '''import 'package:$packageName/$pluralLocaleDataId.dart' as $pluralLocaleDataId;
 ${super.getSymbolsImports()}''';
   
-  String getLocaleDataConstructorArgs(String locale) => super.getLocaleDataConstructorArgs(locale) + ", $pluralLocaleDataId.${locale.toUpperCase()}";
+  String getLocaleDataConstructorArgs(String locale) => super.getLocaleDataConstructorArgs(locale) + ", $pluralLocaleDataId.${Intl.verifiedLocale(locale, pluralLocales.contains).toUpperCase()}";
 
   String getSymbolsMapSetterLogic() => '''$pluralLocaleDataId.ALL.load();
 ${super.getSymbolsMapSetterLogic()}''';

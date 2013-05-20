@@ -17,6 +17,9 @@ library iterable_locale_data;
 
 import 'package:intlx/intlx.dart';
 import 'package:intlx/src/locale_data_impl.dart';
+import 'package:intlx/src/symbols_map.dart';
+import 'package:intlx/src/iterable/iterable_locale_list.dart';
+import 'package:intlx/src/iterable/iterable_symbols.dart';
 import 'package:intlx/src/iterable/data/af.dart' as symbols_AF;
 import 'package:intlx/src/iterable/data/am.dart' as symbols_AM;
 import 'package:intlx/src/iterable/data/ar.dart' as symbols_AR;

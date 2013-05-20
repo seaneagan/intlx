@@ -31,5 +31,5 @@ class PluralLocaleImpl implements PluralLocale {
 
   PluralCategory getPluralCategory(int n) => _strategy(n);
   toString() => "PluralLocale: $locale";
-  static final map = new SymbolsMap<PluralLocaleImpl>(pluralLocales);
+  static var map = new SymbolsMap<PluralLocaleImpl>(pluralLocales);
 }

@@ -1,4 +1,6 @@
 
+library intlx.cldr_template;
+
 import 'package:parsers/parsers.dart';
 
 // CLDR template parser

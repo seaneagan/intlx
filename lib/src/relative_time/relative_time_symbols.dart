@@ -33,6 +33,6 @@ class RelativeTimeSymbols {
     return units[unit.toString()][plurality];
   }
 
-  static final map = new SymbolsMap<RelativeTimeSymbols>(relativeTimeLocales);
+  static var map = new SymbolsMap<RelativeTimeSymbols>(relativeTimeLocales);
 
 }

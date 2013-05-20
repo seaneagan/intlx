@@ -17,6 +17,9 @@ library relative_time_locale_data;
 
 import 'package:intlx/intlx.dart';
 import 'package:intlx/src/locale_data_impl.dart';
+import 'package:intlx/src/symbols_map.dart';
+import 'package:intlx/src/relative_time/relative_time_locale_list.dart';
+import 'package:intlx/src/relative_time/relative_time_symbols.dart';
 import 'package:intlx/plural_locale_data.dart' as plural_locale_data;
 import 'package:intlx/src/relative_time/data/af.dart' as symbols_AF;
 import 'package:intlx/src/relative_time/data/am.dart' as symbols_AM;

@@ -89,10 +89,12 @@ const ${underscoresToCamelCase(type, false)}Locales = const <String> $localeList
 
     writeLibrary(
       libPath.append("src/$type/"), 
-      "${type}_locale_list", 
+      getLocaleListLibraryName(), 
       getLibraryComment(false), 
       code);
   }
+  
+  String getLocaleListLibraryName() => "${type}_locale_list";
 
   writeLibrary(
     Path path, 
@@ -154,6 +156,9 @@ $code''';
     var code = '''
 import 'package:$packageName/$packageName.dart';
 import 'package:$packageName/src/locale_data_impl.dart';
+import 'package:$packageName/src/symbols_map.dart';
+import 'package:$packageName/src/$type/${getLocaleListLibraryName()}.dart';
+${getSymbolsClassLibraryImport()}
 ${getSymbolsImports()}
 
 part 'package:intlx/src/$type/${type}_all_data_constant.dart';

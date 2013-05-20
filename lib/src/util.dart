@@ -1,4 +1,6 @@
 
+library intlx.util;
+
 // this library contains things which don't really belong in this package,
 // but don't currently exist in any common libraries
 

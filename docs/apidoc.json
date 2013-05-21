@@ -1,0 +1,1 @@
+{"name":"dart:","dependencies":[],"location":"0","revision":"0","libraries":[{"refId":"intlx","name":"package:intlx/intlx.dart"},{"refId":"intlx"},{"refId":"iterable_locale_data"},{"refId":"plural_locale_data"},{"refId":"plural_locale_data","name":"package:intlx/plural_locale_data.dart"},{"refId":"relative_time_locale_data"}],"description":"Dart System Libraries"}

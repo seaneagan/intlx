@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html><body>
+  <element name="x-age" constructor="Age"
+      extends="span" apply-author-styles>
+
+    <template>
+      {{age}}
+    </template>
+
+    <script type="application/dart">
+      import 'dart:async';
+      import 'package:web_ui/web_ui.dart';
+      import 'package:intlx/intlx.dart';
+
+      @observable
+      class Age extends WebComponent {
+        static final _defaultAgeFormat = new AgeFormat(rounder: new DurationRounder.staticUnit(TimeUnit.SECOND));
+        
+        Age() {
+          new Stream.periodic(const Duration(seconds: 1), (_) => _dummyChange++).listen(print);
+        }
+        var _dummyChange = 0;
+        DateTime of;
+        AgeFormat ageFormat = _defaultAgeFormat;
+
+        String get age {
+          print(_dummyChange);
+          return ageFormat.format(of);
+        }
+      }
+    </script>
+  </element>
+</body></html>

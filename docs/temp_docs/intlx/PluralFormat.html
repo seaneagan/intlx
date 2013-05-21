@@ -1,0 +1,168 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>PluralFormat class / intlx Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="intlx" data-type="PluralFormat">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../intlx.html">intlx</a> &rsaquo; <a href="../intlx/PluralFormat.html">PluralFormat</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>PluralFormat</strong>
+          class
+        </h2>
+        
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
+<div class="doc">
+<p>Formats text into a plural form, given a quantity (<code>num</code>).
+See the <a href="http://cldr.unicode.org/index/cldr-spec/plural-rules">CLDR specification</a>.
+Data for at least one locale must be loaded using 
+<a href="plural_locale_data.dart">plural<em>locale</em>data.dart</a> before instantiating this class.
+Example:</p>
+<pre><code>import 'package:intlx/intlx.dart';
+import 'package:intlx/plural_locale_data.dart' as plural_data;
+
+var localeData = plural_data.EN; // english locale
+localeData.load();
+var pluralFormat = new PluralFormat({
+  "0": "no books", 
+  "one": "{0} book", 
+  "other": "{0} books"
+}, locale: localeData.locale, pattern: "{0}");
+print(pluralFormat.format(0)); // "no books"
+print(pluralFormat.format(1)); // "1 books"
+print(pluralFormat.format(2)); // "2 books"
+</code></pre>
+<pre class="source">
+class PluralFormat {
+
+ /// The [cases] parameter maps plural category identifiers to templates,
+ /// which may include [pattern], which will be substituted 
+ /// by the [num] passed to format.
+ /// The [locale] parameter defaults to [Intl.systemLocale].
+ PluralFormat(Map&lt;String, String&gt; cases, {String locale, String pattern}) : 
+   _cases = cases, 
+   _locale = new PluralLocale(locale), 
+   _pattern = pattern;
+ 
+ String format(num quantity) {
+   var quantityString = quantity.toString();
+   String key;
+   if(_cases.containsKey(quantityString)) {
+     key = quantityString;
+   } else {
+     var category = 
+       _locale.getPluralCategory(quantity).toString().toLowerCase();
+     if(_cases.containsKey(category)) {
+       key = category;
+     } else {
+       if(_cases.containsKey('other')) {
+         key = 'other';
+       } else {
+         throw new Exception('No case found for quantity: $quantity');
+       }
+     }
+   }
+   var template = _cases[key];
+   if(_pattern != null) {
+     template = 
+       template.splitMapJoin(_pattern, onMatch: (Match) =&gt; quantityString);
+   }
+   return template;
+
+ }
+
+ final Map&lt;String, String&gt; _cases;
+ final String _pattern;
+ final PluralLocale _locale;
+}
+</pre>
+</div>
+<div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="PluralFormat">
+<button class="show-code">Code</button>
+new <strong>PluralFormat</strong>(<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>&lt;<a href="http://api.dartlang.org/dart_core/String.html">String</a>, <a href="http://api.dartlang.org/dart_core/String.html">String</a>&gt; cases, {<a href="http://api.dartlang.org/dart_core/String.html">String</a> locale, <a href="http://api.dartlang.org/dart_core/String.html">String</a> pattern}) <a class="anchor-link" href="#PluralFormat"
+              title="Permalink to PluralFormat.PluralFormat">#</a></h4>
+<div class="doc">
+<p>The 
+<span class="param">cases</span> parameter maps plural category identifiers to templates,
+which may include 
+<span class="param">pattern</span>, which will be substituted 
+by the <code>num</code> passed to format.
+The 
+<span class="param">locale</span> parameter defaults to <code>Intl.systemLocale</code>.</p>
+<pre class="source">
+PluralFormat(Map&lt;String, String&gt; cases, {String locale, String pattern}) : 
+ _cases = cases, 
+ _locale = new PluralLocale(locale), 
+ _pattern = pattern;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method"><h4 id="format">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>format</strong>(<a href="http://api.dartlang.org/dart_core/num.html">num</a> quantity) <a class="anchor-link" href="#format"
+              title="Permalink to PluralFormat.format">#</a></h4>
+<div class="doc">
+<pre class="source">
+String format(num quantity) {
+ var quantityString = quantity.toString();
+ String key;
+ if(_cases.containsKey(quantityString)) {
+   key = quantityString;
+ } else {
+   var category = 
+     _locale.getPluralCategory(quantity).toString().toLowerCase();
+   if(_cases.containsKey(category)) {
+     key = category;
+   } else {
+     if(_cases.containsKey('other')) {
+       key = 'other';
+     } else {
+       throw new Exception('No case found for quantity: $quantity');
+     }
+   }
+ }
+ var template = _cases[key];
+ if(_pattern != null) {
+   template = 
+     template.splitMapJoin(_pattern, onMatch: (Match) =&gt; quantityString);
+ }
+ return template;
+
+}
+</pre>
+</div>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        <div class="footer">
+          <div>This page was generated at 2013-05-21 19:49:40.765</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

@@ -1,0 +1,129 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>DurationRounder class / intlx Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="intlx" data-type="DurationRounder">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../intlx.html">intlx</a> &rsaquo; <a href="../intlx/DurationRounder.html">DurationRounder</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
+        <div class="nav">
+        
+</div>
+<div class="content">
+        <h2><strong>DurationRounder</strong>
+          class
+        </h2>
+        
+<button id="show-inherited" class="show-inherited">Hide inherited</button>
+<div class="doc">
+<p>Strategy for rounding <code>Duration</code>s, used by 
+<a class="crossref" href="../intlx/DurationFormat.html">DurationFormat</a>s and <a class="crossref" href="../intlx/AgeFormat.html">AgeFormat</a>s.
+Example (english):</p>
+<pre><code>var dayRounder = const DurationRounder.staticUnit(TimeUnit.DAY);
+var durationFormat = new DurationFormat(rounder: dayRounder);
+var ageFormat = new AgeFormat(rounder: dayRounder);
+var now = new DateTime.now();
+print(durationFormat.format(new Duration(minutes: 5))); // "0 days"
+print(ageFormat.format(now.add(oneHundredDays))); // "In 100 days"
+</code></pre>
+<pre class="source">
+class DurationRounder {
+ const DurationRounder();
+ const factory DurationRounder.staticUnit(TimeUnit unit) = 
+   _StaticUnitDurationRounder;
+ // TODO: Any other common strategies to include here?
+
+ /// Rounds a [Duration].
+ RoundDuration roundDuration(Duration duration) {
+   TimeUnit unit;
+   int q;
+   if((q = inYears(duration)) &gt; 0) { unit = TimeUnit.YEAR;
+   } else if((q = min(inMonths(duration), 11)) &gt; 0) { unit = TimeUnit.MONTH;
+   } else if((q = inWeeks(duration)) &gt; 0) { unit = TimeUnit.WEEK;
+   } else if((q = duration.inDays) &gt; 0) { unit = TimeUnit.DAY;
+   } else if((q = duration.inHours) &gt; 0) { unit = TimeUnit.HOUR;
+   } else {
+     unit = TimeUnit.MINUTE;
+     q = duration.inMinutes;
+   }
+   return new RoundDuration(unit, q);
+ }
+}
+</pre>
+</div>
+<div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="DurationRounder">
+<button class="show-code">Code</button>
+const <strong>DurationRounder</strong>() <a class="anchor-link" href="#DurationRounder"
+              title="Permalink to DurationRounder.DurationRounder">#</a></h4>
+<div class="doc">
+<pre class="source">
+const DurationRounder();
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="DurationRounder.staticUnit">
+<button class="show-code">Code</button>
+factory <strong>DurationRounder.staticUnit</strong>(<a href="../intlx/TimeUnit.html">TimeUnit</a> unit) <a class="anchor-link" href="#DurationRounder.staticUnit"
+              title="Permalink to DurationRounder.DurationRounder.staticUnit">#</a></h4>
+<div class="doc">
+<pre class="source">
+const factory DurationRounder.staticUnit(TimeUnit unit) = 
+ _StaticUnitDurationRounder;
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method"><h4 id="roundDuration">
+<button class="show-code">Code</button>
+<a href="../intlx/RoundDuration.html">RoundDuration</a> <strong>roundDuration</strong>(<a href="http://api.dartlang.org/dart_core/Duration.html">Duration</a> duration) <a class="anchor-link" href="#roundDuration"
+              title="Permalink to DurationRounder.roundDuration">#</a></h4>
+<div class="doc">
+<p>Rounds a <code>Duration</code>.</p>
+<pre class="source">
+RoundDuration roundDuration(Duration duration) {
+ TimeUnit unit;
+ int q;
+ if((q = inYears(duration)) &gt; 0) { unit = TimeUnit.YEAR;
+ } else if((q = min(inMonths(duration), 11)) &gt; 0) { unit = TimeUnit.MONTH;
+ } else if((q = inWeeks(duration)) &gt; 0) { unit = TimeUnit.WEEK;
+ } else if((q = duration.inDays) &gt; 0) { unit = TimeUnit.DAY;
+ } else if((q = duration.inHours) &gt; 0) { unit = TimeUnit.HOUR;
+ } else {
+   unit = TimeUnit.MINUTE;
+   q = duration.inMinutes;
+ }
+ return new RoundDuration(unit, q);
+}
+</pre>
+</div>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        <div class="footer">
+          <div>This page was generated at 2013-05-21 19:49:40.783</div>
+        </div>
+        <script async src="../client-live-nav.js"></script>
+        </body></html>
+        

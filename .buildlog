@@ -2821,3 +2821,9 @@ Total time                                                   --  46 ms
 Build finished!
 build.dart finished [2876 ms]
 
+---
+build.dart --machine --changed=pubspec.yaml
+Total time                                                   --  25 ms
+Build finished!
+build.dart finished [3911 ms]
+

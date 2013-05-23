@@ -4,14 +4,16 @@
 
 library relative_time_locale;
 
-import 'relative_time_symbols.dart';
-import '../../intlx.dart';
-import '../symbols_map.dart';
-import '../plural/plural.dart';
+import 'package:intl/intl.dart';
+import 'package:intlx/intlx.dart';
+import 'package:intlx/src/symbols_map.dart';
+import 'package:intlx/src/util.dart';
+import 'package:intlx/src/plural/plural.dart';
+import 'package:intlx/src/relative_time/relative_time_symbols.dart';
 
 class RelativeTimeLocale {
 
-  RelativeTimeLocale(String locale) : _symbols = RelativeTimeSymbols.map[locale], _locale = locale;
+  RelativeTimeLocale(String locale) : _symbols = RelativeTimeSymbols.map[locale], _locale = ifNull(locale, Intl.systemLocale);
 
   String formatRoundDuration(RoundDuration roundDuration, FormatLength formatLength) =>
     _format(formatLength == FormatLength.SHORT ? _symbols.shortUnits : _symbols.units, roundDuration);

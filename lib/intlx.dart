@@ -6,6 +6,7 @@
 library intlx;
 
 import 'dart:math';
+import 'package:intl/intl.dart';
 import 'src/relative_time/relative_time_locale.dart';
 import 'src/plural/plural.dart';
 import 'src/iterable/iterable_locale.dart';

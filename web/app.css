@@ -1,356 +1,44 @@
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
 
-body {
-  margin: 0;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 12px;
-  color: #444;
-}
-
-input, textarea {
-  font-family: 'Open Sans', sans-serif;
-  color: #444;
-}
-
-#sidebar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 25%;
-  padding: 40px 0 30px;
-  border-right: 1px solid #ddd;
-  background: #fdfdfd;
-}
-
-#sidebar .toolbar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 40px;
-  background: #eee;
-  border-bottom: 1px solid #ddd;
-}
-
-#main .title button,
-#sidebar .toolbar button {
-  position: absolute;
-  margin: 0;
-  top: 5px;
-  bottom: 5px;
-  left: 5px;
-  width: 35px;
-  background: #f3f3f3;
-  border: 1px solid #ccc;
-  border-radius: 2px;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-}
-
-#main .title button {
-  display: none;
-}
-
-#sidebar .item {
-  border-bottom: 1px solid #ddd;
-  font-size: 12px;
-  padding: 10px;
-  background: #f9f9f9;
+.docs-example {
   position: relative;
-}
-
-#sidebar .item.active {
-  background: #fdfdfd;
-  border-left: 3px solid #c11;
-  padding-left: 7px;
-}
-
-#sidebar .item.active:active {
-  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-#sidebar .item:hover {
-  -webkit-box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.05);
-}
-
-#sidebar .item .title {
-  font-size: 13px;
-  font-weight: 700;
-}
-
-#sidebar .toolbar button:hover {
-  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-}
-
-#sidebar .toolbar button:active {
-  background: #ddd;
-  border-color: #aaa;
-  -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
-  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
-}
-
-#sidebar .toolbar .input-wrap {
-  position: absolute;
-  margin: 0;
-  left: 45px;
-  top: 5px;
-  bottom: 5px;
-  right: 5px;
-}
-
-#sidebar .toolbar .input-wrap input:hover,
-#sidebar .toolbar .input-wrap input:focus {
-  background: rgba(255,255,255,1);
-}
-
-#sidebar .toolbar .input-wrap input {
-  background: rgba(255,255,255,.8);
-  width: 100%;
-  height: 100%;
-}
-
-#sidebar .item .modified {
-  font-size: 10px;
-  color: #888;
-}
-
-#sidebar .item .delete {
-  background: none;
-  border: none;
-  position: absolute;
-  top: 50%;
-  margin: -8px 0 0;
-  padding: 0;
-  height: 16px;
-  width: 16px;
-  line-height: 16px;
-  right: 5px;
-  font-weight: 700;
-  font-size: 19px;
-  opacity: 0;
-}
-
-#sidebar .item:HOVER .delete {
-  opacity: .7;
-}
-
-#sidebar .item .delete:HOVER {
-  text-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
-}
-
-#sidebar .item .delete:active {
-  text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
-}
-
-#main .footer,
-#sidebar .footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 30px;
-  background: #eee;
-  border-top: 1px solid #ddd;
-  padding: 0 5px;
-  line-height: 30px;
-}
-
-#sidebar .footer a {
-  color: #444;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
-
-#sidebar .footer a:HOVER {
-  color: blue;
-  border-bottom: 1px solid blue;
-}
-
-/* Why are you here reading the CSS? Get back to the codelab! */
-#main {
-  position: absolute;
-  top: 0;
-  left: 25%;
-  right: 0;
-  bottom: 0;
-  padding: 40px 0 30px;
-}
-
-#main .title {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 40px;
-  background: #eee;
-  border-bottom: 1px solid #ddd;
-}
-
-#main .title button:hover {
-  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-}
-
-#main .title button:active {
-  background: #ddd;
-  border-color: #aaa;
-  -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
-  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
-}
-
-#main .title .input-wrap {
-  position: absolute;
-  margin: 0;
-  top: 5px;
-  left: 5px;
-  right: 5px;
-  bottom: 5px;
-}
-
-#main .title .input-wrap input {
-  height: 100%;
-  width: 100%;
-  font-weight: 700;
-  font-size: 13px;
-  background: transparent;
-  border: 1px solid transparent;
-  outline: none;
-  padding: 0 5px;
-  -webkit-transition: all 0.1s ease-in-out;
-  -moz-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
-}
-
-#main .title .input-wrap input {
-  background: rgba(255,255,255,.6);
+  margin: 15px 0;
+  padding: 39px 19px 14px;
+  background-color: #fff;
   border: 1px solid #ddd;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
 }
-
-#main .title .input-wrap input:hover,
-#main .title .input-wrap input:focus {
-  background: rgba(255,255,255,1);
+.docs-example:after {
+  content: "Example";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  padding: 3px 7px;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #f5f5f5;
   border: 1px solid #ddd;
+  color: #9da0a4;
+  -webkit-border-radius: 4px 0 4px 0;
+  -moz-border-radius: 4px 0 4px 0;
+  border-radius: 4px 0 4px 0;
 }
 
-#main .content {
-  padding: 10px;
-  font-size: 13px;
-  height: 100%;
-  outline: none;
-  margin: 0;
-  width: 100%;
-  resize: none;
-  border: none;
+.docs-example + .prettyprint {
+  margin-top: -20px;
+  padding-top: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 15px;
 }
 
-#main:only-of-type {
-  left: 0;
+.gh-star {
+  margin:10px 0 0 14px;
 }
 
-@media all and (min-width: 501px) {
-  #sidebar .item:active {
-    -webkit-box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.1);
-    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.1);
-  }
+body { padding-top: 40px; }
+@media screen and (max-width: 768px) {
+    body { padding-top: 0px; }
 }
 
-/* STEP 6: Add styles for mobile devices */
-/* Mobile styles. */
-@media all and (max-width: 500px) {
-  body {
-    overflow: hidden;
-  }
-
-  #sidebar .touched .item {
-    background-color:rgba(250, 150, 150, .8);
-
-    -webkit-transition: all .7s cubic-bezier(.65,-0.50,.76,1.32);
-    -moz-transition: all .7s cubic-bezier(.65,-0.50,.76,1.32);
-    transition: all .7s cubic-bezier(.65,-0.50,.76,1.32);
-  }
-
-  #sidebar {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    -webkit-transition: -webkit-transform 0.3s ease-in-out;
-    -moz-transition: -moz-transform 0.3s ease-in-out;
-    transition: transform 0.3s ease-in-out;
-    -webkit-transform: translate3d(-20%, 0, 0);
-    -moz-transform: translate3d(-20%, 0, 0);
-    transform: translate3d(-20%, 0, 0);
-  }
-
-  #sidebar.active {
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-
-  #sidebar .item.active .delete {
-    opacity: .7;
-  }
-
-  #main {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    -webkit-transition: -webkit-transform 0.3s ease-in-out;
-    -moz-transition: -moz-transform 0.3s ease-in-out;
-    transition: transform 0.3s ease-in-out;
-    -webkit-transform: translate3d(100%, 0, 0);
-    -moz-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);
-  }
-
-  #main.active {
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-
-  #main .title button {
-    display: block;
-  }
-
-  #main .title .input-wrap {
-    margin-left: 40px;
-  }
-
-  /* Let's not go there. It is a silly place. */
-  #main:only-of-type {
-    -moz-transition: none;
-    -webkit-transition: none;
-    transition: none;
-  }
-
-  #main:only-of-type button {
-    display: none;
-  }
-
-  #main:only-of-type .title .input-wrap {
-    margin-left: 0;
-  }
-}

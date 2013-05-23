@@ -13,7 +13,9 @@ part 'plural_category.dart';
 
 abstract class PluralLocale {
   factory PluralLocale(String locale) {
-    return PluralLocaleImpl.map[locale];
+    if(locale == null) locale = Intl.systemLocale;
+    var pluralLocale = Intl.verifiedLocale(locale, pluralLocales.contains);
+    return PluralLocaleImpl.map[pluralLocale];
   }
 
   final String locale;
@@ -26,8 +28,8 @@ typedef PluralCategory PluralStrategy(int quantity);
 
 class PluralLocaleImpl implements PluralLocale {
   const PluralLocaleImpl(this.locale, this._strategy);
-  final String locale;
   final PluralStrategy _strategy;
+  final String locale;
 
   PluralCategory getPluralCategory(int n) => _strategy(n);
   toString() => "PluralLocale: $locale";

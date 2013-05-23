@@ -1,20 +1,104 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>x-age example</title>
+    <title>Intlx | Internationalization for Dart</title>
     <!-- STEP 6: Add viewport meta tag to control layout on mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link href="app.css" rel="stylesheet">
 
-    <link rel="import" href="age.html">
+    <link rel="import" href="package:intlx/components/age.html">
 
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
   </head>
 
   <body>
+    
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">intlx</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li><a href="docs/">Docs</a></li>
+              <li><a href="https://drone.io/seaneagan/intlx">Tests</a></li>
+              <li><a href="https://github.com/seaneagan/intlx">Github</a></li>
+              <li><a href="https://pub.dartlang.org/packages/intlx">Pub Package</a></li>
+              <li><iframe class="gh-star" src="http://ghbtns.com/github-btn.html?user=seaneagan&repo=intlx&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
 
-    <x-age of="{{dateTime}}"></x-age>
+    <div class="container">
+      <h2 id="languages" class="has-permalink">Languages<a class="permalink" title="Permalink" href="#languages">#</a></h2>
+      <ul class="nav nav-pills">
+      <template iterate='locale in locales'>
+        <li class="{{pillClass(locale)}}"><a href="#" on-click="selectedLocale = locale">{{localeNames[locale]}}</a></li>
+      </template>
+      </ul>
 
-    <script type="application/dart" src="app.dart"></script>
+      <h2 id="iterable_format" class="has-permalink">IterableFormat<a class="permalink" title="Permalink" href="#iterable_format">#</a></h2>
+      <div class="row">
+        <div class="span12">
+          <pre class="prettyprint">var iterableFormat = new IterableFormat(locale: selectedLocale);</pre>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span4"><pre class="prettyprint">iterableFormat.format([])</pre></div>
+        <div class="span5"><b>"</b>{{formatCount(0)}}<b>"</b></div>
+      </div>
+      <div class="row">
+        <div class="span4"><pre class="prettyprint">iterableFormat.format([1])</pre></div>
+        <div class="span5"><b>"</b>{{formatCount(1)}}<b>"</b></div>
+      </div>
+      <div class="row">
+        <div class="span4"><pre class="prettyprint">iterableFormat.format([1, 2])</pre></div>
+        <div class="span5"><b>"</b>{{formatCount(2)}}<b>"</b></div>
+      </div>
+      <div class="row">
+        <div class="span4"><pre class="prettyprint">iterableFormat.format([1, 2, 3])</pre></div>
+        <div class="span5"><b>"</b>{{formatCount(3)}}<b>"</b></div>
+      </div>
 
-    <script src="packages/browser/dart.js"></script>
+      <h2 id="intlx-age" class="has-permalink">intlx-age<a class="permalink" title="Permalink" href="#intlx-age">#</a></h2>
+      <pre class="prettyprint">
+var secondsFormat = new AgeFormat(locale: selectedLocale, rounder: new DurationRounder.staticUnit(TimeUnit.SECOND));
+var defaultFormat = new AgeFormat(locale: selectedLocale);</pre>
+      <button class="btn btn-primary" type="button" on-click="dateTime = soy()">start of year</button>
+      <button class="btn btn-primary" type="button" on-click="dateTime = som()">start of month</button>
+      <button class="btn btn-primary" type="button" on-click="dateTime = sod()">start of day</button>
+      <button class="btn btn-primary" type="button" on-click="dateTime = new DateTime.now()">now</button>
+      <button class="btn btn-primary" type="button" on-click="dateTime = eod()">end of day</button>
+      <button class="btn btn-primary" type="button" on-click="dateTime = eom()">end of month</button>
+      <button class="btn btn-primary" type="button" on-click="dateTime = eoy()">end of year</button>
+      <div class="row">
+        <div class="span4"><pre class="prettyprint">
+&lt;intlx-age 
+  value="{{dateTime}}" 
+  format="{{defaultFormat}}"&gt;
+&lt;/intlx-age&gt;</pre></div>
+        <div class="span5"><intlx-age value="{{dateTime}}" format="{{defaultFormat}}"></intlx-age></div>
+      </div>
+      <div class="row">
+        <div class="span4"><pre class="prettyprint">
+&lt;intlx-age 
+  value="{{dateTime}}" 
+  format="{{secondsFormat}}"&gt;
+&lt;/intlx-age&gt;</pre></div>
+        <div class="span5"><intlx-age value="{{dateTime}}" format="{{secondsFormat}}"></intlx-age></div>
+      </div>
+              
+      <script type="application/dart" src="app.dart"></script>
+      <script src="packages/browser/dart.js"></script>
+  
+    </div>    
   </body>
 </html>

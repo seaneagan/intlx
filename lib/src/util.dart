@@ -20,6 +20,9 @@ noop(x) => x;
 // TODO: replace this with the resolution of http://dartbug.com/1236
 ifNull(v, d) => v == null ? d : v;
 
+// works for Strings, Iterables, and Maps
+ifEmpty(v, d) => v.isEmpty ? d : v;
+
 // is there a bug for this ?
 // TODO: named parameters instead ?
 Iterable<int> range(int length, [int start = 0, int step = 1]) => 

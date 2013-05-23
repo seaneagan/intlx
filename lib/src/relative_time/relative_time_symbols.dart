@@ -8,14 +8,19 @@ import 'package:intlx/intlx.dart';
 import 'package:intlx/src/symbols_map.dart';
 import 'package:intlx/src/plural/plural.dart';
 import 'package:intlx/src/relative_time/relative_time_locale_list.dart';
+import 'package:intlx/src/util.dart';
 import 'package:intl/intl.dart';
 
 class RelativeTimeSymbols {
   final String name;
   final Map<String, Map<String, String>> units, shortUnits, pastUnits, futureUnits;
 
-  const RelativeTimeSymbols({this.name, this.units, this.shortUnits, this.pastUnits, this.futureUnits});
-
+  RelativeTimeSymbols({this.name, units, shortUnits, pastUnits, futureUnits}) : 
+    units = units,
+    shortUnits = shortUnits,
+    pastUnits = ifEmpty(pastUnits, units),
+    futureUnits = ifEmpty(futureUnits, units);
+    
   RelativeTimeSymbols.fromMap(Map map) : this(
     name: map["name"],
     units: map["units"],
@@ -24,7 +29,7 @@ class RelativeTimeSymbols {
     futureUnits: map["futureUnits"]);
 
   String getDurationSymbol(TimeUnit unit, String plurality, FormatLength formatLength) =>
-      _getSymbol(formatLength == FormatLength.SHORT ? shortUnits : units, unit, plurality);
+    _getSymbol(formatLength == FormatLength.SHORT ? shortUnits : units, unit, plurality);
 
   String getAgeSymbol(TimeUnit unit, String plurality, bool isFuture) =>
     _getSymbol(isFuture ? futureUnits : pastUnits, unit, plurality);

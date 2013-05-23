@@ -7,6 +7,7 @@ import 'package:http/http.dart' as http;
 import 'dart:json' as json;
 import 'dart:async';
 import 'package:intl/intl.dart';
+import 'package:intlx/src/deprecated_locale_map.dart';
 
 main() {
   new PluralDataProxy().proxy();
@@ -25,7 +26,7 @@ class PluralDataProxy extends CldrDataProxy {
       // add deprecated (renamed) locales, 
       // which are not present in CLDR plural data
       deprecatedLocaleMap.forEach((k, v) {
-        data[k] = data[v];
+        if(data.containsKey(v)) data[k] = data[v];
       });
       
       return data;
@@ -51,9 +52,3 @@ class PluralDataProxy extends CldrDataProxy {
   }
 
 }
-
-const deprecatedLocaleMap = const <String, String> {
-  'iw': 'he',
-  // 'ji': 'yi',
-  'in': 'id'
-};

@@ -4,20 +4,20 @@
 
 library iterable_locale;
 
-import 'iterable_symbols.dart';
-import '../../intlx.dart';
-import '../symbols_map.dart';
-import '../plural/plural.dart';
+import 'package:intl/intl.dart';
+import 'package:intlx/intlx.dart';
+import 'package:intlx/src/symbols_map.dart';
+import 'package:intlx/src/plural/plural.dart';
 import 'package:intlx/src/cldr_template.dart';
+import 'package:intlx/src/iterable/iterable_symbols.dart';
+import 'package:intlx/src/util.dart';
 
 class IterableLocale {
   final IterableSymbols _symbols;
-  final String _locale;
   var _onSeparator;
   
-  IterableLocale(String locale, this._onSeparator) : 
-    _symbols = IterableSymbols.map[locale], 
-    _locale = locale;
+  IterableLocale(String locale, this._onSeparator) :
+    _symbols = IterableSymbols.map[locale];
   
   String format(Iterable iterable) {
     // 0 item case

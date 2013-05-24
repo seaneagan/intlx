@@ -1,5 +1,5 @@
 
-library intlx.age_component;
+library intlx.components;
 
 import 'dart:async';
 import 'package:web_ui/web_ui.dart';
@@ -23,6 +23,7 @@ class AgeComponent extends WebComponent {
 
   String get age {
     _dummyCounter;
-    return format.format(value);
+    var v = format is DurationFormat ? new DateTime.now().difference(value) : value; 
+    return format.format(v);
   }
 }

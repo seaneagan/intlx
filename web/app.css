@@ -34,11 +34,29 @@
 }
 
 .gh-star {
-  margin:10px 0 0 14px;
+  margin:11px -20px 0 14px;
 }
 
-body { padding-top: 40px; }
+.has-permalink .permalink {
+  display: none;
+}
+.has-permalink:hover .permalink {
+  display: inline-block;
+}
+
+body { padding-top: 60px; }
 @media screen and (max-width: 768px) {
     body { padding-top: 0px; }
 }
+
+.dart-logo {
+  text-indent: -119988px;
+  overflow: hidden;
+  text-align: left;
+  background-image: url(http://pub.dartlang.org/static/img/dart.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  width: 21px;
+}
+
 

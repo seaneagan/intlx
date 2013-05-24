@@ -38,9 +38,13 @@ var plural = 0;
 
 // relative time
 var relativeTimeData = relative_time_data.ALL;
-get secondsFormat => new AgeFormat(locale: selectedLocale, rounder: new DurationRounder.staticUnit(TimeUnit.SECOND));
-get defaultFormat => new AgeFormat(locale: selectedLocale);
+get defaultAgeFormat => new AgeFormat(locale: selectedLocale);
+get secondsAgeFormat => new AgeFormat(locale: selectedLocale, rounder: new DurationRounder.staticUnit(TimeUnit.SECOND));
+get durationFormat => new DurationFormat(locale: selectedLocale);
 var dateTime = new DateTime.now().add(const Duration(seconds: 30));
+var timeUnit = "0";
+var timeUnitCount = "45";
+String get duration => durationFormat.format(new RoundDuration(TimeUnit.values[int.parse(timeUnit, onError: (_) => 0)], int.parse(timeUnitCount, onError: (_) => 0)).toDuration());
 DateTime sod() => _withNow((now) => new DateTime(now.year, now.month, now.day));
 DateTime som() => _withNow((now) => new DateTime(now.year, now.month));
 DateTime soy() => _withNow((now) => new DateTime(now.year));

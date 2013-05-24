@@ -91,11 +91,11 @@ class DurationRounder {
   RoundDuration roundDuration(Duration duration) {
     TimeUnit unit;
     int q;
-    if((q = inYears(duration)) > 0) { unit = TimeUnit.YEAR;
-    } else if((q = min(inMonths(duration), 11)) > 0) { unit = TimeUnit.MONTH;
-    } else if((q = inWeeks(duration)) > 0) { unit = TimeUnit.WEEK;
-    } else if((q = duration.inDays) > 0) { unit = TimeUnit.DAY;
-    } else if((q = duration.inHours) > 0) { unit = TimeUnit.HOUR;
+    if((q = inYears(duration)).abs() > 0) { unit = TimeUnit.YEAR;
+    } else if((q = min(inMonths(duration), 11)).abs() > 0) { unit = TimeUnit.MONTH;
+    } else if((q = inWeeks(duration)).abs() > 0) { unit = TimeUnit.WEEK;
+    } else if((q = duration.inDays).abs() > 0) { unit = TimeUnit.DAY;
+    } else if((q = duration.inHours).abs() > 0) { unit = TimeUnit.HOUR;
     } else {
       unit = TimeUnit.MINUTE;
       q = duration.inMinutes;
@@ -110,6 +110,16 @@ class RoundDuration {
 
   final TimeUnit unit;
   final int quantity;
+  
+  Duration toDuration() {
+    if(unit == TimeUnit.SECOND) return new Duration(seconds: quantity);
+    if(unit == TimeUnit.MINUTE) return new Duration(minutes: quantity);
+    if(unit == TimeUnit.HOUR) return new Duration(hours: quantity);
+    if(unit == TimeUnit.DAY) return new Duration(days: quantity);
+    if(unit == TimeUnit.WEEK) return new Duration(days: quantity * DateTime.DAYS_PER_WEEK);
+    if(unit == TimeUnit.MONTH) return new Duration(days: quantity * DAYS_PER_MONTH);
+    if(unit == TimeUnit.YEAR) return new Duration(days: quantity * DAYS_PER_YEAR);
+  }
 }
 
 abstract class _RelativeTimeFormat<T> {

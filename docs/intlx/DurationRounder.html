@@ -53,11 +53,11 @@ class DurationRounder {
  RoundDuration roundDuration(Duration duration) {
    TimeUnit unit;
    int q;
-   if((q = inYears(duration)) &gt; 0) { unit = TimeUnit.YEAR;
-   } else if((q = min(inMonths(duration), 11)) &gt; 0) { unit = TimeUnit.MONTH;
-   } else if((q = inWeeks(duration)) &gt; 0) { unit = TimeUnit.WEEK;
-   } else if((q = duration.inDays) &gt; 0) { unit = TimeUnit.DAY;
-   } else if((q = duration.inHours) &gt; 0) { unit = TimeUnit.HOUR;
+   if((q = inYears(duration)).abs() &gt; 0) { unit = TimeUnit.YEAR;
+   } else if((q = min(inMonths(duration), 11)).abs() &gt; 0) { unit = TimeUnit.MONTH;
+   } else if((q = inWeeks(duration)).abs() &gt; 0) { unit = TimeUnit.WEEK;
+   } else if((q = duration.inDays).abs() &gt; 0) { unit = TimeUnit.DAY;
+   } else if((q = duration.inHours).abs() &gt; 0) { unit = TimeUnit.HOUR;
    } else {
      unit = TimeUnit.MINUTE;
      q = duration.inMinutes;
@@ -103,11 +103,11 @@ const factory DurationRounder.staticUnit(TimeUnit unit) =
 RoundDuration roundDuration(Duration duration) {
  TimeUnit unit;
  int q;
- if((q = inYears(duration)) &gt; 0) { unit = TimeUnit.YEAR;
- } else if((q = min(inMonths(duration), 11)) &gt; 0) { unit = TimeUnit.MONTH;
- } else if((q = inWeeks(duration)) &gt; 0) { unit = TimeUnit.WEEK;
- } else if((q = duration.inDays) &gt; 0) { unit = TimeUnit.DAY;
- } else if((q = duration.inHours) &gt; 0) { unit = TimeUnit.HOUR;
+ if((q = inYears(duration)).abs() &gt; 0) { unit = TimeUnit.YEAR;
+ } else if((q = min(inMonths(duration), 11)).abs() &gt; 0) { unit = TimeUnit.MONTH;
+ } else if((q = inWeeks(duration)).abs() &gt; 0) { unit = TimeUnit.WEEK;
+ } else if((q = duration.inDays).abs() &gt; 0) { unit = TimeUnit.DAY;
+ } else if((q = duration.inHours).abs() &gt; 0) { unit = TimeUnit.HOUR;
  } else {
    unit = TimeUnit.MINUTE;
    q = duration.inMinutes;
@@ -122,7 +122,7 @@ RoundDuration roundDuration(Duration duration) {
         <div class="clear"></div>
         </div>
         <div class="footer">
-          <div>This page was generated at 2013-05-21 18:41:42.759</div>
+          <div>This page was generated at 2013-05-25 01:24:17.539</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

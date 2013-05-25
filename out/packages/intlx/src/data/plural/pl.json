@@ -1,0 +1,1 @@
+{"FEW":"n mod 10 in 2..4 and n mod 100 not in 12..14","MANY":"n is not 1 and n mod 10 in 0..1 or n mod 10 in 5..9 or n mod 100 in 12..14","ONE":"n is 1"}

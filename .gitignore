@@ -1,4 +1,3 @@
-
 .project
 .metadata
 .settings/
@@ -8,5 +7,4 @@ tests/packages
 .project
 packages/
 packages
-out
 .buildlog

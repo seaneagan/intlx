@@ -1,3 +1,5 @@
+/* Auto-generated from style sheet href = web/app.css */
+/* DO NOT EDIT. */
 
 .docs-example {
   position: relative;
@@ -24,7 +26,6 @@
   -moz-border-radius: 4px 0 4px 0;
   border-radius: 4px 0 4px 0;
 }
-
 .docs-example + .prettyprint {
   margin-top: -20px;
   padding-top: 15px;
@@ -32,31 +33,29 @@
   padding-right: 20px;
   padding-bottom: 15px;
 }
-
 .gh-star {
-  margin:11px -20px 0 14px;
+  margin: 11px -20px 0 14px;
 }
-
 .has-permalink .permalink {
   display: none;
 }
 .has-permalink:hover .permalink {
   display: inline-block;
 }
-
-body { padding-top: 60px; }
-@media screen and (max-width: 768px) {
-    body { padding-top: 0px; }
+body {
+  padding-top: 60px;
+} @media screen AND (max-width:768px) {
+body {
+  padding-top: 0px;
 }
-
+}
 .dart-logo {
   text-indent: -119988px;
   overflow: hidden;
   text-align: left;
-  background-image: url(http://pub.dartlang.org/static/img/dart.png);
+  background-image: url("http://pub.dartlang.org/static/img/dart.png");
   background-repeat: no-repeat;
   background-position: 0 0;
   width: 21px;
 }
-
 

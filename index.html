@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<!-- This file was auto-generated from web/index.html. -->
-<html><head><style>template { display: none; }</style>
+<html>
+  <head>
 
     <title>Intlx | Internationalization for Dart</title>
 
@@ -12,7 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
     
 
-    <link href="../app.css" rel="stylesheet">
+    <link href="app.css" rel="stylesheet">
 
     <link rel="import" href="package:intlx/age.html">
 
@@ -31,7 +31,7 @@
           <a class="brand" href="#"><div class="dart-logo">dartlang.org</div></a>
           <a class="brand" href="#">intlx</a>
           <ul class="nav">
-            <li><iframe class="gh-star" src="http://ghbtns.com/github-btn.html?user=seaneagan&amp;repo=intlx&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe></li>
+            <li><iframe class="gh-star" src="http://ghbtns.com/github-btn.html?user=seaneagan&repo=intlx&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe></li>
             <li><a href="https://drone.io/seaneagan/intlx/latest"><img src="https://drone.io/seaneagan/intlx/status.png" alt="Build Status" style="max-width:100%;"></a></li>
             <li><a href="docs/">Docs</a></li>
           </ul>
@@ -43,44 +43,65 @@
       <p class="lead"><b>Intlx</b> is a <a href="https://pub.dartlang.org/packages/intlx">pub package</a> for <a href="http://dartlang.org">Dart</a>, with internationalization APIs beyond what is provided in the <a href="http://pub.dartlang.org/packages/intl">intl package</a>. To install, just add <code>intlx: any</code> to your <a href="http://pub.dartlang.org/doc/dependencies.html">dependencies</a>.</p>
       <h2 id="languages" class="has-permalink">Languages<a class="permalink" title="Permalink" href="#languages">#</a></h2>
       <ul class="nav nav-pills">
-      <template></template>
+      <template iterate='locale in localeNames.keys'>
+        <li class="{{pillClass(locale)}}"><a href="#_" on-click="selectedLocale = locale">{{localeNames[locale]}}</a></li>
+      </template>
       </ul>
       <h2 id="iterable_format" class="has-permalink">Iterable formatting<a class="permalink" title="Permalink" href="#iterable_format">#</a></h2>
       <div class="row">
-        <div class="span6"><pre class="prettyprint"></pre>
+        <div class="span6"><pre class="prettyprint">
+var iterableFormat = new IterableFormat(locale: "{{selectedLocale}}");
+iterableFormat.format([]) <span style="float: right"><b>"</b>{{formatCount(0)}}<b>"</b></span>
+iterableFormat.format([1]) -&gt; <b>"</b>{{formatCount(1)}}<b>"</b>
+iterableFormat.format([1, 2]) -&gt; <b>"</b>{{formatCount(2)}}<b>"</b>
+iterableFormat.format([1, 2, 3]) -&gt; <b>"</b>{{formatCount(3)}}<b>"</b></pre>
         </div>
       </div>
 
       <h2 id="intlx-age" class="has-permalink">Relative time formatting<a class="permalink" title="Permalink" href="#intlx-age">#</a></h2>
       <div class="btn-group">
         <button class="btn btn-primary disabled" type="button">start of:</button>
-        <button class="btn btn-primary" type="button">day</button>
-        <button class="btn btn-primary" type="button">month</button>
-        <button class="btn btn-primary" type="button">year</button>
+        <button class="btn btn-primary" type="button" on-click="dateTime = sod()">day</button>
+        <button class="btn btn-primary" type="button" on-click="dateTime = som()">month</button>
+        <button class="btn btn-primary" type="button" on-click="dateTime = soy()">year</button>
       </div>
-      <button class="btn btn-primary" type="button">now</button>
+      <button class="btn btn-primary" type="button" on-click="dateTime = new DateTime.now()">now</button>
       <div class="btn-group">
         <button class="btn btn-primary disabled" type="button">end of:</button>
-        <button class="btn btn-primary" type="button">day</button>
-        <button class="btn btn-primary" type="button">month</button>
-        <button class="btn btn-primary" type="button">year</button>
+        <button class="btn btn-primary" type="button" on-click="dateTime = eod()">day</button>
+        <button class="btn btn-primary" type="button" on-click="dateTime = eom()">month</button>
+        <button class="btn btn-primary" type="button" on-click="dateTime = eoy()">year</button>
       </div>
-      <pre class="prettyprint" style="line-height:24px;"></pre>
-        <pre class="prettyprint">&lt;link rel="import" href="package:intlx/age.html"&gt;</pre>
+      <pre class="prettyprint" style="line-height:24px;">
+var durationFormat = new DurationFormat(locale: "{{selectedLocale}}");
+var defaultAgeFormat = new AgeFormat(locale: "{{selectedLocale}}");
+var secondsAgeFormat = new AgeFormat(locale: "{{selectedLocale}}", rounder: new DurationRounder.staticUnit(TimeUnit.SECOND));
+var duration = new Duration(<span class="controls"><select class="span2" bind-value="timeUnit"><option value="0">seconds</option><option value="1">minutes</option><option value="2">hours</option><option value="3">days</option></select></span>: <span class="controls"><input type="number" class="input-mini" bind-value="timeUnitCount"></span>);
+durationFormat.format(duration) {{duration}}
+</pre>
+        <pre class="prettyprint">
+&lt;link rel="import" href="package:intlx/age.html"&gt;</pre>
       <div class="row">
-        <div class="span3"><pre class="prettyprint"></pre></div>
-        <div class="span3"><span is="intlx-age"></span></div>
+        <div class="span3"><pre class="prettyprint">
+&lt;intlx-age 
+  value="{{dateTime}}" 
+  format="{{defaultAgeFormat}}"&gt;
+&lt;/intlx-age&gt;</pre></div>
+        <div class="span3"><intlx-age value="{{dateTime}}" format="{{defaultAgeFormat}}"></intlx-age></div>
       </div>
       <div class="row">
-        <div class="span3"><pre class="prettyprint"></pre></div>
-        <div class="span3"><span is="intlx-age"></span></div>
+        <div class="span3"><pre class="prettyprint">
+&lt;intlx-age 
+  value="{{dateTime}}" 
+  format="{{secondsAgeFormat}}"&gt;
+&lt;/intlx-age&gt;</pre></div>
+        <div class="span3"><intlx-age value="{{dateTime}}" format="{{secondsAgeFormat}}"></intlx-age></div>
       </div>
               
-      
-      <script src="../packages/browser/dart.js"></script>
+      <script type="application/dart" src="app.dart"></script>
+      <script src="packages/browser/dart.js"></script>
   
     </div>    
     <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
-  
-
-<script type="application/dart" src="index.html_bootstrap.dart"></script></body></html>
+  </body>
+</html>

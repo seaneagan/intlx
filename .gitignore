@@ -7,4 +7,5 @@ tests/packages
 .project
 packages/
 packages
+out
 .buildlog

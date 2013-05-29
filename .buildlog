@@ -419,3 +419,1540 @@ Total time                                                   --  25 ms
 Build finished!
 build.dart finished [2209 ms]
 
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1096,"charEnd":1177}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1096,"charEnd":1187}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1096,"charEnd":1199}}]
+Total time spent on web/index.html                           -- 8511 ms
+Total time                                                   -- 8554 ms
+Build finished!
+build.dart finished [12094 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  25 ms
+Build finished!
+build.dart finished [680 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  25 ms
+Build finished!
+build.dart finished [21726 ms]
+
+---
+build.dart --machine --changed=web\app.css --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1096,"charEnd":1177}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1096,"charEnd":1187}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1096,"charEnd":1199}}]
+Total time spent on web/index.html                           -- 6859 ms
+Total time                                                   -- 7101 ms
+Build finished!
+build.dart finished [16553 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  26 ms
+Build finished!
+build.dart finished [3782 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  72 ms
+Build finished!
+build.dart finished [6865 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1092,"charEnd":1173}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1092,"charEnd":1183}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1092,"charEnd":1195}}]
+Total time spent on web/index.html                           -- 4057 ms
+Total time                                                   -- 4150 ms
+Build finished!
+build.dart finished [8353 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  30 ms
+Build finished!
+build.dart finished [2558 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1088,"charEnd":1169}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1088,"charEnd":1179}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1088,"charEnd":1191}}]
+Total time spent on web/index.html                           -- 3831 ms
+Total time                                                   -- 3874 ms
+Build finished!
+build.dart finished [6453 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  78 ms
+Build finished!
+build.dart finished [4274 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  36 ms
+Build finished!
+build.dart finished [3040 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1095,"charEnd":1176}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1095,"charEnd":1186}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1095,"charEnd":1198}}]
+Total time spent on web/index.html                           -- 4052 ms
+Total time                                                   -- 4148 ms
+Build finished!
+build.dart finished [10488 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  43 ms
+Build finished!
+build.dart finished [9636 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  51 ms
+Build finished!
+build.dart finished [5573 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1095,"charEnd":1176}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1095,"charEnd":1186}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1095,"charEnd":1198}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1095,"charEnd":1209}}]
+Total time spent on web/index.html                           -- 3853 ms
+Total time                                                   -- 3922 ms
+Build finished!
+build.dart finished [7310 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  49 ms
+Build finished!
+build.dart finished [3379 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1095,"charEnd":1176}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1095,"charEnd":1186}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1095,"charEnd":1198}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1095,"charEnd":1209}}]
+Total time spent on web/index.html                           -- 4067 ms
+Total time                                                   -- 4099 ms
+Build finished!
+build.dart finished [6210 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  61 ms
+Build finished!
+build.dart finished [4291 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  52 ms
+Build finished!
+build.dart finished [3154 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1095,"charEnd":1176}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1095,"charEnd":1186}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1095,"charEnd":1198}}]
+Total time spent on web/index.html                           -- 4289 ms
+Total time                                                   -- 4401 ms
+Build finished!
+build.dart finished [7849 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  96 ms
+Build finished!
+build.dart finished [2743 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1095,"charEnd":1176}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1095,"charEnd":1186}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1095,"charEnd":1198}}]
+Total time spent on web/index.html                           -- 5537 ms
+Total time                                                   -- 5705 ms
+Build finished!
+build.dart finished [10040 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  39 ms
+Build finished!
+build.dart finished [3034 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  47 ms
+Build finished!
+build.dart finished [3146 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1095,"charEnd":1176}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1095,"charEnd":1186}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1095,"charEnd":1198}}]
+Total time spent on web/index.html                           -- 4417 ms
+Total time                                                   -- 4531 ms
+Build finished!
+build.dart finished [7898 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  52 ms
+Build finished!
+build.dart finished [3795 ms]
+
+---
+build.dart --machine --changed=web\app.dart --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1095,"charEnd":1176}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1095,"charEnd":1186}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1095,"charEnd":1198}}]
+Total time spent on web/index.html                           -- 5699 ms
+Total time                                                   -- 6045 ms
+Build finished!
+build.dart finished [9250 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  26 ms
+Build finished!
+build.dart finished [3297 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  28 ms
+Build finished!
+build.dart finished [3333 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1095,"charEnd":1176}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1095,"charEnd":1186}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1095,"charEnd":1198}}]
+Total time spent on web/index.html                           -- 6686 ms
+Total time                                                   -- 6891 ms
+Build finished!
+build.dart finished [15606 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  44 ms
+Build finished!
+build.dart finished [5332 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   -- 103 ms
+Build finished!
+build.dart finished [7582 ms]
+
+---
+build.dart --machine --changed=web\app.css
+Total time                                                   --  45 ms
+Build finished!
+build.dart finished [3092 ms]
+
+---
+build.dart --machine --changed=web\app.dart --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1095,"charEnd":1176}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1095,"charEnd":1186}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1095,"charEnd":1198}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected start tag token (template in the select phase. Ignored.","line":79,"charStart":4369,"charEnd":4407}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (template) in the select phase. Ignored.","line":79,"charStart":4476,"charEnd":4487}}]
+Total time spent on web/index.html                           -- 4471 ms
+Total time                                                   -- 4603 ms
+Build finished!
+build.dart finished [7591 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  29 ms
+Build finished!
+build.dart finished [2896 ms]
+
+---
+build.dart --machine --changed=web\app.dart --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1095,"charEnd":1176}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1095,"charEnd":1186}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1095,"charEnd":1198}}]
+Total time spent on web/index.html                           -- 4764 ms
+Total time                                                   -- 4830 ms
+Build finished!
+build.dart finished [8247 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  43 ms
+Build finished!
+build.dart finished [3142 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  41 ms
+Build finished!
+build.dart finished [3080 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1095,"charEnd":1176}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1095,"charEnd":1186}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1095,"charEnd":1198}}]
+Total time spent on web/index.html                           -- 5770 ms
+Total time                                                   -- 5800 ms
+Build finished!
+build.dart finished [12982 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  27 ms
+Build finished!
+build.dart finished [6504 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  44 ms
+Build finished!
+build.dart finished [4767 ms]
+
+---
+build.dart --machine --changed=web\app.css
+Total time                                                   --  30 ms
+Build finished!
+build.dart finished [2554 ms]
+
+---
+build.dart --machine --changed=web\app.css
+Total time                                                   --  25 ms
+Build finished!
+build.dart finished [571 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":26,"charStart":1051,"charEnd":1132}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":26,"charStart":1051,"charEnd":1142}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":26,"charStart":1051,"charEnd":1154}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"link rel=\"stylesheet\" only valid in head.","line":133,"charStart":6635,"charEnd":6673}}]
+Total time spent on web/index.html                           -- 3393 ms
+Total time                                                   -- 3424 ms
+Build finished!
+build.dart finished [3975 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  25 ms
+Build finished!
+build.dart finished [747 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1095,"charEnd":1176}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1095,"charEnd":1186}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":28,"charStart":1095,"charEnd":1198}}]
+Total time spent on web/index.html                           -- 3766 ms
+Total time                                                   -- 3843 ms
+Build finished!
+build.dart finished [7155 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  30 ms
+Build finished!
+build.dart finished [3520 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  44 ms
+Build finished!
+build.dart finished [4032 ms]
+
+---
+build.dart --machine --changed=web\app.css --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected character after attribute value.","line":22,"charStart":894,"charEnd":945}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Invalid character in attribute name","line":22,"charStart":894,"charEnd":983}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1221,"charEnd":1302}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1221,"charEnd":1312}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1221,"charEnd":1324}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"End tag (div) seen too early. Expected other end tag.","line":35,"charStart":1653,"charEnd":1659}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Event handler onload will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName($event)\" if you want a Dart handler that will automatically update the UI based on model changes.","line":22,"charStart":894,"charEnd":984}}]
+Total time spent on web/index.html                           -- 4115 ms
+Total time                                                   -- 4145 ms
+Build finished!
+build.dart finished [7036 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  27 ms
+Build finished!
+build.dart finished [3183 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  26 ms
+Build finished!
+build.dart finished [2549 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1222,"charEnd":1303}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1222,"charEnd":1313}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1222,"charEnd":1325}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Event handler onload will be interpreted as an inline JavaScript event handler. Use the form on-event-name=\"handlerName($event)\" if you want a Dart handler that will automatically update the UI based on model changes.","line":22,"charStart":894,"charEnd":923}}]
+Total time spent on web/index.html                           -- 4956 ms
+Total time                                                   -- 4989 ms
+Build finished!
+build.dart finished [8370 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  25 ms
+Build finished!
+build.dart finished [4118 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  38 ms
+Build finished!
+build.dart finished [14022 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+Total time spent on web/index.html                           -- 4226 ms
+Total time                                                   -- 4256 ms
+Build finished!
+build.dart finished [6862 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   -- 255 ms
+Build finished!
+build.dart finished [5156 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  25 ms
+Build finished!
+build.dart finished [4765 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+Total time spent on web/index.html                           -- 5151 ms
+Total time                                                   -- 5182 ms
+Build finished!
+build.dart finished [7143 ms]
+
+---
+build.dart --machine --changed=web\index.html --changed=web\out\_from_packages\intlx\components.dart --changed=...
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+Total time spent on web/index.html                           -- 3900 ms
+Total time                                                   -- 3951 ms
+Build finished!
+build.dart finished [6259 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  25 ms
+Build finished!
+build.dart finished [4074 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  25 ms
+Build finished!
+build.dart finished [2479 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+Total time spent on web/index.html                           -- 4166 ms
+Total time                                                   -- 4197 ms
+Build finished!
+build.dart finished [6606 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   -- 352 ms
+Build finished!
+build.dart finished [4157 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  26 ms
+Build finished!
+build.dart finished [19837 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+Total time spent on web/index.html                           -- 4382 ms
+Total time                                                   -- 4414 ms
+Build finished!
+build.dart finished [7288 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  61 ms
+Build finished!
+build.dart finished [3099 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  46 ms
+Build finished!
+build.dart finished [3826 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+Total time spent on web/index.html                           -- 3989 ms
+Total time                                                   -- 4056 ms
+Build finished!
+build.dart finished [6734 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  69 ms
+Build finished!
+build.dart finished [4185 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  26 ms
+Build finished!
+build.dart finished [2513 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+Total time spent on web/index.html                           -- 4175 ms
+Total time                                                   -- 4218 ms
+Build finished!
+build.dart finished [6789 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  25 ms
+Build finished!
+build.dart finished [2536 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  29 ms
+Build finished!
+build.dart finished [3081 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+Total time spent on web/index.html                           -- 4835 ms
+Total time                                                   -- 4881 ms
+Build finished!
+build.dart finished [8501 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  26 ms
+Build finished!
+build.dart finished [4302 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  29 ms
+Build finished!
+build.dart finished [2843 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+Total time spent on web/index.html                           -- 3768 ms
+Total time                                                   -- 3830 ms
+Build finished!
+build.dart finished [6571 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  25 ms
+Build finished!
+build.dart finished [3569 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  26 ms
+Build finished!
+build.dart finished [2602 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+Total time spent on web/index.html                           -- 4470 ms
+Total time                                                   -- 4554 ms
+Build finished!
+build.dart finished [7343 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  52 ms
+Build finished!
+build.dart finished [3617 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  37 ms
+Build finished!
+build.dart finished [3287 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+Total time spent on web/index.html                           -- 4421 ms
+Total time                                                   -- 4461 ms
+Build finished!
+build.dart finished [7753 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  25 ms
+Build finished!
+build.dart finished [1954 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  39 ms
+Build finished!
+build.dart finished [3352 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+Total time spent on web/index.html                           -- 5026 ms
+Total time                                                   -- 5158 ms
+Build finished!
+build.dart finished [7832 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  27 ms
+Build finished!
+build.dart finished [2816 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+Total time spent on web/index.html                           -- 5104 ms
+Total time                                                   -- 5255 ms
+Build finished!
+build.dart finished [11092 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  46 ms
+Build finished!
+build.dart finished [3232 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  71 ms
+Build finished!
+build.dart finished [3671 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+Total time spent on web/index.html                           -- 4806 ms
+Total time                                                   -- 4903 ms
+Build finished!
+build.dart finished [11262 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  54 ms
+Build finished!
+build.dart finished [2823 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  29 ms
+Build finished!
+build.dart finished [3084 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+Total time spent on web/index.html                           -- 4615 ms
+Total time                                                   -- 4667 ms
+Build finished!
+build.dart finished [8350 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  26 ms
+Build finished!
+build.dart finished [5815 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+Total time spent on web/index.html                           -- 5625 ms
+Total time                                                   -- 5667 ms
+Build finished!
+build.dart finished [8822 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  52 ms
+Build finished!
+build.dart finished [2956 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  76 ms
+Build finished!
+build.dart finished [3042 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+Total time spent on web/index.html                           -- 4198 ms
+Total time                                                   -- 4231 ms
+Build finished!
+build.dart finished [8075 ms]
+
+---
+build.dart --machine --changed=web\app.css --changed=web\out\_from_packages\intlx\components.dart --changed=web...
+Total time                                                   --  67 ms
+Build finished!
+build.dart finished [2862 ms]
+
+---
+build.dart --machine --changed=web\app.css
+Total time                                                   --  29 ms
+Build finished!
+build.dart finished [2921 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  46 ms
+Build finished!
+build.dart finished [3291 ms]
+
+---
+build.dart --machine --changed=web\app.dart --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+Total time spent on web/index.html                           -- 4692 ms
+Total time                                                   -- 4721 ms
+Build finished!
+build.dart finished [9973 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  53 ms
+Build finished!
+build.dart finished [4339 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  45 ms
+Build finished!
+build.dart finished [3742 ms]
+
+---
+build.dart --machine --changed=web\app.dart
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+Total time spent on web/index.html                           -- 3829 ms
+Total time                                                   -- 3863 ms
+Build finished!
+build.dart finished [7940 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  37 ms
+Build finished!
+build.dart finished [2708 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  46 ms
+Build finished!
+build.dart finished [3259 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+Total time spent on web/index.html                           -- 4585 ms
+Total time                                                   -- 4615 ms
+Build finished!
+build.dart finished [11391 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  37 ms
+Build finished!
+build.dart finished [2966 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  29 ms
+Build finished!
+build.dart finished [2948 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"End tag (div) seen too early. Expected other end tag.","line":167,"charStart":7912,"charEnd":7918}}]
+Total time spent on web/index.html                           -- 4116 ms
+Total time                                                   -- 4147 ms
+Build finished!
+build.dart finished [11078 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  47 ms
+Build finished!
+build.dart finished [4449 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  44 ms
+Build finished!
+build.dart finished [3204 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+Total time spent on web/index.html                           -- 3971 ms
+Total time                                                   -- 4002 ms
+Build finished!
+build.dart finished [7534 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  53 ms
+Build finished!
+build.dart finished [3945 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  28 ms
+Build finished!
+build.dart finished [2795 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (p). Ignored.","line":104,"charStart":5255,"charEnd":5259}}]
+Total time spent on web/index.html                           -- 4287 ms
+Total time                                                   -- 4402 ms
+Build finished!
+build.dart finished [7374 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  25 ms
+Build finished!
+build.dart finished [4082 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  54 ms
+Build finished!
+build.dart finished [2929 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (p). Ignored.","line":104,"charStart":5266,"charEnd":5270}}]
+Total time spent on web/index.html                           -- 4270 ms
+Total time                                                   -- 4301 ms
+Build finished!
+build.dart finished [7638 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  52 ms
+Build finished!
+build.dart finished [4410 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  53 ms
+Build finished!
+build.dart finished [2852 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (p). Ignored.","line":106,"charStart":5375,"charEnd":5379}}]
+Total time spent on web/index.html                           -- 12476 ms
+Total time                                                   -- 12505 ms
+Build finished!
+build.dart finished [24942 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  29 ms
+Build finished!
+build.dart finished [3643 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Trailing solidus not allowed on element span","line":44,"charStart":2221,"charEnd":2228}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (p). Ignored.","line":106,"charStart":5382,"charEnd":5386}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"End tag (div) seen too early. Expected other end tag.","line":174,"charStart":8121,"charEnd":8127}}]
+Total time spent on web/index.html                           -- 5831 ms
+Total time                                                   -- 5933 ms
+Build finished!
+build.dart finished [9448 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  44 ms
+Build finished!
+build.dart finished [3807 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  46 ms
+Build finished!
+build.dart finished [53723 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (p). Ignored.","line":108,"charStart":5426,"charEnd":5430}}]
+Total time spent on web/index.html                           -- 5744 ms
+Total time                                                   -- 5778 ms
+Build finished!
+build.dart finished [9829 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  37 ms
+Build finished!
+build.dart finished [3409 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (p). Ignored.","line":108,"charStart":5426,"charEnd":5430}}]
+Total time spent on web/index.html                           -- 4541 ms
+Total time                                                   -- 4571 ms
+Build finished!
+build.dart finished [7196 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  25 ms
+Build finished!
+build.dart finished [2154 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"End tag (div) seen too early. Expected other end tag.","line":62,"charStart":3056,"charEnd":3062}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (p). Ignored.","line":112,"charStart":5331,"charEnd":5335}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"End tag (div) seen too early. Expected other end tag.","line":117,"charStart":5491,"charEnd":5497}}]
+Total time spent on web/index.html                           -- 4965 ms
+Total time                                                   -- 4995 ms
+Build finished!
+build.dart finished [8009 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  86 ms
+Build finished!
+build.dart finished [5252 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  37 ms
+Build finished!
+build.dart finished [3406 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (p). Ignored.","line":112,"charStart":5337,"charEnd":5341}}]
+Total time spent on web/index.html                           -- 4274 ms
+Total time                                                   -- 4304 ms
+Build finished!
+build.dart finished [7607 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  25 ms
+Build finished!
+build.dart finished [2203 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+Total time spent on web/index.html                           -- 5252 ms
+Total time                                                   -- 5307 ms
+Build finished!
+build.dart finished [8383 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  41 ms
+Build finished!
+build.dart finished [3015 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  43 ms
+Build finished!
+build.dart finished [2663 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"End tag (div) seen too early. Expected other end tag.","line":192,"charStart":8298,"charEnd":8304}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"End tag (div) seen too early. Expected other end tag.","line":197,"charStart":8445,"charEnd":8451}}]
+Total time spent on web/index.html                           -- 5173 ms
+Total time                                                   -- 5204 ms
+Build finished!
+build.dart finished [8484 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  89 ms
+Build finished!
+build.dart finished [4206 ms]
+
+---
+build.dart --machine --changed=web\index.html --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\...
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"End tag (div) seen too early. Expected other end tag.","line":197,"charStart":8445,"charEnd":8451}}]
+Total time spent on web/index.html                           -- 3715 ms
+Total time                                                   -- 3764 ms
+Build finished!
+build.dart finished [6908 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  51 ms
+Build finished!
+build.dart finished [3439 ms]
+
+---
+build.dart --machine --changed=web\index.html --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\...
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+Total time spent on web/index.html                           -- 12382 ms
+Total time                                                   -- 12471 ms
+Build finished!
+build.dart finished [31500 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  26 ms
+Build finished!
+build.dart finished [3961 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  36 ms
+Build finished!
+build.dart finished [3181 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+Total time spent on web/index.html                           -- 4305 ms
+Total time                                                   -- 4336 ms
+Build finished!
+build.dart finished [7801 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  53 ms
+Build finished!
+build.dart finished [3541 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  41 ms
+Build finished!
+build.dart finished [2837 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+Total time spent on web/index.html                           -- 4988 ms
+Total time                                                   -- 5018 ms
+Build finished!
+build.dart finished [9388 ms]
+
+---
+build.dart --machine --changed=web\app.css --changed=web\out\_from_packages\intlx\components.dart --changed=web...
+Total time                                                   --  49 ms
+Build finished!
+build.dart finished [3327 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+Total time spent on web/index.html                           -- 16677 ms
+Total time                                                   -- 16710 ms
+Build finished!
+build.dart finished [20065 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  33 ms
+Build finished!
+build.dart finished [5041 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  37 ms
+Build finished!
+build.dart finished [2804 ms]
+
+---
+build.dart --machine --changed=web\app.css
+Total time                                                   --  25 ms
+Build finished!
+build.dart finished [3958 ms]
+
+---
+build.dart --machine --changed=web\app.css
+Total time                                                   --  53 ms
+Build finished!
+build.dart finished [3283 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+Total time spent on web/index.html                           -- 5392 ms
+Total time                                                   -- 5422 ms
+Build finished!
+build.dart finished [9852 ms]
+
+---
+build.dart --machine --changed=web\app.css --changed=web\out\_from_packages\intlx\components.dart --changed=web...
+Total time                                                   --  53 ms
+Build finished!
+build.dart finished [2947 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   -- 106 ms
+Build finished!
+build.dart finished [3326 ms]
+
+---
+build.dart --machine --changed=web\app.css
+Total time                                                   --  24 ms
+Build finished!
+build.dart finished [4340 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+Total time spent on web/index.html                           -- 4907 ms
+Total time                                                   -- 4937 ms
+Build finished!
+build.dart finished [8829 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  62 ms
+Build finished!
+build.dart finished [3466 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  37 ms
+Build finished!
+build.dart finished [3012 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+Total time spent on web/index.html                           -- 4046 ms
+Total time                                                   -- 4130 ms
+Build finished!
+build.dart finished [8301 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  64 ms
+Build finished!
+build.dart finished [3887 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  26 ms
+Build finished!
+build.dart finished [2819 ms]
+
+---
+build.dart --machine --changed=web\app.css --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+Total time spent on web/index.html                           -- 4050 ms
+Total time                                                   -- 4080 ms
+Build finished!
+build.dart finished [7010 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  53 ms
+Build finished!
+build.dart finished [6147 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  52 ms
+Build finished!
+build.dart finished [3012 ms]
+
+---
+build.dart --machine --changed=web\app.css
+Total time                                                   -- 543 ms
+Build finished!
+build.dart finished [12384 ms]
+
+---
+build.dart --machine --changed=web\app.css
+Total time                                                   --  31 ms
+Build finished!
+build.dart finished [9014 ms]
+
+---
+build.dart --machine --changed=web\app.css
+Total time                                                   --  70 ms
+Build finished!
+build.dart finished [4719 ms]
+
+---
+build.dart --machine --changed=web\app.css
+Total time                                                   -- 231 ms
+Build finished!
+build.dart finished [5971 ms]
+
+---
+build.dart --machine --changed=web\app.css
+Total time                                                   --  78 ms
+Build finished!
+build.dart finished [8346 ms]
+
+---
+build.dart --machine --changed=web\app.css
+Total time                                                   -- 109 ms
+Build finished!
+build.dart finished [4171 ms]
+
+---
+build.dart --machine --changed=web\app.css
+Total time                                                   -- 145 ms
+Build finished!
+build.dart finished [4100 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+Total time spent on web/index.html                           -- 18434 ms
+Total time                                                   -- 18491 ms
+Build finished!
+build.dart finished [21921 ms]
+
+---
+build.dart --machine --changed=web\index.html --changed=web\out\_from_packages\intlx\components.dart --changed=...
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+Total time spent on web/index.html                           -- 4323 ms
+Total time                                                   -- 4381 ms
+Build finished!
+build.dart finished [7873 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  37 ms
+Build finished!
+build.dart finished [3753 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+Total time spent on web/index.html                           -- 3930 ms
+Total time                                                   -- 4054 ms
+Build finished!
+build.dart finished [7707 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  46 ms
+Build finished!
+build.dart finished [3937 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  44 ms
+Build finished!
+build.dart finished [4752 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+Total time spent on web/index.html                           -- 4287 ms
+Total time                                                   -- 4320 ms
+Build finished!
+build.dart finished [7145 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  77 ms
+Build finished!
+build.dart finished [3952 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  29 ms
+Build finished!
+build.dart finished [3946 ms]
+
+---
+build.dart --machine --changed=web\app.css
+Total time                                                   --  60 ms
+Build finished!
+build.dart finished [2907 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+Total time spent on web/index.html                           -- 4265 ms
+Total time                                                   -- 4326 ms
+Build finished!
+build.dart finished [7790 ms]
+
+---
+build.dart --machine --changed=web\app.css --changed=web\out\_from_packages\intlx\components.dart --changed=web...
+Total time                                                   --  47 ms
+Build finished!
+build.dart finished [3204 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  46 ms
+Build finished!
+build.dart finished [3044 ms]
+
+---
+build.dart --machine --changed=web\app.css
+Total time                                                   --  44 ms
+Build finished!
+build.dart finished [3810 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+Total time spent on web/index.html                           -- 4449 ms
+Total time                                                   -- 4536 ms
+Build finished!
+build.dart finished [7540 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  54 ms
+Build finished!
+build.dart finished [3230 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1280}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1290}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":30,"charStart":1199,"charEnd":1302}}]
+Total time spent on web/index.html                           -- 5436 ms
+Total time                                                   -- 5509 ms
+Build finished!
+build.dart finished [11478 ms]
+
+---
+build.dart --machine --changed=web\out\_from_packages\intlx\components.dart --changed=web\out\_from_packages\in...
+Total time                                                   --  33 ms
+Build finished!
+build.dart finished [3411 ms]
+
+---
+build.dart --machine --changed=web\out\index.html_bootstrap.dart.js --changed=web\out\index.html_bootstrap.dart...
+Total time                                                   --  44 ms
+Build finished!
+build.dart finished [9787 ms]
+

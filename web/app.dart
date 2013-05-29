@@ -13,8 +13,12 @@ import 'package:intlx/src/relative_time/relative_time_locale_list.dart';
 import 'package:intlx/src/deprecated_locale_map.dart';
 import 'package:intlx/src/util.dart';
 
+var _selectedLocale = 'en';
+String get selectedLocale => _selectedLocale;
+void set selectedLocale (String v) {
+  Intl.systemLocale = _selectedLocale = v;
+}
 // locale data (use relative time for no particular reason since they're all the same)
-var selectedLocale = 'en';
 var locales = relativeTimeLocales;
 
 // iterable
@@ -52,6 +56,8 @@ DateTime eoy() => _withNow((now) => new DateTime(now.year + 1));
 DateTime _withNow(transform) => transform(new DateTime.now());
 
 pillClass(String locale) => locale == selectedLocale ? 'active' : '';
+
+String mustachify(String content) => '{{$content}}';
 
 void main() {
   relativeTimeData.load();

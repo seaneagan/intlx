@@ -262,10 +262,12 @@ final Map<String, String> htmlElementConstructors = (() {
  */
 const urlAttributes = const [
   'action',     // in form
+  'background', // in body
   'cite',       // in blockquote, del, ins, q
   'data',       // in object
   'formaction', // in button, input
   'href',       // in a, area, link, base, command
+  'icon',       // in command
   'manifest',   // in html
   'poster',     // in video
   'src',        // in audio, embed, iframe, img, input, script, source, track,

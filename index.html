@@ -8,10 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" rel="stylesheet">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
-    
+<!--    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.js"></script>
+-->    
 
+    <link href="https://google-code-prettify.googlecode.com/svn/loader/prettify.css" rel="stylesheet">
     <link href="app.css" rel="stylesheet">
 
     <link rel="import" href="package:intlx/age.html">
@@ -28,7 +29,6 @@
           <ul class="nav">
             <li><iframe class="gh-star" src="http://ghbtns.com/github-btn.html?user=seaneagan&amp;repo=intlx&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe></li>
             <li><a href="https://drone.io/seaneagan/intlx/latest"><img src="https://drone.io/seaneagan/intlx/status.png" alt="Build Status" style="max-width:100%;"></a></li>
-            <li><a href="docs/">docs</a></li>
           </ul>
         </div>
       </div>
@@ -39,54 +39,178 @@
         <b>Intlx</b> is a <a href="https://pub.dartlang.org/packages/intlx">pub package</a> 
         for <a href="http://dartlang.org">dart</a>, 
         with internationalization APIs beyond what is provided in the <a href="http://pub.dartlang.org/packages/intl">intl package</a>.
-        To install, just add <code>intlx: any</code> to your <a href="http://pub.dartlang.org/doc/dependencies.html">dependencies</a>.
+        To get started, try the demo below, read the <a href="docs/intlx.html">docs</a>, and   
+        install by adding <code>intlx: any</code> to your <a href="http://pub.dartlang.org/doc/dependencies.html">dependencies</a>.
       </p>
-      <p class="lead">
-        To get started, read the <a href="docs">docs</a>.  
-        for <a href="http://dartlang.org">dart</a>, 
-        with internationalization APIs beyond what is provided in the <a href="http://pub.dartlang.org/packages/intl">intl package</a>.
-        To install, just add <code>intlx: any</code> to your <a href="http://pub.dartlang.org/doc/dependencies.html">dependencies</a>.
-      </p>
-      <h2 id="languages" class="has-permalink">Languages<a class="permalink" title="Permalink" href="#languages">#</a></h2>
+      <h2 id="languages" class="has-permalink">Languages<a class="permalink" title="Permalink" href="#languages">#</a>
+        <code id="system-locale-code" class="prettyprint"></code>
+      </h2>
       <ul class="nav nav-pills">
       <template></template>
       </ul>
-      <h2 id="iterable_format" class="has-permalink">Iterable formatting<a class="permalink" title="Permalink" href="#iterable_format">#</a></h2>
       <div class="row">
-        <div class="span6"><pre class="prettyprint"></pre>
+        <div class="span6">
+      <div class="code-demo span6">
+<!--
         </div>
       </div>
-
-      <h2 id="intlx-age" class="has-permalink">Relative time formatting<a class="permalink" title="Permalink" href="#intlx-age">#</a></h2>
+      <div class="row">
+    <p>
       <div class="btn-group">
         <button class="btn btn-primary disabled" type="button">start of:</button>
-        <button class="btn btn-primary" type="button">day</button>
-        <button class="btn btn-primary" type="button">month</button>
-        <button class="btn btn-primary" type="button">year</button>
+        <button class="btn btn-primary" type="button" on-click="dateTime = sod()">day</button>
+        <button class="btn btn-primary" type="button" on-click="dateTime = som()">month</button>
+        <button class="btn btn-primary" type="button" on-click="dateTime = soy()">year</button>
       </div>
-      <button class="btn btn-primary" type="button">now</button>
+      <button class="btn btn-primary" type="button" on-click="dateTime = new DateTime.now()">now</button>
       <div class="btn-group">
         <button class="btn btn-primary disabled" type="button">end of:</button>
-        <button class="btn btn-primary" type="button">day</button>
-        <button class="btn btn-primary" type="button">month</button>
-        <button class="btn btn-primary" type="button">year</button>
+        <button class="btn btn-primary" type="button" on-click="dateTime = eod()">day</button>
+        <button class="btn btn-primary" type="button" on-click="dateTime = eom()">month</button>
+        <button class="btn btn-primary" type="button" on-click="dateTime = eoy()">year</button>
       </div>
-      <pre class="prettyprint" style="line-height:24px;"></pre>
-        <pre class="prettyprint">&lt;link rel="import" href="package:intlx/age.html"&gt;</pre>
-      <div class="row">
-        <div class="span3"><pre class="prettyprint"></pre></div>
-        <div class="span3"><span is="intlx-age"></span></div>
+      </p>
+      <div class="code-demo span6">
+-->      
+        <div class="row">
+          <div class="span4"><pre class="prettyprint">// Duration formatting
+</pre>
+          </div>
+          <div class="span2"></div>
+        </div>
+        <div class="row">
+          <div class="span4"><pre class="prettyprint">var durationFormat = new <a href="docs/intlx/DurationFormat.html">DurationFormat</a>();</pre>
+          </div>
+          <div class="span2"></div>
+        </div>
+        <div class="row">
+          <div class="span4"><pre class="prettyprint">var duration = new Duration(</pre>
+          </div>
+          <div class="span2"></div>
+        </div>
+        <div class="row">
+          <div class="span4">
+<span class="controls"><select class="span2">
+  <option value="0">seconds</option>
+  <option value="1">minutes</option>
+  <option value="2">hours</option>
+  <option value="3">days</option>
+  <option value="4">weeks</option>
+  <option value="5">months</option>
+  <option value="6">years</option></select></span>: <span class="controls"><input type="number" class="input-mini"></span>);
+          </div>
+          <div class="span2"></div>
+        </div>
+        <div class="row">
+          <div class="span4"><pre class="prettyprint lang-dart">durationFormat.format(duration)</pre>
+          </div>
+          <div class="span2"></div>
+        </div>
+        <div class="row">
+          <div class="span4"><pre class="prettyprint">
+
+// "Age" formatting
+</pre>
+          </div>
+          <div class="span2"></div>
+        </div>
+        <div class="row">
+          <div class="span4"><pre class="prettyprint lang-dart">var ageFormat = new <a href="docs/intlx/AgeFormat.html">AgeFormat</a>(
+  rounder: new <a href="docs/intlx/DurationRounder.html">DurationRounder</a>.<a href="docs/intlx/DurationRounder.html#DurationRounder.staticUnit">staticUnit</a>(
+    <a href="docs/intlx/TimeUnit.html">TimeUnit</a>.SECOND));</pre>
+          </div>
+          <div class="span2"></div>
+        </div>
+        <div class="row">
+          <div class="span4"><pre class="prettyprint">&lt;link rel="import" href="package:intlx/age.html"&gt;</pre>
+          </div>
+          <div class="span2"></div>
+        </div>
+        <div class="row">
+          <div class="span4"><pre class="prettyprint"></pre>
+          </div>
+          <div class="span2"><span is="intlx-age"></span></div>
+        </div>
+        <div class="row">
+          <div class="span4"><pre class="prettyprint"></pre>
+          </div>
+          <div class="span2"><span is="intlx-age"></span></div>
+        </div>
       </div>
-      <div class="row">
-        <div class="span3"><pre class="prettyprint"></pre></div>
-        <div class="span3"><span is="intlx-age"></span></div>
+      </div>
+      <div class="span6">
+        <div class="code-demo span6">
+        <div class="row">
+          <div class="span4"><pre class="prettyprint lang-dart">// Iterable formatting
+</pre>
+          </div>
+          <div class="span2"></div>
+        </div>
+        <div class="row">
+          <div class="span4"><pre class="prettyprint lang-dart">var iterableFormat = new <a href="docs/intlx/IterableFormat.html">IterableFormat</a>();</pre>
+          </div>
+          <div class="span2"></div>
+        </div>
+        <div class="row">
+          <div class="span4"><pre class="prettyprint lang-dart">iterableFormat.format([])</pre>
+          </div>
+          <div class="span2"></div>
+        </div>
+        <div class="row">
+          <div class="span4"><pre class="prettyprint lang-dart">iterableFormat.format([1])</pre>
+          </div>
+          <div class="span2"></div>
+        </div>
+        <div class="row">
+          <div class="span4"><pre class="prettyprint lang-dart">iterableFormat.format([1, 2])</pre>
+          </div>
+          <div class="span2"></div>
+        </div>
+        <div class="row">
+          <div class="span4"><pre class="prettyprint lang-dart">iterableFormat.format([1, 2, 3, 4, 5])</pre>
+          </div>
+          <div class="span2"></div>
+        </div>
+        <div class="row">
+          <div class="span4"><pre class="prettyprint lang-dart">
+
+// Plural formatting (demo english only for now)
+</pre>
+          </div>
+          <div class="span2"></div>
+        </div>
+        <div class="row">
+          <div class="span4"><pre class="prettyprint lang-dart">var pluralFormat = new <a href="docs/intlx/PluralFormat.html">PluralFormat</a>({
+  "0": "no books", 
+  "one": "{0} book", 
+  "other": "{0} books"}, pattern: "{0}");</pre>
+          </div>
+          <div class="span2"></div>
+        </div>
+        <div class="row">
+          <div class="span4"><pre class="prettyprint lang-dart">pluralFormat.format(0)</pre>
+          </div>
+          <div class="span2"></div>
+        </div>
+        <div class="row">
+          <div class="span4"><pre class="prettyprint lang-dart">pluralFormat.format(1)</pre>
+          </div>
+          <div class="span2"></div>
+        </div>
+        <div class="row">
+          <div class="span4"><pre class="prettyprint lang-dart">pluralFormat.format(2)</pre>
+          </div>
+          <div class="span2"></div>
+        </div>
+      </div>        
+      </div>
       </div>
               
       
       <script src="packages/browser/dart.js"></script>
   
     </div>    
-    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=dart"></script>
   
 
 <script type="application/dart" src="index.html_bootstrap.dart"></script></body></html>

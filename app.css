@@ -1,25 +1,19 @@
 /* Auto-generated from style sheet href = web/app.css */
 /* DO NOT EDIT. */
 
-.docs-example + .prettyprint {
-  margin-top: -20px;
-  padding-top: 15px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 15px;
-}
 .gh-star {
   margin: 11px -20px 0 14px;
 }
 .has-permalink .permalink {
-  display: none;
+  visibility: hidden;
 }
 .has-permalink:hover .permalink {
   display: inline-block;
+  visibility: visible;
 }
 body {
-  padding-top: 60px;
-} @media screen AND (max-width:768px) {
+  padding-top: 70px;
+} @media screen AND (max-width:980px) {
 body {
   padding-top: 0px;
 }
@@ -32,5 +26,24 @@ body {
   background-repeat: no-repeat;
   background-position: 0 0;
   width: 21px;
+}
+.code-demo pre.prettyprint {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+  background: none;
+}
+.code-demo .row > :first-child {
+  background: #d3d3d3;
+}
+.code-demo, code {
+  border: 1px solid #000;
+  border-radius: 4px;
+}
+code {
+  background-color: #d3d3d3;
+}
+#system-locale-code {
+  vertical-align: middle;
 }
 

@@ -478,9 +478,8 @@ class WebComponentEmitter extends RecursiveEmitter {
     }
 
     if (info.template != null && !elemInfo.childrenCreatedInCode) {
-      // TODO(jmesserly): scoped styles probably don't work when
-      // childrenCreatedInCode is true.
-      if (!info.styleSheets.isEmpty) {
+      if (!info.styleSheets.isEmpty &&
+          !useCssPolyFill(messages.options, info)) {
         var prefix = cssPolyfill ? info.tagName : null;
         // TODO(jmesserly): csslib+html5lib should work together.  We shouldn't
         //                  need to call a different function to serialize CSS.
@@ -621,6 +620,46 @@ class EntryPointEmitter extends RecursiveEmitter {
   }
 }
 
+/**
+ * List of HTML4 elements which could have relative URL resource:
+ *
+ * <body background=url>, <img src=url>, <input src=url>
+ *
+ * HTML 5:
+ *
+ * <audio src=url>, <command icon=url>, <embed src=url>,
+ * <source src=url>, <video poster=url> and <video src=url>
+*/
+class AttributeUrlTransform extends TreeVisitor {
+  final String filePath;
+  final PathMapper pathMapper;
+
+  AttributeUrlTransform(this.filePath, this.pathMapper);
+
+  visitElement(Element node) {
+    if (node.tagName == 'script') return;
+    if (node.tagName == 'link') return;
+
+    for (var key in node.attributes.keys) {
+      if (urlAttributes.contains(key)) {
+        var attr = node.attributes[key];
+        if (attr != null) {
+          // Only rewrite if an URL attribute.
+          node.attributes[key] = pathMapper.transformUrl(filePath, attr);
+        }
+      }
+    }
+
+    super.visitElement(node);
+  }
+}
+
+void _transformRelativeUrlAttributes(Document document, PathMapper pathMapper,
+                                     String filePath) {
+  // Transform any element's attribute which is a relative URL.
+  new AttributeUrlTransform(filePath, pathMapper).visit(document);
+}
+
 void emitImports(DartCodeInfo codeInfo, LibraryInfo info, PathMapper pathMapper,
     CodePrinter printer) {
   var seenImports = new Set();
@@ -722,6 +761,11 @@ void transformMainHtml(Document document, FileInfo fileInfo,
       // Only rewrite URL if rewrite on and we're not CSS polyfilling.
       tag.attributes['href'] = pathMapper.transformUrl(filePath, href);
     }
+  }
+
+  if (rewriteUrls) {
+    // Transform any element's attribute which is a relative URL.
+    _transformRelativeUrlAttributes(document, pathMapper, filePath);
   }
 
   if (hasCss) {

@@ -9,7 +9,7 @@
   visibility: visible;
 }
 body {
-  padding-top: 70px;
+  padding-top: 80px;
 } @media screen AND (max-width:980px) {
 body {
   padding-top: 0px;

@@ -8,8 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" rel="stylesheet">
-<!--    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.js"></script>
+<!--    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap-dropdown.js"></script>
 -->    
 
     <link href="https://google-code-prettify.googlecode.com/svn/loader/prettify.css" rel="stylesheet">
@@ -25,22 +26,36 @@
       <div class="navbar-inner">
         <div class="container">
           <a class="brand" href="#"><div class="dart-logo">dartlang.org</div></a>
-          <a class="brand" href="#">intlx</a>
-          <ul class="nav">
-            <li><iframe class="gh-star" src="http://ghbtns.com/github-btn.html?user=seaneagan&amp;repo=intlx&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe></li>
-            <li><a href="https://drone.io/seaneagan/intlx/latest"><img src="https://drone.io/seaneagan/intlx/status.png" alt="Build Status" style="max-width:100%;"></a></li>
+          <a class="brand" href="#">Intlx</a>
+          <ul id="intlx-nav" class="nav">
+            <li class="gh-star">
+              <iframe src="http://ghbtns.com/github-btn.html?user=seaneagan&amp;repo=intlx&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+            </li>
+            <li class="twitter">
+              <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.seaneagan.github.io/intlx" data-text="Intlx - Internationalization APIs for Dart" data-via="seaneagan" data-hashtags="dartlang">Tweet</a>
+              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+            </li>
+            <li class="gplus">
+              <div class="g-plusone" data-size="medium" data-href="https://www.seaneagan.github.io/intlx"></div>
+              <script type="text/javascript">
+                (function() {
+                  var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                  po.src = 'https://apis.google.com/js/plusone.js';
+                  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+                })();
+              </script>
+            </li>
           </ul>
         </div>
       </div>
     </div>
-
     <div class="container">
       <p class="lead">
         <b>Intlx</b> is a <a href="https://pub.dartlang.org/packages/intlx">pub package</a> 
         for <a href="http://dartlang.org">dart</a>, 
-        with internationalization APIs beyond what is provided in the <a href="http://pub.dartlang.org/packages/intl">intl package</a>.
+        with internationalization APIs beyond that of the <a href="http://pub.dartlang.org/packages/intl">intl package</a>.
         To get started, try the demo below, read the <a href="docs/intlx.html">docs</a>, and   
-        install by adding <code>intlx: any</code> to your <a href="http://pub.dartlang.org/doc/dependencies.html">dependencies</a>.
+        install by adding <code class="prettyprint">intlx: any</code> to your <a href="http://pub.dartlang.org/doc/dependencies.html">dependencies</a>.
       </p>
       <h2 id="languages" class="has-permalink">Languages<a class="permalink" title="Permalink" href="#languages">#</a>
         <code id="system-locale-code" class="prettyprint"></code>
@@ -51,27 +66,6 @@
       <div class="row">
         <div class="span6">
       <div class="code-demo span6">
-<!--
-        </div>
-      </div>
-      <div class="row">
-    <p>
-      <div class="btn-group">
-        <button class="btn btn-primary disabled" type="button">start of:</button>
-        <button class="btn btn-primary" type="button" on-click="dateTime = sod()">day</button>
-        <button class="btn btn-primary" type="button" on-click="dateTime = som()">month</button>
-        <button class="btn btn-primary" type="button" on-click="dateTime = soy()">year</button>
-      </div>
-      <button class="btn btn-primary" type="button" on-click="dateTime = new DateTime.now()">now</button>
-      <div class="btn-group">
-        <button class="btn btn-primary disabled" type="button">end of:</button>
-        <button class="btn btn-primary" type="button" on-click="dateTime = eod()">day</button>
-        <button class="btn btn-primary" type="button" on-click="dateTime = eom()">month</button>
-        <button class="btn btn-primary" type="button" on-click="dateTime = eoy()">year</button>
-      </div>
-      </p>
-      <div class="code-demo span6">
--->      
         <div class="row">
           <div class="span4"><pre class="prettyprint">// Duration formatting
 </pre>
@@ -90,14 +84,19 @@
         </div>
         <div class="row">
           <div class="span4">
-<span class="controls"><select class="span2">
-  <option value="0">seconds</option>
-  <option value="1">minutes</option>
-  <option value="2">hours</option>
-  <option value="3">days</option>
-  <option value="4">weeks</option>
-  <option value="5">months</option>
-  <option value="6">years</option></select></span>: <span class="controls"><input type="number" class="input-mini"></span>);
+&nbsp;&nbsp;<span class="controls">
+              <select>
+                <option value="0">seconds</option>
+                <option value="1">minutes</option>
+                <option value="2">hours</option>
+                <option value="3">days</option>
+              </select>
+            </span>
+            <code class="prettyprint lang-dart">: </code>
+            <span class="controls">
+              <input type="number" class="input-mini">
+            </span>
+            <code class="prettyprint lang-dart">);</code>
           </div>
           <div class="span2"></div>
         </div>
@@ -115,9 +114,29 @@
           <div class="span2"></div>
         </div>
         <div class="row">
+          <div class="span4"><code class="prettyprint lang-dart">var dateTime = </code>
+<span class="controls"><select>
+  <option value="0">startOfYear()</option>
+  <option value="1">startOfMonth()</option>
+  <option value="2">startOfDay()</option>
+  <option value="3">new DateTime.now()</option>
+  <option value="4">endOfDay()</option>
+  <option value="5">endOfMonth()</option>
+  <option value="6">endOfYear()</option></select></span>
+          <code class="prettyprint lang-dart">;</code>
+          </div>
+          <div class="span2"></div>
+        </div>
+        <div class="row">
           <div class="span4"><pre class="prettyprint lang-dart">var ageFormat = new <a href="docs/intlx/AgeFormat.html">AgeFormat</a>(
   rounder: new <a href="docs/intlx/DurationRounder.html">DurationRounder</a>.<a href="docs/intlx/DurationRounder.html#DurationRounder.staticUnit">staticUnit</a>(
     <a href="docs/intlx/TimeUnit.html">TimeUnit</a>.SECOND));</pre>
+          </div>
+          <div class="span2"></div>
+        </div>
+        <div class="row">
+          <div class="span4"><pre class="prettyprint">// Web component - intlx-age
+</pre>
           </div>
           <div class="span2"></div>
         </div>
@@ -205,7 +224,16 @@
       </div>        
       </div>
       </div>
-              
+      <footer class="footer jumbotron">
+        <div class="container">
+          <p>Intlx is licensed under the <a href="http://opensource.org/licenses/BSD-3-Clause" target="_blank">BSD license</a>.</p>
+          <ul class="footer-links">
+            <li><a href="http://pub.dartlang.org/packages/intlx">Pub Package</a></li>
+            <li><a href="https://github.io/seaneagan/intlx/">Github</a></li>
+            <li><a href="docs">Docs</a></li>
+          </ul>
+        </div>
+      </footer>
       
       <script src="packages/browser/dart.js"></script>
   

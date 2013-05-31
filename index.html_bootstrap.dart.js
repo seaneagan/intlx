@@ -971,6 +971,9 @@ $$.Uint8ClampedList = {"": "Uint8List;",
   get$iterator: function(receiver) {
     return new $.ListIterator(receiver, receiver.length, 0, null);
   },
+  fold$2: function(receiver, initialValue, combine) {
+    return $.IterableMixinWorkaround_fold(receiver, initialValue, combine);
+  },
   contains$1: function(receiver, element) {
     return $.IterableMixinWorkaround_contains(receiver, element);
   },
@@ -1122,6 +1125,9 @@ $$.Uint8List = {"": "TypedData;",
   },
   get$iterator: function(receiver) {
     return new $.ListIterator(receiver, receiver.length, 0, null);
+  },
+  fold$2: function(receiver, initialValue, combine) {
+    return $.IterableMixinWorkaround_fold(receiver, initialValue, combine);
   },
   contains$1: function(receiver, element) {
     return $.IterableMixinWorkaround_contains(receiver, element);
@@ -1291,6 +1297,18 @@ $$.Closure$compare = {"": "Closure;call$2,$name"};
 
 $$.Closure$_throwLocaleError = {"": "Closure;call$1,$name"};
 
+$$.Closure$sod = {"": "Closure;call$0,$name"};
+
+$$.Closure$som = {"": "Closure;call$0,$name"};
+
+$$.Closure$soy = {"": "Closure;call$0,$name"};
+
+$$.Closure$eod = {"": "Closure;call$0,$name"};
+
+$$.Closure$eom = {"": "Closure;call$0,$name"};
+
+$$.Closure$eoy = {"": "Closure;call$0,$name"};
+
 $$.Closure$noop = {"": "Closure;call$1,$name"};
 
 $$.Closure$_doNothing = {"": "Closure;call$0,$name"};
@@ -1430,6 +1448,9 @@ JSArray: {"": "List/Interceptor;",
     var t1 = new $.SubListIterable(receiver, n, null);
     t1.$builtinTypeInfo = [null];
     return t1;
+  },
+  fold$2: function(receiver, initialValue, combine) {
+    return $.IterableMixinWorkaround_fold(receiver, initialValue, combine);
   },
   elementAt$1: function(receiver, index) {
     if (index >>> 0 !== index || index >= receiver.length)
@@ -3474,6 +3495,26 @@ Primitives_numMicroseconds: function() {
   return 1000 * Date.now();
 },
 
+Primitives_valueFromDecomposedDate: function(years, month, day, hours, minutes, seconds, milliseconds, isUtc) {
+  var jsMonth, value;
+  jsMonth = month - 1;
+  value = isUtc ? Date.UTC(years, jsMonth, day, hours, minutes, seconds, milliseconds) : new Date(years, jsMonth, day, hours, minutes, seconds, milliseconds).valueOf();
+  if (isNaN(value) || value < -8640000000000000 || value > 8640000000000000)
+    throw $.wrapException(new $.ArgumentError(null));
+  if (years <= 0 || years < 100)
+    return $.Primitives_patchUpY2K(value, years, isUtc);
+  return value;
+},
+
+Primitives_patchUpY2K: function(value, years, isUtc) {
+  var date = new Date(value);
+  if (isUtc)
+    date.setUTCFullYear(years);
+  else
+    date.setFullYear(years);
+  return date.valueOf();
+},
+
 Primitives_lazyAsJsDate: function(receiver) {
   if (receiver.date === void 0)
     receiver.date = new Date(receiver.millisecondsSinceEpoch);
@@ -4949,6 +4990,13 @@ IterableMixinWorkaround_forEach: function(iterable, f) {
     f.call$1(t1.get$current());
 },
 
+IterableMixinWorkaround_fold: function(iterable, initialValue, combine) {
+  var t1;
+  for (t1 = $.get$iterator$ax(iterable); t1.moveNext$0();)
+    initialValue = combine.call$2(initialValue, t1.get$current());
+  return initialValue;
+},
+
 IterableMixinWorkaround_joinList: function(list, separator) {
   var t1, buffer, i, str;
   if (typeof separator !== "string")
@@ -5052,6 +5100,603 @@ IterableMixinWorkaround_setRangeList: function(list, start, end, from, skipCount
   if ($.JSNumber_methods.$gt(otherStart + $length, $.get$length$asx(otherList)))
     throw $.wrapException(new $.StateError("Not enough elements"));
   $.Arrays_copy(otherList, otherStart, list, start, $length);
+},
+
+Sort_insertionSort_: function(a, left, right, compare) {
+  var i, el, j, t1, t2, j0;
+  if (typeof a !== "object" || a === null || (a.constructor !== Array || !!a.immutable$list) && !$.isJsIndexable(a, a[$.dispatchPropertyName]))
+    return $.Sort_insertionSort_$bailout(1, a, left, right, compare);
+  if (typeof right !== "number")
+    return $.Sort_insertionSort_$bailout(1, a, left, right, compare);
+  for (i = left + 1; i <= right; ++i) {
+    if (i >>> 0 !== i || i >= a.length)
+      throw $.ioore(i);
+    el = a[i];
+    j = i;
+    while (true) {
+      if (j > left) {
+        t1 = j - 1;
+        if (t1 < 0 || t1 >= a.length)
+          throw $.ioore(t1);
+        t1 = $.$gt$n(compare.call$2(a[t1], el), 0) === true;
+      } else
+        t1 = false;
+      t2 = a.length;
+      if (!t1)
+        break;
+      j0 = j - 1;
+      if (j0 < 0 || j0 >= t2)
+        throw $.ioore(j0);
+      t1 = a[j0];
+      if (j < 0 || j >= t2)
+        throw $.ioore(j);
+      a[j] = t1;
+      j = j0;
+    }
+    if (j < 0 || j >= t2)
+      throw $.ioore(j);
+    a[j] = el;
+  }
+},
+
+Sort_insertionSort_$bailout: function(state0, a, left, right, compare) {
+  var i, t1, el, j, j0;
+  for (i = left + 1, t1 = $.getInterceptor$asx(a); $.JSNumber_methods.$le(i, right); ++i) {
+    el = t1.$index(a, i);
+    j = i;
+    while (true) {
+      if (!(j > left && $.$gt$n(compare.call$2(t1.$index(a, j - 1), el), 0) === true))
+        break;
+      j0 = j - 1;
+      t1.$indexSet(a, j, t1.$index(a, j0));
+      j = j0;
+    }
+    t1.$indexSet(a, j, el);
+  }
+},
+
+Sort__dualPivotQuicksort: function(a, left, right, compare) {
+  var t1, sixth, index1, index5, index3, index2, index4, el1, el2, el3, el4, el5, t0, t2, less, great, k, ak, comp, t3, great0, less0, t4;
+  if (typeof a !== "object" || a === null || (a.constructor !== Array || !!a.immutable$list) && !$.isJsIndexable(a, a[$.dispatchPropertyName]))
+    return $.Sort__dualPivotQuicksort$bailout(1, a, left, right, compare);
+  t1 = $.getInterceptor$n(right);
+  sixth = $.$tdiv$n($.$add$ns(t1.$sub(right, left), 1), 6);
+  if (typeof sixth !== "number")
+    throw $.iae(sixth);
+  index1 = left + sixth;
+  index5 = t1.$sub(right, sixth);
+  if (typeof right !== "number")
+    throw $.iae(right);
+  index3 = $.JSNumber_methods.$tdiv(left + right, 2);
+  index2 = index3 - sixth;
+  index4 = index3 + sixth;
+  t1 = a.length;
+  if (index1 >>> 0 !== index1 || index1 >= t1)
+    throw $.ioore(index1);
+  el1 = a[index1];
+  if (index2 >>> 0 !== index2 || index2 >= t1)
+    throw $.ioore(index2);
+  el2 = a[index2];
+  if (index3 >>> 0 !== index3 || index3 >= t1)
+    throw $.ioore(index3);
+  el3 = a[index3];
+  if (index4 >>> 0 !== index4 || index4 >= t1)
+    throw $.ioore(index4);
+  el4 = a[index4];
+  if (index5 >>> 0 !== index5 || index5 >= t1)
+    throw $.ioore(index5);
+  el5 = a[index5];
+  if ($.$gt$n(compare.call$2(el1, el2), 0) === true) {
+    t0 = el2;
+    el2 = el1;
+    el1 = t0;
+  }
+  if ($.$gt$n(compare.call$2(el4, el5), 0) === true) {
+    t0 = el5;
+    el5 = el4;
+    el4 = t0;
+  }
+  if ($.$gt$n(compare.call$2(el1, el3), 0) === true) {
+    t0 = el3;
+    el3 = el1;
+    el1 = t0;
+  }
+  if ($.$gt$n(compare.call$2(el2, el3), 0) === true) {
+    t0 = el3;
+    el3 = el2;
+    el2 = t0;
+  }
+  if ($.$gt$n(compare.call$2(el1, el4), 0) === true) {
+    t0 = el4;
+    el4 = el1;
+    el1 = t0;
+  }
+  if ($.$gt$n(compare.call$2(el3, el4), 0) === true) {
+    t0 = el4;
+    el4 = el3;
+    el3 = t0;
+  }
+  if ($.$gt$n(compare.call$2(el2, el5), 0) === true) {
+    t0 = el5;
+    el5 = el2;
+    el2 = t0;
+  }
+  if ($.$gt$n(compare.call$2(el2, el3), 0) === true) {
+    t0 = el3;
+    el3 = el2;
+    el2 = t0;
+  }
+  if ($.$gt$n(compare.call$2(el4, el5), 0) === true) {
+    t0 = el5;
+    el5 = el4;
+    el4 = t0;
+  }
+  t1 = a.length;
+  if (index1 >= t1)
+    throw $.ioore(index1);
+  a[index1] = el1;
+  if (index3 >= t1)
+    throw $.ioore(index3);
+  a[index3] = el3;
+  if (index5 >= t1)
+    throw $.ioore(index5);
+  a[index5] = el5;
+  if (left >>> 0 !== left || left >= t1)
+    throw $.ioore(left);
+  t2 = a[left];
+  if (index2 >= t1)
+    throw $.ioore(index2);
+  a[index2] = t2;
+  if (right >>> 0 !== right || right >= t1)
+    throw $.ioore(right);
+  t2 = a[right];
+  if (index4 >= t1)
+    throw $.ioore(index4);
+  a[index4] = t2;
+  less = left + 1;
+  great = right - 1;
+  t1 = $.$eq(compare.call$2(el2, el4), 0) === true;
+  if (t1)
+    for (k = less; k <= great; ++k) {
+      if (k >= a.length)
+        throw $.ioore(k);
+      ak = a[k];
+      comp = compare.call$2(ak, el2);
+      t2 = $.getInterceptor(comp);
+      if (t2.$eq(comp, 0) === true)
+        continue;
+      if (t2.$lt(comp, 0) === true) {
+        if (k !== less) {
+          t2 = a.length;
+          if (less >= t2)
+            throw $.ioore(less);
+          t3 = a[less];
+          if (k >= t2)
+            throw $.ioore(k);
+          a[k] = t3;
+          a[less] = ak;
+        }
+        ++less;
+      } else
+        for (; true;) {
+          if (great < 0 || great >= a.length)
+            throw $.ioore(great);
+          comp = compare.call$2(a[great], el2);
+          t2 = $.getInterceptor$n(comp);
+          if (t2.$gt(comp, 0) === true) {
+            --great;
+            continue;
+          } else {
+            t2 = t2.$lt(comp, 0);
+            great0 = great - 1;
+            t3 = a.length;
+            if (t2 === true) {
+              if (less >= t3)
+                throw $.ioore(less);
+              t2 = a[less];
+              if (k >= t3)
+                throw $.ioore(k);
+              a[k] = t2;
+              less0 = less + 1;
+              if (great >= t3)
+                throw $.ioore(great);
+              a[less] = a[great];
+              a[great] = ak;
+              great = great0;
+              less = less0;
+              break;
+            } else {
+              if (great >= t3)
+                throw $.ioore(great);
+              t2 = a[great];
+              if (k >= t3)
+                throw $.ioore(k);
+              a[k] = t2;
+              a[great] = ak;
+              great = great0;
+              break;
+            }
+          }
+        }
+    }
+  else
+    for (k = less; k <= great; ++k) {
+      if (k >= a.length)
+        throw $.ioore(k);
+      ak = a[k];
+      if ($.$lt$n(compare.call$2(ak, el2), 0) === true) {
+        if (k !== less) {
+          t2 = a.length;
+          if (less >= t2)
+            throw $.ioore(less);
+          t3 = a[less];
+          if (k >= t2)
+            throw $.ioore(k);
+          a[k] = t3;
+          a[less] = ak;
+        }
+        ++less;
+      } else if ($.$gt$n(compare.call$2(ak, el4), 0) === true)
+        for (; true;) {
+          if (great < 0 || great >= a.length)
+            throw $.ioore(great);
+          if ($.$gt$n(compare.call$2(a[great], el4), 0) === true) {
+            --great;
+            if (great < k)
+              break;
+            continue;
+          } else {
+            if (great >= a.length)
+              throw $.ioore(great);
+            t2 = $.$lt$n(compare.call$2(a[great], el2), 0);
+            great0 = great - 1;
+            t3 = a.length;
+            if (t2 === true) {
+              if (less >= t3)
+                throw $.ioore(less);
+              t2 = a[less];
+              if (k >= t3)
+                throw $.ioore(k);
+              a[k] = t2;
+              less0 = less + 1;
+              if (great >= t3)
+                throw $.ioore(great);
+              a[less] = a[great];
+              a[great] = ak;
+              less = less0;
+            } else {
+              if (great >= t3)
+                throw $.ioore(great);
+              t2 = a[great];
+              if (k >= t3)
+                throw $.ioore(k);
+              a[k] = t2;
+              a[great] = ak;
+            }
+            great = great0;
+            break;
+          }
+        }
+    }
+  t2 = less - 1;
+  t3 = a.length;
+  if (t2 >= t3)
+    throw $.ioore(t2);
+  t4 = a[t2];
+  if (left >= t3)
+    throw $.ioore(left);
+  a[left] = t4;
+  a[t2] = el2;
+  t2 = great + 1;
+  if (t2 < 0 || t2 >= t3)
+    throw $.ioore(t2);
+  t4 = a[t2];
+  if (right >= t3)
+    throw $.ioore(right);
+  a[right] = t4;
+  a[t2] = el4;
+  t2 = less - 2;
+  if (t2 - left <= 32)
+    $.Sort_insertionSort_(a, left, t2, compare);
+  else
+    $.Sort__dualPivotQuicksort(a, left, t2, compare);
+  t2 = great + 2;
+  if (right - t2 <= 32)
+    $.Sort_insertionSort_(a, t2, right, compare);
+  else
+    $.Sort__dualPivotQuicksort(a, t2, right, compare);
+  if (t1)
+    return;
+  if (less < index1 && great > index5) {
+    while (true) {
+      if (less >= a.length)
+        throw $.ioore(less);
+      if (!($.$eq(compare.call$2(a[less], el2), 0) === true))
+        break;
+      ++less;
+    }
+    while (true) {
+      if (great < 0 || great >= a.length)
+        throw $.ioore(great);
+      if (!($.$eq(compare.call$2(a[great], el4), 0) === true))
+        break;
+      --great;
+    }
+    for (k = less; k <= great; ++k) {
+      if (k >= a.length)
+        throw $.ioore(k);
+      ak = a[k];
+      if ($.$eq(compare.call$2(ak, el2), 0) === true) {
+        if (k !== less) {
+          t1 = a.length;
+          if (less >= t1)
+            throw $.ioore(less);
+          t2 = a[less];
+          if (k >= t1)
+            throw $.ioore(k);
+          a[k] = t2;
+          a[less] = ak;
+        }
+        ++less;
+      } else if ($.$eq(compare.call$2(ak, el4), 0) === true)
+        for (; true;) {
+          if (great < 0 || great >= a.length)
+            throw $.ioore(great);
+          if ($.$eq(compare.call$2(a[great], el4), 0) === true) {
+            --great;
+            if (great < k)
+              break;
+            continue;
+          } else {
+            if (great >= a.length)
+              throw $.ioore(great);
+            t1 = $.$lt$n(compare.call$2(a[great], el2), 0);
+            great0 = great - 1;
+            t2 = a.length;
+            if (t1 === true) {
+              if (less >= t2)
+                throw $.ioore(less);
+              t1 = a[less];
+              if (k >= t2)
+                throw $.ioore(k);
+              a[k] = t1;
+              less0 = less + 1;
+              if (great >= t2)
+                throw $.ioore(great);
+              a[less] = a[great];
+              a[great] = ak;
+              less = less0;
+            } else {
+              if (great >= t2)
+                throw $.ioore(great);
+              t1 = a[great];
+              if (k >= t2)
+                throw $.ioore(k);
+              a[k] = t1;
+              a[great] = ak;
+            }
+            great = great0;
+            break;
+          }
+        }
+    }
+    if (great - less <= 32)
+      $.Sort_insertionSort_(a, less, great, compare);
+    else
+      $.Sort__dualPivotQuicksort(a, less, great, compare);
+  } else if (great - less <= 32)
+    $.Sort_insertionSort_(a, less, great, compare);
+  else
+    $.Sort__dualPivotQuicksort(a, less, great, compare);
+},
+
+Sort__dualPivotQuicksort$bailout: function(state0, a, left, right, compare) {
+  var t1, sixth, index1, index5, index3, index2, index4, el1, el2, el3, el4, el5, t0, less, great, t2, k, ak, comp, t3, great0, less0;
+  t1 = $.getInterceptor$n(right);
+  sixth = $.$tdiv$n($.$add$ns(t1.$sub(right, left), 1), 6);
+  if (typeof sixth !== "number")
+    throw $.iae(sixth);
+  index1 = left + sixth;
+  index5 = t1.$sub(right, sixth);
+  if (typeof right !== "number")
+    throw $.iae(right);
+  index3 = $.JSNumber_methods.$tdiv(left + right, 2);
+  index2 = index3 - sixth;
+  index4 = index3 + sixth;
+  t1 = $.getInterceptor$asx(a);
+  el1 = t1.$index(a, index1);
+  el2 = t1.$index(a, index2);
+  el3 = t1.$index(a, index3);
+  el4 = t1.$index(a, index4);
+  el5 = t1.$index(a, index5);
+  if ($.$gt$n(compare.call$2(el1, el2), 0) === true) {
+    t0 = el2;
+    el2 = el1;
+    el1 = t0;
+  }
+  if ($.$gt$n(compare.call$2(el4, el5), 0) === true) {
+    t0 = el5;
+    el5 = el4;
+    el4 = t0;
+  }
+  if ($.$gt$n(compare.call$2(el1, el3), 0) === true) {
+    t0 = el3;
+    el3 = el1;
+    el1 = t0;
+  }
+  if ($.$gt$n(compare.call$2(el2, el3), 0) === true) {
+    t0 = el3;
+    el3 = el2;
+    el2 = t0;
+  }
+  if ($.$gt$n(compare.call$2(el1, el4), 0) === true) {
+    t0 = el4;
+    el4 = el1;
+    el1 = t0;
+  }
+  if ($.$gt$n(compare.call$2(el3, el4), 0) === true) {
+    t0 = el4;
+    el4 = el3;
+    el3 = t0;
+  }
+  if ($.$gt$n(compare.call$2(el2, el5), 0) === true) {
+    t0 = el5;
+    el5 = el2;
+    el2 = t0;
+  }
+  if ($.$gt$n(compare.call$2(el2, el3), 0) === true) {
+    t0 = el3;
+    el3 = el2;
+    el2 = t0;
+  }
+  if ($.$gt$n(compare.call$2(el4, el5), 0) === true) {
+    t0 = el5;
+    el5 = el4;
+    el4 = t0;
+  }
+  t1.$indexSet(a, index1, el1);
+  t1.$indexSet(a, index3, el3);
+  t1.$indexSet(a, index5, el5);
+  t1.$indexSet(a, index2, t1.$index(a, left));
+  t1.$indexSet(a, index4, t1.$index(a, right));
+  less = left + 1;
+  great = right - 1;
+  t2 = $.$eq(compare.call$2(el2, el4), 0) === true;
+  if (t2)
+    for (k = less; k <= great; ++k) {
+      ak = t1.$index(a, k);
+      comp = compare.call$2(ak, el2);
+      t3 = $.getInterceptor(comp);
+      if (t3.$eq(comp, 0) === true)
+        continue;
+      if (t3.$lt(comp, 0) === true) {
+        if (k !== less) {
+          t1.$indexSet(a, k, t1.$index(a, less));
+          t1.$indexSet(a, less, ak);
+        }
+        ++less;
+      } else
+        for (; true;) {
+          comp = compare.call$2(t1.$index(a, great), el2);
+          t3 = $.getInterceptor$n(comp);
+          if (t3.$gt(comp, 0) === true) {
+            --great;
+            continue;
+          } else {
+            great0 = great - 1;
+            if (t3.$lt(comp, 0) === true) {
+              t1.$indexSet(a, k, t1.$index(a, less));
+              less0 = less + 1;
+              t1.$indexSet(a, less, t1.$index(a, great));
+              t1.$indexSet(a, great, ak);
+              great = great0;
+              less = less0;
+              break;
+            } else {
+              t1.$indexSet(a, k, t1.$index(a, great));
+              t1.$indexSet(a, great, ak);
+              great = great0;
+              break;
+            }
+          }
+        }
+    }
+  else
+    for (k = less; k <= great; ++k) {
+      ak = t1.$index(a, k);
+      if ($.$lt$n(compare.call$2(ak, el2), 0) === true) {
+        if (k !== less) {
+          t1.$indexSet(a, k, t1.$index(a, less));
+          t1.$indexSet(a, less, ak);
+        }
+        ++less;
+      } else if ($.$gt$n(compare.call$2(ak, el4), 0) === true)
+        for (; true;)
+          if ($.$gt$n(compare.call$2(t1.$index(a, great), el4), 0) === true) {
+            --great;
+            if (great < k)
+              break;
+            continue;
+          } else {
+            great0 = great - 1;
+            if ($.$lt$n(compare.call$2(t1.$index(a, great), el2), 0) === true) {
+              t1.$indexSet(a, k, t1.$index(a, less));
+              less0 = less + 1;
+              t1.$indexSet(a, less, t1.$index(a, great));
+              t1.$indexSet(a, great, ak);
+              great = great0;
+              less = less0;
+            } else {
+              t1.$indexSet(a, k, t1.$index(a, great));
+              t1.$indexSet(a, great, ak);
+              great = great0;
+            }
+            break;
+          }
+    }
+  t3 = less - 1;
+  t1.$indexSet(a, left, t1.$index(a, t3));
+  t1.$indexSet(a, t3, el2);
+  t3 = great + 1;
+  t1.$indexSet(a, right, t1.$index(a, t3));
+  t1.$indexSet(a, t3, el4);
+  t3 = less - 2;
+  if (t3 - left <= 32)
+    $.Sort_insertionSort_(a, left, t3, compare);
+  else
+    $.Sort__dualPivotQuicksort(a, left, t3, compare);
+  t3 = great + 2;
+  if (right - t3 <= 32)
+    $.Sort_insertionSort_(a, t3, right, compare);
+  else
+    $.Sort__dualPivotQuicksort(a, t3, right, compare);
+  if (t2)
+    return;
+  if (less < index1 && $.JSNumber_methods.$gt(great, index5)) {
+    for (; $.$eq(compare.call$2(t1.$index(a, less), el2), 0) === true;)
+      ++less;
+    for (; $.$eq(compare.call$2(t1.$index(a, great), el4), 0) === true;)
+      --great;
+    for (k = less; k <= great; ++k) {
+      ak = t1.$index(a, k);
+      if ($.$eq(compare.call$2(ak, el2), 0) === true) {
+        if (k !== less) {
+          t1.$indexSet(a, k, t1.$index(a, less));
+          t1.$indexSet(a, less, ak);
+        }
+        ++less;
+      } else if ($.$eq(compare.call$2(ak, el4), 0) === true)
+        for (; true;)
+          if ($.$eq(compare.call$2(t1.$index(a, great), el4), 0) === true) {
+            --great;
+            if (great < k)
+              break;
+            continue;
+          } else {
+            great0 = great - 1;
+            if ($.$lt$n(compare.call$2(t1.$index(a, great), el2), 0) === true) {
+              t1.$indexSet(a, k, t1.$index(a, less));
+              less0 = less + 1;
+              t1.$indexSet(a, less, t1.$index(a, great));
+              t1.$indexSet(a, great, ak);
+              great = great0;
+              less = less0;
+            } else {
+              t1.$indexSet(a, k, t1.$index(a, great));
+              t1.$indexSet(a, great, ak);
+              great = great0;
+            }
+            break;
+          }
+    }
+    if (great - less <= 32)
+      $.Sort_insertionSort_(a, less, great, compare);
+    else
+      $.Sort__dualPivotQuicksort(a, less, great, compare);
+  } else if (great - less <= 32)
+    $.Sort_insertionSort_(a, less, great, compare);
+  else
+    $.Sort__dualPivotQuicksort(a, less, great, compare);
 },
 
 ToString__emitValue: function(i, result, visiting) {
@@ -5495,6 +6140,16 @@ Stream: {"": "Object;",
     t2.$builtinTypeInfo = [t1, null];
     return t2;
   },
+  fold$2: function(_, initialValue, combine) {
+    var t1, result;
+    t1 = {};
+    result = new $._FutureImpl(0, null);
+    result.$builtinTypeInfo = [null];
+    t1.value_0 = initialValue;
+    t1.subscription_1 = null;
+    t1.subscription_1 = this.listen$4$cancelOnError$onDone$onError(new $.Stream_fold_closure(t1, combine, result), true, new $.Stream_fold_closure0(t1, result), new $.Stream_fold_closure1(result));
+    return result;
+  },
   contains$1: function(_, match) {
     var t1, future;
     t1 = {};
@@ -5702,6 +6357,42 @@ Stream_Stream$periodic_closure2: {"": "Closure;box_0",
     if (t2 != null)
       t2.cancel$0();
     t1.timer_1 = null;
+  },
+  $isFunction: true
+},
+
+Stream_fold_closure: {"": "Closure;box_0,combine_1,result_2",
+  call$1: function(element) {
+    var t1 = this.box_0;
+    $._runUserCode(new $.Stream_fold__closure(t1, this.combine_1, element), new $.Stream_fold__closure0(t1), $._cancelAndError(t1.subscription_1, this.result_2));
+  },
+  $isFunction: true
+},
+
+Stream_fold__closure: {"": "Closure;box_0,combine_3,element_4",
+  call$0: function() {
+    return this.combine_3.call$2(this.box_0.value_0, this.element_4);
+  },
+  $isFunction: true
+},
+
+Stream_fold__closure0: {"": "Closure;box_0",
+  call$1: function(newValue) {
+    this.box_0.value_0 = newValue;
+  },
+  $isFunction: true
+},
+
+Stream_fold_closure1: {"": "Closure;result_5",
+  call$1: function(e) {
+    this.result_5._setError$1(e);
+  },
+  $isFunction: true
+},
+
+Stream_fold_closure0: {"": "Closure;box_0,result_6",
+  call$0: function() {
+    this.result_6._setValue$1(this.box_0.value_0);
   },
   $isFunction: true
 },
@@ -7965,6 +8656,30 @@ ListMixin: {"": "Object;",
     t1.$builtinTypeInfo = [null, null];
     return t1;
   },
+  fold$2: function(receiver, initialValue, combine) {
+    var $length, value, i;
+    if (typeof receiver !== "string" && (typeof receiver !== "object" || receiver === null || receiver.constructor !== Array && !$.isJsIndexable(receiver, receiver[$.dispatchPropertyName])))
+      return this.fold$2$bailout(1, initialValue, combine, receiver);
+    $length = receiver.length;
+    for (value = initialValue, i = 0; i < $length; ++i) {
+      if (i >= receiver.length)
+        throw $.ioore(i);
+      value = combine.call$2(value, receiver[i]);
+      if ($length !== receiver.length)
+        throw $.wrapException(new $.ConcurrentModificationError(receiver));
+    }
+    return value;
+  },
+  fold$2$bailout: function(state0, initialValue, combine, receiver) {
+    var $length, t1, value, i;
+    $length = this.get$length(receiver);
+    for (t1 = $.getInterceptor($length), value = initialValue, i = 0; $.JSNumber_methods.$lt(i, $length); ++i) {
+      value = combine.call$2(value, this.$index(receiver, i));
+      if (t1.$eq($length, this.get$length(receiver)) !== true)
+        throw $.wrapException(new $.ConcurrentModificationError(receiver));
+    }
+    return value;
+  },
   skip$1: function(receiver, count) {
     var t1 = new $.SubListIterable(receiver, count, null);
     t1.$builtinTypeInfo = [null];
@@ -9263,6 +9978,47 @@ DateTime: {"": "Object;millisecondsSinceEpoch<,isUtc",
       $.throwExpression(new $.ArgumentError(t2));
     return new $.DateTime(t1, t2);
   },
+  get$year: function() {
+    if (this.isUtc === true) {
+      if (this.date === void 0)
+        this.date = new Date(this.millisecondsSinceEpoch);
+      var t1 = this.date.getUTCFullYear() + 0;
+    } else {
+      if (this.date === void 0)
+        this.date = new Date(this.millisecondsSinceEpoch);
+      t1 = this.date.getFullYear() + 0;
+    }
+    return t1;
+  },
+  get$month: function() {
+    if (this.isUtc === true) {
+      if (this.date === void 0)
+        this.date = new Date(this.millisecondsSinceEpoch);
+      var t1 = this.date.getUTCMonth() + 1;
+    } else {
+      if (this.date === void 0)
+        this.date = new Date(this.millisecondsSinceEpoch);
+      t1 = this.date.getMonth() + 1;
+    }
+    return t1;
+  },
+  get$day: function() {
+    if (this.isUtc === true) {
+      if (this.date === void 0)
+        this.date = new Date(this.millisecondsSinceEpoch);
+      var t1 = this.date.getUTCDate() + 0;
+    } else {
+      if (this.date === void 0)
+        this.date = new Date(this.millisecondsSinceEpoch);
+      t1 = this.date.getDate() + 0;
+    }
+    return t1;
+  },
+  DateTime$_internal$8: function(year, month, day, hour, minute, second, millisecond, isUtc) {
+    if (this.date === void 0)
+      this.date = new Date(this.millisecondsSinceEpoch);
+    this.date;
+  },
   DateTime$fromMillisecondsSinceEpoch$2$isUtc: function(millisecondsSinceEpoch, isUtc) {
     if ($.abs$0$n(millisecondsSinceEpoch) > 8640000000000000)
       throw $.wrapException(new $.ArgumentError(millisecondsSinceEpoch));
@@ -9413,7 +10169,26 @@ Duration: {"": "Object;_duration<",
     }
   },
   $le: function(_, other) {
-    return $.$le$n(this._duration, other.get$_duration());
+    var t1, t2;
+    t1 = this._duration;
+    if (typeof t1 !== "number")
+      return this.$$le$bailout(1, other, t1);
+    t2 = other.get$_duration();
+    if (typeof t2 !== "number")
+      return this.$$le$bailout(2, 0, t1, t2);
+    return t1 <= t2;
+  },
+  $$le$bailout: function(state0, other, t1, t2) {
+    switch (state0) {
+      case 0:
+        t1 = this._duration;
+      case 1:
+        state0 = 0;
+        t2 = other.get$_duration();
+      case 2:
+        state0 = 0;
+        return $.$le$n(t1, t2);
+    }
   },
   $ge: function(_, other) {
     var t1, t2;
@@ -10808,6 +11583,10 @@ CssClassSetImpl: {"": "Object;",
   get$length: function(_) {
     return this.readClasses$0()._liblib1$_length;
   },
+  fold$2: function(_, initialValue, combine) {
+    var t1 = this.readClasses$0();
+    return t1.fold$2(t1, initialValue, combine);
+  },
   contains$1: function(_, value) {
     var t1 = this.readClasses$0();
     return t1.contains$1(t1, value);
@@ -11288,6 +12067,99 @@ duration_closure0: {"": "Closure;",
   $isFunction: true
 },
 
+selectedTime_closure: {"": "Closure;",
+  call$0: function() {
+    var t1 = new $.DateTime(Date.now(), false);
+    if (t1.date === void 0)
+      t1.date = new Date(t1.millisecondsSinceEpoch);
+    t1.date;
+    return t1;
+  },
+  $isFunction: true
+},
+
+sod_closure: {"": "Closure;",
+  call$1: function(now) {
+    var t1, t2, t3;
+    t1 = now.get$year();
+    t2 = now.get$month();
+    t3 = now.get$day();
+    t1 = new $.DateTime($.Primitives_valueFromDecomposedDate(t1, t2, t3, 0, 0, 0, 0, false), false);
+    if (t1.date === void 0)
+      t1.date = new Date(t1.millisecondsSinceEpoch);
+    t1.date;
+    return t1;
+  },
+  $isFunction: true
+},
+
+som_closure: {"": "Closure;",
+  call$1: function(now) {
+    var t1, t2;
+    t1 = now.get$year();
+    t2 = now.get$month();
+    t1 = new $.DateTime($.Primitives_valueFromDecomposedDate(t1, t2, 1, 0, 0, 0, 0, false), false);
+    if (t1.date === void 0)
+      t1.date = new Date(t1.millisecondsSinceEpoch);
+    t1.date;
+    return t1;
+  },
+  $isFunction: true
+},
+
+soy_closure: {"": "Closure;",
+  call$1: function(now) {
+    var t1 = now.get$year();
+    t1 = new $.DateTime($.Primitives_valueFromDecomposedDate(t1, 1, 1, 0, 0, 0, 0, false), false);
+    if (t1.date === void 0)
+      t1.date = new Date(t1.millisecondsSinceEpoch);
+    t1.date;
+    return t1;
+  },
+  $isFunction: true
+},
+
+eod_closure: {"": "Closure;",
+  call$1: function(now) {
+    var t1, t2, t3;
+    t1 = now.get$year();
+    t2 = now.get$month();
+    t3 = now.get$day();
+    t1 = new $.DateTime($.Primitives_valueFromDecomposedDate(t1, t2, t3 + 1, 0, 0, 0, 0, false), false);
+    if (t1.date === void 0)
+      t1.date = new Date(t1.millisecondsSinceEpoch);
+    t1.date;
+    return t1;
+  },
+  $isFunction: true
+},
+
+eom_closure: {"": "Closure;",
+  call$1: function(now) {
+    var t1, t2;
+    t1 = now.get$year();
+    t2 = now.get$month();
+    t1 = new $.DateTime($.Primitives_valueFromDecomposedDate(t1, t2 + 1, 1, 0, 0, 0, 0, false), false);
+    if (t1.date === void 0)
+      t1.date = new Date(t1.millisecondsSinceEpoch);
+    t1.date;
+    return t1;
+  },
+  $isFunction: true
+},
+
+eoy_closure: {"": "Closure;",
+  call$1: function(now) {
+    var t1 = now.get$year();
+    t1 = new $.DateTime($.Primitives_valueFromDecomposedDate(t1 + 1, 1, 1, 0, 0, 0, 0, false), false);
+    if (t1.date === void 0)
+      t1.date = new Date(t1.millisecondsSinceEpoch);
+    t1.date;
+    return t1;
+  },
+  $isFunction: true
+},
+
 main_closure: {"": "Closure;",
   call$1: function(locale) {
     var t1, foundLocale;
@@ -11320,37 +12192,118 @@ main__closure: {"": "Closure;",
   $isFunction: true
 },
 
-closure0: {"": "Closure;",
+closure1: {"": "Closure;",
+  call$0: function() {
+    var t1, $arguments, arguments0, t2, r, compare;
+    if ($._activeObserver != null) {
+      t1 = $.get$__changes();
+      $._activeObserver._addRead$3(t1, 1, "locales");
+    }
+    t1 = new $.WhereIterable($.__$locales, new $._closure());
+    t1.$builtinTypeInfo = [null];
+    $arguments = t1.$asIterableBase;
+    arguments0 = $.getRuntimeTypeInfo(t1);
+    if ($arguments != null && $arguments.constructor === Array)
+      ;
+    else
+      $arguments = typeof $arguments == "function" ? $arguments.apply(null, arguments0) : arguments0;
+    t2 = $arguments == null ? null : $arguments[0];
+    t1 = new $.MappedIterable(t1, new $._closure0());
+    t1.$builtinTypeInfo = [t2, null];
+    $arguments = t1.$asIterableBase;
+    arguments0 = $.getRuntimeTypeInfo(t1);
+    if ($arguments != null && $arguments.constructor === Array)
+      ;
+    else
+      $arguments = typeof $arguments == "function" ? $arguments.apply(null, arguments0) : arguments0;
+    t2 = $arguments == null ? null : $arguments[0];
+    t1 = new $.WhereIterable(t1, new $._closure1());
+    t1.$builtinTypeInfo = [t2];
+    $arguments = t1.$asIterableBase;
+    arguments0 = $.getRuntimeTypeInfo(t1);
+    if ($arguments != null && $arguments.constructor === Array)
+      ;
+    else
+      $arguments = typeof $arguments == "function" ? $arguments.apply(null, arguments0) : arguments0;
+    t2 = $arguments == null ? null : $arguments[0];
+    r = $.List_List$from(t1, true, t2);
+    compare = new $._closure2();
+    if (!!r.immutable$list)
+      $.throwExpression(new $.UnsupportedError("sort"));
+    t1 = $.$sub$n($.get$length$asx(r), 1);
+    if ($.$le$n($.$sub$n(t1, 0), 32) === true)
+      $.Sort_insertionSort_(r, 0, t1, compare);
+    else
+      $.Sort__dualPivotQuicksort(r, 0, t1, compare);
+    return r;
+  },
+  $isFunction: true
+},
+
+_closure: {"": "Closure;",
   call$1: function(locale) {
     return !$.Map_JB81T.containsKey$1(locale);
   },
   $isFunction: true
 },
 
-closure1: {"": "Closure;",
-  call$2: function(filtered, locale) {
-    var t1, languageLocale;
+_closure0: {"": "Closure;",
+  call$1: function(locale) {
+    var t1;
     if ($._activeObserver != null) {
       t1 = $.get$__changes();
       $._activeObserver._addRead$3(t1, 1, "_localeNames");
     }
-    languageLocale = $.Intl_verifiedLocale(locale, $.get$__$_localeNames().get$containsKey(), new $._closure());
-    if (languageLocale != null && filtered.containsKey$1(languageLocale) !== true) {
+    return $.Intl_verifiedLocale(locale, $.get$__$_localeNames().get$containsKey(), new $.__closure());
+  },
+  $isFunction: true
+},
+
+__closure: {"": "Closure;",
+  call$1: function(_) {
+    return;
+  },
+  $isFunction: true
+},
+
+_closure1: {"": "Closure;",
+  call$1: function(locale) {
+    return locale != null;
+  },
+  $isFunction: true
+},
+
+_closure2: {"": "Closure;",
+  call$2: function(a, b) {
+    var t1, t2;
+    if ($._activeObserver != null) {
+      t1 = $.get$__changes();
+      $._activeObserver._addRead$3(t1, 1, "_localeNames");
+    }
+    t1 = $.get$__$_localeNames();
+    t1 = t1.$index(t1, a);
+    if ($._activeObserver != null) {
+      t2 = $.get$__changes();
+      $._activeObserver._addRead$3(t2, 1, "_localeNames");
+    }
+    t2 = $.get$__$_localeNames();
+    return $.compareTo$1$ns(t1, t2.$index(t2, b));
+  },
+  $isFunction: true
+},
+
+closure0: {"": "Closure;",
+  call$2: function(filtered, locale) {
+    var t1;
+    if (filtered.containsKey$1(locale) !== true) {
       if ($._activeObserver != null) {
         t1 = $.get$__changes();
         $._activeObserver._addRead$3(t1, 1, "_localeNames");
       }
       t1 = $.get$__$_localeNames();
-      $.$indexSet$ax(filtered, locale, t1.$index(t1, languageLocale));
+      $.$indexSet$ax(filtered, locale, t1.$index(t1, locale));
     }
     return filtered;
-  },
-  $isFunction: true
-},
-
-_closure: {"": "Closure;",
-  call$1: function(_) {
-    return;
   },
   $isFunction: true
 },
@@ -11436,7 +12389,7 @@ init_autogenerated__closure1: {"": "Closure;locale_4",
 init_autogenerated_closure2: {"": "Closure;box_0",
   call$1: function($$event) {
     var t1, t2;
-    t1 = $.get$value$x(this.box_0.__e6_2);
+    t1 = $.get$value$x(this.box_0.__e6_3);
     t2 = $.get$__changes().$$_observers;
     if (t2 != null) {
       t2.get$head;
@@ -11464,8 +12417,8 @@ init_autogenerated_closure4: {"": "Closure;",
 init_autogenerated_closure3: {"": "Closure;box_0",
   call$1: function(e) {
     var t1 = this.box_0;
-    if ($.$eq($.get$value$x(t1.__e6_2), e) !== true)
-      $.set$value$x(t1.__e6_2, e);
+    if ($.$eq($.get$value$x(t1.__e6_3), e) !== true)
+      $.set$value$x(t1.__e6_3, e);
   },
   $isFunction: true
 },
@@ -11473,7 +12426,7 @@ init_autogenerated_closure3: {"": "Closure;box_0",
 init_autogenerated_closure5: {"": "Closure;box_0",
   call$1: function($$event) {
     var t1, t2;
-    t1 = $.get$value$x(this.box_0.__e7_3);
+    t1 = $.get$value$x(this.box_0.__e7_4);
     t2 = $.get$__changes().$$_observers;
     if (t2 != null) {
       t2.get$head;
@@ -11501,8 +12454,8 @@ init_autogenerated_closure7: {"": "Closure;",
 init_autogenerated_closure6: {"": "Closure;box_0",
   call$1: function(e) {
     var t1 = this.box_0;
-    if ($.$eq($.get$value$x(t1.__e7_3), e) !== true)
-      $.set$value$x(t1.__e7_3, e);
+    if ($.$eq($.get$value$x(t1.__e7_4), e) !== true)
+      $.set$value$x(t1.__e7_4, e);
   },
   $isFunction: true
 },
@@ -11514,14 +12467,41 @@ init_autogenerated_closure8: {"": "Closure;",
   $isFunction: true
 },
 
-init_autogenerated_closure9: {"": "Closure;",
+init_autogenerated_closure9: {"": "Closure;box_0",
+  call$1: function($$event) {
+    $.selectedTime($.get$value$x(this.box_0.__e10_0));
+  },
+  $isFunction: true
+},
+
+init_autogenerated_closure11: {"": "Closure;",
+  call$0: function() {
+    if ($._activeObserver != null) {
+      var t1 = $.get$__changes();
+      $._activeObserver._addRead$3(t1, 1, "_selectedTime");
+    }
+    return $.__$_selectedTime;
+  },
+  $isFunction: true
+},
+
+init_autogenerated_closure10: {"": "Closure;box_0",
+  call$1: function(e) {
+    var t1 = this.box_0;
+    if ($.$eq($.get$value$x(t1.__e10_0), e) !== true)
+      $.set$value$x(t1.__e10_0, e);
+  },
+  $isFunction: true
+},
+
+init_autogenerated_closure12: {"": "Closure;",
   call$0: function() {
     return "{{dateTime}}";
   },
   $isFunction: true
 },
 
-init_autogenerated_closure11: {"": "Closure;",
+init_autogenerated_closure14: {"": "Closure;",
   call$0: function() {
     var t1, t2, t3;
     if ($._activeObserver != null) {
@@ -11539,16 +12519,16 @@ init_autogenerated_closure11: {"": "Closure;",
   $isFunction: true
 },
 
-init_autogenerated_closure10: {"": "Closure;box_0",
+init_autogenerated_closure13: {"": "Closure;box_0",
   call$1: function(e) {
     var t1 = this.box_0;
-    if ($.$eq($.get$format$x($.get$xtag$x(t1.__e12_0)), e) !== true)
-      $.set$format$x($.get$xtag$x(t1.__e12_0), e);
+    if ($.$eq($.get$format$x($.get$xtag$x(t1.__e13_1)), e) !== true)
+      $.set$format$x($.get$xtag$x(t1.__e13_1), e);
   },
   $isFunction: true
 },
 
-init_autogenerated_closure13: {"": "Closure;",
+init_autogenerated_closure16: {"": "Closure;",
   call$0: function() {
     if ($._activeObserver != null) {
       var t1 = $.get$__changes();
@@ -11559,30 +12539,30 @@ init_autogenerated_closure13: {"": "Closure;",
   $isFunction: true
 },
 
-init_autogenerated_closure12: {"": "Closure;box_0",
+init_autogenerated_closure15: {"": "Closure;box_0",
   call$1: function(e) {
     var t1 = this.box_0;
-    if ($.$eq($.get$value$x($.get$xtag$x(t1.__e12_0)), e) !== true)
-      $.set$value$x($.get$xtag$x(t1.__e12_0), e);
+    if ($.$eq($.get$value$x($.get$xtag$x(t1.__e13_1)), e) !== true)
+      $.set$value$x($.get$xtag$x(t1.__e13_1), e);
   },
   $isFunction: true
 },
 
-init_autogenerated_closure14: {"": "Closure;",
+init_autogenerated_closure17: {"": "Closure;",
   call$0: function() {
-    return "{{new DateTime.now().subtract(duration)dateTime}}";
+    return "{{dateTime}}";
   },
   $isFunction: true
 },
 
-init_autogenerated_closure15: {"": "Closure;",
+init_autogenerated_closure18: {"": "Closure;",
   call$0: function() {
     return "{{ageFormat}}";
   },
   $isFunction: true
 },
 
-init_autogenerated_closure17: {"": "Closure;",
+init_autogenerated_closure20: {"": "Closure;",
   call$0: function() {
     var t1, t2, t3;
     if ($._activeObserver != null) {
@@ -11600,16 +12580,16 @@ init_autogenerated_closure17: {"": "Closure;",
   $isFunction: true
 },
 
-init_autogenerated_closure16: {"": "Closure;box_0",
+init_autogenerated_closure19: {"": "Closure;box_0",
   call$1: function(e) {
     var t1 = this.box_0;
-    if ($.$eq($.get$format$x($.get$xtag$x(t1.__e16_1)), e) !== true)
-      $.set$format$x($.get$xtag$x(t1.__e16_1), e);
+    if ($.$eq($.get$format$x($.get$xtag$x(t1.__e17_2)), e) !== true)
+      $.set$format$x($.get$xtag$x(t1.__e17_2), e);
   },
   $isFunction: true
 },
 
-init_autogenerated_closure19: {"": "Closure;",
+init_autogenerated_closure22: {"": "Closure;",
   call$0: function() {
     if ($._activeObserver != null) {
       var t1 = $.get$__changes();
@@ -11620,16 +12600,16 @@ init_autogenerated_closure19: {"": "Closure;",
   $isFunction: true
 },
 
-init_autogenerated_closure18: {"": "Closure;box_0",
+init_autogenerated_closure21: {"": "Closure;box_0",
   call$1: function(e) {
     var t1 = this.box_0;
-    if ($.$eq($.get$value$x($.get$xtag$x(t1.__e16_1)), e) !== true)
-      $.set$value$x($.get$xtag$x(t1.__e16_1), e);
+    if ($.$eq($.get$value$x($.get$xtag$x(t1.__e17_2)), e) !== true)
+      $.set$value$x($.get$xtag$x(t1.__e17_2), e);
   },
   $isFunction: true
 },
 
-init_autogenerated_closure20: {"": "Closure;",
+init_autogenerated_closure23: {"": "Closure;",
   call$0: function() {
     var t1, t2;
     if ($.observeReads() === true)
@@ -11643,7 +12623,7 @@ init_autogenerated_closure20: {"": "Closure;",
   $isFunction: true
 },
 
-init_autogenerated_closure21: {"": "Closure;",
+init_autogenerated_closure24: {"": "Closure;",
   call$0: function() {
     var t1, t2;
     if ($.observeReads())
@@ -11657,7 +12637,7 @@ init_autogenerated_closure21: {"": "Closure;",
   $isFunction: true
 },
 
-init_autogenerated_closure22: {"": "Closure;",
+init_autogenerated_closure25: {"": "Closure;",
   call$0: function() {
     var t1, t2;
     if ($.observeReads())
@@ -11671,7 +12651,7 @@ init_autogenerated_closure22: {"": "Closure;",
   $isFunction: true
 },
 
-init_autogenerated_closure23: {"": "Closure;",
+init_autogenerated_closure26: {"": "Closure;",
   call$0: function() {
     var t1, t2;
     if ($.observeReads())
@@ -11685,21 +12665,15 @@ init_autogenerated_closure23: {"": "Closure;",
   $isFunction: true
 },
 
-init_autogenerated_closure24: {"": "Closure;",
+init_autogenerated_closure27: {"": "Closure;",
   call$0: function() {
-    var t1, t2, locale, pluralLocale;
+    var t1, locale, pluralLocale, t2;
     if ($._activeObserver != null) {
       t1 = $.get$__changes();
       $._activeObserver._addRead$3(t1, 1, "pluralCases");
     }
     t1 = $.get$__$pluralCases();
-    if ($._activeObserver != null) {
-      t2 = $.get$__changes();
-      $._activeObserver._addRead$3(t2, 1, "_selectedLocale");
-    }
-    locale = $.__$_selectedLocale;
-    if (locale == null)
-      locale = $.Intl_systemLocale;
+    locale = "en_US";
     pluralLocale = $.Intl_verifiedLocale(locale, $.JSArray_methods.get$contains($.List_Hl6), $.Intl__throwLocaleError$closure);
     t2 = $.get$PluralLocaleImpl_map();
     t2 = new $.PluralFormat(t1, "{0}", t2.$index(t2, pluralLocale));
@@ -11708,21 +12682,15 @@ init_autogenerated_closure24: {"": "Closure;",
   $isFunction: true
 },
 
-init_autogenerated_closure25: {"": "Closure;",
+init_autogenerated_closure28: {"": "Closure;",
   call$0: function() {
-    var t1, t2, locale, pluralLocale;
+    var t1, locale, pluralLocale, t2;
     if ($._activeObserver != null) {
       t1 = $.get$__changes();
       $._activeObserver._addRead$3(t1, 1, "pluralCases");
     }
     t1 = $.get$__$pluralCases();
-    if ($._activeObserver != null) {
-      t2 = $.get$__changes();
-      $._activeObserver._addRead$3(t2, 1, "_selectedLocale");
-    }
-    locale = $.__$_selectedLocale;
-    if (locale == null)
-      locale = $.Intl_systemLocale;
+    locale = "en_US";
     pluralLocale = $.Intl_verifiedLocale(locale, $.JSArray_methods.get$contains($.List_Hl6), $.Intl__throwLocaleError$closure);
     t2 = $.get$PluralLocaleImpl_map();
     t2 = new $.PluralFormat(t1, "{0}", t2.$index(t2, pluralLocale));
@@ -11731,21 +12699,15 @@ init_autogenerated_closure25: {"": "Closure;",
   $isFunction: true
 },
 
-init_autogenerated_closure26: {"": "Closure;",
+init_autogenerated_closure29: {"": "Closure;",
   call$0: function() {
-    var t1, t2, locale, pluralLocale;
+    var t1, locale, pluralLocale, t2;
     if ($._activeObserver != null) {
       t1 = $.get$__changes();
       $._activeObserver._addRead$3(t1, 1, "pluralCases");
     }
     t1 = $.get$__$pluralCases();
-    if ($._activeObserver != null) {
-      t2 = $.get$__changes();
-      $._activeObserver._addRead$3(t2, 1, "_selectedLocale");
-    }
-    locale = $.__$_selectedLocale;
-    if (locale == null)
-      locale = $.Intl_systemLocale;
+    locale = "en_US";
     pluralLocale = $.Intl_verifiedLocale(locale, $.JSArray_methods.get$contains($.List_Hl6), $.Intl__throwLocaleError$closure);
     t2 = $.get$PluralLocaleImpl_map();
     t2 = new $.PluralFormat(t1, "{0}", t2.$index(t2, pluralLocale));
@@ -11786,6 +12748,69 @@ duration: function() {
   return t3._format$2(t1._liblib9$_length === $.FormatLength_SHORT_0 ? t4.get$shortUnits() : t4.get$units(), t2);
 },
 
+selectedTime: function(v) {
+  var t1, i, cases, t2;
+  t1 = $.get$__changes().$$_observers;
+  if (t1 != null) {
+    t1.get$head;
+    t1 = t1._head != null;
+  } else
+    t1 = false;
+  if (t1)
+    $.notifyChange($.get$__changes(), 1, "_selectedTime", $.__$_selectedTime, v);
+  $.__$_selectedTime = v;
+  i = $.Primitives_parseInt(v, null, null);
+  cases = [$.soy$closure, $.som$closure, $.sod$closure, new $.selectedTime_closure(), $.eod$closure, $.eom$closure, $.eoy$closure];
+  if (i >>> 0 !== i || i >= cases.length)
+    throw $.ioore(i);
+  t1 = cases[i].call$0();
+  t2 = $.get$__changes().$$_observers;
+  if (t2 != null) {
+    t2.get$head;
+    t2 = t2._head != null;
+  } else
+    t2 = false;
+  if (t2)
+    $.notifyChange($.get$__changes(), 1, "dateTime", $.get$__$dateTime(), t1);
+  $.__$dateTime = t1;
+},
+
+sod: function() {
+  var t1 = new $.DateTime(Date.now(), false);
+  $.Primitives_lazyAsJsDate(t1);
+  return new $.sod_closure().call$1(t1);
+},
+
+som: function() {
+  var t1 = new $.DateTime(Date.now(), false);
+  $.Primitives_lazyAsJsDate(t1);
+  return new $.som_closure().call$1(t1);
+},
+
+soy: function() {
+  var t1 = new $.DateTime(Date.now(), false);
+  $.Primitives_lazyAsJsDate(t1);
+  return new $.soy_closure().call$1(t1);
+},
+
+eod: function() {
+  var t1 = new $.DateTime(Date.now(), false);
+  $.Primitives_lazyAsJsDate(t1);
+  return new $.eod_closure().call$1(t1);
+},
+
+eom: function() {
+  var t1 = new $.DateTime(Date.now(), false);
+  $.Primitives_lazyAsJsDate(t1);
+  return new $.eom_closure().call$1(t1);
+},
+
+eoy: function() {
+  var t1 = new $.DateTime(Date.now(), false);
+  $.Primitives_lazyAsJsDate(t1);
+  return new $.eoy_closure().call$1(t1);
+},
+
 main: function() {
   var t1, t2;
   if ($._activeObserver != null) {
@@ -11815,7 +12840,7 @@ main: function() {
 },
 
 init_autogenerated: function() {
-  var t1, __root, __html0, __html1, __html10, __html11, __html12, __html13, __html14, __html15, __html16, __html17, __html2, __html3, __html4, __html5, __html6, __html7, __html8, __html9, __t, t2, __e1, __binding0, t3, __e9, __binding8, __e11, __binding10, __e15, __binding13, __binding14, __e18, __binding17, __e20, __binding19, __e22, __binding21, __e24, __binding23, __e26, __binding25, __e28, __binding27, __e30, __binding29;
+  var t1, __root, __html0, __html1, __html10, __html11, __html12, __html13, __html14, __html15, __html16, __html17, __html2, __html3, __html4, __html5, __html6, __html7, __html8, __html9, __t, t2, __e1, __binding0, t3, __e9, __binding8, __e12, __binding11, __e16, __binding14, __binding15, __e19, __binding18, __e21, __binding20, __e23, __binding22, __e25, __binding24, __e27, __binding26, __e29, __binding28, __e31, __binding30;
   t1 = {};
   __root = document.body;
   __html0 = $._ElementFactoryProvider_createElement_html("<a href=\"http://api.dartlang.org/docs/bleeding_edge/intl/Intl.html#systemLocale\">Intl.systemLocale</a>");
@@ -11836,10 +12861,11 @@ init_autogenerated: function() {
   __html7 = $._ElementFactoryProvider_createElement_html("<b>\"</b>");
   __html8 = $._ElementFactoryProvider_createElement_html("<b>\"</b>");
   __html9 = $._ElementFactoryProvider_createElement_html("<b>\"</b>");
-  t1.__e12_0 = null;
-  t1.__e16_1 = null;
-  t1.__e6_2 = null;
-  t1.__e7_3 = null;
+  t1.__e10_0 = null;
+  t1.__e13_1 = null;
+  t1.__e17_2 = null;
+  t1.__e6_3 = null;
+  t1.__e7_4 = null;
   __t = new $.Template(__root, [], []);
   __root.get$nodes;
   t2 = new $._ChildNodeListLazy(__root)._this.childNodes;
@@ -11858,107 +12884,114 @@ init_autogenerated: function() {
   t2 = new $._ChildNodeListLazy(__root)._this.childNodes;
   if (3 >= t2.length)
     throw $.ioore(3);
-  t1.__e6_2 = $.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x(t2[3]), 7)), 1)), 1)), 9)), 1)), 1)), 0);
-  __t.listen$2($.get$onChange$x(t1.__e6_2), new $.init_autogenerated_closure2(t1));
+  t1.__e6_3 = $.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x(t2[3]), 7)), 1)), 1)), 7)), 1)), 1)), 1);
+  __t.listen$2($.get$onChange$x(t1.__e6_3), new $.init_autogenerated_closure2(t1));
   t3.push(new $.DomPropertyBinding(new $.init_autogenerated_closure3(t1), new $.init_autogenerated_closure4(), false, false, null));
   __root.get$nodes;
   t2 = new $._ChildNodeListLazy(__root)._this.childNodes;
   if (3 >= t2.length)
     throw $.ioore(3);
-  t1.__e7_3 = $.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x(t2[3]), 7)), 1)), 1)), 9)), 1)), 3)), 0);
-  __t.listen$2($.get$onInput$x(t1.__e7_3), new $.init_autogenerated_closure5(t1));
+  t1.__e7_4 = $.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x(t2[3]), 7)), 1)), 1)), 7)), 1)), 5)), 1);
+  __t.listen$2($.get$onInput$x(t1.__e7_4), new $.init_autogenerated_closure5(t1));
   t3.push(new $.DomPropertyBinding(new $.init_autogenerated_closure6(t1), new $.init_autogenerated_closure7(), false, false, null));
   __root.get$nodes;
   t2 = new $._ChildNodeListLazy(__root)._this.childNodes;
   if (3 >= t2.length)
     throw $.ioore(3);
-  __e9 = $.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x(t2[3]), 7)), 1)), 1)), 11)), 3);
+  __e9 = $.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x(t2[3]), 7)), 1)), 1)), 9)), 3);
   __binding8 = __t.contentBind$2(new $.init_autogenerated_closure8(), false);
   $.addAll$1$ax($.get$nodes$x(__e9), [$.clone$1$x(__html2, true), __binding8, $.clone$1$x(__html3, true)]);
   __root.get$nodes;
   t2 = new $._ChildNodeListLazy(__root)._this.childNodes;
   if (3 >= t2.length)
     throw $.ioore(3);
-  __e11 = $.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x(t2[3]), 7)), 1)), 1)), 19)), 1)), 0);
-  __binding10 = __t.contentBind$2(new $.init_autogenerated_closure9(), false);
-  $.addAll$1$ax($.get$nodes$x(__e11), [document.createTextNode("<intlx-age \n  value=\""), __binding10, document.createTextNode("\" \n</intlx-age>")]);
-  __root.get$nodes;
-  t2 = new $._ChildNodeListLazy(__root)._this.childNodes;
-  if (3 >= t2.length)
-    throw $.ioore(3);
-  t1.__e12_0 = $.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x(t2[3]), 7)), 1)), 1)), 19)), 3)), 0);
+  t1.__e10_0 = $.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x(t2[3]), 7)), 1)), 1)), 13)), 1)), 2)), 0);
+  __t.listen$2($.get$onChange$x(t1.__e10_0), new $.init_autogenerated_closure9(t1));
   t3.push(new $.DomPropertyBinding(new $.init_autogenerated_closure10(t1), new $.init_autogenerated_closure11(), false, false, null));
-  t3.push(new $.DomPropertyBinding(new $.init_autogenerated_closure12(t1), new $.init_autogenerated_closure13(), false, false, null));
+  __root.get$nodes;
+  t2 = new $._ChildNodeListLazy(__root)._this.childNodes;
+  if (3 >= t2.length)
+    throw $.ioore(3);
+  __e12 = $.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x(t2[3]), 7)), 1)), 1)), 21)), 1)), 0);
+  __binding11 = __t.contentBind$2(new $.init_autogenerated_closure12(), false);
+  $.addAll$1$ax($.get$nodes$x(__e12), [document.createTextNode("<intlx-age \n  value=\""), __binding11, document.createTextNode("\" \n</intlx-age>")]);
+  __root.get$nodes;
+  t2 = new $._ChildNodeListLazy(__root)._this.childNodes;
+  if (3 >= t2.length)
+    throw $.ioore(3);
+  t1.__e13_1 = $.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x(t2[3]), 7)), 1)), 1)), 21)), 3)), 0);
+  t3.push(new $.DomPropertyBinding(new $.init_autogenerated_closure13(t1), new $.init_autogenerated_closure14(), false, false, null));
+  t3.push(new $.DomPropertyBinding(new $.init_autogenerated_closure15(t1), new $.init_autogenerated_closure16(), false, false, null));
   t2 = $.AgeComponent$();
-  t2.set$host(t2, t1.__e12_0);
+  t2.set$host(t2, t1.__e13_1);
   t3.push(new $.ComponentItem(t2));
   __root.get$nodes;
   t2 = new $._ChildNodeListLazy(__root)._this.childNodes;
   if (3 >= t2.length)
     throw $.ioore(3);
-  __e15 = $.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x(t2[3]), 7)), 1)), 1)), 21)), 1)), 0);
-  __binding13 = __t.contentBind$2(new $.init_autogenerated_closure14(), false);
-  __binding14 = __t.contentBind$2(new $.init_autogenerated_closure15(), false);
-  $.addAll$1$ax($.get$nodes$x(__e15), [document.createTextNode("<intlx-age \n  value=\""), __binding13, document.createTextNode("\" \n  format=\""), __binding14, document.createTextNode("\">\n</intlx-age>")]);
+  __e16 = $.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x(t2[3]), 7)), 1)), 1)), 23)), 1)), 0);
+  __binding14 = __t.contentBind$2(new $.init_autogenerated_closure17(), false);
+  __binding15 = __t.contentBind$2(new $.init_autogenerated_closure18(), false);
+  $.addAll$1$ax($.get$nodes$x(__e16), [document.createTextNode("<intlx-age \n  value=\""), __binding14, document.createTextNode("\" \n  format=\""), __binding15, document.createTextNode("\">\n</intlx-age>")]);
   __root.get$nodes;
   t2 = new $._ChildNodeListLazy(__root)._this.childNodes;
   if (3 >= t2.length)
     throw $.ioore(3);
-  t1.__e16_1 = $.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x(t2[3]), 7)), 1)), 1)), 21)), 3)), 0);
-  t3.push(new $.DomPropertyBinding(new $.init_autogenerated_closure16(t1), new $.init_autogenerated_closure17(), false, false, null));
-  t3.push(new $.DomPropertyBinding(new $.init_autogenerated_closure18(t1), new $.init_autogenerated_closure19(), false, false, null));
+  t1.__e17_2 = $.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x(t2[3]), 7)), 1)), 1)), 23)), 3)), 0);
+  t3.push(new $.DomPropertyBinding(new $.init_autogenerated_closure19(t1), new $.init_autogenerated_closure20(), false, false, null));
+  t3.push(new $.DomPropertyBinding(new $.init_autogenerated_closure21(t1), new $.init_autogenerated_closure22(), false, false, null));
   t2 = $.AgeComponent$();
-  t2.set$host(t2, t1.__e16_1);
+  t2.set$host(t2, t1.__e17_2);
   t3.push(new $.ComponentItem(t2));
   __root.get$nodes;
   t2 = new $._ChildNodeListLazy(__root)._this.childNodes;
   if (3 >= t2.length)
     throw $.ioore(3);
-  __e18 = $.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x(t2[3]), 7)), 3)), 1)), 5)), 3);
-  __binding17 = __t.contentBind$2(new $.init_autogenerated_closure20(), false);
-  $.addAll$1$ax($.get$nodes$x(__e18), [$.clone$1$x(__html4, true), __binding17, $.clone$1$x(__html5, true)]);
+  __e19 = $.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x(t2[3]), 7)), 3)), 1)), 5)), 3);
+  __binding18 = __t.contentBind$2(new $.init_autogenerated_closure23(), false);
+  $.addAll$1$ax($.get$nodes$x(__e19), [$.clone$1$x(__html4, true), __binding18, $.clone$1$x(__html5, true)]);
   __root.get$nodes;
   t2 = new $._ChildNodeListLazy(__root)._this.childNodes;
   if (3 >= t2.length)
     throw $.ioore(3);
-  __e20 = $.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x(t2[3]), 7)), 3)), 1)), 7)), 3);
-  __binding19 = __t.contentBind$2(new $.init_autogenerated_closure21(), false);
-  $.addAll$1$ax($.get$nodes$x(__e20), [$.clone$1$x(__html6, true), __binding19, $.clone$1$x(__html7, true)]);
+  __e21 = $.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x(t2[3]), 7)), 3)), 1)), 7)), 3);
+  __binding20 = __t.contentBind$2(new $.init_autogenerated_closure24(), false);
+  $.addAll$1$ax($.get$nodes$x(__e21), [$.clone$1$x(__html6, true), __binding20, $.clone$1$x(__html7, true)]);
   __root.get$nodes;
   t2 = new $._ChildNodeListLazy(__root)._this.childNodes;
   if (3 >= t2.length)
     throw $.ioore(3);
-  __e22 = $.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x(t2[3]), 7)), 3)), 1)), 9)), 3);
-  __binding21 = __t.contentBind$2(new $.init_autogenerated_closure22(), false);
-  $.addAll$1$ax($.get$nodes$x(__e22), [$.clone$1$x(__html8, true), __binding21, $.clone$1$x(__html9, true)]);
+  __e23 = $.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x(t2[3]), 7)), 3)), 1)), 9)), 3);
+  __binding22 = __t.contentBind$2(new $.init_autogenerated_closure25(), false);
+  $.addAll$1$ax($.get$nodes$x(__e23), [$.clone$1$x(__html8, true), __binding22, $.clone$1$x(__html9, true)]);
   __root.get$nodes;
   t2 = new $._ChildNodeListLazy(__root)._this.childNodes;
   if (3 >= t2.length)
     throw $.ioore(3);
-  __e24 = $.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x(t2[3]), 7)), 3)), 1)), 11)), 3);
-  __binding23 = __t.contentBind$2(new $.init_autogenerated_closure23(), false);
-  $.addAll$1$ax($.get$nodes$x(__e24), [$.clone$1$x(__html10, true), __binding23, $.clone$1$x(__html11, true)]);
+  __e25 = $.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x(t2[3]), 7)), 3)), 1)), 11)), 3);
+  __binding24 = __t.contentBind$2(new $.init_autogenerated_closure26(), false);
+  $.addAll$1$ax($.get$nodes$x(__e25), [$.clone$1$x(__html10, true), __binding24, $.clone$1$x(__html11, true)]);
   __root.get$nodes;
   t2 = new $._ChildNodeListLazy(__root)._this.childNodes;
   if (3 >= t2.length)
     throw $.ioore(3);
-  __e26 = $.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x(t2[3]), 7)), 3)), 1)), 17)), 3);
-  __binding25 = __t.contentBind$2(new $.init_autogenerated_closure24(), false);
-  $.addAll$1$ax($.get$nodes$x(__e26), [$.clone$1$x(__html12, true), __binding25, $.clone$1$x(__html13, true)]);
+  __e27 = $.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x(t2[3]), 7)), 3)), 1)), 17)), 3);
+  __binding26 = __t.contentBind$2(new $.init_autogenerated_closure27(), false);
+  $.addAll$1$ax($.get$nodes$x(__e27), [$.clone$1$x(__html12, true), __binding26, $.clone$1$x(__html13, true)]);
   __root.get$nodes;
   t2 = new $._ChildNodeListLazy(__root)._this.childNodes;
   if (3 >= t2.length)
     throw $.ioore(3);
-  __e28 = $.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x(t2[3]), 7)), 3)), 1)), 19)), 3);
-  __binding27 = __t.contentBind$2(new $.init_autogenerated_closure25(), false);
-  $.addAll$1$ax($.get$nodes$x(__e28), [$.clone$1$x(__html14, true), __binding27, $.clone$1$x(__html15, true)]);
+  __e29 = $.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x(t2[3]), 7)), 3)), 1)), 19)), 3);
+  __binding28 = __t.contentBind$2(new $.init_autogenerated_closure28(), false);
+  $.addAll$1$ax($.get$nodes$x(__e29), [$.clone$1$x(__html14, true), __binding28, $.clone$1$x(__html15, true)]);
   __root.get$nodes;
   t2 = new $._ChildNodeListLazy(__root)._this.childNodes;
   if (3 >= t2.length)
     throw $.ioore(3);
-  __e30 = $.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x(t2[3]), 7)), 3)), 1)), 21)), 3);
-  __binding29 = __t.contentBind$2(new $.init_autogenerated_closure26(), false);
-  $.addAll$1$ax($.get$nodes$x(__e30), [$.clone$1$x(__html16, true), __binding29, $.clone$1$x(__html17, true)]);
+  __e31 = $.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x($.$index$asx($.get$nodes$x(t2[3]), 7)), 3)), 1)), 21)), 3);
+  __binding30 = __t.contentBind$2(new $.init_autogenerated_closure29(), false);
+  $.addAll$1$ax($.get$nodes$x(__e31), [$.clone$1$x(__html16, true), __binding30, $.clone$1$x(__html17, true)]);
   __t.create$0();
   __t.insert$0(__t);
 }}],
@@ -11977,15 +13010,15 @@ renderCldrTemplate: function(template, elements, staticSegmentTransform) {
 ["intlx.components", {
 AgeComponent: {"": "WebComponent_Observable;__t,__$value<,__$format<,$$_observers,$$_changes,hashCode,_host,_shadowRoots,_generatedRoots",
   created_autogenerated$0: function() {
-    var root, t1, __binding31;
+    var root, t1, __binding32;
     root = this._createShadowRoot$0();
     t1 = this._generatedRoots;
     t1.$indexSet(t1, "intlx-age", root);
     this.__t = new $.Template(root, [], []);
     if (typeof root === "object" && root !== null && !!$.getInterceptor(root).$isShadowRoot)
       root.applyAuthorStyles = true;
-    __binding31 = this.__t.contentBind$2(new $.AgeComponent_created_autogenerated_closure(this), false);
-    $.addAll$1$ax($.get$nodes$x(root), [document.createTextNode("\n      "), __binding31, document.createTextNode("\n    ")]);
+    __binding32 = this.__t.contentBind$2(new $.AgeComponent_created_autogenerated_closure(this), false);
+    $.addAll$1$ax($.get$nodes$x(root), [document.createTextNode("\n      "), __binding32, document.createTextNode("\n    ")]);
     this.__t.create$0();
   },
   inserted_autogenerated$0: function() {
@@ -16173,6 +17206,12 @@ $._nullErrorHandler$closure = new $.Closure$_nullErrorHandler($._nullErrorHandle
 $._nullDoneHandler$closure = new $.Closure$_nullDoneHandler($._nullDoneHandler, "_nullDoneHandler$closure");
 $.Comparable_compare$closure = new $.Closure$compare($.Comparable_compare, "Comparable_compare$closure");
 $.Intl__throwLocaleError$closure = new $.Closure$_throwLocaleError($.Intl__throwLocaleError, "Intl__throwLocaleError$closure");
+$.sod$closure = new $.Closure$sod($.sod, "sod$closure");
+$.som$closure = new $.Closure$som($.som, "som$closure");
+$.soy$closure = new $.Closure$soy($.soy, "soy$closure");
+$.eod$closure = new $.Closure$eod($.eod, "eod$closure");
+$.eom$closure = new $.Closure$eom($.eom, "eom$closure");
+$.eoy$closure = new $.Closure$eoy($.eoy, "eoy$closure");
 $.noop$closure = new $.Closure$noop($.noop, "noop$closure");
 $._doNothing$closure = new $.Closure$_doNothing($._doNothing, "_doNothing$closure");
 $.deliverChangesSync$closure = new $.Closure$deliverChangesSync($.deliverChangesSync, "deliverChangesSync$closure");
@@ -16200,8 +17239,8 @@ $.C_NullThrownError = new $.NullThrownError();
 $.List_eld = Isolate.makeConstantList([0, " \u0906\u0923\u093f ", 1]);
 $.Uint8ClampedList_methods = $.Uint8ClampedList.prototype;
 $.EventStreamProvider_input = new $.EventStreamProvider("input");
-$.List_iZu = Isolate.makeConstantList([0, ", dan  ", 1]);
 $.List_zZS = Isolate.makeConstantList([0, " \u0438 ", 1]);
+$.List_iZu = Isolate.makeConstantList([0, ", dan  ", 1]);
 $.TimeUnit_DAY_3 = new $.TimeUnit("DAY", 3);
 $._WatcherType_ORDERED_MAP = new $._WatcherType("ORDERED_MAP");
 $.TimeUnit_MINUTE_1 = new $.TimeUnit("MINUTE", 1);
@@ -16238,11 +17277,10 @@ $.List_QoS = Isolate.makeConstantList([0, " \u0c2e\u0c30\u0c3f\u0c2f\u0c41 ", 1]
 $.List_5Kb = Isolate.makeConstantList([0, " y ", 1]);
 $.List_aBG = Isolate.makeConstantList([0, " \u05d5-", 1]);
 $.EventStreamProvider_click = new $.EventStreamProvider("click");
-$.List_h0f = Isolate.makeConstantList([0, " und ", 1]);
 $.PluralCategory_ZERO = new $.PluralCategory("ZERO");
 $.List_A8T = Isolate.makeConstantList([0, " ir ", 1]);
 $.List_ok2 = Isolate.makeConstantList([0, " a ", 1]);
-$.Duration_30000000 = new $.Duration(30000000);
+$.List_h0f = Isolate.makeConstantList([0, " und ", 1]);
 $.List_8h5 = Isolate.makeConstantList(["body", "head", "caption", "td", "th", "colgroup", "col", "tr", "tbody", "tfoot", "thead", "track"]);
 $.PluralCategory_ONE = new $.PluralCategory("ONE");
 $.List_Hl6 = Isolate.makeConstantList(["af", "ak", "am", "ar", "asa", "az", "be", "bem", "bez", "bg", "bh", "bm", "bn", "bo", "br", "brx", "bs", "ca", "cgg", "chr", "ckb", "cs", "cy", "da", "de", "dv", "dz", "ee", "el", "en", "eo", "es", "et", "eu", "fa", "ff", "fi", "fil", "fo", "fr", "fur", "fy", "ga", "gl", "gsw", "gu", "guw", "gv", "ha", "haw", "he", "hi", "hr", "hu", "id", "ig", "ii", "in", "is", "it", "iu", "iw", "ja", "jmc", "jv", "ka", "kab", "kaj", "kcg", "kde", "kea", "kk", "kl", "km", "kn", "ko", "ksb", "ksh", "ku", "kw", "lag", "lb", "lg", "ln", "lo", "lt", "lv", "mas", "mg", "mk", "ml", "mn", "mo", "mr", "ms", "mt", "my", "nah", "naq", "nb", "nd", "ne", "nl", "nn", "no", "nr", "nso", "ny", "nyn", "om", "or", "pa", "pap", "pl", "ps", "pt", "rm", "ro", "rof", "ru", "rwk", "sah", "saq", "se", "seh", "ses", "sg", "sh", "shi", "sk", "sl", "sma", "smi", "smj", "smn", "sms", "sn", "so", "sq", "sr", "ss", "ssy", "st", "sv", "sw", "syr", "ta", "te", "teo", "th", "ti", "tig", "tk", "tl", "tn", "to", "tr", "ts", "tzm", "uk", "ur", "ve", "vi", "vun", "wa", "wae", "wo", "xh", "xog", "yo", "zh", "zu"]);
@@ -16295,8 +17333,9 @@ $.Intl__defaultLocale = null;
 $.Intl_systemLocale = "en_US";
 $.__$_selectedLocale = "en";
 $.__$locales = $.List_ERN;
-$.__$timeUnit = "0";
-$.__$timeUnitCount = "45";
+$.__$timeUnit = "1";
+$.__$timeUnitCount = "60";
+$.__$_selectedTime = "3";
 $.AgeComponent___$_dummyCounter = 0;
 $.useObservers = false;
 $._watchers = null;
@@ -16426,6 +17465,9 @@ $.createShadowRoot$0$x = function(receiver) {
 };
 $.elementAt$1$ax = function(receiver, a0) {
   return $.getInterceptor$ax(receiver).elementAt$1(receiver, a0);
+};
+$.fold$2$ax = function(receiver, a0, a1) {
+  return $.getInterceptor$ax(receiver).fold$2(receiver, a0, a1);
 };
 $.forEach$1$ax = function(receiver, a0) {
   return $.getInterceptor$ax(receiver).forEach$1(receiver, a0);
@@ -16770,27 +17812,21 @@ Isolate.$lazy($, "__$relativeTimeData", "__$relativeTimeData", "get$__$relativeT
   return $.get$ALL1();
 });
 Isolate.$lazy($, "__$dateTime", "__$dateTime", "get$__$dateTime", function() {
-  var t1, t2;
-  t1 = new $.DateTime(Date.now(), false);
+  var t1 = new $.DateTime(Date.now(), false);
   if (t1.date === void 0)
     t1.date = new Date(t1.millisecondsSinceEpoch);
   t1.date;
-  t2 = $.$add$ns(t1.millisecondsSinceEpoch, $.Duration_30000000.get$inMilliseconds());
-  t1 = t1.isUtc;
-  if ($.abs$0$n(t2) > 8640000000000000)
-    $.throwExpression(new $.ArgumentError(t2));
-  if (t1 == null)
-    $.throwExpression(new $.ArgumentError(t1));
-  return new $.DateTime(t2, t1);
+  return t1;
+});
+Isolate.$lazy($, "__$_constrainedLocales", "__$_constrainedLocales", "get$__$_constrainedLocales", function() {
+  return new $.closure1().call$0();
 });
 Isolate.$lazy($, "__$localeNames", "__$localeNames", "get$__$localeNames", function() {
   if ($._activeObserver != null) {
     var t1 = $.get$__changes();
-    $._activeObserver._addRead$3(t1, 1, "locales");
+    $._activeObserver._addRead$3(t1, 1, "_constrainedLocales");
   }
-  t1 = new $.WhereIterable($.__$locales, new $.closure0());
-  t1.$builtinTypeInfo = [null];
-  return t1.fold$2(t1, $.makeLiteralMap([]), new $.closure1());
+  return $.fold$2$ax($.get$__$_constrainedLocales(), $.makeLiteralMap([]), new $.closure0());
 });
 Isolate.$lazy($, "__$_localeNames", "__$_localeNames", "get$__$_localeNames", function() {
   return $.makeLiteralMap(["gv", "Manx", "gu", "Gujarati", "scn", "Sicilian", "rom", "Romany", "alg", "Algonquian Language", "ale", "Aleut", "sco", "Scots", "rof", "Rombo", "mni", "Manipuri", "gd", "Scottish Gaelic", "ga", "Irish", "mno", "Manobo Language", "osa", "Osage", "gn", "Guarani", "alt", "Southern Altai", "gl", "Galician", "mwr", "Marwari", "ty", "Tahitian", "tw", "Twi", "tt", "Tatar", "tr", "Turkish", "ts", "Tsonga", "tn", "Tswana", "to", "Tongan", "aus", "Australian Language", "tk", "Turkmen", "th", "Thai", "roa", "Romance Language", "tg", "Tajik", "te", "Telugu", "tkl", "Tokelau", "mwl", "Mirandese", "kcg", "Tyap", "smi", "Sami Language", "cay", "Cayuga", "fat", "Fanti", "fan", "Fang", "got", "Gothic", "din", "Dinka", "bla", "Siksika", "cmc", "Chamic Language", "ml", "Malayalam", "guz", "Gusii", "kln", "Kalenjin", "trv", "Taroko", "zh", "Chinese", "tem", "Timne", "teo", "Teso", "nwc", "Classical Newari", "za", "Zhuang", "cau", "Caucasian Language", "zu", "Zulu", "ter", "Tereno", "tet", "Tetum", "mnc", "Manchu", "az-alt-short", "Azeri", "kut", "Kutenai", "suk", "Sukuma", "xog", "Soga", "kum", "Kumyk", "sus", "Susu", "new", "Newari", "sux", "Sumerian", "den", "Slave", "men", "Mende", "mer", "Meru", "lez", "Lezghian", "root", "Root", "eka", "Ekajuk", "akk", "Akkadian", "dra", "Dravidian Language", "jrb", "Judeo-Arabic", "brx", "Bodo", "sgn", "Sign Language", "sga", "Old Irish", "apa", "Apache Language", "bra", "Braj", "chb", "Chibcha", "chg", "Chagatai", "chk", "Chuukese", "chm", "Mari", "chn", "Chinook Jargon", "cho", "Choctaw", "chp", "Chipewyan", "chr", "Cherokee", "twq", "Tasawaq", "chy", "Cheyenne", "ti", "Tigrinya", "jmc", "Machame", "ii", "Sichuan Yi", "mg", "Malagasy", "iba", "Iban", "mo", "Moldavian", "mn", "Mongolian", "mi", "Maori", "mh", "Marshallese", "mk", "Macedonian", "mt", "Maltese", "cai", "Central American Indian Language", "del", "Delaware", "ms", "Malay", "mr", "Marathi", "ta", "Tamil", "my", "Burmese", "cad", "Caddo", "oc", "Occitan", "hit", "Hittite", "tai", "Tai Language", "afh", "Afrihili", "sit", "Sino-Tibetan Language", "ie", "Interlingue", "afa", "Afro-Asiatic Language", "csb", "Kashubian", "nyn", "Nyankole", "nyo", "Nyoro", "dyu", "Dyula", "sio", "Siouan Language", "lam", "Lamba", "fr", "French", "mgh", "Makhuwa-Meetto", "lah", "Lahnda", "lad", "Ladino", "fy", "Western Frisian", "lag", "Langi", "snk", "Soninke", "fa", "Persian", "ug-alt-variant", "Uyghur", "mad", "Madurese", "ff", "Fulah", "mai", "Maithili", "fi", "Finnish", "mak", "Makasar", "fo", "Faroese", "egy", "Ancient Egyptian", "znd", "Zande", "ss", "Swati", "sr", "Serbian", "sq", "Albanian", "sw", "Swahili", "sv", "Swedish", "su", "Sundanese", "st", "Southern Sotho", "sk", "Slovak", "si", "Sinhala", "sh", "Serbo-Croatian", "so", "Somali", "sn", "Shona", "sm", "Samoan", "sl", "Slovenian", "sc", "Sardinian", "sa", "Sanskrit", "sg", "Sango", "se", "Northern Sami", "sd", "Sindhi", "zen", "Zenaga", "kbd", "Kabardian", "enm", "Middle English", "en_AU", "Australian English", "lg", "Ganda", "lb", "Luxembourgish", "fiu", "Finno-Ugrian Language", "ln", "Lingala", "hil", "Hiligaynon", "li", "Limburgish", "byn", "Blin", "lt", "Lithuanian", "lu", "Luba-Katanga", "dje", "Zarma", "fil", "Filipino", "yi", "Yiddish", "non", "Old Norse", "ceb", "Cebuano", "yo", "Yoruba", "nym", "Nyamwezi", "bat", "Baltic Language", "dak", "Dakota", "dav", "Taita", "dar", "Dargwa", "day", "Dayak", "kpe", "Kpelle", "el", "Greek", "eo", "Esperanto", "en", "English", "map", "Austronesian Language", "ee", "Ewe", "mdf", "Moksha", "mas", "Masai", "mdr", "Mandar", "et", "Estonian", "es", "Spanish", "ru", "Russian", "gon", "Gondi", "goh", "Old High German", "sms", "Skolt Sami", "smn", "Inari Sami", "smj", "Lule Sami", "de_AT", "Austrian German", "rm", "Romansh", "rn", "Rundi", "ro", "Romanian", "dsb", "Lower Sorbian", "sma", "Southern Sami", "gor", "Gorontalo", "sbp", "Sangu", "ast", "Asturian", "asa", "Asu", "vai", "Vai", "bal", "Baluchi", "ath", "Athapascan Language", "yue", "Cantonese", "xh", "Xhosa", "mag", "Magahi", "kfo", "Koro", "fj", "Fijian", "zap", "Zapotec", "kok", "Konkani", "eu", "Basque", "zxx", "No linguistic content", "kos", "Kosraean", "man", "Mandingo", "tog", "Nyasa Tonga", "hup", "Hupa", "udm", "Udmurt", "bej", "Beja", "bem", "Bemba", "bez", "Bena", "ber", "Berber", "nzi", "Nzima", "sai", "South American Indian Language", "ang", "Old English", "pra", "Prakrit Language", "bho", "Bhojpuri", "sal", "Salishan Language", "pro", "Old Proven\u00e7al", "raj", "Rajasthani", "sad", "Sandawe", "anp", "Angika", "es_419", "Latin American Spanish", "rap", "Rapanui", "sas", "Sasak", "lui", "Luiseno", "saq", "Samburu", "nqo", "N\u2019Ko", "car", "Carib", "min", "Minangkabau", "mic", "Micmac", "nah", "Nahuatl", "efi", "Efik", "btk", "Batak", "ypk", "Yupik Language", "mis", "Miscellaneous Language", "kac", "Kachin", "kab", "Kabyle", "kaa", "Kara-Kalpak", "kaj", "Jju", "kam", "Kamba", "kar", "Karen", "kaw", "Kawi", "fr_CH", "Swiss French", "tyv", "Tuvinian", "fr_CA", "Canadian French", "ka", "Georgian", "doi", "Dogri", "kg", "Kongo", "ckb", "Sorani Kurdish", "kk", "Kazakh", "kj", "Kuanyama", "ki", "Kikuyu", "ko", "Korean", "kn", "Kannada", "km", "Khmer", "kl", "Kalaallisut", "ks", "Kashmiri", "kr", "Kanuri", "kw", "Cornish", "kv", "Komi", "ku", "Kurdish", "ky", "Kirghiz", "uga", "Ugaritic", "ha", "Hausa", "ksf", "Bafia", "ksb", "Shambala", "ksh", "Colognian", "mga", "Middle Irish", "ssy", "Saho", "gez", "Geez", "de", "German", "da", "Danish", "dyo", "Jola-Fonyi", "dz", "Dzongkha", "ira", "Iranian Language", "dv", "Divehi", "ssa", "Nilo-Saharan Language", "him", "Himachali", "gem", "Germanic Language", "crp", "Creole or Pidgin", "qu", "Quechua", "bas", "Basaa", "gba", "Gbaya", "bad", "Banda", "ban", "Balinese", "shi", "Tachelhit", "crh", "Crimean Turkish", "shn", "Shan", "bai", "Bamileke Language", "arp", "Arapaho", "ses", "Koyraboro Senni", "arw", "Arawak", "nus", "Nuer", "ebu", "Embu", "see", "Seneca", "arc", "Aramaic", "en_US", "U.S. English", "sem", "Semitic Language", "sel", "Selkup", "nub", "Nubian Language", "arn", "Araucanian", "seh", "Sena", "lus", "Lushai", "mus", "Creek", "luy", "Luyia", "lua", "Luba-Lulua", "mua", "Mundang", "iro", "Iroquoian Language", "mul", "Multiple Languages", "mun", "Munda Language", "lun", "Lunda", "luo", "Luo", "wa", "Walloon", "wo", "Wolof", "jv", "Javanese", "zbl", "Blissymbols", "tut", "Altaic Language", "kea", "Kabuverdianu", "tum", "Tumbuka", "ja", "Japanese", "cop", "Coptic", "vun", "Vunjo", "ilo", "Iloko", "tsi", "Tsimshian", "gwi", "Gwich\u02bcin", "und", "Unknown Language", "lo", "Lao", "tli", "Tlingit", "tlh", "Klingon", "ch", "Chamorro", "co", "Corsican", "ca", "Catalan", "ce", "Chechen", "pon", "Pohnpeian", "cy", "Welsh", "sah", "Sakha", "cs", "Czech", "cr", "Cree", "ady", "Adyghe", "cv", "Chuvash", "cu", "Church Slavic", "lv", "Latvian", "dum", "Middle Dutch", "pt", "Portuguese", "dua", "Duala", "swc", "Congo Swahili", "swb", "Comorian", "fro", "Old French", "yap", "Yapese", "frm", "Middle French", "frs", "Eastern Frisian", "frr", "Northern Frisian", "yao", "Yao", "pa", "Punjabi", "xal", "Kalmyk", "es_ES", "Iberian Spanish", "pi", "Pali", "en_GB", "British English", "gay", "Gayo", "oto", "Otomian Language", "ota", "Ottoman Turkish", "hmn", "Hmong", "nl_BE", "Flemish", "gaa", "Ga", "fur", "Friulian", "ain", "Ainu", "rar", "Rarotongan", "sla", "Slavic Language", "ve", "Venda", "vi", "Vietnamese", "is", "Icelandic", "av", "Avaric", "iu", "Inuktitut", "it", "Italian", "vo", "Volap\u00fck", "vot", "Votic", "ik", "Inupiaq", "io", "Ido", "kha", "Khasi", "ia", "Interlingua", "jpr", "Judeo-Persian", "tzm", "Central Morocco Tamazight", "id", "Indonesian", "ig", "Igbo", "pap", "Papiamento", "ewo", "Ewondo", "pau", "Palauan", "paa", "Papuan Language", "pag", "Pangasinan", "sat", "Santali", "pal", "Pahlavi", "pam", "Pampanga", "syc", "Classical Syriac", "phi", "Philippine Language", "cel", "Celtic Language", "phn", "Phoenician", "nic", "Niger-Kordofanian Language", "nia", "Nias", "dgr", "Dogrib", "syr", "Syriac", "tup", "Tupi Language", "niu", "Niuean", "gsw", "Swiss German", "cch", "Atsam", "jbo", "Lojban", "nb", "Norwegian Bokm\u00e5l", "mfe", "Morisyen", "ps-alt-variant", "Pushto", "sam", "Samaritan Aramaic", "hai", "Haida", "nog", "Nogai", "gmh", "Middle High German", "cus", "Cushitic Language", "wen", "Sorbian Language", "bnt", "Bantu", "elx", "Elamite", "ada", "Adangme", "pt_PT", "Iberian Portuguese", "haw", "Hawaiian", "bin", "Bini", "bik", "Bikol", "pt_BR", "Brazilian Portuguese", "mos", "Mossi", "moh", "Mohawk", "rwk", "Rwa", "tl", "Tagalog", "kde", "Makonde", "zh_Hans", "Simplified Chinese", "zh_Hant", "Traditional Chinese", "tvl", "Tuvalu", "ijo", "Ijo", "kmb", "Kimbundu", "peo", "Old Persian", "umb", "Umbundu", "tmh", "Tamashek", "fon", "Fon", "hsb", "Upper Sorbian", "en_CA", "Canadian English", "bg", "Bulgarian", "myv", "Erzya", "ba", "Bashkir", "ps", "Pashto", "bm", "Bambara", "bn", "Bengali", "bo", "Tibetan", "bh", "Bihari", "bi", "Bislama", "cgg", "Chiga", "nmg", "Kwasio", "br", "Breton", "bs", "Bosnian", "rup", "Aromanian", "zza", "Zaza", "om", "Oromo", "oj", "Ojibwa", "ace", "Achinese", "ach", "Acoli", "srn", "Sranan Tongo", "kru", "Kurukh", "srr", "Serer", "kro", "Kru", "krl", "Karelian", "krc", "Karachay-Balkar", "nds", "Low German", "os", "Ossetic", "or", "Oriya", "yav", "Yangben", "sog", "Sogdien", "nso", "Northern Sotho", "son", "Songhai", "de_CH", "Swiss High German", "art", "Artificial Language", "wal", "Walamo", "wak", "Wakashan Language", "wae", "Walser", "lol", "Mongo", "mkh", "Mon-Khmer Language", "awa", "Awadhi", "loz", "Lozi", "gil", "Gilbertese", "was", "Washo", "war", "Waray", "hz", "Herero", "hy", "Armenian", "sid", "Sidamo", "hr", "Croatian", "ht", "Haitian", "hu", "Hungarian", "hi", "Hindi", "ho", "Hiri Motu", "be", "Belarusian", "bua", "Buriat", "bug", "Buginese", "he", "Hebrew", "uz", "Uzbek", "la", "Latin", "ur", "Urdu", "pl", "Polish", "uk", "Ukrainian", "ug", "Uighur", "aa", "Afar", "ab", "Abkhazian", "ae", "Avestan", "af", "Afrikaans", "khq", "Koyra Chiini", "ak", "Akan", "am", "Amharic", "an", "Aragonese", "khi", "Khoisan Language", "as", "Assamese", "ar", "Arabic", "inh", "Ingush", "tpi", "Tok Pisin", "myn", "Mayan Language", "ay", "Aymara", "ine", "Indo-European Language", "az", "Azerbaijani", "inc", "Indic Language", "nl", "Dutch", "nn", "Norwegian Nynorsk", "no", "Norwegian", "na", "Nauru", "tiv", "Tiv", "nai", "North American Indian Language", "nd", "North Ndebele", "ne", "Nepali", "ng", "Ndonga", "ny", "Nyanja", "nap", "Neapolitan", "naq", "Nama", "grb", "Grebo", "grc", "Ancient Greek", "nr", "South Ndebele", "tig", "Tigre", "nv", "Navajo", "zun", "Zuni", "rw", "Kinyarwanda", "cpe", "English-based Creole or Pidgin", "cpf", "French-based Creole or Pidgin", "kho", "Khotanese", "cpp", "Portuguese-based Creole or Pidgin", "agq", "Aghem"]);

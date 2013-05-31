@@ -30,7 +30,7 @@ String toStringCount(int count) => range(count, 1).toList().toString();
 
 // plural
 var pluralData = plural_data.ALL;
-get pluralFormat => new PluralFormat(pluralCases, locale: selectedLocale, pattern: "{0}");
+get pluralFormat => new PluralFormat(pluralCases, locale: 'en_US', pattern: "{0}");
 var pluralCases = {
   "0": "no books", 
   "one": "{0} book", 
@@ -40,13 +40,23 @@ var plural = 0;
 
 // relative time
 var relativeTimeData = relative_time_data.ALL;
+// duration
+get durationFormat => new DurationFormat(locale: selectedLocale);
+var timeUnit = "1";
+var timeUnitCount = "60";
+String get duration => durationFormat.format(new RoundDuration(TimeUnit.values[int.parse(timeUnit, onError: (_) => 0)], int.parse(timeUnitCount, onError: (_) => 0)).toDuration());
+// age
 get defaultAgeFormat => new AgeFormat(locale: selectedLocale);
 get secondsAgeFormat => new AgeFormat(locale: selectedLocale, rounder: new DurationRounder.staticUnit(TimeUnit.SECOND));
-get durationFormat => new DurationFormat(locale: selectedLocale);
-var dateTime = new DateTime.now().add(const Duration(seconds: 30));
-var timeUnit = "0";
-var timeUnitCount = "45";
-String get duration => durationFormat.format(new RoundDuration(TimeUnit.values[int.parse(timeUnit, onError: (_) => 0)], int.parse(timeUnitCount, onError: (_) => 0)).toDuration());
+var dateTime = new DateTime.now();
+String _selectedTime = "3";
+String get selectedTime => _selectedTime;
+void set selectedTime (String v) {
+  _selectedTime = v;
+  var i = int.parse(v);
+  var cases = [soy, som, sod, () => new DateTime.now(), eod, eom, eoy];
+  dateTime = cases[i]();
+}
 DateTime sod() => _withNow((now) => new DateTime(now.year, now.month, now.day));
 DateTime som() => _withNow((now) => new DateTime(now.year, now.month));
 DateTime soy() => _withNow((now) => new DateTime(now.year));
@@ -71,10 +81,19 @@ void main() {
   });
 }
 
-var localeNames = locales.where((locale) => !deprecatedLocaleMap.containsKey(locale)).fold({}, (filtered, locale) {
-  var languageLocale = Intl.verifiedLocale(locale, _localeNames.containsKey, onFailure: (_) => null);
-  if(languageLocale != null && !filtered.containsKey(languageLocale)) {
-    filtered[locale] = _localeNames[languageLocale];
+var _constrainedLocales = () {
+  var r = locales
+  .where((locale) => !deprecatedLocaleMap.containsKey(locale))
+  .map((String locale) => Intl.verifiedLocale(locale, _localeNames.containsKey, onFailure: (_) => null))
+  .where((locale) => locale != null)
+  .toList();
+  r.sort((a, b) => _localeNames[a].compareTo(_localeNames[b]));
+  return r;
+}();
+
+var localeNames = _constrainedLocales.fold({}, (filtered, locale) {
+  if(!filtered.containsKey(locale)) {
+    filtered[locale] = _localeNames[locale];
   }
   return filtered;
 });

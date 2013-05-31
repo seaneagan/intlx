@@ -3,13 +3,10 @@
 [![Build Status](https://drone.io/seaneagan/intlx/status.png)](https://drone.io/seaneagan/intlx/latest)
 
 Intlx is internationalization APIs for Dart, 
-which have not yet made it into [the intl package](http://pub.dartlang.org/packages/intl) itself.
+which have not yet made it into the [intl package](http://pub.dartlang.org/packages/intl) itself.
 
-##API docs
-
-See the [dartdocs](http://seaneagan.github.com/intlx).
-
-The docs for each API include basic examples.
+##Usage
+For usage examples, checkout the [live demo](http://seaneagan.github.io/intlx) and [API docs](http://seaneagan.github.com/intlx/docs).
 
 ##Formats
 

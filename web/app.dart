@@ -41,7 +41,8 @@ var plural = 0;
 // relative time
 var relativeTimeData = relative_time_data.ALL;
 // duration
-get durationFormat => new DurationFormat(locale: selectedLocale);
+var durationFormatLength = "1";
+DurationFormat get durationFormat => new DurationFormat(locale: selectedLocale, length: FormatLength.values[int.parse(durationFormatLength, onError: (_) => 0)]);
 var timeUnit = "1";
 var timeUnitCount = "60";
 String get duration => durationFormat.format(new RoundDuration(TimeUnit.values[int.parse(timeUnit, onError: (_) => 0)], int.parse(timeUnitCount, onError: (_) => 0)).toDuration());

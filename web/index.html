@@ -89,7 +89,20 @@
         </div>
         <div class="row">
           <div class="span4"><pre class="prettyprint">
-var durationFormat = new <a href="docs/intlx/DurationFormat.html">DurationFormat</a>();</pre>
+var durationFormat = new <a href="docs/intlx/DurationFormat.html">DurationFormat</a>(length: </pre>
+          </div>
+          <div class="span2"></div>
+        </div>
+        <div class="row">
+          <div class="span4">
+            &nbsp;&nbsp;<code class="prettyprint lang-dart"><a href="docs/intlx/FormatLength.html">FormatLength</a>.</code>
+            <span class="controls">
+              <select bind-value="durationFormatLength">
+                <option value="0">SHORT</option>
+                <option value="1">LONG /*default*/</option>
+              </select>
+            </span>
+            <code class="prettyprint lang-dart">);</code>
           </div>
           <div class="span2"></div>
         </div>
@@ -126,7 +139,14 @@ durationFormat.format(duration)</pre>
         <div class="row">
           <div class="span4"><pre class="prettyprint">
 
-// "Age" formatting
+</pre>
+          </div>
+          <div class="span2"></div>
+        </div>
+        <div class="row">
+          <div class="span4"><pre class="prettyprint">
+// "Age" formatting using 
+// auto-updating <a href="http://www.dartlang.org/articles/web-ui/">web component</a>
 </pre>
           </div>
           <div class="span2"></div>
@@ -155,31 +175,27 @@ var ageFormat = new <a href="docs/intlx/AgeFormat.html">AgeFormat</a>(
         </div>
         <div class="row">
           <div class="span4"><pre class="prettyprint">
-// Web component - intlx-age
-</pre>
-          </div>
-          <div class="span2"></div>
-        </div>
-        <div class="row">
-          <div class="span4"><pre class="prettyprint">
 &lt;link rel="import" href="package:intlx/age.html"&gt;</pre>
           </div>
           <div class="span2"></div>
         </div>
         <div class="row">
           <div class="span4"><pre class="prettyprint">
-&lt;intlx-age 
-  value="{{mustachify('dateTime')}}" 
-&lt;/intlx-age&gt;</pre>
+&lt;intlx-age value="{{mustachify('dateTime')}}"&gt;&lt;/intlx-age&gt;</pre>
           </div>
           <div class="span2"><intlx-age value="{{dateTime}}" format="{{defaultAgeFormat}}"></intlx-age></div>
         </div>
         <div class="row">
           <div class="span4"><pre class="prettyprint">
-&lt;intlx-age 
-  value="{{mustachify('dateTime')}}" 
-  format="{{mustachify('ageFormat')}}"&gt;
-&lt;/intlx-age&gt;</pre>
+&lt;intlx-age value="{{mustachify('dateTime')}}" 
+  format="{{mustachify('durationFormat')}}"&gt;&lt;/intlx-age&gt;</pre>
+          </div>
+          <div class="span2"><intlx-age value="{{dateTime}}" format="{{durationFormat}}"></intlx-age></div>
+        </div>
+        <div class="row">
+          <div class="span4"><pre class="prettyprint">
+&lt;intlx-age value="{{mustachify('dateTime')}}" 
+  format="{{mustachify('ageFormat')}}"&gt;&lt;/intlx-age&gt;</pre>
           </div>
           <div class="span2"><intlx-age value="{{dateTime}}" format="{{secondsAgeFormat}}"></intlx-age></div>
         </div>
@@ -259,7 +275,7 @@ pluralFormat.format(2)</pre>
           </div>
           <div class="span2"><b>"</b>{{pluralFormat.format(2)}}<b>"</b></div>
         </div>
-      </div>        
+      </div>
       </div>
       </div>
       <footer class="footer jumbotron">

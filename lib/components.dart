@@ -23,7 +23,14 @@ class AgeComponent extends WebComponent {
 
   String get age {
     _dummyCounter;
-    var v = format is DurationFormat ? new DateTime.now().difference(value) : value; 
+    var v = value;
+    if(format is DurationFormat) { 
+      v = new DateTime.now().difference(v);
+      var micros = v.inMicroseconds;
+      if(micros.isNegative) {
+        v = new Duration(microseconds: micros.abs());
+      }
+    }
     return format.format(v);
   }
 }

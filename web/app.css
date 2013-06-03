@@ -30,8 +30,9 @@ body { padding-top: 80px; }
   background: none;
 }
 
-.code-demo .row>:first-child{
-  background: lightgray;
+code,
+.code-demo .row>:first-child {
+  background-color: lightgray;
 }
 
 @media screen and (max-width: 767px) {

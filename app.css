@@ -30,8 +30,8 @@ body {
   border: none;
   background: none;
 }
-.code-demo .row > :first-child {
-  background: #d3d3d3;
+code, .code-demo .row > :first-child {
+  background-color: #d3d3d3;
 } @media screen AND (max-width:767px) {
 .code-demo .row {
   margin-bottom: -1px;

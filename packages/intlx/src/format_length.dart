@@ -14,4 +14,6 @@ class FormatLength {
 
   final String _name;
   final int _index;
+  
+  static const values = const <TimeUnit> [SHORT, LONG];
 }

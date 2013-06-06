@@ -65,13 +65,14 @@ class CompilerResult {
  */
 // TODO(jmesserly): fix this to return a proper exit code
 // TODO(justinfagnani): return messages in the result
-Future<CompilerResult> run(List<String> args, {bool printTime}) {
+Future<CompilerResult> run(List<String> args, {bool printTime,
+    bool shouldPrint: true}) {
   var options = CompilerOptions.parse(args);
   if (options == null) return new Future.value(new CompilerResult());
   if (printTime == null) printTime = options.verbose;
 
   fileSystem = new ConsoleFileSystem();
-  var messages = new Messages(options: options, shouldPrint: true);
+  var messages = new Messages(options: options, shouldPrint: shouldPrint);
 
   return asyncTime('Total time spent on ${options.inputFile}', () {
     var compiler = new Compiler(fileSystem, options, messages);

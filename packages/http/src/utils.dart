@@ -5,11 +5,11 @@
 library utils;
 
 import 'dart:async';
-import 'dart:crypto';
 import 'dart:io';
 import 'dart:typed_data';
-import 'dart:uri';
 import 'dart:utf';
+
+import "package:crypto/crypto.dart";
 
 import 'byte_stream.dart';
 
@@ -37,7 +37,8 @@ Map<String, String> queryToMap(String queryList) {
 String mapToQuery(Map<String, String> map) {
   var pairs = <List<String>>[];
   map.forEach((key, value) =>
-      pairs.add([encodeUriComponent(key), encodeUriComponent(value)]));
+      pairs.add([Uri.encodeQueryComponent(key),
+                 Uri.encodeQueryComponent(value)]));
   return pairs.map((pair) => "${pair[0]}=${pair[1]}").join("&");
 }
 
@@ -50,10 +51,10 @@ String mapToQuery(Map<String, String> map) {
 void mapAddAll(Map destination, Map source) =>
   source.forEach((key, value) => destination[key] = value);
 
-/// Decodes a URL-encoded string. Unlike [decodeUriComponent], this includes
+/// Decodes a URL-encoded string. Unlike [Uri.decodeComponent], this includes
 /// replacing `+` with ` `.
 String urlDecode(String encoded) =>
-  decodeUriComponent(encoded.replaceAll("+", " "));
+  Uri.decodeComponent(encoded.replaceAll("+", " "));
 
 /// Like [String.split], but only splits on the first occurrence of the pattern.
 /// This will always return an array of two elements or fewer.
@@ -172,7 +173,7 @@ Stream get emptyStream => streamFromIterable([]);
 /// Creates a single-subscription stream that emits the items in [iter] and then
 /// ends.
 Stream streamFromIterable(Iterable iter) {
-  var controller = new StreamController();
+  var controller = new StreamController(sync: true);
   iter.forEach(controller.add);
   controller.close();
   return controller.stream;
@@ -183,8 +184,8 @@ Stream streamFromIterable(Iterable iter) {
 /// errors from [stream]. This is useful if [stream] is single-subscription but
 /// multiple subscribers are necessary.
 Pair<Stream, Stream> tee(Stream stream) {
-  var controller1 = new StreamController();
-  var controller2 = new StreamController();
+  var controller1 = new StreamController(sync: true);
+  var controller2 = new StreamController(sync: true);
   stream.listen((value) {
     controller1.add(value);
     controller2.add(value);

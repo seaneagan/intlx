@@ -75,7 +75,9 @@ set iterableData(dynamic value) {
   }
   __$iterableData = value;
 } 
-get iterableFormat => new IterableFormat(locale: selectedLocale);
+get iterableFormat => new IterableFormat(
+  locale: selectedLocale, 
+  onSeparator: (sep) => '<span class="muted">$sep</span>');
 dynamic __$counts = range(4);
 dynamic get counts {
   if (__observe.observeReads) {
@@ -90,7 +92,7 @@ set counts(dynamic value) {
   }
   __$counts = value;
 }
-String formatCount(int count) => iterableFormat.format(range(count, 1));
+String formatCount(int count) => new SafeHtml.unsafe('<span>${iterableFormat.format(range(count, 1).map((i) => '<b class="text-info">$i</b>'))}</span>');
 String toStringCount(int count) => range(count, 1).toList().toString();
 
 // plural

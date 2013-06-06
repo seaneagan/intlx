@@ -59,6 +59,8 @@ class ObservableMap<K, V> extends Observable implements Map<K, V> {
 
   bool get isEmpty => length == 0;
 
+  bool get isNotEmpty => length != 0;
+
   void _notifyReadKey(K key) => notifyRead(this, ChangeRecord.INDEX, key);
 
   void _notifyReadAll() {

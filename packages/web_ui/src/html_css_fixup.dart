@@ -5,7 +5,6 @@
 library html_css_fixup;
 
 import 'dart:json' as json;
-import 'dart:uri' show Uri;
 
 import 'package:csslib/parser.dart' as css;
 import 'package:csslib/visitor.dart';
@@ -69,9 +68,9 @@ class IdClassVisitor extends Visitor {
   }
 }
 
-/** Build the Dart `_css` list of managled class names. */
+/** Build the Dart map of managled class/id names and component tag name. */
 Map createCssSimpleSelectors(IdClassVisitor visitedCss, ComponentInfo info,
-                     {scopedStyles: true}) {
+    {scopedStyles: true}) {
   Map selectors = {};
   if (visitedCss != null) {
     for (var cssClass in visitedCss.classes) {
@@ -82,6 +81,11 @@ Map createCssSimpleSelectors(IdClassVisitor visitedCss, ComponentInfo info,
       selectors['#$id'] = scopedStyles ? '${info.tagName}_$id' : id;
     }
   }
+
+  // Add tag name selector x-comp == [is="x-comp"].
+  var componentName = info.tagName;
+  selectors['$componentName'] = '[is="$componentName"]';
+
   return selectors;
 }
 
@@ -89,7 +93,7 @@ Map createCssSimpleSelectors(IdClassVisitor visitedCss, ComponentInfo info,
  * Return a map of simple CSS selectors (class and id selectors) as a Dart map
  * definition.
  */
-String createCssSelectorsDefinition(ComponentInfo info, bool cssPolyfill) {
+String createCssSelectorsExpression(ComponentInfo info, bool cssPolyfill) {
   var cssVisited = new IdClassVisitor();
 
   // For components only 1 stylesheet allowed.
@@ -98,9 +102,8 @@ String createCssSelectorsDefinition(ComponentInfo info, bool cssPolyfill) {
     cssVisited..visitTree(styleSheet);
   }
 
-  var css = json.stringify(createCssSimpleSelectors(cssVisited, info,
+  return json.stringify(createCssSimpleSelectors(cssVisited, info,
       scopedStyles: cssPolyfill));
-  return 'static Map<String, String> _css = $css;';
 }
 
 // TODO(terry): Need to handle other selectors than IDs/classes like tag name
@@ -151,7 +154,7 @@ class _ScopedStyleRenamer extends InfoVisitor {
         var refClass = refClasses[i];
         if (classes.contains(refClass)) {
           if (prefix != null) {
-            refClasses[i] = "${prefix}_$refClass";
+            refClasses[i] = '${prefix}_$refClass';
             changed = true;
           }
         }
@@ -180,7 +183,7 @@ class _ScopedStyleRenamer extends InfoVisitor {
     if (prefix != null) {
       var id = node.attributes['id'];
       if (id != null && ids.contains(id)) {
-        var mangledName = "${prefix}_$id";
+        var mangledName = '${prefix}_$id';
         if (_debugCss) {
           print("    id = ${node.attributes['id'].toString()} => $mangledName");
         }
@@ -405,7 +408,7 @@ class UriVisitor extends Visitor {
   void visitUriTerm(UriTerm node) {
     // Don't touch URIs that have any scheme (http, etc.).
     var uri = Uri.parse(node.text);
-    if (uri.domain != '') return;
+    if (uri.host != '') return;
     if (uri.scheme != '' && uri.scheme != 'package') return;
 
     node.text = pathToUrl(

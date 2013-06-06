@@ -8,8 +8,6 @@
  */
 library web_ui.src.paths;
 
-import 'dart:uri';
-
 import 'info.dart' show UrlInfo;
 import 'messages.dart';
 import 'summary.dart';
@@ -152,8 +150,13 @@ class PathMapper {
    * [target] is not under [_baseDir].
    */
   String transformUrl(String src, String target) {
-    if (Uri.parse(target).isAbsolute) return target;
+    var uri = Uri.parse(target);
+    if (uri.isAbsolute) return target;
+    if (!uri.scheme.isEmpty) return target;
+    if (!uri.host.isEmpty) return target;
+    if (uri.path.isEmpty) return target;  // Implies standalone ? or # in URI.
     if (path.isAbsolute(target)) return target;
+
     return pathToUrl(path.normalize(path.relative(
           path.join(path.dirname(src), target), from: outputDirPath(src))));
   }

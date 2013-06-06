@@ -25,6 +25,7 @@ import 'package:args/args.dart';
 
 import 'dwc.dart' as dwc;
 import 'src/utils.dart';
+import 'src/options.dart';
 
 /**
  * Set up 'build.dart' to compile with the dart web components compiler every
@@ -33,7 +34,8 @@ import 'src/utils.dart';
  */
 // TODO(jmesserly): we need a better way to automatically detect input files
 Future<List<dwc.CompilerResult>> build(List<String> arguments,
-    List<String> entryPoints) {
+    List<String> entryPoints,
+    {bool printTime: true, bool shouldPrint: true}) {
   bool useColors = stdioType(stdout) == StdioType.TERMINAL;
   return asyncTime('Total time', () {
     var args = _processArgs(arguments);
@@ -41,7 +43,6 @@ Future<List<dwc.CompilerResult>> build(List<String> arguments,
     var lastTask = new Future.value(null);
     tasks.add(lastTask);
 
-    var trackDirs = <Directory>[];
     var changedFiles = args["changed"];
     var removedFiles = args["removed"];
     var cleanBuild = args["clean"];
@@ -51,63 +52,91 @@ Future<List<dwc.CompilerResult>> build(List<String> arguments,
     var fullBuild = args["full"] || (!machineFormat && changedFiles.isEmpty &&
         removedFiles.isEmpty && !cleanBuild);
 
-    for (var file in entryPoints) {
-      trackDirs.add(new Directory(_outDir(file)));
-    }
+    var options = CompilerOptions.parse(args.rest, checkUsage: false);
+
+    // [outputOnlyDirs] contains directories known to only have output files.
+    // When outputDir is not specified, we create a new directory which only
+    // contains output files. If options.outputDir is specified, we don't know
+    // if the output directory may also have input files. In which case,
+    // [_handleCleanCommand] and [_isInputFile] are more conservative.
+    //
+    // TODO(sigmund): get rid of this. Instead, use the compiler to understand
+    // which files are input or output files.
+    var outputOnlyDirs = options.outputDir == null ? []
+        : entryPoints.map((e) => _outDir(e)).toList();
 
     if (cleanBuild) {
-      _handleCleanCommand(trackDirs);
-    } else if (fullBuild || changedFiles.any((f) => _isInputFile(f, trackDirs))
-        || removedFiles.any((f) => _isInputFile(f, trackDirs))) {
+      _handleCleanCommand(outputOnlyDirs);
+    } else if (fullBuild
+        || changedFiles.any((f) => _isInputFile(f, outputOnlyDirs))
+        || removedFiles.any((f) => _isInputFile(f, outputOnlyDirs))) {
       for (var file in entryPoints) {
-        var outDir = _outDir(file);
-        var dwcArgs = [];
-        // Any arguments passed to build.dart after the '--'
-        dwcArgs.addAll(args.rest);
+        var dwcArgs = new List.from(args.rest);
         if (machineFormat) dwcArgs.add('--json_format');
         if (!useColors) dwcArgs.add('--no-colors');
-        dwcArgs.addAll(['-o', outDir.toString(), file]);
+        // We'll set 'out/' as the out folder, unless an output directory was
+        // already specified in the command line.
+        if (options.outputDir == null) dwcArgs.addAll(['-o', _outDir(file)]);
+        dwcArgs.add(file);
         // Chain tasks to that we run one at a time.
-        lastTask = lastTask.then((_) => dwc.run(dwcArgs, printTime: true));
-        tasks.add(lastTask);
-
+        lastTask = lastTask.then((_) => dwc.run(dwcArgs, printTime: printTime,
+            shouldPrint: shouldPrint));
         if (machineFormat) {
-          // Print for the Dart Editor the mapping from the input entry point
-          // file and its corresponding output.
-          var out = path.join(outDir, path.basename(file));
-          print(json.stringify([{
-            "method": "mapping",
-            "params": {"from": file, "to": out},
-          }]));
+          lastTask = lastTask.then((res) {
+            // Print mappings for the Dart Editor.
+            res.outputs.forEach((out, input) {
+              // For now, we print out only mappings of HTML files, which is the
+              // only information the Editor uses today in order to redirect
+              // launches from the source HTML file to the generated one.
+              if (out.endsWith(".html") && input != null) {
+                var mapMessage = json.stringify([{
+                  "method": "mapping",
+                  "params": {"from": input, "to": out},
+                }]);
+                if (shouldPrint) {
+                  print(mapMessage);
+                }
+                res.messages.add(mapMessage);
+              }
+            });
+            return res;
+          });
         }
+        tasks.add(lastTask);
       }
     }
     return tasks.future.then((r) => r.where((v) => v != null));
-  }, printTime: true, useColors: useColors);
+  }, printTime: printTime, useColors: useColors);
 }
 
 String _outDir(String file) => path.join(path.dirname(file), 'out');
 
-bool _isGeneratedFile(String filePath, List<Directory> outputDirs) {
+/** Tell whether [filePath] is a generated file. */
+bool _isGeneratedFile(String filePath, List<Directory> outputOnlyDirs) {
   var dirPrefix = path.dirname(filePath);
-  for (var dir in outputDirs) {
-    if (dirPrefix.startsWith(dir.path)) return true;
+  for (var outDir in outputOnlyDirs) {
+    if (dirPrefix.startsWith(outDir)) return true;
   }
   return path.basename(filePath).startsWith('_');
 }
 
-bool _isInputFile(String filePath, List<Directory> outputDirs) {
+/** Tell whether [filePath] is an input file. */
+bool _isInputFile(String filePath, List<String> outputOnlyDirs) {
   var ext = path.extension(filePath);
   return (ext == '.dart' || ext == '.html') &&
-      !_isGeneratedFile(filePath, outputDirs);
+      !_isGeneratedFile(filePath, outputOnlyDirs);
 }
 
-/** Delete all generated files. */
-void _handleCleanCommand(List<Directory> trackDirs) {
-  for (var dir in trackDirs) {
+/**
+ * Delete all generated files. Currently we only delete files under directories
+ * that are known to contain only generated code.
+ */
+void _handleCleanCommand(List<String> outputOnlyDirs) {
+  for (var dirPath in outputOnlyDirs) {
+    var dir = new Directory(dirPath);
     if (!dir.existsSync()) continue;
     for (var f in dir.listSync(recursive: false)) {
-      if (f is File && _isGeneratedFile(f.path, trackDirs)) f.deleteSync();
+      if (f is File && _isGeneratedFile(f.path, outputOnlyDirs)) f.deleteSync();
     }
   }
 }

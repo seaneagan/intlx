@@ -1247,8 +1247,7 @@ class Parser {
         case TokenKind.SINGLE_QUOTE:
         case TokenKind.DOUBLE_QUOTE:
           value = processQuotedString(false);
-          // TODO(terry): Work around b/10838.
-          value = '"${(_escapeString)(value)}"';
+          value = '"${_escapeString(value)}"';
           return new LiteralTerm(value, value, _makeSpan(start));
         case TokenKind.IDENTIFIER:
           value = identifier();   // Snarf up the ident we'll remap, maybe.
@@ -1850,8 +1849,7 @@ class Parser {
     case TokenKind.SINGLE_QUOTE:
     case TokenKind.DOUBLE_QUOTE:
       value = processQuotedString(false);
-      // TODO(terry): Work around b/10838.
-      value = '"${(_escapeString)(value)}"';
+      value = '"${_escapeString(value)}"';
       return new LiteralTerm(value, value, _makeSpan(start));
     case TokenKind.LPAREN:
       _next();

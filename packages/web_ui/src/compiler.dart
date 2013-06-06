@@ -636,7 +636,7 @@ class Compiler {
           css.write(
               '/* Auto-generated from style sheet href = ${file.path} */\n'
               '/* DO NOT EDIT. */\n\n');
-          css.write(emitStyleSheet(styleSheet));
+          css.write(emitStyleSheet(styleSheet, fileInfo));
           css.write('\n\n');
         }
 
@@ -667,7 +667,7 @@ class Compiler {
                 '/* ==================================================== \n'
                 '   Component ${component.tagName} stylesheet \n'
                 '   ==================================================== */\n');
-            buff.write(emitStyleSheet(styleSheet, component.tagName));
+            buff.write(emitComponentStyleSheet(styleSheet, component.tagName));
             buff.write('\n\n');
           }
         }

@@ -6,7 +6,6 @@ library streamed_request;
 
 import 'dart:async';
 import 'dart:io';
-import 'dart:uri';
 
 import 'byte_stream.dart';
 import 'base_request.dart';
@@ -33,7 +32,7 @@ class StreamedRequest extends BaseRequest {
   /// Creates a new streaming request.
   StreamedRequest(String method, Uri url)
     : super(method, url),
-      _controller = new StreamController<List<int>>();
+      _controller = new StreamController<List<int>>(sync: true);
 
   /// Freezes all mutable fields other than [stream] and returns a
   /// single-subscription [ByteStream] that emits the data being written to

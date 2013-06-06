@@ -196,7 +196,9 @@
           <div class="span2"></div>
         </div>
         <div class="row">
-          <div class="span4"><pre class="prettyprint lang-dart">var iterableFormat = new <a href="docs/intlx/IterableFormat.html">IterableFormat</a>();</pre>
+          <div class="span4"><pre class="prettyprint lang-dart">var iterableFormat = new <a href="docs/intlx/IterableFormat.html">IterableFormat</a>(
+  onSeparator: (sep) =&gt; 
+    '&lt;span class="<span class="nocode"><a href="http://twitter.github.io/bootstrap/base-css.html#typography">muted</a></span>"&gt;$sep&lt;/span&gt;');</pre>
           </div>
           <div class="span2"></div>
         </div>

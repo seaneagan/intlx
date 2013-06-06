@@ -9,7 +9,6 @@
 library web_ui.src.info;
 
 import 'dart:collection' show SplayTreeMap, LinkedHashMap;
-import 'dart:uri' show Uri;
 
 import 'package:analyzer_experimental/src/generated/ast.dart';
 import 'package:csslib/parser.dart' as css;
@@ -645,7 +644,7 @@ class UrlInfo {
       String packageRoot, Messages messages, {bool ignoreAbsolute: false}) {
 
     var uri = Uri.parse(url);
-    if (uri.domain != '' || (uri.scheme != '' && uri.scheme != 'package')) {
+    if (uri.host != '' || (uri.scheme != '' && uri.scheme != 'package')) {
       if (!ignoreAbsolute) {
         messages.error('absolute paths not allowed here: "$url"', span);
       }

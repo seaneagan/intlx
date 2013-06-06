@@ -79,8 +79,13 @@ class CompilerOptions {
       analysisOnly = args['analysis-only'],
       inputFile = args.rest.length > 0 ? args.rest[0] : null;
 
+  /**
+   * Returns the compiler options parsed from [arguments]. Set [checkUsage] to
+   * false to suppress checking of correct usage or printing help messages.
+   */
   // TODO(sigmund): convert all flags to use dashes instead of underscores
-  static CompilerOptions parse(List<String> arguments) {
+  static CompilerOptions parse(List<String> arguments,
+      {bool checkUsage: true}) {
     var parser = new ArgParser()
       ..addFlag('verbose', abbr: 'v')
       ..addFlag('clean', help: 'Remove all generated files',
@@ -124,7 +129,7 @@ class CompilerOptions {
           defaultsTo: false, negatable: false);
     try {
       var results = parser.parse(arguments);
-      if (results['help'] || results.rest.length == 0) {
+      if (checkUsage && (results['help'] || results.rest.length == 0)) {
         showUsage(parser);
         return null;
       }

@@ -1,7 +1,6 @@
 library java.core;
 
 import "dart:math" as math;
-import "dart:uri";
 import "dart:collection" show ListBase;
 
 class JavaSystem {
@@ -269,6 +268,15 @@ class NumberFormatException implements Exception {
   String toString() => "NumberFormatException";
 }
 
+/// Parses given string to [Uri], throws [URISyntaxException] if invalid.
+Uri parseUriWithException(String str) {
+  Uri uri = Uri.parse(str);
+  if (uri.path.isEmpty) {
+    throw new URISyntaxException();
+  }
+  return uri;
+}
+
 class URISyntaxException implements Exception {
   String toString() => "URISyntaxException";
 }
@@ -319,7 +327,7 @@ class ListWrapper<E> extends ListBase<E> implements List<E> {
   }
 
   void setAll(int index, Iterable<E> iterable) {
-    elements.setAll(iterable);
+    elements.setAll(index, iterable);
   }
 
   void sort([int compare(E a, E b)]) {
@@ -422,17 +430,24 @@ class JavaIterator<E> {
 }
 
 class MapEntry<K, V> {
-  K _key;
+  final Map<K, V> _map;
+  final K _key;
   V _value;
-  MapEntry(this._key, this._value);
+  MapEntry(this._map, this._key, this._value);
   K getKey() => _key;
   V getValue() => _value;
+  V setValue(V v) {
+    V prevValue = _value;
+    _value = v;
+    _map[_key] = v;
+    return prevValue;
+  }
 }
 
 Set<MapEntry> getMapEntrySet(Map m) {
   Set<MapEntry> result = new Set();
   m.forEach((k, v) {
-    result.add(new MapEntry(k, v));
+    result.add(new MapEntry(m, k, v));
   });
   return result;
 }
@@ -462,11 +477,13 @@ bool javaBooleanOr(bool a, bool b) {
 class JavaStringBuilder {
   StringBuffer sb = new StringBuffer();
   String toString() => sb.toString();
-  void append(x) {
+  JavaStringBuilder append(x) {
     sb.write(x);
+    return this;
   }
-  void appendChar(int c) {
+  JavaStringBuilder appendChar(int c) {
     sb.writeCharCode(c);
+    return this;
   }
   int get length => sb.length;
   void set length(int newLength) {

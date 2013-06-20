@@ -2,6 +2,8 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
+library intlx.tool.plural.code_build;
+
 import 'dart:io';
 import 'dart:json' as json;
 import '../library_writer.dart';
@@ -11,19 +13,22 @@ import 'plural_rule_parser.dart';
 import 'package:intlx/src/plural/plural.dart';
 import 'dart:async';
 import 'package:http/http.dart' as http;
+import 'package:logging/logging.dart';
+import '../log_util.dart';
 
-main() {
-  new PluralLibraryWriter().writeLibraries();
-}
+main() => new PluralLibraryWriter().writeLibraries();
 
 class PluralLibraryWriter extends LibraryWriter {
+  
+  static var logger = getLogger("intlx.tool.library_writer.plural");
+
   final String type = "plural";
   final String symbolsClass = "PluralLocaleImpl";
   final String symbolsClassLibrary = "plural";
   
   void writeLibrariesSync(){
     super.writeLibrariesSync();
-    writeLoadLocaleLibrary();
+    new LogStep(logger, "Writing loadLocale() library").execute(writeLoadLocaleLibrary);
   }
 
   void writeLoadLocaleLibrary() {

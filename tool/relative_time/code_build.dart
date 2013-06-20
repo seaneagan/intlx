@@ -2,6 +2,8 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
+library intlx.tool.relative_time.code_build;
+
 import 'dart:io';
 import 'dart:json' as json;
 import '../library_writer.dart';
@@ -10,9 +12,7 @@ import 'package:intl/intl.dart';
 import 'package:intlx/intlx.dart';
 import '../package_paths.dart';
 
-main() {
-  new RelativeTimeLibraryWriter().writeLibraries();
-}
+main() => new RelativeTimeLibraryWriter().writeLibraries();
 
 class RelativeTimeLibraryWriter extends LibraryWriter {
   final type = "relative_time";

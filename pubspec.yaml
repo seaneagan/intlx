@@ -6,10 +6,14 @@ homepage: http://www.github.com/seaneagan/intlx
 dependencies:
   intl: any
 dev_dependencies:
-  unittest: any
-  http: any
   browser: any
-  web_ui: any
+  crypto: any
+  http: any
+  logging: any
   parsers: any
   pathos: any
+  unittest: any
+  web_ui: any
   widget: any
+
+# TODO: remove crypto dependency once http://dartbug.com/11358 is fixed

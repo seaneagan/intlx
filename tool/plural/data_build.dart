@@ -2,6 +2,8 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
+library intlx.tool.plural.data_build;
+
 import '../cldr_data_proxy.dart';
 import 'package:http/http.dart' as http;
 import 'dart:json' as json;
@@ -9,16 +11,12 @@ import 'dart:async';
 import 'package:intl/intl.dart';
 import 'package:intlx/src/deprecated_locale_map.dart';
 
-main() {
-  new PluralDataProxy().proxy();
-}
+main() => new PluralDataProxy().proxy();
 
 class PluralDataProxy extends CldrDataProxy {
   
   PluralDataProxy() : super(null, "plural");
 
-  final availableCldrLocales = mainCldrLocales;
-  
   Future fetch() {
     var pluralRulesUri = '${cldrBaseUri}supplemental/plurals/plurals?depth=-1';
     return http.read(pluralRulesUri).then((String jsonText) {
@@ -29,9 +27,9 @@ class PluralDataProxy extends CldrDataProxy {
         if(data.containsKey(v)) data[k] = data[v];
       });
       
-      return data;
+      availableCldrLocales = data.keys;
       
-      return constrainLocales(data.keys).fold({}, (map, locale) {
+      return constrainLocales().fold({}, (map, locale) {
         map[locale] = data[locale];
         return map;
       });

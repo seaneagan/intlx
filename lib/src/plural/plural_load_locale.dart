@@ -12,66 +12,26 @@ import 'package:intlx/src/util.dart';
 import 'package:intlx/src/plural/plural.dart';
 @library_af
 import 'package:intlx/src/plural/data/af.dart' as symbols_AF;
-@library_ak
-import 'package:intlx/src/plural/data/ak.dart' as symbols_AK;
 @library_am
 import 'package:intlx/src/plural/data/am.dart' as symbols_AM;
 @library_ar
 import 'package:intlx/src/plural/data/ar.dart' as symbols_AR;
-@library_asa
-import 'package:intlx/src/plural/data/asa.dart' as symbols_ASA;
-@library_az
-import 'package:intlx/src/plural/data/az.dart' as symbols_AZ;
-@library_be
-import 'package:intlx/src/plural/data/be.dart' as symbols_BE;
-@library_bem
-import 'package:intlx/src/plural/data/bem.dart' as symbols_BEM;
-@library_bez
-import 'package:intlx/src/plural/data/bez.dart' as symbols_BEZ;
 @library_bg
 import 'package:intlx/src/plural/data/bg.dart' as symbols_BG;
-@library_bh
-import 'package:intlx/src/plural/data/bh.dart' as symbols_BH;
-@library_bm
-import 'package:intlx/src/plural/data/bm.dart' as symbols_BM;
 @library_bn
 import 'package:intlx/src/plural/data/bn.dart' as symbols_BN;
-@library_bo
-import 'package:intlx/src/plural/data/bo.dart' as symbols_BO;
-@library_br
-import 'package:intlx/src/plural/data/br.dart' as symbols_BR;
-@library_brx
-import 'package:intlx/src/plural/data/brx.dart' as symbols_BRX;
-@library_bs
-import 'package:intlx/src/plural/data/bs.dart' as symbols_BS;
 @library_ca
 import 'package:intlx/src/plural/data/ca.dart' as symbols_CA;
-@library_cgg
-import 'package:intlx/src/plural/data/cgg.dart' as symbols_CGG;
-@library_chr
-import 'package:intlx/src/plural/data/chr.dart' as symbols_CHR;
-@library_ckb
-import 'package:intlx/src/plural/data/ckb.dart' as symbols_CKB;
 @library_cs
 import 'package:intlx/src/plural/data/cs.dart' as symbols_CS;
-@library_cy
-import 'package:intlx/src/plural/data/cy.dart' as symbols_CY;
 @library_da
 import 'package:intlx/src/plural/data/da.dart' as symbols_DA;
 @library_de
 import 'package:intlx/src/plural/data/de.dart' as symbols_DE;
-@library_dv
-import 'package:intlx/src/plural/data/dv.dart' as symbols_DV;
-@library_dz
-import 'package:intlx/src/plural/data/dz.dart' as symbols_DZ;
-@library_ee
-import 'package:intlx/src/plural/data/ee.dart' as symbols_EE;
 @library_el
 import 'package:intlx/src/plural/data/el.dart' as symbols_EL;
 @library_en
 import 'package:intlx/src/plural/data/en.dart' as symbols_EN;
-@library_eo
-import 'package:intlx/src/plural/data/eo.dart' as symbols_EO;
 @library_es
 import 'package:intlx/src/plural/data/es.dart' as symbols_ES;
 @library_et
@@ -80,36 +40,18 @@ import 'package:intlx/src/plural/data/et.dart' as symbols_ET;
 import 'package:intlx/src/plural/data/eu.dart' as symbols_EU;
 @library_fa
 import 'package:intlx/src/plural/data/fa.dart' as symbols_FA;
-@library_ff
-import 'package:intlx/src/plural/data/ff.dart' as symbols_FF;
 @library_fi
 import 'package:intlx/src/plural/data/fi.dart' as symbols_FI;
 @library_fil
 import 'package:intlx/src/plural/data/fil.dart' as symbols_FIL;
-@library_fo
-import 'package:intlx/src/plural/data/fo.dart' as symbols_FO;
 @library_fr
 import 'package:intlx/src/plural/data/fr.dart' as symbols_FR;
-@library_fur
-import 'package:intlx/src/plural/data/fur.dart' as symbols_FUR;
-@library_fy
-import 'package:intlx/src/plural/data/fy.dart' as symbols_FY;
-@library_ga
-import 'package:intlx/src/plural/data/ga.dart' as symbols_GA;
 @library_gl
 import 'package:intlx/src/plural/data/gl.dart' as symbols_GL;
 @library_gsw
 import 'package:intlx/src/plural/data/gsw.dart' as symbols_GSW;
 @library_gu
 import 'package:intlx/src/plural/data/gu.dart' as symbols_GU;
-@library_guw
-import 'package:intlx/src/plural/data/guw.dart' as symbols_GUW;
-@library_gv
-import 'package:intlx/src/plural/data/gv.dart' as symbols_GV;
-@library_ha
-import 'package:intlx/src/plural/data/ha.dart' as symbols_HA;
-@library_haw
-import 'package:intlx/src/plural/data/haw.dart' as symbols_HAW;
 @library_he
 import 'package:intlx/src/plural/data/he.dart' as symbols_HE;
 @library_hi
@@ -120,236 +62,76 @@ import 'package:intlx/src/plural/data/hr.dart' as symbols_HR;
 import 'package:intlx/src/plural/data/hu.dart' as symbols_HU;
 @library_id
 import 'package:intlx/src/plural/data/id.dart' as symbols_ID;
-@library_ig
-import 'package:intlx/src/plural/data/ig.dart' as symbols_IG;
-@library_ii
-import 'package:intlx/src/plural/data/ii.dart' as symbols_II;
 @library_in
 import 'package:intlx/src/plural/data/in.dart' as symbols_IN;
 @library_is
 import 'package:intlx/src/plural/data/is.dart' as symbols_IS;
 @library_it
 import 'package:intlx/src/plural/data/it.dart' as symbols_IT;
-@library_iu
-import 'package:intlx/src/plural/data/iu.dart' as symbols_IU;
 @library_iw
 import 'package:intlx/src/plural/data/iw.dart' as symbols_IW;
 @library_ja
 import 'package:intlx/src/plural/data/ja.dart' as symbols_JA;
-@library_jmc
-import 'package:intlx/src/plural/data/jmc.dart' as symbols_JMC;
-@library_jv
-import 'package:intlx/src/plural/data/jv.dart' as symbols_JV;
-@library_ka
-import 'package:intlx/src/plural/data/ka.dart' as symbols_KA;
-@library_kab
-import 'package:intlx/src/plural/data/kab.dart' as symbols_KAB;
-@library_kaj
-import 'package:intlx/src/plural/data/kaj.dart' as symbols_KAJ;
-@library_kcg
-import 'package:intlx/src/plural/data/kcg.dart' as symbols_KCG;
-@library_kde
-import 'package:intlx/src/plural/data/kde.dart' as symbols_KDE;
-@library_kea
-import 'package:intlx/src/plural/data/kea.dart' as symbols_KEA;
-@library_kk
-import 'package:intlx/src/plural/data/kk.dart' as symbols_KK;
-@library_kl
-import 'package:intlx/src/plural/data/kl.dart' as symbols_KL;
-@library_km
-import 'package:intlx/src/plural/data/km.dart' as symbols_KM;
 @library_kn
 import 'package:intlx/src/plural/data/kn.dart' as symbols_KN;
 @library_ko
 import 'package:intlx/src/plural/data/ko.dart' as symbols_KO;
-@library_ksb
-import 'package:intlx/src/plural/data/ksb.dart' as symbols_KSB;
-@library_ksh
-import 'package:intlx/src/plural/data/ksh.dart' as symbols_KSH;
-@library_ku
-import 'package:intlx/src/plural/data/ku.dart' as symbols_KU;
-@library_kw
-import 'package:intlx/src/plural/data/kw.dart' as symbols_KW;
-@library_lag
-import 'package:intlx/src/plural/data/lag.dart' as symbols_LAG;
-@library_lb
-import 'package:intlx/src/plural/data/lb.dart' as symbols_LB;
-@library_lg
-import 'package:intlx/src/plural/data/lg.dart' as symbols_LG;
 @library_ln
 import 'package:intlx/src/plural/data/ln.dart' as symbols_LN;
-@library_lo
-import 'package:intlx/src/plural/data/lo.dart' as symbols_LO;
 @library_lt
 import 'package:intlx/src/plural/data/lt.dart' as symbols_LT;
 @library_lv
 import 'package:intlx/src/plural/data/lv.dart' as symbols_LV;
-@library_mas
-import 'package:intlx/src/plural/data/mas.dart' as symbols_MAS;
-@library_mg
-import 'package:intlx/src/plural/data/mg.dart' as symbols_MG;
-@library_mk
-import 'package:intlx/src/plural/data/mk.dart' as symbols_MK;
 @library_ml
 import 'package:intlx/src/plural/data/ml.dart' as symbols_ML;
-@library_mn
-import 'package:intlx/src/plural/data/mn.dart' as symbols_MN;
-@library_mo
-import 'package:intlx/src/plural/data/mo.dart' as symbols_MO;
 @library_mr
 import 'package:intlx/src/plural/data/mr.dart' as symbols_MR;
 @library_ms
 import 'package:intlx/src/plural/data/ms.dart' as symbols_MS;
 @library_mt
 import 'package:intlx/src/plural/data/mt.dart' as symbols_MT;
-@library_my
-import 'package:intlx/src/plural/data/my.dart' as symbols_MY;
-@library_nah
-import 'package:intlx/src/plural/data/nah.dart' as symbols_NAH;
-@library_naq
-import 'package:intlx/src/plural/data/naq.dart' as symbols_NAQ;
-@library_nb
-import 'package:intlx/src/plural/data/nb.dart' as symbols_NB;
-@library_nd
-import 'package:intlx/src/plural/data/nd.dart' as symbols_ND;
-@library_ne
-import 'package:intlx/src/plural/data/ne.dart' as symbols_NE;
 @library_nl
 import 'package:intlx/src/plural/data/nl.dart' as symbols_NL;
-@library_nn
-import 'package:intlx/src/plural/data/nn.dart' as symbols_NN;
 @library_no
 import 'package:intlx/src/plural/data/no.dart' as symbols_NO;
-@library_nr
-import 'package:intlx/src/plural/data/nr.dart' as symbols_NR;
-@library_nso
-import 'package:intlx/src/plural/data/nso.dart' as symbols_NSO;
-@library_ny
-import 'package:intlx/src/plural/data/ny.dart' as symbols_NY;
-@library_nyn
-import 'package:intlx/src/plural/data/nyn.dart' as symbols_NYN;
-@library_om
-import 'package:intlx/src/plural/data/om.dart' as symbols_OM;
 @library_or
 import 'package:intlx/src/plural/data/or.dart' as symbols_OR;
-@library_pa
-import 'package:intlx/src/plural/data/pa.dart' as symbols_PA;
-@library_pap
-import 'package:intlx/src/plural/data/pap.dart' as symbols_PAP;
 @library_pl
 import 'package:intlx/src/plural/data/pl.dart' as symbols_PL;
-@library_ps
-import 'package:intlx/src/plural/data/ps.dart' as symbols_PS;
 @library_pt
 import 'package:intlx/src/plural/data/pt.dart' as symbols_PT;
-@library_rm
-import 'package:intlx/src/plural/data/rm.dart' as symbols_RM;
 @library_ro
 import 'package:intlx/src/plural/data/ro.dart' as symbols_RO;
-@library_rof
-import 'package:intlx/src/plural/data/rof.dart' as symbols_ROF;
 @library_ru
 import 'package:intlx/src/plural/data/ru.dart' as symbols_RU;
-@library_rwk
-import 'package:intlx/src/plural/data/rwk.dart' as symbols_RWK;
-@library_sah
-import 'package:intlx/src/plural/data/sah.dart' as symbols_SAH;
-@library_saq
-import 'package:intlx/src/plural/data/saq.dart' as symbols_SAQ;
-@library_se
-import 'package:intlx/src/plural/data/se.dart' as symbols_SE;
-@library_seh
-import 'package:intlx/src/plural/data/seh.dart' as symbols_SEH;
-@library_ses
-import 'package:intlx/src/plural/data/ses.dart' as symbols_SES;
-@library_sg
-import 'package:intlx/src/plural/data/sg.dart' as symbols_SG;
-@library_sh
-import 'package:intlx/src/plural/data/sh.dart' as symbols_SH;
-@library_shi
-import 'package:intlx/src/plural/data/shi.dart' as symbols_SHI;
 @library_sk
 import 'package:intlx/src/plural/data/sk.dart' as symbols_SK;
 @library_sl
 import 'package:intlx/src/plural/data/sl.dart' as symbols_SL;
-@library_sma
-import 'package:intlx/src/plural/data/sma.dart' as symbols_SMA;
-@library_smi
-import 'package:intlx/src/plural/data/smi.dart' as symbols_SMI;
-@library_smj
-import 'package:intlx/src/plural/data/smj.dart' as symbols_SMJ;
-@library_smn
-import 'package:intlx/src/plural/data/smn.dart' as symbols_SMN;
-@library_sms
-import 'package:intlx/src/plural/data/sms.dart' as symbols_SMS;
-@library_sn
-import 'package:intlx/src/plural/data/sn.dart' as symbols_SN;
-@library_so
-import 'package:intlx/src/plural/data/so.dart' as symbols_SO;
 @library_sq
 import 'package:intlx/src/plural/data/sq.dart' as symbols_SQ;
 @library_sr
 import 'package:intlx/src/plural/data/sr.dart' as symbols_SR;
-@library_ss
-import 'package:intlx/src/plural/data/ss.dart' as symbols_SS;
-@library_ssy
-import 'package:intlx/src/plural/data/ssy.dart' as symbols_SSY;
-@library_st
-import 'package:intlx/src/plural/data/st.dart' as symbols_ST;
 @library_sv
 import 'package:intlx/src/plural/data/sv.dart' as symbols_SV;
 @library_sw
 import 'package:intlx/src/plural/data/sw.dart' as symbols_SW;
-@library_syr
-import 'package:intlx/src/plural/data/syr.dart' as symbols_SYR;
 @library_ta
 import 'package:intlx/src/plural/data/ta.dart' as symbols_TA;
 @library_te
 import 'package:intlx/src/plural/data/te.dart' as symbols_TE;
-@library_teo
-import 'package:intlx/src/plural/data/teo.dart' as symbols_TEO;
 @library_th
 import 'package:intlx/src/plural/data/th.dart' as symbols_TH;
-@library_ti
-import 'package:intlx/src/plural/data/ti.dart' as symbols_TI;
-@library_tig
-import 'package:intlx/src/plural/data/tig.dart' as symbols_TIG;
-@library_tk
-import 'package:intlx/src/plural/data/tk.dart' as symbols_TK;
 @library_tl
 import 'package:intlx/src/plural/data/tl.dart' as symbols_TL;
-@library_tn
-import 'package:intlx/src/plural/data/tn.dart' as symbols_TN;
-@library_to
-import 'package:intlx/src/plural/data/to.dart' as symbols_TO;
 @library_tr
 import 'package:intlx/src/plural/data/tr.dart' as symbols_TR;
-@library_ts
-import 'package:intlx/src/plural/data/ts.dart' as symbols_TS;
-@library_tzm
-import 'package:intlx/src/plural/data/tzm.dart' as symbols_TZM;
 @library_uk
 import 'package:intlx/src/plural/data/uk.dart' as symbols_UK;
 @library_ur
 import 'package:intlx/src/plural/data/ur.dart' as symbols_UR;
-@library_ve
-import 'package:intlx/src/plural/data/ve.dart' as symbols_VE;
 @library_vi
 import 'package:intlx/src/plural/data/vi.dart' as symbols_VI;
-@library_vun
-import 'package:intlx/src/plural/data/vun.dart' as symbols_VUN;
-@library_wa
-import 'package:intlx/src/plural/data/wa.dart' as symbols_WA;
-@library_wae
-import 'package:intlx/src/plural/data/wae.dart' as symbols_WAE;
-@library_wo
-import 'package:intlx/src/plural/data/wo.dart' as symbols_WO;
-@library_xh
-import 'package:intlx/src/plural/data/xh.dart' as symbols_XH;
-@library_xog
-import 'package:intlx/src/plural/data/xog.dart' as symbols_XOG;
-@library_yo
-import 'package:intlx/src/plural/data/yo.dart' as symbols_YO;
 @library_zh
 import 'package:intlx/src/plural/data/zh.dart' as symbols_ZH;
 @library_zu
@@ -357,350 +139,132 @@ import 'package:intlx/src/plural/data/zu.dart' as symbols_ZU;
 
 
 const library_af = const DeferredLibrary('plural_symbols_af');
-const library_ak = const DeferredLibrary('plural_symbols_ak');
 const library_am = const DeferredLibrary('plural_symbols_am');
 const library_ar = const DeferredLibrary('plural_symbols_ar');
-const library_asa = const DeferredLibrary('plural_symbols_asa');
-const library_az = const DeferredLibrary('plural_symbols_az');
-const library_be = const DeferredLibrary('plural_symbols_be');
-const library_bem = const DeferredLibrary('plural_symbols_bem');
-const library_bez = const DeferredLibrary('plural_symbols_bez');
 const library_bg = const DeferredLibrary('plural_symbols_bg');
-const library_bh = const DeferredLibrary('plural_symbols_bh');
-const library_bm = const DeferredLibrary('plural_symbols_bm');
 const library_bn = const DeferredLibrary('plural_symbols_bn');
-const library_bo = const DeferredLibrary('plural_symbols_bo');
-const library_br = const DeferredLibrary('plural_symbols_br');
-const library_brx = const DeferredLibrary('plural_symbols_brx');
-const library_bs = const DeferredLibrary('plural_symbols_bs');
 const library_ca = const DeferredLibrary('plural_symbols_ca');
-const library_cgg = const DeferredLibrary('plural_symbols_cgg');
-const library_chr = const DeferredLibrary('plural_symbols_chr');
-const library_ckb = const DeferredLibrary('plural_symbols_ckb');
 const library_cs = const DeferredLibrary('plural_symbols_cs');
-const library_cy = const DeferredLibrary('plural_symbols_cy');
 const library_da = const DeferredLibrary('plural_symbols_da');
 const library_de = const DeferredLibrary('plural_symbols_de');
-const library_dv = const DeferredLibrary('plural_symbols_dv');
-const library_dz = const DeferredLibrary('plural_symbols_dz');
-const library_ee = const DeferredLibrary('plural_symbols_ee');
 const library_el = const DeferredLibrary('plural_symbols_el');
 const library_en = const DeferredLibrary('plural_symbols_en');
-const library_eo = const DeferredLibrary('plural_symbols_eo');
 const library_es = const DeferredLibrary('plural_symbols_es');
 const library_et = const DeferredLibrary('plural_symbols_et');
 const library_eu = const DeferredLibrary('plural_symbols_eu');
 const library_fa = const DeferredLibrary('plural_symbols_fa');
-const library_ff = const DeferredLibrary('plural_symbols_ff');
 const library_fi = const DeferredLibrary('plural_symbols_fi');
 const library_fil = const DeferredLibrary('plural_symbols_fil');
-const library_fo = const DeferredLibrary('plural_symbols_fo');
 const library_fr = const DeferredLibrary('plural_symbols_fr');
-const library_fur = const DeferredLibrary('plural_symbols_fur');
-const library_fy = const DeferredLibrary('plural_symbols_fy');
-const library_ga = const DeferredLibrary('plural_symbols_ga');
 const library_gl = const DeferredLibrary('plural_symbols_gl');
 const library_gsw = const DeferredLibrary('plural_symbols_gsw');
 const library_gu = const DeferredLibrary('plural_symbols_gu');
-const library_guw = const DeferredLibrary('plural_symbols_guw');
-const library_gv = const DeferredLibrary('plural_symbols_gv');
-const library_ha = const DeferredLibrary('plural_symbols_ha');
-const library_haw = const DeferredLibrary('plural_symbols_haw');
 const library_he = const DeferredLibrary('plural_symbols_he');
 const library_hi = const DeferredLibrary('plural_symbols_hi');
 const library_hr = const DeferredLibrary('plural_symbols_hr');
 const library_hu = const DeferredLibrary('plural_symbols_hu');
 const library_id = const DeferredLibrary('plural_symbols_id');
-const library_ig = const DeferredLibrary('plural_symbols_ig');
-const library_ii = const DeferredLibrary('plural_symbols_ii');
 const library_in = const DeferredLibrary('plural_symbols_in');
 const library_is = const DeferredLibrary('plural_symbols_is');
 const library_it = const DeferredLibrary('plural_symbols_it');
-const library_iu = const DeferredLibrary('plural_symbols_iu');
 const library_iw = const DeferredLibrary('plural_symbols_iw');
 const library_ja = const DeferredLibrary('plural_symbols_ja');
-const library_jmc = const DeferredLibrary('plural_symbols_jmc');
-const library_jv = const DeferredLibrary('plural_symbols_jv');
-const library_ka = const DeferredLibrary('plural_symbols_ka');
-const library_kab = const DeferredLibrary('plural_symbols_kab');
-const library_kaj = const DeferredLibrary('plural_symbols_kaj');
-const library_kcg = const DeferredLibrary('plural_symbols_kcg');
-const library_kde = const DeferredLibrary('plural_symbols_kde');
-const library_kea = const DeferredLibrary('plural_symbols_kea');
-const library_kk = const DeferredLibrary('plural_symbols_kk');
-const library_kl = const DeferredLibrary('plural_symbols_kl');
-const library_km = const DeferredLibrary('plural_symbols_km');
 const library_kn = const DeferredLibrary('plural_symbols_kn');
 const library_ko = const DeferredLibrary('plural_symbols_ko');
-const library_ksb = const DeferredLibrary('plural_symbols_ksb');
-const library_ksh = const DeferredLibrary('plural_symbols_ksh');
-const library_ku = const DeferredLibrary('plural_symbols_ku');
-const library_kw = const DeferredLibrary('plural_symbols_kw');
-const library_lag = const DeferredLibrary('plural_symbols_lag');
-const library_lb = const DeferredLibrary('plural_symbols_lb');
-const library_lg = const DeferredLibrary('plural_symbols_lg');
 const library_ln = const DeferredLibrary('plural_symbols_ln');
-const library_lo = const DeferredLibrary('plural_symbols_lo');
 const library_lt = const DeferredLibrary('plural_symbols_lt');
 const library_lv = const DeferredLibrary('plural_symbols_lv');
-const library_mas = const DeferredLibrary('plural_symbols_mas');
-const library_mg = const DeferredLibrary('plural_symbols_mg');
-const library_mk = const DeferredLibrary('plural_symbols_mk');
 const library_ml = const DeferredLibrary('plural_symbols_ml');
-const library_mn = const DeferredLibrary('plural_symbols_mn');
-const library_mo = const DeferredLibrary('plural_symbols_mo');
 const library_mr = const DeferredLibrary('plural_symbols_mr');
 const library_ms = const DeferredLibrary('plural_symbols_ms');
 const library_mt = const DeferredLibrary('plural_symbols_mt');
-const library_my = const DeferredLibrary('plural_symbols_my');
-const library_nah = const DeferredLibrary('plural_symbols_nah');
-const library_naq = const DeferredLibrary('plural_symbols_naq');
-const library_nb = const DeferredLibrary('plural_symbols_nb');
-const library_nd = const DeferredLibrary('plural_symbols_nd');
-const library_ne = const DeferredLibrary('plural_symbols_ne');
 const library_nl = const DeferredLibrary('plural_symbols_nl');
-const library_nn = const DeferredLibrary('plural_symbols_nn');
 const library_no = const DeferredLibrary('plural_symbols_no');
-const library_nr = const DeferredLibrary('plural_symbols_nr');
-const library_nso = const DeferredLibrary('plural_symbols_nso');
-const library_ny = const DeferredLibrary('plural_symbols_ny');
-const library_nyn = const DeferredLibrary('plural_symbols_nyn');
-const library_om = const DeferredLibrary('plural_symbols_om');
 const library_or = const DeferredLibrary('plural_symbols_or');
-const library_pa = const DeferredLibrary('plural_symbols_pa');
-const library_pap = const DeferredLibrary('plural_symbols_pap');
 const library_pl = const DeferredLibrary('plural_symbols_pl');
-const library_ps = const DeferredLibrary('plural_symbols_ps');
 const library_pt = const DeferredLibrary('plural_symbols_pt');
-const library_rm = const DeferredLibrary('plural_symbols_rm');
 const library_ro = const DeferredLibrary('plural_symbols_ro');
-const library_rof = const DeferredLibrary('plural_symbols_rof');
 const library_ru = const DeferredLibrary('plural_symbols_ru');
-const library_rwk = const DeferredLibrary('plural_symbols_rwk');
-const library_sah = const DeferredLibrary('plural_symbols_sah');
-const library_saq = const DeferredLibrary('plural_symbols_saq');
-const library_se = const DeferredLibrary('plural_symbols_se');
-const library_seh = const DeferredLibrary('plural_symbols_seh');
-const library_ses = const DeferredLibrary('plural_symbols_ses');
-const library_sg = const DeferredLibrary('plural_symbols_sg');
-const library_sh = const DeferredLibrary('plural_symbols_sh');
-const library_shi = const DeferredLibrary('plural_symbols_shi');
 const library_sk = const DeferredLibrary('plural_symbols_sk');
 const library_sl = const DeferredLibrary('plural_symbols_sl');
-const library_sma = const DeferredLibrary('plural_symbols_sma');
-const library_smi = const DeferredLibrary('plural_symbols_smi');
-const library_smj = const DeferredLibrary('plural_symbols_smj');
-const library_smn = const DeferredLibrary('plural_symbols_smn');
-const library_sms = const DeferredLibrary('plural_symbols_sms');
-const library_sn = const DeferredLibrary('plural_symbols_sn');
-const library_so = const DeferredLibrary('plural_symbols_so');
 const library_sq = const DeferredLibrary('plural_symbols_sq');
 const library_sr = const DeferredLibrary('plural_symbols_sr');
-const library_ss = const DeferredLibrary('plural_symbols_ss');
-const library_ssy = const DeferredLibrary('plural_symbols_ssy');
-const library_st = const DeferredLibrary('plural_symbols_st');
 const library_sv = const DeferredLibrary('plural_symbols_sv');
 const library_sw = const DeferredLibrary('plural_symbols_sw');
-const library_syr = const DeferredLibrary('plural_symbols_syr');
 const library_ta = const DeferredLibrary('plural_symbols_ta');
 const library_te = const DeferredLibrary('plural_symbols_te');
-const library_teo = const DeferredLibrary('plural_symbols_teo');
 const library_th = const DeferredLibrary('plural_symbols_th');
-const library_ti = const DeferredLibrary('plural_symbols_ti');
-const library_tig = const DeferredLibrary('plural_symbols_tig');
-const library_tk = const DeferredLibrary('plural_symbols_tk');
 const library_tl = const DeferredLibrary('plural_symbols_tl');
-const library_tn = const DeferredLibrary('plural_symbols_tn');
-const library_to = const DeferredLibrary('plural_symbols_to');
 const library_tr = const DeferredLibrary('plural_symbols_tr');
-const library_ts = const DeferredLibrary('plural_symbols_ts');
-const library_tzm = const DeferredLibrary('plural_symbols_tzm');
 const library_uk = const DeferredLibrary('plural_symbols_uk');
 const library_ur = const DeferredLibrary('plural_symbols_ur');
-const library_ve = const DeferredLibrary('plural_symbols_ve');
 const library_vi = const DeferredLibrary('plural_symbols_vi');
-const library_vun = const DeferredLibrary('plural_symbols_vun');
-const library_wa = const DeferredLibrary('plural_symbols_wa');
-const library_wae = const DeferredLibrary('plural_symbols_wae');
-const library_wo = const DeferredLibrary('plural_symbols_wo');
-const library_xh = const DeferredLibrary('plural_symbols_xh');
-const library_xog = const DeferredLibrary('plural_symbols_xog');
-const library_yo = const DeferredLibrary('plural_symbols_yo');
 const library_zh = const DeferredLibrary('plural_symbols_zh');
 const library_zu = const DeferredLibrary('plural_symbols_zu');
 
 
   const libraryMap = const <String, DeferredLibrary> {
   'af': library_af,
-  'ak': library_ak,
   'am': library_am,
   'ar': library_ar,
-  'asa': library_asa,
-  'az': library_az,
-  'be': library_be,
-  'bem': library_bem,
-  'bez': library_bez,
   'bg': library_bg,
-  'bh': library_bh,
-  'bm': library_bm,
   'bn': library_bn,
-  'bo': library_bo,
-  'br': library_br,
-  'brx': library_brx,
-  'bs': library_bs,
   'ca': library_ca,
-  'cgg': library_cgg,
-  'chr': library_chr,
-  'ckb': library_ckb,
   'cs': library_cs,
-  'cy': library_cy,
   'da': library_da,
   'de': library_de,
-  'dv': library_dv,
-  'dz': library_dz,
-  'ee': library_ee,
   'el': library_el,
   'en': library_en,
-  'eo': library_eo,
   'es': library_es,
   'et': library_et,
   'eu': library_eu,
   'fa': library_fa,
-  'ff': library_ff,
   'fi': library_fi,
   'fil': library_fil,
-  'fo': library_fo,
   'fr': library_fr,
-  'fur': library_fur,
-  'fy': library_fy,
-  'ga': library_ga,
   'gl': library_gl,
   'gsw': library_gsw,
   'gu': library_gu,
-  'guw': library_guw,
-  'gv': library_gv,
-  'ha': library_ha,
-  'haw': library_haw,
   'he': library_he,
   'hi': library_hi,
   'hr': library_hr,
   'hu': library_hu,
   'id': library_id,
-  'ig': library_ig,
-  'ii': library_ii,
   'in': library_in,
   'is': library_is,
   'it': library_it,
-  'iu': library_iu,
   'iw': library_iw,
   'ja': library_ja,
-  'jmc': library_jmc,
-  'jv': library_jv,
-  'ka': library_ka,
-  'kab': library_kab,
-  'kaj': library_kaj,
-  'kcg': library_kcg,
-  'kde': library_kde,
-  'kea': library_kea,
-  'kk': library_kk,
-  'kl': library_kl,
-  'km': library_km,
   'kn': library_kn,
   'ko': library_ko,
-  'ksb': library_ksb,
-  'ksh': library_ksh,
-  'ku': library_ku,
-  'kw': library_kw,
-  'lag': library_lag,
-  'lb': library_lb,
-  'lg': library_lg,
   'ln': library_ln,
-  'lo': library_lo,
   'lt': library_lt,
   'lv': library_lv,
-  'mas': library_mas,
-  'mg': library_mg,
-  'mk': library_mk,
   'ml': library_ml,
-  'mn': library_mn,
-  'mo': library_mo,
   'mr': library_mr,
   'ms': library_ms,
   'mt': library_mt,
-  'my': library_my,
-  'nah': library_nah,
-  'naq': library_naq,
-  'nb': library_nb,
-  'nd': library_nd,
-  'ne': library_ne,
   'nl': library_nl,
-  'nn': library_nn,
   'no': library_no,
-  'nr': library_nr,
-  'nso': library_nso,
-  'ny': library_ny,
-  'nyn': library_nyn,
-  'om': library_om,
   'or': library_or,
-  'pa': library_pa,
-  'pap': library_pap,
   'pl': library_pl,
-  'ps': library_ps,
   'pt': library_pt,
-  'rm': library_rm,
   'ro': library_ro,
-  'rof': library_rof,
   'ru': library_ru,
-  'rwk': library_rwk,
-  'sah': library_sah,
-  'saq': library_saq,
-  'se': library_se,
-  'seh': library_seh,
-  'ses': library_ses,
-  'sg': library_sg,
-  'sh': library_sh,
-  'shi': library_shi,
   'sk': library_sk,
   'sl': library_sl,
-  'sma': library_sma,
-  'smi': library_smi,
-  'smj': library_smj,
-  'smn': library_smn,
-  'sms': library_sms,
-  'sn': library_sn,
-  'so': library_so,
   'sq': library_sq,
   'sr': library_sr,
-  'ss': library_ss,
-  'ssy': library_ssy,
-  'st': library_st,
   'sv': library_sv,
   'sw': library_sw,
-  'syr': library_syr,
   'ta': library_ta,
   'te': library_te,
-  'teo': library_teo,
   'th': library_th,
-  'ti': library_ti,
-  'tig': library_tig,
-  'tk': library_tk,
   'tl': library_tl,
-  'tn': library_tn,
-  'to': library_to,
   'tr': library_tr,
-  'ts': library_ts,
-  'tzm': library_tzm,
   'uk': library_uk,
   'ur': library_ur,
-  've': library_ve,
   'vi': library_vi,
-  'vun': library_vun,
-  'wa': library_wa,
-  'wae': library_wae,
-  'wo': library_wo,
-  'xh': library_xh,
-  'xog': library_xog,
-  'yo': library_yo,
   'zh': library_zh,
   'zu': library_zu
   };
@@ -713,175 +277,66 @@ Future<bool> loadLocale([String locale]) {
       PluralLocaleImpl.map[locale] = pluralLocale;
     switch(locale) {
       case 'af': init(symbols_AF.symbols); break;
-      case 'ak': init(symbols_AK.symbols); break;
       case 'am': init(symbols_AM.symbols); break;
       case 'ar': init(symbols_AR.symbols); break;
-      case 'asa': init(symbols_ASA.symbols); break;
-      case 'az': init(symbols_AZ.symbols); break;
-      case 'be': init(symbols_BE.symbols); break;
-      case 'bem': init(symbols_BEM.symbols); break;
-      case 'bez': init(symbols_BEZ.symbols); break;
       case 'bg': init(symbols_BG.symbols); break;
-      case 'bh': init(symbols_BH.symbols); break;
-      case 'bm': init(symbols_BM.symbols); break;
       case 'bn': init(symbols_BN.symbols); break;
-      case 'bo': init(symbols_BO.symbols); break;
-      case 'br': init(symbols_BR.symbols); break;
-      case 'brx': init(symbols_BRX.symbols); break;
-      case 'bs': init(symbols_BS.symbols); break;
       case 'ca': init(symbols_CA.symbols); break;
-      case 'cgg': init(symbols_CGG.symbols); break;
-      case 'chr': init(symbols_CHR.symbols); break;
-      case 'ckb': init(symbols_CKB.symbols); break;
       case 'cs': init(symbols_CS.symbols); break;
-      case 'cy': init(symbols_CY.symbols); break;
       case 'da': init(symbols_DA.symbols); break;
       case 'de': init(symbols_DE.symbols); break;
-      case 'dv': init(symbols_DV.symbols); break;
-      case 'dz': init(symbols_DZ.symbols); break;
-      case 'ee': init(symbols_EE.symbols); break;
       case 'el': init(symbols_EL.symbols); break;
       case 'en': init(symbols_EN.symbols); break;
-      case 'eo': init(symbols_EO.symbols); break;
       case 'es': init(symbols_ES.symbols); break;
       case 'et': init(symbols_ET.symbols); break;
       case 'eu': init(symbols_EU.symbols); break;
       case 'fa': init(symbols_FA.symbols); break;
-      case 'ff': init(symbols_FF.symbols); break;
       case 'fi': init(symbols_FI.symbols); break;
       case 'fil': init(symbols_FIL.symbols); break;
-      case 'fo': init(symbols_FO.symbols); break;
       case 'fr': init(symbols_FR.symbols); break;
-      case 'fur': init(symbols_FUR.symbols); break;
-      case 'fy': init(symbols_FY.symbols); break;
-      case 'ga': init(symbols_GA.symbols); break;
       case 'gl': init(symbols_GL.symbols); break;
       case 'gsw': init(symbols_GSW.symbols); break;
       case 'gu': init(symbols_GU.symbols); break;
-      case 'guw': init(symbols_GUW.symbols); break;
-      case 'gv': init(symbols_GV.symbols); break;
-      case 'ha': init(symbols_HA.symbols); break;
-      case 'haw': init(symbols_HAW.symbols); break;
       case 'he': init(symbols_HE.symbols); break;
       case 'hi': init(symbols_HI.symbols); break;
       case 'hr': init(symbols_HR.symbols); break;
       case 'hu': init(symbols_HU.symbols); break;
       case 'id': init(symbols_ID.symbols); break;
-      case 'ig': init(symbols_IG.symbols); break;
-      case 'ii': init(symbols_II.symbols); break;
       case 'in': init(symbols_IN.symbols); break;
       case 'is': init(symbols_IS.symbols); break;
       case 'it': init(symbols_IT.symbols); break;
-      case 'iu': init(symbols_IU.symbols); break;
       case 'iw': init(symbols_IW.symbols); break;
       case 'ja': init(symbols_JA.symbols); break;
-      case 'jmc': init(symbols_JMC.symbols); break;
-      case 'jv': init(symbols_JV.symbols); break;
-      case 'ka': init(symbols_KA.symbols); break;
-      case 'kab': init(symbols_KAB.symbols); break;
-      case 'kaj': init(symbols_KAJ.symbols); break;
-      case 'kcg': init(symbols_KCG.symbols); break;
-      case 'kde': init(symbols_KDE.symbols); break;
-      case 'kea': init(symbols_KEA.symbols); break;
-      case 'kk': init(symbols_KK.symbols); break;
-      case 'kl': init(symbols_KL.symbols); break;
-      case 'km': init(symbols_KM.symbols); break;
       case 'kn': init(symbols_KN.symbols); break;
       case 'ko': init(symbols_KO.symbols); break;
-      case 'ksb': init(symbols_KSB.symbols); break;
-      case 'ksh': init(symbols_KSH.symbols); break;
-      case 'ku': init(symbols_KU.symbols); break;
-      case 'kw': init(symbols_KW.symbols); break;
-      case 'lag': init(symbols_LAG.symbols); break;
-      case 'lb': init(symbols_LB.symbols); break;
-      case 'lg': init(symbols_LG.symbols); break;
       case 'ln': init(symbols_LN.symbols); break;
-      case 'lo': init(symbols_LO.symbols); break;
       case 'lt': init(symbols_LT.symbols); break;
       case 'lv': init(symbols_LV.symbols); break;
-      case 'mas': init(symbols_MAS.symbols); break;
-      case 'mg': init(symbols_MG.symbols); break;
-      case 'mk': init(symbols_MK.symbols); break;
       case 'ml': init(symbols_ML.symbols); break;
-      case 'mn': init(symbols_MN.symbols); break;
-      case 'mo': init(symbols_MO.symbols); break;
       case 'mr': init(symbols_MR.symbols); break;
       case 'ms': init(symbols_MS.symbols); break;
       case 'mt': init(symbols_MT.symbols); break;
-      case 'my': init(symbols_MY.symbols); break;
-      case 'nah': init(symbols_NAH.symbols); break;
-      case 'naq': init(symbols_NAQ.symbols); break;
-      case 'nb': init(symbols_NB.symbols); break;
-      case 'nd': init(symbols_ND.symbols); break;
-      case 'ne': init(symbols_NE.symbols); break;
       case 'nl': init(symbols_NL.symbols); break;
-      case 'nn': init(symbols_NN.symbols); break;
       case 'no': init(symbols_NO.symbols); break;
-      case 'nr': init(symbols_NR.symbols); break;
-      case 'nso': init(symbols_NSO.symbols); break;
-      case 'ny': init(symbols_NY.symbols); break;
-      case 'nyn': init(symbols_NYN.symbols); break;
-      case 'om': init(symbols_OM.symbols); break;
       case 'or': init(symbols_OR.symbols); break;
-      case 'pa': init(symbols_PA.symbols); break;
-      case 'pap': init(symbols_PAP.symbols); break;
       case 'pl': init(symbols_PL.symbols); break;
-      case 'ps': init(symbols_PS.symbols); break;
       case 'pt': init(symbols_PT.symbols); break;
-      case 'rm': init(symbols_RM.symbols); break;
       case 'ro': init(symbols_RO.symbols); break;
-      case 'rof': init(symbols_ROF.symbols); break;
       case 'ru': init(symbols_RU.symbols); break;
-      case 'rwk': init(symbols_RWK.symbols); break;
-      case 'sah': init(symbols_SAH.symbols); break;
-      case 'saq': init(symbols_SAQ.symbols); break;
-      case 'se': init(symbols_SE.symbols); break;
-      case 'seh': init(symbols_SEH.symbols); break;
-      case 'ses': init(symbols_SES.symbols); break;
-      case 'sg': init(symbols_SG.symbols); break;
-      case 'sh': init(symbols_SH.symbols); break;
-      case 'shi': init(symbols_SHI.symbols); break;
       case 'sk': init(symbols_SK.symbols); break;
       case 'sl': init(symbols_SL.symbols); break;
-      case 'sma': init(symbols_SMA.symbols); break;
-      case 'smi': init(symbols_SMI.symbols); break;
-      case 'smj': init(symbols_SMJ.symbols); break;
-      case 'smn': init(symbols_SMN.symbols); break;
-      case 'sms': init(symbols_SMS.symbols); break;
-      case 'sn': init(symbols_SN.symbols); break;
-      case 'so': init(symbols_SO.symbols); break;
       case 'sq': init(symbols_SQ.symbols); break;
       case 'sr': init(symbols_SR.symbols); break;
-      case 'ss': init(symbols_SS.symbols); break;
-      case 'ssy': init(symbols_SSY.symbols); break;
-      case 'st': init(symbols_ST.symbols); break;
       case 'sv': init(symbols_SV.symbols); break;
       case 'sw': init(symbols_SW.symbols); break;
-      case 'syr': init(symbols_SYR.symbols); break;
       case 'ta': init(symbols_TA.symbols); break;
       case 'te': init(symbols_TE.symbols); break;
-      case 'teo': init(symbols_TEO.symbols); break;
       case 'th': init(symbols_TH.symbols); break;
-      case 'ti': init(symbols_TI.symbols); break;
-      case 'tig': init(symbols_TIG.symbols); break;
-      case 'tk': init(symbols_TK.symbols); break;
       case 'tl': init(symbols_TL.symbols); break;
-      case 'tn': init(symbols_TN.symbols); break;
-      case 'to': init(symbols_TO.symbols); break;
       case 'tr': init(symbols_TR.symbols); break;
-      case 'ts': init(symbols_TS.symbols); break;
-      case 'tzm': init(symbols_TZM.symbols); break;
       case 'uk': init(symbols_UK.symbols); break;
       case 'ur': init(symbols_UR.symbols); break;
-      case 've': init(symbols_VE.symbols); break;
       case 'vi': init(symbols_VI.symbols); break;
-      case 'vun': init(symbols_VUN.symbols); break;
-      case 'wa': init(symbols_WA.symbols); break;
-      case 'wae': init(symbols_WAE.symbols); break;
-      case 'wo': init(symbols_WO.symbols); break;
-      case 'xh': init(symbols_XH.symbols); break;
-      case 'xog': init(symbols_XOG.symbols); break;
-      case 'yo': init(symbols_YO.symbols); break;
       case 'zh': init(symbols_ZH.symbols); break;
       case 'zu': init(symbols_ZU.symbols); break;
 

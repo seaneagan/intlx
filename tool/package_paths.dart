@@ -6,6 +6,8 @@
 // move under lib/src since used by both tool and test dirs?
 // create a PubPackage class to model this ?
 
+library intlx.tool.package_paths;
+
 import 'dart:io';
 import 'package:pathos/path.dart';
 

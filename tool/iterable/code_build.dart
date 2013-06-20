@@ -2,13 +2,13 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
+library intlx.tool.iterable.code_build;
+
 import 'dart:io';
 import 'dart:json' as json;
 import '../library_writer.dart';
 
-main() {
-  new IterableLibraryWriter().writeLibraries();
-}
+main() => new IterableLibraryWriter().writeLibraries();
 
 class IterableLibraryWriter extends LibraryWriter {
   final type = "iterable";

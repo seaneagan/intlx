@@ -9,8 +9,13 @@ import 'dart:json' as json;
 import 'dart:async';
 import 'package_paths.dart';
 import 'package:intlx/src/util.dart';
+import 'package:logging/logging.dart';
+import 'log_util.dart';
 
 abstract class LibraryWriter {
+
+  static var logger = getLogger("intlx.tool.library_writer");
+  
   Map<String, Map> localeDataMap;
   List<String> localeList;
   String get type;
@@ -19,6 +24,7 @@ abstract class LibraryWriter {
 
   Future getBuiltLocaleData() {
     var dataDirectory = new Directory.fromPath(getLocaleDataPath(type));
+    logger.info("locale data directory: ${dataDirectory.path}");
     return dataDirectory.list().fold({}, (localeDataMap, fse) {
       String locale = new Path(fse.path).filenameWithoutExtension;
   
@@ -31,20 +37,24 @@ abstract class LibraryWriter {
   }
 
   Future writeLibraries() {
-    getBuiltLocaleData().then((localeDataMap) {
+    logger.info("--- Build $type code ---");
+    var loadDataStep = new LogStep(logger, "Loading locale data")..start();
+    return getBuiltLocaleData().then((localeDataMap) {
+      loadDataStep.end();
       this.localeDataMap = localeDataMap;
       localeList = new List.from(localeDataMap.keys)..sort();
       writeLibrariesSync();
     });
   }
 
-  void writeLibrariesSync() {
-    writeLocaleListLibrary();
-    writeLocaleDataConstantsPart();
-    writeSymbolsLibraries();
-    writeAllLocaleDataPart();
-    writeLocaleDataLibrary();
-  }
+  void writeLibrariesSync() =>
+    {
+      "Writing locale list library": writeLocaleListLibrary,
+      "Writing locale data constants": writeLocaleDataConstantsPart,
+      "Writing symbols libraries": writeSymbolsLibraries,
+      "Writing ALL locale data part": writeAllLocaleDataPart,
+      "Writing top-level locale data library": writeLocaleDataLibrary
+    }.forEach((description, step) => new LogStep(logger, description).execute(step));
 
   void writeSymbolsLibraries() {
     for(String locale in localeList) {
@@ -111,6 +121,8 @@ ${isPart ? "part of" : "library"} $id;
 
 $code''';
     var targetFile = new File.fromPath(path.append("$name.dart"));
+    logger.fine('''Writing library: '$id' to file: '$targetFile' with code:
+$fullCode''');
     targetFile.writeAsStringSync(fullCode);
   }
 

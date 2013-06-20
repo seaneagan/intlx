@@ -86,6 +86,7 @@ class CommandLineOptions {
   }
 
   static CommandLineOptions _parse(List<String> args) {
+    args = args.expand((String arg) => arg.split('=')).toList();
     var parser = new _CommandLineParser()
       ..addFlag('batch', abbr: 'b', help: 'Run in batch mode',
           defaultsTo: false, negatable: false)
@@ -110,6 +111,8 @@ class CommandLineOptions {
           defaultsTo: false, negatable: false);
 
     try {
+      // TODO(scheglov) https://code.google.com/p/dart/issues/detail?id=11061
+      args = args.map((String arg) => arg == '-batch' ? '--batch' : arg).toList();
       var results = parser.parse(args);
       // help requests
       if (results['help']) {
@@ -118,16 +121,16 @@ class CommandLineOptions {
       }
       // batch mode and input files
       if (results['batch']) {
-        if (results.rest.length != 0) {
+        if (results.rest.isNotEmpty) {
           print('No source files expected in the batch mode.');
           _showUsage(parser);
           exit(15);
         }
-      } if (results['version']) {
+      } else if (results['version']) {
         print('$_BINARY_NAME version ${_getVersion()}');
         exit(0);
       } else {
-        if (results.rest.length == 0) {
+        if (results.rest.isEmpty) {
           _showUsage(parser);
           exit(15);
         }
@@ -153,7 +156,6 @@ class CommandLineOptions {
       Path path = new Path(new Options().script);
       Path versionPath = path.directoryPath.append('..').append('version');
       File versionFile = new File.fromPath(versionPath);
-      
       return versionFile.readAsStringSync().trim();
     } catch (_) {
       // This happens when the script is not running in the context of an SDK.
@@ -199,6 +201,7 @@ class _CommandLineParser {
   void addOption(String name, {String abbr, String help, List<String> allowed,
       Map<String, String> allowedHelp, String defaultsTo,
       void callback(value), bool allowMultiple: false}) {
+    _knownFlags.add(name);
     _parser.addOption(name, abbr: abbr, help: help, allowed: allowed,
         allowedHelp: allowedHelp, defaultsTo: defaultsTo, callback: callback,
         allowMultiple: allowMultiple);
@@ -223,7 +226,7 @@ class _CommandLineParser {
   List<String> _filterUnknowns(args) {
 
     // Only filter args if the ignore flag is specified.
-    if (!args.contains('--ignore_unrecognized_flags')) {
+    if (!args.contains('--ignore-unrecognized-flags')) {
       return args;
     }
 
@@ -237,6 +240,7 @@ class _CommandLineParser {
       var arg = args[i];
       if (arg.startsWith('--') && arg.length > 2) {
         if (!_knownFlags.contains(arg.substring(2))) {
+          print('remove: $arg');
           //"eat" params by advancing to the next flag/option
           i = _getNextFlagIndex(args, i);
         } else {
@@ -247,6 +251,7 @@ class _CommandLineParser {
       }
     }
 
+    print(filtered);
     return filtered;
   }
 

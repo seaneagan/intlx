@@ -403,14 +403,19 @@ abstract class WebComponent implements Element {
   dynamic get on { throw new UnsupportedError('on is deprecated'); }
 
   String get contentEditable => host.contentEditable;
+  set contentEditable(String v) { host.contentEditable = v; }
 
   String get dir => host.dir;
+  set dir(String v) { host.dir = v; }
 
   bool get draggable => host.draggable;
+  set draggable(bool v) { host.draggable = v; }
 
   bool get hidden => host.hidden;
+  set hidden(bool v) { host.hidden = v; }
 
   String get id => host.id;
+  set id(String v) { host.id = v; }
 
   String get innerHTML => host.innerHtml;
 
@@ -426,22 +431,29 @@ abstract class WebComponent implements Element {
   bool get isContentEditable => host.isContentEditable;
 
   String get lang => host.lang;
+  set lang(String v) { host.lang = v; }
 
   String get outerHtml => host.outerHtml;
 
   bool get spellcheck => host.spellcheck;
+  set spellcheck(bool v) { host.spellcheck = v; }
 
   int get tabIndex => host.tabIndex;
+  set tabIndex(int i) { host.tabIndex = i; }
 
   String get title => host.title;
 
   set title(String value) { host.title = value; }
 
   bool get translate => host.translate;
+  set translate(bool v) { host.translate = v; }
 
   String get dropzone => host.dropzone;
+  set dropzone(String v) { host.dropzone = v; }
 
   void click() { host.click(); }
+
+  InputMethodContext getInputContext() => host.getInputContext();
 
   Element insertAdjacentElement(String where, Element element) =>
     host.insertAdjacentElement(where, element);
@@ -610,7 +622,9 @@ abstract class WebComponent implements Element {
   Node get $dom_lastChild => host.$dom_lastChild;
 
   String get localName => host.localName;
+  String get $dom_localName => host.$dom_localName;
 
+  String get namespaceUri => host.namespaceUri;
   String get $dom_namespaceUri => host.$dom_namespaceUri;
 
   int get nodeType => host.nodeType;
@@ -664,8 +678,6 @@ abstract class WebComponent implements Element {
 
   // TODO(jmesserly): rename "created" to "onCreated".
   void onCreated() => created();
-
-  Node get insertionParent => host.insertionParent;
 
   Stream<Event> get onAbort => host.onAbort;
   Stream<Event> get onBeforeCopy => host.onBeforeCopy;

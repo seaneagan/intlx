@@ -10,7 +10,7 @@
 // the only person who will want to use a linked list :)
 library linked_list;
 
-import 'dart:collection';
+import 'dart:collection' hide LinkedList, LinkedListEntry;
 
 /**
  * An entry in a doubly linked list. It contains a pointer to the next

@@ -1301,7 +1301,7 @@ class Parser {
     if (_maybeEat(TokenKind.LBRACK)) {
       var attrName = identifier();
 
-      int op = TokenKind.NO_MATCH;
+      int op;
       switch (_peek()) {
       case TokenKind.EQUALS:
       case TokenKind.INCLUDES:        // ~=
@@ -1312,6 +1312,8 @@ class Parser {
         op = _peek();
         _next();
         break;
+      default:
+        op = TokenKind.NO_MATCH;
       }
 
       var value;

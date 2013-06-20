@@ -21,7 +21,7 @@
 /// [pkg]: http://pub.dartlang.org/packages/pathos
 library path;
 
-import 'dart:io' as io;
+import 'dart:mirrors';
 
 /// An internal builder for the current OS so we can provide a straight
 /// functional interface and not require users to create one.
@@ -31,16 +31,50 @@ final _builder = new Builder();
  * Inserts [length] elements in front of the [list] and fills them with the
  * [fillValue].
  */
-void _growListFront(List list, int length, fillValue) {
-  list.length += length;
-  list.setRange(length, list.length, list);
-  for (var i = 0; i < length; i++) {
-    list[i] = fillValue;
+void _growListFront(List list, int length, fillValue) =>
+  list.insertAll(0, new List.filled(length, fillValue));
+
+/// If we're running in the server-side Dart VM, this will return a
+/// [LibraryMirror] that gives access to the `dart:io` library.
+///
+/// If `dart:io` is not available, this returns null.
+LibraryMirror get _io {
+  try {
+    return currentMirrorSystem().libraries[Uri.parse('dart:io')];
+  } catch (_) {
+    return null;
+  }
+}
+
+// TODO(nweiz): when issue 6490 or 6943 are fixed, make this work under dart2js.
+/// If we're running in Dartium, this will return a [LibraryMirror] that gives
+/// access to the `dart:html` library.
+///
+/// If `dart:html` is not available, this returns null.
+LibraryMirror get _html {
+  try {
+    return currentMirrorSystem().libraries[Uri.parse('dart:html')];
+  } catch (_) {
+    return null;
   }
 }
 
 /// Gets the path to the current working directory.
-String get current => io.Directory.current.path;
+///
+/// In the browser, this means the current URL. When using dart2js, this
+/// currently returns `.` due to technical constraints. In the future, it will
+/// return the current URL.
+String get current {
+  if (_io != null) {
+    return _io.classes[const Symbol('Directory')]
+        .getField(const Symbol('current')).reflectee.path;
+  } else if (_html != null) {
+    return _html.getField(const Symbol('window'))
+        .reflectee.location.href;
+  } else {
+    return '.';
+  }
+}
 
 /// Gets the path separator for the current platform. On Mac and Linux, this
 /// is `/`. On Windows, it's `\`.
@@ -109,12 +143,25 @@ String extension(String path) => _builder.extension(path);
 ///     // Windows
 ///     path.rootPrefix(r'path\to\foo'); // -> ''
 ///     path.rootPrefix(r'C:\path\to\foo'); // -> r'C:\'
+///
+///     // URL
+///     path.rootPrefix('path/to/foo'); // -> ''
+///     path.rootPrefix('http://dartlang.org/path/to/foo');
+///       // -> 'http://dartlang.org'
 String rootPrefix(String path) => _builder.rootPrefix(path);
 
 /// Returns `true` if [path] is an absolute path and `false` if it is a
-/// relative path. On POSIX systems, absolute paths start with a `/` (forward
-/// slash). On Windows, an absolute path starts with `\\`, or a drive letter
-/// followed by `:/` or `:\`.
+/// relative path.
+///
+/// On POSIX systems, absolute paths start with a `/` (forward slash). On
+/// Windows, an absolute path starts with `\\`, or a drive letter followed by
+/// `:/` or `:\`. For URLs, absolute paths either start with a protocol and
+/// optional hostname (e.g. `http://dartlang.org`, `file://`) or with a `/`.
+///
+/// URLs that start with `/` are known as "root-relative", since they're
+/// relative to the root of the current URL. Since root-relative paths are still
+/// absolute in every other sense, [isAbsolute] will return true for them. They
+/// can be detected using [isRootRelative].
 bool isAbsolute(String path) => _builder.isAbsolute(path);
 
 /// Returns `true` if [path] is a relative path and `false` if it is absolute.
@@ -122,6 +169,16 @@ bool isAbsolute(String path) => _builder.isAbsolute(path);
 /// Windows, an absolute path starts with `\\`, or a drive letter followed by
 /// `:/` or `:\`.
 bool isRelative(String path) => _builder.isRelative(path);
+
+/// Returns `true` if [path] is a root-relative path and `false` if it's not.
+///
+/// URLs that start with `/` are known as "root-relative", since they're
+/// relative to the root of the current URL. Since root-relative paths are still
+/// absolute in every other sense, [isAbsolute] will return true for them. They
+/// can be detected using [isRootRelative].
+///
+/// No POSIX and Windows paths are root-relative.
+bool isRootRelative(String path) => _builder.isRootRelative(path);
 
 /// Joins the given path parts into a single path using the current platform's
 /// [separator]. Example:
@@ -174,6 +231,10 @@ String joinAll(Iterable<String> parts) => _builder.joinAll(parts);
 ///
 ///     // Windows
 ///     path.split(r'C:\path\to\foo'); // -> [r'C:\', 'path', 'to', 'foo']
+///
+///     // Browser
+///     path.split('http://dartlang.org/path/to/foo');
+///       // -> ['http://dartlang.org', 'path', 'to', 'foo']
 List<String> split(String path) => _builder.split(path);
 
 /// Normalizes [path], simplifying it by handling `..`, and `.`, and
@@ -197,9 +258,15 @@ String normalize(String path) => _builder.normalize(path);
 ///         from: '/root/path'); // -> '../other.dart'
 ///
 /// Since there is no relative path from one drive letter to another on Windows,
-/// this will return an absolute path in that case.
+/// or from one hostname to another for URLs, this will return an absolute path
+/// in those cases.
 ///
+///     // Windows
 ///     path.relative(r'D:\other', from: r'C:\home'); // -> 'D:\other'
+///
+///     // URL
+///     path.relative('http://dartlang.org', from: 'http://pub.dartlang.org');
+///       // -> 'http://dartlang.org'
 String relative(String path, {String from}) =>
     _builder.relative(path, from: from);
 
@@ -239,9 +306,16 @@ class Builder {
   /// If [style] is omitted, it uses the host operating system's path style. If
   /// [root] is omitted, it defaults to the current working directory. If [root]
   /// is relative, it is considered relative to the current working directory.
+  ///
+  /// On the browser, the path style is [Style.url]. In Dartium, [root] defaults
+  /// to the current URL. When using dart2js, it currently defaults to `.` due
+  /// to technical constraints.
   factory Builder({Style style, String root}) {
     if (style == null) {
-      if (io.Platform.operatingSystem == 'windows') {
+      if (_io == null) {
+        style = Style.url;
+      } else if (_io.classes[const Symbol('Platform')]
+          .getField(const Symbol('operatingSystem')).reflectee == 'windows') {
         style = Style.windows;
       } else {
         style = Style.posix;
@@ -334,15 +408,28 @@ class Builder {
   ///     // Windows
   ///     builder.rootPrefix(r'path\to\foo'); // -> ''
   ///     builder.rootPrefix(r'C:\path\to\foo'); // -> r'C:\'
+  ///
+  ///     // URL
+  ///     builder.rootPrefix('path/to/foo'); // -> ''
+  ///     builder.rootPrefix('http://dartlang.org/path/to/foo');
+  ///       // -> 'http://dartlang.org'
   String rootPrefix(String path) {
     var root = _parse(path).root;
     return root == null ? '' : root;
   }
 
   /// Returns `true` if [path] is an absolute path and `false` if it is a
-  /// relative path. On POSIX systems, absolute paths start with a `/` (forward
-  /// slash). On Windows, an absolute path starts with `\\`, or a drive letter
-  /// followed by `:/` or `:\`.
+  /// relative path.
+  ///
+  /// On POSIX systems, absolute paths start with a `/` (forward slash). On
+  /// Windows, an absolute path starts with `\\`, or a drive letter followed by
+  /// `:/` or `:\`. For URLs, absolute paths either start with a protocol and
+  /// optional hostname (e.g. `http://dartlang.org`, `file://`) or with a `/`.
+  ///
+  /// URLs that start with `/` are known as "root-relative", since they're
+  /// relative to the root of the current URL. Since root-relative paths are
+  /// still absolute in every other sense, [isAbsolute] will return true for
+  /// them. They can be detected using [isRootRelative].
   bool isAbsolute(String path) => _parse(path).isAbsolute;
 
   /// Returns `true` if [path] is a relative path and `false` if it is absolute.
@@ -350,6 +437,16 @@ class Builder {
   /// Windows, an absolute path starts with `\\`, or a drive letter followed by
   /// `:/` or `:\`.
   bool isRelative(String path) => !isAbsolute(path);
+
+  /// Returns `true` if [path] is a root-relative path and `false` if it's not.
+  ///
+  /// URLs that start with `/` are known as "root-relative", since they're
+  /// relative to the root of the current URL. Since root-relative paths are
+  /// still absolute in every other sense, [isAbsolute] will return true for
+  /// them. They can be detected using [isRootRelative].
+  ///
+  /// No POSIX and Windows paths are root-relative.
+  bool isRootRelative(String path) => _parse(path).isRootRelative;
 
   /// Joins the given path parts into a single path. Example:
   ///
@@ -388,11 +485,20 @@ class Builder {
   String joinAll(Iterable<String> parts) {
     var buffer = new StringBuffer();
     var needsSeparator = false;
+    var isAbsoluteAndNotRootRelative = false;
 
     for (var part in parts) {
-      if (this.isAbsolute(part)) {
+      if (this.isRootRelative(part) && isAbsoluteAndNotRootRelative) {
+        // If the new part is root-relative, it preserves the previous root but
+        // replaces the path after it.
+        var oldRoot = this.rootPrefix(buffer.toString());
+        buffer.clear();
+        buffer.write(oldRoot);
+        buffer.write(part);
+      } else if (this.isAbsolute(part)) {
+        isAbsoluteAndNotRootRelative = !this.isRootRelative(part);
         // An absolute path discards everything before it.
-        buffer = new StringBuffer();
+        buffer.clear();
         buffer.write(part);
       } else {
         if (part.length > 0 && part[0].contains(style.separatorPattern)) {
@@ -406,8 +512,7 @@ class Builder {
 
       // Unless this part ends with a separator, we'll need to add one before
       // the next part.
-      needsSeparator = part.length > 0 &&
-          !part[part.length - 1].contains(style.separatorPattern);
+      needsSeparator = part.contains(style.needsSeparatorPattern);
     }
 
     return buffer.toString();
@@ -498,7 +603,9 @@ class Builder {
 
     // If the given path is relative, resolve it relative to the root of the
     // builder.
-    if (this.isRelative(path)) path = this.resolve(path);
+    if (this.isRelative(path) || this.isRootRelative(path)) {
+      path = this.resolve(path);
+    }
 
     // If the path is still relative and `from` is absolute, we're unable to
     // find a path from `from` to `path`.
@@ -508,6 +615,10 @@ class Builder {
 
     var fromParsed = _parse(from)..normalize();
     var pathParsed = _parse(path)..normalize();
+
+    if (fromParsed.parts.length > 0 && fromParsed.parts[0] == '.') {
+      return pathParsed.toString();
+    }
 
     // If the root prefixes don't match (for example, different drive letters
     // on Windows), then there is no relative path, so just return the absolute
@@ -524,16 +635,17 @@ class Builder {
     while (fromParsed.parts.length > 0 && pathParsed.parts.length > 0 &&
            fromParsed.parts[0] == pathParsed.parts[0]) {
       fromParsed.parts.removeAt(0);
-      fromParsed.separators.removeAt(0);
+      fromParsed.separators.removeAt(1);
       pathParsed.parts.removeAt(0);
-      pathParsed.separators.removeAt(0);
+      pathParsed.separators.removeAt(1);
     }
 
     // If there are any directories left in the root path, we need to walk up
     // out of them.
     _growListFront(pathParsed.parts, fromParsed.parts.length, '..');
-    _growListFront(
-        pathParsed.separators, fromParsed.parts.length, style.separator);
+    pathParsed.separators[0] = '';
+    pathParsed.separators.insertAll(1,
+        new List.filled(fromParsed.parts.length, style.separator));
 
     // Corner case: the paths completely collapsed.
     if (pathParsed.parts.length == 0) return '.';
@@ -566,11 +678,21 @@ class Builder {
 
     // Remove the root prefix, if any.
     var root = style.getRoot(path);
+    var isRootRelative = style.getRelativeRoot(path) != null;
     if (root != null) path = path.substring(root.length);
 
     // Split the parts on path separators.
     var parts = [];
     var separators = [];
+
+    var firstSeparator = style.separatorPattern.firstMatch(path);
+    if (firstSeparator != null && firstSeparator.start == 0) {
+      separators.add(firstSeparator[0]);
+      path = path.substring(firstSeparator[0].length);
+    } else {
+      separators.add('');
+    }
+
     var start = 0;
     for (var match in style.separatorPattern.allMatches(path)) {
       parts.add(path.substring(start, match.start));
@@ -584,7 +706,7 @@ class Builder {
       separators.add('');
     }
 
-    return new _ParsedPath(style, root, parts, separators);
+    return new _ParsedPath(style, root, isRootRelative, parts, separators);
   }
 }
 
@@ -592,20 +714,34 @@ class Builder {
 class Style {
   /// POSIX-style paths use "/" (forward slash) as separators. Absolute paths
   /// start with "/". Used by UNIX, Linux, Mac OS X, and others.
-  static final posix = new Style._('posix', '/', '/', '/');
+  static final posix = new Style._('posix', '/', '/', r'[^/]$', '/');
 
   /// Windows paths use "\" (backslash) as separators. Absolute paths start with
   /// a drive letter followed by a colon (example, "C:") or two backslashes
   /// ("\\") for UNC paths.
   // TODO(rnystrom): The UNC root prefix should include the drive name too, not
   // just the "\\".
-  static final windows = new Style._('windows', '\\', r'[/\\]',
+  static final windows = new Style._('windows', '\\', r'[/\\]', r'[^/\\]$',
       r'\\\\|[a-zA-Z]:[/\\]');
 
+  /// URLs aren't filesystem paths, but they're supported by Pathos to make it
+  /// easier to manipulate URL paths in the browser.
+  ///
+  /// URLs use "/" (forward slash) as separators. Absolute paths either start
+  /// with a protocol and optional hostname (e.g. `http://dartlang.org`,
+  /// `file://`) or with "/".
+  static final url = new Style._('url', '/', '/',
+      r"(^[a-zA-Z][-+.a-zA-Z\d]*://|[^/])$",
+      r"[a-zA-Z][-+.a-zA-Z\d]*://[^/]*", r"/");
+
   Style._(this.name, this.separator, String separatorPattern,
-      String rootPattern)
+      String needsSeparatorPattern, String rootPattern,
+      [String relativeRootPattern])
     : separatorPattern = new RegExp(separatorPattern),
-      _rootPattern = new RegExp('^$rootPattern');
+      needsSeparatorPattern = new RegExp(needsSeparatorPattern),
+      _rootPattern = new RegExp('^$rootPattern'),
+      _relativeRootPattern = relativeRootPattern == null ? null :
+          new RegExp('^$relativeRootPattern');
 
   /// The name of this path style. Will be "posix" or "windows".
   final String name;
@@ -619,15 +755,42 @@ class Style {
   /// "\" is the canonical one.
   final Pattern separatorPattern;
 
+  /// The [Pattern] that matches path components that need a separator after
+  /// them.
+  ///
+  /// Windows and POSIX styles just need separators when the previous component
+  /// doesn't already end in a separator, but the URL always needs to place a
+  /// separator between the root and the first component, even if the root
+  /// already ends in a separator character. For example, to join "file://" and
+  /// "usr", an additional "/" is needed (making "file:///usr").
+  final Pattern needsSeparatorPattern;
+
   // TODO(nweiz): make this a Pattern when issue 7080 is fixed.
   /// The [RegExp] that can be used to match the root prefix of an absolute
   /// path in this style.
   final RegExp _rootPattern;
 
+  /// The [RegExp] that can be used to match the root prefix of a root-relative
+  /// path in this style.
+  ///
+  /// This can be null to indicate that this style doesn't support root-relative
+  /// paths.
+  final RegExp _relativeRootPattern;
+
   /// Gets the root prefix of [path] if path is absolute. If [path] is relative,
   /// returns `null`.
   String getRoot(String path) {
     var match = _rootPattern.firstMatch(path);
+    if (match != null) return match[0];
+    return getRelativeRoot(path);
+  }
+
+  /// Gets the root prefix of [path] if it's root-relative.
+  ///
+  /// If [path] is relative or absolute and not root-relative, returns `null`.
+  String getRelativeRoot(String path) {
+    if (_relativeRootPattern == null) return null;
+    var match = _relativeRootPattern.firstMatch(path);
     if (match == null) return null;
     return match[0];
   }
@@ -646,12 +809,20 @@ class _ParsedPath {
   /// letters.
   String root;
 
+  /// Whether this path is root-relative.
+  ///
+  /// See [Builder.isRootRelative].
+  bool isRootRelative;
+
   /// The path-separated parts of the path. All but the last will be
   /// directories.
   List<String> parts;
 
-  /// The path separators following each part. The last one will be an empty
-  /// string unless the path ends with a trailing separator.
+  /// The path separators preceding each part.
+  ///
+  /// The first one will be an empty string unless the root requires a separator
+  /// between it and the path. The last one will be an empty string unless the
+  /// path ends with a trailing separator.
   List<String> separators;
 
   /// The file extension of the last part, or "" if it doesn't have one.
@@ -660,7 +831,8 @@ class _ParsedPath {
   /// `true` if this is an absolute path.
   bool get isAbsolute => root != null;
 
-  _ParsedPath(this.style, this.root, this.parts, this.separators);
+  _ParsedPath(this.style, this.root, this.isRootRelative, this.parts,
+      this.separators);
 
   String get basename {
     var copy = this.clone();
@@ -715,8 +887,12 @@ class _ParsedPath {
     }
 
     // Canonicalize separators.
-    var newSeparators = [];
-    _growListFront(newSeparators, newParts.length, style.separator);
+    var newSeparators = new List.generate(
+        newParts.length, (_) => style.separator, growable: true);
+    newSeparators.insert(0,
+        isAbsolute && newParts.length > 0 &&
+                root.contains(style.needsSeparatorPattern) ?
+            style.separator : '');
 
     parts = newParts;
     separators = newSeparators;
@@ -732,9 +908,10 @@ class _ParsedPath {
     var builder = new StringBuffer();
     if (root != null) builder.write(root);
     for (var i = 0; i < parts.length; i++) {
-      builder.write(parts[i]);
       builder.write(separators[i]);
+      builder.write(parts[i]);
     }
+    builder.write(separators.last);
 
     return builder.toString();
   }
@@ -758,5 +935,6 @@ class _ParsedPath {
   }
 
   _ParsedPath clone() => new _ParsedPath(
-      style, root, new List.from(parts), new List.from(separators));
+      style, root, isRootRelative,
+      new List.from(parts), new List.from(separators));
 }

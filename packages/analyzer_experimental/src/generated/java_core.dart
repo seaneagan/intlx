@@ -84,6 +84,9 @@ class JavaArrays {
 class Character {
   static const int MAX_VALUE = 0xffff;
   static const int MAX_CODE_POINT = 0x10ffff;
+  static const int MIN_SUPPLEMENTARY_CODE_POINT = 0x010000;
+  static const int MIN_LOW_SURROGATE  = 0xDC00;
+  static const int MIN_HIGH_SURROGATE = 0xD800;
   static bool isLetter(int c) {
     return c >= 0x41 && c <= 0x5A || c >= 0x61 && c <= 0x7A;
   }
@@ -109,7 +112,16 @@ class Character {
     return -1;
   }
   static String toChars(int codePoint) {
-    throw new UnsupportedOperationException();
+    if (codePoint < 0 || codePoint > MAX_CODE_POINT) {
+      throw new IllegalArgumentException();
+    }
+    if (codePoint < MIN_SUPPLEMENTARY_CODE_POINT) {
+      return new String.fromCharCode(codePoint);
+    }
+    int offset = codePoint - MIN_SUPPLEMENTARY_CODE_POINT;
+    int c0 = ((offset & 0x7FFFFFFF) >> 10) + MIN_HIGH_SURROGATE;
+    int c1 = (offset & 0x3ff) + MIN_LOW_SURROGATE;
+    return new String.fromCharCodes([c0, c1]);
   }
 }
 
@@ -281,10 +293,6 @@ class URISyntaxException implements Exception {
   String toString() => "URISyntaxException";
 }
 
-class IOException implements Exception {
-  String toString() => "IOException";
-}
-
 class MissingFormatArgumentException implements Exception {
   final String s;
 
@@ -444,8 +452,8 @@ class MapEntry<K, V> {
   }
 }
 
-Set<MapEntry> getMapEntrySet(Map m) {
-  Set<MapEntry> result = new Set();
+Iterable<MapEntry> getMapEntrySet(Map m) {
+  List<MapEntry> result = [];
   m.forEach((k, v) {
     result.add(new MapEntry(m, k, v));
   });

@@ -667,7 +667,8 @@ class Compiler {
                 '/* ==================================================== \n'
                 '   Component ${component.tagName} stylesheet \n'
                 '   ==================================================== */\n');
-            buff.write(emitComponentStyleSheet(styleSheet, component.tagName));
+            buff.write(emitComponentStyleSheet(styleSheet, component.tagName,
+                component.scoped ? component.tagName : null));
             buff.write('\n\n');
           }
         }
@@ -710,7 +711,7 @@ class Compiler {
     var libPath = _pathMapper.outputLibraryPath(lib);
     var dir = path.dirname(libPath);
     var filename = path.basename(libPath);
-    printer.add('\n//@ sourceMappingURL=$filename.map');
+    printer.add('\n//# sourceMappingURL=$filename.map');
     printer.build(libPath);
     var sourcePath = dartCodeUrl != null ? dartCodeUrl.resolvedPath : null;
     output.add(new OutputFile(libPath, printer.text, source: sourcePath));

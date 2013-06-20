@@ -123,6 +123,8 @@ class ObservableMap<K, V> extends Observable implements Map<K, V> {
     return result;
   }
 
+  void addAll(Map<K, V> other) => other.forEach((k, v) { this[k] = v; });
+
   void clear() {
     int len = _map.length;
     if (hasObservers(this) && len > 0) {

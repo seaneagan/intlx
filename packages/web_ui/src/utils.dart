@@ -110,7 +110,7 @@ find(List list, bool matcher(elem)) {
 /** A future that waits until all added [Future]s complete. */
 // TODO(sigmund): this should be part of the futures/core libraries.
 class FutureGroup {
-  const _FINISHED = -1;
+  static const _FINISHED = -1;
 
   int _pending = 0;
   Future _failedTask;

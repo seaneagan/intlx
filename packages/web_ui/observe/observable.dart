@@ -14,7 +14,7 @@
  */
 library web_ui.observe.observable;
 
-import 'dart:collection';
+import 'dart:collection' hide LinkedList;
 import 'list.dart';
 import 'map.dart';
 import 'reference.dart';

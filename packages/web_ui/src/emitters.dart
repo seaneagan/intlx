@@ -445,8 +445,9 @@ class CssEmitter extends CssPrinter {
  */
 class ComponentCssEmitter extends CssPrinter {
   final String _componentTagName;
+  final String _prefixed;
 
-  ComponentCssEmitter(this._componentTagName);
+  ComponentCssEmitter(this._componentTagName, this._prefixed);
 
   /**
    * If element selector is the component's tag name, then change selector to
@@ -461,23 +462,23 @@ class ComponentCssEmitter extends CssPrinter {
   }
 
   void visitClassSelector(ClassSelector node) {
-    if (_componentTagName == null) {
+    if (_prefixed == null) {
       super.visitClassSelector(node);
     } else {
-      emit('.${_componentTagName}_${node.name}');
+      emit('.${_prefixed}_${node.name}');
     }
   }
 
   void visitIdSelector(IdSelector node) {
-    if (_componentTagName == null) {
+    if (_prefixed == null) {
       super.visitIdSelector(node);
     } else {
-      emit('#${_componentTagName}_${node.name}');
+      emit('#${_prefixed}_${node.name}');
     }
   }
 
   void visitElementSelector(ElementSelector node) {
-    if (_componentTagName != null && _emitComponentElement(node)) return;
+    if (_emitComponentElement(node)) return;
     super.visitElementSelector(node);
   }
 }
@@ -490,8 +491,9 @@ String emitStyleSheet(StyleSheet ss, FileInfo file) =>
       ..visitTree(ss, pretty: true)).toString();
 
 /** Helper function to emit a component's style tag content. */
-String emitComponentStyleSheet(StyleSheet ss, String prefix) =>
-  ((new ComponentCssEmitter(prefix))..visitTree(ss, pretty: true)).toString();
+String emitComponentStyleSheet(StyleSheet ss, String tagName, String prefix) =>
+  ((new ComponentCssEmitter(tagName, prefix))
+      ..visitTree(ss, pretty: true)).toString();
 
 /** Generates the class corresponding to a single web component. */
 class WebComponentEmitter extends RecursiveEmitter {
@@ -528,18 +530,14 @@ class WebComponentEmitter extends RecursiveEmitter {
     }
 
     if (info.template != null && !elemInfo.childrenCreatedInCode) {
-      if (!info.styleSheets.isEmpty &&
-          !useCssPolyFill(messages.options, info)) {
+      if (!info.styleSheets.isEmpty && !messages.options.processCss) {
+        // TODO(terry): Need to support obfuscated prefix.
         var prefix = cssPolyfill ? info.tagName : null;
-        // TODO(jmesserly): csslib+html5lib should work together.  We shouldn't
-        //                  need to call a different function to serialize CSS.
-        //                  Calling innerHTML on a StyleElement should be
-        //                  enought - like a real browser.  CSSOM and DOM
-        //                  should work together in the same tree.
         // TODO(terry): Only one style tag per component.
         var styleSheet =
             '<style>\n'
-            '${emitComponentStyleSheet(info.styleSheets[0], prefix)}'
+            '${emitComponentStyleSheet(info.styleSheets[0], info.tagName,
+                prefix)}'
             '\n</style>';
         var template = elemInfo.node;
         template.insertBefore(new Element.html(styleSheet),
@@ -807,7 +805,7 @@ void transformMainHtml(Document document, FileInfo fileInfo,
   for (var tag in document.queryAll('link')) {
     var href = tag.attributes['href'];
     var rel = tag.attributes['rel'];
-    if (rel == 'component' || rel == 'components') {
+    if (rel == 'component' || rel == 'components' || rel == 'import') {
       tag.remove();
     } else if (href != null && rewriteUrls && !hasCss) {
       // Only rewrite URL if rewrite on and we're not CSS polyfilling.
@@ -824,9 +822,7 @@ void transformMainHtml(Document document, FileInfo fileInfo,
     var newCss = pathMapper.mangle(path.basename(filePath), '.css', true);
     var linkElem = new Element.html(
         '<link rel="stylesheet" type="text/css" href="$newCss">');
-    var head = document.head;
-    head.insertBefore(linkElem,
-        head.hasChildNodes() ? head.nodes.first : null);
+    document.head.insertBefore(linkElem, null);
   }
 
   var styles = document.queryAll('style');

@@ -13,6 +13,7 @@ import 'plural_rule_parser.dart';
 import 'package:intlx/src/plural/plural.dart';
 import 'dart:async';
 import 'package:http/http.dart' as http;
+import 'package:pathos/path.dart' as pathos;
 import 'package:logging/logging.dart';
 import '../log_util.dart';
 
@@ -32,7 +33,7 @@ class PluralLibraryWriter extends LibraryWriter {
   }
 
   void writeLoadLocaleLibrary() {
-    var loadLocaleLibraryPath = libPath.append("src/$type/");
+    var loadLocaleLibraryPath = pathos.join(libPath, "src/$type/");
     
     var imports = localeList.map((locale) => '''@library_$locale
 import 'package:$packageName/src/plural/data/$locale.dart' as ${getSymbolsImportId(locale)};

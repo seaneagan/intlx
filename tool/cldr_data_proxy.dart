@@ -19,7 +19,7 @@ final cldrBaseUri = "http://i18ndata.appspot.com/cldr/tags/$cldrTag/";
 final cldrTag = "unconfirmed";
 
 final mainCldrLocales = 
-  json.parse(new File.fromPath(mainLocaleListFilePath).readAsStringSync());
+  json.parse(new File(mainLocaleListFilePath).readAsStringSync());
 
 class CldrDataProxy {
 
@@ -91,7 +91,7 @@ $transformedJson""");
       var filePath = getLocaleDataFilePath(outputPath, locale);
       logger.fine("storing data for locale '$locale' in '$filePath'");
       var dataFile = 
-        new File.fromPath(filePath);
+        new File(filePath);
       dataFile.writeAsStringSync(json);
     });
   }

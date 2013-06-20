@@ -9,6 +9,7 @@ import 'dart:json' as json;
 import 'dart:async';
 import 'package_paths.dart';
 import 'package:intlx/src/util.dart';
+import 'package:pathos/path.dart' as pathos;
 import 'package:logging/logging.dart';
 import 'log_util.dart';
 
@@ -23,13 +24,13 @@ abstract class LibraryWriter {
   String get symbolsClassLibrary => '${type}_symbols';
 
   Future getBuiltLocaleData() {
-    var dataDirectory = new Directory.fromPath(getLocaleDataPath(type));
+    var dataDirectory = new Directory(getLocaleDataPath(type));
     logger.info("locale data directory: ${dataDirectory.path}");
     return dataDirectory.list().fold({}, (localeDataMap, fse) {
-      String locale = new Path(fse.path).filenameWithoutExtension;
+      String locale = pathos.basenameWithoutExtension(fse.path);
   
       var filePath = getLocaleDataFilePath(type, locale);
-      var file = new File.fromPath(filePath);
+      var file = new File(filePath);
       String fileJson = file.readAsStringSync();
       localeDataMap[locale] = json.parse(fileJson);
       return localeDataMap;
@@ -98,7 +99,7 @@ const ${underscoresToCamelCase(type, false)}Locales = const <String> $localeList
   ''';
 
     writeLibrary(
-      libPath.append("src/$type/"), 
+      pathos.join(libPath, "src/$type/"), 
       getLocaleListLibraryName(), 
       getLibraryComment(false), 
       code);
@@ -107,7 +108,7 @@ const ${underscoresToCamelCase(type, false)}Locales = const <String> $localeList
   String getLocaleListLibraryName() => "${type}_locale_list";
 
   writeLibrary(
-    Path path, 
+    String path, 
     String name, 
     String comment, 
     String code, 
@@ -120,7 +121,7 @@ $comment
 ${isPart ? "part of" : "library"} $id;
 
 $code''';
-    var targetFile = new File.fromPath(path.append("$name.dart"));
+    var targetFile = new File(pathos.join(path, "$name.dart"));
     logger.fine('''Writing library: '$id' to file: '$targetFile' with code:
 $fullCode''');
     targetFile.writeAsStringSync(fullCode);
@@ -190,7 +191,7 @@ part 'package:intlx/src/$type/${type}_locale_data_constants.dart';
 ''';
 
     writeLibrary(
-      libPath.append("src/$type/"), 
+      pathos.join(libPath, "src/$type/"), 
       "${type}_locale_data_constants", 
       getLibraryComment(false), 
       code, 
@@ -216,7 +217,7 @@ ${getSymbolsMapSetterLogic()}
 });''';
 
     writeLibrary(
-      libPath.append("src/$type/"), 
+      pathos.join(libPath, "src/$type/"), 
       "${type}_all_data_constant", 
       getLibraryComment(false), 
       code, 

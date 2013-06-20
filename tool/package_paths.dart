@@ -15,23 +15,23 @@ import 'package:pathos/path.dart';
 String packageName = basename(Directory.current.path);
 
 // current directory must be <root of this package>
-Path libPath = new Path(Directory.current.path).append("lib");
+String libPath = join(Directory.current.path, "lib");
 
 // path of private (symbol) locale libraries for given type
-Path getLocaleSrcPath(String type) => libPath.append("src/$type/data/");
+String getLocaleSrcPath(String type) => join(libPath, "src/$type/data/");
 
 // path of locale specific libraries
-Path localeLibPath = libPath.append("locale/");
+String localeLibPath = join(libPath, "locale/");
 
 // path to data
-Path dataPath = libPath.append("src/data/");
+String dataPath = join(libPath, "src/data/");
 
 // path to locale data for given type
-Path getLocaleDataPath(String type) => dataPath.append(type);
+String getLocaleDataPath(String type) => join(dataPath, type);
 
 // path to locale data file for given type and locale
-Path getLocaleDataFilePath(String type, String locale) => 
-  getLocaleDataPath(type).append("$locale.json");
+String getLocaleDataFilePath(String type, String locale) => 
+    join(getLocaleDataPath(type), "$locale.json");
 
 // path to locale data file for given type and locale
-Path mainLocaleListFilePath = dataPath.append("main_locale_list.json");
+String mainLocaleListFilePath = join(dataPath, "main_locale_list.json");

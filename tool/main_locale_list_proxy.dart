@@ -12,7 +12,7 @@ import 'package_paths.dart';
 main() {
   http.read("${cldrBaseUri}main").then((String emptyLocaleMap) {
     var localeList = json.parse(emptyLocaleMap).keys.toList();
-    var file = new File.fromPath(mainLocaleListFilePath);
+    var file = new File(mainLocaleListFilePath);
     file.writeAsStringSync(json.stringify(localeList));
   });
 }

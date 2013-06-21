@@ -83,21 +83,20 @@ Future<List<dwc.CompilerResult>> build(List<String> arguments,
             shouldPrint: shouldPrint));
         if (machineFormat) {
           lastTask = lastTask.then((res) {
-            // Print mappings for the Dart Editor.
+            appendMessage(Map jsonMessage) {
+              var message = json.stringify([jsonMessage]);
+              if (shouldPrint) print(message);
+              res.messages.add(message);
+            }
+            // Print for the Editor messages about mappings and generated files
             res.outputs.forEach((out, input) {
-              // For now, we print out only mappings of HTML files, which is the
-              // only information the Editor uses today in order to redirect
-              // launches from the source HTML file to the generated one.
               if (out.endsWith(".html") && input != null) {
-                var mapMessage = json.stringify([{
+                appendMessage({
                   "method": "mapping",
                   "params": {"from": input, "to": out},
-                }]);
-                if (shouldPrint) {
-                  print(mapMessage);
-                }
-                res.messages.add(mapMessage);
+                });
               }
+              appendMessage({"method": "generated", "params": {"file": out}});
             });
             return res;
           });

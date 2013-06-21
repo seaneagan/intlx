@@ -9,6 +9,8 @@ import 'dart:io';
 import 'dart:async';
 import 'package:intl/intl.dart';
 import 'package_paths.dart';
+
+// generates a file containing the list of available CLDR locales
 main() {
   http.read("${cldrBaseUri}main").then((String emptyLocaleMap) {
     var localeList = json.parse(emptyLocaleMap).keys.toList();

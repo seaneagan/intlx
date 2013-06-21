@@ -11,20 +11,24 @@ library intlx.tool.package_paths;
 import 'dart:io';
 import 'package:pathos/path.dart';
 
-// current directory must be <root of this package>
+// TODO: this assumes the scripts are run from the root of the pub package.
+// Consider dynamically calculating the root of the pub package instead
+// so it may be run directly from it's own directory.
+
+// name of this pub package
 String packageName = basename(Directory.current.path);
 
-// current directory must be <root of this package>
+// library path of this pub package
 String libPath = join(Directory.current.path, "lib");
 
 // path of private (symbol) locale libraries for given type
-String getLocaleSrcPath(String type) => join(libPath, "src/$type/data/");
+String getLocaleSrcPath(String type) => join(libPath, "src/$type/data");
 
 // path of locale specific libraries
-String localeLibPath = join(libPath, "locale/");
+String localeLibPath = join(libPath, "locale");
 
 // path to data
-String dataPath = join(libPath, "src/data/");
+String dataPath = join(libPath, "src/data");
 
 // path to locale data for given type
 String getLocaleDataPath(String type) => join(dataPath, type);

@@ -13,10 +13,10 @@ import 'package:intl/date_symbol_data_file.dart';
 import 'package:logging/logging.dart';
 import 'package:intlx/src/util.dart';
 import 'package:unittest/matcher.dart';
-import 'log_util.dart';
-import 'io_util.dart';
+import 'util.dart';
 
-// This web service uses the official CLDR JSON bindings,
+// This web service is the reference implementation 
+// of the official CLDR JSON bindings,
 // as specified by http://cldr.unicode.org/index/cldr-spec/json.
 final cldrBaseUri = "http://i18ndata.appspot.com/cldr/tags/$cldrTag/";
 final cldrTag = "unconfirmed";
@@ -24,6 +24,7 @@ final cldrTag = "unconfirmed";
 final mainCldrLocales = 
   json.parse(new File(mainLocaleListFilePath).readAsStringSync());
 
+/// Mechanism to fetch data from CLDR, transform it, and store it locally.
 class CldrDataProxy {
 
   static var logger = getLogger("intlx.tool.cldr_data_proxy");
@@ -32,7 +33,9 @@ class CldrDataProxy {
   final String outputPath;
   var availableCldrLocales = mainCldrLocales;
 
-  // TODO: is it really necessary to artificially constrain the locales to those supported by DateFormat?
+  // TODO: is it necessary to artificially constrain the locales 
+  // to those supported by DateFormat?
+  // Why doesn't DateFormat support all locales that CLDR does?
   Iterable<String> constrainLocales() {
     var locales = availableLocalesForDateFormatting.map((locale) => 
       Intl.verifiedLocale(locale, availableCldrLocales.contains)).toSet();
@@ -76,7 +79,7 @@ class CldrDataProxy {
   }
   
   transform(Map<String, dynamic> localeJsonMap) {
-    var transformedData = localeJsonMap.keys.fold(<String, dynamic> {}, (map, locale) {
+    var transformedData = localeJsonMap.keys.fold({}, (map, locale) {
       var transformedJson = transformJson(locale, localeJsonMap[locale]);
       logger.fine("""transformed locale data for '$locale' was:
 $transformedJson""");
@@ -85,7 +88,7 @@ $transformedJson""");
     });
     
     // remove any subtags which have identical data as their base tag
-    transformedData = transformedData.keys.fold(<String, dynamic> {}, (map, String locale) {
+    transformedData = transformedData.keys.fold({}, (map, String locale) {
       var localeData = transformedData[locale];
       var baseTag = baseLocale(locale);
       var keepData = true;
@@ -94,11 +97,14 @@ $transformedJson""");
         var matcher = equals(baseTagData);
         var matchState = {};
         if(matcher.matches(localeData, matchState)) {
-          logger.info("Removing data for '$locale' since it's identical to that of it's base tag '$baseTag'");
+          logger.info("Removing data for '$locale' as it's identical to"
+          "that of it's base tag '$baseTag'");
           keepData = false;
         } else {
-          var description = matcher.describeMismatch(localeData, new StringDescription(), matchState, true);
-          logger.info("""Retaining data for '$locale' since it has the following difference from that of it's base tag '$baseTag':
+          var description = matcher.describeMismatch(
+            localeData, new StringDescription(), matchState, true);
+          logger.info("Retaining data for '$locale' as it's different than"
+          """that of it's base tag '$baseTag' as follows:
 $description""");
         }
       }

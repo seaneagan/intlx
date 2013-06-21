@@ -11,9 +11,9 @@ import 'package_paths.dart';
 import 'package:intlx/src/util.dart';
 import 'package:pathos/path.dart' as pathos;
 import 'package:logging/logging.dart';
-import 'log_util.dart';
-import 'io_util.dart';
+import 'util.dart';
 
+/// Generates dart source files which can be used to load locale data
 abstract class LibraryWriter {
 
   static var logger = getLogger("intlx.tool.library_writer");
@@ -156,11 +156,13 @@ $fullCode''');
 
   String getPublicClasses() => "[${underscoresToCamelCase(type, true)}Format]";
   
-  String getSymbolsImports() => localeList.map(generateLocaleImport).toList().join("\n");
+  String getSymbolsImports() => 
+    localeList.map(generateLocaleImport).toList().join("\n");
   
   writeLocaleDataLibrary() {
     var publicClasses = getPublicClasses();
-    var symbolsImports = localeList.map(generateLocaleImport).toList().join("\n");
+    var symbolsImports = 
+      localeList.map(generateLocaleImport).toList().join("\n");
     var libraryDoc = '''
 
 /// Exposes [LocaleData] constants for use with $publicClasses.
@@ -191,7 +193,7 @@ part 'package:intlx/src/$type/${type}_locale_data_constants.dart';
 
   }
   void writeLocaleDataConstantsPart() {
-    var localeDataConstants = localeList.map(getLocaleDataConstant).join("\n");    
+    var localeDataConstants = localeList.map(getLocaleDataConstant).join("\n");
     
     var code = '''$localeDataConstants
 ''';
@@ -208,9 +210,11 @@ part 'package:intlx/src/$type/${type}_locale_data_constants.dart';
   String getLocaleDataConstructorArgs(String locale) => 
     '"$locale", () => ${getSymbolsConstant(locale)}';
     
-  String getSymbolsConstant(String locale) => '${getSymbolsImportId(locale)}.symbols';
+  String getSymbolsConstant(String locale) => 
+    '${getSymbolsImportId(locale)}.symbols';
   
-  String getSymbolsImportId(String locale) => "symbols_${locale.toUpperCase()}";
+  String getSymbolsImportId(String locale) => 
+    "symbols_${locale.toUpperCase()}";
 
   String getSymbolPartCode(String locale, Map data) => '''
 final ${getSymbolsConstant(locale)} = new $symbolsClass(${getSymbolsConstructorArgs(locale, data)});

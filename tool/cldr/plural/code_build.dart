@@ -15,7 +15,7 @@ import 'dart:async';
 import 'package:http/http.dart' as http;
 import 'package:pathos/path.dart' as pathos;
 import 'package:logging/logging.dart';
-import '../log_util.dart';
+import '../util.dart';
 
 main() => new PluralLibraryWriter().writeLibraries();
 
@@ -29,15 +29,19 @@ class PluralLibraryWriter extends LibraryWriter {
   
   void writeLibrariesSync(){
     super.writeLibrariesSync();
-    new LogStep(logger, "Writing loadLocale() library").execute(writeLoadLocaleLibrary);
+    new LogStep(logger, "Writing loadLocale() library")
+      .execute(writeLoadLocaleLibrary);
   }
 
   void writeLoadLocaleLibrary() {
     var loadLocaleLibraryPath = pathos.join(libPath, "src/$type/");
     
-    var imports = localeList.map((locale) => '''@library_$locale
-import 'package:$packageName/src/plural/data/$locale.dart' as ${getSymbolsImportId(locale)};
-''').join();
+    var imports = localeList.map((locale) {
+      var symbolsImportId = getSymbolsImportId(locale);
+      return '''@library_$locale
+import 'package:$packageName/src/plural/data/$locale.dart' as $symbolsImportId;
+''';
+    }).join();
 
     var deferredLibraries = localeList.map((locale) => 
       '''const library_$locale = const DeferredLibrary('plural_symbols_$locale');

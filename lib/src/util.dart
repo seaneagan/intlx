@@ -43,3 +43,12 @@ String underscoresToCamelCase(String underscores, bool capitalized) {
     onNonMatch: (String segment) => withCapitalization(segment, true));
   return withCapitalization(camel, capitalized);
 }
+
+// TODO: make Intl._shortLocale public instead of duplicating it here
+String baseLocale(String aLocale) {
+  if (aLocale.length < 2) return aLocale;
+  final noUnderscores = new RegExp(r'[^_]*');
+  return noUnderscores.stringMatch(aLocale.toLowerCase());
+}
+
+

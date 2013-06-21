@@ -6581,3 +6581,339 @@ Total time                                                   -- 3355 ms
 Build finished!
 build.dart finished [6440 ms]
 
+---
+build.dart --machine --changed=lib\iterable_locale_data.dart --changed=lib\plural_locale_data.dart --changed=li...
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2033 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2767 ms
+Build finished!
+build.dart finished [3466 ms]
+
+---
+build.dart --machine --changed=tool\cldr_data_proxy.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2009 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2725 ms
+Build finished!
+build.dart finished [3054 ms]
+
+---
+build.dart --machine --changed=lib\src\util.dart --changed=tool\cldr_data_proxy.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2073 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2825 ms
+Build finished!
+build.dart finished [3291 ms]
+
+---
+build.dart --machine --changed=tool\cldr_data_proxy.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2020 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2755 ms
+Build finished!
+build.dart finished [3152 ms]
+
+---
+build.dart --machine --changed=tool\cldr_data_proxy.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1988 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2705 ms
+Build finished!
+build.dart finished [3023 ms]
+
+---
+build.dart --machine --changed=tool\cldr_data_proxy.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1999 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2718 ms
+Build finished!
+build.dart finished [3153 ms]
+
+---
+build.dart --machine --changed=tool\cldr_data_proxy.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2002 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2713 ms
+Build finished!
+build.dart finished [3038 ms]
+
+---
+build.dart --machine --changed=tool\cldr_data_proxy.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2061 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2795 ms
+Build finished!
+build.dart finished [3135 ms]
+
+---
+build.dart --machine --changed=tool\cldr_data_proxy.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2060 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2798 ms
+Build finished!
+build.dart finished [3163 ms]
+
+---
+build.dart --machine --changed=lib\src\data\iterable\de_AT.json --changed=lib\src\data\iterable\de_CH.json --ch...
+Total time                                                   -- 725 ms
+Build finished!
+build.dart finished [1082 ms]
+
+---
+build.dart --machine --changed=lib\src\data\iterable\de_AT.json --changed=lib\src\data\iterable\de_CH.json --ch...
+Total time                                                   -- 714 ms
+Build finished!
+build.dart finished [1031 ms]
+
+---
+build.dart --machine --changed=tool\cldr_data_proxy.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1995 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2716 ms
+Build finished!
+build.dart finished [3040 ms]
+
+---
+build.dart --machine --changed=lib\src\data\relative_time\de_AT.json --changed=lib\src\data\relative_time\de_CH...
+Total time                                                   -- 714 ms
+Build finished!
+build.dart finished [1077 ms]
+
+---
+build.dart --machine --changed=tool\cldr_data_proxy.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2026 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2752 ms
+Build finished!
+build.dart finished [3082 ms]
+
+---
+build.dart --machine --changed=lib\src\data\iterable\de_AT.json --changed=lib\src\data\iterable\de_CH.json --ch...
+Total time                                                   -- 721 ms
+Build finished!
+build.dart finished [1040 ms]
+
+---
+build.dart --machine --changed=tool\cldr_data_proxy.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2006 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2729 ms
+Build finished!
+build.dart finished [3069 ms]
+
+---
+build.dart --machine --changed=tool\cldr_data_proxy.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2019 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2739 ms
+Build finished!
+build.dart finished [3095 ms]
+
+---
+build.dart --machine --changed=lib\src\data\iterable\de_AT.json --changed=lib\src\data\iterable\de_CH.json --ch...
+Total time                                                   -- 718 ms
+Build finished!
+build.dart finished [1032 ms]
+
+---
+build.dart --machine --changed=lib\src\data\iterable\de_AT.json --changed=lib\src\data\iterable\de_CH.json --ch...
+Total time                                                   -- 712 ms
+Build finished!
+build.dart finished [1076 ms]
+
+---
+build.dart --machine --changed=tool\cldr_data_proxy.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2024 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2742 ms
+Build finished!
+build.dart finished [3113 ms]
+
+---
+build.dart --machine --changed=lib\src\data\iterable\de_AT.json --changed=lib\src\data\iterable\de_CH.json --ch...
+Total time                                                   -- 718 ms
+Build finished!
+build.dart finished [1126 ms]
+
+---
+build.dart --machine --changed=tool\cldr_data_proxy.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2028 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2751 ms
+Build finished!
+build.dart finished [3095 ms]
+
+---
+build.dart --machine --changed=tool\cldr_data_proxy.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2002 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2724 ms
+Build finished!
+build.dart finished [3051 ms]
+
+---
+build.dart --machine --changed=lib\src\data\iterable\de_AT.json
+Total time                                                   -- 721 ms
+Build finished!
+build.dart finished [1033 ms]
+
+---
+build.dart --machine --changed=lib\src\data\iterable\af.json --changed=lib\src\data\iterable\am.json --changed=...
+Total time                                                   -- 763 ms
+Build finished!
+build.dart finished [1099 ms]
+
+---
+build.dart --machine --changed=tool\cldr_data_proxy.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2014 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2735 ms
+Build finished!
+build.dart finished [3126 ms]
+
+---
+build.dart --machine --changed=lib\src\data\iterable\af.json --changed=lib\src\data\iterable\am.json --changed=...
+Total time                                                   -- 719 ms
+Build finished!
+build.dart finished [1048 ms]
+
+---
+build.dart --machine --changed=tool\cldr_data_proxy.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1994 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2707 ms
+Build finished!
+build.dart finished [3102 ms]
+
+---
+build.dart --machine --changed=tool\cldr_data_proxy.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2032 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2758 ms
+Build finished!
+build.dart finished [3211 ms]
+
+---
+build.dart --machine --changed=lib\src\data\iterable\af.json --changed=lib\src\data\iterable\am.json --changed=...
+Total time                                                   -- 736 ms
+Build finished!
+build.dart finished [1157 ms]
+
+---
+build.dart --machine --changed=tool\io_util.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2847 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 3651 ms
+Build finished!
+build.dart finished [6895 ms]
+
+---
+build.dart --machine --changed=tool\library_writer.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2023 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2771 ms
+Build finished!
+build.dart finished [3231 ms]
+
+---
+build.dart --machine --changed=tool\cldr_data_proxy.dart --changed=tool\io_util.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1998 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2722 ms
+Build finished!
+build.dart finished [3047 ms]
+
+---
+build.dart --machine --changed=tool\cldr_data_proxy.dart --changed=tool\library_writer.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2042 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2764 ms
+Build finished!
+build.dart finished [3190 ms]
+
+---
+build.dart --machine --changed=lib\src\data\iterable\af.json --changed=lib\src\data\iterable\am.json --changed=...
+Total time                                                   -- 736 ms
+Build finished!
+build.dart finished [1069 ms]
+
+---
+build.dart --machine --changed=lib\iterable_locale_data.dart --changed=lib\plural_locale_data.dart --changed=li...
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2025 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2763 ms
+Build finished!
+build.dart finished [3103 ms]
+

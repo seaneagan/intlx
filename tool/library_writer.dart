@@ -12,6 +12,7 @@ import 'package:intlx/src/util.dart';
 import 'package:pathos/path.dart' as pathos;
 import 'package:logging/logging.dart';
 import 'log_util.dart';
+import 'io_util.dart';
 
 abstract class LibraryWriter {
 
@@ -58,6 +59,11 @@ abstract class LibraryWriter {
     }.forEach((description, step) => new LogStep(logger, description).execute(step));
 
   void writeSymbolsLibraries() {
+
+    // delete existing data files
+    var localeSrcDirectory = new Directory(getLocaleSrcPath(type));
+    truncateDirectorySync(localeSrcDirectory);
+
     for(String locale in localeList) {
       writeSymbolsLibrary(locale, localeDataMap[locale]);
     }

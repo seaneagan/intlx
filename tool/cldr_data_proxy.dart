@@ -11,7 +11,10 @@ import 'package_paths.dart';
 import 'package:intl/intl.dart';
 import 'package:intl/date_symbol_data_file.dart';
 import 'package:logging/logging.dart';
+import 'package:intlx/src/util.dart';
+import 'package:unittest/matcher.dart';
 import 'log_util.dart';
+import 'io_util.dart';
 
 // This web service uses the official CLDR JSON bindings,
 // as specified by http://cldr.unicode.org/index/cldr-spec/json.
@@ -73,20 +76,55 @@ class CldrDataProxy {
   }
   
   transform(Map<String, dynamic> localeJsonMap) {
-    var transformedData = localeJsonMap.keys.fold(<String, String> {}, (map, locale) {
+    var transformedData = localeJsonMap.keys.fold(<String, dynamic> {}, (map, locale) {
       var transformedJson = transformJson(locale, localeJsonMap[locale]);
       logger.fine("""transformed locale data for '$locale' was:
 $transformedJson""");
-      map[locale] = 
-        json.stringify(transformedJson);
+      map[locale] = transformedJson;
       return map;
     });
+    
+    // remove any subtags which have identical data as their base tag
+    transformedData = transformedData.keys.fold(<String, dynamic> {}, (map, String locale) {
+      var localeData = transformedData[locale];
+      var baseTag = baseLocale(locale);
+      var keepData = true;
+      if(baseTag != locale) {
+        var baseTagData = transformedData[baseTag];
+        var matcher = equals(baseTagData);
+        var matchState = {};
+        if(matcher.matches(localeData, matchState)) {
+          logger.info("Removing data for '$locale' since it's identical to that of it's base tag '$baseTag'");
+          keepData = false;
+        } else {
+          var description = matcher.describeMismatch(localeData, new StringDescription(), matchState, true);
+          logger.info("""Retaining data for '$locale' since it has the following difference from that of it's base tag '$baseTag':
+$description""");
+        }
+      }
+      if(keepData) {
+        map[locale] = localeData;
+      }
+      return map;
+    });
+    
+    // stringify remaining data
+    transformedData.forEach((locale, data) {
+      transformedData[locale] = json.stringify(data);
+    });
+
     return transformedData;
   }
 
   transformJson(String locale, var jsonObject) => jsonObject;
 
   void store(Map<String, String> localeJsonMap) {
+    
+    // delete existing files
+    var localeDataDirectory = new Directory(getLocaleDataPath(outputPath));
+    truncateDirectorySync(localeDataDirectory);
+    
+    // store new files
     localeJsonMap.forEach((locale, json){
       var filePath = getLocaleDataFilePath(outputPath, locale);
       logger.fine("storing data for locale '$locale' in '$filePath'");

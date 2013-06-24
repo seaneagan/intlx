@@ -45,7 +45,11 @@ class PluralDataProxy extends CldrDataProxy {
       return uc;
     }
     return jsonObject == '' ? 
+      // CLDR uses '' to represent the absence of any plural rules
+      // for the locale, so normalize appropriately
       const <String, String> {} : 
+      // store plural categories in upper case form 
+      // to match the output of PluralCategory.toString()
       toUpperCaseKeys(jsonObject);
   }
 

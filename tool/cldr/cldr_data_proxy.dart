@@ -7,31 +7,44 @@ import 'dart:async';
 import 'dart:utf';
 import 'dart:json' as json;
 import 'package:http/http.dart' as http;
-import 'package_paths.dart';
 import 'package:intl/intl.dart';
 import 'package:intl/date_symbol_data_file.dart';
 import 'package:logging/logging.dart';
-import 'package:intlx/src/util.dart';
 import 'package:unittest/matcher.dart';
+import 'package:intlx/src/util.dart';
 import 'util.dart';
+import 'package_paths.dart';
 
 // This web service is the reference implementation 
 // of the official CLDR JSON bindings,
 // as specified by http://cldr.unicode.org/index/cldr-spec/json.
-final cldrBaseUri = "http://i18ndata.appspot.com/cldr/tags/$cldrTag/";
-final cldrTag = "unconfirmed";
+final cldrBaseUri = "http://i18ndata.appspot.com/cldr/tags/${_cldrTag}/";
 
-final mainCldrLocales = 
+// This matches the default tag if none is provided.
+// For more information, see
+// http://cldr.unicode.org/index/process#resolution_procedure
+final _cldrTag = "unconfirmed";
+
+final _mainCldrLocales = 
   json.parse(new File(mainLocaleListFilePath).readAsStringSync());
 
-/// Mechanism to fetch data from CLDR, transform it, and store it locally.
+/// Mechanism to fetch data of a given type from [CLDR][1], 
+/// transform it as necessary, and store it locally.
+/// [1]: http://cldr.unicode.org/
 class CldrDataProxy {
 
   static var logger = getLogger("intlx.tool.cldr_data_proxy");
 
+  // path relative to the main locale data path for a given locale, 
+  // in which to fetch the data.
   final String _path;
+  
+  /// path relative to the root data output directory, 
+  /// in which to output the proxied data.
   final String outputPath;
-  var availableCldrLocales = mainCldrLocales;
+  
+  /// cldr locales from which data is available
+  var availableCldrLocales = _mainCldrLocales;
 
   // TODO: is it necessary to artificially constrain the locales 
   // to those supported by DateFormat?
@@ -45,6 +58,7 @@ class CldrDataProxy {
   
   CldrDataProxy(this._path, this.outputPath);
 
+  /// [fetch]es, [transform]s, and [store]s locale data.
   Future proxy() {
     logger.info('=== Build $outputPath data ===');
     
@@ -56,7 +70,10 @@ class CldrDataProxy {
       .then(wrapStep("store locale data", store));
   }
 
-  Future fetch() {
+  /// Fetches data for each supported locale from the CLDR JSON web service,
+  /// and returns a Future which completes with a Map 
+  /// from locales to parsed JSON structures
+  Future<Map<String, dynamic>> fetch() {
     String getCldrDataUri(String locale) => 
       "${cldrBaseUri}main/$locale/${_path}?depth=-1";
     var locales = constrainLocales().toList();
@@ -78,6 +95,8 @@ class CldrDataProxy {
         }));
   }
   
+  /// Performs [transformJson] for each supported locale, and returns a new 
+  /// Map of transformed locale data.
   transform(Map<String, dynamic> localeJsonMap) {
     var transformedData = localeJsonMap.keys.fold({}, (map, locale) {
       var transformedJson = transformJson(locale, localeJsonMap[locale]);
@@ -87,7 +106,13 @@ $transformedJson""");
       return map;
     });
     
-    // remove any subtags which have identical data as their base tag
+    // Remove any subtags which have identical data as their base tag.
+    // This minimizes the amount of data that needs to be loaded
+    // when supporting multiple (or all) locales.
+    // The XML (LDML) data uses a fallback scheme to explicitly
+    // define locale data which is identical to that of a parent locale,
+    // but the JSON bindings are pre-resolved, so comparisons must be done.
+    // See http://cldr.unicode.org/index/cldr-spec/json.
     transformedData = transformedData.keys.fold({}, (map, String locale) {
       var localeData = transformedData[locale];
       var baseTag = baseLocale(locale);
@@ -97,13 +122,13 @@ $transformedJson""");
         var matcher = equals(baseTagData);
         var matchState = {};
         if(matcher.matches(localeData, matchState)) {
-          logger.info("Removing data for '$locale' as it's identical to"
+          logger.info("Removing data for '$locale' as it's identical to "
           "that of it's base tag '$baseTag'");
           keepData = false;
         } else {
           var description = matcher.describeMismatch(
             localeData, new StringDescription(), matchState, true);
-          logger.info("Retaining data for '$locale' as it's different than"
+          logger.info("Retaining data for '$locale' as it's different than "
           """that of it's base tag '$baseTag' as follows:
 $description""");
         }
@@ -122,8 +147,12 @@ $description""");
     return transformedData;
   }
 
+  /// Override this to transform the fetched data for a given locale,
+  /// into a format optimized for whatever usage patterns 
+  /// are going to be supported by this data.
   transformJson(String locale, var jsonObject) => jsonObject;
 
+  /// Store the transformed data into the local file system for later usage.
   void store(Map<String, String> localeJsonMap) {
     
     // delete existing files

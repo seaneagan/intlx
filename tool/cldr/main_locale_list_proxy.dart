@@ -7,7 +7,6 @@ import 'package:http/http.dart' as http;
 import 'dart:json' as json;
 import 'dart:io';
 import 'dart:async';
-import 'package:intl/intl.dart';
 import 'package_paths.dart';
 
 // generates a file containing the list of available CLDR locales

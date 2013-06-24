@@ -30,7 +30,7 @@ class LogStep {
     if(ret is Future) return ret.then((v) {
       end();
       return v;
-    });
+    }, onError: (e) {_logger.severe("FAIL STEP: $_description");});
     end();
     return ret;
   }
@@ -42,7 +42,7 @@ class LogStep {
 // get a Logger with a preattached [Logger.onRecord] handler
 // TODO: the logging package needs an appender concept,
 // and external configuration thereof.
-getLogger(String name) {
+Logger getLogger(String name) {
   var _logger = new Logger(name);
   _logger.onRecord.listen((record) => print(_logRecordToString(record)));
   return _logger;

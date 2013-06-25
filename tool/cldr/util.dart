@@ -2,7 +2,7 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
-library intlx.tool.util;
+library intlx.tool.cldr.util;
 
 import 'package:logging/logging.dart';
 import 'dart:async';
@@ -40,7 +40,7 @@ class LogStep {
 }
 
 // get a Logger with a preattached [Logger.onRecord] handler
-// TODO: the logging package needs an appender concept,
+// TODO: the logging package needs an Appender concept,
 // and external configuration thereof.
 Logger getLogger(String name) {
   var _logger = new Logger(name);

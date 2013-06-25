@@ -4,7 +4,7 @@
 
 /// Provides a parser for the [CLDR plural rule syntax][1]
 /// [1]: http://unicode.org/reports/tr35/#Language_Plural_Rules
-library intlx.tool.plural.plural_rule_parser;
+library intlx.tool.cldr.plural.plural_rule_parser;
 
 import 'package:parsers/parsers.dart';
 

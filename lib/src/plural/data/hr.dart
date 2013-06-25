@@ -9,7 +9,7 @@
 // to incorporate changes before we could correct CLDR. All manual
 // modification must be documented in this section, and should be
 // removed after those changes land to CLDR.
-library plural_symbols_hr;
+library intlx.plural.data.HR;
 
   import 'package:intlx/src/util.dart';
   import 'package:intlx/src/plural/plural.dart';

@@ -9,7 +9,7 @@
 // to incorporate changes before we could correct CLDR. All manual
 // modification must be documented in this section, and should be
 // removed after those changes land to CLDR.
-library iterable_symbols_zu;
+library intlx.iterable.data.ZU;
 
 import 'package:intlx/src/iterable/iterable_symbols.dart';
 

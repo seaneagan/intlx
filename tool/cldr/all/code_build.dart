@@ -2,7 +2,7 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
-library intlx.tool.all.code_build;
+library intlx.tool.cldr.all.code_build;
 
 import '../iterable/code_build.dart' as iterable_code;
 import '../plural/code_build.dart' as plural_code;

@@ -9,7 +9,7 @@
 // to incorporate changes before we could correct CLDR. All manual
 // modification must be documented in this section, and should be
 // removed after those changes land to CLDR.
-library relative_time_symbols_or;
+library intlx.relative_time.data.OR;
 
 import 'package:intlx/src/relative_time/relative_time_symbols.dart';
 

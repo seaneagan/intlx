@@ -9,7 +9,7 @@
 // to incorporate changes before we could correct CLDR. All manual
 // modification must be documented in this section, and should be
 // removed after those changes land to CLDR.
-library relative_time_symbols_fa;
+library intlx.relative_time.data.FA;
 
 import 'package:intlx/src/relative_time/relative_time_symbols.dart';
 

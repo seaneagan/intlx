@@ -2,7 +2,7 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
-library intlx.tool.iterable.data_build;
+library intlx.tool.cldr.iterable.data_build;
 
 import 'package:parsers/parsers.dart';
 import '../cldr_data_proxy.dart';

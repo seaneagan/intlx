@@ -107,11 +107,10 @@ const ${getLocaleListId()} = const <String> $localeListString;
   void writeSymbolsLibrary(String locale, Map data) {
     var dir = getLocaleSrcPath(type);
     new LibraryBuilder(
-      pathos.join(dir, "$locale.dart"), 
+      pathos.join(dir, "${getLocaleId(locale)}.dart"), 
       getSymbolLibraryCode(locale, data), 
       symbolsLibraryImports, 
-      comment: getLibraryComment(true),
-      libraryId: package.getLibraryIdFromPath(pathos.join(dir, "${getLocaleId(locale)}/")))
+      comment: getLibraryComment(true))
     .generate();
   }
   

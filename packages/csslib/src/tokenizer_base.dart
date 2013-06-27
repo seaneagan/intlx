@@ -35,8 +35,8 @@ abstract class TokenizerBase {
   int _index;
   int _startIndex;
 
-  const String _CDATA_START = '<![CDATA[';
-  const String _CDATA_END = ']]>';
+  static const String _CDATA_START = '<![CDATA[';
+  static const String _CDATA_END = ']]>';
 
   TokenizerBase(this._file, this._text, this._skipWhitespace,
       [this._index = 0]);

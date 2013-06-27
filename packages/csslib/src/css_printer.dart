@@ -81,6 +81,14 @@ class CssPrinter extends Visitor {
     emit('$_newLine\}');
   }
 
+  void visitHostDirective(HostDirective node) {
+    emit('\n@host {');
+    for (var ruleset in node.rulesets) {
+      ruleset.visit(this);
+    }
+    emit('$_newLine\}');
+  }
+
   /**
    *  @page : pseudoPage {
    *    decls

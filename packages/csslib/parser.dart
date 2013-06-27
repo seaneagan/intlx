@@ -432,7 +432,7 @@ class Parser {
   //  keyframes:          '@-webkit-keyframes ...' (see grammar below).
   //  font_face:          '@font-face' '{' declarations '}'
   //  namespace:          '@namespace name url("xmlns")
-  //
+  //  host:               '@host '{' ruleset '}'
   processDirective() {
     int start = _peekToken.start;
 
@@ -511,9 +511,7 @@ class Parser {
         if (_maybeEat(TokenKind.LBRACE)) {
           while (!_maybeEat(TokenKind.END_OF_FILE)) {
             RuleSet ruleset = processRuleSet();
-            if (ruleset == null) {
-              break;
-            }
+            if (ruleset == null) break;
             rulesets.add(ruleset);
           }
 
@@ -524,6 +522,25 @@ class Parser {
           _error('expected { after media before ruleset', _peekToken.span);
         }
         return new MediaDirective(media, rulesets, _makeSpan(start));
+
+      case TokenKind.DIRECTIVE_HOST:
+        _next();
+
+        List<TreeNode> rulesets = [];
+        if (_maybeEat(TokenKind.LBRACE)) {
+          while (!_maybeEat(TokenKind.END_OF_FILE)) {
+            RuleSet ruleset = processRuleSet();
+            if (ruleset == null) break;
+            rulesets.add(ruleset);
+          }
+
+          if (!_maybeEat(TokenKind.RBRACE)) {
+            _error('expected } after ruleset for @host', _peekToken.span);
+          }
+        } else {
+          _error('expected { after host before ruleset', _peekToken.span);
+        }
+        return new HostDirective(rulesets, _makeSpan(start));
 
       case TokenKind.DIRECTIVE_PAGE:
         /*

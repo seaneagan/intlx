@@ -21,6 +21,7 @@ abstract class VisitorBase {
   void visitMediaExpression(MediaExpression node);
   void visitMediaQuery(MediaQuery node);
   void visitMediaDirective(MediaDirective node);
+  void visitHostDirective(HostDirective node);
   void visitPageDirective(PageDirective node);
   void visitCharsetDirective(CharsetDirective node);
   void visitImportDirective(ImportDirective node);
@@ -139,6 +140,12 @@ class Visitor implements VisitorBase {
     for (var mediaQuery in node.mediaQueries) {
       visitMediaQuery(mediaQuery);
     }
+    for (var ruleset in node.rulesets) {
+      visitRuleSet(ruleset);
+    }
+  }
+
+  void visitHostDirective(HostDirective node) {
     for (var ruleset in node.rulesets) {
       visitRuleSet(ruleset);
     }

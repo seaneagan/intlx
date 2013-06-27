@@ -155,6 +155,7 @@ class TokenKind {
   static const int DIRECTIVE_O_KEYFRAMES = 660;
   static const int DIRECTIVE_FONTFACE = 661;
   static const int DIRECTIVE_NAMESPACE = 662;
+  static const int DIRECTIVE_HOST = 663;
 
   // Media query operators
   static const int MEDIA_OP_ONLY = 665;     // Unary.
@@ -203,6 +204,7 @@ class TokenKind {
     const {'type': TokenKind.DIRECTIVE_O_KEYFRAMES, 'value' : '-o-keyframes'},
     const {'type': TokenKind.DIRECTIVE_FONTFACE, 'value' : 'font-face'},
     const {'type': TokenKind.DIRECTIVE_NAMESPACE, 'value' : 'namespace'},
+    const {'type': TokenKind.DIRECTIVE_HOST, 'value' : 'host'},
   ];
 
   static const List<Map<int, String>> MEDIA_OPERATORS = const [
@@ -681,6 +683,7 @@ class TokenKind {
       case TokenKind.DIRECTIVE_O_KEYFRAMES:
       case TokenKind.DIRECTIVE_FONTFACE:
       case TokenKind.DIRECTIVE_NAMESPACE:
+      case TokenKind.DIRECTIVE_HOST:
       case TokenKind.UNIT_EM:
       case TokenKind.UNIT_EX:
       case TokenKind.UNIT_LENGTH_PX:

@@ -378,6 +378,14 @@ class MediaDirective extends Directive {
   visit(VisitorBase visitor) => visitor.visitMediaDirective(this);
 }
 
+class HostDirective extends Directive {
+  List<RuleSet> rulesets;
+
+  HostDirective(this.rulesets, Span span) : super(span);
+
+  visit(VisitorBase visitor) => visitor.visitHostDirective(this);
+}
+
 class PageDirective extends Directive {
   final String _ident;
   final String _pseudoPage;

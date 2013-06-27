@@ -11,6 +11,8 @@ import 'package:csslib/visitor.dart';
 import 'package:html5lib/dom.dart';
 import 'package:html5lib/dom_parsing.dart';
 
+import 'compiler.dart';
+import 'emitters.dart';
 import 'info.dart';
 import 'messages.dart';
 import 'options.dart';
@@ -21,14 +23,15 @@ import 'utils.dart';
  * Helper function returns [true] if CSS polyfill is on and component has a
  * scoped style tag.
  */
-bool useCssPolyFill(CompilerOptions opts, ComponentInfo component) =>
+bool useCssPolyfill(CompilerOptions opts, ComponentInfo component) =>
     opts.processCss && component.scoped;
 
 /**
  *  If processCss is enabled, prefix any component's HTML attributes for id or
  *  class to reference the mangled CSS class name or id.
  */
-void fixupHtmlCss(FileInfo fileInfo, CompilerOptions options) {
+void fixupHtmlCss(FileInfo fileInfo, CompilerOptions options,
+                  CssPolyfillKind polyfillKind(ComponentInfo component)) {
   // Walk the HTML tree looking for class names or id that are in our parsed
   // stylesheet selectors and making those CSS classes and ids unique to that
   // component.
@@ -36,15 +39,14 @@ void fixupHtmlCss(FileInfo fileInfo, CompilerOptions options) {
     print("  CSS fixup ${path.basename(fileInfo.inputUrl.resolvedPath)}");
   }
   for (var component in fileInfo.declaredComponents) {
-    // TODO(terry): Consider allowing more than one style sheet per component.
-    // For components only 1 stylesheet allowed.
+    // Mangle class names and element ids in the HTML to match the stylesheet.
+    // TODO(terry): Allow more than one style sheet per component.
     if (component.styleSheets.length == 1) {
+      // For components only 1 stylesheet allowed.
       var styleSheet = component.styleSheets[0];
-
-      // If polyfill is on prefix component name to all CSS classes and ids
-      // referenced in the scoped style.
-      var prefix = useCssPolyFill(options, component) ?
+      var prefix = polyfillKind(component) == CssPolyfillKind.MANGLED_POLYFILL ?
           component.tagName : null;
+
       // List of referenced #id and .class in CSS.
       var knownCss = new IdClassVisitor()..visitTree(styleSheet);
       // Prefix all id and class refs in CSS selectors and HTML attributes.
@@ -69,16 +71,16 @@ class IdClassVisitor extends Visitor {
 }
 
 /** Build the Dart map of managled class/id names and component tag name. */
-Map createCssSimpleSelectors(IdClassVisitor visitedCss, ComponentInfo info,
-    {scopedStyles: true}) {
+Map _createCssSimpleSelectors(IdClassVisitor visitedCss, ComponentInfo info,
+    bool mangleNames) {
   Map selectors = {};
   if (visitedCss != null) {
     for (var cssClass in visitedCss.classes) {
       selectors['.$cssClass'] =
-          scopedStyles ? '${info.tagName}_$cssClass' : cssClass;
+          mangleNames ? '${info.tagName}_$cssClass' : cssClass;
     }
     for (var id in visitedCss.ids) {
-      selectors['#$id'] = scopedStyles ? '${info.tagName}_$id' : id;
+      selectors['#$id'] = mangleNames ? '${info.tagName}_$id' : id;
     }
   }
 
@@ -93,7 +95,7 @@ Map createCssSimpleSelectors(IdClassVisitor visitedCss, ComponentInfo info,
  * Return a map of simple CSS selectors (class and id selectors) as a Dart map
  * definition.
  */
-String createCssSelectorsExpression(ComponentInfo info, bool cssPolyfill) {
+String createCssSelectorsExpression(ComponentInfo info, bool mangled) {
   var cssVisited = new IdClassVisitor();
 
   // For components only 1 stylesheet allowed.
@@ -102,8 +104,7 @@ String createCssSelectorsExpression(ComponentInfo info, bool cssPolyfill) {
     cssVisited..visitTree(styleSheet);
   }
 
-  return json.stringify(createCssSimpleSelectors(cssVisited, info,
-      scopedStyles: cssPolyfill));
+  return json.stringify(_createCssSimpleSelectors(cssVisited, info, mangled));
 }
 
 // TODO(terry): Need to handle other selectors than IDs/classes like tag name

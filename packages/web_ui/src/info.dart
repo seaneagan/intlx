@@ -213,6 +213,10 @@ class ComponentInfo extends LibraryInfo implements ComponentSummary {
 
   Span get sourceSpan => element.sourceSpan;
 
+  /** Is apply-author-styles enabled. */
+  bool get hasAuthorStyles =>
+      element.attributes.containsKey('apply-author-styles');
+
   /**
    * Finds the declaring class, and initializes [className] and
    * [classDeclaration]. Also [userCode] is generated if there was no script.

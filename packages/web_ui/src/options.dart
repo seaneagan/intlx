@@ -56,6 +56,13 @@ class CompilerOptions {
   /** Emit debugging information for CSS processing. */
   final bool debugCss;
 
+  // TODO(terry): Delete this option; temporary for a transition period.
+  /** If true, emit mangled CSS otherwise emits component scoped CSS. **/
+  final bool mangleCss;
+
+  /** Use CSS file for CSS Reset. */
+  final String resetCssFile;
+
   /** Whether to analyze the input for warnings without generating any code. */
   final bool analysisOnly;
 
@@ -76,6 +83,8 @@ class CompilerOptions {
       componentsOnly = args['components_only'],
       processCss = args['css'],
       debugCss = args['debug_css'],
+      resetCssFile = args['css-reset'],
+      mangleCss = args['css-mangle'],
       analysisOnly = args['analysis-only'],
       inputFile = args.rest.length > 0 ? args.rest[0] : null;
 
@@ -117,6 +126,9 @@ class CompilerOptions {
           defaultsTo: true)
       ..addFlag('debug_css', help: 'Debug information for CSS polyfill',
           defaultsTo: false, negatable: false)
+      ..addOption('css-reset', abbr: 'r', help: 'CSS file used to reset CSS')
+      ..addFlag('css-mangle', help: 'Mangle component\'s CSS', defaultsTo: true,
+          negatable: true)
       ..addFlag('analysis-only', help: 'Don\'t emit code, just show warnings '
           'and errors (unset by default)', defaultsTo: false, negatable: false)
       ..addOption('out', abbr: 'o', help: 'Directory where to generate files'

@@ -153,6 +153,9 @@ void fixConstructor(ConstructorDeclaration ctor, TextEditTransaction code,
 
   var thisInit = [];
   for (var param in ctor.parameters.parameters) {
+    if (param is DefaultFormalParameter) {
+      param = param.parameter;
+    }
     if (param is FieldFormalParameter) {
       var name = param.identifier.name;
       if (changedFields.contains(name)) {

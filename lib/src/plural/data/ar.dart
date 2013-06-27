@@ -11,8 +11,8 @@
 // removed after those changes land to CLDR.
 library intlx.plural.data.AR;
 
-  import 'package:intlx/src/util.dart';
-  import 'package:intlx/src/plural/plural.dart';
+import 'package:intlx/src/plural/plural.dart';
+import 'package:intlx/src/util.dart';
 
 final symbols = new PluralLocaleImpl('ar', (int n) {
 if(n == 0) return PluralCategory.ZERO;
@@ -22,3 +22,4 @@ if(n == 0) return PluralCategory.ZERO;
   else if((range(89, 11).contains(n % 100))) return PluralCategory.MANY;
   else return PluralCategory.OTHER;
 });
+

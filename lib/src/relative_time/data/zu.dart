@@ -49,3 +49,4 @@ final symbols = new RelativeTimeSymbols(      units: {
       "MONTH": {"1":"Enyangeni engu-1","0":"Ezinyangeni ezingu-0","other":"Ezinyangeni ezingu-{0}"},
       "YEAR": {"1":"Onyakeni ongu-1","0":"Eminyakeni engu-0","other":"Eminyakeni engu-{0}"}
     });
+

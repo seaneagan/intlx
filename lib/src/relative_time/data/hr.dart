@@ -49,3 +49,4 @@ final symbols = new RelativeTimeSymbols(      units: {
       "MONTH": {"1":"za 1 mjesec","one":"za {0} mjesec","0":"za 0 mjeseci","few":"za {0} mjeseca","other":"za sljedeći broj mjeseci: {0}","many":"za {0} mjeseci"},
       "YEAR": {"1":"za 1 godinu","one":"za {0} godinu","0":"za 0 g.","few":"za {0} godine","other":"za {0} godina","many":"za {0} godina"}
     });
+

@@ -49,3 +49,4 @@ final symbols = new RelativeTimeSymbols(      units: {
       "MONTH": {"1":"በ1 ወር ውስጥ","0":"በ0 ወራትውስጥ","other":"በ{0} ወራት ውስጥ"},
       "YEAR": {"1":"በ1 አመት ውስጥ","0":"በ0 አመታት ውስጥ","other":"በ{0} አመታት ውስጥ"}
     });
+

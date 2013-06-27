@@ -86,3 +86,5 @@ import 'package:intlx/src/iterable/data/ZU.dart' as symbols_ZU;
 
 part 'package:intlx/src/iterable/iterable_all_data_constant.dart';
 part 'package:intlx/src/iterable/iterable_locale_data_constants.dart';
+
+

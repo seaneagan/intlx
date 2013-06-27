@@ -49,3 +49,4 @@ final symbols = new RelativeTimeSymbols(      units: {
       "MONTH": {"1":"1 నెలలో","0":"0 నెలల్లో","other":"{0} నెలల్లో"},
       "YEAR": {"1":"1 సంవత్సరంలో","0":"0 సంవత్సరాల్లో","other":"{0} సంవత్సరాల్లో"}
     });
+

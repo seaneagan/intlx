@@ -11,14 +11,15 @@ import 'dart:async';
 import 'package:pathos/path.dart' as pathos;
 import 'package:logging/logging.dart';
 import 'package:intlx/src/util.dart';
+import 'package:intlx/src/codegen.dart';
+import 'package:intlx/src/package_paths.dart';
 import 'util.dart';
-import 'package_paths.dart';
 
 /// Generates dart source files which can be used 
 /// to load locale data of a given type.
 abstract class LibraryWriter {
 
-  static var logger = getLogger("$packageName.tool.library_writer");
+  static var logger = getLogger("${package.name}.tool.library_writer");
   
   /// intermediate storage of the locale data
   Map<String, Map> localeDataMap;
@@ -68,9 +69,7 @@ abstract class LibraryWriter {
   void writeLibrariesSync() =>
     {
       "Writing locale list library": writeLocaleListLibrary,
-      "Writing locale data constants": writeLocaleDataConstantsPart,
       "Writing symbols libraries": writeSymbolsLibraries,
-      "Writing ALL locale data part": writeAllLocaleDataPart,
       "Writing top-level locale data library": writeLocaleDataLibrary
     }.forEach((description, step) => 
       new LogStep(logger, description).execute(step));
@@ -81,39 +80,22 @@ abstract class LibraryWriter {
 
     var code = '''
 const ${getLocaleListId()} = const <String> $localeListString;
-      ''';
-
-      writeLibrary(
-        pathos.join(libPath, "src/$type/"), 
-        getLocaleListLibraryName(), 
-        getLibraryComment(false), 
-        code);
-  }
-    
-  // Write the "part of" the public interface which contains 
-  // the individual locale data constants.
-  void writeLocaleDataConstantsPart() {
-    var localeDataConstants = localeList.map(getLocaleDataConstant).join("\n");
-    
-    var code = '''$localeDataConstants
 ''';
 
-    writeLibrary(
-      pathos.join(libPath, "src/$type/"), 
-      "${type}_locale_data_constants", 
-      getLibraryComment(false), 
+    new LibraryBuilder(
+      pathos.join("lib", "src", "$type/${getLocaleListLibraryName()}.dart"), 
       code, 
-      getLocaleDataLibraryId(),
-      true);
-  }
-  
-  String getLocaleDataLibraryId() => "$packageName.${type}_locale_data";
+      [], 
+      comment: getLibraryComment(false))
+    .generate();
 
+  }
+    
   /// Calls [writeSymbolsLibrary] for each locale.
   void writeSymbolsLibraries() {
 
     // delete existing data files
-    var localeSrcDirectory = new Directory(getLocaleSrcPath(type));
+    var localeSrcDirectory = new Directory(pathos.join(package.path, getLocaleSrcPath(type)));
     truncateDirectorySync(localeSrcDirectory);
 
     for(String locale in localeList) {
@@ -123,77 +105,40 @@ const ${getLocaleListId()} = const <String> $localeListString;
 
   /// Writes a library containing raw locale data for an individual locale.
   void writeSymbolsLibrary(String locale, Map data) {
-    writeLibrary(
-      getLocaleSrcPath(type),
-      getLocaleId(locale), 
-      getLibraryComment(true), 
-      getSymbolLibraryCode(locale, data));
+    var dir = getLocaleSrcPath(type);
+    new LibraryBuilder(
+      pathos.join(dir, "$locale.dart"), 
+      getSymbolLibraryCode(locale, data), 
+      symbolsLibraryImports, 
+      comment: getLibraryComment(true),
+      libraryId: package.getLibraryIdFromPath(pathos.join(dir, "${getLocaleId(locale)}/")))
+    .generate();
   }
+  
+  Iterable<Import> get symbolsLibraryImports => 
+    [new Import(package.getPackageUri('src/$type/$symbolsClassLibrary.dart'))];
 
   String getSymbolLibraryCode(String locale, Map data) => '''
-${getSymbolsClassLibraryImport()}
-
 final symbols = new $symbolsClass(${getSymbolsConstructorArgs(locale, data)});
 ''';
 
   String getSymbolsConstructorArgs(String locale, Map data);
 
   String getSymbolsLibraryId(String locale) => 
-    "$packageName.${type}.data.$locale";
+    "${package.name}.${type}.data.$locale";
 
-  String generateLocaleImport(String locale) {
+  Import generateLocaleImport(String locale) {
     var symbolsLibraryId = getSymbolsImportId(locale);
     var localeId = getLocaleId(locale);
-    var uri = 'package:$packageName/src/$type/data/$localeId.dart';
-    return "import '$uri' as $symbolsLibraryId;";
+    var uri = package.getPackageUri('src/$type/data/$localeId.dart');
+    return new Import(uri, as: symbolsLibraryId);
   }
-
-  // Write the "part of" the public interface which contains 
-  // the ALL locale data constant.
-  void writeAllLocaleDataPart() {
-    var code = '''
-/// Loads data for **all** supported locales
-final LocaleData ALL = new AllLocaleDataImpl(() {
-${getSymbolsMapSetterLogic()}
-});''';
-
-    writeLibrary(
-      pathos.join(libPath, "src/$type/"), 
-      "${type}_all_data_constant", 
-      getLibraryComment(false), 
-      code, 
-      getLocaleDataLibraryId(),
-      true);
-  }
-  
-  String getSymbolsClassLibraryImport() => 
-    "import 'package:$packageName/src/$type/$symbolsClassLibrary.dart';";
+    
+  String getSymbolsClassLibraryUri() => 
+    "src/$type/$symbolsClassLibrary.dart";
 
   String getLocaleListLibraryName() => 
     "${type}_locale_list";
-
-  /// Generate and synchronously write to disk a dart library.
-  writeLibrary(
-    String dir, 
-    String name, 
-    String comment, 
-    String code, 
-    [String id,
-     bool isPart = false]) {
-    
-    var path = pathos.join(dir, "$name.dart");
-
-    if(id == null) id = getLibraryIdFromPath(path);
-    String fullCode = '''
-$comment
-${isPart ? "part of" : "library"} $id;
-
-$code''';
-    var file = new File(path);
-    logger.fine('''Writing library: '$id' to file: '$file' with code:
-$fullCode''');
-    file.writeAsStringSync(fullCode);
-  }
 
   // Include dart project copyright text in generated dart files.
   String getLibraryComment(bool containsSymbols) {
@@ -203,7 +148,7 @@ $fullCode''');
 // BSD-style license that can be found in the LICENSE file.
 
 // DO NOT EDIT. This file is autogenerated by script, see
-// "$packageName/tool/$type/code_build.dart"
+// "${package.name}/tool/$type/code_build.dart"
 ''';
     
     // Include an extra message about potential manual editing
@@ -221,41 +166,67 @@ $fullCode''');
 
   String getPublicClasses() => "[${underscoresToCamelCase(type, true)}Format]";
   
-  String getSymbolsImports() => 
-    localeList.map(generateLocaleImport).toList().join("\n");
+  List<Import> getSymbolsImports() => 
+    localeList.map(generateLocaleImport).toList();
   
   // Write the library representing the public interface for loading this locale data.
   writeLocaleDataLibrary() {
     var publicClasses = getPublicClasses();
-    var symbolsImports = 
-      localeList.map(generateLocaleImport).toList().join("\n");
     var libraryDoc = '''
 
 /// Exposes [LocaleData] constants for use with $publicClasses.
 /// For example:
-///     import 'package:$packageName/${type}_locale_data.dart' as ${type}_data;
+///     ${new Import(package.getPackageUri("${type}_locale_data.dart"), as: "${type}_data")}
 ///     main() {
 ///       ${type}_data.EN.load();
 ///       ${type}_data.DE.load();
 ///       // do something with $publicClasses.
 ///     }''';
 
-    var code = '''
-import 'package:$packageName/$packageName.dart';
-import 'package:$packageName/src/locale_data_impl.dart';
-import 'package:$packageName/src/symbols_map.dart';
-import 'package:$packageName/src/$type/${getLocaleListLibraryName()}.dart';
-${getSymbolsClassLibraryImport()}
-${getSymbolsImports()}
+    var imports = [
+      '${package.name}.dart',
+      'src/locale_data_impl.dart',
+      'src/symbols_map.dart',
+      'src/$type/${getLocaleListLibraryName()}.dart',
+      getSymbolsClassLibraryUri()
+    ]
+    .map((path) => new Import(package.getPackageUri(path)))
+    .toList()
+    ..addAll(getSymbolsImports());
 
-part 'package:$packageName/src/$type/${type}_all_data_constant.dart';
-part 'package:$packageName/src/$type/${type}_locale_data_constants.dart';
+    var libraryBuilder = new LibraryBuilder(
+      pathos.join("lib", "${type}_locale_data.dart"), 
+      '', 
+      imports, 
+      comment: getLibraryComment(false) + libraryDoc);
+    // part which contains the ALL locale data constant
+    libraryBuilder.addPart(
+      allLocaleDataPartPath, 
+      allLocaleDataPartCode, 
+      getLibraryComment(false));
+    // part which contains each individual locale data constant
+    libraryBuilder.addPart(
+      localeDataConstantsPartPath, 
+      localeDataConstantsPartCode, 
+      getLibraryComment(false));
+    libraryBuilder.generate();
+
+  }
+
+  String get allLocaleDataPartPath => 
+    "src/$type/${type}_all_data_constant.dart";
+  String get allLocaleDataPartCode => '''
+/// Loads data for **all** supported locales
+final LocaleData ALL = new AllLocaleDataImpl(() {
+${getSymbolsMapSetterLogic()}
+});''';
+
+  String get localeDataConstantsPartPath => 
+    "src/$type/${type}_locale_data_constants.dart";
+  String get localeDataConstantsPartCode {
+    var localeDataConstants = localeList.map(getLocaleDataConstant).join("\n");
+    return '''$localeDataConstants
 ''';
-    writeLibrary(
-      libPath, 
-      "${type}_locale_data", 
-      getLibraryComment(false) + libraryDoc, 
-      code);
   }
   
   String getLocaleDataConstructorArgs(String locale) => 
@@ -293,6 +264,6 @@ final ${getSymbolsConstant(locale)} = new $symbolsClass($constructorArgs);
 
   String getLocaleListId() => '${underscoresToCamelCase(type, false)}Locales';
 
-  // must use upper locales since "in" and "is" are keywords
+  // must use uppercase locales since "in" and "is" are keywords
   String getLocaleId(String locale) => locale.toUpperCase();
 }

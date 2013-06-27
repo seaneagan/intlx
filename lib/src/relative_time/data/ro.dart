@@ -49,3 +49,4 @@ final symbols = new RelativeTimeSymbols(      units: {
       "MONTH": {"1":"Într-o lună","0":"În 0 luni","few":"În {0} luni","other":"În {0} de luni"},
       "YEAR": {"1":"Într-un an","0":"În 0 ani","few":"În {0} ani","other":"În {0} de ani"}
     });
+

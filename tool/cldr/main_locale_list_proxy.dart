@@ -4,12 +4,12 @@
 
 library intlx.tool.cldr.main_locale_list_proxy;
 
-import 'cldr_data_proxy.dart';
-import 'package:http/http.dart' as http;
 import 'dart:json' as json;
 import 'dart:io';
 import 'dart:async';
-import 'package_paths.dart';
+import 'package:http/http.dart' as http;
+import 'package:intlx/src/package_paths.dart';
+import 'cldr_data_proxy.dart';
 
 // generates a file containing the list of available CLDR locales
 main() {

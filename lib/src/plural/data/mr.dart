@@ -11,10 +11,11 @@
 // removed after those changes land to CLDR.
 library intlx.plural.data.MR;
 
-  import 'package:intlx/src/util.dart';
-  import 'package:intlx/src/plural/plural.dart';
+import 'package:intlx/src/plural/plural.dart';
+import 'package:intlx/src/util.dart';
 
 final symbols = new PluralLocaleImpl('mr', (int n) {
 if(n == 1) return PluralCategory.ONE;
   else return PluralCategory.OTHER;
 });
+

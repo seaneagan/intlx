@@ -49,3 +49,4 @@ final symbols = new RelativeTimeSymbols(      units: {
       "MONTH": {"1":"Pēc 1 mēneša","one":"Pēc {0} mēneša","0":"Pēc 0 mēnešiem","other":"Pēc {0} mēnešiem","zero":"Pēc {0} mēnešiem"},
       "YEAR": {"1":"Pēc 1 gada","one":"Pēc {0} gada","0":"Pēc 0 gadiem","other":"Pēc {0} gadiem","zero":"Pēc {0} gadiem"}
     });
+

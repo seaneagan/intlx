@@ -86,3 +86,5 @@ import 'package:intlx/src/plural/data/ZU.dart' as symbols_ZU;
 
 part 'package:intlx/src/plural/plural_all_data_constant.dart';
 part 'package:intlx/src/plural/plural_locale_data_constants.dart';
+
+

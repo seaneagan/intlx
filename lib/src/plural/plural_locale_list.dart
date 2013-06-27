@@ -8,4 +8,4 @@
 library intlx.plural.plural_locale_list;
 
 const pluralLocales = const <String> ["af","am","ar","bg","bn","ca","cs","da","de","el","en","es","et","eu","fa","fi","fil","fr","gl","gsw","gu","he","hi","hr","hu","id","in","is","it","iw","ja","kn","ko","ln","lt","lv","ml","mr","ms","mt","nl","no","or","pl","pt","ro","ru","sk","sl","sq","sr","sv","sw","ta","te","th","tl","tr","uk","ur","vi","zh","zu"];
-      
+

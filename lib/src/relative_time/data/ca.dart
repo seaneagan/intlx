@@ -49,3 +49,4 @@ final symbols = new RelativeTimeSymbols(      units: {
       "MONTH": {"1":"D'aquí a 1 mes","one":"D'aquí a {0} mes","0":"D'aquí a 0 mesos","other":"D'aquí a {0} mesos"},
       "YEAR": {"1":"D'aquí a 1 any","one":"D'aquí a {0} any","0":"D'aquí a 0 anys","other":"D'aquí a {0} anys"}
     });
+

@@ -49,3 +49,4 @@ final symbols = new RelativeTimeSymbols(      units: {
       "MONTH": {"1":"1 か月後","0":"0 か月後","other":"{0} か月後"},
       "YEAR": {"1":"1 年後","0":"0 年後","other":"{0} 年後"}
     });
+

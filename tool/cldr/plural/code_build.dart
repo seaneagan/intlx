@@ -4,18 +4,19 @@
 
 library intlx.tool.cldr.plural.code_build;
 
+import 'dart:async';
 import 'dart:io';
 import 'dart:json' as json;
-import '../library_writer.dart';
-import '../cldr_data_proxy.dart';
-import '../package_paths.dart';
-import 'plural_rule_parser.dart';
-import 'package:intlx/src/plural/plural.dart';
-import 'dart:async';
 import 'package:http/http.dart' as http;
 import 'package:pathos/path.dart' as pathos;
 import 'package:logging/logging.dart';
+import 'package:intlx/src/plural/plural.dart';
+import 'plural_rule_parser.dart';
 import '../util.dart';
+import '../library_writer.dart';
+import '../cldr_data_proxy.dart';
+import '../../../lib/src/package_paths.dart';
+import '../../../lib/src/codegen.dart';
 
 main() => new PluralLibraryWriter().writeLibraries();
 
@@ -34,15 +35,8 @@ class PluralLibraryWriter extends LibraryWriter {
   }
 
   void writeLoadLocaleLibrary() {
-    var loadLocaleLibraryPath = pathos.join(libPath, "src/$type/");
+    var loadLocaleLibraryPath = pathos.join(srcPath, type);
     
-    var imports = localeList.map((locale) {
-      var symbolsImportId = getSymbolsImportId(locale);
-      return '''@library_$locale
-import 'package:$packageName/src/plural/data/$locale.dart' as $symbolsImportId;
-''';
-    }).join();
-
     var deferredLibraries = localeList.map((locale) => 
       '''const library_$locale = const DeferredLibrary('plural_symbols_$locale');
 ''').join();
@@ -55,11 +49,6 @@ import 'package:$packageName/src/plural/data/$locale.dart' as $symbolsImportId;
 ''').join();
 
     var code = '''
-import 'dart:async';
-import 'package:$packageName/src/util.dart';
-import 'package:$packageName/src/plural/plural.dart';
-$imports
-
 $deferredLibraries
 
   const libraryMap = const <String, DeferredLibrary> {
@@ -79,21 +68,38 @@ $switchCases
   });
 }''';
     
-    writeLibrary(
-      loadLocaleLibraryPath, 
-      "${type}_load_locale", 
-      getLibraryComment(false), 
-      code);
+    var imports = [
+      'dart:async',
+      'package:${package.name}/src/util.dart',
+      'package:${package.name}/src/plural/plural.dart'
+    ]
+    .map((uri) => new Import(uri))
+    .toList()
+    ..addAll(localeList.map((locale) {
+      var symbolsImportId = getSymbolsImportId(locale);
+      return new Import(
+        package.getPackageUri('src/plural/data/$locale.dart'), 
+        as: symbolsImportId, 
+        metadata: '@library_$locale');
+    }));
+
+    var libraryBuilder = new LibraryBuilder(
+      pathos.join(loadLocaleLibraryPath, "${type}_load_locale.dart"), 
+      code, 
+      imports, 
+      comment: getLibraryComment(false));
   }
 
   String getSymbolsConstructorArgs(String locale, Map data) => 
     """'$locale', (int n) {
 ${getPluralRulesCode(data)}
 }""";
-  String getSymbolLibraryCode(String locale, Map data) => '''
-  import 'package:$packageName/src/util.dart';
-  ${super.getSymbolLibraryCode(locale, data)}''';
 
+Iterable get symbolsLibraryImports => 
+  [
+    super.symbolsLibraryImports, 
+    [new Import(package.getPackageUri('src/util.dart'))]
+  ].expand((i) => i);
 }
 
 String getPluralRulesCode(Map<String, String> pluralRules) => 

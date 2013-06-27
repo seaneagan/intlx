@@ -49,3 +49,4 @@ final symbols = new RelativeTimeSymbols(      units: {
       "MONTH": {"1":"Eftir einn mánuð","0":"Eftir 0 mánuði","other":"Eftir {0} mánuði"},
       "YEAR": {"1":"Eftir eitt ár","0":"Eftir 0 ár","other":"Eftir {0} ár"}
     });
+

@@ -49,3 +49,4 @@ final symbols = new RelativeTimeSymbols(      units: {
       "MONTH": {"1":"1 hónap múlva","0":"0 hónap múlva","other":"{0} hónap múlva"},
       "YEAR": {"1":"1 év múlva","0":"0 év múlva","other":"{0} év múlva"}
     });
+

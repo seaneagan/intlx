@@ -11,9 +11,10 @@
 // removed after those changes land to CLDR.
 library intlx.plural.data.JA;
 
-  import 'package:intlx/src/util.dart';
-  import 'package:intlx/src/plural/plural.dart';
+import 'package:intlx/src/plural/plural.dart';
+import 'package:intlx/src/util.dart';
 
 final symbols = new PluralLocaleImpl('ja', (int n) {
 return PluralCategory.OTHER;
 });
+

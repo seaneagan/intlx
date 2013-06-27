@@ -15,7 +15,7 @@ import 'package:logging/logging.dart';
 import 'package:unittest/matcher.dart';
 import 'package:intlx/src/util.dart';
 import 'util.dart';
-import 'package_paths.dart';
+import '../../lib/src/package_paths.dart';
 
 // This web service is the reference implementation 
 // of the official CLDR JSON bindings,

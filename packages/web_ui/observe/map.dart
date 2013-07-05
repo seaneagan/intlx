@@ -33,10 +33,12 @@ class ObservableMap<K, V> extends Observable implements Map<K, V> {
   }
 
   /** Creates a new observable map using a [LinkedHashMap]. */
-  ObservableMap.linked() : this(createMap: () => new LinkedHashMap<K, V>());
+  // TODO(jmesserly): removed type annotation to workaround:
+  // https://code.google.com/p/dart/issues/detail?id=11540
+  ObservableMap.linked() : this(createMap: () => new LinkedHashMap/*<K, V>*/());
 
   /** Creates a new observable map using a [SplayTreeMap]. */
-  ObservableMap.sorted() : this(createMap: () => new SplayTreeMap<K, V>());
+  ObservableMap.sorted() : this(createMap: () => new SplayTreeMap/*<K, V>*/());
 
   /**
    * Creates an observable map that contains all key value pairs of [other].

@@ -137,7 +137,6 @@ import 'package:intlx/src/plural/data/zh.dart' as symbols_ZH;
 @library_zu
 import 'package:intlx/src/plural/data/zu.dart' as symbols_ZU;
 
-
 const library_af = const DeferredLibrary('plural_symbols_af');
 const library_am = const DeferredLibrary('plural_symbols_am');
 const library_ar = const DeferredLibrary('plural_symbols_ar');

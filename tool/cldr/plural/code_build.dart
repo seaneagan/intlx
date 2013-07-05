@@ -12,21 +12,21 @@ import 'package:pathos/path.dart' as pathos;
 import 'package:logging/logging.dart';
 import 'package:intlx/src/plural/plural.dart';
 import 'plural_rule_parser.dart';
+import 'package:intlx/src/codegen.dart';
+import 'package:intlx/src/package_paths.dart';
 import '../util.dart';
 import '../library_writer.dart';
 import '../cldr_data_proxy.dart';
-import '../../../lib/src/package_paths.dart';
-import '../../../lib/src/codegen.dart';
 
 main() => new PluralLibraryWriter().writeLibraries();
 
 class PluralLibraryWriter extends LibraryWriter {
   
-  static var logger = getLogger("intlx.tool.library_writer.plural");
+  static var logger = LibraryWriter.logger;
 
   final String type = "plural";
   final String symbolsClass = "PluralLocaleImpl";
-  final String symbolsClassLibrary = "plural";
+  final String symbolsClassLibraryName = "plural";
   
   void writeLibrariesSync(){
     super.writeLibrariesSync();
@@ -35,7 +35,7 @@ class PluralLibraryWriter extends LibraryWriter {
   }
 
   void writeLoadLocaleLibrary() {
-    var loadLocaleLibraryPath = pathos.join(srcPath, type);
+    var loadLocaleLibraryPath = pathos.join(PubPackage.SRC, type);
     
     var deferredLibraries = localeList.map((locale) => 
       '''const library_$locale = const DeferredLibrary('plural_symbols_$locale');
@@ -45,7 +45,7 @@ class PluralLibraryWriter extends LibraryWriter {
       '''  '$locale': library_$locale''').join(',\n');
     
     var switchCases = localeList.map((locale) => 
-      '''      case '$locale': init(${getSymbolsConstant(locale)}); break;
+      '''      case '$locale': init(${getSymbolsVariable(locale)}); break;
 ''').join();
 
     var code = '''
@@ -76,18 +76,18 @@ $switchCases
     .map((uri) => new Import(uri))
     .toList()
     ..addAll(localeList.map((locale) {
-      var symbolsImportId = getSymbolsImportId(locale);
+      var symbolsImportId = getSymbolsImportPrefix(locale);
       return new Import(
         package.getPackageUri('src/plural/data/$locale.dart'), 
         as: symbolsImportId, 
         metadata: '@library_$locale');
     }));
 
-    var libraryBuilder = new LibraryBuilder(
-      pathos.join(loadLocaleLibraryPath, "${type}_load_locale.dart"), 
+    new Library(
+      pathos.join(package.path, loadLocaleLibraryPath, "${type}_load_locale.dart"), 
       code, 
       imports, 
-      comment: getLibraryComment(false));
+      comment: getLibraryComment(false))..generate();
   }
 
   String getSymbolsConstructorArgs(String locale, Map data) => 

@@ -2,6 +2,8 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
+library intlx.test.duration_rounder_test;
+
 import 'package:unittest/unittest.dart';
 import 'package:intlx/intlx.dart';
 import 'package:intlx/relative_time_locale_data.dart' as relative_time_data;

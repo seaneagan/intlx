@@ -54,7 +54,7 @@ Logger getLogger(String name) {
 String _logRecordToString(LogRecord record) => 
   '[${record.level}] ${record.message}';
 
-// deletes all files from Directory synchronously
+// deletes all files from a Directory synchronously
 void truncateDirectorySync(Directory directory) {
   var files = directory.listSync() as List<File>;
   files.forEach((File file) => file.deleteSync());

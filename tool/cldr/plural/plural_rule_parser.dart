@@ -102,10 +102,8 @@ class IsRelation extends Dartable {
 String formatMod(int mod) => mod == null ? 'n' : 'n % $mod';
 
 // TODO: write some proper unit tests for the plural parser
-main() {
-  var test = "n in 0..99 and n is not 0 and n is not 2";
-  //var test = "n is 0 OR n is not 1 AND n mod 100 in 1..19";
-  //var test = "n mod 10 in 3..4,9 and n mod 100 not in 10..19,70..79,90..99";
-  var condition = pluralParser.parse(test);
-  print(condition.toDart());
-}
+//main() {
+//  var test = "n in 0..99 and n is not 0 and n is not 2";
+//  var condition = pluralParser.parse(test);
+//  print(condition.toDart());
+//}

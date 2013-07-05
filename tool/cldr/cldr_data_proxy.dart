@@ -28,14 +28,14 @@ final cldrBaseUri = "http://i18ndata.appspot.com/cldr/tags/${_cldrTag}/";
 final _cldrTag = "unconfirmed";
 
 final _mainCldrLocales = 
-  json.parse(new File(mainLocaleListFilePath).readAsStringSync());
+  json.parse(new File(mainCldrLocaleListFilePath).readAsStringSync());
 
 /// Mechanism to fetch data of a given type from [CLDR][1], 
 /// transform it as necessary, and store it locally.
 /// [1]: http://cldr.unicode.org/
 class CldrDataProxy {
 
-  static var logger = getLogger("intlx.tool.cldr_data_proxy");
+  static var logger = getLogger("intlx.tool.cldr.cldr_data_proxy");
 
   // path relative to the main locale data path for a given locale, 
   // in which to fetch the data.

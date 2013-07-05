@@ -1,8 +1,7 @@
 
-library intlx.util;
-
-// this library contains things which don't really belong in this package,
+// This library contains things which aren't really specific to this package,
 // but don't currently exist in any common libraries
+library intlx.util;
 
 // TODO: replace with resolution of http://dartbug.com/9590 
 Map mapValues(Map map, valueMapper(value)) => map.keys.fold({}, (result, key) {
@@ -18,16 +17,19 @@ typedef void Action();
 noop(x) => x;
 
 // TODO: replace this with the resolution of http://dartbug.com/1236
-ifNull(v, d) => v == null ? d : v;
+// TODO: change fallback to a callback for lazy evaluation
+ifNull(value, fallback) => value == null ? fallback : value;
 
 // works for Strings, Iterables, and Maps
-ifEmpty(v, d) => v.isEmpty ? d : v;
+// TODO: change fallback to a callback for lazy evaluation
+ifEmpty(value, fallback) => value.isEmpty ? fallback : value;
 
-// is there a bug for this ?
+// TODO: is there a bug to add this to a core library?
 // TODO: named parameters instead ?
 Iterable<int> range(int length, [int start = 0, int step = 1]) => 
   new Iterable.generate(length, (int index) => start + index * step);
 
+// uppercase or lowercase the first charater of a String
 String withCapitalization(String s, bool capitalized) {
   var firstLetter = s[0];
   firstLetter = capitalized ? 
@@ -36,6 +38,8 @@ String withCapitalization(String s, bool capitalized) {
   return firstLetter + s.substring(1);
 }
 
+// convert an underscore separated String to camel case.
+// e.g. "foo_bar" -> "fooBar" or "FooBar" (capitalized == true)
 String underscoresToCamelCase(String underscores, bool capitalized) { 
   var camel = underscores.splitMapJoin(
     "_", 
@@ -50,5 +54,3 @@ String baseLocale(String aLocale) {
   final noUnderscores = new RegExp(r'[^_]*');
   return noUnderscores.stringMatch(aLocale.toLowerCase());
 }
-
-

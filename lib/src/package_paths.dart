@@ -2,36 +2,47 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
-// TODO: merge this library with intl/test/data_directory.dart.
-// move under lib/src since used by both tool and test dirs?
-// create a PubPackage class to model this ?
-
-library intlx.tool.package_paths;
+// TODO: Remove intl/test/data_directory.dart, since that functionality 
+// now exists here.
+library intlx.package_paths;
 
 import 'dart:io';
 import 'package:pathos/path.dart';
 import 'package:intlx/src/codegen.dart';
 
-final PubPackage package = new PubPackage();
+/// Find the intl package, compensating for scripts being run 
+/// from different locations. The important locations are:
+/// - somewhere within the package, e.g. the package root, test, or tool dirs.
+/// - the top-level dart directory, where the build tests run
+PubPackage get package {
+  try {
+    // within the package
+    return new PubPackage.containing();
+  } catch (_) {
+    String fromDartDir = join('pkg','intl');
 
-// library path of this pub package
-String libPath = "lib";
-
-// src path of this pub package
-String srcPath = join(libPath, "src");
-
-// path of private (symbol) locale libraries for given type
-String getLocaleSrcPath(String type) => join(srcPath, "$type/data");
+    // top-level dart dir
+    var packagePath = 
+    [join(current, fromDartDir), join(current, '..', fromDartDir)]
+    .firstWhere((path) => new Directory(path).existsSync(), orElse: () => 
+      throw new UnsupportedError(
+        'Cannot find $fromDartDir directory.')
+    );
+    
+    return new PubPackage(packagePath);
+  }
+}
 
 // path to data
-String dataPath = join(srcPath, "data");
+final String _dataPath = join(PubPackage.SRC, "data");
 
-// path to locale data for given type
-String getLocaleDataPath(String type) => join(dataPath, type);
+/// path to locale data for given type
+String getLocaleDataPath(String type) => join(package.path, _dataPath, type);
 
-// path to locale data file for given type and locale
+/// path to locale data file for given type and locale
 String getLocaleDataFilePath(String type, String locale) => 
-    join(getLocaleDataPath(type), "$locale.json");
+  join(getLocaleDataPath(type), "$locale.json");
 
-// absolute path to main locale list data file
-String mainLocaleListFilePath = join(package.path, dataPath, "main_locale_list.json");
+/// path to main cldr locale list data file
+final String mainCldrLocaleListFilePath = 
+  join(package.path, _dataPath, "main_locale_list.json");

@@ -22,12 +22,14 @@ void set selectedLocale (String v) {
 var locales = relativeTimeLocales;
 
 // iterable
+BidiFormatter bidiFormatter = new BidiFormatter.UNKNOWN(true);
+
 var iterableData = iterable_data.ALL; 
-get iterableFormat => new IterableFormat(
+IterableFormat get iterableFormat => new IterableFormat(
   locale: selectedLocale, 
   onSeparator: (sep) => '<span class="muted">$sep</span>');
 var counts = range(4);
-String formatCount(int count) => new SafeHtml.unsafe('<span>${iterableFormat.format(range(count, 1).map((i) => '<b class="text-info">$i</b>'))}</span>');
+SafeHtml formatCount(int count) => new SafeHtml.unsafe(bidiFormatter.wrapWithSpan(iterableFormat.format(range(count, 1).map((i) => '<b class="text-info">$i</b>')), isHtml: true));
 String toStringCount(int count) => range(count, 1).toList().toString();
 
 // plural

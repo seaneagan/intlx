@@ -1831,7 +1831,12 @@ JSString: {"": "String/Interceptor;",
     return this.splitMapJoin$3$onMatch$onNonMatch($receiver, from, onMatch, null);
   },
   split$1: function(receiver, pattern) {
-    return receiver.split(pattern);
+    if (typeof pattern === "string")
+      return receiver.split(pattern);
+    else if (typeof pattern === "object" && pattern !== null && !!$.getInterceptor(pattern).$isJSSyntaxRegExp)
+      return receiver.split(pattern._nativeRegExp);
+    else
+      throw $.wrapException("String.split(Pattern) UNIMPLEMENTED");
   },
   startsWith$1: function(receiver, pattern) {
     var otherLength = pattern.length;
@@ -4260,24 +4265,31 @@ stringContainsUnchecked: function(receiver, other, startIndex) {
 },
 
 stringReplaceAllUnchecked: function(receiver, from, to) {
-  var result, $length, i, t1;
-  if (from === "")
-    if (receiver === "")
-      return to;
-    else {
-      result = new $.StringBuffer("");
-      result._contents = "";
-      $length = receiver.length;
-      result._contents = result._contents + to;
-      for (i = 0; i < $length; ++i) {
-        t1 = receiver[i];
-        result._contents = result._contents + t1;
+  var result, $length, i, t1, regexp;
+  if (typeof from === "string")
+    if (from === "")
+      if (receiver === "")
+        return to;
+      else {
+        result = new $.StringBuffer("");
+        result._contents = "";
+        $length = receiver.length;
         result._contents = result._contents + to;
+        for (i = 0; i < $length; ++i) {
+          t1 = receiver[i];
+          result._contents = result._contents + t1;
+          result._contents = result._contents + to;
+        }
+        return result._contents;
       }
-      return result._contents;
-    }
-  else
-    return receiver.replace(new RegExp(from.replace(new RegExp("[[\\]{}()*+?.\\\\^$|]", 'g'), "\\$&"), 'g'), to.replace("$", "$$$$"));
+    else
+      return receiver.replace(new RegExp(from.replace(new RegExp("[[\\]{}()*+?.\\\\^$|]", 'g'), "\\$&"), 'g'), to.replace("$", "$$$$"));
+  else if (typeof from === "object" && from !== null && !!$.getInterceptor(from).$isJSSyntaxRegExp) {
+    regexp = from.get$_nativeGlobalVersion();
+    regexp.lastIndex = 0;
+    return receiver.replace(regexp, to.replace("$", "$$$$"));
+  } else
+    throw $.wrapException("String.replaceAll(Pattern) UNIMPLEMENTED");
 },
 
 _matchString: function(match) {
@@ -12997,6 +13009,113 @@ convertDartToNative_Dictionary: function(dict) {
   return object;
 }}],
 ["intl", "package:intl/intl.dart", , {
+BidiFormatter: {"": "Object;contextDirection,_alwaysSpan",
+  wrapWithSpan$4$direction$isHtml$resetDir: function(text, direction, isHtml, resetDir) {
+    var t1, directionChange, result;
+    direction = $.Bidi_estimateDirectionOfText(text, isHtml);
+    if (!isHtml) {
+      t1 = $.replaceAll$2$s(text, "&", "&amp;");
+      t1 = $.stringReplaceAllUnchecked(t1, "<", "&lt;");
+      t1 = $.stringReplaceAllUnchecked(t1, ">", "&gt;");
+      t1 = $.stringReplaceAllUnchecked(t1, "\"", "&quot;");
+      text = $.stringReplaceAllUnchecked(t1, "'", "&apos;");
+    }
+    directionChange = direction !== $.TextDirection_UNKNOWN_ltr && this.contextDirection !== direction;
+    if (this._alwaysSpan || directionChange)
+      result = "<span" + (directionChange ? " dir=" + direction.spanText : "") + ">" + $.S(text) + "</span>";
+    else
+      result = text;
+    return $.$add$ns(result, resetDir ? this._resetDir$3(text, direction, isHtml) : "");
+  },
+  wrapWithSpan$2$isHtml: function(text, isHtml) {
+    return this.wrapWithSpan$4$direction$isHtml$resetDir(text, null, isHtml, true);
+  },
+  _resetDir$3: function(text, direction, isHtml) {
+    var t1, t2, t3, t4;
+    t1 = this.contextDirection;
+    t2 = t1 === $.TextDirection_LTR_ltr;
+    if (t2)
+      if (direction !== $.TextDirection_RTL_rtl) {
+        t3 = $.JSSyntaxRegExp_makeNative("[\\u0591-\\u07FF\\uFB1D-\\uFDFD\\uFE70-\\uFEFC][^A-Za-z\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u02B8\\u0300-\\u0590\\u0800-\\u1FFF\\u2C00-\\uFB1C\\uFDFE-\\uFE6F\\uFEFD-\\uFFFF]*$", false, true, false);
+        t4 = isHtml ? $.replaceAll$2$s(text, new $.JSSyntaxRegExp($.JSSyntaxRegExp_makeNative("<[^>]*>|&[^;]+;", false, true, false), null, null), " ") : text;
+        if (typeof t4 !== "string")
+          $.throwExpression(new $.ArgumentError(t4));
+        t3 = new $.JSSyntaxRegExp(t3, null, null)._nativeRegExp.test(t4);
+      } else
+        t3 = true;
+    else
+      t3 = false;
+    if (!t3)
+      if (t1 === $.TextDirection_RTL_rtl)
+        if (direction !== $.TextDirection_LTR_ltr) {
+          t1 = $.JSSyntaxRegExp_makeNative("[A-Za-z\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u02B8\\u0300-\\u0590\\u0800-\\u1FFF\\u2C00-\\uFB1C\\uFDFE-\\uFE6F\\uFEFD-\\uFFFF][^\\u0591-\\u07FF\\uFB1D-\\uFDFD\\uFE70-\\uFEFC]*$", false, true, false);
+          t3 = isHtml ? $.replaceAll$2$s(text, new $.JSSyntaxRegExp($.JSSyntaxRegExp_makeNative("<[^>]*>|&[^;]+;", false, true, false), null, null), " ") : text;
+          if (typeof t3 !== "string")
+            $.throwExpression(new $.ArgumentError(t3));
+          t1 = new $.JSSyntaxRegExp(t1, null, null)._nativeRegExp.test(t3);
+        } else
+          t1 = true;
+      else
+        t1 = false;
+    else
+      t1 = true;
+    if (t1)
+      if (t2)
+        return "\u200e";
+      else
+        return "\u200f";
+    else
+      return "";
+  }
+},
+
+TextDirection: {"": "Object;value>,spanText"},
+
+Bidi_estimateDirectionOfText: function(text, isHtml) {
+  var t1, rtlCount, total, hasWeaklyLtr, token, t2, t3, t4;
+  if (isHtml)
+    text = $.replaceAll$2$s(text, new $.JSSyntaxRegExp($.JSSyntaxRegExp_makeNative("<[^>]*>|&[^;]+;", false, true, false), null, null), " ");
+  for (t1 = $.split$1$s(text, new $.JSSyntaxRegExp($.JSSyntaxRegExp_makeNative("\\s+", false, true, false), null, null)), t1 = new $.ListIterator(t1, t1.length, 0, null), rtlCount = 0, total = 0, hasWeaklyLtr = false; t1.moveNext$0();) {
+    token = t1._liblib$_current;
+    t2 = $.JSSyntaxRegExp_makeNative("^[^A-Za-z\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u02B8\\u0300-\\u0590\\u0800-\\u1FFF\\u2C00-\\uFB1C\\uFDFE-\\uFE6F\\uFEFD-\\uFFFF]*[\\u0591-\\u07FF\\uFB1D-\\uFDFD\\uFE70-\\uFEFC]", false, true, false);
+    t3 = token;
+    if (typeof t3 !== "string")
+      $.throwExpression(new $.ArgumentError(t3));
+    if (new $.JSSyntaxRegExp(t2, null, null)._nativeRegExp.test(t3)) {
+      ++rtlCount;
+      ++total;
+    } else {
+      t2 = $.JSSyntaxRegExp_makeNative("^http://", false, true, false);
+      t3 = typeof token !== "string";
+      if (t3)
+        $.throwExpression(new $.ArgumentError(token));
+      if (new $.JSSyntaxRegExp(t2, null, null)._nativeRegExp.test(token))
+        hasWeaklyLtr = true;
+      else {
+        t2 = $.JSSyntaxRegExp_makeNative("[A-Za-z\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u02B8\\u0300-\\u0590\\u0800-\\u1FFF\\u2C00-\\uFB1C\\uFDFE-\\uFE6F\\uFEFD-\\uFFFF]", false, true, false);
+        t4 = token;
+        if (typeof t4 !== "string")
+          $.throwExpression(new $.ArgumentError(t4));
+        if (new $.JSSyntaxRegExp(t2, null, null)._nativeRegExp.test(t4))
+          ++total;
+        else {
+          t2 = $.JSSyntaxRegExp_makeNative("\\d", false, true, false);
+          if (t3)
+            $.throwExpression(new $.ArgumentError(token));
+          if (new $.JSSyntaxRegExp(t2, null, null)._nativeRegExp.test(token))
+            hasWeaklyLtr = true;
+        }
+      }
+    }
+  }
+  if (total === 0)
+    return hasWeaklyLtr ? $.TextDirection_LTR_ltr : $.TextDirection_UNKNOWN_ltr;
+  else if (rtlCount > $.Bidi__RTL_DETECTION_THRESHOLD * total)
+    return $.TextDirection_RTL_rtl;
+  else
+    return $.TextDirection_LTR_ltr;
+},
+
 Intl_verifiedLocale: function(newLocale, localeExists, onFailure) {
   var t1, each;
   if (newLocale == null) {
@@ -14011,20 +14130,25 @@ iterableFormat: function() {
 },
 
 formatCount: function(count) {
-  var t1, t2, $arguments, arguments0, t3;
-  t1 = $.iterableFormat();
-  t2 = $.range(count, 1, 1);
-  $arguments = t2.$asIterableBase;
-  arguments0 = $.getRuntimeTypeInfo(t2);
+  var t1, t2, t3, $arguments, arguments0, t4;
+  if ($._activeObserver != null) {
+    t1 = $.get$__changes();
+    $._activeObserver._addRead$3(t1, 1, "bidiFormatter");
+  }
+  t1 = $.get$__$bidiFormatter();
+  t2 = $.iterableFormat();
+  t3 = $.range(count, 1, 1);
+  $arguments = t3.$asIterableBase;
+  arguments0 = $.getRuntimeTypeInfo(t3);
   if (typeof $arguments === "object" && $arguments !== null && $arguments.constructor === Array)
     ;
   else
     $arguments = typeof $arguments == "function" ? $arguments.apply(null, arguments0) : arguments0;
-  t3 = $arguments == null ? null : $arguments[0];
-  t2 = new $.MappedIterable(t2, new $.formatCount_closure());
-  t2.$builtinTypeInfo = [t3, null];
-  t1 = t1._locale;
-  return new $.SafeHtml("<span>" + $.S(t1.format$1(t1, t2)) + "</span>");
+  t4 = $arguments == null ? null : $arguments[0];
+  t3 = new $.MappedIterable(t3, new $.formatCount_closure());
+  t3.$builtinTypeInfo = [t4, null];
+  t2 = t2._locale;
+  return new $.SafeHtml(t1.wrapWithSpan$2$isHtml(t2.format$1(t2, t3), true));
 },
 
 durationFormat: function() {
@@ -15728,10 +15852,10 @@ SafeHtml: {"": "Object;_html",
   $eq: function(_, other) {
     if (other == null)
       return false;
-    return typeof other === "object" && other !== null && !!$.getInterceptor(other).$isSafeHtml && this._html === other._html;
+    return typeof other === "object" && other !== null && !!$.getInterceptor(other).$isSafeHtml && $.$eq(this._html, other._html) === true;
   },
   get$hashCode: function(_) {
-    return $.JSString_methods.get$hashCode(this._html);
+    return $.get$hashCode$(this._html);
   },
   $isSafeHtml: true
 }}],
@@ -17437,6 +17561,7 @@ $.List_Aia = Isolate.makeConstantList(["caption", "col", "colgroup", "tbody", "t
 $.Map_Ai46y = new $.ConstantMap(9, {caption: null, col: null, colgroup: null, tbody: null, td: null, tfoot: null, th: null, thead: null, tr: null}, $.List_Aia);
 $.C__DelayedDone = new $._DelayedDone();
 $.List_JYB = Isolate.makeConstantList([0, 0, 26624, 1023, 65534, 2047, 65534, 2047]);
+$.List_E4y = Isolate.makeConstantList([0, " eta ", 1]);
 $.PluralCategory_OTHER = new $.PluralCategory("OTHER");
 $.List_Usy = Isolate.makeConstantList([0, " ja ", 1]);
 $.List_MMr = Isolate.makeConstantList(["af", "am", "ar", "bg", "bn", "ca", "cs", "da", "de", "el", "en", "es", "et", "eu", "fa", "fi", "fil", "fr", "gl", "gsw", "gu", "he", "hi", "hr", "hu", "id", "in", "is", "it", "iw", "ja", "kn", "ko", "ln", "lt", "lv", "ml", "mr", "ms", "mt", "nl", "no", "or", "pl", "pt", "ro", "ru", "sk", "sl", "sq", "sr", "sv", "sw", "ta", "te", "th", "tl", "tr", "uk", "ur", "vi", "zh", "zu"]);
@@ -17459,6 +17584,7 @@ $.List_qg4 = Isolate.makeConstantList([0, 0, 32722, 12287, 65535, 34815, 65534, 
 $.List_suj = Isolate.makeConstantList([0, ", \u12a5\u1293 ", 1]);
 $.C_DurationRounder = new $.DurationRounder();
 $.List_la2 = Isolate.makeConstantList([0, " och ", 1]);
+$.TextDirection_UNKNOWN_ltr = new $.TextDirection("UNKNOWN", "ltr");
 $.List_ENK = Isolate.makeConstantList([0, " \u03ba\u03b1\u03b9 ", 1]);
 $.List_IDT = Isolate.makeConstantList([0, "\u548c", 1]);
 $.List_xBI = Isolate.makeConstantList([0, ", ", 1]);
@@ -17498,6 +17624,7 @@ $.PluralCategory_TWO = new $.PluralCategory("TWO");
 $.List_APm = Isolate.makeConstantList([0, " ", 1]);
 $._WatcherType_HASH_MAP = new $._WatcherType("HASH_MAP");
 $.List_GbU = Isolate.makeConstantList([0, " \u0e41\u0e25\u0e30", 1]);
+$.TextDirection_RTL_rtl = new $.TextDirection("RTL", "rtl");
 $.List_0hx = Isolate.makeConstantList([0, " en ", 1]);
 $.List_ef1 = Isolate.makeConstantList([0, "\u060c \u0648 ", 1]);
 $.List_ECA = Isolate.makeConstantList([0, " \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd ", 1]);
@@ -17525,10 +17652,10 @@ $.PluralCategory_ZERO = new $.PluralCategory("ZERO");
 $.List_8Gl = Isolate.makeConstantList([0, " \u0a85\u0aa8\u0ac7 ", 1]);
 $.List_Kz0 = Isolate.makeConstantList([0, " e ", 1]);
 $.List_yop = Isolate.makeConstantList([0, ", no-", 1]);
-$.List_E4y = Isolate.makeConstantList([0, " eta ", 1]);
-$.JSArray_methods = $.JSArray.prototype;
-$.PluralCategory_ONE = new $.PluralCategory("ONE");
+$.TextDirection_LTR_ltr = new $.TextDirection("LTR", "ltr");
 $.List_wsa = Isolate.makeConstantList([0, " v\u00e0 ", 1]);
+$.PluralCategory_ONE = new $.PluralCategory("ONE");
+$.JSArray_methods = $.JSArray.prototype;
 $.List_6Pr = Isolate.makeConstantList([0, 0, 26624, 1023, 0, 0, 65534, 2047]);
 $.List_nxB = Isolate.makeConstantList([0, 0, 24576, 1023, 65534, 34815, 65534, 18431]);
 $.dispatchPropertyName = null;
@@ -17541,6 +17668,7 @@ $._callbacksAreEnqueued = false;
 $.Expando__keyCount = 0;
 $.Device__isOpera = null;
 $.Device__isIE = null;
+$.Bidi__RTL_DETECTION_THRESHOLD = 0.4;
 $.Intl__defaultLocale = null;
 $.Intl_systemLocale = "en_US";
 $.__$_selectedLocale = "en";
@@ -17811,6 +17939,9 @@ $.remove$0$ax = function(receiver) {
 $.remove$1$ax = function(receiver, a0) {
   return $.getInterceptor$ax(receiver).remove$1(receiver, a0);
 };
+$.replaceAll$2$s = function(receiver, a0, a1) {
+  return $.getInterceptor$s(receiver).replaceAll$2(receiver, a0, a1);
+};
 $.replaceWith$1$x = function(receiver, a0) {
   return $.getInterceptor$x(receiver).replaceWith$1(receiver, a0);
 };
@@ -17998,6 +18129,9 @@ Isolate.$lazy($, "__changes", "__changes", "get$__changes", function() {
   var t1 = $.$add$ns($.Observable_$_nextHashCode, 1);
   $.Observable_$_nextHashCode = t1;
   return new $.Observable(null, null, t1);
+});
+Isolate.$lazy($, "__$bidiFormatter", "__$bidiFormatter", "get$__$bidiFormatter", function() {
+  return new $.BidiFormatter($.TextDirection_UNKNOWN_ltr, true);
 });
 Isolate.$lazy($, "__$iterableData", "__$iterableData", "get$__$iterableData", function() {
   return $.get$ALL0();

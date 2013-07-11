@@ -61,6 +61,21 @@ set locales(dynamic value) {
 }
 
 // iterable
+BidiFormatter __$bidiFormatter = new BidiFormatter.UNKNOWN(true);
+BidiFormatter get bidiFormatter {
+  if (__observe.observeReads) {
+    __observe.notifyRead(__changes, __observe.ChangeRecord.FIELD, 'bidiFormatter');
+  }
+  return __$bidiFormatter;
+}
+set bidiFormatter(BidiFormatter value) {
+  if (__observe.hasObservers(__changes)) {
+    __observe.notifyChange(__changes, __observe.ChangeRecord.FIELD, 'bidiFormatter',
+        __$bidiFormatter, value);
+  }
+  __$bidiFormatter = value;
+}
+
 dynamic __$iterableData = iterable_data.ALL;
 dynamic get iterableData {
   if (__observe.observeReads) {
@@ -75,7 +90,7 @@ set iterableData(dynamic value) {
   }
   __$iterableData = value;
 } 
-get iterableFormat => new IterableFormat(
+IterableFormat get iterableFormat => new IterableFormat(
   locale: selectedLocale, 
   onSeparator: (sep) => '<span class="muted">$sep</span>');
 dynamic __$counts = range(4);
@@ -92,7 +107,7 @@ set counts(dynamic value) {
   }
   __$counts = value;
 }
-String formatCount(int count) => new SafeHtml.unsafe('<span>${iterableFormat.format(range(count, 1).map((i) => '<b class="text-info">$i</b>'))}</span>');
+SafeHtml formatCount(int count) => new SafeHtml.unsafe(bidiFormatter.wrapWithSpan(iterableFormat.format(range(count, 1).map((i) => '<b class="text-info">$i</b>')), isHtml: true));
 String toStringCount(int count) => range(count, 1).toList().toString();
 
 // plural

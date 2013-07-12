@@ -6,6 +6,9 @@ library intlx.tool.cldr.iterable.code_build;
 
 import 'dart:io';
 import 'dart:json' as json;
+import 'package:pathos/path.dart';
+import 'package:intlx/src/package_paths.dart';
+import 'package:intlx/src/codegen.dart';
 import '../library_writer.dart';
 
 main() => new IterableLibraryWriter().writeLibraries();
@@ -16,19 +19,18 @@ class IterableLibraryWriter extends LibraryWriter {
 
   getSymbolsConstructorArgs(String locale, Map data) {
 
-    var indexed = <String, List> {};
-    for(int i = 2; i <= 3; i++) {
-      var indexString = i.toString();
-      if(data.containsKey(indexString)) {
-        indexed[indexString] = data[indexString];
-      }
+    String getConstructorArg(String type) {
+      var separators = data[type];
+      var innerArgs = separators.keys.map((String key) => "$key: '${separators[key]}'").join(", ");
+      return '$type: new SeparatorTemplate($innerArgs)';
     }
 
-    return """
-    start: const ${json.stringify(data["start"])},
-    middle: const ${json.stringify(data["middle"])},
-    end: const ${json.stringify(data["end"])},
-    indexed: ${json.stringify(indexed)}""";
+    return ["start", "middle", "end", "two"].where(data.containsKey).map(getConstructorArg).join(""", 
+""");
   }
+
+  /// Get the Imports used by the symbols libraries.
+  List<Import> get symbolsLibraryImports => super.symbolsLibraryImports
+  ..add(new Import(package.getPackageUri(join("src", "cldr_template.dart"))));
 
 }

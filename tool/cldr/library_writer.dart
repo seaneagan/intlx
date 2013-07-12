@@ -115,7 +115,7 @@ const ${getLocaleListConstant()} = const <String> $localeListString;
   }
   
   /// Get the Imports used by the symbols libraries.
-  Iterable<Import> get symbolsLibraryImports => 
+  List<Import> get symbolsLibraryImports => 
     [new Import(package.getPackageUri(getSymbolsClassLibraryPath()))];
 
   /// Get the code used by the symsols libraries.

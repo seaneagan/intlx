@@ -14,6 +14,18 @@ main() => new IterableDataProxy().proxy();
 class IterableDataProxy extends CldrDataProxy {
   IterableDataProxy() : super("listPatterns/listPattern", "iterable");
 
-  transformJson(String locale, Map unitsData) => 
-    mapValues(unitsData, cldrTemplateParser.parse);
+  transformJson(String locale, Map data) {
+    // Make sure there are no "3" templates, Cldr claims to allow it,
+    // but as of yet it hasn't appeared in the locales supported here.
+    assert(!data.containsKey("3"));
+
+    // Rename "2" to "two", a valid Dart identifier.
+    if(data.containsKey("2")) {
+      data = new Map.from(data);
+      data["two"] = data["2"];
+      data.remove("2");
+    }
+    
+    return mapValues(data, SeparatorTemplate.parse);
+  }
 }

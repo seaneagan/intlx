@@ -95,7 +95,7 @@ $switchCases
 ${getPluralRulesCode(data)}
 }""";
 
-Iterable get symbolsLibraryImports => 
+List<Import> get symbolsLibraryImports => 
   [
     super.symbolsLibraryImports, 
     [new Import(package.getPackageUri('src/util.dart'))]

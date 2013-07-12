@@ -134,7 +134,8 @@ abstract class WebComponent implements Element {
   get isTemplate => host.isTemplate;
   get ref => host.ref;
   get content => host.content;
-  DocumentFragment createInstance() => host.createInstance();
+  DocumentFragment createInstance(model, String syntax) =>
+      host.createInstance(model, syntax);
   void bind(String name, model, String path) => host.bind(name, model, path);
   void unbind(String name) => host.unbind(name);
   void unbindAll() => host.unbindAll();
@@ -617,9 +618,9 @@ abstract class WebComponent implements Element {
 
   List<Node> get $dom_childNodes => host.$dom_childNodes;
 
-  Node get $dom_firstChild => host.$dom_firstChild;
+  Node get firstChild => host.firstChild;
 
-  Node get $dom_lastChild => host.$dom_lastChild;
+  Node get lastChild => host.lastChild;
 
   String get localName => host.localName;
   String get $dom_localName => host.$dom_localName;

@@ -183,10 +183,7 @@ abstract class Thing extends AttachableObject {
     // which signals that another frame is wanted for animating content
     // so we're setting _lastDrawTime here
 
-    // DARTBUG: http://code.google.com/p/dart/issues/detail?id=7322
-    // performance.now is not correctly polyfilled for Chrome 23
-    //_lastDrawTime = window.performance.now();
-
+    // would rather use window.performance, but that is not available on Safari
     _lastDrawTime = new DateTime.now().millisecondsSinceEpoch;
 
     // call the abstract draw method

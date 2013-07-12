@@ -9,22 +9,21 @@ import 'package:intlx/src/symbols_map.dart';
 import 'package:intlx/src/plural/plural.dart';
 import 'package:intlx/src/iterable/iterable_locale_list.dart';
 import 'package:intlx/src/util.dart';
+import 'package:intlx/src/cldr_template.dart';
 
 class IterableSymbols {
 
-  final List middle, start, end;
-  final Map<String, List> indexed;
+  final SeparatorTemplate middle, start, end, two;
 
-  IterableSymbols({start, middle, end, this.indexed}) : 
-    this.start = ifNull(ifNull(start, middle), []), 
-    this.middle = ifNull(middle, []), 
-    this.end = ifNull(ifNull(end, middle), []);
+  IterableSymbols({SeparatorTemplate start, SeparatorTemplate middle, this.end, this.two}) : 
+    this.start = ifNull(start, middle),
+    this.middle = middle;
 
   IterableSymbols.fromMap(Map map) : this(
     start: map["start"],
     middle: map["middle"],
     end: map["end"],
-    indexed: map["indexed"]);
+    two: map["two"]);
   
   static var map = new SymbolsMap<IterableSymbols>(iterableLocales);
   

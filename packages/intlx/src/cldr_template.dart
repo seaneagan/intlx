@@ -3,9 +3,8 @@ library intlx.cldr_template;
 
 import 'package:parsers/parsers.dart';
 
-// CLDR template parser
-// e.g. "{0}, {1}" -> [0, ", ", 1]
-// TODO: is there a spec. for this to link to ?
+// Cldr template parser
+// e.g. "foo {0} bar {1} baz" -> ["foo ", 0, " bar ", 1, " baz"]
 final Parser cldrTemplateParser = () {
   var nat = new LanguageParsers().natural;
   var bracedDigit = nat.between(char('{'), char('}'));
@@ -13,19 +12,28 @@ final Parser cldrTemplateParser = () {
   return (bracedDigit | separator).many1;
 }();
 
-// render a template object produced by the parser
-String renderCldrTemplate(
-  List template, 
-  Iterable elements, 
-  staticSegmentTransform(segment)) => 
-  template.map((e) => 
-    e is int ? 
-      elements.elementAt(e) : 
-      staticSegmentTransform(e)).join();
+// A Cldr list item separator template.
+class SeparatorTemplate {
 
-// TODO: add proper unit tests for this parser
-main() {
-  print(cldrTemplateParser.parse("{0} hours"));
-  print(cldrTemplateParser.parse("In {0} days"));
-  print(cldrTemplateParser.parse("In {500} days"));
+  // Parse a String representation into a Map.
+  // TODO: link to cldr spec for this
+  // Examples:
+  //     "{0}, {1}" -> {"separator" : ", "}
+  //     "foo {0} bar {1} baz" -> {"head" : "foo ", "separator" : " bar ", tail : " baz"}
+  static Map parse(String text) {
+    List result = cldrTemplateParser.parse(text);
+    // "{0}" is now 0, so first item after that is separator
+    var data = {
+      "separator": result[result.indexOf(0) + 1]
+    };
+    // "head" and "tail" are very uncommon, only add if necessary
+    if(result.first is String) data["head"] = result.first;
+    if(result.last is String) data["tail"] = result.last;
+    return data;
+  }
+  
+  final String head, separator, tail;
+
+  SeparatorTemplate({this.head, this.separator, this.tail});
+  
 }

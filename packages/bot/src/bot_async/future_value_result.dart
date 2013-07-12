@@ -47,12 +47,14 @@ class FutureValueResult<TOutput> {
         value.containsKey(_stackTraceKey);
   }
 
-  bool operator ==(FutureValueResult other) {
+  bool operator ==(other) {
     return other != null &&
         other.value == value &&
         other.error == error &&
         other.stackTrace == stackTrace;
   }
+
+  int get hashCode => Util.getHashCode([value, error, stackTrace]);
 
   dynamic _serialize(TOutput output) {
     if(_outputSerializer == null) {

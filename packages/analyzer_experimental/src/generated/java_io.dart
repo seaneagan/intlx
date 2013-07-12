@@ -15,7 +15,7 @@ class JavaSystemIO {
       return Platform.operatingSystem;
     }
     if (name == 'line.separator') {
-      if (Platform.operatingSystem == 'windows') {
+      if (Platform.isWindows) {
         return '\r\n';
       }
       return '\n';
@@ -28,7 +28,7 @@ class JavaSystemIO {
       }
     }
     if (name == 'com.google.dart.sdk') {
-      String exec = new Options().executable;
+      String exec = Platform.executable;
       if (exec.length != 0) {
         String sdkPath;
         // may be "xcodebuild/ReleaseIA32/dart" with "dart-sdk" sibling
@@ -105,7 +105,11 @@ class JavaFile {
   }
   Uri toURI() => new Uri(path: _path.toString());
   String readAsStringSync() => _newFile().readAsStringSync();
-  int lastModified() => _newFile().lastModifiedSync().millisecondsSinceEpoch;
+  int lastModified() {
+    if (!_newFile().existsSync()) return 0;
+    return _newFile().lastModifiedSync().millisecondsSinceEpoch;
+
+  }
   List<JavaFile> listFiles() {
     List<JavaFile> files = [];
     List<FileSystemEntity> entities = _newDirectory().listSync();

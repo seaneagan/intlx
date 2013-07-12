@@ -12,9 +12,10 @@
 library intlx.iterable.data.KN;
 
 import 'package:intlx/src/iterable/iterable_symbols.dart';
+import 'package:intlx/src/cldr_template.dart';
 
-final symbols = new IterableSymbols(    start: const [0,", ",1],
-    middle: const [0,", ",1],
-    end: const [0,", ಮತ್ತು ",1],
-    indexed: {"2":[0," ಮತ್ತು ",1]});
+final symbols = new IterableSymbols(start: new SeparatorTemplate(separator: ', '), 
+middle: new SeparatorTemplate(separator: ', '), 
+end: new SeparatorTemplate(separator: ', ಮತ್ತು '), 
+two: new SeparatorTemplate(separator: ' ಮತ್ತು '));
 

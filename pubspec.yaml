@@ -5,12 +5,12 @@ description: Intlx is internationalization APIs for Dart,  which have not yet ma
 homepage: http://www.github.com/seaneagan/intlx
 dependencies:
   intl: any
+  parsers: any
 dev_dependencies:
   browser: any
   crypto: any
   http: any
   logging: any
-  parsers: any
   pathos: any
   unittest: any
   web_ui: any

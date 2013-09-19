@@ -38,13 +38,13 @@ class Instrumentation {
   /**
    * A builder that will silently ignore all data and logging requests.
    */
-  static InstrumentationBuilder _NULL_INSTRUMENTATION_BUILDER = new InstrumentationBuilder_13();
+  static final InstrumentationBuilder nullBuilder = new InstrumentationBuilder_16();
 
   /**
    * An instrumentation logger that can be used when no other instrumentation logger has been
    * configured. This logger will silently ignore all data and logging requests.
    */
-  static InstrumentationLogger _NULL_LOGGER = new InstrumentationLogger_14();
+  static InstrumentationLogger _NULL_LOGGER = new InstrumentationLogger_17();
 
   /**
    * The current instrumentation logger.
@@ -73,13 +73,6 @@ class Instrumentation {
   static InstrumentationLogger get logger => _CURRENT_LOGGER;
 
   /**
-   * Return a builder that will silently ignore all data and logging requests.
-   *
-   * @return the builder (not `null`)
-   */
-  static InstrumentationBuilder get nullBuilder => _NULL_INSTRUMENTATION_BUILDER;
-
-  /**
    * Is this instrumentation system currently configured to drop instrumentation data provided to
    * it?
    *
@@ -96,7 +89,7 @@ class Instrumentation {
     _CURRENT_LOGGER = logger2 == null ? _NULL_LOGGER : logger2;
   }
 }
-class InstrumentationBuilder_13 implements InstrumentationBuilder {
+class InstrumentationBuilder_16 implements InstrumentationBuilder {
   InstrumentationBuilder data(String name, bool value) => this;
   InstrumentationBuilder data2(String name, int value) => this;
   InstrumentationBuilder data3(String name, String value) => this;
@@ -104,14 +97,16 @@ class InstrumentationBuilder_13 implements InstrumentationBuilder {
   InstrumentationLevel get instrumentationLevel => InstrumentationLevel.OFF;
   void log() {
   }
+  void log2(int minTimeToLong) {
+  }
   InstrumentationBuilder metric(String name, bool value) => this;
   InstrumentationBuilder metric2(String name, int value) => this;
   InstrumentationBuilder metric3(String name, String value) => this;
   InstrumentationBuilder metric4(String name, List<String> value) => this;
   InstrumentationBuilder record(Exception exception) => this;
 }
-class InstrumentationLogger_14 implements InstrumentationLogger {
-  InstrumentationBuilder createBuilder(String name) => Instrumentation._NULL_INSTRUMENTATION_BUILDER;
+class InstrumentationLogger_17 implements InstrumentationLogger {
+  InstrumentationBuilder createBuilder(String name) => Instrumentation.nullBuilder;
 }
 /**
  * The interface `InstrumentationBuilder` defines the behavior of objects used to collect data
@@ -183,6 +178,15 @@ abstract class InstrumentationBuilder {
   void log();
 
   /**
+   * Log the data that has been collected. The instrumentation builder should not be used after this
+   * method is invoked. The behavior of any method defined on this interface that is used after this
+   * method is invoked is undefined.
+   *
+   * @param minTimeToLog if the total elapsed time is less than this, do not record
+   */
+  void log2(int minTimeToLog);
+
+  /**
    * Append the given metric to the data being collected by this builder. The information is
    * declared to contain only metrics data (data that is not user identifiable and does not contain
    * user intellectual property).
@@ -244,7 +248,7 @@ abstract class InstrumentationBuilder {
  *
  * @coverage dart.engine.utilities
  */
-class InstrumentationLevel implements Comparable<InstrumentationLevel> {
+class InstrumentationLevel extends Enum<InstrumentationLevel> {
 
   /** Recording all instrumented information */
   static final InstrumentationLevel EVERYTHING = new InstrumentationLevel('EVERYTHING', 0);
@@ -255,12 +259,6 @@ class InstrumentationLevel implements Comparable<InstrumentationLevel> {
   /** Nothing recorded */
   static final InstrumentationLevel OFF = new InstrumentationLevel('OFF', 2);
   static final List<InstrumentationLevel> values = [EVERYTHING, METRICS, OFF];
-
-  /// The name of this enum constant, as declared in the enum declaration.
-  final String name;
-
-  /// The position in the enum declaration.
-  final int ordinal;
   static InstrumentationLevel fromString(String str) {
     if (str == "EVERYTHING") {
       return InstrumentationLevel.EVERYTHING;
@@ -273,10 +271,7 @@ class InstrumentationLevel implements Comparable<InstrumentationLevel> {
     }
     throw new IllegalArgumentException("Unrecognised InstrumentationLevel");
   }
-  InstrumentationLevel(this.name, this.ordinal);
-  int compareTo(InstrumentationLevel other) => ordinal - other.ordinal;
-  int get hashCode => ordinal;
-  String toString() => name;
+  InstrumentationLevel(String name, int ordinal) : super(name, ordinal);
 }
 /**
  * The interface `InstrumentationLogger` defines the behavior of objects that are used to log

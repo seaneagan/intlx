@@ -11,7 +11,7 @@ import 'dart:async';
 import 'dart:io';
 import 'unittest.dart';
 
-class VMConfiguration extends Configuration {
+class VMConfiguration extends SimpleConfiguration {
   // Color constants used for generating messages.
   final String GREEN_COLOR = '\u001b[32m';
   final String RED_COLOR = '\u001b[31m';
@@ -36,6 +36,11 @@ class VMConfiguration extends Configuration {
       }
     }
     return result;
+  }
+
+  void onInit() {
+    super.onInit();
+    filterStacks = formatStacks = true;
   }
 
   void onDone(bool success) {

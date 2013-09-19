@@ -1,43 +1,39 @@
 part of effects;
 
 class FadeEffect extends Css3TransitionEffect {
-  FadeEffect() : super('opacity', '0', '1');
+  FadeEffect() : super('opacity');
+  
+  String computePropertyValue(num fractionComplete, Element element) =>
+      '$fractionComplete';
+
+  // Infer the fraction complete from the opacity.
+  num computeFractionComplete(Element element) =>
+      double.parse(element.getComputedStyle().opacity);
 }
 
 // TODO: orientation
 class ShrinkEffect extends Css3TransitionEffect {
-  ShrinkEffect() : super('max-height', '0', '500px', {'overflow': 'hidden'});
+  ShrinkEffect() : super('max-height', {'overflow': 'hidden'});
 
   @protected
   @override
-  String overrideStartEndValues(bool showValue, String property, String originalValue) {
-    if(property == 'max-height' && showValue) {
-      // TODO: this is a horrible hack. Need to figure out a way to get the original size
-      //       but the perf loss for calculating cached size is too great.
-      final size = new Size(500, 500);
-      return '${size.height.toInt()}px';
-    } else {
-      return originalValue;
+  String computePropertyValue(num fractionComplete, Element element) =>
+      fractionComplete <= 0 ?
+          '0' : '${element.scrollHeight * fractionComplete}px';
+  
+  num computeFractionComplete(Element element) {
+    num scrollHeight = element.scrollHeight;
+    if (scrollHeight > 0) {
+      return math.min(1, element.clientHeight / element.scrollHeight);
     }
   }
 }
 
 class ScaleEffect extends Css3TransitionEffect {
-
-  factory ScaleEffect({Orientation orientation, HorizontalAlignment xOffset, VerticalAlignment yOffset}) {
-    String hideValue;
-    switch(orientation) {
-      case Orientation.VERTICAL:
-        hideValue = 'scale(1, 0)';
-        break;
-      case Orientation.HORIZONTAL:
-        hideValue = 'scale(0, 1)';
-        break;
-      default:
-        hideValue = 'scale(0, 0)';
-        break;
-    }
-
+  Orientation orientation;
+  
+  static Map<String, String> _computeValues(HorizontalAlignment xOffset,
+      VerticalAlignment yOffset) {
     if(xOffset == null) {
       xOffset = HorizontalAlignment.CENTER;
     }
@@ -48,33 +44,59 @@ class ScaleEffect extends Css3TransitionEffect {
     }
     final yoValue = (yOffset == VerticalAlignment.MIDDLE) ? 'center' : yOffset.name;
 
-    final map = {'-webkit-transform-origin' : '$xoValue $yoValue'};
-
-    return new ScaleEffect._internal(hideValue, map);
+    return {'-webkit-transform-origin' : '$xoValue $yoValue'};
   }
 
-  ScaleEffect._internal(String hideValue, Map<String, String> values) :
-    super('-webkit-transform', hideValue, 'scale(1, 1)', values);
+  ScaleEffect({this.orientation, HorizontalAlignment xOffset,
+      VerticalAlignment yOffset})
+      : super('-webkit-transform', _computeValues(xOffset, yOffset));
+
+  String computePropertyValue(num fractionComplete, Element element) {
+    switch(orientation) {
+      case Orientation.VERTICAL:
+        return 'scale(1, $fractionComplete)';
+      case Orientation.HORIZONTAL:
+        return 'scale($fractionComplete, 1)';
+      default:
+        return 'scale($fractionComplete, $fractionComplete)';
+    }
+  }
+
+  num computeFractionComplete(Element element) => null;
 }
 
 class SpinEffect extends Css3TransitionEffect {
-  SpinEffect() : super('-webkit-transform', 'perspective(600px) rotateX(90deg)', 'perspective(600px) rotateX(0deg)');
+  SpinEffect() : super('-webkit-transform');
+  
+  String computePropertyValue(num fractionComplete, Element element) =>
+      'perspective(600px) rotateX(${(1-fractionComplete) * 90}deg)';
 }
 
 class DoorEffect extends Css3TransitionEffect {
-  DoorEffect() : super('-webkit-transform', 'perspective(1000px) rotateY(90deg)', 'perspective(1000px) rotateY(0deg)',
-      {'-webkit-transform-origin': '0% 50%'} );
+  DoorEffect() : super('-webkit-transform', {'-webkit-transform-origin': '0% 50%'});
+  
+  String computePropertyValue(num fractionComplete, Element element) =>
+      'perspective(600px) rotateX(${(1-fractionComplete) * 90}deg)';
 }
 
 class SlideEffect extends Css3TransitionEffect {
-  factory SlideEffect({HorizontalAlignment xStart, VerticalAlignment yStart}) {
+  final HorizontalAlignment xStart;
+  final VerticalAlignment yStart;
+
+  SlideEffect({this.xStart, this.yStart}) : super('-webkit-transform'); 
+
+  String computePropertyValue(num fractionComplete, Element _) {
+    if (fractionComplete >= 1) {
+      return 'translate3d(0,0,0)';
+    }
+    var offset = '${(1 - fractionComplete) * 100}';
     String xComponent;
     switch(xStart) {
       case HorizontalAlignment.LEFT:
-        xComponent = '-100%';
+        xComponent = '-$offset%';
         break;
       case HorizontalAlignment.RIGHT:
-        xComponent = '100%';
+        xComponent = '$offset%';
         break;
       case HorizontalAlignment.CENTER:
       default:
@@ -85,20 +107,16 @@ class SlideEffect extends Css3TransitionEffect {
     String yComponent;
     switch(yStart) {
       case VerticalAlignment.TOP:
-        yComponent = '-100%';
+        yComponent = '-$offset%';
         break;
       case VerticalAlignment.BOTTOM:
-        yComponent = '100%';
+        yComponent = '$offset%';
         break;
       case VerticalAlignment.MIDDLE:
       default:
         yComponent = '0';
         break;
     }
-
-    return new SlideEffect._internal('translate($xComponent, $yComponent)');
+    return 'translate3d($xComponent, $yComponent, 0)';
   }
-
-  SlideEffect._internal(String hideValue) :
-    super('-webkit-transform', hideValue, 'translate(0)');
 }

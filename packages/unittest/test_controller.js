@@ -23,7 +23,15 @@ window.onerror = function (message, url, lineNumber) {
   window.postMessage('unittest-suite-external-error', '*');
 };
 
-if (navigator.webkitStartDart) {
+// Start Dartium/content_shell, unless we are waiting for HTML Imports to load.
+// HTML Imports allows a document to link to other HTMLs documents via
+// <link rel=import>. It also allows for those other documents to contain
+// <script> tags, which must be run before scripts on the main page.
+// We have package:html_import to polyfill this feature, and it will handle
+// starting Dartium/content_shell in that case. HTML Imports is used by Polymer,
+// but it could be used by itself too. See the specification:
+// https://dvcs.w3.org/hg/webcomponents/raw-file/tip/spec/imports/index.html
+if (navigator.webkitStartDart && !window.HTMLImports) {
   navigator.webkitStartDart();
 }
 
@@ -51,6 +59,8 @@ function notifyStart() {
     driver.postMessage("STARTING", "*");
   }
 }
+// We call notifyStart here to notify the encapsulating browser.
+notifyStart();
 
 function notifyDone() {
   if (testRunner) testRunner.notifyDone();
@@ -145,10 +155,12 @@ document.addEventListener('readystatechange', function () {
 // processMessage above will see them.
 function dartPrint(msg) {
   if ((msg === 'unittest-suite-success')
+      || (msg === 'unittest-suite-done')
       || (msg === 'unittest-suite-wait-for-done')) {
     window.postMessage(msg, '*');
     return;
   }
+  if (typeof console === 'object') console.warn(msg);
   var pre = document.createElement("pre");
   pre.appendChild(document.createTextNode(String(msg)));
   document.body.appendChild(pre);
@@ -157,8 +169,6 @@ function dartPrint(msg) {
 // dart2js will generate code to call this function instead of calling
 // Dart [main] directly. The argument is a closure that invokes main.
 function dartMainRunner(main) {
-  // We call notifyStart here to notify the encapsulating browser.
-  notifyStart();
   window.postMessage('dart-calling-main', '*');
   try {
     main();

@@ -8,27 +8,58 @@ library templating;
 import 'dart:async';
 import 'dart:collection';
 import 'dart:html';
+import 'dart:svg' as svg;
 import 'package:web_ui/safe_html.dart';
 import 'package:web_ui/observe.dart';
 import 'package:web_ui/watcher.dart';
 import 'package:web_ui/web_ui.dart' show WebComponent;
 
 /**
- * Take the value of a bound expression and creates an HTML node with its value.
- * Normally bindings are associated with text nodes, unless [binding] has the
- * [SafeHtml] type, in which case an html element is created for it.
+ * Empty sanitizer used to create HTML content that was already sanitized during
+ * compilation.
  */
-Node nodeForBinding(binding) => binding is SafeHtml
-    ? new Element.html(binding.toString()) : new Text(binding.toString());
+NodeTreeSanitizer nullTreeSanitizer = new _NullTreeSanitizer();
+class _NullTreeSanitizer implements NodeTreeSanitizer {
+  void sanitizeTree(Node node) {}
+}
 
 /**
- * Updates a data-bound [node] to a new [value]. If the new value is not
- * [SafeHtml] and the node is a [Text] node, then we update the node in place.
- * Otherwise, the node is replaced in the DOM tree and the new node is returned.
+ * Helper function to create a tag without it's context. Used to workaround the
+ * change that removed support for `new Element.html('<td attr=foo></td>')`.
+ */
+Node createSafeNode(String tag, Map<String, String> attributes, String body) {
+  var node = new Element.tag(tag);
+  for (var key in attributes.keys) {
+    node.attributes[key] = attributes[key];
+  }
+  if (body != '') node.setInnerHtml(body, treeSanitizer: nullTreeSanitizer);
+  return node;
+}
+
+/**
+ * Take the value of a bound expression and creates an HTML node with its value.
+ * Normally bindings are associated with text nodes, unless [binding] is a
+ * [Node] (in which case the Node it self is used as the binding) or has the
+ * [SafeHtml] type (in which case an html element is created for it).
+ */
+Node nodeForBinding(binding) => binding is Node ? binding
+    : (binding is SafeHtml ? new Element.html(binding.toString())
+        : new Text(binding.toString()));
+
+/**
+ * Updates a data-bound [node] to a new [value]. If the new value is a [Node],
+ * then the new node will replace the old node. If value is not [SafeHtml] and
+ * the node is a [Text] node, we try to update the node in place.  Otherwise,
+ * the node is replaced in the DOM tree and the new node is returned.
  * [stringValue] should be equivalent to `value.toString()` and can be passed
  * here if it has already been computed.
  */
 Node updateBinding(value, Node node, [String stringValue]) {
+  if (value is Node) {
+    node.replaceWith(value);
+    return value;
+  }
+
   var isSafeHtml = value is SafeHtml;
   if (stringValue == null) {
     stringValue = value.toString();
@@ -38,7 +69,8 @@ Node updateBinding(value, Node node, [String stringValue]) {
     node.text = stringValue;
   } else {
     var old = node;
-    node = isSafeHtml ? new Element.html(stringValue) : new Text(stringValue);
+    node = !isSafeHtml ?  new Text(stringValue)
+        : new Element.html(stringValue, treeSanitizer: nullTreeSanitizer);
     old.replaceWith(node);
   }
   return node;
@@ -147,7 +179,8 @@ void changeCssClasses(elem, ChangeRecord change) {
  *         bindCssClasses(e, () => class1);
  *         bindCssClasses(e, () => class2);
  */
-ChangeUnobserver bindCssClasses(Element elem, dynamic exp()) {
+ChangeUnobserver bindCssClasses(Element elem, dynamic exp(),
+    [String debugLocation]) {
   return watchAndInvoke(exp, (e) {
     if (e.changes != null) {
       for (var change in e.changes) changeCssClasses(elem, change);
@@ -155,13 +188,14 @@ ChangeUnobserver bindCssClasses(Element elem, dynamic exp()) {
       updateCssClass(elem, false, e.oldValue);
       updateCssClass(elem, true, e.newValue);
     }
-  }, 'css-class-bind');
+  }, 'css-class-bind', debugLocation);
 }
 
 /** Bind the result of [exp] to the style attribute in [elem]. */
-ChangeUnobserver bindStyle(Element elem, Map<String, String> exp()) {
+ChangeUnobserver bindStyle(Element elem, Map<String, String> exp(),
+    [String debugLocation]) {
   return watchAndInvoke(exp, (e) => updateStyle(elem, e.oldValue, e.newValue),
-      'css-style-bind');
+      'css-style-bind', debugLocation);
 }
 
 /**
@@ -249,22 +283,24 @@ class Listener extends TemplateItem {
   }
 }
 
-/** Represents a generic data binding and a corresponding action. */
-class Binding extends TemplateItem {
+/** Common logic for all bindings. */
+abstract class Binding extends TemplateItem {
   final exp;
-  final ChangeObserver action;
   final bool isFinal;
+  final String debugLocation;
   ChangeUnobserver stopper;
 
-  Binding(this.exp, this.action, this.isFinal);
+  Binding(this.exp, this.isFinal)
+      : debugLocation = verboseDebugMessages && readCurrentStackTrace != null
+            ? readCurrentStackTrace() : null;
 
   void insert() {
     if (isFinal) {
-      action(new ChangeNotification(null, exp()));
+      invokeCallback();
     } else if (stopper != null) {
       throw new StateError('binding already attached');
     } else {
-      stopper = watchAndInvoke(exp, action, 'generic-binding');
+      stopper = registerAndInvoke();
     }
   }
 
@@ -274,75 +310,58 @@ class Binding extends TemplateItem {
       stopper = null;
     }
   }
+
+  /** Invokes the action associated with this binding. */
+  void invokeCallback();
+
+  /**
+   * Registers the watcher and invokes the action associated with this binding.
+   */
+  ChangeUnobserver registerAndInvoke();
+}
+
+/** Represents a generic data binding and a corresponding action. */
+class GenericBinding extends Binding {
+  final ChangeObserver action;
+
+  GenericBinding(exp, this.action, bool isFinal) : super(exp, isFinal);
+
+  void invokeCallback() => action(new ChangeNotification(null, exp()));
+
+  ChangeUnobserver registerAndInvoke() =>
+      watchAndInvoke(exp, action, 'generic-binding', debugLocation);
 }
 
 /** Represents a binding to a style attribute. */
-class StyleAttrBinding extends TemplateItem {
-  final exp;
+class StyleAttrBinding extends Binding {
   final Element elem;
-  final bool isFinal;
-  ChangeUnobserver stopper;
 
-  StyleAttrBinding(this.elem, this.exp, this.isFinal);
+  StyleAttrBinding(this.elem, exp, bool isFinal) : super(exp, isFinal);
 
-  void insert() {
-    if (isFinal) {
-      updateStyle(elem, null, exp());
-    } else if (stopper != null) {
-      throw new StateError('style binding already attached');
-    } else {
-      stopper = bindStyle(elem, exp);
-    }
-  }
+  void invokeCallback() => updateStyle(elem, null, exp());
 
-  void remove() {
-    if (!isFinal) {
-      stopper();
-      stopper = null;
-    }
-  }
+  ChangeUnobserver registerAndInvoke() => bindStyle(elem, exp, debugLocation);
 }
 
 /** Represents a binding to a class attribute. */
-class ClassAttrBinding extends TemplateItem {
+class ClassAttrBinding extends Binding {
   final Element elem;
-  final exp;
-  final bool isFinal;
-  ChangeUnobserver stopper;
 
-  ClassAttrBinding(this.elem, this.exp, this.isFinal);
+  ClassAttrBinding(this.elem, exp, bool isFinal) : super(exp, isFinal);
 
-  void insert() {
-    if (isFinal) {
-      updateCssClass(elem, true, exp());
-    } else if (stopper != null) {
-      throw new StateError('class binding already attached');
-    } else {
-      stopper = bindCssClasses(elem, exp);
-    }
-  }
+  void invokeCallback() => updateCssClass(elem, true, exp());
 
-  void remove() {
-    if (!isFinal) {
-      stopper();
-      stopper = null;
-    }
-  }
+  ChangeUnobserver registerAndInvoke() =>
+      bindCssClasses(elem, exp, debugLocation);
 }
 
 /**
  * Represents a one-way binding between a dart getter expression and a DOM
  * property, or conversely between a DOM property value and a dart property.
  */
-class DomPropertyBinding extends TemplateItem {
+class DomPropertyBinding extends Binding {
   /** Value updated by this binding. */
   final Setter setter;
-
-  /**
-   * Getter that reads the value of the binding, either from a Dart expression
-   * or from a DOM property (which is internally also a Dart expression).
-   */
-  final Getter getter;
 
   /**
    * Whether this is a binding that assigns a DOM attribute accepting URL
@@ -350,33 +369,22 @@ class DomPropertyBinding extends TemplateItem {
    */
   final bool isUrl;
 
-  final bool isFinal;
-
-  ChangeUnobserver stopper;
-
-  DomPropertyBinding(this.getter, this.setter, this.isUrl, this.isFinal);
+  /**
+   * Creates a DOM property binding, where [getter] reads the value of the
+   * binding, either from a Dart expression or from a DOM property (which is
+   * internally also a Dart expression).
+   */
+  DomPropertyBinding(Getter getter, this.setter, this.isUrl, bool isFinal)
+      : super(getter, isFinal);
 
   void _safeSetter(value) {
     setter(isUrl ? sanitizeUri(value) : value);
   }
+  void invokeCallback() => _safeSetter(exp());
 
-  void insert() {
-    if (isFinal) {
-      _safeSetter(getter());
-    } else if (stopper != null) {
-      throw new StateError('data binding already attached.');
-    } else {
-      stopper = watchAndInvoke(getter, (e) => _safeSetter(e.newValue),
-          'dom-property-binding');
-    }
-  }
-
-  void remove() {
-    if (!isFinal) {
-      stopper();
-      stopper = null;
-    }
-  }
+  ChangeUnobserver registerAndInvoke() =>
+      watchAndInvoke(exp, (e) => _safeSetter(e.newValue),
+          'dom-property-binding', debugLocation);
 }
 
 /** Represents a component added within a template. */
@@ -420,13 +428,13 @@ class Template extends TemplateItem {
 
   /** Run [action] when [exp] changes (while this template is visible).  */
   void bind(exp, ChangeObserver action, bool isFinal) {
-    children.add(new Binding(exp, action, isFinal));
+    children.add(new GenericBinding(exp, action, isFinal));
   }
 
   /** Create and bind a [Node] to [exp] while this template is visible. */
   Node contentBind(Function exp, isFinal) {
     var bindNode = new Text('');
-    children.add(new Binding(() => '${exp()}', (e) {
+    children.add(new GenericBinding(() => '${exp()}', (e) {
       bindNode = updateBinding(exp(), bindNode, e.newValue);
     }, isFinal));
     return bindNode;

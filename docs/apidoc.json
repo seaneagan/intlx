@@ -1,1 +1,1 @@
-{"name":"dart:","dependencies":[],"location":"0","revision":"0","libraries":[{"refId":"intlx","name":"package:intlx/intlx.dart"},{"refId":"intlx"}],"description":"Dart System Libraries"}
+{"name":"dart:","description":"Dart System Libraries","libraries":[{"name":"package:intlx/intlx.dart","refId":"intlx"}],"revision":"0","location":"0","dependencies":[]}

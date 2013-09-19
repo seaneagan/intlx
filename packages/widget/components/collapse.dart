@@ -19,15 +19,17 @@ class Collapse extends WebComponent implements ShowHideComponent {
   static const String _collapseDivSelector = '.collapse-body-x';
   static final ShowHideEffect _effect = new ShrinkEffect();
 
-  bool _isShown = true;
+  bool _isShown = false;
 
   bool get isShown => _isShown;
+  
+  bool _insertedCalled = false;
 
   void set isShown(bool value) {
     assert(value != null);
     if(value != _isShown) {
       _isShown = value;
-      _updateElements();
+      _updateElements(!_insertedCalled);
 
       ShowHideComponent.dispatchToggleEvent(this);
     }
@@ -54,6 +56,11 @@ class Collapse extends WebComponent implements ShowHideComponent {
 
   @protected
   void inserted() {
+    // TODO(jacobr): find a way to prevent animations upon calls to the isShown
+    // setter that occur from the intial web_ui template binding that do not
+    // require manually tracking _insertedCalled. If this.parent was null
+    // when the template binding occurred we would be fine.
+    _insertedCalled = true;
     _updateElements(true);
   }
 

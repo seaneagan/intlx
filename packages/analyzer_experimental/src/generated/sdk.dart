@@ -1,8 +1,6 @@
 // This code was auto-generated, is not intended to be edited, and is subject to
 // significant change. Please see the README file for more information.
 library engine.sdk;
-import 'java_core.dart';
-import 'java_engine.dart';
 import 'source.dart' show ContentCache, Source, UriKind;
 import 'engine.dart' show AnalysisContext;
 /**
@@ -332,9 +330,8 @@ abstract class DartSdk {
    * Return the source representing the library with the given `dart:` URI, or `null` if
    * the given URI does not denote a library in this SDK.
    *
-   * @param contentCache the content cache used to access the contents of the mapped source
    * @param dartUri the URI of the library to be returned
    * @return the source representing the specified library
    */
-  Source mapDartUri(ContentCache contentCache, String dartUri);
+  Source mapDartUri(String dartUri);
 }

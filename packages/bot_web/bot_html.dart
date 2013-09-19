@@ -3,7 +3,6 @@ library bot_html;
 import 'dart:html';
 import 'dart:async';
 import 'dart:math' as math;
-import 'dart:typed_data' as typed_data;
 import 'dart:web_audio';
 import 'package:logging/logging.dart';
 import 'package:meta/meta.dart';

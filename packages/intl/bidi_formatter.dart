@@ -85,19 +85,13 @@ class BidiFormatter {
    * Escapes HTML-special characters of [text] so that the result can be
    * included verbatim in HTML source code, either in an element body or in an
    * attribute value.
+   *
+   * *htmlEscape* is deprecated. Use [HtmlEscape] from the `dart:convert`
+   * package. *htmlEscape* will be removed the 30th of September 2013.
    */
-  String htmlEscape(String text) {
-    // TODO(alanknight): This is copied into here directly to avoid having a
-    // dependency on the htmlescape library, which is difficult to do in a way
-    // that's compatible with both package: links and direct links in the SDK.
-    // Once pub is used in test.dart (Issue #4968) this should be removed.
-    // TODO(efortuna): A more efficient implementation.
-    return text.replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&apos;");
-  }
+  // TODO(kevmoo) Remove this!
+  @deprecated
+  String htmlEscape(String text) => HTML_ESCAPE.convert(text);
 
   /**
    * Formats a string of a given (or estimated, if not provided)
@@ -119,7 +113,7 @@ class BidiFormatter {
                       TextDirection direction}) {
     if (direction == null) direction = estimateDirection(text, isHtml: isHtml);
     var result;
-    if (!isHtml) text = htmlEscape(text);
+    if (!isHtml) text = HTML_ESCAPE.convert(text);
     var directionChange = contextDirection.isDirectionChange(direction);
     if (_alwaysSpan || directionChange) {
       var spanDirection = '';

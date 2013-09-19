@@ -5,7 +5,6 @@ import 'dart:html';
 import 'dart:math' as math;
 import 'package:meta/meta.dart';
 import 'package:bot/bot.dart';
-import 'package:bot_web/bot_html.dart';
 
 part 'src/effects/_enum.dart';
 part 'src/effects/alignment.dart';

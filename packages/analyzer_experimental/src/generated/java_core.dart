@@ -31,10 +31,10 @@ bool isInstanceOf(o, Type t) {
   if (oTypeName == tTypeName) {
     return true;
   }
-  if (oTypeName.startsWith("HashMap") && tTypeName == "Map") {
+  if (oTypeName.startsWith("List") && tTypeName == "List") {
     return true;
   }
-  if (oTypeName.startsWith("List") && tTypeName == "List") {
+  if (tTypeName == "Map" && o is Map) {
     return true;
   }
   // Dart Analysis Engine specific
@@ -47,7 +47,26 @@ bool isInstanceOf(o, Type t) {
     }
   }
   if (tTypeName == "ExecutableElement") {
-    if (oTypeName == "MethodElementImpl" || oTypeName == "FunctionElementImpl") {
+    if (oTypeName == "MethodElementImpl" ||
+        oTypeName == "FunctionElementImpl" ||
+        oTypeName == "PropertyAccessorElementImpl") {
+      return true;
+    }
+  }
+  if (tTypeName == "ParameterElement") {
+    if (oTypeName == "FieldFormalParameterElementImpl" ||
+        oTypeName == "DefaultFieldFormalParameterElementImpl" ||
+        oTypeName == "DefaultParameterElementImpl") {
+      return true;
+    }
+  }
+  if (tTypeName == "VariableElement") {
+    if (oTypeName == "LocalVariableElementImpl" ||
+        oTypeName == "ConstLocalVariableElementImpl" ||
+        oTypeName == "FieldElementImpl" ||
+        oTypeName == "ConstFieldElementImpl" ||
+        oTypeName == "TopLevelVariableElementImpl" ||
+        oTypeName == "ConstTopLevelVariableElementImpl") {
       return true;
     }
   }
@@ -252,16 +271,21 @@ class Math {
   static num min(num a, num b) => math.min(a, b);
 }
 
-class RuntimeException implements Exception {
-  String toString() => "RuntimeException";
+class RuntimeException extends JavaException {
+  RuntimeException([String message = "", Exception cause = null]) :
+    super(message, cause);
 }
 
 class JavaException implements Exception {
   final String message;
-  final Exception e;
-  JavaException([this.message = "", this.e = null]);
-  JavaException.withCause(this.e) : message = null;
-  String toString() => "JavaException: $message $e";
+  final Exception cause;
+  JavaException([this.message = "", this.cause = null]);
+  JavaException.withCause(this.cause) : message = null;
+  String toString() => "${runtimeType}: $message $cause";
+}
+
+class JavaIOException extends JavaException {
+  JavaIOException([message = "", cause = null]) : super(message, cause);
 }
 
 class IllegalArgumentException implements Exception {
@@ -478,6 +502,12 @@ bool javaSetAdd(Set s, o) {
   return false;
 }
 
+javaMapPut(Map target, key, value) {
+  var oldValue = target[key];
+  target[key] = value;
+  return oldValue;
+}
+
 void javaMapPutAll(Map target, Map source) {
   source.forEach((k, v) {
     target[k] = v;
@@ -520,4 +550,15 @@ class JavaStringBuilder {
   void clear() {
     sb = new StringBuffer();
   }
+}
+
+abstract class Enum<E extends Enum> implements Comparable<E> {
+  /// The name of this enum constant, as declared in the enum declaration.
+  final String name;
+  /// The position in the enum declaration.
+  final int ordinal;
+  Enum(this.name, this.ordinal);
+  int get hashCode => ordinal;
+  String toString() => name;
+  int compareTo(E other) => ordinal - other.ordinal;
 }

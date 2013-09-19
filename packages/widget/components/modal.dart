@@ -17,9 +17,11 @@ import 'package:widget/widget.dart';
  * The [Modal] component leverages the [ModalManager] effect.
  */
 class Modal extends WebComponent implements ShowHideComponent {
+  /** If false, clicking the backdrop closes the dialog. */
+  bool staticBackdrop = false;
   bool _isShown = false;
-
   bool get isShown => _isShown;
+  ShowHideEffect effect = new ScaleEffect();
 
   void set isShown(bool value) {
     assert(value != null);
@@ -28,7 +30,6 @@ class Modal extends WebComponent implements ShowHideComponent {
 
       final modal = _getModalElement();
       if(modal != null) {
-        final effect = new ScaleEffect();
 
         if(_isShown) {
           ModalManager.show(modal, effect: effect, backdropClickHandler: _onBackdropClicked);
@@ -83,6 +84,8 @@ class Modal extends WebComponent implements ShowHideComponent {
     // TODO: ignoring some edge cases here
     // like what if this element has been removed from the tree before the backdrop is clicked
     // ...etc
-    hide();
+    if (!staticBackdrop) {
+      hide();
+    }
   }
 }

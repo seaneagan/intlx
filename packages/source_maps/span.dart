@@ -5,7 +5,6 @@
 /// Dart classes representing the souce spans and source files.
 library source_maps.span;
 
-import 'dart:utf' show stringToCodepoints;
 import 'dart:math' show min, max;
 
 import 'src/utils.dart';
@@ -69,6 +68,8 @@ abstract class Span implements Comparable {
   bool operator ==(Span other) =>
     sourceUrl == other.sourceUrl && start == other.start && end == other.end;
 
+  int get hashCode => sourceUrl.hashCode + start.offset + (31 * length);
+
   String toString() => '<$runtimeType: $start $end $formatLocation $text>';
 }
 
@@ -96,6 +97,11 @@ abstract class Location implements Comparable {
     }
     return offset - other.offset;
   }
+
+  bool operator ==(Location other) =>
+      sourceUrl == other.sourceUrl && offset == other.offset;
+
+  int get hashCode => sourceUrl.hashCode + offset;
 
   String toString() => '(Location $offset)';
   String get formatString => '$sourceUrl:${line + 1}:${column + 1}';
@@ -194,7 +200,7 @@ class SourceFile {
 
   SourceFile.text(this.url, String text)
       : _lineStarts = <int>[0],
-        _decodedChars = stringToCodepoints(text) {
+        _decodedChars = text.runes.toList() {
     for (int i = 0; i < _decodedChars.length; i++) {
       var c = _decodedChars[i];
       if (c == _CR) {

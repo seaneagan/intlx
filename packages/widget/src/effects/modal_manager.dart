@@ -9,8 +9,7 @@ part of effects;
  * Any element used should have a fixed position, a z-index greater than 1040, and an initial display of none.
  */
 class ModalManager {
-  static const _backdropClass = 'modal-backdrop-x';
-  static const _backdropStyle = '''display: none; position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 1040; background-color: rgba(0,0,0,0.8);''';
+  static const _backdropClass = 'modal-backdrop';
 
   static Future show(Element element,
                    {ShowHideEffect effect, int duration, EffectTiming effectTiming, Action0 backdropClickHandler}) {
@@ -22,9 +21,11 @@ class ModalManager {
     }
 
     final showElement = ShowHide.show(element, effect: effect, duration: duration, effectTiming: effectTiming);
-    final showBackdrop = ShowHide.show(backDropElement, effect: new FadeEffect());
-
-    return Future.wait([showElement, showBackdrop]);
+    backDropElement.classes
+      ..add('fade')
+      ..remove('in');
+    runAsync(() => backDropElement.classes.add('in'));
+    return Future.wait([showElement, Tools.onTransitionEnd(backDropElement)]);
   }
 
   static Future hide(Element element,
@@ -36,7 +37,8 @@ class ModalManager {
     final futures = [ShowHide.hide(element, effect: effect, duration: duration, effectTiming: effectTiming)];
 
     if(backDropElement != null) {
-      futures.add(ShowHide.hide(backDropElement, effect: new FadeEffect()));
+      backDropElement.classes.remove('in');
+      futures.add(Tools.onTransitionEnd(backDropElement));
     }
 
     return Future.wait(futures)
@@ -60,11 +62,9 @@ class ModalManager {
     Element element = parentDocument.body.query('.$_backdropClass');
     if(element == null && addIfMissing) {
       element = new DivElement()
-        ..classes.add(_backdropClass)
-        ..attributes['style'] = _backdropStyle;
+        ..classes.add(_backdropClass);
       parentDocument.body.children.add(element);
     }
-
     return element;
   }
 }

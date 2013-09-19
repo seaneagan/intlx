@@ -19,29 +19,29 @@ class Line {
     }
   }
 
-  addSpace() {
+  void addSpace() {
     addSpaces(1);
   }
 
-  addSpaces(int n) {
+  void addSpaces(int n) {
     if (n > 0) {
       tokens.add(new SpaceToken(n));
     }
   }
 
-  addToken(LineToken token) {
+  void addToken(LineToken token) {
     tokens.add(token);
   }
 
-  _indent(int n) {
+  bool isWhitespace() => tokens.every((tok) => tok is SpaceToken);
+
+  void _indent(int n) {
     tokens.add(useTabs ? new TabToken(n) : new SpaceToken(n * spacesPerIndent));
   }
 
   String toString() {
     var buffer = new StringBuffer();
-    for (var tok in tokens) {
-      buffer.write(tok.toString());
-    }
+    tokens.forEach((tok) => buffer.write(tok.toString()));
     return buffer.toString();
   }
 
@@ -78,55 +78,77 @@ class NewlineToken extends LineToken {
 class SourceWriter {
 
   final StringBuffer buffer = new StringBuffer();
-  Line currentLine = new Line();
+  Line currentLine;
 
   final String lineSeparator;
   int indentCount = 0;
+  
+  LineToken _lastToken;
+  
+  SourceWriter({this.indentCount: 0, this.lineSeparator: NEW_LINE}) {
+    currentLine = new Line(indent: indentCount);
+  }
 
-  SourceWriter({int initialIndent: 0, this.lineSeparator: '\n'}) :
-    indentCount = initialIndent;
-
-  indent() {
+  LineToken get lastToken => _lastToken;
+  
+  _addToken(LineToken token) {
+    _lastToken = token;
+    currentLine.addToken(token);
+  }
+  
+  void indent() {
     ++indentCount;
   }
 
-  unindent() {
-    --indentCount;
-  }
-
-  print(x) {
-    currentLine.addToken(new LineToken(x));
-  }
-
-  newline() {
-    currentLine.addToken(new NewlineToken(this.lineSeparator));
+  void newline() {
+    if (currentLine.isWhitespace()) {
+      currentLine.tokens.clear();
+    }
+    _addToken(new NewlineToken(this.lineSeparator));
     buffer.write(currentLine.toString());
     currentLine = new Line(indent: indentCount);
   }
 
-  space() {
-    spaces(1);
+  void newlines(int num) {
+    while (num-- > 0) {
+      newline();
+    }
   }
 
-  spaces(n) {
-    currentLine.addSpaces(n);
+  void print(x) {
+    _addToken(new LineToken(x));
   }
-
-  println(String s) {
+  
+  void println(String s) {
     print(s);
     newline();
   }
+  
+  void space() {
+    spaces(1);
+  }
 
+  void spaces(n) {
+    currentLine.addSpaces(n);
+  }
+  
+  void unindent() {
+    --indentCount;
+  }
+  
   String toString() {
     var source = new StringBuffer(buffer.toString());
-    source.write(currentLine);
+    if (!currentLine.isWhitespace()) {
+      source.write(currentLine);
+    }
     return source.toString();
   }
+
 }
 
-
+const NEW_LINE = '\n';
 const SPACE = ' ';
-final SPACES = [
+const SPACES = const [
           '',
           ' ',
           '  ',
@@ -145,7 +167,7 @@ final SPACES = [
           '               ',
           '                ',
 ];
-final TABS = [
+const TABS = const [
           '',
           '\t',
           '\t\t',

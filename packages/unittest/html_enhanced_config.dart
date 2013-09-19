@@ -12,10 +12,11 @@ library unittest_html_enhanced_config;
 
 import 'dart:async';
 import 'dart:collection' show LinkedHashMap;
+import 'dart:convert';
 import 'dart:html';
 import 'unittest.dart';
 
-class HtmlEnhancedConfiguration extends Configuration {
+class HtmlEnhancedConfiguration extends SimpleConfiguration {
   /** Whether this is run within dartium layout tests. */
   final bool _isLayoutTest;
   HtmlEnhancedConfiguration(this._isLayoutTest);
@@ -68,12 +69,12 @@ class HtmlEnhancedConfiguration extends Configuration {
 
     var cssElement = document.head.query('#${_CSSID}');
     if (cssElement == null){
-      document.head.children.add(new Element.html(
-          '<style id="${_CSSID}"></style>'));
-      cssElement = document.head.query('#${_CSSID}');
+      cssElement = new StyleElement();
+      cssElement.id = _CSSID;
+      document.head.append(cssElement);
     }
 
-    cssElement.innerHtml = _htmlTestCSS;
+    cssElement.text = _htmlTestCSS;
     window.postMessage('unittest-suite-wait-for-done', '*');
   }
 
@@ -235,14 +236,6 @@ class HtmlEnhancedConfiguration extends Configuration {
     var background = 'unittest-row-${test_.id % 2 == 0 ? "even" : "odd"}';
     var display = '${isVisible ? "unittest-row" : "unittest-row-hidden"}';
 
-    // TODO (prujohn@gmail.com) I had to borrow this from html_print.dart
-    // Probably should put it in some more common location.
-    String _htmlEscape(String string) {
-      return string.replaceAll('&', '&amp;')
-                   .replaceAll('<','&lt;')
-                   .replaceAll('>','&gt;');
-    }
-
     addRowElement(id, status, description){
       te.children.add(
         new Element.html(
@@ -267,10 +260,11 @@ class HtmlEnhancedConfiguration extends Configuration {
     }
 
     addRowElement('${test_.id}', '${test_.result.toUpperCase()}',
-        '${test_.description}. ${_htmlEscape(test_.message)}');
+        '${test_.description}. ${HTML_ESCAPE.convert(test_.message)}');
 
     if (test_.stackTrace != null) {
-      addRowElement('', '', '<pre>${_htmlEscape(test_.stackTrace)}</pre>');
+      addRowElement('', '',
+          '<pre>${HTML_ESCAPE.convert(test_.stackTrace.toString())}</pre>');
     }
   }
 

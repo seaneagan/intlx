@@ -10,17 +10,7 @@ class AudioLoader extends ResourceLoader<AudioBuffer> {
   Future<AudioBuffer> _doLoad(String blobUrl) {
     return HttpRequest.request(blobUrl, responseType: 'arraybuffer')
         .then((HttpRequest request) {
-          return _decode(request.response);
+          return context.decodeAudioData(request.response);
         });
-  }
-
-  Future<AudioBuffer> _decode(typed_data.ByteBuffer audioData) {
-    final completer = new Completer<AudioBuffer>();
-
-    context.decodeAudioData(audioData,
-        (buffer) => completer.complete(buffer),
-        (buffer) => completer.completeError('There was an error decoding the audio'));
-
-    return completer.future;
   }
 }

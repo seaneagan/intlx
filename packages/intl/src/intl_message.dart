@@ -33,6 +33,8 @@
  */
 library intl_message;
 
+import 'package:analyzer_experimental/analyzer.dart';
+
 /** A default function for the [Message.expanded] method. */
 _nullTransform(msg, chunk) => chunk;
 
@@ -58,6 +60,38 @@ abstract class Message {
    * do variable substitutions.
    */
   get arguments => parent == null ? const [] : parent.arguments;
+
+  String checkValidity(MethodInvocation node, List arguments,
+                       String outerName, FormalParameterList outerArgs) {
+    var hasArgs = arguments.any(
+        (each) => each is NamedExpression && each.name.label.name == 'args');
+    var hasParameters = !outerArgs.parameters.isEmpty;
+    if (!hasArgs && hasParameters) {
+      return "The 'args' argument for Intl.message must be specified";
+    }
+
+    var messageName = arguments.firstWhere(
+        (eachArg) => eachArg is NamedExpression &&
+            eachArg.name.label.name == 'name',
+        orElse: () => null);
+    if (messageName == null) {
+      return "The 'name' argument for Intl.message must be specified";
+    }
+    if (messageName.expression is! SimpleStringLiteral) {
+      return "The 'name' argument for Intl.message must be a simple string "
+          "literal.";
+    }
+    var simpleArguments = arguments.where(
+        (each) => each is NamedExpression
+        && ["desc", "name"].contains(each.name.label.name));
+    var values = simpleArguments.map((each) => each.expression).toList();
+    for (var arg in values) {
+      if (arg is! SimpleStringLiteral) {
+        return "Intl.message argument '$arg' must be "
+            "a simple string literal";
+      }
+    }
+  }
 
   /**
    * Turn a value, typically read from a translation file or created out of an
@@ -178,7 +212,7 @@ abstract class ComplexMessage extends Message {
 class CompositeMessage extends Message {
   List<Message> pieces;
 
-  CompositeMessage.parent(parent) : super(parent);
+  CompositeMessage.withParent(parent) : super(parent);
   CompositeMessage(this.pieces, ComplexMessage parent) : super(parent) {
     pieces.forEach((x) => x.parent = this);
   }
@@ -199,14 +233,41 @@ class LiteralString extends Message {
 
 /**
  * Represents an interpolation of a variable value in a message. We expect
- * this to be specified as an [index] into the list of variables, and we will
- * compute the variable name for the interpolation based on that.
+ * this to be specified as an [index] into the list of variables, or else
+ * as the name of a variable that exists in [arguments] and we will
+ * compute the variable name or the index based on the value of the other.
  */
 class VariableSubstitution extends Message {
-  VariableSubstitution(this.index, Message parent) : super(parent);
+  VariableSubstitution(this._index, Message parent) : super(parent);
+
+  /**
+   * Create a substitution based on the name rather than the index. The name
+   * may have been used as all upper-case in the translation tool, so we
+   * save it separately and look it up case-insensitively once the parent
+   * (and its arguments) are definitely available.
+   */
+  VariableSubstitution.named(String name, Message parent)
+      : super(parent) {
+    _variableNameUpper = name.toUpperCase();
+  }
 
   /** The index in the list of parameters of the containing function. */
-  int index;
+  int _index;
+  int get index {
+    if (_index != null) return _index;
+    if (arguments.isEmpty) return null;
+    // We may have been given an all-uppercase version of the name, so compare
+    // case-insensitive.
+    _index = arguments.map((x) => x.toUpperCase()).toList()
+        .indexOf(_variableNameUpper);
+    return _index;
+  }
+
+  /**
+   * The variable name we get from parsing. This may be an all uppercase version
+   * of the Dart argument name.
+   */
+  String _variableNameUpper;
 
   /**
    * The name of the variable in the parameter list of the containing function.
@@ -233,6 +294,16 @@ class MainMessage extends ComplexMessage {
    * printing it for See [expanded], [toCode].
    */
   List<Message> messagePieces = [];
+
+  /** Verify that this looks like a correct Intl.message invocation. */
+  String checkValidity(MethodInvocation node, List arguments,
+      String outerName, FormalParameterList outerArgs) {
+    if (arguments.first is! StringLiteral) {
+      return "Intl.message messages must be string literals";
+    }
+
+    return super.checkValidity(node, arguments, outerName, outerArgs);
+  }
 
   void addPieces(List<Message> messages) {
     for (var each in messages) {
@@ -306,9 +377,9 @@ class MainMessage extends ComplexMessage {
     var out = new StringBuffer()
       ..write('static $name(')
       ..write(arguments.join(", "))
-      ..write(') => Intl.$dartMessageName("')
+      ..write(') => "')
       ..write(translations[locale])
-      ..write('");');
+      ..write('";');
     return out.toString();
   }
 
@@ -384,6 +455,18 @@ abstract class SubMessage extends ComplexMessage {
   String mainArgument;
 
   /**
+   * Return the arguments that affect this SubMessage as a map of
+   * argument names and values.
+   */
+  Map argumentsOfInterestFor(MethodInvocation node) {
+    var basicArguments = node.argumentList.arguments.elements;
+    var others = basicArguments.where((each) => each is NamedExpression);
+    return new Map.fromIterable(others,
+        key: (node) => node.name.label.token.value(),
+        value: (node) => node.expression);
+  }
+
+  /**
    * Return the list of attribute names to use when generating code. This
    *  may be different from [attributeNames] if there are multiple aliases
    *  that map to the same clause.
@@ -391,10 +474,11 @@ abstract class SubMessage extends ComplexMessage {
   List<String> get codeAttributeNames;
 
   String expanded([Function transform = _nullTransform]) {
-    fullMessageForClause(key) => key + '{' + transform(parent, this[key]) + '}';
+    fullMessageForClause(key) => key + '{' +
+        transform(parent, this[key]).toString() + '}';
     var clauses = attributeNames
         .where((key) => this[key] != null)
-        .map(fullMessageForClause);
+        .map(fullMessageForClause).toList();
     return "{$mainArgument,$icuMessageName, ${clauses.join("")}}";
   }
 
@@ -422,12 +506,12 @@ class Gender extends SubMessage {
 
   Gender();
   /**
-   * Create a new IntlGender providing [mainArgument] and the list of possible
+   * Create a new Gender providing [mainArgument] and the list of possible
    * clauses. Each clause is expected to be a list whose first element is a
-   * variable name and whose second element is either a String or
-   * a list of strings and IntlMessageSends or IntlVariableSubstitution.
+   * variable name and whose second element is either a [String] or
+   * a list of strings and [Message] or [VariableSubstitution].
    */
-  Gender.from(mainArgument, List clauses, parent) :
+  Gender.from(String mainArgument, List clauses, Message parent) :
       super.from(mainArgument, clauses, parent);
 
   Message female;
@@ -466,7 +550,7 @@ class Gender extends SubMessage {
 class Plural extends SubMessage {
 
    Plural();
-   Plural.from(mainArgument, clauses, parent) :
+   Plural.from(String mainArgument, List clauses, Message parent) :
      super.from(mainArgument, clauses, parent);
 
    Message zero;
@@ -518,3 +602,69 @@ class Plural extends SubMessage {
    }
 }
 
+/**
+ * Represents a message send of [Intl.select] inside a message that is to
+ * be internationalized. This corresponds to an ICU message syntax "select"
+ * with arbitrary options.
+ */
+class Select extends SubMessage {
+
+  Select();
+  /**
+   * Create a new [Select] providing [mainArgument] and the list of possible
+   * clauses. Each clause is expected to be a list whose first element is a
+   * variable name and whose second element is either a String or
+   * a list of strings and [Message]s or [VariableSubstitution]s.
+   */
+  Select.from(String mainArgument, List clauses, Message parent) :
+      super.from(mainArgument, clauses, parent);
+
+  Map<String, Message> cases = new Map<String, Message>();
+
+  String get icuMessageName => "select";
+  String get dartMessageName => 'Intl.select';
+
+  get attributeNames => cases.keys;
+  get codeAttributeNames => attributeNames;
+
+  void operator []=(attributeName, rawValue) {
+    var value = Message.from(rawValue, this);
+    cases[attributeName] = value;
+  }
+
+  Message operator [](String attributeName) {
+    var exact = cases[attributeName];
+    return exact == null ? cases["other"] : exact;
+  }
+
+  /**
+   * Return the arguments that we care about for the select. In this
+   * case they will all be passed in as a Map rather than as the named
+   * arguments used in Plural/Gender.
+   */
+  Map argumentsOfInterestFor(MethodInvocation node) {
+    var casesArgument = node.argumentList.arguments.elements[1];
+    return new Map.fromIterable(casesArgument.entries,
+      key: (node) => node.key.value,
+      value: (node) => node.value);
+  }
+
+  /**
+   * Write out the generated representation of this message. This differs
+   * from Plural/Gender in that it prints a literal map rather than
+   * named arguments.
+   */
+  String toCode() {
+    var out = new StringBuffer();
+    out.write('\${');
+    out.write(dartMessageName);
+    out.write('(');
+    out.write(mainArgument);
+    var args = codeAttributeNames;
+    out.write(", {");
+    args.fold(out, (buffer, arg) => buffer..write(
+        "'$arg': '${this[arg].toCode()}', "));
+    out.write("})}");
+    return out.toString();
+  }
+}

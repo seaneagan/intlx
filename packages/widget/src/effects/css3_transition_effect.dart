@@ -1,13 +1,13 @@
 part of effects;
 
-class Css3TransitionEffect extends ShowHideEffect {
+abstract class Css3TransitionEffect extends ShowHideEffect {
   static const List<String> _reservedProperties = const ['transitionProperty', 'transitionDuration'];
   final String _property;
-  final String _hideValue;
-  final String _showValue;
   final Map<String, String> _animatingOverrides;
 
-  Css3TransitionEffect(this._property, this._hideValue, this._showValue, [Map<String, String> animatingOverrides]) : _animatingOverrides = animatingOverrides == null ? new Map<String, String>() : new Map<String, String>.from(animatingOverrides) {
+  Css3TransitionEffect(this._property, [Map<String, String> animatingOverrides])
+      : _animatingOverrides = animatingOverrides == null ?
+          new Map<String, String>() : new Map<String, String>.from(animatingOverrides) {
     assert(!_animatingOverrides.containsKey(_property));
     assert(!_reservedProperties.contains(_property));
     assert(_reservedProperties.every((p) => !_animatingOverrides.containsKey(p)));
@@ -15,41 +15,37 @@ class Css3TransitionEffect extends ShowHideEffect {
 
   @protected
   @override
-  int startShow(Element element, int desiredDuration, EffectTiming timing) {
-    return _startAnimation(true, element, desiredDuration, _hideValue, _showValue, timing);
-  }
+  int startShow(Element element, int desiredDuration, EffectTiming timing,
+                [num fractionComplete=0]) =>
+      _startAnimation(true, element, desiredDuration, timing, fractionComplete);
 
   @protected
   @override
-  int startHide(Element element, int desiredDuration, EffectTiming timing) {
-    return _startAnimation(false, element, desiredDuration, _showValue, _hideValue, timing);
-  }
+  int startHide(Element element, int desiredDuration, EffectTiming timing,
+                [num fractionComplete=1]) =>
+      _startAnimation(false, element, desiredDuration, timing, fractionComplete);
 
   @protected
-  // Use this to modify a provided override given the calculated size of the element
-  // Note that if the size is not calculatable, this method is not called and the
-  // original value is used
-  String overrideStartEndValues(bool showValue, String property, String originalValue) {
-    return originalValue;
-  }
+  /**
+   * Compute the value of the CSS property value given the current fraction
+   * the effect is complete.
+   */
+  String computePropertyValue(num fractionComplete, Element element);
 
   @override
   void clearAnimation(Element element) {
     final restoreValues = _css3TransitionEffectValues.cleanup(element);
 
-    element.style.transitionTimingFunction = '';
-    element.style.transitionProperty = '';
-    element.style.transitionDuration = '';
+    var style = element.style;
+    style..transitionTimingFunction = ''
+         ..transitionProperty = ''
+         ..transitionDuration = '';
 
-    restoreValues.forEach((p, v) {
-      // TODO: Remove empty string as third param
-      // Waiting on dartbug.com/10583
-      element.style.setProperty(p, v, '');
-    });
+    restoreValues.forEach(style.setProperty);
   }
 
   int _startAnimation(bool doingShow, Element element, int desiredDuration,
-                      String startValue, String endValue, EffectTiming timing) {
+                      EffectTiming timing, num fractionComplete) {
     assert(desiredDuration > 0);
     assert(timing != null);
 
@@ -58,32 +54,27 @@ class Css3TransitionEffect extends ShowHideEffect {
 
     final localValues = _recordProperties(element, localPropsToKeep);
 
-    _animatingOverrides.forEach((p, v) {
-      // TODO: Remove empty string as third param
-      // Waiting on dartbug.com/10583
-      element.style.setProperty(p, v, '');
-    });
+    _animatingOverrides.forEach(element.style.setProperty);
 
-    startValue = overrideStartEndValues(!doingShow, _property, startValue);
-    endValue = overrideStartEndValues(doingShow, _property, endValue);
+    String startValue = computePropertyValue(fractionComplete, element);
+    String endValue = computePropertyValue(doingShow ? 1 : 0, element);
 
-    // TODO: Remove empty string as third param
-    // Waiting on dartbug.com/10583
-    element.style.setProperty(_property, startValue, '');
+    num animationFractionLeft = doingShow ? (1 - fractionComplete) : fractionComplete;
+    int actualDuration = (desiredDuration * animationFractionLeft).round();
+    element.style.setProperty(_property, startValue);
     _css3TransitionEffectValues.delayStart(element, localValues,
-        () => _setShowValue(element, endValue, desiredDuration, timing));
-    return desiredDuration;
+        () => _setShowValue(element, endValue, actualDuration, timing));
+    return actualDuration;
   }
 
-  void _setShowValue(Element element, String value, int desiredDuration, EffectTiming timing) {
+  void _setShowValue(Element element, String value, num desiredDuration, EffectTiming timing) {
     final cssTimingValue = CssEffectTiming._getCssValue(timing);
 
-    element.style.transitionTimingFunction = cssTimingValue;
-    element.style.transitionProperty = _property;
-    element.style.transitionDuration = '${desiredDuration}ms';
-    // TODO: Remove empty string as third param
-    // Waiting on dartbug.com/10583
-    element.style.setProperty(_property, value, '');
+    element.style
+      ..transitionTimingFunction = cssTimingValue
+      ..transitionProperty = _property
+      ..transitionDuration = '${desiredDuration}ms'
+      ..setProperty(_property, value);
   }
 
   static Map<String, String> _recordProperties(Element element, Iterable<String> properties) {
@@ -121,13 +112,14 @@ class _css3TransitionEffectValues {
     assert(_values[element] == null);
 
     final value = _values[element] = new _css3TransitionEffectValues(element, originalValues);
+    // TODO(jacobr): we should be able to use runAsync for this but it does the
+    // wrong thing.
 
     value.timer = new Timer(const Duration(milliseconds: 1), () {
       assert(value.timer != null);
       value.timer = null;
       action();
     });
-
   }
 
   static Map<String, String> cleanup(Element element) {
@@ -137,5 +129,3 @@ class _css3TransitionEffectValues {
     return value._cleanup();
   }
 }
-
-

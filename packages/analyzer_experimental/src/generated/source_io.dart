@@ -2,10 +2,8 @@
 // significant change. Please see the README file for more information.
 library engine.source.io;
 import 'source.dart';
-import 'dart:io';
 import 'java_core.dart';
 import 'java_io.dart';
-import 'sdk.dart' show DartSdk;
 import 'engine.dart' show AnalysisContext, AnalysisEngine;
 export 'source.dart';
 /**
@@ -24,7 +22,7 @@ class FileBasedSource implements Source {
   /**
    * The file represented by this source.
    */
-  JavaFile _file;
+  JavaFile file;
 
   /**
    * The cached encoding for this source.
@@ -54,12 +52,19 @@ class FileBasedSource implements Source {
    */
   FileBasedSource.con2(ContentCache contentCache, JavaFile file, UriKind uriKind) {
     this._contentCache = contentCache;
-    this._file = file;
+    this.file = file;
     this._uriKind = uriKind;
-    this._encoding = "${uriKind.encoding}${file.toURI().toString()}";
+    if (file.getPath().indexOf(':') > 2) {
+      try {
+        throw new IllegalArgumentException("Invalid source path: ${file}");
+      } on IllegalArgumentException catch (e) {
+        AnalysisEngine.instance.logger.logError3(e);
+        throw e;
+      }
+    }
   }
-  bool operator ==(Object object) => object != null && this.runtimeType == object.runtimeType && _file == ((object as FileBasedSource))._file;
-  bool exists() => _contentCache.getContents(this) != null || (_file.exists() && !_file.isDirectory());
+  bool operator ==(Object object) => object != null && this.runtimeType == object.runtimeType && file == ((object as FileBasedSource)).file;
+  bool exists() => _contentCache.getContents(this) != null || (file.exists() && !file.isDirectory());
   void getContents(Source_ContentReceiver receiver) {
     {
       String contents = _contentCache.getContents(this);
@@ -68,20 +73,25 @@ class FileBasedSource implements Source {
         return;
       }
     }
-    receiver.accept2(_file.readAsStringSync(), _file.lastModified());
+    receiver.accept2(file.readAsStringSync(), file.lastModified());
   }
-  String get encoding => _encoding;
-  String get fullName => _file.getAbsolutePath();
+  String get encoding {
+    if (_encoding == null) {
+      _encoding = "${_uriKind.encoding}${file.toURI().toString()}";
+    }
+    return _encoding;
+  }
+  String get fullName => file.getAbsolutePath();
   int get modificationStamp {
     int stamp = _contentCache.getModificationStamp(this);
     if (stamp != null) {
       return stamp;
     }
-    return _file.lastModified();
+    return file.lastModified();
   }
-  String get shortName => _file.getName();
+  String get shortName => file.getName();
   UriKind get uriKind => _uriKind;
-  int get hashCode => _file.hashCode;
+  int get hashCode => file.hashCode;
   bool get isInSystemLibrary => identical(_uriKind, UriKind.DART_URI);
   Source resolveRelative(Uri containedUri) {
     try {
@@ -92,19 +102,11 @@ class FileBasedSource implements Source {
     return null;
   }
   String toString() {
-    if (_file == null) {
+    if (file == null) {
       return "<unknown source>";
     }
-    return _file.getAbsolutePath();
+    return file.getAbsolutePath();
   }
-
-  /**
-   * Return the file represented by this source. This is an internal method that is only intended to
-   * be used by [UriResolver].
-   *
-   * @return the file represented by this source
-   */
-  JavaFile get file => _file;
 }
 /**
  * Instances of the class `PackageUriResolver` resolve `package` URI's in the context of
@@ -226,7 +228,7 @@ class PackageUriResolver extends UriResolver {
     JavaFile pkgDir = new JavaFile.relative(packagesDirectory, pkgName);
     try {
       pkgDir = pkgDir.getCanonicalFile();
-    } on IOException catch (e) {
+    } on JavaIOException catch (e) {
       if (!e.toString().contains("Required key not available")) {
         AnalysisEngine.instance.logger.logError2("Canonical failed: ${pkgDir}", e);
       } else if (_CanLogRequiredKeyIoException) {
@@ -262,7 +264,7 @@ class DirectoryBasedSourceContainer implements SourceContainer {
   /**
    * The container's path (not `null`).
    */
-  String _path;
+  String path;
 
   /**
    * Construct a container representing the specified directory and containing any sources whose
@@ -281,19 +283,12 @@ class DirectoryBasedSourceContainer implements SourceContainer {
    * @param path the path (not `null` and not empty)
    */
   DirectoryBasedSourceContainer.con2(String path) {
-    this._path = appendFileSeparator(path);
+    this.path = appendFileSeparator(path);
   }
-  bool contains(Source source) => source.fullName.startsWith(_path);
+  bool contains(Source source) => source.fullName.startsWith(path);
   bool operator ==(Object obj) => (obj is DirectoryBasedSourceContainer) && ((obj as DirectoryBasedSourceContainer)).path == path;
-
-  /**
-   * Answer the receiver's path, used to determine if a source is contained in the receiver.
-   *
-   * @return the path (not `null`, not empty)
-   */
-  String get path => _path;
-  int get hashCode => _path.hashCode;
-  String toString() => "SourceContainer[${_path}]";
+  int get hashCode => path.hashCode;
+  String toString() => "SourceContainer[${path}]";
 }
 /**
  * Instances of the class `FileUriResolver` resolve `file` URI's.

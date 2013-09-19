@@ -30,7 +30,7 @@ class ShowHideResult extends _Enum {
  * It is also used by [Swapper].
  */
 class ShowHide {
-  static const int _defaultDuration = 400;
+  static const int _defaultDuration = 218;
   static final Map<String, String> _defaultDisplays = new Map<String, String>();
   static final Expando<_ShowHideValues> _values = new Expando<_ShowHideValues>('_ShowHideValues');
 
@@ -80,7 +80,6 @@ class ShowHide {
     final localDisplay = element.style.display;
     final computedDisplay = computedStyle.display;
     final inferredState = computedDisplay == 'none' ? ShowHideState.HIDDEN : ShowHideState.SHOWN;
-    final size = Tools.getSize(computedStyle);
 
     _values[element] = new _ShowHideValues(computedDisplay, localDisplay, inferredState);
     return inferredState;
@@ -148,7 +147,7 @@ class ShowHide {
     assert(effect != null);
     assert(effectTiming != null);
     final values = _values[element];
-
+    num fractionComplete = null;
     switch(values.currentState) {
       case ShowHideState.SHOWING:
         // no op - let the current animation finish
@@ -159,6 +158,7 @@ class ShowHide {
         assert(!_AnimatingValues.isAnimating(element));
         return new Future.value(ShowHideResult.NOOP);
       case ShowHideState.HIDING:
+        fractionComplete = effect.computeFractionComplete(element);
         _AnimatingValues.cancelAnimation(element);
         break;
       case ShowHideState.HIDDEN:
@@ -167,12 +167,15 @@ class ShowHide {
       default:
         throw new DetailedArgumentError('oldState', 'the provided value ${values.currentState} is not supported');
     }
+    if (fractionComplete == null)
+      fractionComplete = 0;
 
     assert(!_AnimatingValues.isAnimating(element));
     _finishShow(element);
-    final durationMS = effect.startShow(element, desiredDuration, effectTiming);
+    final durationMS = effect.startShow(element, desiredDuration, effectTiming, fractionComplete);
+    // TODO(jacobr): we should listen for transitionEnd events rather than
+    // manually triggering the cleanup.
     if(durationMS > 0) {
-
       // _finishShow sets the currentState to shown, but we know better since we're animating
       assert(values.currentState == ShowHideState.SHOWN);
       values.currentState = ShowHideState.SHOWING;
@@ -197,7 +200,8 @@ class ShowHide {
     assert(effect != null);
     assert(effectTiming != null);
     final values = _values[element];
-
+    num fractionComplete = null;
+    
     switch(values.currentState) {
       case ShowHideState.HIDING:
         // no op - let the current animation finish
@@ -209,6 +213,7 @@ class ShowHide {
         _finishHide(element);
         return new Future.value(ShowHideResult.NOOP);
       case ShowHideState.SHOWING:
+        fractionComplete = effect.computeFractionComplete(element);
         _AnimatingValues.cancelAnimation(element);
         break;
       case ShowHideState.SHOWN:
@@ -218,8 +223,12 @@ class ShowHide {
         throw new DetailedArgumentError('oldState', 'the provided value ${values.currentState} is not supported');
     }
 
+    if (fractionComplete == null) {
+      fractionComplete = 1;
+    }
+    
     assert(!_AnimatingValues.isAnimating(element));
-    final durationMS = effect.startHide(element, desiredDuration, effectTiming);
+    final durationMS = effect.startHide(element, desiredDuration, effectTiming, fractionComplete);
     if(durationMS > 0) {
       _values[element].currentState = ShowHideState.HIDING;
       return _AnimatingValues.scheduleCleanup(durationMS, element, effect.clearAnimation, _finishHide);

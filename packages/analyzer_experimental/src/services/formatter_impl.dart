@@ -4,17 +4,13 @@
 
 library formatter_impl;
 
-
-import 'dart:io';
+import 'dart:math';
 
 import 'package:analyzer_experimental/analyzer.dart';
 import 'package:analyzer_experimental/src/generated/parser.dart';
 import 'package:analyzer_experimental/src/generated/scanner.dart';
 import 'package:analyzer_experimental/src/generated/source.dart';
 import 'package:analyzer_experimental/src/services/writer.dart';
-
-/// OS line separator. --- TODO(pquitslund): may not be necessary
-const NEW_LINE = '\n' ; //Platform.pathSeparator;
 
 /// Formatter options.
 class FormatterOptions {
@@ -41,31 +37,36 @@ class FormatterOptions {
 class FormatterException implements Exception {
 
   /// A message describing the error.
-  final message;
+  final String message;
 
   /// Creates a new FormatterException with an optional error [message].
-  const FormatterException([this.message = '']);
+  const FormatterException([this.message = 'FormatterException']);
 
-  FormatterException.forError(List<AnalysisError> errors) :
-    // TODO(pquitslund): add descriptive message based on errors
-    message = 'an analysis error occured during format';
+  FormatterException.forError(List<AnalysisError> errors, [LineInfo line]) :
+    message = _createMessage(errors);
 
-  String toString() => 'FormatterException: $message';
+  static String _createMessage(errors) {
+    //TODO(pquitslund): consider a verbosity flag to add/suppress details
+    var errorCode = errors[0].errorCode;
+    var phase = errorCode is ParserErrorCode ? 'parsing' : 'scanning';
+    return 'An error occured while ${phase} (${errorCode.name}).';
+  }
 
+  String toString() => '$message';
 }
 
 /// Specifies the kind of code snippet to format.
 class CodeKind {
 
-  final index;
+  final int _index;
 
-  const CodeKind(this.index);
+  const CodeKind._(this._index);
 
   /// A compilation unit snippet.
-  static const COMPILATION_UNIT = const CodeKind(0);
+  static const COMPILATION_UNIT = const CodeKind._(0);
 
   /// A statement snippet.
-  static const STATEMENT = const CodeKind(1);
+  static const STATEMENT = const CodeKind._(1);
 
 }
 
@@ -78,7 +79,7 @@ abstract class CodeFormatter {
   /// Format the specified portion (from [offset] with [length]) of the given
   /// [source] string, optionally providing an [indentationLevel].
   String format(CodeKind kind, String source, {int offset, int end,
-    int indentationLevel:0});
+    int indentationLevel: 0});
 
 }
 
@@ -86,23 +87,33 @@ class CodeFormatterImpl implements CodeFormatter, AnalysisErrorListener {
 
   final FormatterOptions options;
   final errors = <AnalysisError>[];
+  final whitespace = new RegExp(r'[\s]+');
+
+  LineInfo lineInfo;
 
   CodeFormatterImpl(this.options);
 
   String format(CodeKind kind, String source, {int offset, int end,
-      int indentationLevel:0}) {
+      int indentationLevel: 0}) {
 
-    var start = tokenize(source);
+    var startToken = tokenize(source);
     checkForErrors();
 
-    var node = parse(kind, start);
+    var node = parse(kind, startToken);
     checkForErrors();
 
-    var formatter = new SourceVisitor(options);
+    var formatter = new SourceVisitor(options, lineInfo);
     node.accept(formatter);
 
-    return formatter.writer.toString();
+    var formattedSource = formatter.writer.toString();
+    
+    checkTokenStreams(startToken, tokenize(formattedSource));
+
+    return formattedSource;
   }
+
+  checkTokenStreams(Token t1, Token t2) =>
+      new TokenStreamComparator(lineInfo, t1, t2).verifyEquals();
 
   ASTNode parse(CodeKind kind, Token start) {
 
@@ -124,93 +135,224 @@ class CodeFormatterImpl implements CodeFormatter, AnalysisErrorListener {
     }
   }
 
-  void onError(AnalysisError error) {
+  onError(AnalysisError error) {
     errors.add(error);
   }
 
   Token tokenize(String source) {
     var scanner = new StringScanner(null, source, this);
-    return scanner.tokenize();
+    var token = scanner.tokenize();
+    lineInfo = new LineInfo(scanner.lineStarts);
+    return token;
   }
 
 }
 
 
+// Compares two token streams.  Used for sanity checking formatted results.
+class TokenStreamComparator {
+
+  final LineInfo lineInfo;
+  Token token1, token2;
+
+  TokenStreamComparator(this.lineInfo, this.token1, this.token2);
+
+  /// Verify that these two token streams are equal.
+  verifyEquals() {
+    while (!isEOF(token1)) {
+      checkPrecedingComments();
+      if (!checkTokens()) {
+        throwNotEqualException(token1, token2);
+      }
+      advance();
+
+    }
+    if (!isEOF(token2)) {
+      throw new FormatterException(
+          'Expected "EOF" but got "${token2}".');
+    }
+  }
+
+  checkPrecedingComments() {
+    var comment1 = token1.precedingComments;
+    var comment2 = token2.precedingComments;
+    while (comment1 != null) {
+      if (comment2 == null) {
+        throw new FormatterException(
+            'Expected comment, "${comment1}", at ${describeLocation(token1)}, '
+            'but got none.');
+      }
+      if (!equivalentComments(comment1, comment2)) {
+        throwNotEqualException(comment1, comment2);
+      }
+      comment1 = comment1.next;
+      comment2 = comment2.next;
+    }
+    if (comment2 != null) {
+      throw new FormatterException(
+          'Unexpected comment, "${comment2}", at ${describeLocation(token2)}.');
+    }
+  }
+
+  bool equivalentComments(Token comment1, Token comment2) =>
+      comment1.lexeme.trim() == comment2.lexeme.trim();
+
+  throwNotEqualException(t1, t2) {
+    throw new FormatterException(
+        'Expected "${t1}" but got "${t2}", at ${describeLocation(t1)}.');
+  }
+
+  String describeLocation(Token token) => lineInfo == null ? '<unknown>' :
+      'Line: ${lineInfo.getLocation(token.offset).lineNumber}, '
+      'Column: ${lineInfo.getLocation(token.offset).columnNumber}';
+
+  advance() {
+    token1 = token1.next;
+    token2 = token2.next;
+  }
+
+  bool checkTokens() {
+    if (token1 == null || token2 == null) {
+      return false;
+    }
+    if (token1 == token2 || token1.lexeme == token2.lexeme) {
+      return true;
+    }
+
+    // '[' ']' => '[]'
+    if (isOPEN_SQ_BRACKET(token1) && isCLOSE_SQUARE_BRACKET(token1.next)) {
+      if (isINDEX(token2)) {
+        token1 = token1.next;
+        return true;
+      }
+    }
+    // '>' '>' => '>>'
+    if (isGT(token1) && isGT(token1.next)) {
+      if (isGT_GT(token2)) {
+        token1 = token1.next;
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+}
+
+// Cached parser for testing token types.
+final tokenTester = new Parser(null,null);
+
+/// Test if this token is an EOF token.
+bool isEOF(Token token) => tokenIs(token, TokenType.EOF);
+
+/// Test for token type.
+bool tokenIs(Token token, TokenType type) => 
+    token != null && tokenTester.matches4(token, type);
+
+/// Test if this token is a GT token.
+bool isGT(Token token) => tokenIs(token, TokenType.GT);
+
+/// Test if this token is a GT_GT token.
+bool isGT_GT(Token token) => tokenIs(token, TokenType.GT_GT);
+
+/// Test if this token is an INDEX token.
+bool isINDEX(Token token) => tokenIs(token, TokenType.INDEX);
+
+/// Test if this token is a OPEN_SQUARE_BRACKET token.
+bool isOPEN_SQ_BRACKET(Token token) =>
+    tokenIs(token, TokenType.OPEN_SQUARE_BRACKET);
+
+/// Test if this token is a CLOSE_SQUARE_BRACKET token.
+bool isCLOSE_SQUARE_BRACKET(Token token) =>
+    tokenIs(token, TokenType.CLOSE_SQUARE_BRACKET);
 
 /// An AST visitor that drives formatting heuristics.
 class SourceVisitor implements ASTVisitor {
 
   /// The writer to which the source is to be written.
-  SourceWriter writer;
+  final SourceWriter writer;
+
+  /// Cached line info for calculating blank lines.
+  LineInfo lineInfo;
+
+  /// Cached previous token for calculating preceding whitespace.
+  Token previousToken;
+
+  /// A flag to indicate that a newline should be emitted before the next token.
+  bool needsNewline = false;
+
+  /// Used for matching EOL comments
+  final twoSlashes = new RegExp(r'//[^/]');
 
   /// Initialize a newly created visitor to write source code representing
   /// the visited nodes to the given [writer].
-  SourceVisitor(FormatterOptions options) :
-      writer = new SourceWriter(initialIndent: options.initialIndentationLevel,
+  SourceVisitor(FormatterOptions options, this.lineInfo) :
+      writer = new SourceWriter(indentCount: options.initialIndentationLevel,
                                 lineSeparator: options.lineSeparator);
 
   visitAdjacentStrings(AdjacentStrings node) {
-    visitList(node.strings, ' ');
+    visitNodes(node.strings, separatedBy: space);
   }
 
   visitAnnotation(Annotation node) {
-    writer.print('@');
+    token(node.atSign);
     visit(node.name);
-    visitPrefixed('.', node.constructorName);
+    token(node.period);
+    visit(node.constructorName);
     visit(node.arguments);
   }
 
   visitArgumentDefinitionTest(ArgumentDefinitionTest node) {
-    writer.print('?');
+    token(node.question);
     visit(node.identifier);
   }
 
   visitArgumentList(ArgumentList node) {
-    writer.print('(');
-    visitList(node.arguments, ', ');
-    writer.print(')');
+    token(node.leftParenthesis);
+    visitNodes(node.arguments, separatedBy: commaSeperator);
+    token(node.rightParenthesis);
   }
 
   visitAsExpression(AsExpression node) {
     visit(node.expression);
-    writer.print(' as ');
+    space();
+    token(node.asOperator);
+    space();
     visit(node.type);
   }
 
   visitAssertStatement(AssertStatement node) {
-    writer.print('assert (');
+    token(node.keyword);
+    space();
+    token(node.leftParenthesis);
     visit(node.condition);
-    writer.print(');');
+    token(node.rightParenthesis);
+    token(node.semicolon);
   }
 
   visitAssignmentExpression(AssignmentExpression node) {
     visit(node.leftHandSide);
-    writer.print(' ');
-    writer.print(node.operator.lexeme);
-    writer.print(' ');
+    space();
+    token(node.operator);
+    space();
     visit(node.rightHandSide);
   }
 
   visitBinaryExpression(BinaryExpression node) {
     visit(node.leftOperand);
-    writer.print(' ');
-    writer.print(node.operator.lexeme);
-    writer.print(' ');
+    space();
+    token(node.operator);
+    space();
     visit(node.rightOperand);
   }
 
   visitBlock(Block node) {
-    writer.print('{');
-    writer.indent();
-
-    for (var stmt in node.statements) {
-      writer.newline();
-      visit(stmt);
-    }
-
-    writer.unindent();
-    writer.newline();
-    writer.print('}');
+    token(node.leftBracket);
+    indent();
+    visitNodes(node.statements, precededBy: newlines, separatedBy: newlines);
+    unindent();
+    newlines();
+    token(node.rightBracket);
   }
 
   visitBlockFunctionBody(BlockFunctionBody node) {
@@ -218,68 +360,77 @@ class SourceVisitor implements ASTVisitor {
   }
 
   visitBooleanLiteral(BooleanLiteral node) {
-    writer.print(node.literal.lexeme);
+    token(node.literal);
   }
 
   visitBreakStatement(BreakStatement node) {
-    writer.print('break');
-    visitPrefixed(' ', node.label);
-    writer.print(';');
+    token(node.keyword);
+    visitNode(node.label, precededBy: space);
+    token(node.semicolon);
   }
 
   visitCascadeExpression(CascadeExpression node) {
     visit(node.target);
-    visitList(node.cascadeSections);
+    visitNodes(node.cascadeSections);
   }
 
   visitCatchClause(CatchClause node) {
-    visitPrefixed('on ', node.exceptionType);
+
+    token(node.onKeyword, precededBy: space, followedBy: space);
+    visit(node.exceptionType);
+
     if (node.catchKeyword != null) {
       if (node.exceptionType != null) {
-        writer.print(' ');
+        space();
       }
-      writer.print('catch (');
+      token(node.catchKeyword);
+      space();
+      token(node.leftParenthesis);
       visit(node.exceptionParameter);
-      visitPrefixed(', ', node.stackTraceParameter);
-      writer.print(') ');
+      token(node.comma, followedBy: space);
+      visit(node.stackTraceParameter);
+      token(node.rightParenthesis);
+      space();
     } else {
-      writer.print(' ');
+      space();
     }
     visit(node.body);
   }
 
   visitClassDeclaration(ClassDeclaration node) {
-    visitToken(node.abstractKeyword, ' ');
-    writer.print('class ');
+    modifier(node.abstractKeyword);
+    token(node.classKeyword);
+    space();
     visit(node.name);
     visit(node.typeParameters);
-    visitPrefixed(' ', node.extendsClause);
-    visitPrefixed(' ', node.withClause);
-    visitPrefixed(' ', node.implementsClause);
-    writer.print(' {');
-    writer.indent();
-    for (var member in node.members) {
-      writer.newline();
-      visit(member);
-    }
-
-    writer.unindent();
-    writer.newline();
-    writer.print('}');
+    visitNode(node.extendsClause, precededBy: space);
+    visitNode(node.withClause, precededBy: space);
+    visitNode(node.implementsClause, precededBy: space);
+    space();
+    token(node.leftBracket);
+    indent();
+    visitNodes(node.members, precededBy: newlines, separatedBy: newlines);
+    unindent();
+    newlines();
+    token(node.rightBracket);
   }
 
   visitClassTypeAlias(ClassTypeAlias node) {
-    writer.print('typedef ');
+    token(node.keyword);
+    space();
     visit(node.name);
     visit(node.typeParameters);
-    writer.print(' = ');
+    space();
+    token(node.equals);
+    space();
     if (node.abstractKeyword != null) {
-      writer.print('abstract ');
+      token(node.abstractKeyword);
+      space();
     }
     visit(node.superclass);
-    visitPrefixed(' ', node.withClause);
-    visitPrefixed(' ', node.implementsClause);
-    writer.print(';');
+    visitNode(node.withClause, precededBy: space);
+    visitNode(node.implementsClause, precededBy: space);
+    token(node.semicolon);
   }
 
   visitComment(Comment node) => null;
@@ -287,194 +438,235 @@ class SourceVisitor implements ASTVisitor {
   visitCommentReference(CommentReference node) => null;
 
   visitCompilationUnit(CompilationUnit node) {
+
+    // Cache EOF for leading whitespace calculation
+    var start = node.beginToken.previous;
+    if (start != null && start.type is TokenType_EOF) {
+      previousToken = start;
+    }
+
     var scriptTag = node.scriptTag;
     var directives = node.directives;
     visit(scriptTag);
-    var prefix = scriptTag == null ? '' : ' ';
-    visitPrefixedList(prefix, directives, ' ');
-    prefix = scriptTag == null && directives.isEmpty ? '' : ' ';
-    visitPrefixedList(prefix, node.declarations, ' ');
+
+    visitNodes(directives, separatedBy: newlines, followedBy: newlines);
+
+    visitNodes(node.declarations, separatedBy: newlines);
+
+    // Handle trailing whitespace
+    token(node.endToken /* EOF */);
+    
+    // Be a good citizen, end with a NL
+    ensureTrailingNewline();
   }
 
   visitConditionalExpression(ConditionalExpression node) {
     visit(node.condition);
-    writer.print(' ? ');
+    space();
+    token(node.question);
+    space();
     visit(node.thenExpression);
-    writer.print(' : ');
+    space();
+    token(node.colon);
+    space();
     visit(node.elseExpression);
   }
 
   visitConstructorDeclaration(ConstructorDeclaration node) {
-    visitToken(node.externalKeyword, ' ');
-    visitToken(node.constKeyword, ' ');
-    visitToken(node.factoryKeyword, ' ');
+    modifier(node.externalKeyword);
+    modifier(node.constKeyword);
+    modifier(node.factoryKeyword);
     visit(node.returnType);
-    visitPrefixed('.', node.name);
+    token(node.period);
+    visit(node.name);
     visit(node.parameters);
-    visitPrefixedList(' : ', node.initializers, ', ');
-    visitPrefixed(' = ', node.redirectedConstructor);
-    visitPrefixedBody(' ', node.body);
+    token(node.separator /* = or : */, precededBy: space, followedBy: space);
+    visitNodes(node.initializers, separatedBy: commaSeperator);
+    visit(node.redirectedConstructor);
+
+    visitPrefixedBody(space, node.body);
   }
 
   visitConstructorFieldInitializer(ConstructorFieldInitializer node) {
-    visitToken(node.keyword, '.');
+    token(node.keyword);
+    token(node.period);
     visit(node.fieldName);
-    writer.print(' = ');
+    space();
+    token(node.equals);
+    space();
     visit(node.expression);
   }
 
   visitConstructorName(ConstructorName node) {
     visit(node.type);
-    visitPrefixed('.', node.name);
+    token(node.period);
+    visit(node.name);
   }
 
   visitContinueStatement(ContinueStatement node) {
-    writer.print('continue');
-    visitPrefixed(' ', node.label);
-    writer.print(';');
+    token(node.keyword);
+    visitNode(node.label, precededBy: space);
+    token(node.semicolon);
   }
 
   visitDeclaredIdentifier(DeclaredIdentifier node) {
-    visitToken(node.keyword, ' ');
-    visitSuffixed(node.type, ' ');
+    modifier(node.keyword);
+    visitNode(node.type, followedBy: space);
     visit(node.identifier);
   }
 
   visitDefaultFormalParameter(DefaultFormalParameter node) {
     visit(node.parameter);
     if (node.separator != null) {
-      writer.print(' ');
-      writer.print(node.separator.lexeme);
-      visitPrefixed(' ', node.defaultValue);
+      // The '=' separator is preceded by a space
+      if (node.separator.type == TokenType.EQ) {
+        space();
+      }
+      token(node.separator);
+      visitNode(node.defaultValue, precededBy: space);
     }
   }
 
   visitDoStatement(DoStatement node) {
-    writer.print('do ');
+    token(node.doKeyword);
+    space();
     visit(node.body);
-    writer.print(' while (');
+    space();
+    token(node.whileKeyword);
+    space();
+    token(node.leftParenthesis);
     visit(node.condition);
-    writer.print(');');
+    token(node.rightParenthesis);
+    token(node.semicolon);
   }
 
   visitDoubleLiteral(DoubleLiteral node) {
-    writer.print(node.literal.lexeme);
+    token(node.literal);
   }
 
   visitEmptyFunctionBody(EmptyFunctionBody node) {
-    writer.print(';');
+    token(node.semicolon);
   }
 
   visitEmptyStatement(EmptyStatement node) {
-    writer.print(';');
+    token(node.semicolon);
   }
 
   visitExportDirective(ExportDirective node) {
-    writer.print('export ');
+    token(node.keyword);
+    space();
     visit(node.uri);
-    visitPrefixedList(' ', node.combinators, ' ');
-    writer.print(';');
+    visitNodes(node.combinators, precededBy: space, separatedBy: space);
+    token(node.semicolon);
   }
 
   visitExpressionFunctionBody(ExpressionFunctionBody node) {
-    writer.print('=> ');
+    token(node.functionDefinition);
+    space();
     visit(node.expression);
-    if (node.semicolon != null) {
-      writer.print(';');
-    }
+    token(node.semicolon);
   }
 
   visitExpressionStatement(ExpressionStatement node) {
     visit(node.expression);
-    writer.print(';');
+    token(node.semicolon);
   }
 
   visitExtendsClause(ExtendsClause node) {
-    writer.print('extends ');
+    token(node.keyword);
+    space();
     visit(node.superclass);
   }
 
   visitFieldDeclaration(FieldDeclaration node) {
-    visitToken(node.keyword, ' ');
+    modifier(node.staticKeyword);
     visit(node.fields);
-    writer.print(';');
+    token(node.semicolon);
   }
 
   visitFieldFormalParameter(FieldFormalParameter node) {
-    visitToken(node.keyword, ' ');
-    visitSuffixed(node.type, ' ');
-    writer.print('this.');
+    token(node.keyword, followedBy: space);
+    visitNode(node.type, followedBy: space);
+    token(node.thisToken);
+    token(node.period);
     visit(node.identifier);
     visit(node.parameters);
   }
 
   visitForEachStatement(ForEachStatement node) {
-    writer.print('for (');
+    token(node.forKeyword);
+    space();
+    token(node.leftParenthesis);
     visit(node.loopVariable);
-    writer.print(' in ');
+    space();
+    token(node.inKeyword);
+    space();
     visit(node.iterator);
-    writer.print(') ');
+    token(node.rightParenthesis);
+    space();
     visit(node.body);
   }
 
   visitFormalParameterList(FormalParameterList node) {
     var groupEnd = null;
-    writer.print('(');
+    token(node.leftParenthesis);
     var parameters = node.parameters;
     var size = parameters.length;
     for (var i = 0; i < size; i++) {
       var parameter = parameters[i];
       if (i > 0) {
-        writer.print(', ');
+        append(', ');
       }
       if (groupEnd == null && parameter is DefaultFormalParameter) {
         if (identical(parameter.kind, ParameterKind.NAMED)) {
           groupEnd = '}';
-          writer.print('{');
+          append('{');
         } else {
           groupEnd = ']';
-          writer.print('[');
+          append('[');
         }
       }
       parameter.accept(this);
     }
     if (groupEnd != null) {
-      writer.print(groupEnd);
+      append(groupEnd);
     }
-    writer.print(')');
+    token(node.rightParenthesis);
   }
 
   visitForStatement(ForStatement node) {
-    var initialization = node.initialization;
-    writer.print('for (');
-    if (initialization != null) {
-      visit(initialization);
+    token(node.forKeyword);
+    space();
+    token(node.leftParenthesis);
+    if (node.initialization != null) {
+      visit(node.initialization);
     } else {
       visit(node.variables);
     }
-    writer.print(';');
-    visitPrefixed(' ', node.condition);
-    writer.print(';');
-    visitPrefixedList(' ', node.updaters, ', ');
-    writer.print(') ');
+    token(node.leftSeparator);
+    space();
+    visit(node.condition);
+    token(node.rightSeparator);
+    visitNodes(node.updaters, precededBy: space, separatedBy: space);
+    token(node.rightParenthesis);
+    space();
     visit(node.body);
   }
 
   visitFunctionDeclaration(FunctionDeclaration node) {
-    visitSuffixed(node.returnType, ' ');
-    visitToken(node.propertyKeyword, ' ');
+    visitNode(node.returnType, followedBy: space);
+    token(node.propertyKeyword, followedBy: space);
     visit(node.name);
     visit(node.functionExpression);
   }
 
   visitFunctionDeclarationStatement(FunctionDeclarationStatement node) {
     visit(node.functionDeclaration);
-    writer.print(';');
   }
 
   visitFunctionExpression(FunctionExpression node) {
     visit(node.parameters);
-    writer.print(' ');
+    space();
     visit(node.body);
   }
 
@@ -484,300 +676,338 @@ class SourceVisitor implements ASTVisitor {
   }
 
   visitFunctionTypeAlias(FunctionTypeAlias node) {
-    writer.print('typedef ');
-    visitSuffixed(node.returnType, ' ');
+    token(node.keyword);
+    space();
+    visitNode(node.returnType, followedBy: space);
     visit(node.name);
     visit(node.typeParameters);
     visit(node.parameters);
-    writer.print(';');
+    token(node.semicolon);
   }
 
   visitFunctionTypedFormalParameter(FunctionTypedFormalParameter node) {
-    visitSuffixed(node.returnType, ' ');
+    visitNode(node.returnType, followedBy: space);
     visit(node.identifier);
     visit(node.parameters);
   }
 
   visitHideCombinator(HideCombinator node) {
-    writer.print('hide ');
-    visitList(node.hiddenNames, ', ');
+    token(node.keyword);
+    space();
+    visitNodes(node.hiddenNames, separatedBy: commaSeperator);
   }
 
   visitIfStatement(IfStatement node) {
-    writer.print('if (');
+    token(node.ifKeyword);
+    space();
+    token(node.leftParenthesis);
     visit(node.condition);
-    writer.print(') ');
+    token(node.rightParenthesis);
+    space();
     visit(node.thenStatement);
-    visitPrefixed(' else ', node.elseStatement);
+    //visitPrefixed(' else ', node.elseStatement);
+    if (node.elseStatement != null) {
+      space();
+      token(node.elseKeyword);
+      space();
+      visit(node.elseStatement);
+    }
   }
 
   visitImplementsClause(ImplementsClause node) {
-    writer.print('implements ');
-    visitList(node.interfaces, ', ');
+    token(node.keyword);
+    space();
+    visitNodes(node.interfaces, separatedBy: commaSeperator);
   }
 
   visitImportDirective(ImportDirective node) {
-    writer.print('import ');
+    token(node.keyword);
+    space();
     visit(node.uri);
-    visitPrefixed(' as ', node.prefix);
-    visitPrefixedList(' ', node.combinators, ' ');
-    writer.print(';');
+    token(node.asToken, precededBy: space, followedBy: space);
+    visit(node.prefix);
+    visitNodes(node.combinators, precededBy: space, separatedBy: space);
+    token(node.semicolon);
   }
 
   visitIndexExpression(IndexExpression node) {
     if (node.isCascaded) {
-      writer.print('..');
+      token(node.period);
     } else {
-      visit(node.array);
+      visit(node.target);
     }
-    writer.print('[');
+    token(node.leftBracket);
     visit(node.index);
-    writer.print(']');
+    token(node.rightBracket);
   }
 
   visitInstanceCreationExpression(InstanceCreationExpression node) {
-    visitToken(node.keyword, ' ');
+    token(node.keyword);
+    space();
     visit(node.constructorName);
     visit(node.argumentList);
   }
 
   visitIntegerLiteral(IntegerLiteral node) {
-    writer.print(node.literal.lexeme);
+    token(node.literal);
   }
 
   visitInterpolationExpression(InterpolationExpression node) {
     if (node.rightBracket != null) {
-      writer.print('\${');
+      token(node.leftBracket);
       visit(node.expression);
-      writer.print('}');
+      token(node.rightBracket);
     } else {
-      writer.print('\$');
+      token(node.leftBracket);
       visit(node.expression);
     }
   }
 
   visitInterpolationString(InterpolationString node) {
-    writer.print(node.contents.lexeme);
+    token(node.contents);
   }
 
   visitIsExpression(IsExpression node) {
     visit(node.expression);
-    if (node.notOperator == null) {
-      writer.print(' is ');
-    } else {
-      writer.print(' is! ');
-    }
+    space();
+    token(node.isOperator);
+    token(node.notOperator);
+    space();
     visit(node.type);
   }
 
   visitLabel(Label node) {
     visit(node.label);
-    writer.print(':');
+    token(node.colon);
   }
 
   visitLabeledStatement(LabeledStatement node) {
-    visitSuffixedList(node.labels, ' ', ' ');
+    visitNodes(node.labels, separatedBy: space, followedBy: space);
     visit(node.statement);
   }
 
   visitLibraryDirective(LibraryDirective node) {
-    writer.print('library ');
+    token(node.keyword);
+    space();
     visit(node.name);
-    writer.print(';');
+    token(node.semicolon);
   }
 
   visitLibraryIdentifier(LibraryIdentifier node) {
-    writer.print(node.name);
+    append(node.name);
   }
 
   visitListLiteral(ListLiteral node) {
-    if (node.modifier != null) {
-      writer.print(node.modifier.lexeme);
-      writer.print(' ');
-    }
-    visitSuffixed(node.typeArguments, ' ');
-    writer.print('[');
-    visitList(node.elements, ', ');
-    writer.print(']');
+    modifier(node.constKeyword);
+    visit(node.typeArguments);
+    token(node.leftBracket);
+    visitNodes(node.elements, separatedBy: commaSeperator);
+    optionalTrailingComma(node.rightBracket);
+    token(node.rightBracket);
   }
 
   visitMapLiteral(MapLiteral node) {
-    if (node.modifier != null) {
-      writer.print(node.modifier.lexeme);
-      writer.print(' ');
-    }
-    visitSuffixed(node.typeArguments, ' ');
-    writer.print('{');
-    visitList(node.entries, ', ');
-    writer.print('}');
+    modifier(node.constKeyword);
+    visitNode(node.typeArguments, followedBy: space);
+    token(node.leftBracket);
+    visitNodes(node.entries, separatedBy: commaSeperator);
+    optionalTrailingComma(node.rightBracket);
+    token(node.rightBracket);
   }
-
+  
   visitMapLiteralEntry(MapLiteralEntry node) {
     visit(node.key);
-    writer.print(' : ');
+    token(node.separator);
+    space();
     visit(node.value);
   }
 
   visitMethodDeclaration(MethodDeclaration node) {
-    visitToken(node.externalKeyword, ' ');
-    visitToken(node.modifierKeyword, ' ');
-    visitSuffixed(node.returnType, ' ');
-    visitToken(node.propertyKeyword, ' ');
-    visitToken(node.operatorKeyword, ' ');
+    modifier(node.externalKeyword);
+    modifier(node.modifierKeyword);
+    visitNode(node.returnType, followedBy: space);
+    modifier(node.propertyKeyword);
+    modifier(node.operatorKeyword);
     visit(node.name);
     if (!node.isGetter) {
       visit(node.parameters);
     }
-    visitPrefixedBody(' ', node.body);
+    visitPrefixedBody(space, node.body);
   }
 
   visitMethodInvocation(MethodInvocation node) {
-    if (node.isCascaded) {
-      writer.print('..');
-    } else {
-      visitSuffixed(node.target, '.');
-    }
+    visit(node.target);
+    token(node.period);
     visit(node.methodName);
     visit(node.argumentList);
   }
 
   visitNamedExpression(NamedExpression node) {
     visit(node.name);
-    visitPrefixed(' ', node.expression);
+    visitNode(node.expression, precededBy: space);
+  }
+
+  visitNativeClause(NativeClause node) {
+    token(node.keyword);
+    space();
+    visit(node.name);
   }
 
   visitNativeFunctionBody(NativeFunctionBody node) {
-    writer.print('native ');
+    token(node.nativeToken);
+    space();
     visit(node.stringLiteral);
-    writer.print(';');
+    token(node.semicolon);
   }
 
   visitNullLiteral(NullLiteral node) {
-    writer.print('null');
+    token(node.literal);
   }
 
   visitParenthesizedExpression(ParenthesizedExpression node) {
-    writer.print('(');
+    token(node.leftParenthesis);
     visit(node.expression);
-    writer.print(')');
+    token(node.rightParenthesis);
   }
 
   visitPartDirective(PartDirective node) {
-    writer.print('part ');
+    token(node.keyword);
+    space();
     visit(node.uri);
-    writer.print(';');
+    token(node.semicolon);
   }
 
   visitPartOfDirective(PartOfDirective node) {
-    writer.print('part of ');
+    token(node.keyword);
+    space();
+    token(node.ofToken);
+    space();
     visit(node.libraryName);
-    writer.print(';');
+    token(node.semicolon);
   }
 
   visitPostfixExpression(PostfixExpression node) {
     visit(node.operand);
-    writer.print(node.operator.lexeme);
+    token(node.operator);
   }
 
   visitPrefixedIdentifier(PrefixedIdentifier node) {
     visit(node.prefix);
-    writer.print('.');
+    token(node.period);
     visit(node.identifier);
   }
 
   visitPrefixExpression(PrefixExpression node) {
-    writer.print(node.operator.lexeme);
+    token(node.operator);
     visit(node.operand);
   }
 
   visitPropertyAccess(PropertyAccess node) {
     if (node.isCascaded) {
-      writer.print('..');
+      token(node.operator);
     } else {
       visit(node.target);
-      writer.print('.');
+      token(node.operator);
     }
     visit(node.propertyName);
   }
 
   visitRedirectingConstructorInvocation(RedirectingConstructorInvocation node) {
-    writer.print('this');
-    visitPrefixed('.', node.constructorName);
+    token(node.keyword);
+    token(node.period);
+    visit(node.constructorName);
     visit(node.argumentList);
   }
 
   visitRethrowExpression(RethrowExpression node) {
-    writer.print('rethrow');
+    token(node.keyword);
   }
 
   visitReturnStatement(ReturnStatement node) {
     var expression = node.expression;
     if (expression == null) {
-      writer.print('return;');
+      token(node.keyword);
+      token(node.semicolon);
     } else {
-      writer.print('return ');
+      token(node.keyword);
+      space();
       expression.accept(this);
-      writer.print(';');
+      token(node.semicolon);
     }
   }
 
   visitScriptTag(ScriptTag node) {
-    writer.print(node.scriptTag.lexeme);
+    token(node.scriptTag);
   }
 
   visitShowCombinator(ShowCombinator node) {
-    writer.print('show ');
-    visitList(node.shownNames, ', ');
+    token(node.keyword);
+    space();
+    visitNodes(node.shownNames, separatedBy: commaSeperator);
   }
 
   visitSimpleFormalParameter(SimpleFormalParameter node) {
-    visitToken(node.keyword, ' ');
-    visitSuffixed(node.type, ' ');
+    modifier(node.keyword);
+    visitNode(node.type, followedBy: space);
     visit(node.identifier);
   }
 
   visitSimpleIdentifier(SimpleIdentifier node) {
-    writer.print(node.token.lexeme);
+    token(node.token);
   }
 
   visitSimpleStringLiteral(SimpleStringLiteral node) {
-    writer.print(node.literal.lexeme);
+    token(node.literal);
   }
 
   visitStringInterpolation(StringInterpolation node) {
-    visitList(node.elements);
+    visitNodes(node.elements);
   }
 
   visitSuperConstructorInvocation(SuperConstructorInvocation node) {
-    writer.print('super');
-    visitPrefixed('.', node.constructorName);
+    token(node.keyword);
+    token(node.period);
+    visit(node.constructorName);
     visit(node.argumentList);
   }
 
   visitSuperExpression(SuperExpression node) {
-    writer.print('super');
+    token(node.keyword);
   }
 
   visitSwitchCase(SwitchCase node) {
-    visitSuffixedList(node.labels, ' ', ' ');
-    writer.print('case ');
+    visitNodes(node.labels, separatedBy: space, followedBy: space);
+    token(node.keyword);
+    space();
     visit(node.expression);
-    writer.print(': ');
-    visitList(node.statements, ' ');
+    token(node.colon);
+    newlines();
+    indent();
+    visitNodes(node.statements, separatedBy: newlines);
+    unindent();
   }
 
   visitSwitchDefault(SwitchDefault node) {
-    visitSuffixedList(node.labels, ' ', ' ');
-    writer.print('default: ');
-    visitList(node.statements, ' ');
+    visitNodes(node.labels, separatedBy: space, followedBy: space);
+    token(node.keyword);
+    token(node.colon);
+    space();
+    visitNodes(node.statements, separatedBy: space);
   }
 
   visitSwitchStatement(SwitchStatement node) {
-    writer.print('switch (');
+    token(node.keyword);
+    space();
+    token(node.leftParenthesis);
     visit(node.expression);
-    writer.print(') {');
-    visitList(node.members, ' ');
-    writer.print('}');
+    token(node.rightParenthesis);
+    space();
+    token(node.leftBracket);
+    indent();
+    newlines();
+    visitNodes(node.members, separatedBy: newlines, followedBy: newlines);
+    unindent();
+    token(node.rightBracket);
   }
 
   visitSymbolLiteral(SymbolLiteral node) {
@@ -785,29 +1015,33 @@ class SourceVisitor implements ASTVisitor {
   }
 
   visitThisExpression(ThisExpression node) {
-    writer.print('this');
+    token(node.keyword);
   }
 
   visitThrowExpression(ThrowExpression node) {
-    writer.print('throw ');
+    token(node.keyword);
+    space();
     visit(node.expression);
   }
 
   visitTopLevelVariableDeclaration(TopLevelVariableDeclaration node) {
-    visitSuffixed(node.variables, ';');
+    visit(node.variables);
+    token(node.semicolon);
   }
 
   visitTryStatement(TryStatement node) {
-    writer.print('try ');
+    token(node.tryKeyword);
+    space();
     visit(node.body);
-    visitPrefixedList(' ', node.catchClauses, ' ');
-    visitPrefixed(' finally ', node.finallyClause);
+    visitNodes(node.catchClauses, precededBy: space, separatedBy: space);
+    token(node.finallyKeyword, precededBy: space, followedBy: space);
+    visit(node.finallyBlock);
   }
 
   visitTypeArgumentList(TypeArgumentList node) {
-    writer.print('<');
-    visitList(node.arguments, ', ');
-    writer.print('>');
+    token(node.leftBracket);
+    visitNodes(node.arguments, separatedBy: commaSeperator);
+    token(node.rightBracket);
   }
 
   visitTypeName(TypeName node) {
@@ -817,41 +1051,51 @@ class SourceVisitor implements ASTVisitor {
 
   visitTypeParameter(TypeParameter node) {
     visit(node.name);
-    visitPrefixed(' extends ', node.bound);
+    token(node.keyword /* extends */, precededBy: space, followedBy: space);
+    visit(node.bound);
   }
 
   visitTypeParameterList(TypeParameterList node) {
-    writer.print('<');
-    visitList(node.typeParameters, ', ');
-    writer.print('>');
+    token(node.leftBracket);
+    visitNodes(node.typeParameters, separatedBy: commaSeperator);
+    token(node.rightBracket);
   }
 
   visitVariableDeclaration(VariableDeclaration node) {
     visit(node.name);
-    visitPrefixed(' = ', node.initializer);
+    if (node.initializer != null) {
+      space();
+      token(node.equals);
+      space();
+      visit(node.initializer);
+    }
   }
 
   visitVariableDeclarationList(VariableDeclarationList node) {
-    visitToken(node.keyword, ' ');
-    visitSuffixed(node.type, ' ');
-    visitList(node.variables, ', ');
+    modifier(node.keyword);
+    visitNode(node.type, followedBy: space);
+    visitNodes(node.variables, separatedBy: commaSeperator);
   }
 
   visitVariableDeclarationStatement(VariableDeclarationStatement node) {
     visit(node.variables);
-    writer.print(';');
+    token(node.semicolon);
   }
 
   visitWhileStatement(WhileStatement node) {
-    writer.print('while (');
+    token(node.keyword);
+    space();
+    token(node.leftParenthesis);
     visit(node.condition);
-    writer.print(') ');
+    token(node.rightParenthesis);
+    space();
     visit(node.body);
   }
 
   visitWithClause(WithClause node) {
-    writer.print('with ');
-    visitList(node.mixinTypes, ', ');
+    token(node.withKeyword);
+    space();
+    visitNodes(node.mixinTypes, separatedBy: commaSeperator);
   }
 
   /// Safely visit the given [node].
@@ -861,85 +1105,264 @@ class SourceVisitor implements ASTVisitor {
     }
   }
 
-  /// Safely visit the given [node], printing the [suffix] after the node if it
-  /// is non-null.
-  visitSuffixed(ASTNode node, String suffix) {
-    if (node != null) {
-      node.accept(this);
-      writer.print(suffix);
-    }
-  }
-
-  /// Safely visit the given [node], printing the [prefix] before the node if
-  /// it is non-null.
-  visitPrefixed(String prefix, ASTNode node) {
-    if (node != null) {
-      writer.print(prefix);
-      node.accept(this);
-    }
-  }
-
   /// Visit the given function [body], printing the [prefix] before if given
   /// body is not empty.
-  visitPrefixedBody(String prefix, FunctionBody body) {
+  visitPrefixedBody(prefix(), FunctionBody body) {
     if (body is! EmptyFunctionBody) {
-      writer.print(prefix);
+      prefix();
     }
     visit(body);
   }
 
-  /// Safely visit the given [token], printing the suffix after the [token]
-  /// node if it is non-null.
-  visitToken(Token token, String suffix) {
+  /// Visit a list of [nodes] if not null, optionally separated and/or preceded
+  /// and followed by the given functions.
+  visitNodes(NodeList<ASTNode> nodes, {precededBy(): null,
+      separatedBy() : null, followedBy(): null}) {
+    if (nodes != null) {
+      var size = nodes.length;
+      if (size > 0) {
+        if (precededBy != null) {
+          precededBy();
+        }
+        for (var i = 0; i < size; i++) {
+          if (i > 0 && separatedBy != null) {
+            separatedBy();
+          }
+          nodes[i].accept(this);
+        }
+        if (followedBy != null) {
+          followedBy();
+        }
+      }
+    }
+  }
+
+  /// Visit a [node], and if not null, optionally preceded or followed by the
+  /// specified functions.
+  visitNode(ASTNode node, {precededBy(): null, followedBy(): null}) {
+    if (node != null) {
+      if (precededBy != null) {
+        precededBy();
+      }
+      node.accept(this);
+      if (followedBy != null) {
+        followedBy();
+      }
+    }
+  }
+
+
+  /// Emit the given [modifier] if it's non null, followed by non-breaking
+  /// whitespace.
+  modifier(Token modifier) {
+    token(modifier, followedBy: space);
+  }
+
+  /// Indicate that at least one newline should be emitted and possibly more
+  /// if the source has them.
+  newlines() {
+    needsNewline = true;
+  }
+
+  /// Optionally emit a trailing comma.
+  optionalTrailingComma(Token rightBracket) {
+    if (rightBracket.previous.lexeme == ',') {
+      comma();
+    }
+  }
+  
+  token(Token token, {precededBy(), followedBy(), int minNewlines: 0}) {
     if (token != null) {
-      writer.print(token.lexeme);
-      writer.print(suffix);
+      if (needsNewline) {
+        minNewlines = max(1, minNewlines);
+      }
+      var emitted = emitPrecedingCommentsAndNewlines(token, min: minNewlines);
+      if (emitted > 0) {
+        needsNewline = false;
+      }
+      if (precededBy != null) {
+        precededBy();
+      }
+      append(token.lexeme);
+      if (followedBy != null) {
+        followedBy();
+      }
+      previousToken = token;
     }
   }
 
-  /// Print a list of [nodes], separated by the given [separator].
-  visitList(NodeList<ASTNode> nodes, [String separator = '']) {
-    if (nodes != null) {
-      var size = nodes.length;
-      for (var i = 0; i < size; i++) {
-        if (i > 0) {
-          writer.print(separator);
-        }
-        nodes[i].accept(this);
-      }
+  commaSeperator() {
+    comma();
+    space();
+  }
+
+  comma() {
+    append(',');
+  }
+
+  /// Emit a non-breakable space.
+  space() {
+    //TODO(pquitslund): replace with a proper space token
+    append(' ');
+  }
+
+  /// Emit a breakable space
+  breakableSpace() {
+    //Implement
+  }
+
+  /// Append the given [string] to the source writer if it's non-null.
+  append(String string) {
+    if (string != null && !string.isEmpty) {
+      writer.print(string);
     }
   }
 
-  /// Print a list of [nodes], separated by the given [separator].
-  visitSuffixedList(NodeList<ASTNode> nodes, String separator, String suffix) {
-    if (nodes != null) {
-      var size = nodes.length;
-      if (size > 0) {
-        for (var i = 0; i < size; i++) {
-          if (i > 0) {
-            writer.print(separator);
-          }
-          nodes[i].accept(this);
-        }
-        writer.print(suffix);
+  /// Indent.
+  indent() {
+    writer.indent();
+  }
+
+  /// Unindent
+  unindent() {
+    writer.unindent();
+  }
+
+
+  /// Emit any detected comments and newlines or a minimum as specified
+  /// by [min].
+  int emitPrecedingCommentsAndNewlines(Token token, {min: 0}) {
+
+    var comment = token.precedingComments;
+    var currentToken = comment != null ? comment : token;
+
+    //Handle EOLs before newlines
+    if (isAtEOL(comment)) {
+      emitComment(comment, previousToken);
+      comment = comment.next;
+      currentToken = comment != null ? comment : token;
+    }
+
+    var lines = max(min, countNewlinesBetween(previousToken, currentToken));
+    writer.newlines(lines);
+
+    var previousToken = currentToken.previous;
+
+    while (comment != null) {
+
+      emitComment(comment, previousToken);
+
+      var nextToken = comment.next != null ? comment.next : token;
+      var newlines = calculateNewlinesBetweenComments(comment, nextToken);
+      if (newlines > 0) {
+        writer.newlines(newlines);
+        lines += newlines;
+      } else if (!isEOF(token)) {
+        space();
       }
+
+      previousToken = comment;
+      comment = comment.next;
+    }
+
+    previousToken = token;
+    return lines;
+  }
+
+
+  ensureTrailingNewline() {
+    if (writer.lastToken is! NewlineToken) {
+      writer.newline();
+    }
+  }
+  
+  
+  /// Test if this [comment] is at the end of a line.
+  bool isAtEOL(Token comment) =>
+      comment != null && comment.toString().trim().startsWith(twoSlashes) &&
+      sameLine(comment, previousToken);
+
+  /// Emit this [comment], inserting leading whitespace if appropriate.
+  emitComment(Token comment, Token previousToken) {
+    if (!writer.currentLine.isWhitespace() && !isBlock(comment)) {
+      var ws = countSpacesBetween(previousToken, comment);
+      // Preserve one space but no more
+      if (ws > 0) {
+        space();
+      }
+    }
+
+    append(comment.toString().trim());
+  }
+
+  /// Count spaces between these tokens.  Tokens on different lines return 0.
+  int countSpacesBetween(Token last, Token current) => isEOF(last) ||
+      countNewlinesBetween(last, current) > 0 ? 0 : current.offset - last.end;
+
+  /// Count the blanks between these two nodes.
+  int countBlankLinesBetween(ASTNode lastNode, ASTNode currentNode) =>
+      countNewlinesBetween(lastNode.endToken, currentNode.beginToken);
+
+  /// Count newlines preceeding this [node].
+  int countPrecedingNewlines(ASTNode node) =>
+      countNewlinesBetween(node.beginToken.previous, node.beginToken);
+
+  /// Count newlines succeeding this [node].
+  int countSucceedingNewlines(ASTNode node) => node == null ? 0 :
+      countNewlinesBetween(node.endToken, node.endToken.next);
+
+  /// Count the blanks between these two tokens.
+  int countNewlinesBetween(Token last, Token current) {
+    if (last == null || current == null) {
+      return 0;
+    }
+
+    return linesBetween(last.end - 1, current.offset);
+  }
+
+  /// Calculate the newlines that should separate these comments.
+  int calculateNewlinesBetweenComments(Token last, Token current) {
+    // Insist on a newline after doc comments or single line comments
+    // (NOTE that EOL comments have already been processed).
+    if (isOldSingleLineDocComment(last) || isSingleLineComment(last)) {
+      return max(1, countNewlinesBetween(last, current));
+    } else {
+      return countNewlinesBetween(last, current);
     }
   }
 
-  /// Print a list of [nodes], separated by the given [separator].
-  visitPrefixedList(String prefix, NodeList<ASTNode> nodes, String separator) {
-    if (nodes != null) {
-      var size = nodes.length;
-      if (size > 0) {
-        writer.print(prefix);
-        for (var i = 0; i < size; i++) {
-          if (i > 0) {
-            writer.print(separator);
-          }
-          nodes[i].accept(this);
-        }
-      }
-    }
+  /// Single line multi-line comments (e.g., '/** like this */').
+  bool isOldSingleLineDocComment(Token comment) =>
+      comment.lexeme.startsWith(r'/**') && singleLine(comment);
+
+  /// Test if this [token] spans just one line.
+  bool singleLine(Token token) => linesBetween(token.offset, token.end) < 1;
+
+  /// Test if token [first] is on the same line as [second].
+  bool sameLine(Token first, Token second) =>
+      countNewlinesBetween(first, second) == 0;
+
+  /// Test if this is a multi-line [comment] (e.g., '/* ...' or '/** ...')
+  bool isMultiLineComment(Token comment) =>
+      comment.type == TokenType.MULTI_LINE_COMMENT;
+
+  /// Test if this is a single-line [comment] (e.g., '// ...')
+  bool isSingleLineComment(Token comment) =>
+      comment.type == TokenType.SINGLE_LINE_COMMENT;
+
+  /// Test if this [comment] is a block comment (e.g., '/* like this */')..
+  bool isBlock(Token comment) =>
+      isMultiLineComment(comment) && singleLine(comment);
+
+  /// Count the lines between two offsets.
+  int linesBetween(int lastOffset, int currentOffset) {
+    var lastLine =
+        lineInfo.getLocation(lastOffset).lineNumber;
+    var currentLine =
+        lineInfo.getLocation(currentOffset).lineNumber;
+    return currentLine - lastLine;
   }
+
+  String toString() => writer.toString();
 
 }

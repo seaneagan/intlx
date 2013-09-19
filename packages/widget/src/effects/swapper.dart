@@ -20,7 +20,7 @@ class Swapper {
 
     assert(host != null);
 
-    if(?effect && !?hideEffect) {
+    if(hideEffect == null) {
       hideEffect = effect;
     }
 

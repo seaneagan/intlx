@@ -1,6 +1,5 @@
 import 'dart:html';
 import 'package:web_ui/web_ui.dart';
-import 'package:widget/effects.dart';
 import 'package:widget/widget.dart';
 import 'package:bot/bot.dart';
 
@@ -14,16 +13,6 @@ class Accordion extends WebComponent {
   @protected
   void created() {
     ShowHideComponent.toggleEvent.forTarget(this).listen(_onOpen);
-  }
-
-  @protected
-  void inserted() {
-    // collapse all 'collapse' children
-    _getAllCollapseElements()
-      .map((Element e) => e.xtag)
-      .forEach((ShowHideComponent e) {
-        e.hide();
-      });
   }
 
   List<Element> _getAllCollapseElements() =>

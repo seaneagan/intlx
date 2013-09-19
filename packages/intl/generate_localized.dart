@@ -13,10 +13,9 @@
  */
 library generate_localized;
 
-import 'extract_messages.dart';
 import 'src/intl_message.dart';
 import 'dart:io';
-import 'package:pathos/path.dart' as path;
+import 'package:path/path.dart' as path;
 
 /**
  * If the import path following package: is something else, modify the
@@ -86,7 +85,7 @@ abstract class TranslatedMessage {
  * We can't use a hyphen in a Dart library name, so convert the locale
  * separator to an underscore.
  */
-String asLibraryName(String x) => x.replaceAll('-', '_');
+String _libraryName(String x) => 'messages_' + x.replaceAll('-', '_');
 
 /**
  * Generate a file <[generated_file_prefix]>_messages_<[locale]>.dart
@@ -136,7 +135,7 @@ String prologue(String locale) => """
  * function name.
  */
 
-library messages_${locale.replaceAll('-','_')};
+library ${_libraryName(locale)};
 import 'package:$intlImportPath/intl.dart';
 import 'package:$intlImportPath/message_lookup_by_library.dart';
 
@@ -147,6 +146,9 @@ class MessageLookup extends MessageLookupByLibrary {
   get localeName => '$locale';
 """;
 
+
+_deferredName(locale) => "lazy_${_libraryName(locale)}";
+
 /**
  * This section generates the messages_all.dart file based on the list of
  * [allLocales].
@@ -154,17 +156,31 @@ class MessageLookup extends MessageLookupByLibrary {
 String generateMainImportFile() {
   var output = new StringBuffer();
   output.write(mainPrologue);
-  for (var each in allLocales) {
-    var baseFile = '${generatedFilePrefix}messages_$each.dart';
+  for (var locale in allLocales) {
+    var baseFile = '${generatedFilePrefix}messages_$locale.dart';
     var file = importForGeneratedFile(baseFile);
-    output.write("import '$file' as ${asLibraryName(each)};\n");
+    // TODO(alanknight): Restore this once deferred loading works in dartj2s.
+    // Issue 12824
+    //    output.write("@${_deferredName(locale)}\n");
+    output.write("import '$file' as ${_libraryName(locale)};\n");
   }
+  output.write("\n");
+  // Issue 12824
+  //for (var locale in allLocales) {
+  //  output.write("const ${_deferredName(locale)} = const DeferredLibrary");
+  //  output.write("('${_libraryName(locale)}');\n");
+  //}
+  //output.write("\nconst deferredLibraries = const {\n");
+  //for (var locale in allLocales) {
+  //  output.write("  '$locale' : ${_deferredName(locale)},\n");
+  //}
+  //output.write("};\n");
   output.write(
     "\nMessageLookupByLibrary _findExact(localeName) {\n"
     "  switch (localeName) {\n");
-  for (var each in allLocales) {
+  for (var locale in allLocales) {
     output.write(
-        "    case '$each' : return ${asLibraryName(each)}.messages;\n");
+        "    case '$locale' : return ${_libraryName(locale)}.messages;\n");
   }
   output.write(closing);
   return output.toString();
@@ -199,10 +215,13 @@ const closing = """
 }
 
 /** User programs should call this before using [localeName] for messages.*/
-initializeMessages(localeName) {
+Future initializeMessages(String localeName) {
   initializeInternalMessageLookup(() => new CompositeMessageLookup());
   messageLookup.addLocale(localeName, _findGeneratedMessagesFor);
-  return new Future.value();
+  // TODO(alanknight): Restore once Issue 12824 is fixed.
+  // var lib = deferredLibraries[localeName];
+  // return lib == null ? new Future.value(false) : lib.load();
+  return new Future.value(true);
 }
 
 MessageLookupByLibrary _findGeneratedMessagesFor(locale) {

@@ -31,7 +31,9 @@
  */
 library intl;
 
-import 'dart:async';
+import 'dart:collection';
+import 'dart:convert';
+import 'package:meta/meta.dart';
 import 'src/intl_helpers.dart';
 import 'dart:math';
 import 'date_symbols.dart';
@@ -81,6 +83,11 @@ part 'number_format.dart';
  * produce "I see 2 other people in Athens." as output in the default locale.
  *
  * To use a locale other than the default, use the `withLocale` function.
+ * You can set the default locale.
+ *       Intl.defaultLocale = "pt_BR";
+ *
+ * To temporarily use a locale other than the default, use the `withLocale`
+ * function.
  *       var todayString = new DateFormat("pt_BR").format(new DateTime.now());
  *       print(withLocale("pt_BR", () => today(todayString));
  *
@@ -99,7 +106,7 @@ class Intl {
    * can also be set explicitly, and will then apply to any new instances where
    * the locale isn't specified.
    */
-  static String _defaultLocale;
+  static String defaultLocale;
 
   /**
    * The system's locale, as obtained from the window.navigator.language
@@ -193,7 +200,7 @@ class Intl {
       return newLocale;
     }
     for (var each in
-        [canonicalizedLocale(newLocale), _shortLocale(newLocale)]) {
+        [canonicalizedLocale(newLocale), shortLocale(newLocale)]) {
       if (localeExists(each)) {
         return each;
       }
@@ -210,7 +217,7 @@ class Intl {
   }
 
   /** Return the short version of a locale name, e.g. 'en_US' => 'en' */
-  static String _shortLocale(String aLocale) {
+  static String shortLocale(String aLocale) {
     if (aLocale.length < 2) return aLocale;
     return aLocale.substring(0, 2).toLowerCase();
   }
@@ -243,7 +250,19 @@ class Intl {
    * Selects the correct plural form from
    * the provided alternatives. The [other] named argument is mandatory.
    */
-  static String plural(int howMany, {zero, one, two, few, many, other}) {
+  static String plural(int howMany, {zero, one, two, few, many, other,
+      desc, examples, locale, name, args}) {
+    // If we are passed a name and arguments, then we are operating as a
+    // top-level message, so look up our translation by calling Intl.message
+    // with ourselves as an argument.
+    if (name != null) {
+      return message(
+        plural(howMany,
+            zero: zero, one: one, two: two, few: few, many: many, other: other),
+        name: name,
+        args: args,
+        locale: locale);
+    }
     if (other == null) {
       throw new ArgumentError("The 'other' named argument must be provided");
     }
@@ -261,19 +280,59 @@ class Intl {
   }
 
   /**
-   * Format a message differently depending on [gender]. Normally used as part
-   * of an Intl.message message that is to be translated.
+   * Format a message differently depending on [targetGender]. Normally used as
+   * part of an Intl.message message that is to be translated.
    */
-  static String gender(String gender,
-      {String male, String female, String other}) {
+  static String gender(String targetGender,
+      {String male, String female, String other,
+       String desc, Map examples, String locale, String name,
+       List<String>args}) {
+    // If we are passed a name and arguments, then we are operating as a
+    // top-level message, so look up our translation by calling Intl.message
+    // with ourselves as an argument.
+    if (name != null) {
+      return message(
+        gender(targetGender, male: male, female: female, other: other),
+        name: name,
+        args: args,
+        locale: locale);
+    }
+
     if (other == null) {
       throw new ArgumentError("The 'other' named argument must be specified");
     }
-    switch(gender) {
+    switch(targetGender) {
       case "female" : return female == null ? other : female;
       case "male" : return male == null ? other : male;
       default: return other;
     }
+  }
+
+  /**
+   * Format a message differently depending on [choice]. We look up the value
+   * of [choice] in [cases] and return the result, or an empty string if
+   * it is not found. Normally used as part
+   * of an Intl.message message that is to be translated.
+   */
+  static String select(String choice, Map<String, String> cases,
+       {String desc, Map examples, String locale, String name,
+       List<String>args}) {
+    // If we are passed a name and arguments, then we are operating as a
+    // top-level message, so look up our translation by calling Intl.message
+    // with ourselves as an argument.
+    if (name != null) {
+      return message(
+          select(choice, cases),
+          name: name,
+          args: args,
+          locale: locale);
+    }
+    var exact = cases[choice];
+    if (exact != null) return exact;
+    var other = cases["other"];
+    if (other == null)
+      throw new ArgumentError("The 'other' case must be specified");
+    return other;
   }
 
   /**
@@ -293,21 +352,10 @@ class Intl {
     // but must be a static variable in order to be visible to the Intl.message
     // invocation.
     var oldLocale = getCurrentLocale();
-    _defaultLocale = locale;
+    defaultLocale = locale;
     var result = message_function();
-    _defaultLocale = oldLocale;
+    defaultLocale = oldLocale;
     return result;
-  }
-
-  /**
-   * Support method for message formatting. Select the correct exact (gender,
-   * usually) form from [cases] given the user [choice].
-   */
-  static String select(String choice, Map cases) {
-    var exact = cases[choice];
-    if (exact != null) return exact;
-    var other = cases["other"];
-    return (other == null) ? '' : other;
   }
 
   /**
@@ -316,8 +364,8 @@ class Intl {
    * locale.
    */
   static String getCurrentLocale() {
-    if (_defaultLocale == null) _defaultLocale = systemLocale;
-    return _defaultLocale;
+    if (defaultLocale == null) defaultLocale = systemLocale;
+    return defaultLocale;
   }
 
   toString() => "Intl($locale)";

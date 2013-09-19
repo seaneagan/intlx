@@ -60,7 +60,10 @@ class Tools {
   }
 
   static double _getPixelCount(String cssDimension) {
-    if(cssDimension == 'auto' || cssDimension.endsWith('%')) {
+    // The cssDimension will be empty if the element or a parent has
+    // display:none.
+    if(cssDimension == 'auto'|| cssDimension.endsWith('%')
+        || cssDimension.isEmpty) {
       return null;
     } else {
       assert(cssDimension.endsWith('px'));
@@ -128,4 +131,12 @@ class Tools {
     return value;
   }
 
+  // TODO(jacobr): avoid app animation hangs by timing out if no transitionEnd
+  // event ever occurs as is the case when no transition is required on an
+  // element.
+  /**
+   * Return a future when the next transitionEnd event occurs.
+   */
+  static Future onTransitionEnd(Element e) =>
+      e.onTransitionEnd.first.then((_) => null);
 }

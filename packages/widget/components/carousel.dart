@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:html';
 import 'package:web_ui/web_ui.dart';
-import 'package:bot/bot.dart';
 import 'package:widget/effects.dart';
 import 'package:widget/widget.dart';
 
@@ -16,19 +15,29 @@ import 'package:widget/widget.dart';
  * [Carousel] leverages the [Swap] component to render the transition between items.
  */
 class Carousel extends WebComponent {
+  ScopedCssMapper get __css => getScopedCss("x-swap");
+
   final ShowHideEffect _fromTheLeft = new SlideEffect(xStart: HorizontalAlignment.LEFT);
   final ShowHideEffect _fromTheRight = new SlideEffect(xStart: HorizontalAlignment.RIGHT);
 
-  static const _duration = 2000;
+  static const _duration = 1000;
+
+  Future<bool> _pendingAction = null;
 
   Future<bool> next() => _moveDelta(true);
 
   Future<bool> previous() => _moveDelta(false);
 
   SwapComponent get _swap =>
-      this.query('[is=x-carousel] > .carousel > [is=x-swap]').xtag;
+      this.query('${__css["x-carousel"]} ${__css.getSelector(".carousel")} > [is=x-swap]').xtag;
 
   Future<bool> _moveDelta(bool doNext) {
+    if (_pendingAction != null) {
+      // Ignore all calls to moveDelta until the current pending action is
+      // complete to avoid ugly janky UI.
+      return _pendingAction.then((_) => false);
+    }
+
     final swap = _swap;
     assert(swap != null);
     if (swap.items.length == 0) {
@@ -51,7 +60,9 @@ class Carousel extends WebComponent {
 
     final newIndex = (activeIndex + delta) % _swap.items.length;
 
-    return _swap.showItemAtIndex(newIndex, effect: showEffect,
+    _pendingAction = _swap.showItemAtIndex(newIndex, effect: showEffect,
         hideEffect: hideEffect, duration: _duration);
+    _pendingAction.whenComplete(() { _pendingAction = null; });
+    return _pendingAction;
   }
 }

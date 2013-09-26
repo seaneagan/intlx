@@ -14,7 +14,10 @@ part 'plural_category.dart';
 abstract class PluralLocale {
   factory PluralLocale(String locale) {
     if(locale == null) locale = Intl.systemLocale;
-    var pluralLocale = Intl.verifiedLocale(locale, pluralLocales.contains);
+    var pluralLocale = Intl.verifiedLocale(
+        locale,
+        pluralLocales.contains,
+        onFailure: (_) => 'root');
     return PluralLocaleImpl.map[pluralLocale];
   }
 

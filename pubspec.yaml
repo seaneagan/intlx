@@ -8,12 +8,9 @@ dependencies:
   parsers: any
 dev_dependencies:
   browser: any
-  crypto: any
   http: any
   logging: any
   pathos: any
   unittest: any
   web_ui: any
   widget: any
-
-# TODO: remove crypto dependency once http://dartbug.com/11358 is fixed

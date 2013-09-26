@@ -5,10 +5,7 @@
 library symbols_map;
 
 import 'package:intl/src/intl_helpers.dart';
-import 'package:intl/src/lazy_locale_data.dart';
 import 'package:intl/intl.dart';
-import 'package:intlx/intlx.dart';
-import 'package:intlx/src/util.dart';
 
 class SymbolsMap<T> {
   final List<String> _localeList;
@@ -24,7 +21,7 @@ class SymbolsMap<T> {
   T operator [] (String locale) {
     if(locale == null) locale = Intl.systemLocale;
     locale = Intl.verifiedLocale(locale, _localeList.contains);
-    if(!_map.containsKey(locale)) 
+    if(!_map.containsKey(locale))
       throw new LocaleDataException(
         "Locale data has not been loaded for locale: '$locale'");
     return _map[locale];

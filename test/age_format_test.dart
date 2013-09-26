@@ -11,17 +11,17 @@ import 'package:intlx/relative_time_locale_data.dart' as relative_time_data;
 main() {
   group('AgeFormat', () {
 
-    AgeFormat ageFormat;
+    AgeFormat unit;
 
     setUp(() {
       var localeData = relative_time_data.EN;
       localeData.load();
-      ageFormat = new AgeFormat(locale: localeData.locale);
+      unit = new AgeFormat(locale: localeData.locale);
     });
 
-    test("In 2 minutes", () => expect(ageFormat.format(new DateTime.now().add(new Duration(minutes: 2, seconds: 30))), "In 2 minutes"));
-    test("5 hours ago", () => expect(ageFormat.format(new DateTime.now().subtract(new Duration(hours: 5))), "5 hours ago"));
-    test("now is past", () => expect(ageFormat.format(new DateTime.now()), "0 minutes ago"));
+    test("In 2 minutes", () => expect(unit.format(new DateTime.now().add(new Duration(minutes: 2, seconds: 30))), "In 2 minutes"));
+    test("5 hours ago", () => expect(unit.format(new DateTime.now().subtract(new Duration(hours: 5))), "5 hours ago"));
+    test("now is past", () => expect(unit.format(new DateTime.now()), "0 minutes ago"));
   });
 }
 

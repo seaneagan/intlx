@@ -2508,3 +2508,1898 @@ Total time                                                   -- 727 ms
 Build finished!
 build.dart finished [1152 ms]
 
+---
+build.dart --machine --changed=lib\intlx.dart --changed=test\age_format_test.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 4419 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 5242 ms
+Build finished!
+build.dart finished [13841 ms]
+
+---
+build.dart --machine --changed=test\codegen_test.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2033 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2767 ms
+Build finished!
+build.dart finished [3392 ms]
+
+---
+build.dart --machine --changed=test\codegen_test.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1980 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2703 ms
+Build finished!
+build.dart finished [3289 ms]
+
+---
+build.dart --machine --changed=test\codegen_test.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1976 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2695 ms
+Build finished!
+build.dart finished [3120 ms]
+
+---
+build.dart --machine --changed=test\codegen_test.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1977 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2697 ms
+Build finished!
+build.dart finished [3074 ms]
+
+---
+build.dart --machine --changed=test\duration_format_test.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2809 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 3615 ms
+Build finished!
+build.dart finished [7710 ms]
+
+---
+build.dart --machine --changed=test\duration_format_test.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1970 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2684 ms
+Build finished!
+build.dart finished [3071 ms]
+
+---
+build.dart --machine --changed=test\duration_rounder_test.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1974 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2694 ms
+Build finished!
+build.dart finished [3292 ms]
+
+---
+build.dart --machine --changed=test\duration_rounder_test.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1967 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2691 ms
+Build finished!
+build.dart finished [3277 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [67027 ms]
+
+---
+build.dart --machine --full
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 4442 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 5146 ms
+Build finished!
+build.dart finished [19829 ms]
+
+---
+build.dart --machine --full
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2421 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 3149 ms
+Build finished!
+build.dart finished [12003 ms]
+
+---
+build.dart --machine --changed=lib\src\codegen.dart --changed=lib\src\package_paths.dart --changed=lib\src\util...
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 30274 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 31008 ms
+Build finished!
+build.dart finished [43319 ms]
+
+---
+build.dart --machine --changed=test\codegen_test.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2024 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2747 ms
+Build finished!
+build.dart finished [3171 ms]
+
+---
+build.dart --machine --changed=tool\cldr\cldr_data_proxy.dart --changed=tool\cldr\library_writer.dart --changed...
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2030 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2755 ms
+Build finished!
+build.dart finished [3575 ms]
+
+---
+build.dart --machine --changed=tool\cldr\library_writer.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1976 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2694 ms
+Build finished!
+build.dart finished [3172 ms]
+
+---
+build.dart --machine --changed=tool\cldr\cldr_data_proxy.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1963 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2681 ms
+Build finished!
+build.dart finished [3088 ms]
+
+---
+build.dart --machine --changed=tool\cldr\main_locale_list_proxy.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1973 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2695 ms
+Build finished!
+build.dart finished [3054 ms]
+
+---
+build.dart --machine --changed=lib\src\codegen.dart --changed=lib\src\package_paths.dart --changed=test\codegen...
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2011 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2747 ms
+Build finished!
+build.dart finished [3087 ms]
+
+---
+build.dart --machine --changed=lib\src\util.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2002 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2728 ms
+Build finished!
+build.dart finished [3173 ms]
+
+---
+build.dart --machine --changed=lib\src\package_paths.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2014 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2738 ms
+Build finished!
+build.dart finished [3096 ms]
+
+---
+build.dart --machine --changed=lib\src\data\main_locale_list.json
+Total time                                                   -- 740 ms
+Build finished!
+build.dart finished [1110 ms]
+
+---
+build.dart --machine --changed=lib\src\package_paths.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2000 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2722 ms
+Build finished!
+build.dart finished [3130 ms]
+
+---
+build.dart --machine --changed=lib\src\package_paths.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2000 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2722 ms
+Build finished!
+build.dart finished [3107 ms]
+
+---
+build.dart --machine --changed=lib\src\codegen.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2030 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2768 ms
+Build finished!
+build.dart finished [3175 ms]
+
+---
+build.dart --machine --changed=lib\src\codegen.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2011 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2746 ms
+Build finished!
+build.dart finished [3145 ms]
+
+---
+build.dart --machine --changed=lib\src\codegen.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1970 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2688 ms
+Build finished!
+build.dart finished [3060 ms]
+
+---
+build.dart --machine --changed=tool\cldr\cldr_data_proxy.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1994 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2711 ms
+Build finished!
+build.dart finished [3104 ms]
+
+---
+build.dart --machine --changed=tool\cldr\cldr_data_proxy.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2000 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2728 ms
+Build finished!
+build.dart finished [3255 ms]
+
+---
+build.dart --machine --changed=tool\cldr\cldr_data_proxy.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2032 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2762 ms
+Build finished!
+build.dart finished [3230 ms]
+
+---
+build.dart --machine --changed=tool\cldr\cldr_data_proxy.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2041 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2794 ms
+Build finished!
+build.dart finished [3281 ms]
+
+---
+build.dart --machine --changed=tool\cldr\cldr_data_proxy.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2011 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2749 ms
+Build finished!
+build.dart finished [3167 ms]
+
+---
+build.dart --machine --changed=tool\cldr\cldr_data_proxy.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2022 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2754 ms
+Build finished!
+build.dart finished [3119 ms]
+
+---
+build.dart --machine --changed=tool\cldr\cldr_data_proxy.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2040 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2766 ms
+Build finished!
+build.dart finished [3101 ms]
+
+---
+build.dart --machine --changed=tool\cldr\cldr_data_proxy.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2011 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2729 ms
+Build finished!
+build.dart finished [3134 ms]
+
+---
+build.dart --machine --changed=tool\cldr\cldr_data_proxy.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2004 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2723 ms
+Build finished!
+build.dart finished [3265 ms]
+
+---
+build.dart --machine --changed=tool\cldr\cldr_data_proxy.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2019 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2744 ms
+Build finished!
+build.dart finished [3063 ms]
+
+---
+build.dart --machine --changed=lib\src\codegen.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2018 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2735 ms
+Build finished!
+build.dart finished [3126 ms]
+
+---
+build.dart --machine --changed=test\codegen_test.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2035 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2763 ms
+Build finished!
+build.dart finished [3208 ms]
+
+---
+build.dart --machine --changed=tool\cldr\cldr_data_proxy.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1999 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2718 ms
+Build finished!
+build.dart finished [3099 ms]
+
+---
+build.dart --machine --changed=tool\cldr\main_locale_list_proxy.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2040 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2761 ms
+Build finished!
+build.dart finished [3273 ms]
+
+---
+build.dart --machine --changed=lib\src\package_paths.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2048 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2773 ms
+Build finished!
+build.dart finished [3147 ms]
+
+---
+build.dart --machine --changed=lib\iterable_locale_data.dart --changed=lib\lib\src\iterable\iterable_locale_lis...
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2012 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2773 ms
+Build finished!
+build.dart finished [3591 ms]
+
+---
+build.dart --machine --changed=lib\iterable_locale_data.dart --changed=lib\lib\src\iterable\iterable_locale_lis...
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\AF.dart\"","line":23,"charStart":878,"charEnd":939}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\AM.dart\"","line":24,"charStart":940,"charEnd":1001}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\AR.dart\"","line":25,"charStart":1002,"charEnd":1063}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\BG.dart\"","line":26,"charStart":1064,"charEnd":1125}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\BN.dart\"","line":27,"charStart":1126,"charEnd":1187}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\CA.dart\"","line":28,"charStart":1188,"charEnd":1249}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\CS.dart\"","line":29,"charStart":1250,"charEnd":1311}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\DA.dart\"","line":30,"charStart":1312,"charEnd":1373}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\DE.dart\"","line":31,"charStart":1374,"charEnd":1435}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\EL.dart\"","line":32,"charStart":1436,"charEnd":1497}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\EN.dart\"","line":33,"charStart":1498,"charEnd":1559}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\ES.dart\"","line":34,"charStart":1560,"charEnd":1621}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\ET.dart\"","line":35,"charStart":1622,"charEnd":1683}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\EU.dart\"","line":36,"charStart":1684,"charEnd":1745}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\FA.dart\"","line":37,"charStart":1746,"charEnd":1807}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\FI.dart\"","line":38,"charStart":1808,"charEnd":1869}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\FIL.dart\"","line":39,"charStart":1870,"charEnd":1933}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\FR.dart\"","line":40,"charStart":1934,"charEnd":1995}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\GL.dart\"","line":41,"charStart":1996,"charEnd":2057}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\GSW.dart\"","line":42,"charStart":2058,"charEnd":2121}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\GU.dart\"","line":43,"charStart":2122,"charEnd":2183}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\HE.dart\"","line":44,"charStart":2184,"charEnd":2245}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\HI.dart\"","line":45,"charStart":2246,"charEnd":2307}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\HR.dart\"","line":46,"charStart":2308,"charEnd":2369}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\HU.dart\"","line":47,"charStart":2370,"charEnd":2431}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\ID.dart\"","line":48,"charStart":2432,"charEnd":2493}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\IN.dart\"","line":49,"charStart":2494,"charEnd":2555}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\IS.dart\"","line":50,"charStart":2556,"charEnd":2617}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\IT.dart\"","line":51,"charStart":2618,"charEnd":2679}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\IW.dart\"","line":52,"charStart":2680,"charEnd":2741}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\JA.dart\"","line":53,"charStart":2742,"charEnd":2803}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\KN.dart\"","line":54,"charStart":2804,"charEnd":2865}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\KO.dart\"","line":55,"charStart":2866,"charEnd":2927}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\LN.dart\"","line":56,"charStart":2928,"charEnd":2989}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\LT.dart\"","line":57,"charStart":2990,"charEnd":3051}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\LV.dart\"","line":58,"charStart":3052,"charEnd":3113}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\ML.dart\"","line":59,"charStart":3114,"charEnd":3175}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\MR.dart\"","line":60,"charStart":3176,"charEnd":3237}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\MS.dart\"","line":61,"charStart":3238,"charEnd":3299}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\MT.dart\"","line":62,"charStart":3300,"charEnd":3361}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\NL.dart\"","line":63,"charStart":3362,"charEnd":3423}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\NO.dart\"","line":64,"charStart":3424,"charEnd":3485}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\OR.dart\"","line":65,"charStart":3486,"charEnd":3547}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\PL.dart\"","line":66,"charStart":3548,"charEnd":3609}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\PT.dart\"","line":67,"charStart":3610,"charEnd":3671}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\RO.dart\"","line":68,"charStart":3672,"charEnd":3733}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\RU.dart\"","line":69,"charStart":3734,"charEnd":3795}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\SK.dart\"","line":70,"charStart":3796,"charEnd":3857}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\SL.dart\"","line":71,"charStart":3858,"charEnd":3919}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\SQ.dart\"","line":72,"charStart":3920,"charEnd":3981}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\SR.dart\"","line":73,"charStart":3982,"charEnd":4043}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\SV.dart\"","line":74,"charStart":4044,"charEnd":4105}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\SW.dart\"","line":75,"charStart":4106,"charEnd":4167}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\TA.dart\"","line":76,"charStart":4168,"charEnd":4229}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\TE.dart\"","line":77,"charStart":4230,"charEnd":4291}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\TH.dart\"","line":78,"charStart":4292,"charEnd":4353}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\TL.dart\"","line":79,"charStart":4354,"charEnd":4415}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\TR.dart\"","line":80,"charStart":4416,"charEnd":4477}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\UK.dart\"","line":81,"charStart":4478,"charEnd":4539}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\UR.dart\"","line":82,"charStart":4540,"charEnd":4601}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\VI.dart\"","line":83,"charStart":4602,"charEnd":4663}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\ZH.dart\"","line":84,"charStart":4664,"charEnd":4725}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\ZU.dart\"","line":85,"charStart":4726,"charEnd":4787}}]
+Total time spent on web/index.html                           -- 1695 ms
+Total time                                                   -- 2436 ms
+Build finished!
+build.dart finished [2850 ms]
+
+---
+build.dart --machine --changed=tool\cldr\plural\code_build.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\AF.dart\"","line":23,"charStart":878,"charEnd":939}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\AM.dart\"","line":24,"charStart":940,"charEnd":1001}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\AR.dart\"","line":25,"charStart":1002,"charEnd":1063}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\BG.dart\"","line":26,"charStart":1064,"charEnd":1125}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\BN.dart\"","line":27,"charStart":1126,"charEnd":1187}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\CA.dart\"","line":28,"charStart":1188,"charEnd":1249}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\CS.dart\"","line":29,"charStart":1250,"charEnd":1311}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\DA.dart\"","line":30,"charStart":1312,"charEnd":1373}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\DE.dart\"","line":31,"charStart":1374,"charEnd":1435}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\EL.dart\"","line":32,"charStart":1436,"charEnd":1497}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\EN.dart\"","line":33,"charStart":1498,"charEnd":1559}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\ES.dart\"","line":34,"charStart":1560,"charEnd":1621}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\ET.dart\"","line":35,"charStart":1622,"charEnd":1683}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\EU.dart\"","line":36,"charStart":1684,"charEnd":1745}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\FA.dart\"","line":37,"charStart":1746,"charEnd":1807}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\FI.dart\"","line":38,"charStart":1808,"charEnd":1869}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\FIL.dart\"","line":39,"charStart":1870,"charEnd":1933}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\FR.dart\"","line":40,"charStart":1934,"charEnd":1995}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\GL.dart\"","line":41,"charStart":1996,"charEnd":2057}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\GSW.dart\"","line":42,"charStart":2058,"charEnd":2121}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\GU.dart\"","line":43,"charStart":2122,"charEnd":2183}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\HE.dart\"","line":44,"charStart":2184,"charEnd":2245}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\HI.dart\"","line":45,"charStart":2246,"charEnd":2307}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\HR.dart\"","line":46,"charStart":2308,"charEnd":2369}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\HU.dart\"","line":47,"charStart":2370,"charEnd":2431}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\ID.dart\"","line":48,"charStart":2432,"charEnd":2493}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\IN.dart\"","line":49,"charStart":2494,"charEnd":2555}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\IS.dart\"","line":50,"charStart":2556,"charEnd":2617}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\IT.dart\"","line":51,"charStart":2618,"charEnd":2679}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\IW.dart\"","line":52,"charStart":2680,"charEnd":2741}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\JA.dart\"","line":53,"charStart":2742,"charEnd":2803}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\KN.dart\"","line":54,"charStart":2804,"charEnd":2865}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\KO.dart\"","line":55,"charStart":2866,"charEnd":2927}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\LN.dart\"","line":56,"charStart":2928,"charEnd":2989}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\LT.dart\"","line":57,"charStart":2990,"charEnd":3051}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\LV.dart\"","line":58,"charStart":3052,"charEnd":3113}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\ML.dart\"","line":59,"charStart":3114,"charEnd":3175}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\MR.dart\"","line":60,"charStart":3176,"charEnd":3237}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\MS.dart\"","line":61,"charStart":3238,"charEnd":3299}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\MT.dart\"","line":62,"charStart":3300,"charEnd":3361}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\NL.dart\"","line":63,"charStart":3362,"charEnd":3423}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\NO.dart\"","line":64,"charStart":3424,"charEnd":3485}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\OR.dart\"","line":65,"charStart":3486,"charEnd":3547}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\PL.dart\"","line":66,"charStart":3548,"charEnd":3609}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\PT.dart\"","line":67,"charStart":3610,"charEnd":3671}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\RO.dart\"","line":68,"charStart":3672,"charEnd":3733}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\RU.dart\"","line":69,"charStart":3734,"charEnd":3795}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\SK.dart\"","line":70,"charStart":3796,"charEnd":3857}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\SL.dart\"","line":71,"charStart":3858,"charEnd":3919}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\SQ.dart\"","line":72,"charStart":3920,"charEnd":3981}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\SR.dart\"","line":73,"charStart":3982,"charEnd":4043}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\SV.dart\"","line":74,"charStart":4044,"charEnd":4105}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\SW.dart\"","line":75,"charStart":4106,"charEnd":4167}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\TA.dart\"","line":76,"charStart":4168,"charEnd":4229}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\TE.dart\"","line":77,"charStart":4230,"charEnd":4291}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\TH.dart\"","line":78,"charStart":4292,"charEnd":4353}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\TL.dart\"","line":79,"charStart":4354,"charEnd":4415}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\TR.dart\"","line":80,"charStart":4416,"charEnd":4477}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\UK.dart\"","line":81,"charStart":4478,"charEnd":4539}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\UR.dart\"","line":82,"charStart":4540,"charEnd":4601}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\VI.dart\"","line":83,"charStart":4602,"charEnd":4663}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\ZH.dart\"","line":84,"charStart":4664,"charEnd":4725}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\plural_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\plural\\data\\ZU.dart\"","line":85,"charStart":4726,"charEnd":4787}}]
+Total time spent on web/index.html                           -- 1707 ms
+Total time                                                   -- 2434 ms
+Build finished!
+build.dart finished [2816 ms]
+
+---
+build.dart --machine --changed=lib\iterable_locale_data.dart --changed=lib\lib\src\iterable\iterable_locale_lis...
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2133 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2884 ms
+Build finished!
+build.dart finished [3226 ms]
+
+---
+build.dart --machine --changed=tool\cldr\relative_time\code_build.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2663 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 3411 ms
+Build finished!
+build.dart finished [9537 ms]
+
+---
+build.dart --machine --changed=lib\lib\src\iterable\iterable_locale_list.dart --changed=lib\src\iterable\data\A...
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\MS.dart\"","line":63,"charStart":3776,"charEnd":3844}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\MT.dart\"","line":64,"charStart":3845,"charEnd":3913}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\NL.dart\"","line":65,"charStart":3914,"charEnd":3982}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\NO.dart\"","line":66,"charStart":3983,"charEnd":4051}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\OR.dart\"","line":67,"charStart":4052,"charEnd":4120}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\PL.dart\"","line":68,"charStart":4121,"charEnd":4189}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\PT.dart\"","line":69,"charStart":4190,"charEnd":4258}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\RO.dart\"","line":70,"charStart":4259,"charEnd":4327}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\RU.dart\"","line":71,"charStart":4328,"charEnd":4396}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\SK.dart\"","line":72,"charStart":4397,"charEnd":4465}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\SL.dart\"","line":73,"charStart":4466,"charEnd":4534}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\SQ.dart\"","line":74,"charStart":4535,"charEnd":4603}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\SR.dart\"","line":75,"charStart":4604,"charEnd":4672}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\SV.dart\"","line":76,"charStart":4673,"charEnd":4741}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\SW.dart\"","line":77,"charStart":4742,"charEnd":4810}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\TE.dart\"","line":79,"charStart":4880,"charEnd":4948}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\TH.dart\"","line":80,"charStart":4949,"charEnd":5017}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\TL.dart\"","line":81,"charStart":5018,"charEnd":5086}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\TR.dart\"","line":82,"charStart":5087,"charEnd":5155}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\UK.dart\"","line":83,"charStart":5156,"charEnd":5224}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\UR.dart\"","line":84,"charStart":5225,"charEnd":5293}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\VI.dart\"","line":85,"charStart":5294,"charEnd":5362}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\ZH.dart\"","line":86,"charStart":5363,"charEnd":5431}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\ZH_CN.dart\"","line":87,"charStart":5432,"charEnd":5506}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\ZH_HK.dart\"","line":88,"charStart":5507,"charEnd":5581}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\ZH_TW.dart\"","line":89,"charStart":5582,"charEnd":5656}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\ZU.dart\"","line":90,"charStart":5657,"charEnd":5725}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\TA.dart\"","line":78,"charStart":4811,"charEnd":4879}}]
+Total time spent on web/index.html                           -- 1662 ms
+Total time                                                   -- 2398 ms
+Build finished!
+build.dart finished [2728 ms]
+
+---
+build.dart --machine --changed=lib\iterable_locale_data.dart --changed=lib\lib\src\plural\plural_locale_list.da...
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2121 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2849 ms
+Build finished!
+build.dart finished [3190 ms]
+
+---
+build.dart --machine --changed=lib\relative_time_locale_data.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2032 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2766 ms
+Build finished!
+build.dart finished [3091 ms]
+
+---
+build.dart --machine --clean
+Total time                                                   --  44 ms
+Build finished!
+build.dart finished [3457 ms]
+
+---
+build.dart --machine --full
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 4463 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 5241 ms
+Build finished!
+build.dart finished [5594 ms]
+
+---
+build.dart --machine --changed=pubspec.yaml
+Total time                                                   -- 733 ms
+Build finished!
+build.dart finished [3930 ms]
+
+---
+build.dart --machine --changed=tool\cldr\iterable\data_build.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 3317 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 4064 ms
+Build finished!
+build.dart finished [4396 ms]
+
+---
+build.dart --machine --changed=pubspec.yaml
+Total time                                                   -- 715 ms
+Build finished!
+build.dart finished [1084 ms]
+
+---
+build.dart --machine --changed=tool\cldr\iterable\data_build.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1711 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2457 ms
+Build finished!
+build.dart finished [2927 ms]
+
+---
+build.dart --machine --changed=lib\src\util.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1749 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2506 ms
+Build finished!
+build.dart finished [2832 ms]
+
+---
+build.dart --machine --changed=tool\cldr\iterable\data_build.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 3009 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 3801 ms
+Build finished!
+build.dart finished [6041 ms]
+
+---
+build.dart --machine --changed=tool\cldr\iterable\data_build.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1712 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2467 ms
+Build finished!
+build.dart finished [2808 ms]
+
+---
+build.dart --machine --changed=tool\cldr\iterable\data_build.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2660 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 3408 ms
+Build finished!
+build.dart finished [3860 ms]
+
+---
+build.dart --machine --changed=tool\cldr\iterable\data_build.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2645 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 3408 ms
+Build finished!
+build.dart finished [3818 ms]
+
+---
+build.dart --machine --changed=tool\cldr\iterable\data_build.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1744 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2494 ms
+Build finished!
+build.dart finished [2870 ms]
+
+---
+build.dart --machine --changed=lib\src\data\iterable\ar.json --changed=lib\src\data\iterable\bg.json --changed=...
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 3585 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 4393 ms
+Build finished!
+build.dart finished [7972 ms]
+
+---
+build.dart --machine --changed=tool\cldr\iterable\data_build.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1748 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2487 ms
+Build finished!
+build.dart finished [2821 ms]
+
+---
+build.dart --machine --changed=lib\src\data\iterable\de.json
+Total time                                                   -- 708 ms
+Build finished!
+build.dart finished [1089 ms]
+
+---
+build.dart --machine --changed=lib\src\data\iterable\ar.json --changed=lib\src\data\iterable\bg.json --changed=...
+Total time                                                   -- 703 ms
+Build finished!
+build.dart finished [1065 ms]
+
+---
+build.dart --machine --changed=tool\cldr\iterable\data_build.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1767 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2507 ms
+Build finished!
+build.dart finished [2836 ms]
+
+---
+build.dart --machine --changed=lib\src\data\iterable\de.json
+Total time                                                   -- 701 ms
+Build finished!
+build.dart finished [1055 ms]
+
+---
+build.dart --machine --changed=lib\src\data\iterable\ar.json --changed=lib\src\data\iterable\bg.json --changed=...
+Total time                                                   -- 711 ms
+Build finished!
+build.dart finished [1072 ms]
+
+---
+build.dart --machine --changed=tool\cldr\iterable\data_build.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 4607 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 5445 ms
+Build finished!
+build.dart finished [9815 ms]
+
+---
+build.dart --machine --changed=tool\cldr\iterable\data_build.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1956 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 2709 ms
+Build finished!
+build.dart finished [3085 ms]
+
+---
+build.dart --machine --changed=lib\src\data\iterable\ar.json
+Total time                                                   -- 702 ms
+Build finished!
+build.dart finished [1152 ms]
+
+---
+build.dart --machine --changed=lib\src\data\iterable\bg.json --changed=lib\src\data\iterable\bn.json --changed=...
+Total time                                                   -- 706 ms
+Build finished!
+build.dart finished [1134 ms]
+
+---
+build.dart --machine --changed=tool\cldr\iterable\data_build.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 8646 ms
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+Total time                                                   -- 10003 ms
+Build finished!
+build.dart finished [26590 ms]
+
+---
+build.dart --machine --full
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 4047 ms
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart.map"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+Total time                                                   -- 4796 ms
+Build finished!
+build.dart finished [7468 ms]
+
+---
+build.dart --machine --changed=lib\src\data\iterable\en-IN.json
+Total time                                                   -- 801 ms
+Build finished!
+build.dart finished [1336 ms]
+
+---
+build.dart --machine --changed=lib\src\data\iterable\ar.json --changed=lib\src\data\iterable\bg.json --changed=...
+Total time                                                   -- 737 ms
+Build finished!
+build.dart finished [1149 ms]
+
+---
+build.dart --machine --changed=tool\cldr\iterable\code_build.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 11846 ms
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart.map"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+Total time                                                   -- 12584 ms
+Build finished!
+build.dart finished [18096 ms]
+
+---
+build.dart --machine --changed=tool\cldr\iterable\data_build.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1779 ms
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart.map"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+Total time                                                   -- 2517 ms
+Build finished!
+build.dart finished [2909 ms]
+
+---
+build.dart --machine --changed=tool\cldr\iterable\code_build.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1838 ms
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart.map"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+Total time                                                   -- 2670 ms
+Build finished!
+build.dart finished [3106 ms]
+
+---
+build.dart --machine --changed=tool\cldr\iterable\code_build.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1670 ms
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart.map"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+Total time                                                   -- 2490 ms
+Build finished!
+build.dart finished [2900 ms]
+
+---
+build.dart --machine --changed=tool\cldr\iterable\data_build.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1850 ms
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart.map"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+Total time                                                   -- 2672 ms
+Build finished!
+build.dart finished [3086 ms]
+
+---
+build.dart --machine --changed=lib\src\data\iterable\ar.json --changed=lib\src\data\iterable\bg.json --changed=...
+Total time                                                   -- 856 ms
+Build finished!
+build.dart finished [1326 ms]
+
+---
+build.dart --machine --changed=tool\cldr\plural\data_build.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1823 ms
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart.map"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+Total time                                                   -- 2684 ms
+Build finished!
+build.dart finished [3213 ms]
+
+---
+build.dart --machine --changed=tool\cldr\plural\data_build.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1701 ms
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart.map"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+Total time                                                   -- 2449 ms
+Build finished!
+build.dart finished [2806 ms]
+
+---
+build.dart --machine --changed=lib\src\data\plural\en.json
+Total time                                                   -- 735 ms
+Build finished!
+build.dart finished [1115 ms]
+
+---
+build.dart --machine --changed=lib\src\data\plural\af.json --changed=lib\src\data\plural\ak.json --changed=lib\...
+Total time                                                   -- 883 ms
+Build finished!
+build.dart finished [1278 ms]
+
+---
+build.dart --machine --changed=tool\cldr\plural\data_build.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1762 ms
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart.map"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+Total time                                                   -- 2559 ms
+Build finished!
+build.dart finished [3009 ms]
+
+---
+build.dart --machine --changed=tool\cldr\plural\data_build.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1880 ms
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart.map"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+Total time                                                   -- 2686 ms
+Build finished!
+build.dart finished [3162 ms]
+
+---
+build.dart --machine --changed=lib\src\data\plural\az.json
+Total time                                                   -- 737 ms
+Build finished!
+build.dart finished [1082 ms]
+
+---
+build.dart --machine --changed=lib\src\data\plural\af.json --changed=lib\src\data\plural\ak.json --changed=lib\...
+Total time                                                   -- 820 ms
+Build finished!
+build.dart finished [1222 ms]
+
+---
+build.dart --machine --changed=tool\cldr\plural\data_build.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1867 ms
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart.map"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+Total time                                                   -- 2616 ms
+Build finished!
+build.dart finished [2964 ms]
+
+---
+build.dart --machine --changed=tool\cldr\plural\data_build.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1928 ms
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart.map"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+Total time                                                   -- 2735 ms
+Build finished!
+build.dart finished [3165 ms]
+
+---
+build.dart --machine --changed=lib\src\data\plural\az.json
+Total time                                                   -- 744 ms
+Build finished!
+build.dart finished [1097 ms]
+
+---
+build.dart --machine --changed=lib\src\data\plural\af.json --changed=lib\src\data\plural\ak.json --changed=lib\...
+Total time                                                   -- 930 ms
+Build finished!
+build.dart finished [1358 ms]
+
+---
+build.dart --machine --changed=tool\cldr\relative_time\data_build.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1826 ms
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart.map"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+Total time                                                   -- 2665 ms
+Build finished!
+build.dart finished [3065 ms]
+
+---
+build.dart --machine --changed=tool\cldr\plural\data_build.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1938 ms
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart.map"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+Total time                                                   -- 2675 ms
+Build finished!
+build.dart finished [4106 ms]
+
+---
+build.dart --machine --changed=tool\cldr\relative_time\data_build.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1983 ms
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart.map"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+Total time                                                   -- 2828 ms
+Build finished!
+build.dart finished [4239 ms]
+
+---
+build.dart --machine --changed=lib\src\data\relative_time\en.json
+Total time                                                   -- 749 ms
+Build finished!
+build.dart finished [1107 ms]
+
+---
+build.dart --machine --changed=lib\src\data\relative_time\af.json --changed=lib\src\data\relative_time\ak.json ...
+Total time                                                   -- 732 ms
+Build finished!
+build.dart finished [1131 ms]
+
+---
+build.dart --machine --changed=tool\cldr\relative_time\data_build.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1954 ms
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart.map"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+Total time                                                   -- 2850 ms
+Build finished!
+build.dart finished [3221 ms]
+
+---
+build.dart --machine --changed=tool\cldr\relative_time\data_build.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1820 ms
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart.map"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+Total time                                                   -- 2557 ms
+Build finished!
+build.dart finished [3098 ms]
+
+---
+build.dart --machine --changed=lib\src\data\iterable\ar.json --changed=lib\src\data\iterable\bg.json --changed=...
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1960 ms
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart.map"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+Total time                                                   -- 2721 ms
+Build finished!
+build.dart finished [5310 ms]
+
+---
+build.dart --machine --removed=lib\src\data\relative_time\bm.json
+Total time                                                   -- 721 ms
+Build finished!
+build.dart finished [1054 ms]
+
+---
+build.dart --machine --changed=lib\src\data\relative_time\ar.json --changed=lib\src\data\relative_time\bg.json ...
+Total time                                                   -- 733 ms
+Build finished!
+build.dart finished [1074 ms]
+
+---
+build.dart --machine --changed=tool\cldr\relative_time\data_build.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1684 ms
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart.map"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+Total time                                                   -- 2427 ms
+Build finished!
+build.dart finished [2816 ms]
+
+---
+build.dart --machine --changed=lib\src\data\relative_time\ar.json --changed=lib\src\data\relative_time\bg.json ...
+Total time                                                   -- 723 ms
+Build finished!
+build.dart finished [1057 ms]
+
+---
+build.dart --machine --changed=lib\src\data\relative_time\ar.json
+Total time                                                   -- 740 ms
+Build finished!
+build.dart finished [1088 ms]
+
+---
+build.dart --machine --changed=lib\src\iterable\iterable_locale_list.dart --changed=tool\cldr\iterable\code_bui...
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\AF.dart\"","line":23,"charStart":910,"charEnd":973}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\AM.dart\"","line":24,"charStart":974,"charEnd":1037}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\AR.dart\"","line":25,"charStart":1038,"charEnd":1101}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\BG.dart\"","line":26,"charStart":1102,"charEnd":1165}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\BN.dart\"","line":27,"charStart":1166,"charEnd":1229}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\CA.dart\"","line":28,"charStart":1230,"charEnd":1293}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\CS.dart\"","line":29,"charStart":1294,"charEnd":1357}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\DA.dart\"","line":30,"charStart":1358,"charEnd":1421}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\DE.dart\"","line":31,"charStart":1422,"charEnd":1485}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\EL.dart\"","line":32,"charStart":1486,"charEnd":1549}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\EN.dart\"","line":33,"charStart":1550,"charEnd":1613}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\ES.dart\"","line":34,"charStart":1614,"charEnd":1677}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\ET.dart\"","line":35,"charStart":1678,"charEnd":1741}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\EU.dart\"","line":36,"charStart":1742,"charEnd":1805}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\FA.dart\"","line":37,"charStart":1806,"charEnd":1869}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\FI.dart\"","line":38,"charStart":1870,"charEnd":1933}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\FIL.dart\"","line":39,"charStart":1934,"charEnd":1999}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\FR.dart\"","line":40,"charStart":2000,"charEnd":2063}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\GL.dart\"","line":41,"charStart":2064,"charEnd":2127}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\GSW.dart\"","line":42,"charStart":2128,"charEnd":2193}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\GU.dart\"","line":43,"charStart":2194,"charEnd":2257}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\HE.dart\"","line":44,"charStart":2258,"charEnd":2321}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\HI.dart\"","line":45,"charStart":2322,"charEnd":2385}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\HR.dart\"","line":46,"charStart":2386,"charEnd":2449}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\HU.dart\"","line":47,"charStart":2450,"charEnd":2513}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\ID.dart\"","line":48,"charStart":2514,"charEnd":2577}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\IN.dart\"","line":49,"charStart":2578,"charEnd":2641}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\IS.dart\"","line":50,"charStart":2642,"charEnd":2705}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\IT.dart\"","line":51,"charStart":2706,"charEnd":2769}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\IW.dart\"","line":52,"charStart":2770,"charEnd":2833}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\JA.dart\"","line":53,"charStart":2834,"charEnd":2897}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\KN.dart\"","line":54,"charStart":2898,"charEnd":2961}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\KO.dart\"","line":55,"charStart":2962,"charEnd":3025}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\LN.dart\"","line":56,"charStart":3026,"charEnd":3089}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\LT.dart\"","line":57,"charStart":3090,"charEnd":3153}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\LV.dart\"","line":58,"charStart":3154,"charEnd":3217}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\ML.dart\"","line":59,"charStart":3218,"charEnd":3281}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\MR.dart\"","line":60,"charStart":3282,"charEnd":3345}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\MS.dart\"","line":61,"charStart":3346,"charEnd":3409}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\MT.dart\"","line":62,"charStart":3410,"charEnd":3473}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\NL.dart\"","line":63,"charStart":3474,"charEnd":3537}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\NO.dart\"","line":64,"charStart":3538,"charEnd":3601}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\OR.dart\"","line":65,"charStart":3602,"charEnd":3665}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\PL.dart\"","line":66,"charStart":3666,"charEnd":3729}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\PT.dart\"","line":67,"charStart":3730,"charEnd":3793}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\RO.dart\"","line":68,"charStart":3794,"charEnd":3857}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\RU.dart\"","line":69,"charStart":3858,"charEnd":3921}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\SK.dart\"","line":70,"charStart":3922,"charEnd":3985}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\SL.dart\"","line":71,"charStart":3986,"charEnd":4049}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\SQ.dart\"","line":72,"charStart":4050,"charEnd":4113}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\SR.dart\"","line":73,"charStart":4114,"charEnd":4177}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\SV.dart\"","line":74,"charStart":4178,"charEnd":4241}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\SW.dart\"","line":75,"charStart":4242,"charEnd":4305}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\TA.dart\"","line":76,"charStart":4306,"charEnd":4369}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\TE.dart\"","line":77,"charStart":4370,"charEnd":4433}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\TH.dart\"","line":78,"charStart":4434,"charEnd":4497}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\TL.dart\"","line":79,"charStart":4498,"charEnd":4561}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\TR.dart\"","line":80,"charStart":4562,"charEnd":4625}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\UK.dart\"","line":81,"charStart":4626,"charEnd":4689}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\UR.dart\"","line":82,"charStart":4690,"charEnd":4753}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\VI.dart\"","line":83,"charStart":4754,"charEnd":4817}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\ZH.dart\"","line":84,"charStart":4818,"charEnd":4881}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\iterable_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\iterable\\data\\ZU.dart\"","line":85,"charStart":4882,"charEnd":4945}}]
+Total time spent on web/index.html                           -- 1357 ms
+Total time                                                   -- 2103 ms
+Build finished!
+build.dart finished [2521 ms]
+
+---
+build.dart --machine --changed=lib\src\iterable\iterable_all_data_constant.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1612 ms
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart.map"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+Total time                                                   -- 2344 ms
+Build finished!
+build.dart finished [2700 ms]
+
+---
+build.dart --machine --changed=lib\iterable_locale_data.dart --changed=lib\src\iterable\data\AR.dart --changed=...
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1694 ms
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart.map"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+Total time                                                   -- 2439 ms
+Build finished!
+build.dart finished [2801 ms]
+
+---
+build.dart --machine --changed=lib\src\data\iterable\ja.json
+Total time                                                   -- 726 ms
+Build finished!
+build.dart finished [1096 ms]
+
+---
+build.dart --machine --full
+Unable to open file: C:/Users/se136c/dart/intlx/packages/web_ui/component_build.dart'file:///C:/Users/se136c/dart/intlx/build.dart': Error: line 3 pos 1: library handler failed
+import 'package:web_ui/component_build.dart';
+^
+build.dart finished [2041 ms]
+
+---
+build.dart --machine --full
+Unable to open file: C:/Users/se136c/dart/intlx/packages/web_ui/component_build.dart'file:///C:/Users/se136c/dart/intlx/build.dart': Error: line 3 pos 1: library handler failed
+import 'package:web_ui/component_build.dart';
+^
+build.dart finished [4677 ms]
+
+---
+build.dart --machine --full
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2715 ms
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+Total time                                                   -- 2770 ms
+Build finished!
+build.dart finished [8577 ms]
+
+---
+build.dart --machine --full
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 1901 ms
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+Total time                                                   -- 1967 ms
+Build finished!
+build.dart finished [2465 ms]
+
+---
+build.dart --machine --full
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2855 ms
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+Total time                                                   -- 2907 ms
+Build finished!
+build.dart finished [3273 ms]
+
+---
+build.dart --machine --changed=lib\src\symbols_map.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2562 ms
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+Total time                                                   -- 2614 ms
+Build finished!
+build.dart finished [2973 ms]
+
+---
+build.dart --machine --changed=lib\src\symbols_map.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2575 ms
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+Total time                                                   -- 2625 ms
+Build finished!
+build.dart finished [2974 ms]
+
+---
+build.dart --machine --changed=lib\src\plural\plural.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2559 ms
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+Total time                                                   -- 2611 ms
+Build finished!
+build.dart finished [2976 ms]
+
+---
+build.dart --machine --changed=lib\src\symbols_map.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2600 ms
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+Total time                                                   -- 2651 ms
+Build finished!
+build.dart finished [3005 ms]
+
+---
+build.dart --machine --removed=tool\cldr\all\code_build.dart --removed=tool\cldr\all\data_build.dart --removed=...
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2569 ms
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+Total time                                                   -- 2619 ms
+Build finished!
+build.dart finished [2979 ms]
+
+---
+build.dart --machine --removed=lib\src\data\main_locale_list.json
+Total time                                                   --  45 ms
+Build finished!
+build.dart finished [462 ms]
+
+---
+build.dart --machine --changed=lib\src\_codegen.dart --removed=lib\src\codegen.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2549 ms
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+Total time                                                   -- 2600 ms
+Build finished!
+build.dart finished [2956 ms]
+
+---
+build.dart --machine --removed=test\codegen_test.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2541 ms
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+Total time                                                   -- 2592 ms
+Build finished!
+build.dart finished [2975 ms]
+
+---
+build.dart --machine --changed=test\test.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2565 ms
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+Total time                                                   -- 2616 ms
+Build finished!
+build.dart finished [2960 ms]
+
+---
+build.dart --machine --removed=lib\src\_codegen.dart
+Total time                                                   --  46 ms
+Build finished!
+build.dart finished [392 ms]
+
+---
+build.dart --machine --changed=lib\src\package_paths.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2617 ms
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+Total time                                                   -- 2669 ms
+Build finished!
+build.dart finished [3082 ms]
+
+---
+build.dart --machine --changed=lib\src\_package_paths.dart --removed=lib\src\package_paths.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 3197 ms
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+Total time                                                   -- 3248 ms
+Build finished!
+build.dart finished [4699 ms]
+
+---
+build.dart --machine --removed=lib\src\_package_paths.dart
+Total time                                                   --  45 ms
+Build finished!
+build.dart finished [384 ms]
+
+---
+build.dart --machine --full
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\ES_PY.dart\"","line":65,"charStart":4039,"charEnd":4113}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\ES_SV.dart\"","line":66,"charStart":4114,"charEnd":4188}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\ES_US.dart\"","line":67,"charStart":4189,"charEnd":4263}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\ES_UY.dart\"","line":68,"charStart":4264,"charEnd":4338}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\ES_VE.dart\"","line":69,"charStart":4339,"charEnd":4413}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\EWO.dart\"","line":72,"charStart":4552,"charEnd":4622}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\FF.dart\"","line":74,"charStart":4692,"charEnd":4760}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\FO.dart\"","line":77,"charStart":4901,"charEnd":4969}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\GA.dart\"","line":81,"charStart":5185,"charEnd":5253}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\GAA.dart\"","line":82,"charStart":5254,"charEnd":5324}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\GUZ.dart\"","line":86,"charStart":5534,"charEnd":5604}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\GV.dart\"","line":87,"charStart":5605,"charEnd":5673}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\HA.dart\"","line":88,"charStart":5674,"charEnd":5742}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\HAW.dart\"","line":89,"charStart":5743,"charEnd":5813}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\HY.dart\"","line":94,"charStart":6090,"charEnd":6158}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\IA.dart\"","line":95,"charStart":6159,"charEnd":6227}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\IG.dart\"","line":97,"charStart":6297,"charEnd":6365}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\II.dart\"","line":98,"charStart":6366,"charEnd":6434}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\FUR.dart\"","line":80,"charStart":5114,"charEnd":5184}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\JMC.dart\"","line":104,"charStart":6780,"charEnd":6850}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\KAB.dart\"","line":106,"charStart":6920,"charEnd":6990}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\KAJ.dart\"","line":107,"charStart":6991,"charEnd":7061}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\KAM.dart\"","line":108,"charStart":7062,"charEnd":7132}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\KCG.dart\"","line":109,"charStart":7133,"charEnd":7203}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\KDE.dart\"","line":110,"charStart":7204,"charEnd":7274}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\KA.dart\"","line":105,"charStart":6851,"charEnd":6919}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\KEA.dart\"","line":111,"charStart":7275,"charEnd":7345}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\KHQ.dart\"","line":112,"charStart":7346,"charEnd":7416}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\KI.dart\"","line":113,"charStart":7417,"charEnd":7485}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\KK.dart\"","line":114,"charStart":7486,"charEnd":7554}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\KL.dart\"","line":115,"charStart":7555,"charEnd":7623}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\KLN.dart\"","line":116,"charStart":7624,"charEnd":7694}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\KM.dart\"","line":117,"charStart":7695,"charEnd":7763}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\KOK.dart\"","line":120,"charStart":7902,"charEnd":7972}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\KSB.dart\"","line":121,"charStart":7973,"charEnd":8043}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\KSF.dart\"","line":122,"charStart":8044,"charEnd":8114}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\KSH.dart\"","line":123,"charStart":8115,"charEnd":8185}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\KU.dart\"","line":124,"charStart":8186,"charEnd":8254}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\KU_LATN.dart\"","line":125,"charStart":8255,"charEnd":8333}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\KU_LATN_SY.dart\"","line":126,"charStart":8334,"charEnd":8418}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\KU_LATN_TR.dart\"","line":127,"charStart":8419,"charEnd":8503}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\KU_SY.dart\"","line":128,"charStart":8504,"charEnd":8578}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\KU_TR.dart\"","line":129,"charStart":8579,"charEnd":8653}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\KW.dart\"","line":130,"charStart":8654,"charEnd":8722}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\KY.dart\"","line":131,"charStart":8723,"charEnd":8791}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\LAG.dart\"","line":132,"charStart":8792,"charEnd":8862}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\LG.dart\"","line":133,"charStart":8863,"charEnd":8931}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\LO.dart\"","line":135,"charStart":9001,"charEnd":9069}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\LU.dart\"","line":137,"charStart":9139,"charEnd":9207}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\LUO.dart\"","line":138,"charStart":9208,"charEnd":9278}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\LUY.dart\"","line":139,"charStart":9279,"charEnd":9349}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\MAS.dart\"","line":141,"charStart":9419,"charEnd":9489}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\MER.dart\"","line":142,"charStart":9490,"charEnd":9560}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\MFE.dart\"","line":143,"charStart":9561,"charEnd":9631}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\MG.dart\"","line":144,"charStart":9632,"charEnd":9700}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\MGH.dart\"","line":145,"charStart":9701,"charEnd":9771}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\MK.dart\"","line":146,"charStart":9772,"charEnd":9840}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\MN.dart\"","line":148,"charStart":9910,"charEnd":9978}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\MO.dart\"","line":149,"charStart":9979,"charEnd":10047}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\MUA.dart\"","line":153,"charStart":10255,"charEnd":10325}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\MY.dart\"","line":154,"charStart":10326,"charEnd":10394}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\NAQ.dart\"","line":155,"charStart":10395,"charEnd":10465}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\NB.dart\"","line":156,"charStart":10466,"charEnd":10534}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\ND.dart\"","line":157,"charStart":10535,"charEnd":10603}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\NDS.dart\"","line":158,"charStart":10604,"charEnd":10674}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\NE.dart\"","line":159,"charStart":10675,"charEnd":10743}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\NE_IN.dart\"","line":160,"charStart":10744,"charEnd":10818}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\NMG.dart\"","line":162,"charStart":10888,"charEnd":10958}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\NN.dart\"","line":163,"charStart":10959,"charEnd":11027}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\NR.dart\"","line":165,"charStart":11097,"charEnd":11165}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\NSO.dart\"","line":166,"charStart":11166,"charEnd":11236}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\NUS.dart\"","line":167,"charStart":11237,"charEnd":11307}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\NYN.dart\"","line":168,"charStart":11308,"charEnd":11378}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\OC.dart\"","line":169,"charStart":11379,"charEnd":11447}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\OM.dart\"","line":170,"charStart":11448,"charEnd":11516}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\PA.dart\"","line":172,"charStart":11586,"charEnd":11654}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\PS.dart\"","line":174,"charStart":11724,"charEnd":11792}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\RM.dart\"","line":176,"charStart":11862,"charEnd":11930}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\RN.dart\"","line":177,"charStart":11931,"charEnd":11999}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\ROF.dart\"","line":179,"charStart":12069,"charEnd":12139}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\ROOT.dart\"","line":180,"charStart":12140,"charEnd":12212}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\RW.dart\"","line":182,"charStart":12282,"charEnd":12350}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\RWK.dart\"","line":183,"charStart":12351,"charEnd":12421}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\SAH.dart\"","line":184,"charStart":12422,"charEnd":12492}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\SAQ.dart\"","line":185,"charStart":12493,"charEnd":12563}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\SBP.dart\"","line":186,"charStart":12564,"charEnd":12634}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\SE.dart\"","line":187,"charStart":12635,"charEnd":12703}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\SEH.dart\"","line":188,"charStart":12704,"charEnd":12774}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\SES.dart\"","line":189,"charStart":12775,"charEnd":12845}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\SG.dart\"","line":190,"charStart":12846,"charEnd":12914}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\SH.dart\"","line":191,"charStart":12915,"charEnd":12983}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\SH_BA.dart\"","line":192,"charStart":12984,"charEnd":13058}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\SH_CS.dart\"","line":193,"charStart":13059,"charEnd":13133}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\SH_YU.dart\"","line":194,"charStart":13134,"charEnd":13208}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\SHI.dart\"","line":195,"charStart":13209,"charEnd":13279}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\SI.dart\"","line":196,"charStart":13280,"charEnd":13348}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\SID.dart\"","line":197,"charStart":13349,"charEnd":13419}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\SN.dart\"","line":200,"charStart":13558,"charEnd":13626}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\SO.dart\"","line":201,"charStart":13627,"charEnd":13695}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\SR_LATN.dart\"","line":204,"charStart":13834,"charEnd":13912}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\SR_LATN_BA.dart\"","line":205,"charStart":13913,"charEnd":13997}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\SR_LATN_CS.dart\"","line":206,"charStart":13998,"charEnd":14082}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\SR_LATN_ME.dart\"","line":207,"charStart":14083,"charEnd":14167}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\SR_LATN_RS.dart\"","line":208,"charStart":14168,"charEnd":14252}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\SR_LATN_YU.dart\"","line":209,"charStart":14253,"charEnd":14337}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\SR_ME.dart\"","line":210,"charStart":14338,"charEnd":14412}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\SS.dart\"","line":211,"charStart":14413,"charEnd":14481}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\SSY.dart\"","line":212,"charStart":14482,"charEnd":14552}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\ST.dart\"","line":213,"charStart":14553,"charEnd":14621}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\SWC.dart\"","line":216,"charStart":14760,"charEnd":14830}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\TEO.dart\"","line":219,"charStart":14969,"charEnd":15039}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\TG.dart\"","line":220,"charStart":15040,"charEnd":15108}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\TI.dart\"","line":222,"charStart":15178,"charEnd":15246}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\TIG.dart\"","line":223,"charStart":15247,"charEnd":15317}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\TL_PH.dart\"","line":225,"charStart":15387,"charEnd":15461}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\TN.dart\"","line":226,"charStart":15462,"charEnd":15530}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\TO.dart\"","line":227,"charStart":15531,"charEnd":15599}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\TRV.dart\"","line":229,"charStart":15669,"charEnd":15739}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\TS.dart\"","line":230,"charStart":15740,"charEnd":15808}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\TWQ.dart\"","line":231,"charStart":15809,"charEnd":15879}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\TZM.dart\"","line":232,"charStart":15880,"charEnd":15950}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\UZ.dart\"","line":235,"charStart":16089,"charEnd":16157}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\VAI.dart\"","line":236,"charStart":16158,"charEnd":16228}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\VE.dart\"","line":237,"charStart":16229,"charEnd":16297}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\VUN.dart\"","line":239,"charStart":16367,"charEnd":16437}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\WAE.dart\"","line":240,"charStart":16438,"charEnd":16508}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\WAL.dart\"","line":241,"charStart":16509,"charEnd":16579}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\XH.dart\"","line":242,"charStart":16580,"charEnd":16648}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\XOG.dart\"","line":243,"charStart":16649,"charEnd":16719}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\YAV.dart\"","line":244,"charStart":16720,"charEnd":16790}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\YO.dart\"","line":245,"charStart":16791,"charEnd":16859}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\ZH_HANS_HK.dart\"","line":248,"charStart":17004,"charEnd":17088}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\ZH_HANS_MO.dart\"","line":249,"charStart":17089,"charEnd":17173}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\ZH_HANS_SG.dart\"","line":250,"charStart":17174,"charEnd":17258}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\ZH_HANT.dart\"","line":251,"charStart":17259,"charEnd":17337}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\ZH_HANT_HK.dart\"","line":252,"charStart":17338,"charEnd":17422}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\ZH_HANT_MO.dart\"","line":253,"charStart":17423,"charEnd":17507}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\ZH_HANT_TW.dart\"","line":254,"charStart":17508,"charEnd":17592}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\relative_time_locale_data.dart","message":"unable to open file \"web\\packages\\intlx\\src\\relative_time\\data\\ZH_MO.dart\"","line":255,"charStart":17593,"charEnd":17667}}]
+Total time spent on web/index.html                           -- 2210 ms
+Total time                                                   -- 2259 ms
+Build finished!
+build.dart finished [2898 ms]
+
+---
+build.dart --machine --changed=lib\data\plural\af.json --changed=lib\data\plural\az.json --changed=lib\src\data...
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2016}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2026}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":44,"charStart":1951,"charEnd":2038}}]
+Total time spent on web/index.html                           -- 2879 ms
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+Total time                                                   -- 2938 ms
+Build finished!
+build.dart finished [3311 ms]
+
+---
+build.dart --machine --changed=pubspec.yaml
+Total time                                                   --  45 ms
+Build finished!
+build.dart finished [411 ms]
+

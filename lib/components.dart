@@ -1,15 +1,20 @@
+// Copyright (c) 2013, the Dart project authors.  Please see the AUTHORS file
+// for details. All rights reserved. Use of this source code is governed by a
+// BSD-style license that can be found in the LICENSE file.
 
 library intlx.components;
 
 import 'dart:async';
-import 'package:web_ui/web_ui.dart';
-import 'package:web_ui/watcher.dart' as watcher;
+import 'package:polymer/polymer.dart';
 import 'package:intlx/intlx.dart';
 
-@observable
-class AgeComponent extends WebComponent {
+@CustomTag('intlx-age')
+class AgeComponent extends PolymerElement with ObservableMixin {
+
+  bool get applyAuthorStyles => true;
+
   static final _defaultAgeFormat = new AgeFormat();
-  
+
   AgeComponent() {
     if(_dummyCounter == 0) {
       new Stream.periodic(const Duration(seconds: 1), (_) => _dummyCounter++).listen((_){});
@@ -21,10 +26,12 @@ class AgeComponent extends WebComponent {
   DateTime value;
   AgeFormat format = _defaultAgeFormat;
 
+  @observable
   String get age {
     _dummyCounter;
     var v = value;
-    if(format is DurationFormat) { 
+    if(v == null) return '';
+    if(format is DurationFormat) {
       v = new DateTime.now().difference(v);
       var micros = v.inMicroseconds;
       if(micros.isNegative) {

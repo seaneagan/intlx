@@ -4403,3 +4403,1614 @@ Total time                                                   --  45 ms
 Build finished!
 build.dart finished [411 ms]
 
+---
+build.dart --machine --changed=web\index.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":45,"charStart":1976,"charEnd":2041}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":45,"charStart":1976,"charEnd":2051}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":45,"charStart":1976,"charEnd":2063}}]
+Total time spent on web/index.html                           -- 6739 ms
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\_from_packages\\intlx\\components.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+Total time                                                   -- 6790 ms
+Build finished!
+build.dart finished [9515 ms]
+
+---
+build.dart --machine --changed=lib\age.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":45,"charStart":1976,"charEnd":2041}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":45,"charStart":1976,"charEnd":2051}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":45,"charStart":1976,"charEnd":2063}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-age not found.","line":187,"charStart":8605,"charEnd":8667}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-age not found.","line":194,"charStart":8949,"charEnd":9009}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-age not found.","line":201,"charStart":9286,"charEnd":9348}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\age.html","message":"custom element with tag name polymer-element not found.","line":3,"charStart":31,"charEnd":85}}]
+Total time spent on web/index.html                           -- 2578 ms
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+Total time                                                   -- 2628 ms
+Build finished!
+build.dart finished [3406 ms]
+
+---
+build.dart --machine --changed=pubspec.yaml
+Total time                                                   --  47 ms
+Build finished!
+build.dart finished [2590 ms]
+
+---
+build.dart --machine --changed=lib\components.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":45,"charStart":1976,"charEnd":2041}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":45,"charStart":1976,"charEnd":2051}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":45,"charStart":1976,"charEnd":2063}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-age not found.","line":187,"charStart":8605,"charEnd":8667}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-age not found.","line":194,"charStart":8949,"charEnd":9009}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-age not found.","line":201,"charStart":9286,"charEnd":9348}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\age.html","message":"custom element with tag name polymer-element not found.","line":3,"charStart":31,"charEnd":85}}]
+Total time spent on web/index.html                           -- 3332 ms
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+Total time                                                   -- 3383 ms
+Build finished!
+build.dart finished [3744 ms]
+
+---
+build.dart --machine --changed=lib\components.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":45,"charStart":1976,"charEnd":2041}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":45,"charStart":1976,"charEnd":2051}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":45,"charStart":1976,"charEnd":2063}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-age not found.","line":187,"charStart":8605,"charEnd":8667}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-age not found.","line":194,"charStart":8949,"charEnd":9009}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-age not found.","line":201,"charStart":9286,"charEnd":9348}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\age.html","message":"custom element with tag name polymer-element not found.","line":3,"charStart":31,"charEnd":85}}]
+Total time spent on web/index.html                           -- 2814 ms
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+Total time                                                   -- 2865 ms
+Build finished!
+build.dart finished [3220 ms]
+
+---
+build.dart --machine --changed=lib\age.html --changed=lib\components.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":45,"charStart":1976,"charEnd":2041}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":45,"charStart":1976,"charEnd":2051}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":45,"charStart":1976,"charEnd":2063}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-age not found.","line":187,"charStart":8605,"charEnd":8667}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-age not found.","line":194,"charStart":8949,"charEnd":9009}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-age not found.","line":201,"charStart":9286,"charEnd":9348}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\age.html","message":"custom element with tag name polymer-element not found.","line":3,"charStart":31,"charEnd":65}}]
+Total time spent on web/index.html                           -- 2792 ms
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+Total time                                                   -- 2842 ms
+Build finished!
+build.dart finished [3464 ms]
+
+---
+build.dart --machine --changed=pubspec.yaml
+Total time                                                   --  45 ms
+Build finished!
+build.dart finished [385 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":45,"charStart":1976,"charEnd":2041}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":45,"charStart":1976,"charEnd":2051}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":45,"charStart":1976,"charEnd":2063}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-age not found.","line":187,"charStart":8604,"charEnd":8666}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-age not found.","line":194,"charStart":8948,"charEnd":9008}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-age not found.","line":201,"charStart":9285,"charEnd":9347}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\age.html","message":"custom element with tag name polymer-element not found.","line":3,"charStart":31,"charEnd":65}}]
+Total time spent on web/index.html                           -- 6398 ms
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+Total time                                                   -- 6448 ms
+Build finished!
+build.dart finished [8980 ms]
+
+---
+build.dart --machine --changed=lib\components.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":45,"charStart":1976,"charEnd":2041}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":45,"charStart":1976,"charEnd":2051}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":45,"charStart":1976,"charEnd":2063}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-age not found.","line":187,"charStart":8604,"charEnd":8666}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-age not found.","line":194,"charStart":8948,"charEnd":9008}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-age not found.","line":201,"charStart":9285,"charEnd":9347}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\age.html","message":"custom element with tag name polymer-element not found.","line":3,"charStart":31,"charEnd":65}}]
+Total time spent on web/index.html                           -- 2833 ms
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+Total time                                                   -- 2884 ms
+Build finished!
+build.dart finished [3240 ms]
+
+---
+build.dart --machine --changed=lib\intlx-demo.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":45,"charStart":1976,"charEnd":2041}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":45,"charStart":1976,"charEnd":2051}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":45,"charStart":1976,"charEnd":2063}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-age not found.","line":187,"charStart":8604,"charEnd":8666}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-age not found.","line":194,"charStart":8948,"charEnd":9008}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-age not found.","line":201,"charStart":9285,"charEnd":9347}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\age.html","message":"custom element with tag name polymer-element not found.","line":3,"charStart":31,"charEnd":65}}]
+Total time spent on web/index.html                           -- 2746 ms
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+Total time                                                   -- 2796 ms
+Build finished!
+build.dart finished [3154 ms]
+
+---
+build.dart --machine --changed=lib\age.html --changed=lib\intlx-demo.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":45,"charStart":1976,"charEnd":2041}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":45,"charStart":1976,"charEnd":2051}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":45,"charStart":1976,"charEnd":2063}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-age not found.","line":187,"charStart":8604,"charEnd":8666}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-age not found.","line":194,"charStart":8948,"charEnd":9008}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-age not found.","line":201,"charStart":9285,"charEnd":9347}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\age.html","message":"custom element with tag name polymer-element not found.","line":3,"charStart":31,"charEnd":65}}]
+Total time spent on web/index.html                           -- 2768 ms
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+Total time                                                   -- 2818 ms
+Build finished!
+build.dart finished [3171 ms]
+
+---
+build.dart --machine --changed=lib\intlx-demo.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":45,"charStart":1976,"charEnd":2041}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":45,"charStart":1976,"charEnd":2051}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":45,"charStart":1976,"charEnd":2063}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-age not found.","line":187,"charStart":8604,"charEnd":8666}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-age not found.","line":194,"charStart":8948,"charEnd":9008}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-age not found.","line":201,"charStart":9285,"charEnd":9347}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\age.html","message":"custom element with tag name polymer-element not found.","line":3,"charStart":31,"charEnd":65}}]
+Total time spent on web/index.html                           -- 4282 ms
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+Total time                                                   -- 4334 ms
+Build finished!
+build.dart finished [97220 ms]
+
+---
+build.dart --machine --changed=lib\intlx-demo.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":45,"charStart":1976,"charEnd":2041}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":45,"charStart":1976,"charEnd":2051}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":45,"charStart":1976,"charEnd":2063}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-age not found.","line":187,"charStart":8604,"charEnd":8666}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-age not found.","line":194,"charStart":8948,"charEnd":9008}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-age not found.","line":201,"charStart":9285,"charEnd":9347}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\age.html","message":"custom element with tag name polymer-element not found.","line":3,"charStart":31,"charEnd":65}}]
+Total time spent on web/index.html                           -- 31812 ms
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+Total time                                                   -- 31866 ms
+Build finished!
+build.dart finished [36672 ms]
+
+---
+build.dart --machine --changed=lib\intlx-demo.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":45,"charStart":1976,"charEnd":2041}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":45,"charStart":1976,"charEnd":2051}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Named entity expected. Got none.","line":45,"charStart":1976,"charEnd":2063}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-age not found.","line":187,"charStart":8604,"charEnd":8666}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-age not found.","line":194,"charStart":8948,"charEnd":9008}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-age not found.","line":201,"charStart":9285,"charEnd":9347}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\age.html","message":"custom element with tag name polymer-element not found.","line":3,"charStart":31,"charEnd":65}}]
+Total time spent on web/index.html                           -- 2787 ms
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+Total time                                                   -- 2837 ms
+Build finished!
+build.dart finished [3267 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (intlx-demo). Missing end tag (body).","line":36,"charStart":1457,"charEnd":1464}}]
+[{"method":"error","params":{"file":"web/index.html","message":"unable to open file \"web\\packages\\intlx\\demo.html\"","line":18,"charStart":852,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-demo not found.","line":35,"charStart":1430,"charEnd":1442}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-demo not found.","line":35,"charStart":1442,"charEnd":1454}}]
+Total time spent on web/index.html                           -- 219 ms
+Total time                                                   -- 268 ms
+Build finished!
+build.dart finished [777 ms]
+
+---
+build.dart --machine --changed=lib\intlx-demo.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (intlx-demo). Missing end tag (body).","line":36,"charStart":1457,"charEnd":1464}}]
+[{"method":"error","params":{"file":"web/index.html","message":"unable to open file \"web\\packages\\intlx\\demo.html\"","line":18,"charStart":852,"charEnd":902}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-demo not found.","line":35,"charStart":1430,"charEnd":1442}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-demo not found.","line":35,"charStart":1442,"charEnd":1454}}]
+Total time spent on web/index.html                           -- 217 ms
+Total time                                                   -- 267 ms
+Build finished!
+build.dart finished [626 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (intlx-demo). Missing end tag (body).","line":36,"charStart":1463,"charEnd":1470}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":15,"charStart":441,"charEnd":506}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":15,"charStart":441,"charEnd":516}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":15,"charStart":441,"charEnd":528}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"there should be only one dart script tag in the top-level HTML page.","line":269,"charStart":11005,"charEnd":11059}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"unable to open file \"web\\packages\\intlx\\app.dart\"","line":264,"charStart":10815,"charEnd":10862}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-demo not found.","line":35,"charStart":1436,"charEnd":1448}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-demo not found.","line":35,"charStart":1448,"charEnd":1460}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"custom element with tag name polymer-element not found.","line":5,"charStart":68,"charEnd":103}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"custom element with tag name intlx-age not found.","line":157,"charStart":6815,"charEnd":6877}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"custom element with tag name intlx-age not found.","line":164,"charStart":7149,"charEnd":7209}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"custom element with tag name intlx-age not found.","line":171,"charStart":7476,"charEnd":7538}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\age.html","message":"custom element with tag name polymer-element not found.","line":3,"charStart":31,"charEnd":65}}]
+Total time spent on web/index.html                           -- 1478 ms
+Total time                                                   -- 1529 ms
+Build finished!
+build.dart finished [1889 ms]
+
+---
+build.dart --machine --changed=lib\intlx-demo.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (intlx-demo). Missing end tag (body).","line":36,"charStart":1463,"charEnd":1470}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":15,"charStart":441,"charEnd":506}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":15,"charStart":441,"charEnd":516}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":15,"charStart":441,"charEnd":528}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"there should be only one dart script tag in the top-level HTML page.","line":269,"charStart":11005,"charEnd":11059}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"unable to open file \"web\\packages\\intlx\\app.dart\"","line":264,"charStart":10815,"charEnd":10862}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-demo not found.","line":35,"charStart":1436,"charEnd":1448}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-demo not found.","line":35,"charStart":1448,"charEnd":1460}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"custom element with tag name polymer-element not found.","line":5,"charStart":68,"charEnd":103}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"custom element with tag name intlx-age not found.","line":157,"charStart":6815,"charEnd":6877}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"custom element with tag name intlx-age not found.","line":164,"charStart":7149,"charEnd":7209}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"custom element with tag name intlx-age not found.","line":171,"charStart":7476,"charEnd":7538}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\age.html","message":"custom element with tag name polymer-element not found.","line":3,"charStart":31,"charEnd":65}}]
+Total time spent on web/index.html                           -- 1477 ms
+Total time                                                   -- 1526 ms
+Build finished!
+build.dart finished [2013 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (intlx-demo). Missing end tag (body).","line":38,"charStart":1525,"charEnd":1532}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":15,"charStart":441,"charEnd":506}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":15,"charStart":441,"charEnd":516}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":15,"charStart":441,"charEnd":528}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"there should be only one dart script tag in the top-level HTML page.","line":269,"charStart":11005,"charEnd":11059}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"unable to open file \"web\\packages\\intlx\\app.dart\"","line":264,"charStart":10815,"charEnd":10862}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-demo not found.","line":37,"charStart":1498,"charEnd":1510}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-demo not found.","line":37,"charStart":1510,"charEnd":1522}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"custom element with tag name polymer-element not found.","line":5,"charStart":68,"charEnd":103}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"custom element with tag name intlx-age not found.","line":157,"charStart":6815,"charEnd":6877}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"custom element with tag name intlx-age not found.","line":164,"charStart":7149,"charEnd":7209}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"custom element with tag name intlx-age not found.","line":171,"charStart":7476,"charEnd":7538}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\age.html","message":"custom element with tag name polymer-element not found.","line":3,"charStart":31,"charEnd":65}}]
+Total time spent on web/index.html                           -- 2351 ms
+Total time                                                   -- 2403 ms
+Build finished!
+build.dart finished [2794 ms]
+
+---
+build.dart --machine --changed=lib\intlx-demo.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (intlx-demo). Missing end tag (body).","line":38,"charStart":1525,"charEnd":1532}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":15,"charStart":441,"charEnd":506}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":15,"charStart":441,"charEnd":516}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":15,"charStart":441,"charEnd":528}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-demo not found.","line":37,"charStart":1498,"charEnd":1510}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-demo not found.","line":37,"charStart":1510,"charEnd":1522}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"custom element with tag name polymer-element not found.","line":5,"charStart":68,"charEnd":103}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"custom element with tag name intlx-age not found.","line":157,"charStart":6815,"charEnd":6877}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"custom element with tag name intlx-age not found.","line":164,"charStart":7149,"charEnd":7209}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"custom element with tag name intlx-age not found.","line":171,"charStart":7476,"charEnd":7538}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\age.html","message":"custom element with tag name polymer-element not found.","line":3,"charStart":31,"charEnd":65}}]
+Total time spent on web/index.html                           -- 2757 ms
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+Total time                                                   -- 2807 ms
+Build finished!
+build.dart finished [3332 ms]
+
+---
+build.dart --machine --changed=lib\app.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (intlx-demo). Missing end tag (body).","line":38,"charStart":1525,"charEnd":1532}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":15,"charStart":441,"charEnd":506}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":15,"charStart":441,"charEnd":516}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":15,"charStart":441,"charEnd":528}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-demo not found.","line":37,"charStart":1498,"charEnd":1510}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-demo not found.","line":37,"charStart":1510,"charEnd":1522}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"custom element with tag name polymer-element not found.","line":5,"charStart":68,"charEnd":103}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"custom element with tag name intlx-age not found.","line":157,"charStart":6815,"charEnd":6877}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"custom element with tag name intlx-age not found.","line":164,"charStart":7149,"charEnd":7209}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"custom element with tag name intlx-age not found.","line":171,"charStart":7476,"charEnd":7538}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\age.html","message":"custom element with tag name polymer-element not found.","line":3,"charStart":31,"charEnd":65}}]
+Total time spent on web/index.html                           -- 2756 ms
+[{"method":"generated","params":{"file":"web\\out\\app.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.dart.map"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html_bootstrap.dart"}}]
+[{"method":"generated","params":{"file":"web\\out\\app.css"}}]
+[{"method":"mapping","params":{"from":"web/index.html","to":"web\\out\\index.html"}}]
+[{"method":"generated","params":{"file":"web\\out\\index.html"}}]
+Total time                                                   -- 2809 ms
+Build finished!
+build.dart finished [3249 ms]
+
+---
+build.dart --machine --removed=web\app.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (intlx-demo). Missing end tag (body).","line":38,"charStart":1525,"charEnd":1532}}]
+[{"method":"error","params":{"file":"web/index.html","message":"unable to open file \"web\\app.dart\"","line":22,"charStart":968,"charEnd":1015}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":15,"charStart":441,"charEnd":506}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":15,"charStart":441,"charEnd":516}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":15,"charStart":441,"charEnd":528}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-demo not found.","line":37,"charStart":1498,"charEnd":1510}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-demo not found.","line":37,"charStart":1510,"charEnd":1522}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"custom element with tag name polymer-element not found.","line":5,"charStart":68,"charEnd":103}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"custom element with tag name intlx-age not found.","line":157,"charStart":6815,"charEnd":6877}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"custom element with tag name intlx-age not found.","line":164,"charStart":7149,"charEnd":7209}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"custom element with tag name intlx-age not found.","line":171,"charStart":7476,"charEnd":7538}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\age.html","message":"custom element with tag name polymer-element not found.","line":3,"charStart":31,"charEnd":65}}]
+Total time spent on web/index.html                           -- 1703 ms
+Total time                                                   -- 1782 ms
+Build finished!
+build.dart finished [6965 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart --removed=lib\app.dart
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (intlx-demo). Missing end tag (body).","line":38,"charStart":1525,"charEnd":1532}}]
+[{"method":"error","params":{"file":"web/index.html","message":"unable to open file \"web\\app.dart\"","line":22,"charStart":968,"charEnd":1015}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":15,"charStart":441,"charEnd":506}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":15,"charStart":441,"charEnd":516}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":15,"charStart":441,"charEnd":528}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-demo not found.","line":37,"charStart":1498,"charEnd":1510}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-demo not found.","line":37,"charStart":1510,"charEnd":1522}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"custom element with tag name polymer-element not found.","line":5,"charStart":68,"charEnd":103}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"custom element with tag name intlx-age not found.","line":157,"charStart":6815,"charEnd":6877}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"custom element with tag name intlx-age not found.","line":164,"charStart":7149,"charEnd":7209}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"custom element with tag name intlx-age not found.","line":171,"charStart":7476,"charEnd":7538}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\age.html","message":"custom element with tag name polymer-element not found.","line":3,"charStart":31,"charEnd":65}}]
+Total time spent on web/index.html                           -- 1548 ms
+Total time                                                   -- 1599 ms
+Build finished!
+build.dart finished [6970 ms]
+
+---
+build.dart --machine --changed=lib\intlx-demo.html --changed=web\index.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (intlx-demo). Missing end tag (body).","line":36,"charStart":1463,"charEnd":1470}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":15,"charStart":441,"charEnd":506}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":15,"charStart":441,"charEnd":516}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":15,"charStart":441,"charEnd":528}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"there should be only one dart script tag in the top-level HTML page.","line":269,"charStart":11006,"charEnd":11060}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-demo not found.","line":35,"charStart":1436,"charEnd":1448}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-demo not found.","line":35,"charStart":1448,"charEnd":1460}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"custom element with tag name polymer-element not found.","line":5,"charStart":68,"charEnd":103}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"custom element with tag name intlx-age not found.","line":157,"charStart":6815,"charEnd":6877}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"custom element with tag name intlx-age not found.","line":164,"charStart":7149,"charEnd":7209}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"custom element with tag name intlx-age not found.","line":171,"charStart":7476,"charEnd":7538}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\age.html","message":"custom element with tag name polymer-element not found.","line":3,"charStart":31,"charEnd":65}}]
+Total time spent on web/index.html                           -- 12586 ms
+Total time                                                   -- 12781 ms
+Build finished!
+build.dart finished [39977 ms]
+
+---
+build.dart --machine --clean
+Total time                                                   --  30 ms
+Build finished!
+build.dart finished [715 ms]
+
+---
+build.dart --machine --full
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (intlx-demo). Missing end tag (body).","line":36,"charStart":1463,"charEnd":1470}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":15,"charStart":441,"charEnd":506}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":15,"charStart":441,"charEnd":516}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":15,"charStart":441,"charEnd":528}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"there should be only one dart script tag in the top-level HTML page.","line":269,"charStart":11006,"charEnd":11060}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-demo not found.","line":35,"charStart":1436,"charEnd":1448}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-demo not found.","line":35,"charStart":1448,"charEnd":1460}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"custom element with tag name polymer-element not found.","line":5,"charStart":68,"charEnd":103}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"custom element with tag name intlx-age not found.","line":157,"charStart":6815,"charEnd":6877}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"custom element with tag name intlx-age not found.","line":164,"charStart":7149,"charEnd":7209}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"custom element with tag name intlx-age not found.","line":171,"charStart":7476,"charEnd":7538}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\age.html","message":"custom element with tag name polymer-element not found.","line":3,"charStart":31,"charEnd":65}}]
+Total time spent on web/index.html                           -- 2500 ms
+Total time                                                   -- 2549 ms
+Build finished!
+build.dart finished [3010 ms]
+
+---
+build.dart --machine --changed=pubspec.lock
+Unable to open file: C:/Users/se136c/dart/intlx/packages/polymer/builder.dart'file:///C:/Users/se136c/dart/intlx/build.dart': Error: line 3 pos 1: library handler failed
+import 'package:polymer/builder.dart';
+^
+build.dart finished [160 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (intlx-demo). Missing end tag (body).","line":37,"charStart":1464,"charEnd":1471}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":14,"charStart":440,"charEnd":505}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":14,"charStart":440,"charEnd":515}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":14,"charStart":440,"charEnd":527}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":914,"charEnd":922}}]
+Total time spent on web/index.html                           -- 232 ms
+Total time                                                   -- 263 ms
+build.dart finished [2757 ms]
+
+---
+build.dart --machine --changed=lib\intlx-demo.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected end tag (intlx-demo). Missing end tag (body).","line":37,"charStart":1464,"charEnd":1471}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":14,"charStart":440,"charEnd":505}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":14,"charStart":440,"charEnd":515}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":14,"charStart":440,"charEnd":527}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":914,"charEnd":922}}]
+Total time spent on web/index.html                           -- 248 ms
+Total time                                                   -- 278 ms
+build.dart finished [502 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":14,"charStart":440,"charEnd":505}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":14,"charStart":440,"charEnd":515}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":14,"charStart":440,"charEnd":527}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":914,"charEnd":922}}]
+Total time spent on web/index.html                           -- 235 ms
+Total time                                                   -- 266 ms
+build.dart finished [486 ms]
+
+---
+build.dart --machine --changed=pubspec.yaml
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":14,"charStart":440,"charEnd":505}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":14,"charStart":440,"charEnd":515}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":14,"charStart":440,"charEnd":527}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":914,"charEnd":922}}]
+Total time spent on web/index.html                           -- 228 ms
+Total time                                                   -- 257 ms
+build.dart finished [1676 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":14,"charStart":440,"charEnd":505}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":14,"charStart":440,"charEnd":515}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"Named entity expected. Got none.","line":14,"charStart":440,"charEnd":527}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":914,"charEnd":922}}]
+Total time spent on web/index.html                           -- 236 ms
+Total time                                                   -- 264 ms
+build.dart finished [620 ms]
+
+---
+build.dart --machine --changed=lib\intlx-demo.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":926,"charEnd":934}}]
+Total time spent on web/index.html                           -- 227 ms
+Total time                                                   -- 256 ms
+build.dart finished [601 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":926,"charEnd":934}}]
+Total time spent on web/index.html                           -- 227 ms
+Total time                                                   -- 255 ms
+build.dart finished [691 ms]
+
+---
+build.dart --machine --changed=lib\intlx-demo.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\intlx-demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":926,"charEnd":934}}]
+Total time spent on web/index.html                           -- 228 ms
+Total time                                                   -- 258 ms
+build.dart finished [648 ms]
+
+---
+build.dart --machine --changed=lib\demo.html --removed=lib\intlx-demo.html
+[{"method":"error","params":{"file":"web/index.html","message":"unable to open file \"web\\packages\\intlx\\intlx-demo.html\"","line":18,"charStart":852,"charEnd":909}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-demo not found.","line":35,"charStart":1437,"charEnd":1449}}]
+Total time spent on web/index.html                           -- 133 ms
+Total time                                                   -- 162 ms
+build.dart finished [377 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart --changed=web\index.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":926,"charEnd":934}}]
+Total time spent on web/index.html                           -- 231 ms
+Total time                                                   -- 259 ms
+build.dart finished [483 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":927,"charEnd":935}}]
+[{"method":"error","params":{"file":"web\\packages\\intlx\\demo.html","message":"unable to open file \"web\\packages\\intlx\\packages\\intlx\\age.html\"","line":2,"charStart":16,"charEnd":66}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"custom element with tag name intlx-age not found.","line":156,"charStart":6828,"charEnd":6890}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"custom element with tag name intlx-age not found.","line":163,"charStart":7162,"charEnd":7222}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"custom element with tag name intlx-age not found.","line":170,"charStart":7489,"charEnd":7551}}]
+Total time spent on web/index.html                           -- 225 ms
+Total time                                                   -- 254 ms
+build.dart finished [528 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 228 ms
+Total time                                                   -- 256 ms
+build.dart finished [470 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 233 ms
+Total time                                                   -- 262 ms
+build.dart finished [590 ms]
+
+---
+build.dart --machine --changed=lib\age.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 227 ms
+Total time                                                   -- 255 ms
+build.dart finished [635 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 224 ms
+Total time                                                   -- 253 ms
+build.dart finished [543 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 227 ms
+Total time                                                   -- 255 ms
+build.dart finished [466 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":921,"charEnd":929}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"custom element with tag name intlx-age not found.","line":156,"charStart":6822,"charEnd":6884}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"custom element with tag name intlx-age not found.","line":163,"charStart":7156,"charEnd":7216}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"custom element with tag name intlx-age not found.","line":170,"charStart":7483,"charEnd":7545}}]
+Total time spent on web/index.html                           -- 219 ms
+Total time                                                   -- 247 ms
+build.dart finished [511 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":921,"charEnd":929}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"custom element with tag name intlx-age not found.","line":156,"charStart":6822,"charEnd":6884}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"custom element with tag name intlx-age not found.","line":163,"charStart":7156,"charEnd":7216}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"custom element with tag name intlx-age not found.","line":170,"charStart":7483,"charEnd":7545}}]
+Total time spent on web/index.html                           -- 280 ms
+Total time                                                   -- 314 ms
+build.dart finished [3989 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":921,"charEnd":929}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"custom element with tag name intlx-age not found.","line":156,"charStart":6822,"charEnd":6884}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"custom element with tag name intlx-age not found.","line":163,"charStart":7156,"charEnd":7216}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"custom element with tag name intlx-age not found.","line":170,"charStart":7483,"charEnd":7545}}]
+Total time spent on web/index.html                           -- 230 ms
+Total time                                                   -- 265 ms
+build.dart finished [3605 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":921,"charEnd":929}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"custom element with tag name intlx-age not found.","line":156,"charStart":6822,"charEnd":6884}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"custom element with tag name intlx-age not found.","line":163,"charStart":7156,"charEnd":7216}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"custom element with tag name intlx-age not found.","line":170,"charStart":7483,"charEnd":7545}}]
+Total time spent on web/index.html                           -- 224 ms
+Total time                                                   -- 251 ms
+build.dart finished [585 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":921,"charEnd":929}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"custom element with tag name intlx-age not found.","line":156,"charStart":6822,"charEnd":6884}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"custom element with tag name intlx-age not found.","line":163,"charStart":7156,"charEnd":7216}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"custom element with tag name intlx-age not found.","line":170,"charStart":7483,"charEnd":7545}}]
+Total time spent on web/index.html                           -- 224 ms
+Total time                                                   -- 252 ms
+build.dart finished [663 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 234 ms
+Total time                                                   -- 264 ms
+build.dart finished [483 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"warning","params":{"file":"web/index.html","message":"custom element with tag name intlx-demo not found.","line":35,"charStart":1439,"charEnd":1451}}]
+Total time spent on web/index.html                           -- 124 ms
+Total time                                                   -- 152 ms
+build.dart finished [2133 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 287 ms
+Total time                                                   -- 336 ms
+build.dart finished [3480 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 231 ms
+Total time                                                   -- 259 ms
+build.dart finished [482 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 237 ms
+Total time                                                   -- 287 ms
+build.dart finished [3087 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 232 ms
+Total time                                                   -- 262 ms
+build.dart finished [480 ms]
+
+---
+build.dart --machine --changed=pubspec.yaml
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 409 ms
+Total time                                                   -- 438 ms
+build.dart finished [7222 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 226 ms
+Total time                                                   -- 255 ms
+build.dart finished [591 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 226 ms
+Total time                                                   -- 254 ms
+build.dart finished [467 ms]
+
+---
+build.dart --machine --clean
+Total time                                                   --  30 ms
+build.dart finished [2319 ms]
+
+---
+build.dart --machine --full
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 374 ms
+Total time                                                   -- 403 ms
+build.dart finished [633 ms]
+
+---
+build.dart --machine --changed=lib\intlx.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 271 ms
+Total time                                                   -- 298 ms
+build.dart finished [2780 ms]
+
+---
+build.dart --machine --changed=lib\intlx.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 225 ms
+Total time                                                   -- 254 ms
+build.dart finished [479 ms]
+
+---
+build.dart --machine --changed=lib\src\relative_time\relative_time_locale.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 245 ms
+Total time                                                   -- 274 ms
+build.dart finished [481 ms]
+
+---
+build.dart --machine --changed=lib\intlx.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 227 ms
+Total time                                                   -- 255 ms
+build.dart finished [466 ms]
+
+---
+build.dart --machine --changed=lib\intlx.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 226 ms
+Total time                                                   -- 254 ms
+build.dart finished [467 ms]
+
+---
+build.dart --machine --changed=lib\intlx.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 227 ms
+Total time                                                   -- 256 ms
+build.dart finished [512 ms]
+
+---
+build.dart --machine --clean
+Total time                                                   --  27 ms
+build.dart finished [249 ms]
+
+---
+build.dart --machine --full
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 227 ms
+Total time                                                   -- 255 ms
+build.dart finished [489 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 323 ms
+Total time                                                   -- 351 ms
+build.dart finished [2396 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+Total time spent on web/index.html                           -- 152 ms
+Total time                                                   -- 181 ms
+build.dart finished [396 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+Total time spent on web/index.html                           -- 153 ms
+Total time                                                   -- 182 ms
+build.dart finished [681 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart
+Total time spent on web/index.html                           -- 151 ms
+Total time                                                   -- 181 ms
+build.dart finished [548 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 227 ms
+Total time                                                   -- 256 ms
+build.dart finished [491 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 178 ms
+Total time                                                   -- 206 ms
+build.dart finished [552 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+Total time spent on web/index.html                           -- 153 ms
+Total time                                                   -- 182 ms
+build.dart finished [394 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 225 ms
+Total time                                                   -- 254 ms
+build.dart finished [516 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+Total time spent on web/index.html                           -- 149 ms
+Total time                                                   -- 177 ms
+build.dart finished [564 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 226 ms
+Total time                                                   -- 255 ms
+build.dart finished [635 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":911,"charEnd":919}}]
+Total time spent on web/index.html                           -- 179 ms
+Total time                                                   -- 208 ms
+build.dart finished [537 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart --changed=lib\demo.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 181 ms
+Total time                                                   -- 210 ms
+build.dart finished [442 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 185 ms
+Total time                                                   -- 215 ms
+build.dart finished [632 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 186 ms
+Total time                                                   -- 214 ms
+build.dart finished [457 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 187 ms
+Total time                                                   -- 217 ms
+build.dart finished [559 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 180 ms
+Total time                                                   -- 208 ms
+build.dart finished [451 ms]
+
+---
+build.dart --machine --changed=lib\app.css
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 179 ms
+Total time                                                   -- 207 ms
+build.dart finished [437 ms]
+
+---
+build.dart --machine --changed=lib\demo.css --removed=lib\app.css
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 179 ms
+Total time                                                   -- 207 ms
+build.dart finished [436 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart --changed=lib\demo.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 188 ms
+Total time                                                   -- 218 ms
+build.dart finished [624 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 188 ms
+Total time                                                   -- 217 ms
+build.dart finished [431 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"link rel=\"stylesheet\" only valid in head.","line":8,"charStart":106,"charEnd":145}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":21,"charStart":956,"charEnd":964}}]
+Total time spent on web/index.html                           -- 184 ms
+Total time                                                   -- 213 ms
+build.dart finished [426 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"link rel=\"stylesheet\" only valid in head.","line":8,"charStart":106,"charEnd":145}}]
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":21,"charStart":956,"charEnd":964}}]
+Total time spent on web/index.html                           -- 186 ms
+Total time                                                   -- 214 ms
+build.dart finished [540 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 187 ms
+Total time                                                   -- 215 ms
+build.dart finished [429 ms]
+
+---
+build.dart --machine --changed=tool\gen_languages.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 1150 ms
+Total time                                                   -- 1179 ms
+build.dart finished [9949 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 216 ms
+Total time                                                   -- 246 ms
+build.dart finished [1077 ms]
+
+---
+build.dart --machine --changed=tool\gen_languages.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 189 ms
+Total time                                                   -- 217 ms
+build.dart finished [457 ms]
+
+---
+build.dart --machine --changed=tool\gen_languages.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 186 ms
+Total time                                                   -- 214 ms
+build.dart finished [430 ms]
+
+---
+build.dart --machine --changed=tool\gen_languages.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 185 ms
+Total time                                                   -- 213 ms
+build.dart finished [513 ms]
+
+---
+build.dart --machine --changed=web\languages.json
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 183 ms
+Total time                                                   -- 212 ms
+build.dart finished [419 ms]
+
+---
+build.dart --machine --changed=tool\gen_languages.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 187 ms
+Total time                                                   -- 214 ms
+build.dart finished [428 ms]
+
+---
+build.dart --machine --changed=tool\gen_languages.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 186 ms
+Total time                                                   -- 214 ms
+build.dart finished [436 ms]
+
+---
+build.dart --machine --changed=web\languages.json
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 187 ms
+Total time                                                   -- 215 ms
+build.dart finished [430 ms]
+
+---
+build.dart --machine --changed=tool\gen_languages.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 187 ms
+Total time                                                   -- 215 ms
+build.dart finished [533 ms]
+
+---
+build.dart --machine --changed=web\languages.json
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 204 ms
+Total time                                                   -- 234 ms
+build.dart finished [1389 ms]
+
+---
+build.dart --machine --changed=tool\gen_languages.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 222 ms
+Total time                                                   -- 251 ms
+build.dart finished [896 ms]
+
+---
+build.dart --machine --changed=web\languages.json
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 186 ms
+Total time                                                   -- 214 ms
+build.dart finished [427 ms]
+
+---
+build.dart --machine --changed=tool\gen_languages.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 185 ms
+Total time                                                   -- 214 ms
+build.dart finished [428 ms]
+
+---
+build.dart --machine --changed=web\languages.json
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 186 ms
+Total time                                                   -- 215 ms
+build.dart finished [420 ms]
+
+---
+build.dart --machine --changed=web\languages.json
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 185 ms
+Total time                                                   -- 214 ms
+build.dart finished [427 ms]
+
+---
+build.dart --machine --full
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 858 ms
+Total time                                                   -- 883 ms
+build.dart finished [6044 ms]
+
+---
+build.dart --machine --changed=lib\age.html --changed=lib\demo.css --changed=lib\demo.dart --changed=lib\demo.h...
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 209 ms
+Total time                                                   -- 235 ms
+build.dart finished [1241 ms]
+
+---
+build.dart --machine --changed=tool\gen_languages.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 186 ms
+Total time                                                   -- 211 ms
+build.dart finished [481 ms]
+
+---
+build.dart --machine --changed=web\languages.json
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 185 ms
+Total time                                                   -- 210 ms
+build.dart finished [440 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 190 ms
+Total time                                                   -- 214 ms
+build.dart finished [475 ms]
+
+---
+build.dart --machine --clean
+Total time                                                   --  23 ms
+build.dart finished [252 ms]
+
+---
+build.dart --machine --full
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 193 ms
+Total time                                                   -- 218 ms
+build.dart finished [469 ms]
+
+---
+build.dart --machine --changed=tool\gen_languages.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 186 ms
+Total time                                                   -- 210 ms
+build.dart finished [436 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 344 ms
+Total time                                                   -- 368 ms
+build.dart finished [4286 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 355 ms
+Total time                                                   -- 380 ms
+build.dart finished [4641 ms]
+
+---
+build.dart --machine --changed=lib\languages.json
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 309 ms
+Total time                                                   -- 334 ms
+build.dart finished [3837 ms]
+
+---
+build.dart --machine --removed=web\languages.json
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 268 ms
+Total time                                                   -- 318 ms
+build.dart finished [3627 ms]
+
+---
+build.dart --machine --changed=tool\gen_languages.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 421 ms
+Total time                                                   -- 622 ms
+build.dart finished [6034 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 259 ms
+Total time                                                   -- 283 ms
+build.dart finished [2523 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 186 ms
+Total time                                                   -- 211 ms
+build.dart finished [468 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 187 ms
+Total time                                                   -- 212 ms
+build.dart finished [578 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 187 ms
+Total time                                                   -- 212 ms
+build.dart finished [464 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 274 ms
+Total time                                                   -- 298 ms
+build.dart finished [5176 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 339 ms
+Total time                                                   -- 362 ms
+build.dart finished [7207 ms]
+
+---
+build.dart --machine --clean
+Total time                                                   --  26 ms
+build.dart finished [452 ms]
+
+---
+build.dart --machine --full
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 205 ms
+Total time                                                   -- 233 ms
+build.dart finished [527 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 203 ms
+Total time                                                   -- 230 ms
+build.dart finished [474 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 205 ms
+Total time                                                   -- 232 ms
+build.dart finished [474 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 202 ms
+Total time                                                   -- 229 ms
+build.dart finished [499 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 232 ms
+Total time                                                   -- 294 ms
+build.dart finished [2836 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 202 ms
+Total time                                                   -- 228 ms
+build.dart finished [861 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 202 ms
+Total time                                                   -- 229 ms
+build.dart finished [606 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 202 ms
+Total time                                                   -- 242 ms
+build.dart finished [2037 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 199 ms
+Total time                                                   -- 226 ms
+build.dart finished [466 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 204 ms
+Total time                                                   -- 230 ms
+build.dart finished [471 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 201 ms
+Total time                                                   -- 228 ms
+build.dart finished [503 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 206 ms
+Total time                                                   -- 233 ms
+build.dart finished [2019 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 220 ms
+Total time                                                   -- 248 ms
+build.dart finished [504 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 203 ms
+Total time                                                   -- 230 ms
+build.dart finished [472 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart --changed=lib\demo.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 206 ms
+Total time                                                   -- 232 ms
+build.dart finished [647 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 201 ms
+Total time                                                   -- 228 ms
+build.dart finished [1811 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+[{"method":"warning","params":{"file":"web\\packages\\intlx\\demo.html","message":"script tag in component with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+Total time spent on web/index.html                           -- 206 ms
+Total time                                                   -- 233 ms
+build.dart finished [479 ms]
+
+---
+build.dart --machine --full
+Unhandled exception:
+No top-level method 'parseOptions' declared.
+
+NoSuchMethodError : method not found: 'parseOptions'
+Receiver: top-level
+Arguments: [...]
+#0      NoSuchMethodError._throwNew (dart:core-patch/errors_patch.dart:156)
+#1      build (package:polymer/component_build.dart:21:42)
+#2      main (file:///C:/Users/se136c/dart/intlx/build.dart:7:8)
+build.dart finished [745 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart
+Unhandled exception:
+No top-level method 'parseOptions' declared.
+
+NoSuchMethodError : method not found: 'parseOptions'
+Receiver: top-level
+Arguments: [...]
+#0      NoSuchMethodError._throwNew (dart:core-patch/errors_patch.dart:156)
+#1      build (package:polymer/component_build.dart:21:42)
+#2      main (file:///C:/Users/se136c/dart/intlx/build.dart:7:8)
+build.dart finished [2055 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart --changed=lib\demo.html
+[{"method":"warning","params":{"file":"lib/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+build.dart finished [3637 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+[{"method":"warning","params":{"file":"lib/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+[{"method":"warning","params":{"file":"lib/demo.html","message":"Invalid event handler body \"selectLocale(locale)\". Declare a method in your custom element \"void handlerName(event, detail, target)\" and use the form on-click=\"handlerName\".","line":48,"charStart":2808,"charEnd":2853}}]
+build.dart finished [10955 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart
+[{"method":"warning","params":{"file":"lib/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+[{"method":"warning","params":{"file":"lib/demo.html","message":"Invalid event handler body \"selectLocale(locale)\". Declare a method in your custom element \"void handlerName(event, detail, target)\" and use the form on-click=\"handlerName\".","line":48,"charStart":2808,"charEnd":2853}}]
+build.dart finished [6852 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+[{"method":"warning","params":{"file":"lib/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+build.dart finished [14015 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart
+[{"method":"warning","params":{"file":"lib/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+build.dart finished [6489 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart --changed=lib\demo.html
+[{"method":"warning","params":{"file":"lib/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+build.dart finished [6334 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+[{"method":"warning","params":{"file":"lib/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+build.dart finished [2104 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"warning","params":{"file":"lib/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+build.dart finished [10295 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"warning","params":{"file":"lib/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":912,"charEnd":920}}]
+build.dart finished [5852 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+[{"method":"warning","params":{"file":"lib/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":18,"charStart":926,"charEnd":934}}]
+build.dart finished [3496 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+
+build.dart finished [8846 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+
+build.dart finished [19005 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart
+
+build.dart finished [19330 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart
+
+build.dart finished [10263 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart
+
+build.dart finished [16169 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart
+
+build.dart finished [13333 ms]
+
+---
+build.dart --machine --changed=lib\components.dart
+
+build.dart finished [11216 ms]
+
+---
+build.dart --machine --changed=lib\components.dart
+
+build.dart finished [18511 ms]
+
+---
+build.dart --machine --changed=lib\components.dart
+
+build.dart finished [20331 ms]
+
+---
+build.dart --machine --changed=lib\src\format_length.dart
+
+build.dart finished [19109 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+
+build.dart finished [15985 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+
+build.dart finished [10428 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart
+
+build.dart finished [9041 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart
+
+build.dart finished [8728 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+
+build.dart finished [14004 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+
+build.dart finished [9653 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+
+build.dart finished [8539 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+[{"method":"warning","params":{"file":"lib/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":20,"charStart":995,"charEnd":1003}}]
+build.dart finished [12487 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+[{"method":"warning","params":{"file":"lib/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":25,"charStart":1243,"charEnd":1251}}]
+build.dart finished [12437 ms]
+
+---
+build.dart --machine --changed=lib\demo.html
+[{"method":"warning","params":{"file":"lib/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":25,"charStart":1242,"charEnd":1250}}]
+build.dart finished [16101 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"warning","params":{"file":"lib/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":25,"charStart":1242,"charEnd":1250}}]
+build.dart finished [13786 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"warning","params":{"file":"lib/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":25,"charStart":1242,"charEnd":1250}}]
+build.dart finished [9092 ms]
+
+---
+build.dart --machine --removed=lib\demo.css
+[{"method":"warning","params":{"file":"lib/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":25,"charStart":1242,"charEnd":1250}}]
+build.dart finished [10244 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart --changed=lib\demo.html
+[{"method":"warning","params":{"file":"lib/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":25,"charStart":1242,"charEnd":1250}}]
+build.dart finished [13317 ms]
+
+---
+build.dart --machine --changed=lib\demo.dart
+[{"method":"warning","params":{"file":"lib/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":25,"charStart":1242,"charEnd":1250}}]
+build.dart finished [14777 ms]
+
+---
+build.dart --machine --changed=lib\components.dart --changed=lib\demo.dart --changed=lib\demo.html --changed=li...
+[{"method":"warning","params":{"file":"lib/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":25,"charStart":1242,"charEnd":1250}}]
+[{"method":"error","params":{"file":"web/demo.html","message":"couldn't find imported asset \"web/age.html\" in package \"intlx\".","line":2,"charStart":16,"charEnd":51}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":25,"charStart":1242,"charEnd":1250}}]
+build.dart finished [5712 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"lib/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":25,"charStart":1242,"charEnd":1250}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":25,"charStart":1257,"charEnd":1265}}]
+build.dart finished [2460 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"warning","params":{"file":"lib/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":25,"charStart":1242,"charEnd":1250}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":25,"charStart":1257,"charEnd":1265}}]
+build.dart finished [2284 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"warning","params":{"file":"lib/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":25,"charStart":1242,"charEnd":1250}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":25,"charStart":1257,"charEnd":1265}}]
+build.dart finished [2383 ms]
+
+---
+build.dart --machine --changed=web\demo.css --removed=web\app.css
+[{"method":"warning","params":{"file":"lib/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":25,"charStart":1242,"charEnd":1250}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":25,"charStart":1257,"charEnd":1265}}]
+build.dart finished [2296 ms]
+
+---
+build.dart --machine --changed=tool\gen_languages.dart
+[{"method":"warning","params":{"file":"lib/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":25,"charStart":1242,"charEnd":1250}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":25,"charStart":1257,"charEnd":1265}}]
+build.dart finished [2228 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"lib/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":25,"charStart":1242,"charEnd":1250}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":25,"charStart":1259,"charEnd":1267}}]
+build.dart finished [2240 ms]
+
+---
+build.dart --machine --full
+[{"method":"warning","params":{"file":"lib/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":25,"charStart":1242,"charEnd":1250}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":25,"charStart":1259,"charEnd":1267}}]
+build.dart finished [3251 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"lib/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":25,"charStart":1242,"charEnd":1250}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":25,"charStart":1259,"charEnd":1267}}]
+build.dart finished [2225 ms]
+
+---
+build.dart --machine --changed=lib\components.dart --changed=lib\demo.dart --changed=web\demo.dart
+[{"method":"warning","params":{"file":"lib/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":25,"charStart":1242,"charEnd":1250}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":25,"charStart":1259,"charEnd":1267}}]
+build.dart finished [2097 ms]
+
+---
+build.dart --machine --removed=lib\demo.dart --removed=lib\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":25,"charStart":1259,"charEnd":1267}}]
+build.dart finished [2077 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":25,"charStart":1259,"charEnd":1267}}]
+build.dart finished [2458 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":25,"charStart":1259,"charEnd":1267}}]
+build.dart finished [2185 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":25,"charStart":1259,"charEnd":1267}}]
+build.dart finished [2069 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":25,"charStart":1259,"charEnd":1267}}]
+build.dart finished [2081 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":25,"charStart":1259,"charEnd":1267}}]
+build.dart finished [2081 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":25,"charStart":1259,"charEnd":1267}}]
+build.dart finished [2197 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":25,"charStart":1257,"charEnd":1265}}]
+build.dart finished [2119 ms]
+

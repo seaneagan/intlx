@@ -18,49 +18,79 @@ import 'package:intlx/src/util.dart';
 import 'package:polymer/polymer.dart';
 
 @CustomTag('intlx-demo')
-class IntlxDemo extends PolymerElement with ObservableMixin {
+class IntlxDemo extends PolymerElement {
 
-  created() {
+  IntlxDemo() {
 
     loadLocaleData();
 
+    var propertyDependencies = {
+      #localeNames: [#selectedLocale],
+      #defaultAgeFormat: [#selectedLocale],
+      #secondsAgeFormat: [#selectedLocale],
+      #durationFormat: [#selectedLocale, #durationFormatLength],
+      #duration: [#durationFormat, #timeUnit, #timeUnitCount],
+      #dateTime: [#selectedTime],
+      #selectedLocale: [#selectedLocaleIndex]
+    };
+
+    propertyDependencies.forEach((property, dependencies) =>
+        dependencies.forEach((dependency) =>
+            onPropertyChange(this, dependency, () => notifyProperty(this, property))));
+
+    onPropertyChange(this, #selectedLocale, () => Intl.systemLocale = selectedLocale);
+  }
+
+  created() {
+
     super.created();
 
-    onPropertyChange(this, #selectedLocale, () => notifyProperty(this, #localeNames));
-    onPropertyChange(this, #selectedLocale, () => notifyProperty(this, #durationFormat));
-    onPropertyChange(this, #durationFormatLength, () => notifyProperty(this, #durationFormat));
-    onPropertyChange(this, #durationFormat, () => notifyProperty(this, #duration));
-    onPropertyChange(this, #timeUnit, () => notifyProperty(this, #duration));
-    onPropertyChange(this, #timeUnitCount, () => notifyProperty(this, #duration));
-
-    HttpRequest.getString('packages/intlx/languages.json').then((languagesJson) {
-      var allLanguageNames = JSON.decode(languagesJson);
-      localeNames = _filterLocaleNames(allLanguageNames);
-    });
+    HttpRequest.getString('packages/intlx/languages.json')
+        .then((languagesJson) {
+          var allLanguageNames = JSON.decode(languagesJson);
+          localeNames = _filterLocaleNames(allLanguageNames);
+        })
+        .then((_) => findSystemLocale())
+        .then((systemLocale) {
+          var foundLocale = Intl.verifiedLocale(systemLocale, localeNames.keys.contains, onFailure: (_) => null);
+          if(foundLocale != null) {
+            selectedLocale = foundLocale;
+          }
+        });
   }
+
+  final iterableCounts = [0, 1, 2, 5];
+  final pluralCounts = [0, 1, 2];
 
   bool get applyAuthorStyles => true;
 
-  var _selectedLocale = 'en';
-  String get selectedLocale => _selectedLocale;
-  selectLocale(_1, _2, AnchorElement target) {
-    var locale = target.attributes['value'];
-    Intl.systemLocale = _selectedLocale = locale;
-    notifyProperty(this, #selectedLocale);
+  @observable
+  var selectedLocaleIndex = 0;
+
+  String get selectedLocale {
+    var locales = localeNames.keys;
+    if(locales.length - 1 < selectedLocaleIndex) return 'en';
+    return locales.elementAt(selectedLocaleIndex);
+  }
+
+  void set selectedLocale(String v) {
+    selectedLocaleIndex = localeNames.keys.toList().indexOf(v);
   }
 
   @observable
   Map<String, String> localeNames = const {};
 
-  // iterable
-  BidiFormatter bidiFormatter = new BidiFormatter.UNKNOWN(true);
+  @observable
+  var durationFormatLength = 1;
 
+  @observable
+  var timeUnit = 1;
+
+  @observable
+  var timeUnitCount = '60';
+
+  // iterable
   var iterableData = iterable_data.ALL;
-  IterableFormat get iterableFormat => new IterableFormat(
-    locale: selectedLocale,
-    onSeparator: (sep) => '<span class="muted">$sep</span>');
-  var counts = range(4);
-  String formatCount(int count) => bidiFormatter.wrapWithSpan(iterableFormat.format(range(count, 1).map((i) => '<b class="text-info">$i</b>')), isHtml: true);
   String toStringCount(int count) => range(count, 1).toList().toString();
 
   // plural
@@ -75,32 +105,40 @@ class IntlxDemo extends PolymerElement with ObservableMixin {
 
   // relative time
   var relativeTimeData = relative_time_data.ALL;
-  // duration
-  @observable
-  var durationFormatLength = 1;
 
+  // duration
   DurationFormat get durationFormat => new DurationFormat(locale: selectedLocale, length: FormatLength.values[durationFormatLength]);
 
-  @observable
-  var timeUnit = 1;
+  var timeUnits = TimeUnit.values.take(4).toList();
 
-  @observable
-  var timeUnitCount = '60';
+  Iterable<String> get timeUnitsToDisplay =>
+      timeUnits.map((unit) => '${unit.toString().toLowerCase()}s');
 
-  String get duration => durationFormat.format(new RoundDuration(TimeUnit.values[timeUnit], int.parse(timeUnitCount, onError: (_) => 0)).toDuration());
+
+  Iterable<String> get formatLengths =>
+      FormatLength.values.map((formatLength) => formatLength.toString());
+
+  String get duration => durationFormat.format(new RoundDuration(timeUnits[timeUnit], int.parse(timeUnitCount, onError: (_) => 0)).toDuration());
 
   // age
   get defaultAgeFormat => new AgeFormat(locale: selectedLocale);
   get secondsAgeFormat => new AgeFormat(locale: selectedLocale, rounder: new DurationRounder.staticUnit(TimeUnit.SECOND));
-  var dateTime = new DateTime.now();
-  String _selectedTime = "3";
-  String get selectedTime => _selectedTime;
-  void set selectedTime (String v) {
-    _selectedTime = v;
-    var i = int.parse(v);
-    var cases = [soy, som, sod, () => new DateTime.now(), eod, eom, eoy];
-    dateTime = cases[i]();
-  }
+
+  Map<String, Function> get dateTimes => {
+    'startOfYear()': soy,
+    'startOfMonth()': som,
+    'startOfDay()': sod,
+    'new DateTime.now()': () => new DateTime.now(),
+    'endOfDay()':  eod,
+    'endOfMonth()': eom,
+    'endOfYear()': eoy
+  };
+
+  DateTime get dateTime => dateTimes.values.elementAt(selectedTime)();
+
+  @observable
+  var selectedTime = 3;
+
   DateTime sod() => _withNow((now) => new DateTime(now.year, now.month, now.day));
   DateTime som() => _withNow((now) => new DateTime(now.year, now.month));
   DateTime soy() => _withNow((now) => new DateTime(now.year));
@@ -115,15 +153,7 @@ class IntlxDemo extends PolymerElement with ObservableMixin {
     relativeTimeData.load();
     iterableData.load();
     pluralData.load();
-    findSystemLocale().then((locale) {
-      var foundLocale = Intl.verifiedLocale(locale, _locales.contains, onFailure: (_) => null);
-      if(foundLocale != null) {
-        Intl.systemLocale = _selectedLocale = foundLocale;
-      }
-    });
   }
-
-  pillClass(String locale) => locale == selectedLocale ? 'active' : '';
 }
 
 // locale data (use relative time for no particular reason since they're all the same)
@@ -145,4 +175,41 @@ Map<String, String> _filterLocaleNames(Map<String, String> localeNames) {
     }
     return filtered;
   });
+}
+
+@CustomTag('intlx-iterable-demo')
+class IterableDemo extends PolymerElement {
+
+  bool get applyAuthorStyles => true;
+
+  @published
+  String locale;
+
+  @published
+  int count;
+
+  int get _countAsInt => count == null ? 0 : count;
+
+  IterableDemo() {
+    onPropertyChange(this, #locale, _update);
+  }
+
+  void _update() {
+    if(shadowRoot != null) shadowRoot.setInnerHtml(_content);
+  }
+
+  IterableFormat get iterableFormat => new IterableFormat(
+    locale: locale,
+    onSeparator: (sep) => '<span class="text-muted">$sep</span>');
+
+  String get _content {
+    return bidiFormatter.wrapWithSpan(iterableFormat.format(range(_countAsInt, 1).map((i) => '<b class="text-info">$i</b>')), isHtml: true);
+  }
+
+  BidiFormatter bidiFormatter = new BidiFormatter.UNKNOWN(true);
+}
+
+@CustomTag('intlx-code-demo-row')
+class CodeDemoRow extends PolymerElement {
+  bool get applyAuthorStyles => true;
 }

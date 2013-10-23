@@ -6014,3 +6014,1093 @@ build.dart --machine --changed=web\demo.html
 [{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":25,"charStart":1257,"charEnd":1265}}]
 build.dart finished [2119 ms]
 
+---
+build.dart --machine --changed=lib\components.dart --changed=pubspec.lock --changed=web\demo.dart --changed=web...
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":27,"charStart":1359,"charEnd":1367}}]
+build.dart finished [2630 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":27,"charStart":1359,"charEnd":1367}}]
+build.dart finished [2141 ms]
+
+---
+build.dart --machine --changed=web\demo.html --changed=web\index.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":30,"charStart":1517,"charEnd":1525}}]
+build.dart finished [5318 ms]
+
+---
+build.dart --machine --changed=web\demo.html --changed=web\index.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":31,"charStart":1418,"charEnd":1426}}]
+build.dart finished [2368 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":31,"charStart":1418,"charEnd":1426}}]
+build.dart finished [2234 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":31,"charStart":1418,"charEnd":1426}}]
+build.dart finished [2240 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":31,"charStart":1418,"charEnd":1426}}]
+build.dart finished [2290 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":31,"charStart":1418,"charEnd":1426}}]
+build.dart finished [2317 ms]
+
+---
+build.dart --machine --changed=web\demo.html --changed=web\index.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2108 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2167 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2183 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [4388 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2144 ms]
+
+---
+build.dart --machine --changed=web\demo.dart --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2186 ms]
+
+---
+build.dart --machine --changed=web\demo.dart --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2138 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [12854 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2179 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2117 ms]
+
+---
+build.dart --machine --changed=web\demo.dart --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2148 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2136 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2115 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2133 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2126 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [5747 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2217 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2133 ms]
+
+---
+build.dart --machine --changed=lib\components.dart --changed=pubspec.lock --changed=web\demo.css --changed=web\...
+[{"method":"warning","params":{"file":"web/demo.html","message":"Unexpected start tag token (template in the select phase. Ignored.","line":102,"charStart":4916,"charEnd":4969}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"Unexpected end tag (template) in the select phase. Ignored.","line":104,"charStart":5055,"charEnd":5066}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"Unexpected start tag token (template in the select phase. Ignored.","line":102,"charStart":4916,"charEnd":4969}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"Unexpected end tag (template) in the select phase. Ignored.","line":104,"charStart":5055,"charEnd":5066}}]
+build.dart finished [13887 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"Unexpected start tag token (template in the select phase. Ignored.","line":102,"charStart":4916,"charEnd":4969}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"Unexpected end tag (template) in the select phase. Ignored.","line":104,"charStart":5055,"charEnd":5066}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"Unexpected start tag token (template in the select phase. Ignored.","line":102,"charStart":4916,"charEnd":4969}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"Unexpected end tag (template) in the select phase. Ignored.","line":104,"charStart":5055,"charEnd":5066}}]
+build.dart finished [2182 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [3219 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2307 ms]
+
+---
+build.dart --machine --changed=web\demo.dart --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2347 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2532 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2116 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2150 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2137 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2113 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2317 ms]
+
+---
+build.dart --machine --changed=web\demo.dart --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2609 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"End tag (div) seen too early. Expected other end tag.","line":141,"charStart":6334,"charEnd":6340}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"End tag (div) seen too early. Expected other end tag.","line":141,"charStart":6334,"charEnd":6340}}]
+build.dart finished [2137 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2107 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2289 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2262 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2233 ms]
+
+---
+build.dart --machine --changed=lib\src\format_length.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2124 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2274 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"Trailing solidus not allowed on element span","line":200,"charStart":8936,"charEnd":8974}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"End tag (div) seen too early. Expected other end tag.","line":200,"charStart":8982,"charEnd":8988}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"Trailing solidus not allowed on element span","line":200,"charStart":8936,"charEnd":8974}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"End tag (div) seen too early. Expected other end tag.","line":200,"charStart":8982,"charEnd":8988}}]
+build.dart finished [4651 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"Trailing solidus not allowed on element span","line":200,"charStart":8936,"charEnd":8974}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"End tag (div) seen too early. Expected other end tag.","line":200,"charStart":8982,"charEnd":8988}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"Trailing solidus not allowed on element span","line":200,"charStart":8936,"charEnd":8974}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"End tag (div) seen too early. Expected other end tag.","line":200,"charStart":8982,"charEnd":8988}}]
+build.dart finished [2177 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"Trailing solidus not allowed on element span","line":200,"charStart":8936,"charEnd":8974}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"End tag (div) seen too early. Expected other end tag.","line":200,"charStart":8982,"charEnd":8988}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"Trailing solidus not allowed on element span","line":200,"charStart":8936,"charEnd":8974}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"End tag (div) seen too early. Expected other end tag.","line":200,"charStart":8982,"charEnd":8988}}]
+build.dart finished [2136 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"Trailing solidus not allowed on element span","line":200,"charStart":8936,"charEnd":8974}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"End tag (div) seen too early. Expected other end tag.","line":200,"charStart":8982,"charEnd":8988}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"Trailing solidus not allowed on element span","line":200,"charStart":8936,"charEnd":8974}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"End tag (div) seen too early. Expected other end tag.","line":200,"charStart":8982,"charEnd":8988}}]
+build.dart finished [2179 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"Trailing solidus not allowed on element span","line":200,"charStart":8936,"charEnd":8974}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"End tag (div) seen too early. Expected other end tag.","line":200,"charStart":8982,"charEnd":8988}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"Trailing solidus not allowed on element span","line":200,"charStart":8936,"charEnd":8974}}]
+[{"method":"warning","params":{"file":"web/demo.html","message":"End tag (div) seen too early. Expected other end tag.","line":200,"charStart":8982,"charEnd":8988}}]
+build.dart finished [2258 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2464 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2128 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2107 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2720 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2343 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2249 ms]
+
+---
+build.dart --machine --changed=lib\components.dart --changed=lib\src\format_length.dart --changed=pubspec.lock ...
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2163 ms]
+
+---
+build.dart --machine --changed=web\demo.dart --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2153 ms]
+
+---
+build.dart --machine --changed=web\iterable-demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2123 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":32,"charStart":1519,"charEnd":1527}}]
+build.dart finished [2108 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2137 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2102 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2264 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2458 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2161 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2173 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2452 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2152 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2456 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2107 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2135 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2268 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2324 ms]
+
+---
+build.dart --machine --changed=web\iterable-demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2110 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2164 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2112 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2243 ms]
+
+---
+build.dart --machine --changed=web\iterable-demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2149 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2512 ms]
+
+---
+build.dart --machine --changed=web\demo.dart --changed=web\iterable-demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2253 ms]
+
+---
+build.dart --machine --changed=web\demo.dart --changed=web\iterable-demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2231 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2129 ms]
+
+---
+build.dart --machine --changed=web\iterable-demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2111 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2320 ms]
+
+---
+build.dart --machine --changed=web\iterable-demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2123 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2125 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2185 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2331 ms]
+
+---
+build.dart --machine --changed=web\code-demo-row.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [7192 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [7305 ms]
+
+---
+build.dart --machine --changed=web\code-demo-row.html --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2175 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":35,"charStart":1612,"charEnd":1620}}]
+build.dart finished [5817 ms]
+
+---
+build.dart --machine --changed=web\code-demo-row.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":35,"charStart":1612,"charEnd":1620}}]
+build.dart finished [2148 ms]
+
+---
+build.dart --machine --changed=web\code-demo-row.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":35,"charStart":1612,"charEnd":1620}}]
+build.dart finished [2255 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":35,"charStart":1612,"charEnd":1620}}]
+build.dart finished [2270 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":35,"charStart":1612,"charEnd":1620}}]
+build.dart finished [2115 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":35,"charStart":1612,"charEnd":1620}}]
+build.dart finished [2157 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2247 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":35,"charStart":1612,"charEnd":1620}}]
+build.dart finished [2119 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2141 ms]
+
+---
+build.dart --machine --changed=lib\components.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [15586 ms]
+
+---
+build.dart --machine --changed=lib\components.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2634 ms]
+
+---
+build.dart --machine --changed=lib\components.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2338 ms]
+
+---
+build.dart --machine --changed=lib\age.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2126 ms]
+
+---
+build.dart --machine --changed=lib\components.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2495 ms]
+
+---
+build.dart --machine --changed=lib\age.html --changed=lib\components.dart --changed=lib\src\format_length.dart ...
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [15660 ms]
+
+---
+build.dart --machine --changed=lib\components.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [7583 ms]
+
+---
+build.dart --machine --changed=lib\age.html --changed=lib\components.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2309 ms]
+
+---
+build.dart --machine --changed=lib\components.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2433 ms]
+
+---
+build.dart --machine --changed=lib\components.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2461 ms]
+
+---
+build.dart --machine --changed=lib\age.html --changed=lib\components.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2153 ms]
+
+---
+build.dart --machine --changed=lib\age.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2238 ms]
+
+---
+build.dart --machine --changed=lib\components.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2446 ms]
+
+---
+build.dart --machine --changed=lib\components.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2206 ms]
+
+---
+build.dart --machine --changed=lib\components.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2468 ms]
+
+---
+build.dart --machine --changed=lib\components.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2232 ms]
+
+---
+build.dart --machine --changed=lib\components.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2109 ms]
+
+---
+build.dart --machine --changed=lib\components.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2331 ms]
+
+---
+build.dart --machine --changed=lib\components.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2129 ms]
+
+---
+build.dart --machine --changed=lib\components.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2295 ms]
+
+---
+build.dart --machine --changed=lib\components.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2123 ms]
+
+---
+build.dart --machine --changed=lib\components.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2143 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [9149 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [3019 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2868 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2145 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [10549 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2137 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [8103 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2480 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2118 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2370 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2776 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [3340 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2171 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2356 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2292 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [6458 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2173 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2145 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2120 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2212 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2428 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2467 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2156 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2123 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2257 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2428 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2120 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2148 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2110 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2149 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2350 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2149 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2098 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2088 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":34,"charStart":1566,"charEnd":1574}}]
+build.dart finished [2100 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":27,"charStart":1304,"charEnd":1312}}]
+build.dart finished [5491 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":27,"charStart":1304,"charEnd":1312}}]
+build.dart finished [2183 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":27,"charStart":1304,"charEnd":1312}}]
+build.dart finished [8955 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":27,"charStart":1304,"charEnd":1312}}]
+build.dart finished [2802 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":27,"charStart":1304,"charEnd":1312}}]
+build.dart finished [2345 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":27,"charStart":1304,"charEnd":1312}}]
+build.dart finished [4853 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":27,"charStart":1304,"charEnd":1312}}]
+build.dart finished [2561 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":27,"charStart":1304,"charEnd":1312}}]
+build.dart finished [2166 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":27,"charStart":1304,"charEnd":1312}}]
+build.dart finished [2138 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":27,"charStart":1304,"charEnd":1312}}]
+build.dart finished [2364 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":27,"charStart":1304,"charEnd":1312}}]
+build.dart finished [2122 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":27,"charStart":1304,"charEnd":1312}}]
+build.dart finished [2158 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":27,"charStart":1304,"charEnd":1312}}]
+build.dart finished [20774 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":27,"charStart":1304,"charEnd":1312}}]
+build.dart finished [2184 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":27,"charStart":1304,"charEnd":1312}}]
+build.dart finished [32168 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":27,"charStart":1304,"charEnd":1312}}]
+build.dart finished [2129 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":27,"charStart":1304,"charEnd":1312}}]
+build.dart finished [12809 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":27,"charStart":1304,"charEnd":1312}}]
+build.dart finished [5791 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":27,"charStart":1304,"charEnd":1312}}]
+build.dart finished [8203 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":27,"charStart":1304,"charEnd":1312}}]
+build.dart finished [9787 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":27,"charStart":1304,"charEnd":1312}}]
+build.dart finished [2086 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":27,"charStart":1304,"charEnd":1312}}]
+build.dart finished [2158 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":27,"charStart":1304,"charEnd":1312}}]
+build.dart finished [2826 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":27,"charStart":1304,"charEnd":1312}}]
+build.dart finished [2619 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":27,"charStart":1304,"charEnd":1312}}]
+build.dart finished [2103 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":27,"charStart":1304,"charEnd":1312}}]
+build.dart finished [2110 ms]
+
+---
+build.dart --machine --changed=web\demo.css --changed=web\demo.dart --changed=web\demo.html --changed=web\index...
+
+build.dart finished [7413 ms]
+
+---
+build.dart --machine --changed=web\index.html
+
+build.dart finished [2176 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+
+build.dart finished [2111 ms]
+
+---
+build.dart --machine --changed=web\demo.html --changed=web\index.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":27,"charStart":1306,"charEnd":1314}}]
+build.dart finished [2407 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+[{"method":"warning","params":{"file":"web/demo.html","message":"script tag in polymer element with no type will be treated as JavaScript. Did you forget type=\"application/dart\"?","line":27,"charStart":1306,"charEnd":1323}}]
+build.dart finished [2489 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+
+build.dart finished [2100 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+
+build.dart finished [2434 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+
+build.dart finished [2095 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+
+build.dart finished [2097 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+
+build.dart finished [2366 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+
+build.dart finished [2415 ms]
+
+---
+build.dart --machine --changed=web\demo.css
+
+build.dart finished [2086 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+
+build.dart finished [2684 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+
+build.dart finished [2106 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+
+build.dart finished [2340 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+
+build.dart finished [2162 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+
+build.dart finished [2623 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+
+build.dart finished [2202 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+
+build.dart finished [42990 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+
+build.dart finished [3435 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+
+build.dart finished [20269 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+
+build.dart finished [2106 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+
+build.dart finished [15208 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+
+build.dart finished [2474 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+
+build.dart finished [2118 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+
+build.dart finished [2138 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+
+build.dart finished [2520 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+
+build.dart finished [2418 ms]
+
+---
+build.dart --machine --changed=web\demo.html
+
+build.dart finished [2329 ms]
+

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<polymer-element name="intlx-code-demo-row">
+
+  <template>
+
+    <div class="row">
+      <div class="col-md-8">
+        <pre class="prettyprint"><content select=".code > *"></content></pre>
+      </div>
+      <div class="col-md-4">
+        <content select=".output > *"></content>
+      </div>
+    </div>
+    
+  </template>
+  
+  <script type="application/dart" src="demo.dart"></script>
+
+</polymer-element>

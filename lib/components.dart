@@ -9,26 +9,36 @@ import 'package:polymer/polymer.dart';
 import 'package:intlx/intlx.dart';
 
 @CustomTag('intlx-age')
-class AgeComponent extends PolymerElement with ObservableMixin {
+class AgeComponent extends PolymerElement {
+
+  created() {
+    super.created();
+
+    _onUpdateInterval.listen((_) {
+      notifyProperty(this, #age);
+    });
+
+    onPropertyChange(this, #value, () => notifyProperty(this, #age));
+  }
 
   bool get applyAuthorStyles => true;
 
   static final _defaultAgeFormat = new AgeFormat();
 
-  AgeComponent() {
-    if(_dummyCounter == 0) {
-      new Stream.periodic(const Duration(seconds: 1), (_) => _dummyCounter++).listen((_){});
-    }
-  }
-  static var _dummyCounter = 0;
-  static var _dummyCounterInit = (){
-  }();
+  static final _updateInterval = const Duration(seconds: 1);
+
+  static final _onUpdateInterval =
+      new Stream.periodic(_updateInterval)
+      .asBroadcastStream();
+
+  @published
   DateTime value;
-  AgeFormat format = _defaultAgeFormat;
+
+  @published
+  var format = _defaultAgeFormat;
 
   @observable
   String get age {
-    _dummyCounter;
     var v = value;
     if(v == null) return '';
     if(format is DurationFormat) {

@@ -16,4 +16,6 @@ class FormatLength {
   final int _index;
 
   static const values = const <FormatLength> [SHORT, LONG];
+
+  String toString() => _name;
 }

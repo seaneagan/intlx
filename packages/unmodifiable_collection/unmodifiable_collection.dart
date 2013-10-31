@@ -13,6 +13,7 @@
  */
 library unmodifiable_collection;
 
+import "dart:math" show Random;
 export "dart:collection" show UnmodifiableListView;
 
 /**
@@ -54,10 +55,11 @@ class NonGrowableListView<E> extends _IterableView<E>
 
   Map<int, E> asMap() => _source.asMap();
 
-
   void operator []=(int index, E value) { _source[index] = value; }
 
   void sort([int compare(E a, E b)]) { _source.sort(compare); }
+
+  void shuffle([Random random]) { _source.shuffle(random); }
 
   void setRange(int start, int end, Iterable<E> iterable, [int skipCount = 0]) {
     _source.setRange(start, end, iterable, skipCount);
@@ -82,7 +84,9 @@ class NonGrowableListView<E> extends _IterableView<E>
    * Throws an [UnsupportedError];
    * operations that change the length of the list are disallowed.
    */
-  void add(E value) => _throw();
+  bool add(E value) {
+    _throw();
+  }
 
   /**
    * Throws an [UnsupportedError];
@@ -154,7 +158,7 @@ class NonGrowableListView<E> extends _IterableView<E>
 /**
  * An unmodifiable set.
  *
- * An UnmodifiableSetView contains a [Set] object and ensures 
+ * An UnmodifiableSetView contains a [Set] object and ensures
  * that it does not change.
  * Methods that would change the set,
  * such as [add] and [remove], throw an [UnsupportedError].
@@ -177,12 +181,15 @@ class UnmodifiableSetView<E> extends _IterableView<E>
 
   Set<E> difference(Set<E> other) => _source.difference(other);
 
+  E lookup(Object object) => _source.lookup(object);
 
   /**
    * Throws an [UnsupportedError];
    * operations that change the set are disallowed.
    */
-  void add(E value) => _throw();
+  bool add(E value) {
+    _throw();
+  }
 
   /**
    * Throws an [UnsupportedError];
@@ -230,7 +237,7 @@ class UnmodifiableSetView<E> extends _IterableView<E>
 /**
  * An unmodifiable map.
  *
- * An UnmodifiableMapView contains a [Map] object and ensures 
+ * An UnmodifiableMapView contains a [Map] object and ensures
  * that it does not change.
  * Methods that would change the map,
  * such as [addAll] and [remove], throw an [UnsupportedError].

@@ -577,6 +577,34 @@ Parser choice(List<Parser> ps) {
   });
 }
 
+class _SkipInBetween {
+  final Parser left;
+  final Parser right;
+  final bool nested;
+
+  _SkipInBetween(this.left, this.right, this.nested);
+
+  Parser parser() => nested ? insideMulti() : insideSingle();
+
+  Parser inside() => rec(parser).between(left, right);
+  Parser get leftOrRightAhead => (left | right).lookAhead;
+  Parser insideMulti() => anyChar.skipManyUntil(leftOrRightAhead) > nest();
+  Parser nest() => (rec(inside) > rec(insideMulti)).maybe;
+  Parser insideSingle() => anyChar.skipManyUntil(right.lookAhead);
+}
+
+Parser skipEverythingBetween(
+    Parser left, Parser right, {bool nested: false}) {
+  final inBetween = new _SkipInBetween(left, right, nested).parser();
+  return inBetween.between(left, right) > success(null);
+}
+
+Parser everythingBetween(
+    Parser left, Parser right, {bool nested: false}) {
+  final inBetween = new _SkipInBetween(left, right, nested).parser();
+  return inBetween.record.between(left, right);
+}
+
 // Derived character parsers
 
 final Parser<String> anyChar = pred((c) => true) % 'any character';
@@ -776,17 +804,8 @@ class LanguageParsers {
   Parser get _end => string(_commentEnd);
   Parser get _notStartNorEnd => (_start | _end).notAhead > anyChar;
 
-  Parser _multiLineComment() => _start > _inComment();
-
-  Parser _inComment() =>
-      _nestedComments ? _inCommentMulti() : _inCommentSingle();
-
-  Parser _inCommentMulti() => _notStartNorEnd.skipMany > _recOrEnd();
-
-  Parser _recOrEnd() => (rec(_multiLineComment) > rec(_inCommentMulti))
-                      | (_end > success(null));
-
-  Parser _inCommentSingle() => anyChar.skipManyUntil(_end);
+  Parser get _multiLineComment =>
+      skipEverythingBetween(_start, _end, nested: _nestedComments);
 
   Parser get _oneLineComment =>
       string(_commentLine) > (pred((c) => c != '\n').skipMany > success(null));
@@ -797,11 +816,11 @@ class LanguageParsers {
     if (_commentLine.isEmpty && _commentStart.isEmpty) {
       return space.skipMany;
     } else if (_commentLine.isEmpty) {
-      return (space | _multiLineComment()).skipMany;
+      return (space | _multiLineComment).skipMany;
     } else if (_commentStart.isEmpty) {
       return (space | _oneLineComment).skipMany;
     } else {
-      return (space | _oneLineComment | _multiLineComment()).skipMany;
+      return (space | _oneLineComment | _multiLineComment).skipMany;
     }
   }
 

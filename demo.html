@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<link rel="import" href="packages/intlx/age.html">
+<link rel="import" href="iterable-demo.html">
+
+<polymer-element name="intlx-demo">
+
+  <template>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><div class="dart-logo">dartlang.org</div></a>
+        <a class="navbar-brand" href="#">Intlx</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul id="intlx-nav" class="nav navbar-nav">
+          <li class="gh-star">
+            <iframe src="http://ghbtns.com/github-btn.html?user=seaneagan&amp;repo=intlx&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+          </li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+  <div class="container">
+    <p class="lead">
+      <b>Intlx</b> is a <a href="https://pub.dartlang.org/packages/intlx">pub package</a>
+      for <a href="http://dartlang.org">dart</a>,
+      with internationalization APIs beyond that of the <a href="http://pub.dartlang.org/packages/intl">intl package</a>.
+      To get started, try the demo below, read the <a href="docs/intlx.html">docs</a>, and
+      install by adding <code class="prettyprint">intlx: any</code> to your <a href="http://pub.dartlang.org/doc/dependencies.html">dependencies</a>.
+    </p>
+    <div class="row">
+      <form class="form-horizontal" role="form">
+        <div class="form-group">
+          <label for="selected-locale" class="col-lg-1 control-label">Language:</label>
+          <div class="col-lg-3">
+            <select id="selected-locale" class="form-control" selectedIndex="{{selectedLocaleIndex}}">
+              <option template repeat="{{locale in locales}}">{{localeNames[locale]}}</option>
+            </select>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="row">
+    <div class="code-demo col-md-6">
+      <div class="row">
+        <div class="col-md-8"><code class="prettyprint">
+Intl.systemLocale = '{{selectedLocale}}';</code>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-8"><pre class="prettyprint">
+// Duration formatting
+</pre>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-8"><pre class="prettyprint">
+var durationFormat = new <a href="docs/intlx/DurationFormat.html">DurationFormat</a>(length: </pre>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          &nbsp;&nbsp;<code class="prettyprint lang-dart"><a href="docs/intlx/FormatLength.html">FormatLength</a>.</code>
+          <span class="controls">
+            <select id="duration-format-length" selectedIndex="{{durationFormatLength}}">
+              <option template repeat="{{formatLengh in formatLengths}}">{{formatLengh}}</option>
+            </select>
+          </span>
+          <code class="prettyprint lang-dart">);</code>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-8"><pre class="prettyprint">
+var duration = new Duration(</pre>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+&nbsp;&nbsp;<span class="controls">
+            <select id="time-unit" selectedIndex="{{timeUnit}}">
+              <option template repeat="{{unit in timeUnitsToDisplay}}">{{unit}}</option>
+            </select>
+          </span>
+          <code class="prettyprint lang-dart">: </code>
+          <span class="controls">
+            <input type="number" class="input-mini" value="{{timeUnitCount}}">
+          </span>
+          <code class="prettyprint lang-dart">);</code>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-8"><pre class="prettyprint lang-dart">
+durationFormat.format(duration)</pre>
+        </div>
+        <div class="col-md-4"><b>"</b>{{duration}}<b>"</b></div>
+      </div>
+      <div class="row">
+        <div class="col-md-8"><pre class="prettyprint">
+
+</pre>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-8"><pre class="prettyprint">
+// "Age" formatting using
+// auto-updating <a href="https://www.dartlang.org/polymer-dart/">polymer component</a>
+</pre>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-8"><code class="prettyprint lang-dart">var dateTime = </code>
+          <span class="controls">
+            <select id="selected-time" selectedIndex="{{selectedTime}}">
+              <option template repeat="{{label in dateTimeLabels}}">{{label}}</option>
+            </select>
+          </span>
+        <code class="prettyprint lang-dart">;</code>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-8"><pre class="prettyprint lang-dart">
+var ageFormat = new <a href="docs/intlx/AgeFormat.html">AgeFormat</a>(
+rounder: new <a href="docs/intlx/DurationRounder.html">DurationRounder</a>.<a href="docs/intlx/DurationRounder.html#DurationRounder.staticUnit">staticUnit</a>(
+  <a href="docs/intlx/TimeUnit.html">TimeUnit</a>.SECOND));</pre>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-8"><pre class="prettyprint">
+&lt;link rel="import" href="packages/intlx/age.html"&gt;</pre>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-8"><pre class="prettyprint">
+&lt;intlx-age value="{{mustachify('dateTime')}}"&gt;&lt;/intlx-age&gt;</pre>
+        </div>
+        <div class="col-md-4"><intlx-age value="{{dateTime}}" format="{{defaultAgeFormat}}"></intlx-age></div>
+      </div>
+      <div class="row">
+        <div class="col-md-8"><pre class="prettyprint">
+&lt;intlx-age value="{{mustachify('dateTime')}}"
+  format="{{mustachify('durationFormat')}}"&gt;&lt;/intlx-age&gt;</pre>
+        </div>
+        <div class="col-md-4"><intlx-age value="{{dateTime}}" format="{{durationFormat}}"></intlx-age></div>
+      </div>
+      <div class="row">
+        <div class="col-md-8"><pre class="prettyprint">
+&lt;intlx-age value="{{mustachify('dateTime')}}"
+  format="{{mustachify('ageFormat')}}"&gt;&lt;/intlx-age&gt;</pre>
+        </div>
+        <div class="col-md-4"><intlx-age value="{{dateTime}}" format="{{secondsAgeFormat}}"></intlx-age></div>
+      </div>
+    </div>
+    <div class="code-demo col-md-6">
+      <div class="row">
+        <div class="col-md-8"><pre class="prettyprint lang-dart">
+// Iterable formatting
+</pre>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-8"><pre class="prettyprint lang-dart">
+var iterableFormat = new <a href="docs/intlx/IterableFormat.html">IterableFormat</a>(
+onSeparator: (sep) =>
+  '&lt;span class="<span class="nocode"><a href="http://twitter.github.io/bootstrap/base-css.html#typography">text-muted</a></span>"&gt;$sep&lt;/span&gt;');</pre>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+      <template repeat="{{count in iterableCounts}}">
+        <div class="row">
+          <div class="col-md-8"><pre class="prettyprint lang-dart">
+  iterableFormat.format({{toStringCount(count)}})</pre>
+          </div>
+          <div class="col-md-4"><b>"</b><intlx-iterable-demo locale="{{selectedLocale}}" count="{{count}}"></intlx-iterable-demo><b>"</b></div>
+        </div>
+      </template>
+      <div class="row">
+        <div class="col-md-8"><pre class="prettyprint lang-dart">
+
+// Plural formatting (demo english only for now)
+</pre>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-8"><pre class="prettyprint lang-dart">
+var pluralFormat = new <a href="docs/intlx/PluralFormat.html">PluralFormat</a>({
+"0": "no books",
+"one": "{0} book",
+"other": "{0} books"}, pattern: "{0}");</pre>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+      <template repeat="{{count in pluralCounts}}">
+        <div class="row">
+          <div class="col-md-8"><pre class="prettyprint lang-dart">
+  pluralFormat.format({{count}})</pre>
+          </div>
+          <div class="col-md-4"><b>"</b>{{formatPlural(count)}}<b>"</b></div>
+        </div>
+      </template>
+    </div>
+    </div>
+    <footer class="footer jumbotron">
+      <div class="container">
+        <p>Intlx is licensed under the <a href="http://opensource.org/licenses/BSD-3-Clause" target="_blank">BSD license</a>.</p>
+        <ul class="footer-links">
+          <li><a href="http://pub.dartlang.org/packages/intlx">Pub Package</a></li>
+          <li><a href="https://github.com/seaneagan/intlx/">Github</a></li>
+          <li><a href="docs">Docs</a></li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+  <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=dart"></script>
+  </template>
+
+  <script type="application/dart" src="demo.dart"></script>
+
+</polymer-element>

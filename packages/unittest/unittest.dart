@@ -305,15 +305,6 @@ const FAIL  = 'fail';
 const ERROR = 'error';
 
 /**
- * A map that can be used to communicate state between a test driver
- * or main() function and the tests, particularly when these two
- * are otherwise independent. For example, a test driver that starts
- * an HTTP server and then runs tests that access that server could use
- * this as a way of communicating the server port to the tests.
- */
-Map testState = {};
-
-/**
  * Creates a new test case with the given description and body. The
  * description will include the descriptions of any surrounding group()
  * calls.
@@ -750,6 +741,7 @@ void _runTest() {
       try {
         timer = new Timer(timeout, () {
           testCase.error("Test timed out after ${timeout.inSeconds} seconds.");
+          _nextTestCase();
         });
       } on UnsupportedError catch (e) {
         if (e.message != "Timer greater than 0.") rethrow;
@@ -763,7 +755,7 @@ void _runTest() {
         _lastBreath = now;
         Timer.run(_nextTestCase);
       } else {
-        runAsync(_nextTestCase); // Schedule the next test.
+        scheduleMicrotask(_nextTestCase); // Schedule the next test.
       }
     });
   }
@@ -817,7 +809,7 @@ void _ensureInitialized(bool configAutoStart) {
   if (configAutoStart && _config.autoStart) {
     // Immediately queue the suite up. It will run after a timeout (i.e. after
     // main() has returned).
-    runAsync(runTests);
+    scheduleMicrotask(runTests);
   }
 }
 
@@ -858,13 +850,13 @@ typedef dynamic TestFunction();
 bool formatStacks = true;
 
 /**
- * A flag that controls whether we try to filter out irrelevant frames from 
+ * A flag that controls whether we try to filter out irrelevant frames from
  * the stack trace. Requires formatStacks to be set.
  */
 bool filterStacks = true;
 
 /**
- * Returns a Trace object from a StackTrace object or a String, or the 
+ * Returns a Trace object from a StackTrace object or a String, or the
  * unchanged input if formatStacks is false;
  */
 Trace _getTrace(stack) {

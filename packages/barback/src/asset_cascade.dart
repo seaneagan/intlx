@@ -11,11 +11,13 @@ import 'asset.dart';
 import 'asset_id.dart';
 import 'asset_node.dart';
 import 'asset_set.dart';
+import 'barback_logger.dart';
 import 'build_result.dart';
 import 'cancelable_future.dart';
 import 'errors.dart';
 import 'package_graph.dart';
 import 'phase.dart';
+import 'stream_pool.dart';
 import 'transformer.dart';
 import 'utils.dart';
 
@@ -69,10 +71,33 @@ class AssetCascade {
   Stream<BarbackException> get errors => _errorsController.stream;
   final _errorsController = new StreamController<BarbackException>.broadcast();
 
+  /// A stream that emits an event whenever this cascade becomes dirty.
+  ///
+  /// After this stream emits an event, [results] will emit an event once the
+  /// cascade is no longer dirty.
+  ///
+  /// This may emit events when the cascade was already dirty. Events are
+  /// emitted synchronously to ensure that the dirty state is thoroughly
+  /// propagated as soon as any assets are changed.
+  Stream get onDirty => _onDirtyPool.stream;
+  final _onDirtyPool = new StreamPool.broadcast();
+
+  /// A controller whose stream feeds into [_onDirtyPool].
+  final _onDirtyController = new StreamController.broadcast(sync: true);
+
+  /// A stream that emits an event whenever any transforms in this cascade log
+  /// an entry.
+  Stream<LogEntry> get onLog => _onLogPool.stream;
+  final _onLogPool = new StreamPool<LogEntry>.broadcast();
+
   /// The errors that have occurred since the current build started.
   ///
   /// This will be empty if no build is occurring.
   Queue<BarbackException> _accumulatedErrors;
+
+  /// The number of errors that have been logged since the current build
+  /// started.
+  int _numLogErrors;
 
   /// A future that completes when the currently running build process finishes.
   ///
@@ -84,13 +109,23 @@ class AssetCascade {
   var _newChanges = false;
 
   /// Returns all currently-available output assets from this cascade.
-  AssetSet get availableOutputs => _phases.last.availableOutputs;
+  AssetSet get availableOutputs =>
+    new AssetSet.from(_phases.last.availableOutputs.map((node) => node.asset));
 
   /// Creates a new [AssetCascade].
   ///
   /// It loads source assets within [package] using [provider].
   AssetCascade(this.graph, this.package) {
+    _onDirtyPool.add(_onDirtyController.stream);
     _addPhase(new Phase(this, []));
+
+    // Keep track of logged errors so we can know that the build failed.
+    onLog.listen((entry) {
+      if (entry.level == LogLevel.ERROR) {
+        _accumulatedErrors.add(
+            new TransformerException(entry.transform, entry.message));
+      }
+    });
   }
 
   /// Gets the asset identified by [id].
@@ -174,7 +209,10 @@ class AssetCascade {
   }
 
   /// Sets this cascade's transformer phases to [transformers].
-  void updateTransformers(Iterable<Iterable<Transformer>> transformers) {
+  ///
+  /// Elements of the inner iterable of [transformers] must be either
+  /// [Transformer]s or [TransformerGroup]s.
+  void updateTransformers(Iterable<Iterable> transformers) {
     transformers = transformers.toList();
 
     for (var i = 0; i < transformers.length; i++) {
@@ -201,6 +239,8 @@ class AssetCascade {
 
   /// Add [phase] to the end of [_phases] and watch its [onDirty] stream.
   void _addPhase(Phase phase) {
+    _onDirtyPool.add(phase.onDirty);
+    _onLogPool.add(phase.onLog);
     phase.onDirty.listen((_) {
       _newChanges = true;
       _waitForProcess();
@@ -219,10 +259,12 @@ class AssetCascade {
     if (_processDone != null) return _processDone;
 
     _accumulatedErrors = new Queue();
+    _numLogErrors = 0;
     return _processDone = _process().then((_) {
       // Report the build completion.
       // TODO(rnystrom): Put some useful data in here.
-      _resultsController.add(new BuildResult(_accumulatedErrors));
+      _resultsController.add(
+          new BuildResult(_accumulatedErrors));
     }).catchError((error) {
       // If we get here, it's an unexpected error. Runtime errors like missing
       // assets should be handled earlier. Errors from transformers or other

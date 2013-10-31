@@ -6,9 +6,7 @@ library relative_time_locale;
 
 import 'package:intl/intl.dart';
 import 'package:intlx/intlx.dart';
-import 'package:intlx/src/symbols_map.dart';
 import 'package:intlx/src/util.dart';
-import 'package:intlx/src/plural/plural.dart';
 import 'package:intlx/src/relative_time/relative_time_symbols.dart';
 
 class RelativeTimeLocale {

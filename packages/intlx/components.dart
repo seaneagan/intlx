@@ -1,30 +1,50 @@
+// Copyright (c) 2013, the Dart project authors.  Please see the AUTHORS file
+// for details. All rights reserved. Use of this source code is governed by a
+// BSD-style license that can be found in the LICENSE file.
 
 library intlx.components;
 
 import 'dart:async';
-import 'package:web_ui/web_ui.dart';
-import 'package:web_ui/watcher.dart' as watcher;
+import 'package:polymer/polymer.dart';
 import 'package:intlx/intlx.dart';
 
-@observable
-class AgeComponent extends WebComponent {
-  static final _defaultAgeFormat = new AgeFormat();
-  
-  AgeComponent() {
-    if(_dummyCounter == 0) {
-      new Stream.periodic(const Duration(seconds: 1), (_) => _dummyCounter++).listen((_){});
-    }
-  }
-  static var _dummyCounter = 0;
-  static var _dummyCounterInit = (){
-  }();
-  DateTime value;
-  AgeFormat format = _defaultAgeFormat;
+@CustomTag('intlx-age')
+class AgeComponent extends PolymerElement with ChangeNotifier  {
 
+  AgeComponent.created() : super.created();
+
+  enteredView() {
+
+    super.enteredView();
+
+    _onUpdateInterval.listen((_) => notifyAge());
+
+    onPropertyChange(this, #value, notifyAge);
+  }
+
+  notifyAge() => notifyPropertyChange(#age, null, age);
+
+  bool get applyAuthorStyles => true;
+
+  static final _defaultAgeFormat = new AgeFormat();
+
+  static final _updateInterval = const Duration(seconds: 1);
+
+  static final _onUpdateInterval =
+      new Stream.periodic(_updateInterval)
+      .asBroadcastStream();
+
+  @reflectable @published
+  DateTime get value => __$value; DateTime __$value; @reflectable set value(DateTime value) { __$value = notifyPropertyChange(#value, __$value, value); }
+
+  @reflectable @published
+  dynamic get format => __$format; dynamic __$format = _defaultAgeFormat; @reflectable set format(dynamic value) { __$format = notifyPropertyChange(#format, __$format, value); }
+
+  @observable
   String get age {
-    _dummyCounter;
     var v = value;
-    if(format is DurationFormat) { 
+    if(v == null) return '';
+    if(format is DurationFormat) {
       v = new DateTime.now().difference(v);
       var micros = v.inMicroseconds;
       if(micros.isNegative) {

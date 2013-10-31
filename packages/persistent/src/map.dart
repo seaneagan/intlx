@@ -1,7 +1,9 @@
 // Copyright (c) 2012, Google Inc. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 
-// Author: Paul Brauner (polux@google.com)
+// Authors:
+//   Paul Brauner (polux@google.com)
+//   Rafael Brandão (rafa.bra@gmail.com)
 
 part of persistent;
 
@@ -25,6 +27,18 @@ abstract class PersistentMap<K, V> implements Iterable<Pair<K, V>> {
     PersistentMap<K, V> result = new _EmptyMap<K, V>();
     map.forEach((K key, V value) {
       result = result.insert(key, value);
+    });
+    return result;
+  }
+
+  /**
+   * Creates a [PersistentMap] from an [Iterable] of [Pair]s using the default
+   * implementation of [PersistentMap].
+   */
+  factory PersistentMap.fromPairs(Iterable<Pair<K, V>> pairs) {
+    PersistentMap<K, V> result = new _EmptyMap<K, V>();
+    pairs.forEach((pair) {
+      result = result.insert(pair.fst, pair.snd);
     });
     return result;
   }
@@ -62,6 +76,12 @@ abstract class PersistentMap<K, V> implements Iterable<Pair<K, V>> {
    *     {'a': 1, 'b': 2}.lookup('b') == Option.some(2)
    */
   Option<V> lookup(K key);
+
+  /**
+   * Returns the value for the given [key] or [:null:] if [key]
+   * is not in the map.
+   */
+  V operator [](K key);
 
   /**
    * Evaluates `f(key, value)` for each (`key`, `value`) pair in `this`.
@@ -137,6 +157,12 @@ abstract class PersistentMap<K, V> implements Iterable<Pair<K, V>> {
 
   /// Randomly picks an entry of `this`.
   Pair<K, V> pickRandomEntry([Random random]);
+
+  /// A strict (non-lazy) version of [map].
+  PersistentMap strictMap(Pair f(Pair<K, V> pair));
+
+  /// A strict (non-lazy) version of [where].
+  PersistentMap<K, V> strictWhere(bool f(Pair<K, V> pair));
 }
 
 /**
@@ -176,4 +202,12 @@ abstract class PersistentMapBase<K, V>
 
   Pair<K, V> pickRandomEntry([Random random]) =>
       elementAt((random != null ? random : _random).nextInt(this.length));
+
+  V operator [](K key) => this.lookup(key).asNullable;
+
+  PersistentMap strictMap(Pair f(Pair<K, V> pair)) =>
+      new PersistentMap.fromPairs(this.map(f));
+
+  PersistentMap<K, V> strictWhere(bool f(Pair<K, V> pair)) =>
+      new PersistentMap<K, V>.fromPairs(this.where(f));
 }

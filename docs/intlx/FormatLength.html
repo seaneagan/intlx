@@ -43,8 +43,10 @@ class FormatLength {
 
  final String _name;
  final int _index;
- 
- static const values = const &lt;TimeUnit&gt; [SHORT, LONG];
+
+ static const values = const &lt;FormatLength&gt; [SHORT, LONG];
+
+ String toString() =&gt; _name;
 }
 </pre>
 </div>
@@ -82,7 +84,23 @@ const         <strong>values</strong> <a class="anchor-link"
         </h4>
         <div class="doc">
 <pre class="source">
-static const values = const &lt;TimeUnit&gt; [SHORT, LONG]
+static const values = const &lt;FormatLength&gt; [SHORT, LONG]
+</pre>
+</div>
+</div>
+</div>
+<div>
+<h3>Methods</h3>
+<div class="method"><h4 id="toString">
+<button class="show-code">Code</button>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>toString</strong>() <a class="anchor-link" href="#toString"
+              title="Permalink to FormatLength.toString">#</a></h4>
+<div class="doc">
+<div class="inherited">
+<p>Returns a string representation of this object.</p>
+<div class="docs-inherited-from">docs inherited from <a href="http://api.dartlang.org/dart_core/Object.html">Object</a> </div></div>
+<pre class="source">
+String toString() =&gt; _name;
 </pre>
 </div>
 </div>
@@ -91,7 +109,7 @@ static const values = const &lt;TimeUnit&gt; [SHORT, LONG]
         <div class="clear"></div>
         </div>
         <div class="footer">
-          <div>This page was generated at 2013-09-26 20:55:17.153</div>
+          <div>This page was generated at 2013-10-31 21:09:41.451</div>
         </div>
         <script async src="../client-live-nav.js"></script>
         </body></html>

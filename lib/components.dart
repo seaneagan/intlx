@@ -11,15 +11,18 @@ import 'package:intlx/intlx.dart';
 @CustomTag('intlx-age')
 class AgeComponent extends PolymerElement {
 
-  created() {
-    super.created();
+  AgeComponent.created() : super.created();
 
-    _onUpdateInterval.listen((_) {
-      notifyProperty(this, #age);
-    });
+  enteredView() {
 
-    onPropertyChange(this, #value, () => notifyProperty(this, #age));
+    super.enteredView();
+
+    _onUpdateInterval.listen((_) => notifyAge());
+
+    onPropertyChange(this, #value, notifyAge);
   }
+
+  notifyAge() => notifyPropertyChange(#age, null, age);
 
   bool get applyAuthorStyles => true;
 

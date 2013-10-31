@@ -6,6 +6,8 @@ library intlx.demo;
 
 import 'dart:html';
 import 'dart:convert';
+//@MirrorsUsed(targets: 'dart.core.Iterable.keys', override: '*')
+//import 'dart:mirrors';
 import 'package:intl/intl.dart';
 import 'package:intl/intl_browser.dart';
 import 'package:intlx/intlx.dart';
@@ -20,11 +22,10 @@ import 'package:polymer/polymer.dart';
 @CustomTag('intlx-demo')
 class IntlxDemo extends PolymerElement {
 
-  IntlxDemo() {
-
-    loadLocaleData();
+  IntlxDemo.created() : super.created() {
 
     var propertyDependencies = {
+      #locales: [#localeNames],
       #localeNames: [#selectedLocale],
       #defaultAgeFormat: [#selectedLocale],
       #secondsAgeFormat: [#selectedLocale],
@@ -36,14 +37,15 @@ class IntlxDemo extends PolymerElement {
 
     propertyDependencies.forEach((property, dependencies) =>
         dependencies.forEach((dependency) =>
-            onPropertyChange(this, dependency, () => notifyProperty(this, property))));
+            onPropertyChange(this, dependency, () =>
+                notifyChange(new PropertyChangeRecord(this, property, null, null)))));
 
     onPropertyChange(this, #selectedLocale, () => Intl.systemLocale = selectedLocale);
   }
 
-  created() {
+  enteredView() {
 
-    super.created();
+    super.enteredView();
 
     HttpRequest.getString('packages/intlx/languages.json')
         .then((languagesJson) {
@@ -80,6 +82,8 @@ class IntlxDemo extends PolymerElement {
   @observable
   Map<String, String> localeNames = const {};
 
+  Iterable<String> get locales => localeNames.keys;
+
   @observable
   var durationFormatLength = 1;
 
@@ -100,8 +104,7 @@ class IntlxDemo extends PolymerElement {
     "0": "no books",
     "one": "{0} book",
     "other": "{0} books"};
-  String get formattedPlural => pluralFormat.format(plural);
-  var plural = 0;
+  String formatPlural(int plural) => pluralFormat.format(plural);
 
   // relative time
   var relativeTimeData = relative_time_data.ALL;
@@ -124,7 +127,7 @@ class IntlxDemo extends PolymerElement {
   get defaultAgeFormat => new AgeFormat(locale: selectedLocale);
   get secondsAgeFormat => new AgeFormat(locale: selectedLocale, rounder: new DurationRounder.staticUnit(TimeUnit.SECOND));
 
-  Map<String, Function> get dateTimes => {
+  get dateTimes => {
     'startOfYear()': soy,
     'startOfMonth()': som,
     'startOfDay()': sod,
@@ -133,6 +136,8 @@ class IntlxDemo extends PolymerElement {
     'endOfMonth()': eom,
     'endOfYear()': eoy
   };
+
+  get dateTimeLabels => dateTimes.keys;
 
   DateTime get dateTime => dateTimes.values.elementAt(selectedTime)();
 
@@ -149,11 +154,13 @@ class IntlxDemo extends PolymerElement {
 
   String mustachify(String content) => '{{$content}}';
 
-  loadLocaleData() {
-    relativeTimeData.load();
-    iterableData.load();
-    pluralData.load();
-  }
+}
+
+@initMethod
+loadLocaleData() {
+  relative_time_data.ALL.load();
+  iterable_data.ALL.load();
+  plural_data.ALL.load();
 }
 
 // locale data (use relative time for no particular reason since they're all the same)
@@ -190,8 +197,13 @@ class IterableDemo extends PolymerElement {
 
   int get _countAsInt => count == null ? 0 : count;
 
-  IterableDemo() {
+  IterableDemo.created() : super.created() {
     onPropertyChange(this, #locale, _update);
+  }
+
+  enteredView() {
+    super.enteredView();
+    _update();
   }
 
   void _update() {
@@ -207,9 +219,4 @@ class IterableDemo extends PolymerElement {
   }
 
   BidiFormatter bidiFormatter = new BidiFormatter.UNKNOWN(true);
-}
-
-@CustomTag('intlx-code-demo-row')
-class CodeDemoRow extends PolymerElement {
-  bool get applyAuthorStyles => true;
 }

@@ -7104,3 +7104,525 @@ build.dart --machine --changed=web\demo.html
 
 build.dart finished [2329 ms]
 
+---
+build.dart --machine --full
+[{"method":"warning","params":{"file":"web/index.html","message":"\"boot.js\" is now deprecated. Instead, you can initialize your polymer application by calling \"initPolymer()\" in your main. If you don't have a main, then you can include our generic main by adding the following script tag to your page: '<script type=\"application/dart\" src=\"packages/polymer/init.dart\"> </script>'. Additionally you need to include: '<script src=\"packages/browser/dart.js\"></script>' in the page too. Make sure these script tags come after all HTML imports.","line":20,"charStart":727,"charEnd":766}}]
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications, make sure to include '<script type=\"application/dart\" src=\"packages/polymer/init.dart\"></script>' in your page, after all HTML imports.","line":34,"charStart":1238,"charEnd":1244}}]
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications in Dartium, make sure to include'<script src=\"packages/browser/dart.js\"></script>' in your page","line":34,"charStart":1238,"charEnd":1244}}]
+build.dart finished [2565 ms]
+
+---
+build.dart --machine --changed=lib\components.dart --changed=web\demo.dart --changed=web\index.html
+
+build.dart finished [8863 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+
+build.dart finished [6372 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected character after attribute value.","line":20,"charStart":727,"charEnd":759}}]
+[{"method":"warning","params":{"file":"web/index.html","message":"Invalid character in attribute name","line":20,"charStart":727,"charEnd":759}}]
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications, make sure to include '<script type=\"application/dart\" src=\"packages/polymer/init.dart\"></script>' in your page, after all HTML imports.","line":39,"charStart":1361,"charEnd":1367}}]
+build.dart finished [2512 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications, make sure to include '<script type=\"application/dart\" src=\"packages/polymer/init.dart\"></script>' in your page, after all HTML imports.","line":39,"charStart":1360,"charEnd":1366}}]
+build.dart finished [2146 ms]
+
+---
+build.dart --machine --changed=web\index.html
+
+build.dart finished [2303 ms]
+
+---
+build.dart --machine --changed=web\index.html
+
+build.dart finished [2128 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications, make sure to include '<script type=\"application/dart\" src=\"packages/polymer/init.dart\"></script>' in your page, after all HTML imports.","line":38,"charStart":1353,"charEnd":1359}}]
+build.dart finished [2310 ms]
+
+---
+build.dart --machine --changed=web\index.html
+[{"method":"warning","params":{"file":"web/index.html","message":"Unexpected start tag token (script) in the after body phase.","line":36,"charStart":1236,"charEnd":1268}}]
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications, make sure to include '<script type=\"application/dart\" src=\"packages/polymer/init.dart\"></script>' in your page, after all HTML imports.","line":32,"charStart":1184,"charEnd":1190}}]
+build.dart finished [3725 ms]
+
+---
+build.dart --machine --changed=web\demo.dart --changed=web\index.html
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications, make sure to include '<script type=\"application/dart\" src=\"packages/polymer/init.dart\"></script>' in your page, after all HTML imports.","line":38,"charStart":1353,"charEnd":1359}}]
+build.dart finished [2578 ms]
+
+---
+build.dart --machine --clean
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications, make sure to include '<script type=\"application/dart\" src=\"packages/polymer/init.dart\"></script>' in your page, after all HTML imports.","line":38,"charStart":1353,"charEnd":1359}}]
+build.dart finished [3827 ms]
+
+---
+build.dart --machine --full
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications, make sure to include '<script type=\"application/dart\" src=\"packages/polymer/init.dart\"></script>' in your page, after all HTML imports.","line":38,"charStart":1353,"charEnd":1359}}]
+build.dart finished [2150 ms]
+
+---
+build.dart --machine --changed=lib\components.dart --changed=pubspec.lock --changed=web\demo.dart --changed=web...
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications, make sure to include '<script type=\"application/dart\" src=\"packages/polymer/init.dart\"></script>' in your page, after all HTML imports.","line":38,"charStart":1353,"charEnd":1359}}]
+build.dart finished [7971 ms]
+
+---
+build.dart --machine --clean
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications, make sure to include '<script type=\"application/dart\" src=\"packages/polymer/init.dart\"></script>' in your page, after all HTML imports.","line":38,"charStart":1353,"charEnd":1359}}]
+build.dart finished [8237 ms]
+
+---
+build.dart --machine --full
+[{"method":"error","params":{"file":"web/index.html","message":"To run a polymer applications, make sure to include '<script type=\"application/dart\" src=\"packages/polymer/init.dart\"></script>' in your page, after all HTML imports.","line":38,"charStart":1353,"charEnd":1359}}]
+build.dart finished [2135 ms]
+
+---
+build.dart --machine --changed=pubspec.lock
+
+build.dart finished [3032 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [2211 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+
+build.dart finished [5022 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+
+build.dart finished [4572 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+
+build.dart finished [2104 ms]
+
+---
+build.dart --machine --changed=web\index.html
+
+build.dart finished [4436 ms]
+
+---
+build.dart --machine --changed=web\index.html
+
+build.dart finished [2152 ms]
+
+---
+build.dart --machine --changed=build\code-demo-row.html --changed=build\demo.css --changed=build\demo.html --ch...
+
+build.dart finished [3233 ms]
+
+---
+build.dart --machine --changed=web\index.html
+
+build.dart finished [2360 ms]
+
+---
+build.dart --machine --changed=web\index.html
+
+build.dart finished [2145 ms]
+
+---
+build.dart --machine --changed=build\code-demo-row.html --changed=build\demo.css --changed=build\demo.html --ch...
+Running dart2js
+out/web/packages/path/path.dart:49:23: Hint: Can't find 'dart.io.Directory.current' in the current library.
+Did you forget to add an import?
+@MirrorsUsed(targets: 'dart.dom.html.window, '
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/path/path.dart:49:23: Hint: Can't find 'dart.io.Platform.operatingSystem' in the current library.
+Did you forget to add an import?
+@MirrorsUsed(targets: 'dart.dom.html.window, '
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/template_binding/src/element.dart:18:7: Warning: No member named 'attributes' in class 'Node'.
+      _node.attributes.remove(name);
+      ^^^^^^^^^^^^^^^^
+out/web/index.html_bootstrap.dart:1:1: Hint: 870 methods retained for use by dart:mirrors out of 3453 total methods (25%).
+library app_bootstrap;
+
+out/web/packages/polymer/polymer.dart:50:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/observe/observe.dart:89:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/path/path.dart:52:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/polymer_expressions/eval.dart:12:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/polymer_expressions/src/mirrors.dart:11:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/polymer/deserialize.dart:8:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors' show TypeMirror;
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/polymer/src/reflected_type.dart:11:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+
+Done
+build.dart finished [28045 ms]
+
+---
+build.dart --machine --changed=build\code-demo-row.html --changed=build\demo.css --changed=build\demo.html --ch...
+Running dart2js
+out/web/packages/path/path.dart:49:23: Hint: Can't find 'dart.io.Directory.current' in the current library.
+Did you forget to add an import?
+@MirrorsUsed(targets: 'dart.dom.html.window, '
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/path/path.dart:49:23: Hint: Can't find 'dart.io.Platform.operatingSystem' in the current library.
+Did you forget to add an import?
+@MirrorsUsed(targets: 'dart.dom.html.window, '
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/template_binding/src/element.dart:18:7: Warning: No member named 'attributes' in class 'Node'.
+      _node.attributes.remove(name);
+      ^^^^^^^^^^^^^^^^
+out/web/index.html_bootstrap.dart:1:1: Hint: 870 methods retained for use by dart:mirrors out of 3453 total methods (25%).
+library app_bootstrap;
+
+out/web/packages/polymer/polymer.dart:50:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/observe/observe.dart:89:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/path/path.dart:52:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/polymer_expressions/eval.dart:12:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/polymer_expressions/src/mirrors.dart:11:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/polymer/deserialize.dart:8:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors' show TypeMirror;
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/polymer/src/reflected_type.dart:11:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+
+Done
+build.dart finished [53359 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+Running dart2js
+out/web/packages/path/path.dart:49:23: Hint: Can't find 'dart.io.Directory.current' in the current library.
+Did you forget to add an import?
+@MirrorsUsed(targets: 'dart.dom.html.window, '
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/path/path.dart:49:23: Hint: Can't find 'dart.io.Platform.operatingSystem' in the current library.
+Did you forget to add an import?
+@MirrorsUsed(targets: 'dart.dom.html.window, '
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/template_binding/src/element.dart:18:7: Warning: No member named 'attributes' in class 'Node'.
+      _node.attributes.remove(name);
+      ^^^^^^^^^^^^^^^^
+out/web/index.html_bootstrap.dart:1:1: Hint: 870 methods retained for use by dart:mirrors out of 3453 total methods (25%).
+library app_bootstrap;
+
+out/web/packages/polymer/polymer.dart:50:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/observe/observe.dart:89:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/path/path.dart:52:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/polymer_expressions/eval.dart:12:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/polymer_expressions/src/mirrors.dart:11:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/polymer/deserialize.dart:8:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors' show TypeMirror;
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/polymer/src/reflected_type.dart:11:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+
+Done
+build.dart finished [32193 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+Running dart2js
+out/web/packages/path/path.dart:49:23: Hint: Can't find 'dart.io.Directory.current' in the current library.
+Did you forget to add an import?
+@MirrorsUsed(targets: 'dart.dom.html.window, '
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/path/path.dart:49:23: Hint: Can't find 'dart.io.Platform.operatingSystem' in the current library.
+Did you forget to add an import?
+@MirrorsUsed(targets: 'dart.dom.html.window, '
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/template_binding/src/element.dart:18:7: Warning: No member named 'attributes' in class 'Node'.
+      _node.attributes.remove(name);
+      ^^^^^^^^^^^^^^^^
+out/web/index.html_bootstrap.dart:1:1: Hint: 870 methods retained for use by dart:mirrors out of 3453 total methods (25%).
+library app_bootstrap;
+
+out/web/packages/polymer/polymer.dart:50:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/observe/observe.dart:89:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/path/path.dart:52:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/polymer_expressions/eval.dart:12:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/polymer_expressions/src/mirrors.dart:11:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/polymer/deserialize.dart:8:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors' show TypeMirror;
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/polymer/src/reflected_type.dart:11:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+
+Done
+build.dart finished [18396 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+Running dart2js
+out/web/packages/path/path.dart:49:23: Hint: Can't find 'dart.io.Directory.current' in the current library.
+Did you forget to add an import?
+@MirrorsUsed(targets: 'dart.dom.html.window, '
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/path/path.dart:49:23: Hint: Can't find 'dart.io.Platform.operatingSystem' in the current library.
+Did you forget to add an import?
+@MirrorsUsed(targets: 'dart.dom.html.window, '
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+out/web/demo.dart:9:23: Hint: Can't find 'keys' in the current library.
+Did you forget to add an import?
+@MirrorsUsed(targets: 'keys', override: '*')
+                      ^^^^^^
+out/web/packages/template_binding/src/element.dart:18:7: Warning: No member named 'attributes' in class 'Node'.
+      _node.attributes.remove(name);
+      ^^^^^^^^^^^^^^^^
+out/web/index.html_bootstrap.dart:1:1: Hint: 870 methods retained for use by dart:mirrors out of 3453 total methods (25%).
+library app_bootstrap;
+
+out/web/packages/polymer/polymer.dart:50:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/observe/observe.dart:89:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/path/path.dart:52:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/polymer_expressions/eval.dart:12:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/polymer_expressions/src/mirrors.dart:11:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/polymer/deserialize.dart:8:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors' show TypeMirror;
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/polymer/src/reflected_type.dart:11:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/demo.dart:10:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+
+Done
+build.dart finished [18375 ms]
+
+---
+build.dart --machine --changed=web\demo.dart --changed=web\demo.html
+Running dart2js
+out/web/packages/path/path.dart:49:23: Hint: Can't find 'dart.io.Directory.current' in the current library.
+Did you forget to add an import?
+@MirrorsUsed(targets: 'dart.dom.html.window, '
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/path/path.dart:49:23: Hint: Can't find 'dart.io.Platform.operatingSystem' in the current library.
+Did you forget to add an import?
+@MirrorsUsed(targets: 'dart.dom.html.window, '
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+out/web/demo.dart:9:23: Hint: Can't find 'keys' in 'Iterable'.
+Is 'keys' spelled right?
+@MirrorsUsed(targets: 'dart.core.Iterable.keys', override: '*')
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/template_binding/src/element.dart:18:7: Warning: No member named 'attributes' in class 'Node'.
+      _node.attributes.remove(name);
+      ^^^^^^^^^^^^^^^^
+out/web/index.html_bootstrap.dart:1:1: Hint: 995 methods retained for use by dart:mirrors out of 3578 total methods (28%).
+library app_bootstrap;
+
+out/web/packages/polymer/polymer.dart:50:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/observe/observe.dart:89:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/path/path.dart:52:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/polymer_expressions/eval.dart:12:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/polymer_expressions/src/mirrors.dart:11:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/polymer/deserialize.dart:8:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors' show TypeMirror;
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/polymer/src/reflected_type.dart:11:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/demo.dart:10:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+
+Done
+build.dart finished [18083 ms]
+
+---
+build.dart --machine --changed=web\demo.dart --changed=web\demo.html
+Running dart2js
+out/web/packages/path/path.dart:49:23: Hint: Can't find 'dart.io.Directory.current' in the current library.
+Did you forget to add an import?
+@MirrorsUsed(targets: 'dart.dom.html.window, '
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/path/path.dart:49:23: Hint: Can't find 'dart.io.Platform.operatingSystem' in the current library.
+Did you forget to add an import?
+@MirrorsUsed(targets: 'dart.dom.html.window, '
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/template_binding/src/element.dart:18:7: Warning: No member named 'attributes' in class 'Node'.
+      _node.attributes.remove(name);
+      ^^^^^^^^^^^^^^^^
+out/web/index.html_bootstrap.dart:1:1: Hint: 871 methods retained for use by dart:mirrors out of 3454 total methods (25%).
+library app_bootstrap;
+
+out/web/packages/polymer/polymer.dart:50:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/observe/observe.dart:89:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/path/path.dart:52:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/polymer_expressions/eval.dart:12:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/polymer_expressions/src/mirrors.dart:11:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/polymer/deserialize.dart:8:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors' show TypeMirror;
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/polymer/src/reflected_type.dart:11:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+
+Done
+build.dart finished [17949 ms]
+
+---
+build.dart --machine --changed=web\demo.dart --changed=web\demo.html
+Running dart2js
+out/web/packages/path/path.dart:49:23: Hint: Can't find 'dart.io.Directory.current' in the current library.
+Did you forget to add an import?
+@MirrorsUsed(targets: 'dart.dom.html.window, '
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/path/path.dart:49:23: Hint: Can't find 'dart.io.Platform.operatingSystem' in the current library.
+Did you forget to add an import?
+@MirrorsUsed(targets: 'dart.dom.html.window, '
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/template_binding/src/element.dart:18:7: Warning: No member named 'attributes' in class 'Node'.
+      _node.attributes.remove(name);
+      ^^^^^^^^^^^^^^^^
+out/web/index.html_bootstrap.dart:1:1: Hint: 872 methods retained for use by dart:mirrors out of 3455 total methods (25%).
+library app_bootstrap;
+
+out/web/packages/polymer/polymer.dart:50:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/observe/observe.dart:89:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/path/path.dart:52:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/polymer_expressions/eval.dart:12:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/polymer_expressions/src/mirrors.dart:11:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/polymer/deserialize.dart:8:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors' show TypeMirror;
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/polymer/src/reflected_type.dart:11:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+
+Done
+build.dart finished [18498 ms]
+
+---
+build.dart --machine --changed=web\demo.dart
+Running dart2js
+out/web/packages/path/path.dart:49:23: Hint: Can't find 'dart.io.Directory.current' in the current library.
+Did you forget to add an import?
+@MirrorsUsed(targets: 'dart.dom.html.window, '
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/path/path.dart:49:23: Hint: Can't find 'dart.io.Platform.operatingSystem' in the current library.
+Did you forget to add an import?
+@MirrorsUsed(targets: 'dart.dom.html.window, '
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/template_binding/src/element.dart:18:7: Warning: No member named 'attributes' in class 'Node'.
+      _node.attributes.remove(name);
+      ^^^^^^^^^^^^^^^^
+out/web/index.html_bootstrap.dart:1:1: Hint: 872 methods retained for use by dart:mirrors out of 3455 total methods (25%).
+library app_bootstrap;
+
+out/web/packages/polymer/polymer.dart:50:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/observe/observe.dart:89:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/path/path.dart:52:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/polymer_expressions/eval.dart:12:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/polymer_expressions/src/mirrors.dart:11:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/polymer/deserialize.dart:8:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors' show TypeMirror;
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+out/web/packages/polymer/src/reflected_type.dart:11:1: Info: Import of 'dart:mirrors'.
+import 'dart:mirrors';
+^^^^^^^^^^^^^^^^^^^^^^
+
+Done
+build.dart finished [20996 ms]
+

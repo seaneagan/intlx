@@ -1,0 +1,115 @@
+
+.has-permalink .permalink {
+  visibility: hidden;
+}
+.has-permalink:hover .permalink {
+  display: inline-block;
+  visibility: visible;
+}
+
+body { padding-top: 80px; }
+@media screen and (max-width: 980px) {
+    body { padding-top: 0px; }
+}
+
+.dart-logo {
+  text-indent: -119988px;
+  overflow: hidden;
+  text-align: left;
+  background-image: url(http://pub.dartlang.org/static/img/dart.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  width: 21px;
+}
+
+.code-demo pre.prettyprint,
+.code-demo code.prettyprint {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+  background: none;
+  font-size: 14px;
+}
+
+code,
+.code-demo .row>:first-child {
+  background-color: lightgray;
+}
+
+.code-demo>.row:first-child>:first-child,
+.code-demo>.row:last-child>:first-child {
+  z-index: -100000000000;
+}
+
+@media screen and (max-width: 767px) {
+  .code-demo {
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .code-demo .row>:nth-child(2) {
+    margin-bottom: -2px;
+  }
+}
+
+.code-demo {
+  margin-left: 0px;
+}
+
+.code-demo, code {
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+#system-locale-code {
+  vertical-align: middle;
+}
+
+code a, pre a {
+  text-decoration: underline;
+}
+
+/*
+#intlx-nav li {
+  margin-top: 11px;
+}
+*/
+li.gh-star {
+  margin-top: 14px;
+  margin-left: 18px;
+}
+/*
+li.twitter {
+  margin-left: 2px;
+}
+
+li.gplus {
+  margin-left: 10px;
+}
+
+li#drone {
+  margin: 0;
+}
+*/
+.footer {
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 70px;
+  border-top: 1px solid #e5e5e5;
+  background-color: #f5f5f5;
+}
+.footer p {
+  margin-bottom: 0;
+  color: #777;
+}
+.footer-links {
+  margin: 10px 0;
+}
+.footer-links li:first-child {
+  padding-left: 0;
+}
+.footer-links li {
+  display: inline;
+  padding: 0 2px;
+}

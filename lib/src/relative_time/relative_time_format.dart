@@ -52,8 +52,8 @@ class DurationFormat extends _RelativeTimeFormat<Duration> {
 ///     var ageFormat = new AgeFormat(locale: localeData.locale);
 ///     var now = new DateTime.now();
 ///     var twoHours = const Duration(hours: 2);
-///     print(ageFormat.format(now.add(twoHours)))); // "In 2 hours"
-///     print(ageFormat.format(now.subtract(twoHours)))); // "2 hours ago"
+///     print(ageFormat.format(now.add(twoHours))); // "In 2 hours"
+///     print(ageFormat.format(now.subtract(twoHours))); // "2 hours ago"
 /// [1]: http://cldr.unicode.org/translation/plurals#TOC-Past-and-Future
 class AgeFormat extends _RelativeTimeFormat<DateTime> {
 
